@@ -14,7 +14,6 @@
 \usepackage{centernot}
 \usepackage{ragged2e}
 \usepackage{esvect}
-    \newcommand{\abs}[1]{\mathnormal \vv{#1}}
 \renewcommand{\vv}[1]{\mathbf{#1}}
 \newcommand{\dd}[1]{\mathrm{d}#1}
 \newcommand{\vvbeta}{\bm{\upbeta}}
@@ -34,9 +33,7 @@
 \usepackage{subcaption}
 \usepackage{hypcap}
 \usepackage{cancel}
-\usepackage{tensor}
 \interfootnotelinepenalty=10000
-\usepackage{graphicx}
 \DeclareFontEncoding{FML}{}{}%
 \DeclareFontSubstitution{FML}{futm}{m}{it}%
 \DeclareSymbolFont{fourier}{FML}{futm}{b}{it}%
@@ -46,7 +43,7 @@
 
 \title{Energy, Momentum, and Four-Vectors:\\A Gentle, ``Massless" Introduction\\to Relativistic Dynamics}
 \author{Michael Allen Warner}
-\date{\today}
+\date{Last updated: \today}
 \maketitle
 
 \section{Preface}\label{sec:p}
@@ -62,7 +59,7 @@ I'll remind you of this dot and circle business along the way.
 
 The ``massless" in the title is half tongue-in-cheek. The serious bit is that beyond Newtonian mechanics, I don't use the word \emph{mass} or the symbol $m$. This does set my approach apart---in a helpful way, I hope you'll agree---but you'll see that it's just a linguistic and notational preference. There's nothing radical about it.
 
-On vector notation: vectors are boldface, their magnitudes are italic (like any scalar), a vector in component form is enclosed by angle brackets (not parentheses), and squaring a vector means taking its dot product with itself, which is equivalent to squaring its magnitude. So velocity is $\vv v = \langle \abs v_x, \abs v_y, \abs v_z \rangle$, speed is $\abs v$, and $\vv v^2 = \vv v \cdot \vv v =  \abs v^2$. Occasionally italics aren't suitable for notating a vector's magnitude. A good example is the vector $\Delta \vv r$, because $\Delta r$ already signifies the change in $r$ (magnitude of position $\vv r$). In such cases we'll indicate the vector's magnitude with double bars instead (e.g., $\Vert \Delta \vv r \Vert$).
+On vector notation: vectors are boldface, their magnitudes are italic (like any scalar), a vector in component form is enclosed by angle brackets (not parentheses), and squaring a vector means taking its dot product with itself, which is equivalent to squaring its magnitude. So velocity is $\vv v = \langle v_x, v_y, v_z \rangle$, speed is $v$, and $\vv v^2 = \vv v \cdot \vv v = v^2$. Occasionally italics aren't suitable for notating a vector's magnitude. A good example is the vector $\Delta \vv r$, because $\Delta r$ already signifies the change in $r$ (magnitude of position $\vv r$). In such cases we'll indicate the vector's magnitude with double bars instead (e.g., $\Vert \Delta \vv r \Vert$).
 
 
 \section[Einstein's Thought Experiment without Einstein]{Einstein's Thought Experiment\\without Einstein}
@@ -79,7 +76,7 @@ Diving right in, what can we say about that light-emitting body if we have Newto
 \end{equation}
 and kinetic energy
 \begin{equation}\label{eq:2}
-E_{\mkern.5mu \textrm{k}}= \frac{1}{2} \, m \abs v ^2 \quad \text{\footnotesize{ (classical)}},
+E_{\mkern.5mu \textrm{k}}= \frac{1}{2} \, m v ^2 \quad \text{\footnotesize{ (classical)}},
 \end{equation}
 where $m$ is mass and $\vv{v}$ velocity. We also have the \textbf{conservation} laws for mass, momentum, and total energy $E$ (i.e., $\Delta m_{\mathrm{system}} = \Delta E_{\mathrm{system}} = 0$, and $\Delta \vv p_{\mathrm{system}} = \vv 0$), valid for \textbf{closed} systems that don't interact with the outside world. Truly closed systems only exist in thought experiments, though. For an \textbf{open} system, any change of $m_{\mathrm{system}}$, $E_{\mathrm{system}}$, or $\vv p_{\mathrm{system}}$ is equal-and-opposite to a corresponding change in the environment, meaning that these three conserved quantities are also \textbf{additive}:\footnote{In this paper we distinguish between conservation and additivity, but you should be aware that many treatments lump both properties together to define \emph{conservation} (sometimes only tacitly). Their ``conserved" is our ``additive and conserved."} a system's mass, momentum, and total energy are the sums (respectively) of the masses, momenta, and energies of the system's constituents.\footnote{\label{fn:ad}This is how things stand without special relativity, anyway. If we find that any of this additivity breaks down, we'll want to take note.} In particular, a system's total energy is the sum of \emph{all} energy contributions, kinetic and otherwise.
 
@@ -171,7 +168,7 @@ First, we can no longer use the \textbf{Galilean transformation} and its inverse
 \begin{equation*}
 \begin{aligned}
 t^{\prime} &= t& t&= t^\prime \\
-x^{\prime} &= x - \abs vt& \qquad x &= x^\prime + \abs vt^\prime\\
+x^{\prime} &= x - vt& \qquad x &= x^\prime + vt^\prime\\
 y^{\prime} &= y& y&= y^\prime\\
 z^{\prime} &= z& z&= z^\prime .
 \end{aligned}
@@ -187,7 +184,7 @@ z^{\prime} &= z& z&= z^\prime,
 \end{equation}
 where again the frames are in standard configuration.\footnote{A more general transformation drops the stipulations about the axes and origins, but our rotation-free standard-configuration boosts are much simpler and have everything we need to study the ``new" physics of special relativity.} Here we've introduced the \textbf{normalized speed} $\beta$, which is the magnitude of the \textbf{normalized velocity} $\vvbeta=\vv v/c$. By \emph{normalized}, we mean that $\beta$ is a dimensionless number between 0 and 1.
 
-Don't think of $\vvbeta$ as shorthand! The universe has a speed limit, and all speeds \emph{really are} fractions of it. Plus, working with $\vvbeta$ reveals mathematical elegance that's masked when working with $\vv v$. A good example is the symmetry of the $ct^\prime$ and $x^\prime$ equations above; if we use $\abs v$ instead of $\beta$ (or $t$ instead of $ct$, for that matter), the symmetry of the numerators is hidden:
+Don't think of $\vvbeta$ as shorthand! The universe has a speed limit, and all speeds \emph{really are} fractions of it. Plus, working with $\vvbeta$ reveals mathematical elegance that's masked when working with $\vv v$. A good example is the symmetry of the $ct^\prime$ and $x^\prime$ equations above; if we use $v$ instead of $\beta$ (or $t$ instead of $ct$, for that matter), the symmetry of the numerators is hidden:
 \begin{equation*}
 ct^\prime = \frac{ct - \dfrac{vx}{\vphantom{V_v} c}}{\sqrt{1 - \dfrac{v^2}{c^2}}} \qquad x^\prime = \frac{x - vt}{\sqrt{1 - \dfrac{v^2}{c^2}}},
 \end{equation*}
@@ -195,7 +192,7 @@ or worse:
 \begin{equation*}
 t^\prime = \frac{t - \dfrac{vx}{\vphantom{V_v} c^2}}{\sqrt{1 - \dfrac{v^2}{c^2}}} \qquad x^\prime = \frac{x - vt}{\sqrt{1 - \dfrac{v^2}{c^2}}}.
 \end{equation*}
-From now on we spurn $\vv v$. We'll refer to the classical limit not as $\abs v \ll c$, but as $\beta \ll 1$. We regard $\vvbeta$ as the ``natural" way to express velocity. It goes hand in hand with measuring distance and time in the same unit.
+From now on we spurn $\vv v$. We'll refer to the classical limit not as $v \ll c$, but as $\beta \ll 1$. We regard $\vvbeta$ as the ``natural" way to express velocity. It goes hand in hand with measuring distance and time in the same unit.
  
 Because the Lorentz transformation is linear (space and time coordinates are to first power only), it also works for \emph{differences} in the coordinates between two \textbf{events} (an event being a location in space at a moment in time, or a point in \textbf{spacetime}): just replace the likes of $x$ and $ct$ with those of $\Delta x$ and $c \mkern.5mu \Delta t$ (or of $\dd x$ and $c \, \dd t$ if need be\footnote{\label{fn:in}In physics it's normal to interpret the derivative as a ratio of infinitesimals. Some find this objectionable, but it's a great heuristic that works just fine for well-behaved single-variable situations (not for partial derivatives, though).}). We now adopt the standard shorthand $\gamma \equiv (1 - \beta^2)^{-1/2}$ (called the \textbf{Lorentz factor}):
 \begin{equation}\label{eq:lt2}
@@ -826,7 +823,7 @@ Next, we define the normalized \textbf{four-velocity} by replicating our steps f
 \end{aligned}
 } \, .
 \end{equation}
-Its magnitude is $\abs B = \sqrt{\vv B \cdot \vv B} = \gamma \sqrt{1 - (\vvbeta \cdot \vvbeta)} = 1$, a \emph{constant} invariant. As we could have guessed from Equation \ref{eq:25}, $\vv B$ is a unit vector. Note the similarity between Equation \ref{eq:31}'s $\vv B = \mathring{\vv R}$ and the relation $\vvbeta = \dot{\vv r}$.\footnote{Recall that we're using the circle for $c t_0$-derivatives and the dot for $ct$-derivatives. Also, the unnormalized four-velocity is $\vv V = \dd \vv R / \dd t_0 = \vv B c$, just as $\vv v = \vvbeta c$.}
+Its magnitude is $B = \sqrt{\vv B \cdot \vv B} = \gamma \sqrt{1 - (\vvbeta \cdot \vvbeta)} = 1$, a \emph{constant} invariant. As we could have guessed from Equation \ref{eq:25}, $\vv B$ is a unit vector. Note the similarity between Equation \ref{eq:31}'s $\vv B = \mathring{\vv R}$ and the relation $\vvbeta = \dot{\vv r}$.\footnote{Recall that we're using the circle for $c t_0$-derivatives and the dot for $ct$-derivatives. Also, the unnormalized four-velocity is $\vv V = \dd \vv R / \dd t_0 = \vv B c$, just as $\vv v = \vvbeta c$.}
 
 Because proper time is undefined for lightlike intervals (or, if you prefer, because $\gamma$ is undefined for $\beta = 1$), $\vv B$ is undefined for light and anything else without a rest frame.
 
@@ -838,11 +835,11 @@ By the same logic, we can construct a \textbf{four-momentum} in terms of the nor
 \boxed{
 \begin{aligned}
 \vv P &= E_0 \vv B\\
-&\equiv \langle E, \vv p c \rangle = \langle E, \, c \abs p_x, \, c \abs p_y, \, c \abs p_z \rangle
+&\equiv \langle E, \vv p c \rangle = \langle E, \, c p_x, \, c p_y, \, c p_z \rangle
 \end{aligned}
 } \, .
 \end{equation}
-Its magnitude is $\abs P = \sqrt{\vv P \cdot \vv P} = \sqrt{E^2 - (\vv p c \cdot \vv p c)} = E_0$, the invariant rest energy. Note the similarity between Equation \ref{eq:32}'s $\vv P = E_0 \vv B$ and the relation $\vv p c = E \vvbeta$ (Equation \ref{eq:18}).
+Its magnitude is $P = \sqrt{\vv P \cdot \vv P} = \sqrt{E^2 - (\vv p c \cdot \vv p c)} = E_0$, the invariant rest energy. Note the similarity between Equation \ref{eq:32}'s $\vv P = E_0 \vv B$ and the relation $\vv p c = E \vvbeta$ (Equation \ref{eq:18}).
 
 Unlike the four-velocity $\vv B$, the four-momentum $\vv P$ \emph{is} defined for a restless system, but only in component form $\langle E, \vv p c \rangle$. (That's why we reserved the ``$\equiv$" symbol for the second line in Equation \ref{eq:32}.) What's more, Equation \ref{eq:22} tells us that $E=p c$ in that case. The magnitude of the four-momentum is then $P = \sqrt{E^2 - (p c)^2} = 0$, as it must be when $E_0 = 0$. So the four-momentum of a restless system is a \textbf{null vector}, even though its components aren't zero. That runs counter to our Euclidean intuition. In Minkowski spacetime, a four-vector is null if the absolute value of its scalar time component equals the magnitude of its three-vector spatial component. The \textbf{zero four-vector} (we'll use the symbol \mbox{\boldmath$\emptyset$} to distinguish it from the null/zero three-vector $\vv 0$) is a null vector that indeed has only zeroes for components; it has the special property of being orthogonal to all four-vectors.
 
@@ -972,7 +969,7 @@ With that in mind, consider what happens when we take the $c t_0$-derivative of 
 \end{aligned}
 } \, ,
 \end{equation}
-and it's apparent that $\vv Z$ and $\vv B$ are \emph{not} codirectional. In fact, they're orthogonal! It must be so: $\vv B$ is always a unit vector, so only its direction can change.\footnote{If you don't see why constant $\abs B$ means that $\vv B$ and $\vv Z$ are orthogonal, then think of the velocity and acceleration three-vectors in the familiar case of uniform circular motion.} And we can easily confirm it, because if two vectors are orthogonal then their dot product is zero. To test that, let's start by evaluating the $ct$-derivative of $\gamma$ (remembering that $\beta^2$ is actually $\vvbeta \cdot \vvbeta$):
+and it's apparent that $\vv Z$ and $\vv B$ are \emph{not} codirectional. In fact, they're orthogonal! It must be so: $\vv B$ is always a unit vector, so only its direction can change.\footnote{If you don't see why constant $B$ means that $\vv B$ and $\vv Z$ are orthogonal, then think of the velocity and acceleration three-vectors in the familiar case of uniform circular motion.} And we can easily confirm it, because if two vectors are orthogonal then their dot product is zero. To test that, let's start by evaluating the $ct$-derivative of $\gamma$ (remembering that $\beta^2$ is actually $\vvbeta \cdot \vvbeta$):
 \begin{equation}\label{eq:gd}
 \begin{split}
 \dot{\gamma} &= \dfrac{\dd}{\dd t} \left[ \left(1-\beta^2 \right)^{-1/2} \right] \dfrac{1}{c} \\[5pt]
@@ -1100,7 +1097,7 @@ If \emph{both} $E_0$ and $\vv B$ change (the general case), then the product rul
 
 \subsection{Proper Power, Proper Force}\label{ssec:pf}
 
-When we discussed the four-force in Section \ref{ssec:ff}, we didn't bother finding its magnitude $\abs F$. We could have ``plug-and-chugged" with the temporal and spatial components (like we later did to calculate the four-acceleration's magnitude), but that would have been a chore. Now that we've covered the four-acceleration $\vv Z$ and the proper acceleration $\vvzeta_{\mkern1mu 0}$ (with invariant magnitude $Z/\mathrm{i}$), we have a better option:
+When we discussed the four-force in Section \ref{ssec:ff}, we didn't bother finding its magnitude $F$. We could have ``plug-and-chugged" with the temporal and spatial components (like we later did to calculate the four-acceleration's magnitude), but that would have been a chore. Now that we've covered the four-acceleration $\vv Z$ and the proper acceleration $\vvzeta_{\mkern1mu 0}$ (with invariant magnitude $Z/\mathrm{i}$), we have a better option:
 \begin{equation}\label{eq:40}
 \begin{split}
 F &= \sqrt{\vv F \cdot \vv F} = \sqrt{\mathring{\vv P} \cdot \mathring{\vv P}} \\[2pt]
@@ -1176,10 +1173,10 @@ Have another look at Equation \ref{eq:44}, and note that the force and accelerat
 \begin{equation}\label{eq:45}
 \vvzeta = \frac{\vv f}{E} \quad \textrm{\footnotesize{ (for $\dot{E}_0 = 0$ and $\vv f \perp \vvbeta$)}}.
 \end{equation}
-If $\vv f \parallel \vvbeta$, then $\vv f \cdot \vvbeta = \pm \, \abs f \beta$, and $\vvbeta = \pm \, \beta \mkern1mu \vv{\hat{f}}$ (where $\vv{\hat{f}}$ is the unit vector $\vv f / \abs f$):
+If $\vv f \parallel \vvbeta$, then $\vv f \cdot \vvbeta = \pm \, f \beta$, and $\vvbeta = \pm \, \beta \mkern1mu \vv{\hat{f}}$ (where $\vv{\hat{f}}$ is the unit vector $\vv f / f$):
 \begin{equation*}
 \begin{split}
-\vv f - (\vv f \cdot \vvbeta) \vvbeta &= \abs f \mkern1mu \vv{\hat{f}} - (\pm \, \abs f \beta) (\pm \, \beta \mkern1mu \vv{\hat{f}}) \\[2pt]
+\vv f - (\vv f \cdot \vvbeta) \vvbeta &= f \mkern1mu \vv{\hat{f}} - (\pm \, f \beta) (\pm \, \beta \mkern1mu \vv{\hat{f}}) \\[2pt]
 &= \vv f \mkern1mu (1 - \beta^2) \\[2pt]
 &= \frac{\vv f}{\gamma^2},
 \end{split}
