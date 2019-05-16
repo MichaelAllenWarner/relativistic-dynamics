@@ -1,3 +1,5 @@
+*.gdoc
+
 # Latex files
 
 *.aux
