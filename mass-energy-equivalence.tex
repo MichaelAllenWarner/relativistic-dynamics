@@ -41,7 +41,7 @@
 
 \begin{document}
 
-\title{Energy, Momentum, and Four-Vectors:\\A Gentle, ``Massless" Introduction\\to Relativistic Dynamics}
+\title{Energy, Momentum, and Four-Vectors:\\A Gentle, ``Massless" Introduction to\\Relativistic Dynamics and Electromagnetism}
 \author{Michael Allen Warner}
 \date{Last updated: \today}
 \maketitle
@@ -2196,7 +2196,7 @@ When it's dotted with a four-vector field $\vv Q = \vv Q (\vv R) = \langle Q^{ct
 whose value at every event is Lorentz-invariant.
 }
 \item{
-When $\partialup$ is dotted with \emph{itself}, the resulting function is called the \textbf{wave operator}, the \textbf{four-Laplacian}, or the \textbf{d'Alembertian}, labeled $\Box$:\footnote{Another convention---preferable, perhaps, but uncommon these days---uses $\Box$ as the four-del symbol and $\Box^2$ as the d'Alembertian, mirroring the use of $\del$ for the three-del and $\del^2 = \del \cdot \del$ for the three-Laplacian.}
+When $\partialup$ is dotted with \emph{itself}, the resulting function is called the \textbf{wave operator}, the \textbf{four-Laplacian}, or the \textbf{d'Alembertian}, labeled $\Box$:\footnote{Another convention---preferable, perhaps, but less common these days---uses $\Box$ as the four-del symbol and $\Box^2$ as the d'Alembertian, mirroring the use of $\del$ for the three-del and $\del^2 = \del \cdot \del$ for the three-Laplacian.}
 \begin{equation*}
 \begin{split}
 \Box &\equiv \partialup \cdot \partialup = \dfrac{1}{c^2} \, \dfrac{\partial^2}{\partial t^2} - \left[ \left( - \del \right) \cdot \left( - \del \right) \right] \\
@@ -2204,8 +2204,9 @@ When $\partialup$ is dotted with \emph{itself}, the resulting function is called
 &= \dfrac{1}{c^2} \, \dfrac{\partial^2}{\partial t^2} - \dfrac{\partial^2}{\partial x^2} - \dfrac{\partial^2}{\partial y^2} - \dfrac{\partial^2}{\partial z^2} .
 \end{split}
 \end{equation*}
-The d'Alembertian is the four-divergence of the four-gradient. Like the Laplacian, it can operate on a scalar field \emph{or} a vector field, always outputting a field of the same kind as its input.\footnote{\label{fn:gd}Does this mean that a vector field can have a gradient? Doesn't that contradict what we said above about the four-gradient acting on scalar fields? It depends on how we define the word \emph{gradient}, but basically the answer is yes! The details involve tensors (briefly---the gradient of a tensor field of rank $n$ is a tensor field of rank $n + 1$, and the divergence of a tensor field of rank $n$ is a tensor field of rank $n - 1$), but for now it's enough to know that the Laplacian and d'Alembertian can operate on both scalar and vector fields.} Think of the d'Alembertian as the four-del's invariant ``squared magnitude." It acts like a \emph{scalar} when combined with a four-gradient or -divergence, in the sense that the order of the operations is reversible: $\Box (\partialup \psi) = \partialup (\Box \psi)$ and $\Box (\partialup \cdot \vv Q) = \partialup \cdot (\Box \vv Q)$.\footnote{It's a good exercise to verify these relations. Use the analogous Laplacian identities $\del^2 (\del f) = \del (\del^2 f)$ and $\del^2 (\del \cdot \vv c) = \del \cdot (\del^2 \vv c)$, and also the fact that the order of mixed partials doesn't matter (e.g., $\partial^{ct} \del \cdot \vv c = \del \cdot \partial^{ct} \vv c$, and $\partial^{ct} \del f = \del \partial^{ct} f$).} By contrast, the four-gradient of the four-divergence is not equivalent to the four-divergence of the four-gradient (the d'Alembertian): $\partialup (\partialup \cdot \vv Q) \neq \Box \vv Q$.}
+}
 \end{itemize}
+The d'Alembertian is the four-divergence of the four-gradient. Like the Laplacian, it can operate on a scalar field \emph{or} a vector field, always outputting a field of the same kind as its input.\footnote{\label{fn:gd}Does this mean that a vector field can have a gradient? Doesn't that contradict what we said above about the four-gradient acting on scalar fields? It depends on how we define the word \emph{gradient}, but basically the answer is yes! The details involve tensors (briefly---the gradient of a tensor field of rank $n$ is a tensor field of rank $n + 1$, and the divergence of a tensor field of rank $n$ is a tensor field of rank $n - 1$), but for now it's enough to know that the Laplacian and d'Alembertian can operate on both scalar and vector fields.} Think of the d'Alembertian as the four-del's invariant ``squared magnitude." It acts like a \emph{scalar} when combined with a four-gradient or -divergence, in the sense that the order of the operations is reversible: $\Box (\partialup \psi) = \partialup (\Box \psi)$ and $\Box (\partialup \cdot \vv Q) = \partialup \cdot (\Box \vv Q)$.\footnote{It's a good exercise to verify these relations. Use the analogous Laplacian identities $\del^2 (\del f) = \del (\del^2 f)$ and $\del^2 (\del \cdot \vv c) = \del \cdot (\del^2 \vv c)$, and also the fact that the order of mixed partials doesn't matter (e.g., $\partial^{ct} \del \cdot \vv c = \del \cdot \partial^{ct} \vv c$, and $\partial^{ct} \del f = \del \partial^{ct} f$).} By contrast, the four-gradient of the four-divergence is not equivalent to the four-divergence of the four-gradient (the d'Alembertian): $\partialup (\partialup \cdot \vv Q) \neq \Box \vv Q$.
 
 
 \subsubsection{The Differential Four-Vector Triple Product}\label{sssec:tp}
@@ -2256,7 +2257,7 @@ Input a four-vector $\vv W$, and we have:
 \end{equation*}
 a new four-vector. This is our \textbf{differential four-vector triple product}. For convenience, we'll use a shorter notation for it, modeled after its Euclidean three-vector counterpart:
 \begin{equation}\label{eq:dtp}
-\vv W \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv Q) =  \partialup_{\vv Q} ( \vv W \cdot \vv Q) - ( \vv W \cdot \partialup) \vv Q .
+\vv W \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv Q) \equiv \partialup_{\vv Q} ( \vv W \cdot \vv Q) - ( \vv W \cdot \partialup) \vv Q .
 \end{equation}
 The scare quotes remind us that we have \emph{not} defined the cross product or curl as four-vector operations.\footnote{Warning: neither this notation nor the very concept of a ``differential four-vector triple product" is standard. But with the differential four-vector triple product in our toolkit, we can cover the basics of relativistic electrodynamics without getting mired in tensor analysis and index gymnastics.}
  
@@ -2267,12 +2268,7 @@ With $\vv W = \langle W^{ct}, \, \vv w \rangle$ and $\vv Q = \langle Q^{ct} , \,
 &= W^{ct} \partialup Q^{ct} - \partialup_{\vv q} ( \vv w \cdot \vv q ) - W^{ct} \partial^{ct} \vv Q - ( \vv w \cdot \del ) \vv Q
 \end{split}
 \end{equation*}
-(the $-\del$ comes from Equation \ref{eq:fn}). Now in component form:\footnote{Two of our steps are maybe less transparent than the others:
-\begin{equation*}
-\partial^{ct}_{\vv q} \left( \vv w \cdot \vv q \right) = \vv w \cdot \partial^{ct} \vv q \qquad \textrm{and} \qquad (\vv w \cdot \del) Q^{ct} = \vv w \cdot \del Q^{ct} ,
-\end{equation*}
-but they're easily verified by carrying out the dot products in the parentheses and then applying the operators.
-}
+(the $-\del$ comes from Equation \ref{eq:fn}). Now in component form:
 \begin{equation*}
 \begin{split}
 & \left \langle W^{ct} \partial^{ct} Q^{ct} - \vv w \cdot \partial^{ct} \vv q - W^{ct} \partial^{ct} Q^{ct} - \vv w \cdot \del Q^{ct} , \right. \\[3pt]
@@ -2332,7 +2328,7 @@ This four-potential isn't uniquely defined because given an $\vv A$ that satisfi
 \begin{equation*}
 0 = \partialup \cdot \vv J = \partialup \cdot (\Box \vv A) = \Box ( \partialup \cdot \vv A) .
 \end{equation*}
-If $\Box ( \partialup \cdot \vv A) = 0$, then either there are sourceless ``waves of $\partialup \cdot \vv A$" that do nothing (there aren't), or $\partialup \cdot \vv A = 0$. The Lorenz gauge condition is Lorentz-invariant, and it makes Equation \ref{eq:fp} consistent with the physical aspects of electromagnetic theory that we'll soon discuss.\footnote{The most general way to define $\vv A$ that's consistent with the physical aspects of the theory is by having it satisfy $\Box \vv A - \partialup (\partialup \cdot \vv A) = \vv J$, which is inherently compatible with the continuity equation because the four-divergence of the left side is \emph{necessarily} zero: $\partialup \cdot (\Box \vv A) - \partialup \cdot \partialup (\partialup \cdot \vv A) = \Box (\partialup \cdot \vv A) - \Box (\partialup \cdot \vv A)$. But for any spacetime scalar field $\chi = \chi (\vv R)$, we also have $\Box (\vv A - \partialup \chi) - \partialup [\partialup \cdot (\vv A - \partialup \chi)] = \Box \vv A - \Box (\partialup \chi) - \partialup (\partialup \cdot \vv A) + \partialup (\Box \chi) = \Box \vv A - \partialup (\partialup \cdot \vv A)$, and we see that ``gauge transformations" taking $\vv A$ to $\vv A - \partialup \chi$ are of no consequence here. We are therefore free to impose the Lorenz gauge by choosing the $\chi$ whose $\Box \chi = \partialup \cdot \vv A$, rendering the ``new" four-potential divergenceless: $\partialup \cdot (\vv A - \partialup \chi) = \partialup \cdot \vv A - \Box \chi = 0$. The Lorenz gauge isn't always the most convenient choice in practice, but it's ideal for the relativistic treatment of electrodynamics.}
+If $\Box ( \partialup \cdot \vv A) = 0$, then either there are sourceless ``waves of $\partialup \cdot \vv A$" that do nothing (there aren't), or $\partialup \cdot \vv A = 0$. The Lorenz gauge condition is Lorentz-invariant, and it makes Equation \ref{eq:fp} consistent with the physical aspects of electromagnetic theory that we'll soon discuss.\footnote{The most general way to define $\vv A$ that's consistent with the physical aspects of the theory is by having it satisfy $\Box \vv A - \partialup (\partialup \cdot \vv A) = \vv J$, which is inherently compatible with the continuity equation because the four-divergence of the left side is \emph{necessarily} zero: $\partialup \cdot (\Box \vv A) - \partialup \cdot \partialup (\partialup \cdot \vv A) = \Box (\partialup \cdot \vv A) - \Box (\partialup \cdot \vv A)$. But for any spacetime scalar field $\chi = \chi (\vv R)$, we also have $\Box (\vv A + \partialup \chi) - \partialup [\partialup \cdot (\vv A + \partialup \chi)] = \Box \vv A + \Box (\partialup \chi) - \partialup (\partialup \cdot \vv A) - \partialup (\Box \chi) = \Box \vv A - \partialup (\partialup \cdot \vv A)$, and we see that transformations taking $\vv A$ to $\vv A + \partialup \chi$ are of no consequence here. We are therefore always free to impose the Lorenz gauge by choosing $\chi$ so that $\Box \chi = - \partialup \cdot \vv A$, rendering the ``new" four-potential divergenceless and reducing its relationship with $\vv J$ to Equation \ref{eq:fp}: $\partialup \cdot (\vv A + \partialup \chi) = \partialup \cdot \vv A + \Box \chi = 0$. The Lorenz gauge isn't always the most convenient choice in practice, but it's ideal for the relativistic treatment of electrodynamics.}
 
 Equation \ref{eq:fp} is \emph{the} electromagnetic field equation. It's an inhomogeneous wave equation, and it says that a non-zero value of the $\vv J$ field at an event in spacetime generates a commensurate disturbance in the $\vv A$ field that propagates outward in space at $\beta = 1$:
 \begin{equation*}
@@ -2440,7 +2436,7 @@ Do the same for $\vv b$, and simplify both expressions using the ``half-angle" h
 \end{aligned}
 } \, .
 \end{equation}
-Equivalently, though less elegantly:
+Equivalently, though maybe less elegantly:
 \begin{equation*}
 \vv e^\prime = \gamma \left( \vv e + \vvbeta \times \vv b \right) - \dfrac{\gamma^2 (\vvbeta \cdot \vv e) \vvbeta}{\gamma + 1} \qquad \quad \vv b^\prime = \gamma \left( \vv b - \vvbeta \times \vv e \right) - \dfrac{\gamma^2 (\vvbeta \cdot \vv b) \vvbeta}{\gamma + 1},
 \end{equation*}
@@ -2636,7 +2632,7 @@ We have what we need from the Lorentz four-force density---we've simplified its 
 
 We take this opportunity to dip our toes into (Euclidean) rank-2 tensors, without getting into their full machinery, and without getting bogged down in new notation.\footnote{This discussion is restricted to tensors in three-dimensional \emph{Euclidean} space. To extend the discussion to tensors in Minkowski spacetime (four-tensors), we'd need to cover covectors and the metric tensor as well.} Actually, we've already done so: at the end of Section \ref{sec:in}, we represented one vector as a column matrix and another as a row matrix, we took their matrix product (in that order), and we mentioned in passing that the resulting square matrix was the matrix representation of the \emph{dyadic product} of the two vectors (we used the symbol $\otimes$ for this operation). What we didn't mention is that the dyadic product is a special case of the \textbf{tensor product}, and the \textbf{dyadic} it outputs is indeed a rank-2 tensor.
 
-It's important to understand that tensors, like vectors (but unlike matrices), are \emph{geometric} objects, characterized by components that transform a certain way under a coordinate transformation. In fact, vectors \emph{are} tensors---of rank-1. And scalars are tensors of rank-0. A tensor's rank tells you how many indices you need to uniquely specify one of its components. Not all Euclidean rank-2 tensors can be expressed as the tensor product of two vectors, but they all have nine ``doubled up" Cartesian components ($xx$, $xy$, $xz$, $yx$, $yy$, $yz$, $zx$, $zy$, $zz$), allowing them to be represented by a square matrix. (A rank-3 tensor can be represented by a cubic array, and so on.)
+It's important to understand that tensors, like vectors (but unlike matrices), are \emph{geometric} objects, characterized by components that transform a certain way under a coordinate transformation. In fact, vectors \emph{are} tensors---of rank-1. And scalars are tensors of rank-0. A tensor's rank tells you how many indices you need to uniquely specify one of its components. Not all three-dimensional Euclidean rank-2 tensors can be expressed as the tensor product of two vectors, but they all have nine ``doubled up" Cartesian components ($xx$, $xy$, $xz$, $yx$, $yy$, $yz$, $zx$, $zy$, $zz$), allowing them to be represented by a square matrix. (A rank-3 tensor can be represented by a cubic array, and so on.)
 
 The geometric nature of tensors is why we're careful to use language like ``the matrix representation of a rank-2 tensor," and why we'll continue to use different notation for matrix representations of vectors than we do for the vectors themselves. For example, we'll use $[\vv e]$ for the column-matrix representation of the electric field, and we'll use $[\vv e]^{\textrm{T}}$ for the transpose of that matrix (i.e., for the row-matrix representation of $\vv e$). Likewise, $[\vv c][\vv d]^{\textrm{T}}$ is the matrix representation of the dyadic product $\vv c \otimes \vv d$, and $[\vv d][\vv c]^{\textrm{T}} = ([\vv c][\vv d]^{\textrm{T}})^{\textrm{T}}$ is the matrix representation of $\vv d \otimes \vv c$ (the dyadic product is not commutative). As for the divergence $\del \cdot \vv c$ (of a vector), we have the matrix representation of the dot product $[\del]^{\textrm{T}}[\vv c]$.
 
@@ -2673,7 +2669,7 @@ By the way, the electromagnetic energy density, the Poynting vector, and the Max
 
 \subsubsection{Light}
 
-In classical electromagnetism, light is an electromagnetic wave, which is a disturbance in the four-potential field $\vv A = \vv A (\vv R)$ that propagates through free space (where the four-current-density field $\vv J = \vv J (\vv R)$ is zero). To discuss it mathematically, then, means working with solutions for $\vv A$ to the homogeneous wave equation
+Light is an electromagnetic wave---a disturbance in the (Lorenz-gauge) four-potential field $\vv A = \vv A (\vv R)$ that propagates through free space (where the four-current-density field $\vv J = \vv J (\vv R)$ is zero). To discuss it mathematically, then, means working with solutions to the homogeneous wave equation
 \begin{equation*}
 \Box \vv A =  \left( \dfrac{1}{c^2} \, \dfrac{\partial^2}{\partial t^2} - \del^2 \right) \vv A = \textrm{\mbox{\boldmath $\emptyset$}}
 \end{equation*}
@@ -2683,14 +2679,14 @@ In classical electromagnetism, light is an electromagnetic wave, which is a dist
 \end{equation}
 where the magnitude of the constant four-vector $\bar{\vv A} = \langle \bar{A}^{ct}, \, \bar{\vv a} \rangle$ is the wave's peak amplitude, and the likewise constant \textbf{four-wavevector} ${\vv K = \langle K^{ct}, \, \vv k \rangle}$ points in the spacetime-direction of the wave's propagation ($\vv k$ points in the \emph{spatial} direction of the wave's propagation).\footnote{The usual notation for the amplitude vector is $\vv A_0$, but we've been using the naught subscript for proper quantities, so we'll use bar notation instead.} If you were expecting a sinusoidal function of something like $(\vv k \cdot \vv r - 2 \pi \nu t )$, note that by Euler's formula ${\Re \lbrace \mathrm{e}^{\mathrm{i} \mkern.5mu \theta} \rbrace = \Re \lbrace \cos \theta + \mathrm{i} \sin \theta \rbrace = \cos \theta}$, and also that $\vv K \cdot \vv R = K^{ct}ct - \vv k \cdot \vv r$, with $K^{ct}$ related to the frequency $\nu$ by $K^{ct} = 2 \pi \nu / c$ (cosine is an even function, so it doesn't matter which term gets subtracted from the other). The complex exponential function is convenient for linear operations; only when we perform non-linear operations (we won't) or need the field itself do we take the real part.
 
-We'll assume that the amplitude vector $\bar{\vv A}$ is real, but it's worth mentioning that in general it may be complex. In the simplest case of complex $\bar{\vv A}$, we'd have $\bar{\vv A} = \mathcal{A} \mathrm{e}^{\mathrm{i} \mkern.5mu \delta}$ for some real four-vector $\mathcal{A}$, and $\vv A$ would then be the real part of ${\mathcal{A} \mathrm{e}^{\mathrm{i} \mkern.5mu \delta} \mathrm{e}^{\mathrm{i} \mkern.5mu \vv K \cdot \vv R} = \mathcal{A} \mathrm{e}^{\mathrm{i} \mkern.5mu ( \vv K \cdot \vv R + \delta )}}$, which differs from Equation \ref{eq:pw} for real $\bar{\vv A}$ only by the inclusion of a phase constant in the exponent. A more complicated scenario arises when complex $\bar{\vv A}$ \emph{cannot} be expressed as $\mathcal{A} \mathrm{e}^{\mathrm{i} \mkern.5mu \delta}$ for real $\mathcal{A}$, but no matter---the resulting wave is always equivalent to a superposition of solutions that are free of this complication.\footnote{Such a wave is elliptically or circularly polarized.} In the end, keeping $\bar{\vv A}$ real won't affect our main results, though strictly speaking we should add a phase constant to the exponential and sinusoidal arguments we encounter. The four-wavevector $\vv K$ is necessarily real (for our free-space waves).
+We'll assume that the amplitude vector $\bar{\vv A}$ is real, but it's worth mentioning that in general it may be complex. In the simplest case of complex $\bar{\vv A}$, we'd have $\bar{\vv A} = \mathcal{A} \mathrm{e}^{\mathrm{i} \mkern.5mu \delta}$ for some real four-vector $\mathcal{A}$, and $\vv A$ would then be the real part of ${\mathcal{A} \mathrm{e}^{\mathrm{i} \mkern.5mu \delta} \mathrm{e}^{\mathrm{i} \mkern.5mu \vv K \cdot \vv R} = \mathcal{A} \mathrm{e}^{\mathrm{i} \mkern.5mu ( \vv K \cdot \vv R + \delta )}}$, which differs from Equation \ref{eq:pw} for real $\bar{\vv A}$ only by the inclusion of a phase constant in the exponent. A more complicated scenario arises when complex $\bar{\vv A}$ \emph{cannot} be expressed as $\mathcal{A} \mathrm{e}^{\mathrm{i} \mkern.5mu \delta}$ for real $\mathcal{A}$, but no matter---the resulting wave is always equivalent to a superposition of solutions that are free of this complication.\footnote{Such a wave is elliptically or circularly polarized, as opposed to linearly polarized.} In the end, keeping $\bar{\vv A}$ real won't affect our main results, though strictly speaking we should add a phase constant to the exponential and sinusoidal arguments we encounter. The four-wavevector $\vv K$ is necessarily real (for our free-space waves).
 
 Now, surely $\vv K$ is lightlike (null), yes? As a sanity check, let's set the d'Alembertian of Equation \ref{eq:pw} to zero and see what happens (we need not take the real part, since differentiation is a linear operation). Introducing $f(\vv R) \equiv \vv K \cdot \vv R$ to avoid clutter, and using a product rule:\footnote{This product rule is $\partialup \cdot (g \vv Q) = g (\partialup \cdot \vv Q) + (\partialup g) \cdot \vv Q$ for a four-vector $\vv Q$ and a spacetime scalar function $g$, easily verified by writing it out in component form. In our case, $\vv Q = \partialup h$ (four-gradient of a scalar $h$), and so $\partialup \cdot (g \, \partialup h) = g \Box h + \partialup g \cdot \partialup h$.}
 \begin{equation*}
 \begin{aligned}
-\textrm{\mbox{\boldmath $\emptyset$}} &= \Box \left( \bar{\vv A} \mathrm{e}^{\mathrm{i} f} \right) = \partialup \cdot \partialup \left( \bar{\vv A} \mathrm{e}^{\mathrm{i} f} \right) \\
-0 &= \partialup \cdot \left[ \mathrm{e}^{\mathrm{i} f} \, \partialup ( \mathrm{i} f ) \right] \\
-&=  \mathrm{i} \left( \mathrm{e}^{\mathrm{i} f} \, \Box f + \partialup \mathrm{e}^{\mathrm{i} f} \cdot \partialup f \right) \\
+\textrm{\mbox{\boldmath $\emptyset$}} &= \Box \left( \bar{\vv A} \mathrm{e}^{\mathrm{i} f} \right) = \bar{\vv A} \, \Box \mkern1mu \mathrm{e}^{\mathrm{i} f} \\
+0 &= \partialup \cdot \partialup \mathrm{e}^{\mathrm{i} f} = \partialup \cdot \left( \mathrm{i} \mathrm{e}^{\mathrm{i} f} \, \partialup f \right) \\
+0 &= \mathrm{e}^{\mathrm{i} f} \, \Box f + \partialup \mathrm{e}^{\mathrm{i} f} \cdot \partialup f  \\
 0 &=  \Box f + \mathrm{i} \, \partialup f \cdot \partialup f ,
 \end{aligned}
 \end{equation*}
@@ -2701,7 +2697,7 @@ which requires that $\Box f = 0$ and $\partialup f \cdot \partialup f = 0$. But 
 &= \left \langle K^{ct} \dfrac{\partial (ct)}{\partial (ct)}, \, K^x \dfrac{\partial x}{\partial x}, \, K^y \dfrac{\partial y}{\partial y} , \, K^z \dfrac{\partial z}{\partial z} \right \rangle = \vv K ,
 \end{aligned}
 \end{equation*}
-and our constraints become $\partialup \cdot \vv K = 0$ and $\vv K \cdot \vv K = 0$. So $\vv K$ \emph{is} lightlike, and let's further insist that it's future-pointing (otherwise we allow for light waves traveling backward in time!). The Lorenz condition ($\partialup \cdot \vv A = 0$) imposes an additional constraint on $\vv K$:
+and our constraints become $\partialup \cdot \vv K = 0$ (trivial---$\vv K$ is constant) and $\vv K \cdot \vv K = 0$. So $\vv K$ \emph{is} lightlike, and let's further insist that it's future-pointing (otherwise we allow for light waves traveling backward in time!). The Lorenz condition ($\partialup \cdot \vv A = 0$) imposes an additional constraint on $\vv K$:
 \begin{equation*}
 \begin{aligned}
 0 &= \partialup \cdot \left( \bar{\vv A} \mathrm{e}^{\mathrm{i} f} \right) \\
@@ -2714,10 +2710,10 @@ giving $\bar{\vv A} \cdot \vv K = 0$. Combined with the fact that $\vv K$ is fut
 With these constraints and Equations \ref{eq:eb}, we can differentiate Equation \ref{eq:pw} to obtain the electric and magnetic fields of the monochromatic plane wave. We'll keep using $f(\vv R) = \vv K \cdot \vv R$ for short, bearing in mind that $\partialup f = \vv K$, whose components are $\partial^{ct} f = K^{ct}$ and $- \del f = \vv k$. First the magnetic field:\footnote{The omitted $\Re \lbrace \rbrace$ notation is implied. We'll take the real part after differentiating.}
 \begin{equation*}
 \begin{aligned}
-\del \times \vv a &= \del \times \left( \bar{\vv a} \mathrm{e}^{\mathrm{i} f} \right) \\
+\del \times \vv a &= \del \times \left( \bar{\vv a} \mkern1mu \mathrm{e}^{\mathrm{i} f} \right) \\
 &= \del \mathrm{e}^{\mathrm{i} f} \times \bar{\vv a} \\
 &= \mathrm{i} \mathrm{e}^{\mathrm{i} f} \del f \times \bar{\vv a} \\
-&= - \mathrm{i} \mathrm{e}^{\mathrm{i} f} \vv k \times \bar{\vv a},
+&= - \mathrm{i} \mathrm{e}^{\mathrm{i} f} \, \vv k \times \bar{\vv a},
 \end{aligned}
 \end{equation*}
 where we've used the product rule for the curl of a scalar-times-a-vector. Defining $\bar{\vv b} \equiv \vv k \times \bar{\vv a}$ and noting $\Re \lbrace - \mathrm{i} \mathrm{e}^{\mathrm{i} f} \rbrace = \Re \lbrace -\mathrm{i} ( \cos f + \mathrm{i} \sin f ) \rbrace = \sin f$, the real part is:\footnote{A few paragraphs up, we mentioned that it doesn't matter whether we use positive or negative $f = \vv K \cdot \vv R$ because cosine is an even function. Well, here we have a sine function, which is \emph{odd}. Does it matter now? No: if we'd started with $\mathrm{e}^{-\mathrm{i} f}$, we'd have ended up with $- \sin (-f) = \sin f$.}
@@ -2727,14 +2723,14 @@ where we've used the product rule for the curl of a scalar-times-a-vector. Defin
 Now the electric field, using $K^{ct} = k = (\vv{\hat{k}} \cdot \vv k)$ and $\bar{A}^{ct} = \bar{\vv a} \cdot \vv k / k = (\vv{\hat{k}} \cdot \bar{\vv a} )$:
 \begin{equation*}
 \begin{aligned}
-- \del A^{ct} - \partial^{ct} \vv a &= - \del \left( \bar{A}^{ct} \mathrm{e}^{\mathrm{i} f} \right) - \partial^{ct} \left( \bar{\vv a} \mathrm{e}^{\mathrm{i} f} \right) \\
+- \del A^{ct} - \partial^{ct} \vv a &= - \del \left( \bar{A}^{ct} \mathrm{e}^{\mathrm{i} f} \right) - \partial^{ct} \left( \bar{\vv a} \mkern1mu \mathrm{e}^{\mathrm{i} f} \right) \\
 &= - \mathrm{i} \mathrm{e}^{\mathrm{i} f} \left( \bar{A}^{ct} \del f + \bar{\vv a} \, \partial^{ct} f \right) \\
-&= - \mathrm{i} \mathrm{e}^{\mathrm{i} f} \left( K^{ct} \bar{\vv a} - \bar{A}^{ct} \vv k \right) \\
-&= - \mathrm{i} \mathrm{e}^{\mathrm{i} f} \left( \bar{\vv a} (\vv{\hat{k}} \cdot \vv k )  - \vv k (\vv{\hat{k}} \cdot \bar{\vv a} ) \right) \\
-&= - \mathrm{i} \mathrm{e}^{\mathrm{i} f} \left( \vv{\hat{k}} \times (\bar{\vv a} \times \vv k) \right)
+&= - \mathrm{i} \mathrm{e}^{\mathrm{i} f} \left( K^{ct} \bar{\vv a} - \bar{A}^{ct} \vv k \right) \\[1pt]
+&= - \mathrm{i} \mathrm{e}^{\mathrm{i} f} \left( \bar{\vv a} (\vv{\hat{k}} \cdot \vv k )  - \vv k (\vv{\hat{k}} \cdot \bar{\vv a} ) \right) \\[1pt]
+&= - \mathrm{i} \mathrm{e}^{\mathrm{i} f} \, \vv{\hat{k}} \times (\bar{\vv a} \times \vv k) = - \mathrm{i} \mathrm{e}^{\mathrm{i} f} \, \bar{\vv b} \times \vv{\hat{k}}
 \end{aligned}
 \end{equation*}
-(``$bac - cab$" rule). Defining $\bar{\vv e} \equiv \vv{\hat{k}} \times (\bar{\vv a} \times \vv k) = \bar{\vv b} \times \vv{\hat{k}}$, the real part is:
+(``$bac - cab$" rule). Defining $\bar{\vv e} \equiv \bar{\vv b} \times \vv{\hat{k}}$, the real part is:
 \begin{equation}\label{eq:epw}
 \vv e (\vv R) = \bar{\vv e} \, \sin \left( \vv K \cdot \vv R \right) .
 \end{equation}
