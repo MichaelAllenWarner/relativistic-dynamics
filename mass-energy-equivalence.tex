@@ -2128,7 +2128,7 @@ Since information can travel no faster than $\beta = 1$, it also follows that in
 
 \section{Electromagnetism}\label{sec:rem}
 
-Near the beginning of this document, we took a quantum shortcut: instead of using classical electromagnetism to show that the energy of light transforms between frames in the same manner as its frequency, we used the Planck--Einstein relation. This wasn't quite ahistorical, but it wasn't entirely satisfactory, either, and we pledged that we'd come back and redo it the ``right" way, without invoking the photon model. The time has come to settle that unfinished business. We'll start by formulating electrodynamics from scratch using four-vectors.\footnote{No explicit tensor analysis or Ricci calculus.} Then we'll derive the transformation law for the energy of a light wave the way that Einstein did it (more or less). But first we'll need to go over some spacetime vector calculus. Familiarity with Euclidean vector calculus is assumed, though we'll keep our steps transparent and point out the identities we use.
+Near the beginning of this document, we took a quantum shortcut: instead of using classical electromagnetism to show that the energy of light transforms between frames in the same manner as its frequency, we used the Planck--Einstein relation. This wasn't quite ahistorical, but it wasn't entirely satisfactory, either, and we pledged that we'd come back and redo it the ``right" way, without invoking the photon model. The time has come to settle that unfinished business. We'll start by formulating electrodynamics from scratch using four-vectors.\footnote{No explicit tensor analysis or Ricci calculus, though there's an ``optional" foray into dyadics at the end, which is kind of like ``tensors lite" (see Section \ref{ssec:dy}).} Then we'll derive the transformation law for the energy of a light wave the way that Einstein did it (more or less). But first we'll need to go over some spacetime vector calculus. Familiarity with Euclidean vector calculus is assumed, though we'll keep our steps transparent and point out the identities we use.
 
 
 \subsection{The Math (Spacetime Vector Calculus)}
@@ -2264,7 +2264,7 @@ The scare quotes remind us that we have \emph{not} defined the cross product or 
 With $\vv W = \langle W^{ct}, \, \vv w \rangle$ and $\vv Q = \langle Q^{ct} , \, \vv q \rangle$, we can put the right side of Equation \ref{eq:dtp} into component form. Here is the first step:
 \begin{equation*}
 \begin{split}
-&\partialup_{\vv Q} \left[ W^{ct} Q^{ct} - \left( \vv w \cdot \vv q \right) \right] - \left[ W^{ct} \partial^{ct} - \big(  \vv w \cdot [ - \del ] \big) \right] \vv Q \\[5pt]
+&\partialup_{\vv Q} \left[ W^{ct} Q^{ct} - \left( \vv w \cdot \vv q \right) \right] - \left[ W^{ct} \partial^{ct} - \big(  \vv w \cdot [ - \del ] \big) \right] \vv Q \\[8pt]
 &= W^{ct} \partialup Q^{ct} - \partialup_{\vv q} ( \vv w \cdot \vv q ) - W^{ct} \partial^{ct} \vv Q - ( \vv w \cdot \del ) \vv Q
 \end{split}
 \end{equation*}
@@ -2272,7 +2272,7 @@ With $\vv W = \langle W^{ct}, \, \vv w \rangle$ and $\vv Q = \langle Q^{ct} , \,
 \begin{equation*}
 \begin{split}
 & \left \langle W^{ct} \partial^{ct} Q^{ct} - \vv w \cdot \partial^{ct} \vv q - W^{ct} \partial^{ct} Q^{ct} - \vv w \cdot \del Q^{ct} , \right. \\[3pt]
-& \qquad \left. W^{ct} (- \del Q^{ct}) - [- \del_{\vv q} (\vv w \cdot \vv q)]  -  W^{ct} \partial^{ct} \vv q - (\vv w \cdot \del) \vv q \right \rangle \\[5pt]
+& \qquad \left. W^{ct} (- \del Q^{ct}) - [- \del_{\vv q} (\vv w \cdot \vv q)]  -  W^{ct} \partial^{ct} \vv q - (\vv w \cdot \del) \vv q \right \rangle \\[10pt]
 &= \left \langle \vv w \cdot \left( - \del Q^{ct} - \partial^{ct} \vv q  \right) , \, W^{ct} \left( - \del Q^{ct} - \partial^{ct} \vv q \right) + \big[ \vv w \times (\del \times \vv q) \big] \right \rangle ,
 \end{split}
 \end{equation*}
@@ -2328,7 +2328,7 @@ This four-potential isn't uniquely defined because given an $\vv A$ that satisfi
 \begin{equation*}
 0 = \partialup \cdot \vv J = \partialup \cdot (\Box \vv A) = \Box ( \partialup \cdot \vv A) .
 \end{equation*}
-If $\Box ( \partialup \cdot \vv A) = 0$, then either there are sourceless ``waves of $\partialup \cdot \vv A$" that do nothing (there aren't), or $\partialup \cdot \vv A = 0$. The Lorenz gauge condition is Lorentz-invariant, and it makes Equation \ref{eq:fp} consistent with the physical aspects of electromagnetic theory that we'll soon discuss.\footnote{The most general way to define $\vv A$ that's consistent with the physical aspects of the theory is by having it satisfy $\Box \vv A - \partialup (\partialup \cdot \vv A) = \vv J$, which is inherently compatible with the continuity equation because the four-divergence of the left side is \emph{necessarily} zero: $\partialup \cdot (\Box \vv A) - \partialup \cdot \partialup (\partialup \cdot \vv A) = \Box (\partialup \cdot \vv A) - \Box (\partialup \cdot \vv A)$. But for any spacetime scalar field $\chi = \chi (\vv R)$, we also have $\Box (\vv A + \partialup \chi) - \partialup [\partialup \cdot (\vv A + \partialup \chi)] = \Box \vv A + \Box (\partialup \chi) - \partialup (\partialup \cdot \vv A) - \partialup (\Box \chi) = \Box \vv A - \partialup (\partialup \cdot \vv A)$, and we see that transformations taking $\vv A$ to $\vv A + \partialup \chi$ are of no consequence here. We are therefore always free to impose the Lorenz gauge by choosing $\chi$ so that $\Box \chi = - \partialup \cdot \vv A$, rendering the ``new" four-potential divergenceless and reducing its relationship with $\vv J$ to Equation \ref{eq:fp}: $\partialup \cdot (\vv A + \partialup \chi) = \partialup \cdot \vv A + \Box \chi = 0$. The Lorenz gauge isn't always the most convenient choice in practice, but it's ideal for the relativistic treatment of electrodynamics.}
+If $\Box ( \partialup \cdot \vv A) = 0$, then either there are sourceless ``waves of $\partialup \cdot \vv A$" that do nothing (there aren't), or $\partialup \cdot \vv A = 0$. The Lorenz gauge condition is Lorentz-invariant, and it makes Equation \ref{eq:fp} consistent with the physical aspects of electromagnetic theory that we'll soon discuss.\footnote{\label{fn:fp}The most general way to define $\vv A$ that's consistent with the physical aspects of the theory is by having it satisfy $\Box \vv A - \partialup (\partialup \cdot \vv A) = \vv J$, which is inherently compatible with the continuity equation because the four-divergence of the left side is \emph{necessarily} zero: $\partialup \cdot (\Box \vv A) - \partialup \cdot \partialup (\partialup \cdot \vv A) = \Box (\partialup \cdot \vv A) - \Box (\partialup \cdot \vv A)$. But for any spacetime scalar field $\chi = \chi (\vv R)$, we also have $\Box (\vv A + \partialup \chi) - \partialup [\partialup \cdot (\vv A + \partialup \chi)] = \Box \vv A + \Box (\partialup \chi) - \partialup (\partialup \cdot \vv A) - \partialup (\Box \chi) = \Box \vv A - \partialup (\partialup \cdot \vv A)$, and we see that transformations taking $\vv A$ to $\vv A + \partialup \chi$ are of no consequence here. We are therefore always free to impose the Lorenz gauge by choosing $\chi$ so that $\Box \chi = - \partialup \cdot \vv A$, rendering the ``new" four-potential divergenceless and reducing its relationship with $\vv J$ to Equation \ref{eq:fp}: $\partialup \cdot (\vv A + \partialup \chi) = \partialup \cdot \vv A + \Box \chi = 0$. The Lorenz gauge isn't always the most convenient choice in practice, but it's ideal for the relativistic treatment of electrodynamics.}
 
 Equation \ref{eq:fp} is \emph{the} electromagnetic field equation. It's an inhomogeneous wave equation, and it says that a non-zero value of the $\vv J$ field at an event in spacetime generates a commensurate disturbance in the $\vv A$ field that propagates outward in space at $\beta = 1$:
 \begin{equation*}
@@ -2339,7 +2339,7 @@ The disturbance propagates forever, though it can undergo interference with othe
 
 \subsubsection{The Lorentz Four-Force; Electric and Magnetic Fields}\label{sssec:lff}
 
-We've introduced the four-potential $\vv A = \vv A (\vv R)$ (in the Lorenz gauge) as any divergenceless vector field whose d'Alembertian equals the four-current-density, but we haven't yet established why we should care about it. We care about it because of the following empirical result:\footnote{In the next section, we'll actually derive Equation \ref{eq:ff} with a well-chosen Lagrangian.}
+We've introduced the four-potential $\vv A = \vv A (\vv R)$ (in the Lorenz gauge) as any divergenceless vector field whose d'Alembertian equals the four-current-density, but we haven't yet established why we should care about it. We care about it because of the following empirical result:\footnote{Though we're sticking with the Lorenz gauge, this result and those that follow from it hold for \emph{any} $\vv A$ that satisfies $\Box \vv A - \partialup (\partialup \cdot \vv A) = \vv J$ (see Footnote \ref{fn:fp}).}
 \begin{equation}\label{eq:ff}
 \boxed{\vv F_{\textrm{L}} = q \, \bigl[ \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) \bigr]} \, .
 \end{equation}
@@ -2377,13 +2377,13 @@ and the temporal component is the particle's $\gamma$ times the \textbf{Lorentz 
 The magnetic field $\vv b$ plays no role in Equation \ref{eq:lp} because the \textbf{magnetic force} $q \vvbeta \times \vv b$ in Equation \ref{eq:ltf} is perpendicular to $\vvbeta$ and therefore only changes the \emph{direction} of the particle's velocity (and momentum), not its magnitude. In other words, the magnetic field does no work. The \textbf{electric force} $q \vv e$, on the other hand, is parallel to $\vv e$ regardless of the direction of $\vvbeta$, and generally changes both the direction and magnitude of the particle's velocity.
 
 As four-vectors, $\vv J$, $\vv A$, and $\vv F_{\mathrm{L}}$ have components that obey the Lorentz transformation. As three-vectors, $\vv e$ and $\vv b$ do not, but their components are \emph{built} from the components of four-vectors ($\partialup$ and $\vv A$) and transform accordingly. Here are the Cartesian components of $\vv e$ and $\vv b$ in terms of those four-vector components (using Equations \ref{eq:fn} and \ref{eq:eb}):
-\begin{equation*}
+\begin{equation}\label{eq:ebc}
 \begin{aligned}
 e_x = \partial^x A^{ct} - \partial^{ct} A^x \qquad \qquad b_x = \partial^z A^y - \partial^y A^z \\
 e_y = \partial^y A^{ct} - \partial^{ct} A^y \qquad \qquad b_y = \partial^x A^z - \partial^z A^x \\
 e_z = \partial^z A^{ct} - \partial^{ct} A^z \qquad \qquad b_z = \partial^y A^x - \partial^x A^y 
 \end{aligned}
-\end{equation*}
+\end{equation}
 (remember, $\partial^{ct}$ is the positive $ct$-partial, but the other components of $\partialup$ are \emph{negative} partials). Under a standard-configuration boost with relative rapidity $\phi$ between the frames, $e^\prime_x$ is:
 \begin{equation*}
 \begin{split}
@@ -2442,33 +2442,35 @@ Equivalently, though maybe less elegantly:
 \end{equation*}
 where $\gamma = \cosh{\phi}$ and $\beta = \tanh{\phi}$ are boost parameters (and $\hatbeta = \vvbeta / \beta = \hatphi$).
 
-Finally, it's useful to derive a relationship between $\Box \vv A = \langle \Box A^{ct}, \Box \vv a \rangle$ and the electric and magnetic fields (Equations \ref{eq:eb}). By the Lorenz condition ${\partialup \cdot \vv A = 0}$ (that is, $\partial^{ct} A^{ct} = - \del \cdot \vv a$):
+Finally, it's useful to derive a relationship between $\vv J = \Box \vv A = \langle \Box A^{ct}, \Box \vv a \rangle$ and the electric and magnetic fields (Equations \ref{eq:eb}). By the Lorenz condition ${\partialup \cdot \vv A = 0}$ (that is, $\partial^{ct} A^{ct} = - \del \cdot \vv a$):
 \begin{equation}\label{eq:ace}
 \begin{split}
-\Box A^{ct} &= \partial^{ct} (\partial^{ct} A^{ct}) - \del^2 A^{ct} \\
+\rho &= \Box A^{ct} \\
+&= \partial^{ct} (\partial^{ct} A^{ct}) - \del^2 A^{ct} \\
 &= \partial^{ct} (- \del \cdot \vv a) - \del \cdot \del A^{ct} \\
 &= \del \cdot (- \partial^{ct} \vv a - \del A^{ct}) \\
-\Box A^{ct} &= \del \cdot \vv e
+\rho &= \del \cdot \vv e
 \end{split}
 \end{equation}
 (we can swap $\partial^{ct}$ and $\del \cdot$ because the order of mixed partials is reversible). Then using the identity ${\del^2 \vv a = \del(\del \cdot \vv a) - \del \times (\del \times \vv a)}$ for the vector Laplacian (and Equations \ref{eq:eb}), we also have:
 \begin{equation}\label{eq:abe}
 \begin{split}
-\Box \vv a &= \partial^{ct} (\partial^{ct} \vv a) - \del^2 \vv a \\
+\vv j &= \Box \vv a \\
+&= \partial^{ct} (\partial^{ct} \vv a) - \del^2 \vv a \\
 &= \del \times (\del \times \vv a) + \del(\partial^{ct} A^{ct}) + \partial^{ct} (\partial^{ct} \vv a) \\
-\Box \vv a &=  \del \times \vv b - \partial^{ct} \vv e ,
+\vv j &=  \del \times \vv b - \partial^{ct} \vv e ,
 \end{split}
 \end{equation}
 where we've again invoked the Lorenz condition $\partial^{ct} A^{ct} = - \del \cdot \vv a$ and reversed the order of mixed partials. We're now in a position to write \textbf{Maxwell's equations}, the three-vector equivalent of the more compact Equation \ref{eq:fp}:
 \begin{equation}\label{eq:me}
 \begin{aligned}
 \del \cdot \vv e &= \rho \\
+\del \times \vv b - \partial^{ct} \vv e &= \vv j \\ 
 \del \cdot \vv b &= 0 \\
-\del \times \vv e &= - \partial^{ct} \vv b \\
-\del \times \vv b &= \vv j + \partial^{ct} \vv e .
+\del \times \vv e + \partial^{ct} \vv b &= \vv 0 .
 \end{aligned}
 \end{equation}
-We've used Equations \ref{eq:fc}, \ref{eq:fp}, \ref{eq:eb}, \ref{eq:ace}, and \ref{eq:abe}, and a pair of vector calculus identities (the divergence of a curl is $0$, and the curl of a gradient is $\vv 0$). 
+We've used Equations \ref{eq:eb}, \ref{eq:ace}, and \ref{eq:abe}, and a pair of vector calculus identities (the divergence of a curl is $0$, and the curl of a gradient is $\vv 0$).\footnote{If we weren't working in the Lorenz gauge, we'd instead want to find a relationship between $\vv J = \Box \vv A - \partialup (\partialup \cdot \vv A)$ and the $\vv e$ and $\vv b$ fields (see Footnote \ref{fn:fp}), and of course we couldn't invoke the Lorenz condition. But we'd still get Equations \ref{eq:me}! For example: $\rho = \Box A^{ct} - \partial^{ct}(\partialup \cdot \vv A) = \partial^{ct} (\partial^{ct} A^{ct}) - \del \cdot \del A^{ct} - \partial^{ct} (\partial^{ct} A^{ct} + \del \cdot \vv a) = \del \cdot \vv e$.} Note that the first two of Maxwell's equations together constitute a four-vector (equal to the four-current-density $\vv J = \langle \rho, \vv j \rangle$), and that the last two do the same (equal to the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}} = \langle 0, \vv 0 \rangle$). The left sides are suggestive; each four-vector looks like it might be expressible with the four-del $\partialup$ somehow. We'll come back to this in Section \ref{sssec:md}.
 
 
 \subsubsection{For Fun: Lorentz Force via the Euler--Lagrange Equation}
@@ -2482,7 +2484,7 @@ Earlier we called the Lorentz four-force (Equation \ref{eq:ff}) an ``empirical r
 \dfrac{1}{c} \, \dfrac{\dd}{\dd t_0} \left( \partialup^\ddagger L \right) = \partialup L .
 \end{equation*}
 
-To cut to the chase, the Lagrangian we want for a particle in an electromagnetic field should have two terms constructed from four-vectors and invariants: one for the particle as if it were inertial (absent the field and any other forces) and one for its coupling with the field. Now, we haven't yet dealt with the principle of stationary action directly, but here and there we've had occasion to discuss the elapsed proper time along a particle's trajectory, and we even mentioned in passing that the \emph{inertial} journey between a pair of timelike-separated events is the one that maximizes the proper time elapsed en route. Because of this principle of maximal aging, the Lagrangian term for the inertial particle ($L_{\textrm{inertial}}$) should be a \emph{constant}, so that its action integral $\int \mkern-4mu L_{\textrm{inertial}} \, c \, dt_0$ for the path taken is proportional to the particle's elapsed proper time.\footnote{If we were actually using the calculus of variations to \emph{find} the path of stationary action, we'd have to integrate over some other variable whose values at the integration limits are \emph{fixed}, regardless of the path taken between them (i.e., not the path-dependent proper time). After finding the path of stationary action, it's fine to equate the integration variable with the particle's proper time \emph{for that path}, and that's all we've done.} Something like $L_{\textrm{inertial}} = E_0 (\vv B \cdot \vv B)$ should do the trick (we don't want to reduce $\vv B \cdot \vv B$ to $B^2 = 1$ at this stage---if we do, we won't get a four-acceleration when we differentiate, and then how will we recover the Lorentz four-force?). For the coupling term, perhaps the simplest sensible invariant we can make from the field and the particle is $q (\vv B \cdot \vv A)$. Let's try it. Our candidate Lagrangian is then:
+To cut to the chase, the Lagrangian we want for a particle in an electromagnetic field should have two terms constructed from four-vectors and invariants: one for the particle as if it were inertial (absent the field and any other forces) and one for its coupling with the field. Now, we haven't yet dealt with the principle of stationary action directly, but here and there we've had occasion to discuss the elapsed proper time along a particle's trajectory, and we even mentioned in passing that the \emph{inertial} journey between a pair of timelike-separated events is the one that maximizes the proper time elapsed en route. Because of this principle of maximal aging, the Lagrangian term for the inertial particle ($L_{\textrm{inertial}}$) should be a \emph{constant}, so that its action integral $\int \mkern-4mu L_{\textrm{inertial}} \, c \, dt_0$ for the path taken is proportional to the particle's elapsed proper time.\footnote{If we were actually using the calculus of variations to \emph{find} the path of stationary action, we'd have to integrate over some other variable whose values at the integration limits are \emph{fixed}, regardless of the path taken between them (i.e., not the path-dependent proper time). After finding the path of stationary action, it's fine to equate the integration variable with the particle's proper time \emph{for that path}, and that's all we've done.} Something like $L_{\textrm{inertial}} = E_0 (\vv B \cdot \vv B)$ should do the trick (we don't want to reduce $\vv B \cdot \vv B$ to $B^2 = 1$ at this stage---if we do, we won't get a four-acceleration when we differentiate, and then how will we recover the Lorentz four-force?). For the coupling term, perhaps the simplest sensible invariant we can make from the field and the particle is $q (\vv B \cdot \vv A)$.\footnote{The four-potential need not be in the Lorenz gauge (see Footnote \ref{fn:fp}).} Let's try it. Our candidate Lagrangian is then:
 \begin{equation*}
 L = \dfrac{1}{2} \, E_0 (\vv B \cdot \vv B) + q (\vv B \cdot \vv A)
 \end{equation*}
@@ -2554,7 +2556,7 @@ which is indeed the Lorentz four-force (Equations \ref{eq:ff} and \ref{eq:lff}).
 
 ``All" of classical electromagnetism is contained in Equations \ref{eq:fp} and \ref{eq:ff}. Now let's apply it. Remember, our goal is to obtain Equation \ref{eq:8} without using the Planck--Einstein relation. To do this, we'll first coax some general information about electromagnetic energy (and momentum) from the Lorentz four-force. Then we'll briefly discuss light---i.e., solutions to Equation \ref{eq:fp} when $\vv J = \textrm{\mbox{\boldmath $\emptyset$}}$---and try to figure out how its energy transforms under a Lorentz boost.
 
-\subsubsection{The Lorentz Four-Force Density; Poynting's Theorem}
+\subsubsection{The Lorentz Four-Force Density; Poynting's Theorem}\label{sssec:lffd}
 
 If we differentiate the Lorentz four-force (Equation \ref{eq:ff}) with respect to the proper volume ${V_0 = \gamma V}$ of a small piece of a continuous charge distribution, we get a four-vector called the \textbf{Lorentz four-force density}:
 \begin{equation*}
@@ -2586,9 +2588,9 @@ where $\gamma$ is the Lorentz factor of the infinitesimal \emph{distribution} (a
 \end{equation}
 So in a given frame, the temporal component is the per-unit-$V$ $ct$-rate of \emph{energy} transfer from $\vv A$ to the distribution, and the spatial component is the per-unit-$V$ $ct$-rate of \emph{three-momentum} transfer.
 
-With this understanding, let's now write the component form of the Lorentz four-force density in terms of the $\vv e$ and $\vv b$ fields. First, from Equation \ref{eq:lfc} (and the relations $\rho_0 \gamma \vvbeta = \vv j = \Box \vv a$ and $\rho_0 \gamma = \rho = \Box A^{ct}$ for a continuous charge distribution):
+With this understanding, let's now write the component form of the Lorentz four-force density in terms of the $\vv e$ and $\vv b$ fields. First, from Equation \ref{eq:lfc} (and the relations $\rho_0 \gamma \vvbeta = \vv j$ and $\rho_0 \gamma = \rho$ for a continuous charge distribution):
 \begin{equation*}
-\dfrac{\dd \vv F_{\mathrm{L}}}{\dd V_0} = \left \langle \Box \vv a \cdot \vv e, \, \Box A^{ct} \vv e + \Box \vv a \times \vv b \right \rangle ,
+\dfrac{\dd \vv F_{\mathrm{L}}}{\dd V_0} = \left \langle \, \vv j \cdot \vv e, \, \rho \mkern1mu \vv e + \vv j \times \vv b \right \rangle ,
 \end{equation*}
 and with substitutions from Equations \ref{eq:ace} and \ref{eq:abe}:
 \begin{equation}\label{eq:lffdc2}
@@ -2625,51 +2627,12 @@ and use the divergence theorem:
 \end{equation*}
 Evidently, $u$ is the volume-density of something, and the surface integral is the flux of that something (that is, the rate at which that something flows out of the volume's bounds). The last term clues us in as to what that something is: the energy stored in the fields. Poynting's theorem says that the rate at which electromagnetic energy decreases in a volume equals the rate at which electromagnetic energy is flowing out of the region through its surface plus the rate at which the fields are doing work on charged particles within the region (via the Lorentz four-force). Naturally, we call $u = (e^2 + b^2)/2$ the \textbf{electromagnetic energy density}. The \textbf{Poynting vector} $\vv s = \vv e \times \vv b$ gives the flow of electromagnetic energy (its per-unit-area rate of transport).
 
-
-\subsubsection{An Aside on Momentum and Euclidean Rank-2 Tensors}\label{sssec:emm}
-
-We have what we need from the Lorentz four-force density---we've simplified its temporal component into a succinct statement of energy conservation---but it's worth reiterating that its three-vector \emph{spatial} component can similarly be simplified into a succinct statement of \emph{three-momentum} conservation. And as we might expect from what we've just seen with Poynting's theorem, the statement does equate the rate of decrease of electromagnetic three-momentum from a region to the outward ``flux" of electromagnetic three-momentum plus the rate at which the fields transfer three-momentum to particles within the region. Why the scare quotes? Because flux is the rate of flow through a surface of a \emph{scalar} quantity, and three-momentum is a \emph{vector} quantity. In particular, flux (of a scalar quantity) is the volume-integral of the divergence of a vector field, whereas the corresponding integrand for the ``flux" of a \emph{vector} quantity would have to be the ``divergence" of a \emph{rank-2 tensor} field (see Footnote \ref{fn:gd}). As we haven't dealt explicitly with tensor notation or the ``divergence" of anything but a vector field, this presents a challenge!\footnote{That said, we deal implicitly with rank-2 tensors every time we take the Laplacian or d'Alembertian of a vector field (the gradient of a vector is a rank-2 tensor).} If you're up for it, read this section. If not, skip it.
-
-We take this opportunity to dip our toes into (Euclidean) rank-2 tensors, without getting into their full machinery, and without getting bogged down in new notation.\footnote{This discussion is restricted to tensors in three-dimensional \emph{Euclidean} space. To extend the discussion to tensors in Minkowski spacetime (four-tensors), we'd need to cover covectors and the metric tensor as well.} Actually, we've already done so: at the end of Section \ref{sec:in}, we represented one vector as a column matrix and another as a row matrix, we took their matrix product (in that order), and we mentioned in passing that the resulting square matrix was the matrix representation of the \emph{dyadic product} of the two vectors (we used the symbol $\otimes$ for this operation). What we didn't mention is that the dyadic product is a special case of the \textbf{tensor product}, and the \textbf{dyadic} it outputs is indeed a rank-2 tensor.
-
-It's important to understand that tensors, like vectors (but unlike matrices), are \emph{geometric} objects, characterized by components that transform a certain way under a coordinate transformation. In fact, vectors \emph{are} tensors---of rank-1. And scalars are tensors of rank-0. A tensor's rank tells you how many indices you need to uniquely specify one of its components. Not all three-dimensional Euclidean rank-2 tensors can be expressed as the tensor product of two vectors, but they all have nine ``doubled up" Cartesian components ($xx$, $xy$, $xz$, $yx$, $yy$, $yz$, $zx$, $zy$, $zz$), allowing them to be represented by a square matrix. (A rank-3 tensor can be represented by a cubic array, and so on.)
-
-The geometric nature of tensors is why we're careful to use language like ``the matrix representation of a rank-2 tensor," and why we'll continue to use different notation for matrix representations of vectors than we do for the vectors themselves. For example, we'll use $[\vv e]$ for the column-matrix representation of the electric field, and we'll use $[\vv e]^{\textrm{T}}$ for the transpose of that matrix (i.e., for the row-matrix representation of $\vv e$). Likewise, $[\vv c][\vv d]^{\textrm{T}}$ is the matrix representation of the dyadic product $\vv c \otimes \vv d$, and $[\vv d][\vv c]^{\textrm{T}} = ([\vv c][\vv d]^{\textrm{T}})^{\textrm{T}}$ is the matrix representation of $\vv d \otimes \vv c$ (the dyadic product is not commutative). As for the divergence $\del \cdot \vv c$ (of a vector), we have the matrix representation of the dot product $[\del]^{\textrm{T}}[\vv c]$.
-
-And what about the ``divergence" of a Euclidean rank-2 tensor? First consider rank-2 tensors that \emph{are} expressible as the tensor product of two vectors. If we've got $[\vv c][\vv d]^{\textrm{T}}$ (the matrix representation of the rank-2 tensor $\vv c \otimes \vv d$), we can combine it with a matrix representation of $\del$ in a divergence-like way with $[\del]^{\textrm{T}}([\vv c][\vv d]^{\textrm{T}})$, where we've included the parentheses to make clear that $\del$ operates not just on $\vv c$ but on the rank-2 tensor $\vv c \otimes \vv d$. Somewhat circuitously, then, and not at all rigorously, we \emph{define} the operation $\del \cdot (\vv c \otimes \vv d)$ as the vector whose row-matrix representation is $[\del]^{\textrm{T}}([\vv c][\vv d]^{\textrm{T}})$, which satisfies a product rule that goes $[\del]^{\textrm{T}}([\vv c][\vv d]^{\textrm{T}}) = ([\del]^{\textrm{T}}[\vv c])[\vv d]^{\textrm{T}} + [\vv c]^{\textrm{T}}([\del][\vv d]^{\textrm{T}})$ (if you need convincing, carry out the matrix multiplication). In our preferred vector notation, that's $\del \cdot (\vv c \otimes \vv d) = (\del \cdot \vv c) \vv d + (\vv c \cdot \del) \vv d$, so any time we spot the $(\del \cdot \vv c) \vv d + (\vv c \cdot \del) \vv d$ pattern in the wild we're free to express it as the divergence of $\vv c \otimes \vv d$.
-
-That suffices for our purposes, but now extend the logic to \emph{any} Euclidean rank-2 tensor---even if it isn't expressible as the tensor product of two vectors, it still has nine ``doubled up" Cartesian components, and we can still put a $[\del]^{\textrm{T}}$ in front of its square-matrix representation to produce a row-matrix representation of a vector, can't we? There's a subtlety: which way should we arrange the nine components in the matrix representation of the rank-2 tensor? The two square matrices we might use are transposes of each other, and unless they're symmetric they lead to different row-matrices (different ``divergences"). This is no problem if we can express the rank-2 tensor as a dyadic product, because then the order of the vectors tells us what to do. But in general it would be useful to have a \emph{notation} for tensors that keeps track of this sort of thing. That's where the index gymnastics of Ricci calculus comes in. It's ugly and takes some getting used to, and we won't use it (everything we'll do can be handled without it), but it's incredibly powerful---indispensable, even, in more complicated tensor analysis.
-
-One more preliminary. The Euclidean rank-2 tensor whose square-matrix representation (in Cartesian coordinates) is the identity matrix $I_3$ is the \textbf{unit dyadic}, which we'll notate $\vv I$.\footnote{It's related to the more broadly applicable \textbf{Kronecker delta}.} Its divergence $\del \cdot \vv I$ vanishes, since $[\del]^{\textrm{T}}I_3 = [\vv 0]^{\textrm{T}}$. Note that for a scalar function $f$, the divergence $\del \cdot (f \vv I)$ is just $\del f$ (gradient of $f$) because $[\del]^{\textrm{T}}(f I_3) = [\del f]^{\textrm{T}} I_3 + f ([\del]^{\textrm{T}} I_3) = [\del f]^{\textrm{T}}$.
-
-With all that out of the way, let's proceed. From Equations \ref{eq:lffdc} and \ref{eq:lffdc2}:
-\begin{equation*}
-\dfrac{\dd \vv f_{\mathrm{L}}}{\dd V} = \left( \del \cdot \vv e \right) \vv e - \vv b \times \left( \del \times \vv b \right) + \vv b \times \partial^{ct} \vv e .
-\end{equation*}
-The first term on the right we recognize as one of the two ingredients we'd need to make $\del \cdot (\vv e \otimes \vv e)$. The ingredient we don't have is $(\vv e \cdot \del) \vv e$, which we could get as the ``$cab$" part of a ``$bac - cab$" expansion of $\vv e \times (\del \times \vv e)$ if only we had an $\vv e \times (\del \times \vv e)$. On the flip side, we do have a $\vv b \times (\del \times \vv b)$, which we could ``$bac - cab$" to get the $(\vv b \cdot \del) \vv b$ ingredient of $\del \cdot (\vv b \otimes \vv b)$, but we're missing $(\del \cdot \vv b) \vv b$. Well, actually we \emph{do} have $(\del \cdot \vv b) \vv b$, because by Maxwell's equations that's just $\vv 0$ (Equations \ref{eq:me}). As for $\vv e \times (\del \times \vv e)$, consider the last term in the equation. By the product rule for the cross product (mind the signs!), $\vv b \times \partial^{ct} \vv e$ is equivalently $\vv e \times \partial^{ct} \vv b - \partial^{ct} \left( \vv e \times \vv b \right)$, which we can shorten to $\vv e \times \partial^{ct} \vv b - \partial^{ct} \vv s$ (Poynting vector). But since Maxwell's equations also give us $\partial^{ct} \vv b = - \del \times \vv e$, we have $\vv b \times \partial^{ct} \vv e = - \vv e \times (\del \times \vv e) - \partial^{ct} \vv s$, and so:
-\begin{equation*}
-\dfrac{\dd \vv f_{\mathrm{L}}}{\dd V} = \left( \del \cdot \vv e \right) \vv e - \vv e \times (\del \times \vv e) + (\del \cdot \vv b) \vv b - \vv b \times \left( \del \times \vv b \right) - \partial^{ct} \vv s .
-\end{equation*}
-Now use the ``$bac - cab$" rule on the differential vector triple products, noting that the ``$bac$" parts are $\frac{1}{2} \del (\vv e \cdot \vv e)$ and $\frac{1}{2} \del (\vv b \cdot \vv b)$, which sum to $\del u$ (gradient of the electromagnetic energy density):
-\begin{equation*}
-\begin{aligned}
-\dfrac{\dd \vv f_{\mathrm{L}}}{\dd V} &= \left( \del \cdot \vv e \right) \vv e + \left( \vv e \cdot \del \right) \vv e + (\del \cdot \vv b) \vv b + \left( \vv b \cdot \del \right) \vv b - \del u - \partial^{ct} \vv s \\
-&= \del \cdot (\vv e \otimes \vv e) + \del \cdot (\vv b \otimes \vv b) - \del \cdot (u \vv I) - \partial^{ct} \vv s \\[2pt]
-&= \del \cdot \vvsigma - \partial^{ct} \vv s ,
-\end{aligned}
-\end{equation*}
-where $\vvsigma \equiv \vv e \otimes \vv e + \vv b \otimes \vv b - u \vv I$ is the rank-2 \textbf{Maxwell stress tensor}. Rearranging, our statement of momentum conservation is:
-\begin{equation*}
-- \partial^{ct} \vv s = - \del \cdot \vvsigma + \dfrac{\dd \vv f_{\mathrm{L}}}{\dd V} .
-\end{equation*}
-A comparison with Poynting's theorem (Equation \ref{eq:py}) shows why the Poynting vector is sometimes called the \textbf{electromagnetic momentum density} (it represents both that \emph{and} the flow of electromagnetic energy). Don't worry about the sign difference in the divergence terms---the volume-integral of $- \del \cdot \vvsigma$ is indeed the \emph{outward} flux of electromagnetic three-momentum from a region.
-
-By the way, the electromagnetic energy density, the Poynting vector, and the Maxwell stress tensor all combine to form the rank-2 \textbf{electromagnetic stress--energy tensor} in Minkowski spacetime. Another rank-2 Minkowski tensor we haven't mentioned is the \textbf{Faraday tensor} (aka the \textbf{electromagnetic field tensor}), which combines the electric and magnetic fields. While it's no great leap to go from our surface-level treatment of tensors to a fuller one that would let us handle these Minkowski objects, doing it right involves the introduction of covectors and the metric tensor (this is related to the negative sign in the Minkowski dot product), and it's best accomplished with the index notation that we've avoided. But it's an excellent ``next step" for the ambitious learner---it allows for a Lagrangian approach to the electromagnetic field itself, and it opens the door to more advanced topics like general relativity.
+We have what we need from the Lorentz four-force density to take care of our unfinished business. Later we'll return to Equation \ref{eq:lffdc2} and simplify its \emph{spatial} component into a succinct statement of three-momentum conservation.
 
 
-\subsubsection{Light}
+\subsubsection{Light}\label{sssec:li}
 
-Light is an electromagnetic wave---a disturbance in the (Lorenz-gauge) four-potential field $\vv A = \vv A (\vv R)$ that propagates through free space (where the four-current-density field $\vv J = \vv J (\vv R)$ is zero). To discuss it mathematically, then, means working with solutions to the homogeneous wave equation
+Light is an electromagnetic wave---a disturbance in the (Lorenz-gauge!) four-potential field $\vv A = \vv A (\vv R)$ that propagates through free space (where the four-current-density field $\vv J = \vv J (\vv R)$ is zero).\footnote{Our ``potential-first" approach in this section is \emph{only} valid in the Lorenz gauge. The results it generates for the $\vv e$ and $\vv b$ fields, however, are gauge-invariant.} To discuss it mathematically, then, means working with solutions to the homogeneous wave equation
 \begin{equation*}
 \Box \vv A =  \left( \dfrac{1}{c^2} \, \dfrac{\partial^2}{\partial t^2} - \del^2 \right) \vv A = \textrm{\mbox{\boldmath $\emptyset$}}
 \end{equation*}
@@ -2734,7 +2697,7 @@ Now the electric field, using $K^{ct} = k = (\vv{\hat{k}} \cdot \vv k)$ and $\ba
 \begin{equation}\label{eq:epw}
 \vv e (\vv R) = \bar{\vv e} \, \sin \left( \vv K \cdot \vv R \right) .
 \end{equation}
-The takeaway here is that for a light wave,\footnote{We should say, ``for a \emph{progressive} light wave," since a superposition of plane waves may yield a \emph{standing} wave (as in a microwave oven), where the situation is a bit different. But the superposed plane waves are individually progressive.} $\vv e$, $\vv b$, and $\vv k$ (in cyclic permutations of that order) constitute a right-handed set of mutually perpendicular three-vectors, with $\vv e$ and $\vv b$ having equal magnitudes (recall our discovery in Section \ref{sssec:lff} that $\vv e \perp \vv b$ and $e = b$ are Lorentz-invariant conditions). It follows that the electromagnetic energy density $u = (e^2 + b^2) / 2$ at any point reduces to $u = e^2 = b^2$, and that the Poynting vector $\vv s = \vv e \times \vv b$ reduces to $\vv s = u \vv{\hat{k}} = e^2 \vv{\hat{k}} = b^2 \vv{\hat{k}}$.\footnote{Since the Poynting vector is the electromagnetic momentum density (see Section \ref{sssec:emm}), the relation $s = u$ means that $E = pc$ for light (we've derived Equation \ref{eq:3}).} By Equations \ref{eq:bpw} and \ref{eq:epw}, the wave's \emph{average} energy density is $\langle u \rangle = \bar{e}^2 / 2 = \bar{b}^2 / 2$ (the average of a squared sinusoidal function over the course of a cycle is always $1/2$), and the wave's \emph{average} Poynting vector is $\langle \vv s \rangle = \langle u \rangle \vv{\hat{k}} = \vv{\hat{k}} \mkern1mu \bar{e}^2 / 2 = \vv{\hat{k}} \mkern1mu \bar{b}^2 / 2$.
+The takeaway here is that for a light wave,\footnote{We should say, ``for a \emph{progressive} light wave," since a superposition of plane waves may yield a \emph{standing} wave (as in a microwave oven), where the situation is a bit different. But the superposed plane waves are individually progressive.} $\vv e$, $\vv b$, and $\vv k$ (in cyclic permutations of that order) constitute a right-handed set of mutually perpendicular three-vectors, with $\vv e$ and $\vv b$ having equal magnitudes (recall our discovery in Section \ref{sssec:lff} that $\vv e \perp \vv b$ and $e = b$ are Lorentz-invariant conditions). It follows that the electromagnetic energy density $u = (e^2 + b^2) / 2$ at any point reduces to $u = e^2 = b^2$, and that the Poynting vector $\vv s = \vv e \times \vv b$ reduces to $\vv s = u \vv{\hat{k}} = e^2 \vv{\hat{k}} = b^2 \vv{\hat{k}}$.\footnote{\label{fn:epc}In Section \ref{sssec:emm}, we'll learn that the Poynting vector is the electromagnetic momentum density (\emph{in addition} to being the electromagnetic energy flux). This means that the relation $s = u$ gives $E = pc$ for light (we'll have derived Equation \ref{eq:3}).} By Equations \ref{eq:bpw} and \ref{eq:epw}, the wave's \emph{average} energy density is $\langle u \rangle = \bar{e}^2 / 2 = \bar{b}^2 / 2$ (the average of a squared sinusoidal function over the course of a cycle is always $1/2$), and the wave's \emph{average} Poynting vector is $\langle \vv s \rangle = \langle u \rangle \vv{\hat{k}} = \vv{\hat{k}} \mkern1mu \bar{e}^2 / 2 = \vv{\hat{k}} \mkern1mu \bar{b}^2 / 2$.
 
 
 \subsubsection{Transforming Light's Energy}
@@ -2917,5 +2880,277 @@ It's hard to spot, but because $(1 - \beta)(1 + \beta) = \gamma^{-2}$, that fact
 \left[ \lambda - \gamma^2 (1 - \beta \cos \theta) (1 + \beta) \right] \left[ \lambda - \gamma^2 (1 - \beta \cos \theta) (1 - \beta) \right] = 0,
 \end{equation*}
 and our other two eigenvalues are $\lambda = \gamma^2 (1 - \beta \cos \theta)(1 \pm \beta)$. The three principal semi-axes of the ellipsoid then have lengths $R$, $R /  \sqrt{\gamma^2 (1 - \beta \cos \theta)(1 + \beta)}$, and $R / \sqrt{\gamma^2 (1 - \beta \cos \theta)(1 - \beta)}$. Their product is $R^3 / [\gamma(1 - \beta \cos \theta)]$, and we can indeed reproduce Equation \ref{eq:vol}. Note that no two principal semi-axes of our ellipsoid have the same length. It is \emph{not} a spheroid (see Footnote \ref{fn:sph}).
+
+
+\subsection{Optional: Dyadics (Tensors Lite)}\label{ssec:dy}
+
+\subsubsection{Three-Momentum and Euclidean Dyadics}\label{sssec:emm}
+
+In Section \ref{sssec:lffd}, we simplified the temporal component of the Lorentz four-force density into a succinct statement of energy conservation. Now that we've taken care of our unfinished business concerning light and energy, we return to the Lorentz four-force density and simplify its three-vector \emph{spatial} component into a succinct statement of \emph{three-momentum} conservation. As we might expect from what we saw with Poynting's theorem (Equation \ref{eq:py}), the statement does equate the rate of decrease of electromagnetic three-momentum from a region to the outward ``flux" of electromagnetic three-momentum plus the rate at which the fields transfer three-momentum to particles within the region. Why the scare quotes? Because flux is the rate of flow of a \emph{scalar} quantity through a surface, and three-momentum is a \emph{vector} quantity. In particular, flux (of a scalar quantity) is the volume-integral of the divergence of a vector field, whereas the corresponding integrand for the ``flux" of a \emph{vector} quantity would have to be the ``divergence" of a \emph{rank-2 tensor} field (see Footnote \ref{fn:gd}). As we haven't dealt explicitly with tensor notation or the ``divergence" of anything but a vector field, this presents a challenge!\footnote{That said, we deal implicitly with rank-2 tensors every time we take the Laplacian or d'Alembertian of a vector field (the gradient of a vector is a rank-2 tensor).}
+
+We take this opportunity to dip our toes into Euclidean rank-2 tensors, without getting into their full machinery, and without getting bogged down in new notation. Actually, we've already done so: at the end of Section \ref{sec:in}, we represented one vector as a column matrix and another as a row matrix, we took their matrix product (in that order), and we mentioned in passing that the resulting 3-by-3 was the matrix representation of the \emph{dyadic product} of the two vectors (we used the symbol $\otimes$ for this operation). What we didn't mention is that the dyadic product is a special case of the \textbf{tensor product}, and the \textbf{dyad} it outputs is indeed a kind of rank-2 tensor. We'll limit our discussion of rank-2 tensors to \textbf{dyadics}, which are dyads and their sums.
+
+It's important to understand that tensors, like vectors (but unlike matrices), are \emph{geometric} objects, characterized by components that transform a certain way under a coordinate transformation. In fact, vectors \emph{are} tensors---of rank-1. And scalars are tensors of rank-0. A tensor's rank tells you (among other things) how many indices you need to uniquely specify one of its components. Not all three-dimensional Euclidean dyadics are dyads (that is, the dyadic product of two vectors), but those that aren't are the \emph{sum} of dyads, and all Euclidean dyadics have nine ``doubled up" Cartesian components ($xx$, $xy$, $xz$, $yx$, $yy$, $yz$, $zx$, $zy$, $zz$), allowing them to be represented by a square matrix. (A rank-3 tensor can be represented by a cubic array, and so on.)
+
+The geometric nature of tensors is why we're careful to use language like ``the matrix representation of a dyadic," and why we'll continue to use different notation for matrix representations of vectors than we do for the vectors themselves. For example, we'll use $[\vv e]$ for the column-matrix representation of the electric field, and we'll use $[\vv e]^{\textrm{T}}$ for the transpose of that matrix (i.e., for the row-matrix representation of $\vv e$). Likewise, $[\vv c][\vv d]^{\textrm{T}}$ is the matrix representation of the dyad $\vv c \otimes \vv d$, and $[\vv d][\vv c]^{\textrm{T}} = ([\vv c][\vv d]^{\textrm{T}})^{\textrm{T}}$ is the matrix representation of $\vv d \otimes \vv c$ (the dyadic product is not commutative). As for the divergence $\del \cdot \vv c$ (of a vector), we have the matrix representation of the dot product $[\del]^{\textrm{T}}[\vv c]$.
+
+And what about the ``divergence" of a Euclidean dyadic? Or more generally, what about the Euclidean ``dot product" of a vector and a dyadic? The operation should produce a \emph{vector}. Let's let our matrix notation lead the way. If we have a vector $\vv m$ that we'd like to ``dot" with the dyad $\vv c \otimes \vv d$, there are actually \emph{two different} matrix products involving $[\vv c][\vv d]^{\textrm{T}}$ and a matrix representation of $\vv m$ that generate a vector. The first is $[\vv m]^{\mathrm{T}}[\vv c][\vv d]^{\textrm{T}}$, which gives the row-matrix representation of a vector, and the second is $[\vv c][\vv d]^{\textrm{T}}[\vv m]$, which gives the column-matrix representation of a \emph{different} vector. So let's define \emph{two} ``dot products" between a vector and a dyad: we define $\vv m \cdot (\vv c \otimes \vv d)$ as the vector whose row-matrix representation is $[\vv m]^{\mathrm{T}}[\vv c][\vv d]^{\textrm{T}}$, and we define $(\vv c \otimes \vv d) \cdot \vv m$ as the vector whose column-matrix representation is $[\vv c][\vv d]^{\textrm{T}}[\vv m]$. Since the matrix product is distributive over addition, and since a dyadic that isn't a dyad can be expressed as the sum of dyads, we can extend these dot-product definitions to dyadics generally (just replace $[\vv c][\vv d]^{\textrm{T}}$ with the square-matrix representation of the dyadic). For the divergence, we can apply our first dot-product definition to $\del$, so that $\del \cdot (\vv c \otimes \vv d)$ is the vector whose row-matrix representation is $[\del]^{\textrm{T}}([\vv c][\vv d]^{\textrm{T}})$, where we've included the parentheses to make clear that $\del$ operates not just on $\vv c$ but on the dyadic $\vv c \otimes \vv d$. We'll make use of a product rule that goes $[\del]^{\textrm{T}}([\vv c][\vv d]^{\textrm{T}}) = [\del_{\vv c}]^{\textrm{T}}[\vv c][\vv d]^{\textrm{T}} + [\vv c]^{\textrm{T}}[\del_{\vv d}][\vv d]^{\textrm{T}}$ (if you need convincing, carry out the matrix multiplication). In our preferred vector notation, that's $\del \cdot (\vv c \otimes \vv d) = (\del \cdot \vv c) \vv d + (\vv c \cdot \del) \vv d$, so any time we spot the $(\del \cdot \vv c) \vv d + (\vv c \cdot \del) \vv d$ pattern in the wild we may express it as the divergence of $\vv c \otimes \vv d$.
+
+%That suffices for our purposes, but now extend the logic to \emph{any} Euclidean rank-2 tensor---even if it isn't expressible as the tensor product of two vectors, it still has nine ``doubled up" Cartesian components, and we can still put a $[\del]^{\textrm{T}}$ in front of its square-matrix representation to produce a row-matrix representation of a vector, can't we? There's a subtlety: which way should we arrange the nine components in the matrix representation of the rank-2 tensor? The two square matrices we might use are transposes of each other, and unless they're symmetric they lead to different row-matrices (different ``divergences"). This is no problem if we can express the rank-2 tensor as a dyadic product, because then the order of the vectors tells us what to do. But in general it would be useful to have a \emph{notation} for tensors that keeps track of this sort of thing. That's where the index gymnastics of Ricci calculus comes in. It's ugly and takes some getting used to, and we won't use it (everything we'll do can be handled without it), but it's incredibly powerful---indispensable, even, in more complicated tensor analysis.
+
+One more preliminary. The Euclidean dyadic whose matrix representation (in Cartesian coordinates) is the identity matrix $I_3$ is the \textbf{unit dyadic}, which we'll notate $\vv I$.\footnote{It's related to the more broadly applicable \textbf{Kronecker delta}.} Its divergence $\del \cdot \vv I$ vanishes, since $[\del]^{\textrm{T}}I_3 = [\vv 0]^{\textrm{T}}$. Note that for a scalar function $f$, the divergence $\del \cdot (f \vv I)$ is just $\del f$ (gradient of $f$) because $[\del]^{\textrm{T}}(f I_3) = [\del f]^{\textrm{T}} I_3 + f [\del]^{\textrm{T}} I_3 = [\del f]^{\textrm{T}}$.
+
+With all that out of the way, let's proceed. From Equations \ref{eq:lffdc} and \ref{eq:lffdc2}:
+\begin{equation*}
+\dfrac{\dd \vv f_{\mathrm{L}}}{\dd V} = \left( \del \cdot \vv e \right) \vv e - \vv b \times \left( \del \times \vv b \right) + \vv b \times \partial^{ct} \vv e .
+\end{equation*}
+The first term on the right we recognize as one of the two ingredients we'd need to make $\del \cdot (\vv e \otimes \vv e)$. The ingredient we don't have is $(\vv e \cdot \del) \vv e$, which we could get as the ``$cab$" part of a ``$bac - cab$" expansion of $\vv e \times (\del \times \vv e)$ if only we had an $\vv e \times (\del \times \vv e)$. On the flip side, we do have a $\vv b \times (\del \times \vv b)$, which we could ``$bac - cab$" to get the $(\vv b \cdot \del) \vv b$ ingredient of $\del \cdot (\vv b \otimes \vv b)$, but we're missing $(\del \cdot \vv b) \vv b$. Well, actually we \emph{do} have $(\del \cdot \vv b) \vv b$, because by Maxwell's equations that's just $\vv 0$ (Equations \ref{eq:me}). As for $\vv e \times (\del \times \vv e)$, consider the last term in the equation. By the product rule for the cross product (mind the signs!), $\vv b \times \partial^{ct} \vv e$ is equivalently $\vv e \times \partial^{ct} \vv b - \partial^{ct} \left( \vv e \times \vv b \right)$, which we can shorten to $\vv e \times \partial^{ct} \vv b - \partial^{ct} \vv s$ (Poynting vector). But since Maxwell's equations also give us $\partial^{ct} \vv b = - \del \times \vv e$, we have $\vv b \times \partial^{ct} \vv e = - \vv e \times (\del \times \vv e) - \partial^{ct} \vv s$, and so:
+\begin{equation*}
+\dfrac{\dd \vv f_{\mathrm{L}}}{\dd V} = \left( \del \cdot \vv e \right) \vv e - \vv e \times (\del \times \vv e) + (\del \cdot \vv b) \vv b - \vv b \times \left( \del \times \vv b \right) - \partial^{ct} \vv s .
+\end{equation*}
+Now use the ``$bac - cab$" rule on the differential vector triple products, noting that the ``$bac$" parts are $\frac{1}{2} \del (\vv e \cdot \vv e)$ and $\frac{1}{2} \del (\vv b \cdot \vv b)$, which sum to $\del u$ (gradient of the electromagnetic energy density):
+\begin{equation*}
+\begin{aligned}
+\dfrac{\dd \vv f_{\mathrm{L}}}{\dd V} &= \left( \del \cdot \vv e \right) \vv e + \left( \vv e \cdot \del \right) \vv e + (\del \cdot \vv b) \vv b + \left( \vv b \cdot \del \right) \vv b - \del u - \partial^{ct} \vv s \\
+&= \del \cdot (\vv e \otimes \vv e) + \del \cdot (\vv b \otimes \vv b) - \del \cdot (u \vv I) - \partial^{ct} \vv s \\[2pt]
+&= \del \cdot \vvsigma - \partial^{ct} \vv s ,
+\end{aligned}
+\end{equation*}
+where the dyadic $\vvsigma \equiv \vv e \otimes \vv e + \vv b \otimes \vv b - u \vv I$ is the rank-2 \textbf{Maxwell stress tensor}. Rearranging, our statement of momentum conservation is:
+\begin{equation*}
+- \partial^{ct} \vv s = - \del \cdot \vvsigma + \dfrac{\dd \vv f_{\mathrm{L}}}{\dd V} .
+\end{equation*}
+A comparison with Poynting's theorem (Equation \ref{eq:py}) shows why the Poynting vector is sometimes called the \textbf{electromagnetic momentum density} (it represents both that \emph{and} the flow of electromagnetic energy).\footnote{In light of what we learned in Section \ref{sssec:li} (see Footnote \ref{fn:epc}), we've now derived $E = pc$ for light (full version of Equation \ref{eq:3}).} Don't worry about the sign difference in the divergence terms---the volume-integral of $- \del \cdot \vvsigma$ is indeed the \emph{outward} flux of electromagnetic three-momentum from a region.
+
+%By the way, the electromagnetic energy density, the Poynting vector, and the Maxwell stress tensor all combine to form the rank-2 \textbf{electromagnetic stress--energy tensor} in Minkowski spacetime. Another rank-2 Minkowski tensor we haven't mentioned is the \textbf{Faraday tensor} (aka the \textbf{electromagnetic field tensor}), which combines the electric and magnetic fields. While it's no great leap to go from our surface-level treatment of tensors to a fuller one that would let us handle these Minkowski objects, doing it right involves the introduction of covectors and the metric tensor (this is related to the negative sign in the Minkowski dot product), and it's best accomplished with the index notation that we've avoided. But it's an excellent ``next step" for the ambitious learner---it allows for a Lagrangian approach to the electromagnetic field itself, and it opens the door to more advanced topics like general relativity.
+
+
+\subsubsection{Minkowski Dyadics}\label{sssec:md}
+
+Before digging into Minkowski dyadics, let's take a closer look at the matrix representation of the Euclidean dyadic product $\vv c \otimes \vv d$:
+\begin{equation*}
+\begin{bmatrix}
+c_x \\
+c_y \\
+c_z
+\end{bmatrix}
+\begin{bmatrix}
+d_x & d_y & d_z
+\end{bmatrix}
+=
+\begin{bmatrix}
+c_x d_x & c_x d_y & c_x d_z \\
+c_y d_x & c_y d_y & c_y d_z \\
+c_z d_x & c_z d_z & c_z d_z 
+\end{bmatrix} .
+\end{equation*}
+Under a counterclockwise rotation of the $x$- and $y$-axes through the angle $\theta$, the components of $\vv c$ transform like
+\begin{equation*}
+\begin{bmatrix}
+c_x^\prime \\[1pt]
+c_y^\prime \\[1pt]
+c_z^\prime
+\end{bmatrix}
+=
+\begin{bmatrix}
+\cos \theta & \sin \theta & 0 \\
+- \sin \theta & \cos \theta & 0 \\
+0 & 0 & 1 
+\end{bmatrix}
+\begin{bmatrix}
+c_x \\
+c_y \\
+c_z
+\end{bmatrix} ,
+\end{equation*}
+and likewise for $\vv d$. If we label that 3-by-3 rotation matrix $R$, it follows that the nine ``doubled up" Cartesian components of the dyad $\vv c \otimes \vv d$ transform by two ``applications" of the rotation matrix like this:
+\begin{equation*}
+[\vv c^\prime] [\vv d^\prime]^{\mathrm{T}} = ( R [\vv c] ) ( [\vv d]^{\mathrm{T}} R^{\mathrm{T}} ) ,
+\end{equation*}
+where $R^{\mathrm{T}}$ is the matrix transpose of $R$ (swap the signs of the sines). Indeed, \emph{any} Euclidean dyadic transforms this way under the specified rotation, with the matrix representation of the dyadic flanked on the left by $R$ and on the right by $R^{\mathrm{T}}$. The Maxwell stress tensor from the previous section, for example:
+\begin{equation*}
+[\vvsigma^\prime] = R [\vvsigma] R^{\mathrm{T}}
+\end{equation*}
+(we've extended our bracket notation to signify a \emph{dyadic's} square-matrix representation). Euclidean dyadics can be \emph{defined} as geometric objects whose Cartesian components transform like this under a rotation of axes.
+
+In a similar way, dyadics in Minkowski spacetime can be \emph{defined} as geometric objects whose \emph{sixteen} ``doubled up" ($ct$ + Cartesian) components transform like so under a \emph{Lorentz} transformation:
+\begin{equation}\label{eq:ltd}
+[\mathcal{D}^\prime] = \Lambda [\mathcal{D}] \Lambda^{\mathrm{T}} ,
+\end{equation}
+where $\Lambda$ is the Lorentz-transformation matrix and $\Lambda^{\mathrm{T}}$ is its transpose (they're both Equation \ref{eq:bm} if it's a standard-configuration boost along the $x$-axis). As was the case with Euclidean dyadics, not all Minkowski dyadics are dyads (dyadic products of four-vectors), but those that aren't can be expressed as the \emph{sum} of Minkowski dyads. In the context of electromagnetism, a particularly useful four-dyadic is $\partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A}$.\footnote{The four-potential need not be in the Lorenz gauge here (see Footnote \ref{fn:fp}).} In matrix notation, that's $[\partialup][\vv A]^{\mathrm{T}} - [\vv A][\partialup_{\vv A}]^{\mathrm{T}}$, or:
+\begin{equation*}
+\begin{bmatrix}
+\partial^{ct} \\
+\partial^x \\
+\partial^y \\
+\partial^z
+\end{bmatrix}
+\begin{bmatrix}
+A^{ct} & A^x & A^y & A^z
+\end{bmatrix}
+-
+\begin{bmatrix}
+A^{ct} \\
+A^x \\
+A^y \\
+A^z
+\end{bmatrix}
+\begin{bmatrix}
+\partial^{ct} & \partial^x & \partial^y & \partial^z
+\end{bmatrix}_{\vv A},
+\end{equation*}
+which comes to
+\begin{equation*}
+\begin{bmatrix}
+0 & ( \partial^{ct} A^x - \partial^x A^{ct} ) & ( \partial^{ct} A^y - \partial^y A^{ct} ) & ( \partial^{ct} A^z - \partial^z A^{ct} ) \\[1.5ex]
+( \partial^x A^{ct} - \partial^{ct} A^x ) & 0 & ( \partial^x A^y - \partial^y A^x ) & ( \partial^x A^z - \partial^z A^x ) \\[1.5ex]
+( \partial^y A^{ct} - \partial^{ct} A^y ) & ( \partial^y A^x - \partial^x A^y ) & 0 & ( \partial^y A^z - \partial^z A^y ) \\[1.5ex]
+( \partial^z A^{ct} - \partial^{ct} A^z ) & ( \partial^z A^x - \partial^x A^z ) & ( \partial^z A^y - \partial^y A^z ) & 0
+\end{bmatrix} .
+\end{equation*}
+We call this dyadic the \textbf{Faraday tensor}, or the \textbf{electromagnetic field tensor}.\footnote{Specifically, dyadics are \emph{contravariant} rank-2 tensors, a detail that matters in more advanced treatments of Minkowski spacetime (doesn't matter for Euclidean dyadics).} Labeling it $\mathcal{F}$, and invoking Equations \ref{eq:ebc}, we have:
+\begin{equation}\label{eq:emt}
+[\mathcal{F}] \equiv [\partialup][\vv A]^{\mathrm{T}} - ( [\partialup][\vv A]^{\mathrm{T}} )^{\mathrm{T}}
+=
+\begin{bmatrix}
+0 & -e_x & -e_y & -e_z \\[.5ex]
+e_x & 0 & -b_z & b_y \\[.5ex]
+e_y & b_z & 0 & -b_x \\[.5ex]
+e_z & -b_y & b_x & 0
+\end{bmatrix} .
+\end{equation}
+The matrix is clearly antisymmetric, and we likewise call the dyadic itself antisymmetric. There's a shorthand notation for the operation we performed to produce this antisymmetric dyadic: $\partialup \wedge \vv A \equiv \partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A}$. (This operation generates an antisymmetric dyadic from \emph{any} two four-vectors; the four-del needn't be one of them.) So ${\mathcal{F} = \partialup \wedge \vv A}$. 
+
+To see why the Faraday tensor is useful, we'll define the Minkowski dot product(s) between a four-dyadic $\mathcal{D}$ and a four-vector $\vv Q$. We can let the matrix notation guide us again, but this time there are negative signs to account for---i.e., the matrix representation of $\vv Q \cdot \vv W$ (dot product of two four-vectors) isn't $[\vv Q]^{\textrm{T}} [\vv W]$ but is rather $[\vv Q]^{\textrm{T}} \eta [\vv W]$, with
+\begin{equation*}
+\eta
+=
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1
+\end{bmatrix} .
+\end{equation*}
+Using the matrix $\eta$, we define $\vv Q \cdot \mathcal{D}$ as the four-vector whose row-matrix representation is $[\vv Q]^{\mathrm{T}} \eta [\mathcal{D}]$, and we define $\mathcal{D} \cdot \vv Q$ as the four-vector whose column-matrix representation is $[\mathcal{D}] \eta [\vv Q]$. The four-\emph{divergence} of the dyadic $\mathcal{D}$ we notate $\partialup \cdot \mathcal{D}$, and so we define it as the four-vector whose row-matrix representation is $[\partialup]^{\mathrm{T}} \eta [\mathcal{D}]$.
+
+Now we can write the Lorentz four-force (Equation \ref{eq:ff}) more compactly in terms of the Faraday tensor:
+\begin{equation*}
+\vv F_{\mathrm{L}} = q \mathcal{F} \cdot \vv B
+\end{equation*}
+(carry out the corresponding matrix multiplication $[\mathcal{F}] \eta [\vv B]$ to confirm that the components match those of Equation \ref{eq:lfc}). And remember when we noted that Maxwell's equations (Equations \ref{eq:me}) actually constitute two four-vectors, and that their forms suggest expressions involving $\partialup$? Well, now we have the first of them:
+\begin{equation*}
+\partialup \cdot \mathcal{F} = \vv J
+\end{equation*}
+(again, carry out the corresponding matrix multiplication $[\partialup]^{\mathrm{T}} \eta [\mathcal{F}]$ to confirm it, minding that $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$). As for the other one, we note that the left sides of the last two of Maxwell's equations are just like the left sides of the first two, but with the roles of $\vv e$ and $\vv b$ reversed and a sign change. It should therefore be possible to form a new Minkowski dyadic from the Faraday tensor (Equation \ref{eq:emt}) by ``swapping" the $\vv e$ and $\vv b$ components and making some sign change; the four-divergence of this new dyadic should equal the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}}$. It turns out that the way to do this is by replacing $\vv e$ with $\vv b$ and $\vv b$ with $- \vv e$ (the resulting object $\mathcal{G}$ satisfies the dyadic transformation rule Equation \ref{eq:ltd}):
+\begin{equation}\label{eq:mt}
+[ \mathcal{G} ] \equiv
+\begin{bmatrix}
+0 & -b_x & -b_y & -b_z \\[.5ex]
+b_x & 0 & e_z & -e_y \\[.5ex]
+b_y & -e_z & 0 & e_x \\[.5ex]
+b_z & e_y & -e_x & 0
+\end{bmatrix} ,
+\end{equation}
+and:
+\begin{equation*}
+\partialup \cdot \mathcal{G} = \textrm{\mbox{\boldmath $\emptyset$}}
+\end{equation*}
+(confirm it!).
+
+
+\subsubsection{Hodge Duals and Quasi-Four-Vectors}
+
+The four-dyadic $\mathcal{G}$, sometimes called the $\textbf{Maxwell tensor}$ (not to be confused with the Maxwell stress tensor, a Euclidean dyadic) is the \textbf{Hodge dual} of $\mathcal{F}$. To explain what this means, we first introduce a limited sense in which three-vectors may be treated as quasi-four-vectors: \emph{at a single moment for a given inertial frame}, we can ``append" a zero temporal component to a three-vector (that isn't already the spatial component of a true four-vector) and manipulate it as if it were a spacelike four-vector orthogonal to the frame's (normalized) four-velocity $\vv B$. It must be stressed that such quasi-four-vectors aren't \emph{actually} four-vectors---their ``components" don't transform Lorentzianly between frames! But sometimes intra-frame equations involving them \emph{have the same form} in all inertial frames.
+
+We'll now demonstrate that for a given inertial frame, we can form an antisymmetric Minkowski dyadic $\mathcal{D}$ in terms of two of these quasi-four-vectors $\tilde{\vv q} = \langle 0, \vv q \rangle$ and $\tilde{\vv w} = \langle 0, \vv w \rangle$ like this:
+\begin{equation*}
+\mathcal{D} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \},
+\end{equation*}
+where $\vv B$ is the frame's four-velocity $\langle 1, \vv 0 \rangle$, and where $\{ \tilde{\vv w} \times \}$ symbolizes the quasi-four-dyadic that satisfies $\{ \tilde{\vv w} \times \} \cdot \vv H = \langle 0, \vv w \times \vv h \rangle$ for \emph{any} four-vector ${\vv H = \langle H^{ct}, \vv h \rangle}$ (again, we're working with one inertial frame at a single moment). Explicitly, the matrix representation of $\{ \tilde{\vv w} \times \}$ must be:
+\begin{equation}\label{eq:wt}
+[\{ \tilde{\vv w} \times \}] =
+\begin{bmatrix}
+0 & 0 & 0 & 0 \\
+0 & 0 & w_z & -w_y \\
+0 & -w_z & 0 & w_x \\
+0 & w_y & -w_x & 0
+\end{bmatrix},
+\end{equation}
+so that $[\{ \tilde{\vv w} \times \}] \eta [\vv H]$ (the matrix representation of $\{ \tilde{\vv w} \times \} \cdot \vv H$) is:
+\begin{equation*}
+\begin{bmatrix}
+0 & 0 & 0 & 0 \\
+0 & 0 & w_z & -w_y \\
+0 & -w_z & 0 & w_x \\
+0 & w_y & -w_x & 0
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1
+\end{bmatrix}
+\begin{bmatrix}
+H^{ct} \\
+h_x \\
+h_y \\
+h_z
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+w_y h_z - w_z h_y \\
+w_z h_x - w_x h_z \\
+w_x h_y - w_y h_x
+\end{bmatrix},
+\end{equation*}
+which is indeed the column-matrix representation of $\langle 0, \vv w \times \vv h \rangle$. Then for the antisymmetric quasi-four-dyadic $\tilde{\vv q} \wedge \vv B = \tilde{\vv q} \otimes \vv B - \vv B \otimes \tilde{\vv q}$, we have the matrix representation:
+\begin{equation}\label{eq:qb}
+\begin{bmatrix}
+0 \\
+q_x \\
+q_y \\
+q_z
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 & 0 & 0
+\end{bmatrix}
+-
+\begin{bmatrix}
+1 \\
+0 \\
+0 \\
+0
+\end{bmatrix}
+\begin{bmatrix}
+0 & q_x & q_y & q_z
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & -q_x & -q_y & -q_z \\
+q_x & 0 & 0 & 0 \\
+q_y & 0 & 0 & 0 \\
+q_z & 0 & 0 & 0
+\end{bmatrix}.
+\end{equation}
+Subtracting Equation \ref{eq:wt} from Equation \ref{eq:qb}, we get:
+\begin{equation*}
+[\mathcal{D}] = [\tilde{\vv q} \wedge \vv B] - [\{ \tilde{\vv w} \times \}]
+=
+\begin{bmatrix}
+0 & -q_x & -q_y & -q_z \\[.5ex]
+q_x & 0 & -w_z & w_y \\[.5ex]
+q_y & w_z & 0 & -w_x \\[.5ex]
+q_z & -w_y & w_x & 0
+\end{bmatrix},
+\end{equation*}
+and we see that the matrix representation of $\mathcal{D}$ has exactly the same form as that of the Faraday tensor (Equation \ref{eq:emt}). Provided that $\vv q$ and $\vv w$ transform under a Lorentz boost like the electric and magnetic fields do (Equations \ref{eq:ebt} or \ref{eq:ebr}), $\mathcal{D}$ is necessarily a \emph{true} antisymmetric Minkowski dyadic like $\mathcal{F}$ is, and the form of $\mathcal{D} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ must hold for all inertial frames (where for each frame $\vv B$ is \emph{that frame's} four-velocity $\langle 1, \vv 0 \rangle$). Additionally---though we haven't proven it---\emph{all} antisymmetric four-dyadics can be uniquely expressed in this fashion.\footnote{For a deeper dive that proves it, see this unpublished paper from 2018 by Jonas Larsson and Karl Larsson: \url{https://urn.kb.se/resolve?urn=urn:nbn:se:umu:diva-152747}.}
+
+So the combination of quasi-four-dyadics $\tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ makes a \emph{true} antisymmetric dyadic. For the Faraday tensor, we have $\mathcal{F} = \tilde{\vv e} \wedge \vv B - \{ \tilde{\vv b} \times \}$. And if we study the matrix representation of the Maxwell tensor (Equation \ref{eq:mt}), we find that $\mathcal{G} = \tilde{\vv b} \wedge \vv B + \{ \tilde{\vv e} \times \}$. That's how $\mathcal{F}$ and $\mathcal{G}$ are related, and it shows us that the \emph{Hodge dual} of an antisymmetric Minkowski dyadic $\mathcal{D} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ is given by $\star \mathcal{D} = \tilde{\vv w} \wedge \vv B - (- \{ \tilde{\vv q} \times \})$ (for obvious reasons, we call $\star$ the \textbf{star operator}, or the $\textbf{Hodge star operator}$). The Hodge dual of the Hodge dual is then $\star \star \mathcal{D} = - \tilde{\vv q} \wedge \vv B - (- \{ \tilde{\vv w} \times \}) = - \mathcal{D}$. Thus, $\star \mathcal{F} = \mathcal{G}$, and $\star \mathcal{G} = - \mathcal{F}$.
+
+
+\subsubsection{The Double Dot Product}
+
 
 \end{document}
