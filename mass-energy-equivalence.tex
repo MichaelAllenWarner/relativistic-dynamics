@@ -3010,7 +3010,7 @@ which comes to
 \end{equation*}
 We call this dyadic the \textbf{Faraday tensor}, or the \textbf{electromagnetic field tensor}.\footnote{Specifically, dyadics are \emph{contravariant} rank-2 tensors, a detail that matters in more advanced treatments of Minkowski spacetime (doesn't matter for Euclidean dyadics).} Labeling it $\mathcal{F}$, and invoking Equations \ref{eq:ebc}, we have:
 \begin{equation}\label{eq:emt}
-[\mathcal{F}] \equiv [\partialup][\vv A]^{\mathrm{T}} - ( [\partialup][\vv A]^{\mathrm{T}} )^{\mathrm{T}}
+[\mathcal{F}] = [\partialup][\vv A]^{\mathrm{T}} - ( [\partialup][\vv A]^{\mathrm{T}} )^{\mathrm{T}}
 =
 \begin{bmatrix}
 0 & -e_x & -e_y & -e_z \\[.5ex]
@@ -3019,7 +3019,10 @@ e_y & b_z & 0 & -b_x \\[.5ex]
 e_z & -b_y & b_x & 0
 \end{bmatrix} .
 \end{equation}
-The matrix is clearly antisymmetric, and we likewise call the dyadic itself antisymmetric. There's a shorthand notation for the operation we performed to produce this antisymmetric dyadic: $\partialup \wedge \vv A \equiv \partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A}$. (This operation generates an antisymmetric dyadic from \emph{any} two four-vectors; the four-del needn't be one of them.) So ${\mathcal{F} = \partialup \wedge \vv A}$. 
+The matrix is clearly antisymmetric, and we likewise call the dyadic itself antisymmetric. There's a shorthand notation for the operation we performed to produce this antisymmetric dyadic: $\partialup \wedge \vv A \equiv \partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A}$. (This operation generates an antisymmetric dyadic from \emph{any} two four-vectors; the four-del needn't be one of them.) So:
+\begin{equation}\label{eq:emta}
+\boxed{ \mathcal{F} \equiv \partialup \wedge \vv A } \, . 
+\end{equation}
 
 To see why the Faraday tensor is useful, we'll define the Minkowski dot product(s) between a four-dyadic $\mathcal{D}$ and a four-vector $\vv Q$. We can let the matrix notation guide us again, but this time there are negative signs to account for---i.e., the matrix representation of $\vv Q \cdot \vv W$ (dot product of two four-vectors) isn't $[\vv Q]^{\textrm{T}} [\vv W]$ but is rather $[\vv Q]^{\textrm{T}} \eta [\vv W]$, with
 \begin{equation}\label{eq:mmt}
@@ -3089,7 +3092,8 @@ Anyway, now we can write the Lorentz four-force (Equation \ref{eq:ff}) more comp
 \end{equation}
 (again, carry out the corresponding matrix multiplication $[\partialup]^{\mathrm{T}} \eta [\mathcal{F}]$ to confirm it, minding that $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$). As for the other one, we note that the left sides of the last two of Maxwell's equations are just like the left sides of the first two, but with the roles of $\vv e$ and $\vv b$ reversed and a sign change. It should therefore be possible to form a new Minkowski dyadic from the Faraday tensor (Equation \ref{eq:emt}) by ``swapping" the $\vv e$ and $\vv b$ components and making some sign change; the four-divergence of this new dyadic should equal the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}}$. It turns out that the way to do this is by replacing $\vv e$ with $\vv b$ and $\vv b$ with $- \vv e$ (the resulting object $\mathcal{G}$ satisfies the dyadic transformation rule Equation \ref{eq:ltd}):
 \begin{equation}\label{eq:mt}
-[ \mathcal{G} ] \equiv
+[ \mathcal{G} ]
+=
 \begin{bmatrix}
 0 & -b_x & -b_y & -b_z \\[.5ex]
 b_x & 0 & e_z & -e_y \\[.5ex]
@@ -3192,58 +3196,41 @@ q_z & -w_y & w_x & 0
 \end{equation*}
 and we see that the matrix representation of $\mathcal{D}$ has exactly the same form as that of the Faraday tensor (Equation \ref{eq:emt}). Provided that $\vv q$ and $\vv w$ transform under a Lorentz boost like the electric and magnetic fields do (Equations \ref{eq:ebt} or \ref{eq:ebr}), $\mathcal{D}$ is necessarily a \emph{true} antisymmetric Minkowski dyadic like $\mathcal{F}$ is, and the form of $\mathcal{D} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ must hold for all inertial frames (where for each frame $\vv B$ is \emph{that frame's} four-velocity $\langle 1, \vv 0 \rangle$). With the right choice of $\tilde{\vv q}$ and $\tilde{\vv w}$, any antisymmetric four-dyadic can be expressed in this fashion.\footnote{For a deeper dive that proves it, see this unpublished paper from 2018 by Jonas Larsson and Karl Larsson: \url{https://urn.kb.se/resolve?urn=urn:nbn:se:umu:diva-152747}.}
 
-So the combination of quasi-four-dyadics $\tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ makes a \emph{true} antisymmetric dyadic. For the Faraday tensor, we have $\mathcal{F} = \tilde{\vv e} \wedge \vv B - \{ \tilde{\vv b} \times \}$. And if we study the matrix representation of the Maxwell tensor (Equation \ref{eq:mt}), we find that $\mathcal{G} = \tilde{\vv b} \wedge \vv B - \{ - \tilde{\vv e} \times \}$. That's how $\mathcal{F}$ and $\mathcal{G}$ are related, and it shows us that the \emph{Hodge dual} of an antisymmetric Minkowski dyadic $\mathcal{D} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ is given by $\star \mathcal{D} = \tilde{\vv w} \wedge \vv B - \{ - \tilde{\vv q} \times \}$ (for obvious reasons, we call $\star$ the \textbf{star operator}, or the $\textbf{Hodge star operator}$). The Hodge dual of the Hodge dual is then $\star \star \mathcal{D} = - \tilde{\vv q} \wedge \vv B - \{ - \tilde{\vv w} \times \} = - \mathcal{D}$. Thus, $\star \mathcal{F} = \mathcal{G}$, and $\star \mathcal{G} = - \mathcal{F}$.
+So the combination of quasi-four-dyadics $\tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ makes a \emph{true} antisymmetric dyadic. For the Faraday tensor, we have $\mathcal{F} = \tilde{\vv e} \wedge \vv B - \{ \tilde{\vv b} \times \}$. And if we study the matrix representation of the Maxwell tensor (Equation \ref{eq:mt}), we find that $\mathcal{G} = \tilde{\vv b} \wedge \vv B - \{ - \tilde{\vv e} \times \}$. That's how $\mathcal{F}$ and $\mathcal{G}$ are related, and it shows us that the \emph{Hodge dual} of an antisymmetric Minkowski dyadic $\mathcal{D} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ is given by $\star \mathcal{D} = \tilde{\vv w} \wedge \vv B - \{ - \tilde{\vv q} \times \}$ (for obvious reasons, we call $\star$ the \textbf{star operator}, or the $\textbf{Hodge star operator}$). The Hodge dual of the Hodge dual is then $\star \star \mathcal{D} = - \tilde{\vv q} \wedge \vv B - \{ - \tilde{\vv w} \times \} = - \mathcal{D}$. Thus:
+\begin{equation}\label{eq:mthd}
+\boxed{ \mathcal{G} \equiv \star \mathcal{F} } \, ,
+\end{equation}
+and $\star \mathcal{G} = - \mathcal{F}$.
+
+It \emph{is} possible to express $\mathcal{G}$ as a sum of true Minkowski dyads, as we've done with $\mathcal{F}$ (Equation \ref{eq:emta}), and as is true of all non-dyad four-dyadics. It's not so straightforward, though. For a geometric definition of the Maxwell tensor, Equation \ref{eq:mthd} will suffice.
 
 
-\subsubsection{Dot Products Between Four-Dyadics}
+\subsubsection{The Double Dot Product and Field Invariants}
 
-Let's go ahead and broaden the notion of ``dot product" to cover multiplication between Minkowski dyadics. As before, we start with definitions for dyads (dyadic products of vectors) and extend them to general dyadics by invoking linearity properties and the fact that all dyadics can be expressed as the sum of dyads.
-
-If we have a dyad $\vv Q \otimes \vv W$ that we'd like to ``dot" with another dyad $\vv S \otimes \vv U$, our matrix notation (with $\eta$ for the dot!) leads naturally to two options:
+If we have a pair of four-dyads $\vv Q \otimes \vv W$ and $\vv S \otimes \vv U$, we can make a Lorentz-invariant scalar from them like this:
+\begin{equation*}
+(\vv Q \otimes \vv W) : (\vv S \otimes \vv U) \equiv (\vv Q \cdot \vv S) (\vv W \cdot \vv U).
+\end{equation*}
+This commutative operation is called the \textbf{double dot product}. To extend the idea to non-dyad dyadics, we put them into sum-of-dyads form and invoke linearity:
 \begin{equation*}
 \begin{aligned}
-\mkern0mu [ \vv Q \otimes \vv W ] \eta [ \vv S \otimes \vv U ] &= [\vv Q][\vv W]^{\mathrm{T}} \eta [\vv S][\vv U]^{\mathrm{T}} \\
-&= (\vv W \cdot \vv S) \, [\vv Q] [\vv U]^{\mathrm{T}} \\[3pt]
-(\vv Q \otimes \vv W) \cdot (\vv S \otimes \vv U) &= (\vv W \cdot \vv S) (\vv Q \otimes \vv U)
+&(\vv Q \otimes \vv W + \vv H \otimes \vv E + \dots) : (\vv S \otimes \vv U + \vv M \otimes \vv N + \dots) \\[3pt]
+&\qquad = (\vv Q \otimes \vv W) : (\vv S \otimes \vv U) + (\vv Q \otimes \vv W) : (\vv M \otimes \vv N) + (\vv Q \otimes \vv W) : \, \dots \\
+& \qquad \quad + (\vv H \otimes \vv E) : (\vv S \otimes \vv U) + (\vv H \otimes \vv E) : (\vv M \otimes \vv N) + (\vv H \otimes \vv E) : \, \dots \\
+& \qquad \quad + \dots
 \end{aligned}
 \end{equation*}
-(because the dot product $[\vv W]^{\mathrm{T}} \eta [\vv S] = \vv W \cdot \vv T$ is a scalar), and the ``reverse" operation:
-\begin{equation*}
-\begin{aligned}
-\mkern0mu [ \vv S \otimes \vv U ] \eta [ \vv Q \otimes \vv W ] &= [\vv S][\vv U]^{\mathrm{T}} \eta [\vv Q][\vv W]^{\mathrm{T}}  \\
-&= (\vv U \cdot \vv Q) \, [\vv S] [\vv W]^{\mathrm{T}} \\[3pt]
-(\vv S \otimes \vv U) \cdot (\vv Q \otimes \vv W) &= (\vv U \cdot \vv Q) (\vv S \otimes \vv W) .
-\end{aligned}
-\end{equation*}
-So the dot product between two four-dyads generates a new dyad, and it isn't commutative. If we want to dot dyadics that aren't simple dyads---say, $(\vv Q \otimes \vv W + \vv H \otimes \vv E)$ and $(\vv S \otimes \vv U + \vv M \otimes \vv N)$---we can distribute the constituent dyads and evaluate each product of dyads as above:
-\begin{equation*}
-\begin{aligned}
-&(\vv Q \otimes \vv W + \vv H \otimes \vv E) \cdot (\vv S \otimes \vv U + \vv M \otimes \vv N) \\[3pt]
-&\qquad \qquad = (\vv Q \otimes \vv W) \cdot (\vv S \otimes \vv U) + (\vv Q \otimes \vv W) \cdot (\vv M \otimes \vv N) \\
-& \qquad \qquad \quad + (\vv H \otimes \vv E) \cdot (\vv S \otimes \vv U) + (\vv H \otimes \vv E) \cdot (\vv M \otimes \vv N) .
-\end{aligned}
-\end{equation*}
-Of course, if we already have the sixteen ($ct$ + Cartesian) \emph{components} of the input-dyadics $\mathcal{D}$ and $\mathcal{Z}$, it may be easier to calculate with matrices directly ($\mathcal{D} \cdot \mathcal{Z} = [\mathcal{D}] \eta [\mathcal{Z}]$) than to put the dyadics into sum-of-dyads form and carry out all the dyadic products.
-
-Finally, we introduce the \emph{double}-dot product between four-dyadics, which \emph{is} commutative and produces a Lorentz-invariant scalar. For dyads, it looks like this:
-\begin{equation*}
-(\vv Q \otimes \vv W) : (\vv S \otimes \vv U) = (\vv Q \cdot \vv S) (\vv W \cdot \vv U),
-\end{equation*}
-and for general dyadics we can distribute the constituent dyads as we did above and evaluate each double-dot product of dyads individually. Again, if we already have the sixteen ($ct$ + Cartesian) components of the input-dyadics $\mathcal{D}$ and $\mathcal{Z}$, it may be easier to calculate with matrices directly, but what is the matrix representation of the double-dot product? For \emph{dyads} it's clearly $[\vv Q]^{\mathrm{T}} \eta [\vv S] [\vv W]^{\mathrm{T}} \eta [\vv U]$, but without $[\vv Q][\vv W]^{\mathrm{T}}$ and $[\vv S][\vv U]^{\mathrm{T}}$ in there we can't just sub in $[\mathcal{D}]$ and $[\mathcal{Z}]$! We need another way to express it, and the key is to bring in the \emph{trace}, which is the sum of the diagonal entries of a square matrix. First, with simple dyads:
+Of course, if we already have the sixteen ($ct$ + Cartesian) components of the input-dyadics, it may be easier to calculate with matrices directly than to put the dyadics into sum-of-dyads form and fuss with all that distribution. But what \emph{is} the matrix representation of the double dot product? For dyads it's clearly $(\vv Q \otimes \vv W) : (\vv S \otimes \vv U) = [\vv Q]^{\mathrm{T}} \eta [\vv S] [\vv W]^{\mathrm{T}} \eta [\vv U]$, but this won't help us for non-dyad dyadics (where would we plug them in?). It would be handy to have an alternative matrix representation of the double dot product for dyads, one that doesn't ``separate" an input-dyad's constituent vectors from each other. The key is to bring in the \emph{trace}, which is the sum of the diagonal entries of a square matrix. Here is one way to do it (can you think of any others?):
 \begin{equation*}
 \begin{aligned}
 (\vv Q \otimes \vv W) : (\vv S \otimes \vv U) &= \mathrm{Tr} \left( \eta [\vv Q \otimes \vv W] \eta [ \vv S \otimes \vv U ]^{\mathrm{T}} \right) \\
-&= \mathrm{Tr} \left( \eta [\vv Q] [\vv W]^{\mathrm{T}} \eta [\vv U] [\vv S]^{\mathrm{T}} \right)
+&= \mathrm{Tr} \left( \eta [\vv Q] [\vv W]^{\mathrm{T}} \eta [\vv U] [\vv S]^{\mathrm{T}} \right) .
 \end{aligned}
 \end{equation*}
-(this isn't the only way to express it, but do carry out the matrix multiplication and take the trace to confirm that it equals $[\vv Q]^{\mathrm{T}} \eta [\vv S] [\vv W]^{\mathrm{T}} \eta [\vv U]$). \emph{Now} we have a matrix representation of the double-dot product that we can use for direct calculations:
+Do carry out the matrix multiplication and take the trace to confirm that it equals $[\vv Q]^{\mathrm{T}} \eta [\vv S] [\vv W]^{\mathrm{T}} \eta [\vv U]$. \emph{Now} we have a matrix representation of the double dot product that we can use for arbitrary four-dyadics $\mathcal{D}$ and $\mathcal{Z}$:
 \begin{equation*}
-\mathcal{D} : \mathcal{Z} = \mathrm{Tr} \left( \eta [\mathcal{D}] \eta [ \mathcal{Z} ]^{\mathrm{T}} \right),
+\mathcal{D} : \mathcal{Z} = \mathrm{Tr} \left( \eta [\mathcal{D}] \eta [ \mathcal{Z} ]^{\mathrm{T}} \right) .
 \end{equation*}
-for any Minkowski dyadics $\mathcal{D}$ and $\mathcal{Z}$.
-
-
-\subsubsection{Field Invariants, Electromagnetic Stress--Energy Tensor}
 
 An immediate application is to double-dot the Faraday and Maxwell tensors with each other and with themselves. We'll calculate directly with matrices, using Equations \ref{eq:emt} and \ref{eq:mt}. Double-dotting them with each other:
 \begin{equation*}
@@ -3268,7 +3255,7 @@ b_z & e_y & -e_x & 0
 &= -4 (\vv e \cdot \vv b).
 \end{aligned}
 \end{equation*}
-Except for the factor of $-4$, that's just one of the two invariants we made from $\vv e$ and $\vv b$ back in Section \ref{sssec:lff}, but now we see where it comes from geometrically. The other one was $e^2 - b^2$, and sure enough the double-dot products of $\mathcal{F}$ and $\mathcal{G}$ with \emph{themselves} produce that invariant:
+Except for the factor of $-4$, that's just one of the two invariants we made from $\vv e$ and $\vv b$ back in Section \ref{sssec:lff}, but now we see where it comes from geometrically. The other one was $e^2 - b^2$, and sure enough the double dot products of $\mathcal{F}$ and $\mathcal{G}$ with \emph{themselves} produce that invariant (scaled):
 \begin{equation*}
 \begin{aligned}
 \mathcal{F} : \mathcal{F} &= \mathrm{Tr} \left( \eta [ \mathcal{F} ] \eta [ \mathcal{F} ]^{\mathrm{T}} \right) \\[5pt]
@@ -3315,47 +3302,169 @@ b_z & e_y & -e_x & 0
 \end{aligned}
 \end{equation*}
 
-A less obvious but very interesting application is to use our newfound four-dyadic chops to combine Poynting's theorem (statement of energy conservation, Equation \ref{eq:py}) and the corresponding expression involving the Maxwell stress tensor (statement of three-momentum conservation, Equation \ref{eq:tmc}) into a single statement of \emph{four-momentum} conservation. Those equations were expressed in terms of the Lorentz four-force density and derivatives of the $\vv e$ and $\vv b$ fields, so maybe we can combine them in a way that equates the Lorentz four-force density to the four-divergence of some Minkowski dyadic built from the Faraday and/or Maxwell tensors.
 
-We've already found a relationship between the Lorentz \emph{four-force} and the Faraday tensor (Equation \ref{eq:lfffd}). If we differentiate it with respect to proper volume, we obtain the Lorentz four-force \emph{density} in terms of the Faraday tensor:
+
+\subsubsection{Dot Product Between Four-Dyadics}
+
+We have dot products between four-dyadics and four-vectors, and we have a double dot product between four-dyadics, but what about just a ``normal" dot product between four-dyadics? If we have a dyad $\vv Q \otimes \vv W$ that we'd like to ``dot" with another dyad $\vv S \otimes \vv U$, our matrix notation (with $\eta$ for the dot!) leads naturally to:
 \begin{equation*}
 \begin{aligned}
-\dfrac{\dd \vv F_{\mathrm{L}}}{\dd V_0} &= \rho_0 \mathcal{F} \cdot \vv B \\
-&= \mathcal{F} \cdot \vv J \\[3pt]
-&= \mathcal{F} \cdot (\partialup \cdot \mathcal{F}) ,
+\mkern0mu [ \vv Q \otimes \vv W ] \eta [ \vv S \otimes \vv U ] &= [\vv Q][\vv W]^{\mathrm{T}} \eta [\vv S][\vv U]^{\mathrm{T}} \\
+&= (\vv W \cdot \vv S) \, [\vv Q] [\vv U]^{\mathrm{T}} \\[3pt]
+(\vv Q \otimes \vv W) \cdot (\vv S \otimes \vv U) &= (\vv W \cdot \vv S) (\vv Q \otimes \vv U)
 \end{aligned}
 \end{equation*}
-where the last equality follows from Equation \ref{eq:ime}. This is correct, but it's not yet in the form of a Minkowski dyadic's four-divergence! Figuring out how to put it in that form is tricky, and we won't go through the steps. Instead, we posit the equality of these three expressions:
-\begin{equation*}
-- \mathcal{F} \cdot (\partialup \cdot \mathcal{F}) = \dfrac{1}{2} \, \partialup \cdot \left( \mathcal{F} \cdot \mathcal{F} + \mathcal{G} \cdot \mathcal{G} \right) = \partialup \cdot \left( \mathcal{F} \cdot \mathcal{F} + \dfrac{1}{4} \left( \mathcal{F} : \mathcal{F} \right) \bm{\upeta} \right) ,
-\end{equation*}
-recalling that the four-dyadic $\bm{\upeta}$ is the Minkowski metric tensor (whose matrix representation is $\eta$ in every frame). It's exhausting but possible to work through the corresponding matrix equation to verify the equivalence:
+(because the dot product $[\vv W]^{\mathrm{T}} \eta [\vv S] = \vv W \cdot \vv T$ is a scalar). So the dot product between two four-dyads generates a new dyad, and it isn't commutative. If we want to dot dyadics that aren't simple dyads, we again put them in sum-of-dyads form and distribute:
 \begin{equation*}
 \begin{aligned}
-& - [\mathcal{F}] \eta \left( [\partialup]^\mathrm{T} \eta [\mathcal{F}] \right) ^\mathrm{T} \\[3pt]
-&= \dfrac{1}{2} \, [\partialup]^\mathrm{T} \eta \left( [\mathcal{F}] \eta [\mathcal{F}] \right) + \dfrac{1}{2} \, [\partialup]^\mathrm{T} \eta \left( [\mathcal{G}] \eta [\mathcal{G}] \right) \\[1pt]
-&= [\partialup]^{\mathrm{T}} \eta \left( [\mathcal{F}] \eta [\mathcal{F}] \right) + \dfrac{1}{4}[\partialup]^\mathrm{T} \eta \left( 2(b^2 - e^2) \eta \right)
+&(\vv Q \otimes \vv W + \vv H \otimes \vv E + \dots ) \cdot (\vv S \otimes \vv U + \vv M \otimes \vv N + \dots ) \\[3pt]
+&\qquad = (\vv Q \otimes \vv W) \cdot (\vv S \otimes \vv U) + (\vv Q \otimes \vv W) \cdot (\vv M \otimes \vv N) + (\vv Q \otimes \vv W) \cdot \, \dots \\
+& \qquad \quad + (\vv H \otimes \vv E) \cdot (\vv S \otimes \vv U) + (\vv H \otimes \vv E) \cdot (\vv M \otimes \vv N) + (\vv H \otimes \vv E) \cdot \, \dots \\
+& \qquad \quad + \dots
 \end{aligned}
 \end{equation*}
-(enjoy!). Notably, the second and third expressions are both in the form we're looking for. We define our desired Minkowski dyadic accordingly:
+(a new dyadic). And again, if we already have the sixteen ($ct$ + Cartesian) components of the input-dyadics $\mathcal{D}$ and $\mathcal{Z}$, it may be easier to calculate with matrices directly ($[\mathcal{D} \cdot \mathcal{Z}] = [\mathcal{D}] \eta [\mathcal{Z}]$) than to put the dyadics into sum-of-dyads form and distribute.
+
+Applications aren't obvious, but we should certainly test out the operation on the Faraday and Maxwell tensors (Equations \ref{eq:emt} and \ref{eq:mt}). First $\mathcal{F} \cdot \mathcal{G}$:
+\begin{equation*}
+\begin{aligned}
+\mkern0mu [\mathcal{F}] \eta [\mathcal{G}]
+&=
+\begin{bmatrix}
+0 & -e_x & -e_y & -e_z \\
+e_x & 0 & -b_z & b_y \\
+e_y & b_z & 0 & -b_x \\
+e_z & -b_y & b_x & 0
+\end{bmatrix}
+\begin{bmatrix}
+0 & -b_x & -b_y & -b_z \\
+-b_x & 0 & -e_z & e_y \\
+-b_y & e_z & 0 & -e_x \\
+-b_z & -e_y & e_x & 0
+\end{bmatrix} \\[5pt]
+&=
+\begin{bmatrix}
+\vv e \cdot \vv b & 0 & 0 & 0 \\
+0 & - \vv e \cdot \vv b & 0 & 0 \\
+0 & 0 & - \vv e \cdot \vv b & 0 \\
+0 & 0 & 0 & - \vv e \cdot \vv b
+\end{bmatrix}
+=
+- \dfrac{1}{4} \left( \mathcal{F} : \mathcal{G} \right) \eta ,
+\end{aligned}
+\end{equation*}
+and $\mathcal{F} \cdot \mathcal{G} = - ( \mathcal{F} : \mathcal{G} ) \bm{\upeta} / 4$, recalling that the four-dyadic $\bm{\upeta}$ is the Minkowski metric tensor (whose matrix representation is $\eta$ in every inertial frame). The ``reverse" operation $\mathcal{G} \cdot \mathcal{F}$ actually gives the same four-dyadic, even though the dot product between dyadics isn't generally commutative.
+
+Now let's try $\mathcal{F} \cdot \mathcal{F}$:
+\begin{equation*}
+\begin{aligned}
+\mkern0mu [\mathcal{F}] \eta [\mathcal{F}]
+&=
+\begin{bmatrix}
+0 & -e_x & -e_y & -e_z \\
+e_x & 0 & -b_z & b_y \\
+e_y & b_z & 0 & -b_x \\
+e_z & -b_y & b_x & 0
+\end{bmatrix}
+\begin{bmatrix}
+0 & -e_x & -e_y & -e_z \\
+-e_x & 0 & b_z & -b_y \\
+-e_y & -b_z & 0 & b_x \\
+-e_z & b_y & -b_x & 0
+\end{bmatrix} \\[5pt]
+&=
+\begin{bmatrix}
+e^2 & e_y b_z - e_z b_y & e_z b_x - e_x b_z & e_x b_y - e_y b_x \\[1ex]
+e_y b_z - e_z b_y & b_y^2 + b_z^2 - e_x^2 & -e_x e_y - b_x b_y & - e_x e_z - b_x b_z \\[1ex]
+e_z b_x - e_x b_z & -e_x e_y - b_x b_y & b_z^2 + b_x^2 - e_y^2  & - e_y e_z - b_y b_z \\[1ex]
+e_x b_y - e_y b_x & - e_x e_z - b_x b_z & - e_y e_z - b_y b_z & b_x^2 + b_y^2 - e_z^2
+\end{bmatrix} \\[5pt]
+&=
+\begin{bmatrix}
+e^2 & s_x & s_y & s_z \\[1ex]
+s_x & b^2 - b_x^2 - e_x^2 & - \sigma_{x y} & - \sigma_{x z} \\[1ex]
+s_y & - \sigma_{y x} & b^2 - b_y^2 - e_y^2  & - \sigma_{y z} \\[1ex]
+s_z & - \sigma_{z x} & - \sigma_{z y} & b^2 - b_z^2 - e_z^2 
+\end{bmatrix} ,
+\end{aligned}
+\end{equation*}
+where $\vv s = \vv e \times \vv b$ is the Poynting vector, $\vvsigma = \vv e \otimes \vv e + \vv b \otimes \vv b - u \vv I$ is the Maxwell stress tensor, $u = (e^2 + b^2) / 2$ is the electromagnetic energy density, and $\vv I$ is the Euclidean unit dyadic. Similarly, $\mathcal{G} \cdot \mathcal{G}$:
+\begin{equation*}
+\begin{aligned}
+\mkern0mu [\mathcal{G}] \eta [\mathcal{G}]
+&=
+\begin{bmatrix}
+0 & -b_x & -b_y & -b_z \\
+b_x & 0 & e_z & -e_y \\
+b_y & -e_z & 0 & e_x \\
+b_z & e_y & -e_x & 0
+\end{bmatrix}
+\begin{bmatrix}
+0 & -b_x & -b_y & -b_z \\
+-b_x & 0 & -e_z & e_y \\
+-b_y & e_z & 0 & -e_x \\
+-b_z & -e_y & e_x & 0
+\end{bmatrix} \\[5pt]
+&=
+\begin{bmatrix}
+b^2 & s_x & s_y & s_z \\[1ex]
+s_x & e^2 - e_x^2 - b_x^2 & - \sigma_{x y} & - \sigma_{x z} \\[1ex]
+s_y & - \sigma_{y x} & e^2 - e_y^2 - b_y^2  & - \sigma_{y z} \\[1ex]
+s_z & - \sigma_{z x} & - \sigma_{z y} & e^2 - e_z^2 - b_z^2 
+\end{bmatrix} .
+\end{aligned}
+\end{equation*}
+The dyadics $\mathcal{F} \cdot \mathcal{F}$ and $\mathcal{G} \cdot \mathcal{G}$ are begging to be summed!
+\begin{equation*}
+[\mathcal{F}] \eta [\mathcal{F}] + [\mathcal{G}] \eta [\mathcal{G}]
+=
+\begin{bmatrix}
+2 u & 2 s_x & 2 s_y & 2 s_z \\[1ex]
+2 s_x & - 2 \sigma_{x x} & - 2 \sigma_{x y} & - 2 \sigma_{x z} \\[1ex]
+2 s_y & - 2 \sigma_{y x} & - 2 \sigma_{yy}  & - 2 \sigma_{y z} \\[1ex]
+2 s_z & - 2 \sigma_{z x} & - 2 \sigma_{z y} & - 2 \sigma_{zz}
+\end{bmatrix}.
+\end{equation*}
+Define:
 \begin{equation}\label{eq:eset}
-\mathcal{T} \equiv \dfrac{1}{2} \left( \mathcal{F} \cdot \mathcal{F} + \mathcal{G} \cdot \mathcal{G} \right) = \mathcal{F} \cdot \mathcal{F} + \dfrac{1}{4} \left( \mathcal{F} : \mathcal{F} \right) \bm{\upeta} .
+\boxed { \mathcal{T} \equiv \dfrac{1}{2} \left( \mathcal{F} \cdot \mathcal{F} + \mathcal{G} \cdot \mathcal{G} \right) } \, ,
 \end{equation}
-Equation \ref{eq:eset} is the \textbf{electromagnetic stress--energy tensor}. Some matrix-math (easier with the ``$\mathcal{F}$ and $\mathcal{G}$" version) reveals that its components are:
+and we have a four-dyadic that combines $u$, $\vv s$, and $\vvsigma$:
 \begin{equation*}
-[\mathcal{T}] =
+[\mathcal{T}]
+=
 \begin{bmatrix}
 u & [\vv s]^{\mathrm{T}} \\[1ex]
-[\vv s] & [ - \vvsigma] \\[1ex]
-\end{bmatrix},
+[\vv s] & [ - \vvsigma]
+\end{bmatrix} .
 \end{equation*}
-where $u = (e^2 + b^2) / 2$ is the electromagnetic energy density, $\vv s = \vv e \times \vv b$ is the Poynting vector, and $\vvsigma = \vv e \otimes \vv e + \vv b \otimes \vv b - u \vv I$ is the Maxwell stress tensor. The matrix is symmetric, and we say that the dyadic $\mathcal{T}$ itself is symmetric. And at last, the equation we wanted is:
+The matrix is symmetric, and we call the dyadic itself symmetric. Note also that to get from $[\mathcal{F} \cdot \mathcal{F}]$ to $[\mathcal{T}]$ requires only the addition of the invariant $(b^2 - e^2) / 2 = ( \mathcal{F} : \mathcal{F} ) / 4 = - ( \mathcal{G} : \mathcal{G} ) / 4$ to the top-left entry, and the addition of its additive inverse $(e^2 - b^2)/2 = - ( \mathcal{F} : \mathcal{F} ) / 4 = ( \mathcal{G} : \mathcal{G} ) / 4$ to the other three diagonal entries. A parallel statement can be made about $\mathcal{G} \cdot \mathcal{G}$ and $\mathcal{T}$, but with the signs of the added invariants reversed. So there are several ways to express $\mathcal{T}$ in terms of the Faraday and/or Maxwell tensors, such as:
+\begin{equation*}
+\mathcal{T} = \mathcal{F} \cdot \mathcal{F} + \dfrac{1}{4} \left( \mathcal{F} : \mathcal{F} \right) \bm{\upeta} = \mathcal{G} \cdot \mathcal{G} + \dfrac{1}{4} \left( \mathcal{G} : \mathcal{G} \right) \bm{\upeta} .
+\end{equation*}
+
+Equation \ref{eq:eset} is the \textbf{electromagnetic stress--energy tensor}. Its significance reveals itself when we closely examine Equation \ref{eq:py} (Poynting's theorem, a statement of energy conservation) and Equation \ref{eq:tmc} (the corresponding statement of three-momentum conservation). Together, these expressions convey exactly the same information as:
 \begin{equation}\label{eq:fmc}
-\boxed{ \partialup \cdot \mathcal{T} = - \dfrac{\dd \vv F_{\mathrm{L}}}{\dd V_0} } \, .
+\boxed{ \partialup \cdot \mathcal{T} = - \dfrac{\dd \vv F_{\mathrm{L}}}{\dd V_0} } \, ,
 \end{equation}
-This is a statement of electromagnetic four-momentum conservation. The four-divergence of $\mathcal{T}$ vanishes as it should when the fields are transferring no four-momentum to charged particles. The right side of Equation \ref{eq:fmc} can also be expressed in terms of the fields and charges:
+because in matrix notation that's:
+\begin{equation*}
+\begin{bmatrix}
+\partial^{ct} & [ \del ]^{\mathrm{T}}
+\end{bmatrix}
+\begin{bmatrix}
+u & [\vv s]^{\mathrm{T}} \\[1ex]
+[\vv s] & [ - \vvsigma]
+\end{bmatrix}
+=
+\begin{bmatrix}
+- \dfrac{\dd \mathcal{P}_{\textrm{L}}}{\dd V} & - \dfrac{\dd \vv f_{\mathrm{L}}}{\dd V}
+\end{bmatrix}
+\end{equation*}
+(no naught subscripts on the right---see Equation \ref{eq:lffdc}). Equation \ref{eq:fmc} is a statement of \emph{four-momentum} conservation that explicitly accounts for the electromagnetic field. The four-divergence of $\mathcal{T}$ vanishes as it should when the fields are transferring no four-momentum to charged particles. The right side of Equation \ref{eq:fmc} can also be expressed in terms of the fields and charges (differentiate Equation \ref{eq:lfffd} with respect to proper volume, and sub in $\vv J$ for $\rho_0 \vv B$):
 \begin{equation*}
 \partialup \cdot \mathcal{T} = - \mathcal{F} \cdot \vv J .
 \end{equation*}
+
 
 \end{document}
