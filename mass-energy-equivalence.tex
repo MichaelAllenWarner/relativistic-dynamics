@@ -3231,15 +3231,19 @@ In Section \ref{sssec:li}, we discussed electromagnetic plane waves in terms of 
 \begin{equation}\label{eq:ftwe}
 \capdy{\mathrm{F}} (\vv R) = \bar{\capdy{\mathrm{F}}} \mathrm{e}^{\mathrm{i} \mkern.5mu \vv K \cdot \vv R} ,
 \end{equation}
-where the ``barred" amplitude four-dyadic is constant and antisymmetric, where $\vv K = \langle K^{ct}, \vv k \rangle$ is the constant four-wavevector as before, and where the solution is constrained by $\partialup \cdot \inlinedy{\mathrm{F}} = \textrm{\mbox{\boldmath $\emptyset$}}$ (Equation \ref{eq:ime} with $\vv J = \textrm{\mbox{\boldmath $\emptyset$}}$). Applying this constraint:
-\begin{equation}\label{eq:ftwec}
+where the ``barred" amplitude four-dyadic is constant and antisymmetric, where $\vv K = \langle K^{ct}, \vv k \rangle$ is the constant four-wavevector as before, and where the solution is constrained by the Maxwell equations $\partialup \cdot \inlinedy{\mathrm{F}} = \textrm{\mbox{\boldmath $\emptyset$}}$ (Equation \ref{eq:ime} with $\vv J = \textrm{\mbox{\boldmath $\emptyset$}}$) and $\partialup \cdot \inlinedy{\mathrm{G}} = \textrm{\mbox{\boldmath $\emptyset$}}$ (Equation \ref{eq:hme}). By the first of these:
+\begin{equation*}
 \begin{split}
 \textrm{\mbox{\boldmath $\emptyset$}} &= \partialup \cdot \bigl( \bar{\capdy{\mathrm{F}}} \mathrm{e}^{\mathrm{i} \mkern.5mu \vv K \cdot \vv R} \bigr) \\[2pt]
 &= \left( \partialup \mathrm{e}^{\mathrm{i} \mkern.5mu \vv K \cdot \vv R} \right) \cdot \bar{\capdy{\mathrm{F}}} \\[2pt]
 \textrm{\mbox{\boldmath $\emptyset$}} &= \vv K \cdot \bar{\capdy{\mathrm{F}}} .
 \end{split}
-\end{equation}
-If we label the ``barred" four-dyadic's components $\bar{e}_x$, $\bar{b}_x$, etc. (corresponding to their ``unbarred" counterparts in the Faraday tensor), and if we remember that $K^{ct} = k$ (because the four-wavevector is future-pointing lightlike), then carrying out the associated matrix multiplication gives us the conditions $\vv k \cdot \bar{\vv e} = 0$ and ${\bar{\vv e} = \bar{\vv b} \times \vv{\hat k}}$, matching what we found in Section \ref{sssec:li}. Together, Equations \ref{eq:ftwe} and \ref{eq:ftwec} constitute an explicitly relativistic \emph{gauge-invariant} description of monochromatic electromagnetic plane waves.\footnote{You might note that the real part of Equation \ref{eq:ftwe} gives a \emph{cosine} function for $\vv e$ and $\vv b$, whereas Equations \ref{eq:bpw} and \ref{eq:epw} gave \emph{sine} functions. Strictly speaking, we should allow for a phase constant in the exponential argument.}
+\end{equation*}
+If we label the ``barred" four-dyadic's components $\bar{e}_x$, $\bar{b}_x$, etc. (corresponding to their ``unbarred" counterparts in the Faraday tensor), and if we remember that $K^{ct} = k$ (because the four-wavevector is future-pointing lightlike), then carrying out the associated matrix multiplication gives us the conditions $\vv k \cdot \bar{\vv e} = 0$ and ${\bar{\vv e} = \bar{\vv b} \times \vv{\hat k}}$, matching part of what we found in Section \ref{sssec:li}. To show the rest ($\bar{e} = \bar{b}$ and $\bar{\vv b} \perp \vv k$), we apply the second constraint to the Hodge dual of Equation \ref{eq:ftwe}, yielding:
+\begin{equation*}
+\textrm{\mbox{\boldmath $\emptyset$}} = \vv K \cdot \bar{\capdy{\mathrm{G}}} ,
+\end{equation*}
+from which we obtain the remaining conditions $\vv k \cdot \bar{\vv b} = 0$ and ${\bar{\vv b} = \vv{\hat k}} \times \bar{\vv e}$. So everything checks out, and Equation \ref{eq:ftwe} is an explicitly relativistic \emph{gauge-invariant} description of monochromatic electromagnetic plane waves.\footnote{You might note that the real part of Equation \ref{eq:ftwe} gives a \emph{cosine} function for $\vv e$ and $\vv b$, whereas Equations \ref{eq:bpw} and \ref{eq:epw} gave \emph{sine} functions. Strictly speaking, we should allow for a phase constant in the exponential argument.}
 
 For the Lorenz gauge specifically, we can just combine Equations \ref{eq:pw} and \ref{eq:emta} (real part implied):
 \begin{equation*}
@@ -3267,7 +3271,7 @@ Let's make sure that the plane-wave solutions for $\vv e$ and $\vv b$ that we fo
 [\bar{A}^{ct} \vv k - K^{ct} \bar{\vv a}] & [ \vv k \wedge \bar{\vv a} ] 
 \end{bmatrix} ,
 \end{equation*}
-where $\{ \vv b \times \}$ is the three-dyadic that satisfies $\{ \vv b \times \} \cdot \vv q = \vv b \times \vv q$ for any three-vector $\vv q$, and where the three-dyadic $\vv k \wedge \bar{\vv a} = {\vv k \otimes \bar{\vv a} - \bar{\vv a} \otimes \vv k}$. This gives $\vv b = \mathrm{i} \mathrm{e}^{\mathrm{i} f} \, \bar{\vv a} \times \vv k$ (check that!) and $\vv e = \mathrm{i} \mathrm{e}^{\mathrm{i} f} ( \bar{A}^{ct} \vv k - K^{ct} \bar{\vv a} )$, which were indeed steps on the way to Equations \ref{eq:bpw} and \ref{eq:epw}. Everything checks out. (And by now we've noticed a relationship between cross products and antisymmetric dyadics, yes?)
+where $\{ \vv b \times \}$ is the three-dyadic that satisfies $\{ \vv b \times \} \cdot \vv q = \vv b \times \vv q$ for any three-vector $\vv q$, and where the three-dyadic $\vv k \wedge \bar{\vv a} = {\vv k \otimes \bar{\vv a} - \bar{\vv a} \otimes \vv k}$. This gives $\vv b = \mathrm{i} \mathrm{e}^{\mathrm{i} f} \, \bar{\vv a} \times \vv k$ (check that!) and $\vv e = \mathrm{i} \mathrm{e}^{\mathrm{i} f} ( \bar{A}^{ct} \vv k - K^{ct} \bar{\vv a} )$, which were indeed steps on the way to Equations \ref{eq:bpw} and \ref{eq:epw}. So everything checks out here, too. (And by now we've noticed a relationship between cross products and antisymmetric dyadics, yes?)
 
 
 \subsubsection{Double-Dotting Four-Dyadics; Field Invariants}
