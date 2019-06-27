@@ -2230,7 +2230,7 @@ When $\partialup$ is dotted with \emph{itself}, the resulting function is called
 \end{equation*}
 }
 \end{itemize}
-The d'Alembertian is the four-divergence of the four-gradient. Like the Laplacian, it can operate on a scalar field \emph{or} a vector field, always outputting a field of the same kind as its input.\footnote{\label{fn:gd}Does this mean that a vector field can have a gradient? Doesn't that contradict what we said above about the four-gradient acting on scalar fields? It depends on how we define the word \emph{gradient}, but basically the answer is yes! The details involve tensors (briefly---the gradient of a tensor field of rank $n$ is a tensor field of rank $n + 1$, and the divergence of a tensor field of rank $n$ is a tensor field of rank $n - 1$), but for now it's enough to know that the Laplacian and d'Alembertian can operate on both scalar and vector fields.} Think of the d'Alembertian as the four-del's invariant ``squared magnitude." It acts like a \emph{scalar} when combined with a four-gradient or -divergence, in the sense that the order of the operations is reversible: $\Box (\partialup \psi) = \partialup (\Box \psi)$ and $\Box (\partialup \cdot \vv Q) = \partialup \cdot (\Box \vv Q)$.\footnote{It's a good exercise to verify these relations. Use the analogous Laplacian identities $\del^2 (\del f) = \del (\del^2 f)$ and $\del^2 (\del \cdot \vv c) = \del \cdot (\del^2 \vv c)$, and also the fact that the order of mixed partials doesn't matter (e.g., $\partial^{ct} \del \cdot \vv c = \del \cdot \partial^{ct} \vv c$, and $\partial^{ct} \del f = \del \partial^{ct} f$).} By contrast, the four-gradient of the four-divergence is not equivalent to the four-divergence of the four-gradient (the d'Alembertian): $\partialup (\partialup \cdot \vv Q) \neq \Box \vv Q$.
+The d'Alembertian is the four-divergence of the four-gradient. Like the Laplacian, it can operate on a scalar field \emph{or} a vector field, always outputting a field of the same kind as its input.\footnote{\label{fn:gd}Does this mean that a vector field can have a gradient? Doesn't that contradict what we said above about the four-gradient acting on scalar fields? It depends on how we define the word \emph{gradient}, but basically the answer is yes! The details involve tensors (briefly---the gradient of a tensor field of rank $n$ is a tensor field of rank $n + 1$, and the divergence of a tensor field of rank $n$ is a tensor field of rank $n - 1$), but for now it's enough to know that the Laplacian and d'Alembertian can operate on both scalar and vector fields.} Think of the d'Alembertian as the four-del's invariant ``squared magnitude." It acts like a \emph{scalar} when combined with other operators, in the sense that the order of the operations is reversible: $\Box (\partialup \psi) = \partialup (\Box \psi)$ and $\Box (\partialup \cdot \vv Q) = \partialup \cdot (\Box \vv Q)$.\footnote{It's a good exercise to verify these relations. Use the analogous Laplacian identities $\del^2 (\del f) = \del (\del^2 f)$ and $\del^2 (\del \cdot \vv c) = \del \cdot (\del^2 \vv c)$, and also the fact that the order of mixed partials doesn't matter (e.g., $\partial^{ct} \del \cdot \vv c = \del \cdot \partial^{ct} \vv c$, and $\partial^{ct} \del f = \del \partial^{ct} f$).} By contrast, the four-gradient of the four-divergence is not equivalent to the four-divergence of the four-gradient (the d'Alembertian): $\partialup (\partialup \cdot \vv Q) \neq \Box \vv Q$.
 
 
 \subsubsection{The Differential Four-Vector Triple Product}\label{sssec:tp}
@@ -2779,7 +2779,7 @@ where $R$ is the sphere's radius and the point $(x_0, y_0, z_0)$ is the sphere's
 \begin{equation*}
 x^2 + y^2 + z^2 = R^2.
 \end{equation*}
-When time is ``unpaused," every point on and in the sphere (including the center) moves at the speed of light in the direction of the light's three-wavevector $\vv k$. At some later time $ct = ct$, then, the $x$-coordinate of the sphere's center is its initial $x$-coordinate ($0$) plus the $x$-component of the light's ``displacement" since $ct = 0$, which is the $x$-component of the light's (normalized) velocity vector $\vv{\hat{k}}$ times $ct$.\footnote{The three-wavevector $\vv k$ isn't dimensionless, but the unit vector $\vv{\hat{k}} = \vv k / k$ is, so $\vv{\hat{k}}$ is indeed the light's normalized velocity. Same goes for $\vv{\hat s} = \vv s / s$.} If $\theta$ is the angle between the positive $x$-direction and $\vv{\hat{k}}$, then the $x$-component of $\vv{\hat{k}}$ is $\Vert \vv{\hat{k}} \Vert \cos{\theta} = \cos{\theta}$. The $x$-coordinate of the sphere's center is therefore $x_0 = \cos{\theta} \, ct$. Likewise, $y_0 = \cos{\alpha} \, \mkern.5mu ct$ and $z_0 = \cos{\kappa} \, \mkern.5mu ct$ for the corresponding angles $\alpha$ and $\kappa$, and the sphere's equation is:
+When time is ``unpaused," the sphere and its center move at the speed of light in the direction of the light's three-wavevector $\vv k$. At some later time $ct = ct$, then, the $x$-coordinate of the sphere's center is its initial $x$-coordinate ($0$) plus the $x$-component of the light's ``displacement" since $ct = 0$, which is the $x$-component of the light's (normalized) velocity vector $\vv{\hat{k}}$ times $ct$.\footnote{The three-wavevector $\vv k$ isn't dimensionless, but the unit vector $\vv{\hat{k}} = \vv k / k$ is, so $\vv{\hat{k}}$ is indeed the light's normalized velocity. Same goes for $\vv{\hat s} = \vv s / s$.} If $\theta$ is the angle between the positive $x$-direction and $\vv{\hat{k}}$, then the $x$-component of $\vv{\hat{k}}$ is $\Vert \vv{\hat{k}} \Vert \cos{\theta} = \cos{\theta}$. The $x$-coordinate of the sphere's center is therefore $x_0 = \cos{\theta} \, ct$. Likewise, $y_0 = \cos{\alpha} \, \mkern.5mu ct$ and $z_0 = \cos{\kappa} \, \mkern.5mu ct$ for the corresponding angles $\alpha$ and $\kappa$, and the sphere's equation is:
 \begin{equation*}
 (x - \cos{\theta} \, ct)^2 + (y - \cos{\alpha} \, \mkern.5mu ct)^2 + (z - \cos{\kappa} \, \mkern.5mu ct)^2 = R^2 .
 \end{equation*}
@@ -2823,7 +2823,7 @@ V^\prime &= \dfrac{4 \pi}{3} \, abc = \dfrac{4 \pi }{3} \, R^3 \, \dfrac{1}{\gam
 V^\prime &= \dfrac{V}{\gamma \left( 1 - \beta \cos{\theta} \right)} ,
 \end{split}
 \end{equation}
-which is precisely the transformation we were expecting. Unsurprisingly perhaps, this volume transforms the same way as wavelength (Equation \ref{eq:rdw}). Combining Equations \ref{eq:edt} and \ref{eq:vol}, we see that the energy $E$ of a light wave, equal to its (average) energy density $u$ times a ``containing" volume $V$, transforms under a Lorentz boost like this:
+which is precisely the transformation we were expecting. Perhaps unsurprisingly, this volume transforms the same way as wavelength (Equation \ref{eq:rdw}). Combining Equations \ref{eq:edt} and \ref{eq:vol}, we see that the energy $E$ of a light wave, equal to its (average) energy density $u$ times a ``containing" volume $V$, transforms under a Lorentz boost like this:
 \begin{equation}\label{eq:len}
 \begin{split}
 E^\prime &= u^\prime V^\prime \\
@@ -2947,7 +2947,7 @@ A comparison with Poynting's theorem (Equation \ref{eq:py}) shows that $\vv s$ a
 
 \subsubsection{Minkowski Dyadics; Metric and Field Tensors}\label{sssec:md}
 
-Before digging into Minkowski dyadics, let's take a closer look at the matrix representation of the Euclidean dyadic product $\vv c \otimes \vv d$:
+Let's take a closer look at the matrix representation of the Euclidean dyadic product $\vv c \otimes \vv d$:
 \begin{equation*}
 \begin{bmatrix}
 c_x \\
@@ -3110,7 +3110,7 @@ Anyway, now we can write the Lorentz four-force (Equation \ref{eq:ff}) more comp
 \begin{equation}\label{eq:ime}
 \boxed{ \vphantom{A_{A_A}} \partialup \cdot \capdy{\mathrm{F}} = \vv J }
 \end{equation}
-(again, carry out the corresponding matrix multiplication $[\partialup]^{\mathrm{T}} \eta [\inlinedy{\mathrm{F}}]$ to confirm it, minding that $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$).\footnote{Combining Equations \ref{eq:ime} and \ref{eq:emta}, we get $\vv J = \partialup \cdot ( \partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A} ) = \Box \vv A - \partialup (\partialup \cdot \vv A)$. We mentioned this general relationship between $\vv A$ and $\vv J$ without motivation in Footnote \ref{fn:fp}; now we see where it comes from.} As for the other one, we note that the left sides of the last two of Maxwell's equations are just like the left sides of the first two, but with the roles of $\vv e$ and $\vv b$ reversed and a sign change. It should therefore be possible to form a new Minkowski dyadic from the Faraday tensor (Equation \ref{eq:emt}) by ``swapping" the $\vv e$ and $\vv b$ components and making some sign change; the four-divergence of this new dyadic should equal the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}}$. It turns out that the way to do this is by replacing $\vv e$ with $\vv b$ and $\vv b$ with $- \vv e$ (the resulting object $\inlinedy{\mathrm{G}}$ satisfies the dyadic transformation rule Equation \ref{eq:ltd}):
+(use $[\partialup]^{\mathrm{T}} \eta [\inlinedy{\mathrm{F}}] = [\vv J]$ to confirm that this gives $\del \cdot \vv e = \rho$ and $\del \times \vv b - \partial^{ct} \vv e = \vv j$, minding that $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$). As for the other one, we note that the left sides of the remaining Maxwell equations are just like the left sides of the first two, but with the roles of $\vv e$ and $\vv b$ reversed and a sign change. It should therefore be possible to form a new Minkowski dyadic from the Faraday tensor (Equation \ref{eq:emt}) by ``swapping" the $\vv e$ and $\vv b$ components and changing some signs; the four-divergence of this new dyadic should equal the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}}$. It turns out that the way to do this is by replacing $\vv e$ with $\vv b$ and $\vv b$ with $- \vv e$ (the resulting object $\inlinedy{\mathrm{G}}$ satisfies the dyadic transformation rule Equation \ref{eq:ltd}):
 \begin{equation}\label{eq:mt}
 [ \capdy{\mathrm{G}} ]
 =
@@ -3125,7 +3125,7 @@ and:
 \begin{equation}\label{eq:hme}
 \boxed{ \vphantom{A_{A_A}} \partialup \cdot \capdy{\mathrm{G}} = \textrm{\mbox{\boldmath $\emptyset$}} }
 \end{equation}
-(confirm it!). Equation \ref{eq:ime} gives the so-called \emph{inhomogeneous} Maxwell equations; Equation \ref{eq:hme} gives the \emph{homogeneous} Maxwell equations.
+(use $[\partialup]^{\mathrm{T}} \eta [\inlinedy{\mathrm{G}}] = [\textrm{\mbox{\boldmath $\emptyset$}}]$ to show that this yields $\del \cdot \vv b = 0$ and $\del \times \vv e + \partial^{ct} \vv b = \vv 0$). Equations \ref{eq:ime} and \ref{eq:hme} are Maxwell's equations in an explicitly relativistic \emph{and gauge-invariant} form (Equation \ref{eq:fp} contains the same information but is specific to the Lorenz gauge).
 
 
 \subsubsection{Hodge Duals and Quasi-Four-Vectors}
@@ -3214,9 +3214,9 @@ q_y & w_z & 0 & -w_x \\[.5ex]
 q_z & -w_y & w_x & 0
 \end{bmatrix},
 \end{equation*}
-and we see that the matrix representation of $\inlinedy{\mathrm{D}}$ has exactly the same form as that of the Faraday tensor (Equation \ref{eq:emt}). It follows that if we transform $\vv q$ and $\vv w$ under a Lorentz boost in the same way that we transform the electric and magnetic fields (Equations \ref{eq:ebt} or \ref{eq:ebr}), we'll find that the form $\inlinedy{\mathrm{D}} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ holds for \emph{all} inertial frames (where for each frame $\vv B$ is \emph{that frame's} four-velocity $\langle 1, \vv 0 \rangle$), and $\inlinedy{\mathrm{D}}$ must be a true antisymmetric Minkowski dyadic like $\inlinedy{\mathrm{F}}$ is. With the right choice of $\tilde{\vv q}$ and $\tilde{\vv w}$, any antisymmetric four-dyadic can be expressed in this fashion.\footnote{For a deeper dive that proves it, see this unpublished paper from 2018 by Jonas Larsson and Karl Larsson: \url{https://urn.kb.se/resolve?urn=urn:nbn:se:umu:diva-152747}.}
+and we see that the matrix representation of $\inlinedy{\mathrm{D}}$ has exactly the same form as that of the Faraday tensor $\inlinedy{\mathrm{F}}$ (Equation \ref{eq:emt}). It follows that if we transform $\vv q$ and $\vv w$ under a Lorentz boost in the same way that we transform the electric and magnetic fields (Equations \ref{eq:ebt} or \ref{eq:ebr}), we'll find that the form $\inlinedy{\mathrm{D}} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ holds for \emph{all} inertial frames (where for each frame $\vv B$ is \emph{that frame's} four-velocity $\langle 1, \vv 0 \rangle$), and $\inlinedy{\mathrm{D}}$ must be a true antisymmetric Minkowski dyadic like $\inlinedy{\mathrm{F}}$ is. With the right choice of $\tilde{\vv q}$ and $\tilde{\vv w}$, any antisymmetric four-dyadic can be expressed in this fashion.\footnote{For a deeper dive that proves it, see this unpublished paper from 2018 by Jonas Larsson and Karl Larsson: \url{https://urn.kb.se/resolve?urn=urn:nbn:se:umu:diva-152747}.}
 
-So the combination of quasi-four-dyadics $\tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ makes a \emph{true} antisymmetric dyadic. For the Faraday tensor, it's $\inlinedy{\mathrm{F}} = \tilde{\vv e} \wedge \vv B - \{ \tilde{\vv b} \times \}$. And if we study the matrix representation of the Maxwell tensor (Equation \ref{eq:mt}), we find that $\inlinedy{\mathrm{G}} = \tilde{\vv b} \wedge \vv B - \{ - \tilde{\vv e} \times \}$. That's how $\inlinedy{\mathrm{F}}$ and $\inlinedy{\mathrm{G}}$ are related, and it shows us that the \emph{Hodge dual} of an antisymmetric Minkowski dyadic $\inlinedy{\mathrm{D}} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ is given by $\star \inlinedy{\mathrm{D}} = \tilde{\vv w} \wedge \vv B - \{ - \tilde{\vv q} \times \}$ (for obvious reasons, we call $\star$ the \textbf{star operator}, or the $\textbf{Hodge star operator}$). The Hodge dual of the Hodge dual is then $\star \star \inlinedy{\mathrm{D}} = - \tilde{\vv q} \wedge \vv B - \{ - \tilde{\vv w} \times \} = - \inlinedy{\mathrm{D}}$. Thus:
+So the combination of quasi-four-dyadics $\tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ makes a \emph{true} antisymmetric dyadic. For the Faraday tensor, it's $\inlinedy{\mathrm{F}} = \tilde{\vv e} \wedge \vv B - \{ \tilde{\vv b} \times \}$. And if we study the matrix representation of the Maxwell tensor (Equation \ref{eq:mt}), we find that $\inlinedy{\mathrm{G}} = \tilde{\vv b} \wedge \vv B + \{ \tilde{\vv e} \times \} = \tilde{\vv b} \wedge \vv B - \{ - \tilde{\vv e} \times \}$. That's how $\inlinedy{\mathrm{F}}$ and $\inlinedy{\mathrm{G}}$ are related: the \emph{Hodge dual} of an antisymmetric Minkowski dyadic $\inlinedy{\mathrm{D}} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ is given by $\star \inlinedy{\mathrm{D}} = \tilde{\vv w} \wedge \vv B - \{ - \tilde{\vv q} \times \}$ (for obvious reasons, we call $\star$ the \textbf{star operator}). The Hodge dual of the Hodge dual is then $\star \star \inlinedy{\mathrm{D}} = - \tilde{\vv q} \wedge \vv B - \{ - \tilde{\vv w} \times \} = - \inlinedy{\mathrm{D}}$. Thus:
 \begin{equation}\label{eq:mthd}
 \boxed{ \vphantom{A_{A_A}} \capdy{\mathrm{G}} \equiv \star \capdy{\mathrm{F}} } \, ,
 \end{equation}
@@ -3227,11 +3227,31 @@ It \emph{is} possible to express $\inlinedy{\mathrm{G}}$ as a sum of Minkowski d
 
 \subsubsection{Light with Four-Dyadics}
 
-In Section \ref{sssec:li}, we discussed electromagnetic plane waves in terms of the Lorenz-gauge four-potential. While that's arguably the most elegant way to do it, we're now in a position to treat light in a fashion that's both explicitly relativistic \emph{and} gauge-invariant. Simply put, the Faraday tensor in free space satisfies the homogeneous wave equation $\Box \inlinedy{\mathrm{F}} = \inlinedy{0}$ (the four-dyadic whose components are zero), and the general monochromatic plane-wave solution is (the real part of):
+In Section \ref{sssec:li}, we discussed electromagnetic plane waves in an explicitly relativistic fashion by starting with Equation \ref{eq:fp} ($\vv J = \Box \vv A$). But that equation is valid only in the Lorenz gauge, and combining Equations \ref{eq:ime} and \ref{eq:emta} we see that in general $\vv J = \partialup \cdot ( \partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A} )$, or:
+\begin{equation}\label{eq:ja}
+\vv J = \Box \vv A - \partialup (\partialup \cdot \vv A)
+\end{equation}
+(we mentioned this in Footnote \ref{fn:fp} without motivation). We might wonder, then, whether it's possible to cover light in a way that's both explicitly relativistic \emph{and gauge-invariant}. It is! First impose the free-space condition ($\vv J = \textrm{\mbox{\boldmath $\emptyset$}}$) on Equation \ref{eq:ja}:
+\begin{equation*}
+\Box \vv A = \partialup(\partialup \cdot \vv A).
+\end{equation*}
+Next, take the d'Alembertian of the Faraday tensor (Equation \ref{eq:emta}) and sub in $\partialup(\partialup \cdot \vv A)$ for $\Box \vv A$, letting $\chi = \partialup \cdot \vv A$ for short:
+\begin{equation}\label{eq:fthwe}
+\begin{split}
+\Box \capdy{\mathrm{F}} &= \Box ( \partialup \wedge \vv A ) \\
+&= \partialup \wedge ( \Box \vv A) \\
+&= \partialup \wedge (\partialup \chi) \\
+&= ( \partialup \wedge \partialup ) \chi \\
+\Box \capdy{\mathrm{F}} &= \capdy{0} .
+\end{split}
+\end{equation}
+Here $\inlinedy{0}$ is the \textbf{null four-dyadic} whose components are all zero. The key step $\partialup \wedge (\partialup \chi) = (\partialup \wedge \partialup) \chi$ follows from the fact that the order of mixed partials is reversible (verify with matrix notation that $\partialup \otimes ( \partialup \chi ) - ( \partialup \chi ) \otimes \partialup_{\chi} = \inlinedy{0}$). Equation \ref{eq:fthwe} is a homogeneous wave equation for the Faraday tensor in free space. Its general monochromatic plane-wave solution is (the real part of):
 \begin{equation}\label{eq:ftwe}
 \capdy{\mathrm{F}} (\vv R) = \bar{\capdy{\mathrm{F}}} \mathrm{e}^{\mathrm{i} \mkern.5mu \vv K \cdot \vv R} ,
 \end{equation}
-where the ``barred" amplitude four-dyadic is constant and antisymmetric, where $\vv K = \langle K^{ct}, \vv k \rangle$ is the constant four-wavevector as before, and where the solution is constrained by the Maxwell equations $\partialup \cdot \inlinedy{\mathrm{F}} = \textrm{\mbox{\boldmath $\emptyset$}}$ (Equation \ref{eq:ime} with $\vv J = \textrm{\mbox{\boldmath $\emptyset$}}$) and $\partialup \cdot \inlinedy{\mathrm{G}} = \textrm{\mbox{\boldmath $\emptyset$}}$ (Equation \ref{eq:hme}). By the first of these:
+where the ``barred" amplitude four-dyadic is constant and antisymmetric, and where $\vv K = \langle K^{ct}, \vv k \rangle$ is the constant four-wavevector as before.
+
+The solution is constrained by $\partialup \cdot \inlinedy{\mathrm{F}} = \textrm{\mbox{\boldmath $\emptyset$}}$ (Equation \ref{eq:ime} with $\vv J = \textrm{\mbox{\boldmath $\emptyset$}}$):
 \begin{equation*}
 \begin{split}
 \textrm{\mbox{\boldmath $\emptyset$}} &= \partialup \cdot \bigl( \bar{\capdy{\mathrm{F}}} \mathrm{e}^{\mathrm{i} \mkern.5mu \vv K \cdot \vv R} \bigr) \\[2pt]
@@ -3239,11 +3259,11 @@ where the ``barred" amplitude four-dyadic is constant and antisymmetric, where $
 \textrm{\mbox{\boldmath $\emptyset$}} &= \vv K \cdot \bar{\capdy{\mathrm{F}}} .
 \end{split}
 \end{equation*}
-If we label the ``barred" four-dyadic's components $\bar{e}_x$, $\bar{b}_x$, etc. (corresponding to their ``unbarred" counterparts in the Faraday tensor), and if we remember that $K^{ct} = k$ (because the four-wavevector is future-pointing lightlike), then carrying out the associated matrix multiplication gives us the conditions $\vv k \cdot \bar{\vv e} = 0$ and ${\bar{\vv e} = \bar{\vv b} \times \vv{\hat k}}$, matching part of what we found in Section \ref{sssec:li}. To show the rest ($\bar{e} = \bar{b}$ and $\bar{\vv b} \perp \vv k$), we apply the second constraint to the Hodge dual of Equation \ref{eq:ftwe}, yielding:
+If we label the ``barred" four-dyadic's components $\bar{e}_x$, $\bar{b}_x$, etc. (corresponding to their ``unbarred" counterparts in the Faraday tensor), and if we remember that $K^{ct} = k$ (because the four-wavevector is future-pointing lightlike), then carrying out the associated matrix multiplication gives us the conditions $\vv k \cdot \bar{\vv e} = 0$ and ${\bar{\vv e} = \bar{\vv b} \times \vv{\hat k}}$, matching part of what we found in Section \ref{sssec:li}. To show the rest ($\bar{e} = \bar{b}$ and $\bar{\vv b} \perp \vv k$), take the Hodge dual of Equation \ref{eq:ftwe} and apply $\partialup \cdot \inlinedy{\mathrm{G}} = \textrm{\mbox{\boldmath $\emptyset$}}$ (Equation \ref{eq:hme}), yielding:
 \begin{equation*}
 \textrm{\mbox{\boldmath $\emptyset$}} = \vv K \cdot \bar{\capdy{\mathrm{G}}} ,
 \end{equation*}
-from which we obtain the remaining conditions $\vv k \cdot \bar{\vv b} = 0$ and ${\bar{\vv b} = \vv{\hat k}} \times \bar{\vv e}$. So everything checks out, and Equation \ref{eq:ftwe} is an explicitly relativistic \emph{gauge-invariant} description of monochromatic electromagnetic plane waves.\footnote{You might note that the real part of Equation \ref{eq:ftwe} gives a \emph{cosine} function for $\vv e$ and $\vv b$, whereas Equations \ref{eq:bpw} and \ref{eq:epw} gave \emph{sine} functions. Strictly speaking, we should allow for a phase constant in the exponential argument.}
+wherefrom $\vv k \cdot \bar{\vv b} = 0$ and ${\bar{\vv b} = \vv{\hat k}} \times \bar{\vv e}$. So everything checks out, and Equation \ref{eq:ftwe} is an explicitly relativistic \emph{gauge-invariant} description of monochromatic electromagnetic plane waves.\footnote{You might note that the real part of Equation \ref{eq:ftwe} gives a \emph{cosine} function for $\vv e$ and $\vv b$, whereas Equations \ref{eq:bpw} and \ref{eq:epw} gave \emph{sine} functions. Strictly speaking, we should allow for a phase constant in the exponential argument.}
 
 For the Lorenz gauge specifically, we can just combine Equations \ref{eq:pw} and \ref{eq:emta} (real part implied):
 \begin{equation*}
@@ -3271,7 +3291,7 @@ Let's make sure that the plane-wave solutions for $\vv e$ and $\vv b$ that we fo
 [\bar{A}^{ct} \vv k - K^{ct} \bar{\vv a}] & [ \vv k \wedge \bar{\vv a} ] 
 \end{bmatrix} ,
 \end{equation*}
-where $\{ \vv b \times \}$ is the three-dyadic that satisfies $\{ \vv b \times \} \cdot \vv q = \vv b \times \vv q$ for any three-vector $\vv q$, and where the three-dyadic $\vv k \wedge \bar{\vv a} = {\vv k \otimes \bar{\vv a} - \bar{\vv a} \otimes \vv k}$. This gives $\vv b = \mathrm{i} \mathrm{e}^{\mathrm{i} f} \, \bar{\vv a} \times \vv k$ (check that!) and $\vv e = \mathrm{i} \mathrm{e}^{\mathrm{i} f} ( \bar{A}^{ct} \vv k - K^{ct} \bar{\vv a} )$, which were indeed steps on the way to Equations \ref{eq:bpw} and \ref{eq:epw}. So everything checks out here, too. (And by now we've noticed a relationship between cross products and antisymmetric dyadics, yes?)
+where $\{ \vv b \times \}$ is the three-dyadic that satisfies $\{ \vv b \times \} \cdot \vv q = \vv b \times \vv q$ for any three-vector $\vv q$, and where the three-dyadic $\vv k \wedge \bar{\vv a} = {\vv k \otimes \bar{\vv a} - \bar{\vv a} \otimes \vv k}$. This gives $\vv b = \mathrm{i} \mathrm{e}^{\mathrm{i} f} \, \bar{\vv a} \times \vv k$ (check that!) and $\vv e = \mathrm{i} \mathrm{e}^{\mathrm{i} f} ( \bar{A}^{ct} \vv k - K^{ct} \bar{\vv a} )$, which were indeed steps on the way to Equations \ref{eq:bpw} and \ref{eq:epw}. Everything checks out again (and by now we've noticed a relationship between cross products and antisymmetric dyadics, yes?).
 
 
 \subsubsection{Double-Dotting Four-Dyadics; Field Invariants}
@@ -3297,7 +3317,8 @@ The key is to bring in the \emph{trace}, which is the sum of the main-diagonal e
 (\vv Q \otimes \vv W) : (\vv S \otimes \vv U) &= (\vv Q \cdot \vv S) (\vv W \cdot \vv U) \\
 &= (\vv S \cdot \vv Q) (\vv W \cdot \vv U) \\
 &= \mathrm{Tr} \left( [\vv S]^{\mathrm{T}} \eta [\vv Q] [\vv W]^{\mathrm{T}} \eta [\vv U] \right) \\
-&= \mathrm{Tr} \left( \eta [\vv Q] [\vv W]^{\mathrm{T}} \eta [\vv U] [\vv S]^{\mathrm{T}} \right) .
+&= \mathrm{Tr} \left( \eta [\vv Q] [\vv W]^{\mathrm{T}} \eta [\vv U] [\vv S]^{\mathrm{T}} \right) \\
+&= \mathrm{Tr} \left( \eta [\vv Q \otimes \vv W] \eta [\vv S \otimes \vv U]^\mathrm{T} \right).
 \end{aligned}
 \end{equation*}
 \emph{Now} we have a matrix representation of the double dot product that we can use for arbitrary four-dyadics $\inlinedy{\mathrm{D}}$ and $\inlinedy{\mathrm{K}}$:
