@@ -3110,7 +3110,7 @@ Anyway, now we can write the Lorentz four-force (Equation \ref{eq:ff}) more comp
 \begin{equation}\label{eq:ime}
 \boxed{ \vphantom{A_{A_A}} \partialup \cdot \capdy{\mathrm{F}} = \vv J }
 \end{equation}
-(use $[\partialup]^{\mathrm{T}} \eta [\inlinedy{\mathrm{F}}] = [\vv J]$ to confirm that this gives $\del \cdot \vv e = \rho$ and $\del \times \vv b - \partial^{ct} \vv e = \vv j$, minding that $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$). As for the other one, we note that the left sides of the remaining Maxwell equations are just like the left sides of the first two, but with the roles of $\vv e$ and $\vv b$ reversed and a sign change. It should therefore be possible to form a new Minkowski dyadic from the Faraday tensor (Equation \ref{eq:emt}) by ``swapping" the $\vv e$ and $\vv b$ components and changing some signs; the four-divergence of this new dyadic should equal the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}}$. It turns out that the way to do this is by replacing $\vv e$ with $\vv b$ and $\vv b$ with $- \vv e$ (the resulting object $\inlinedy{\mathrm{G}}$ satisfies the dyadic transformation rule Equation \ref{eq:ltd}):
+(use $[\partialup]^{\mathrm{T}} \eta [\inlinedy{\mathrm{F}}] = [\vv J]^{\mathrm{T}}$ to confirm that this gives $\del \cdot \vv e = \rho$ and $\del \times \vv b - \partial^{ct} \vv e = \vv j$, minding that $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$). As for the other one, we note that the left sides of the remaining Maxwell equations are just like the left sides of the first two, but with the roles of $\vv e$ and $\vv b$ reversed and a sign change. It should therefore be possible to form a new Minkowski dyadic from the Faraday tensor (Equation \ref{eq:emt}) by ``swapping" the $\vv e$ and $\vv b$ components and changing some signs; the four-divergence of this new dyadic should equal the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}}$. It turns out that the way to do this is by replacing $\vv e$ with $\vv b$ and $\vv b$ with $- \vv e$ (the resulting object $\inlinedy{\mathrm{G}}$ satisfies the dyadic transformation rule Equation \ref{eq:ltd}):
 \begin{equation}\label{eq:mt}
 [ \capdy{\mathrm{G}} ]
 =
@@ -3125,7 +3125,7 @@ and:
 \begin{equation}\label{eq:hme}
 \boxed{ \vphantom{A_{A_A}} \partialup \cdot \capdy{\mathrm{G}} = \textrm{\mbox{\boldmath $\emptyset$}} }
 \end{equation}
-(use $[\partialup]^{\mathrm{T}} \eta [\inlinedy{\mathrm{G}}] = [\textrm{\mbox{\boldmath $\emptyset$}}]$ to show that this yields $\del \cdot \vv b = 0$ and $\del \times \vv e + \partial^{ct} \vv b = \vv 0$). Equations \ref{eq:ime} and \ref{eq:hme} are Maxwell's equations in an explicitly relativistic \emph{and gauge-invariant} form (Equation \ref{eq:fp} contains the same information but is specific to the Lorenz gauge).
+(use $[\partialup]^{\mathrm{T}} \eta [\inlinedy{\mathrm{G}}] = [\textrm{\mbox{\boldmath $\emptyset$}}]^\mathrm{T}$ to show that this yields $\del \cdot \vv b = 0$ and $\del \times \vv e + \partial^{ct} \vv b = \vv 0$). Equations \ref{eq:ime} and \ref{eq:hme} are Maxwell's equations in an explicitly relativistic \emph{and gauge-invariant} form (Equation \ref{eq:fp} contains the same information but is specific to the Lorenz gauge).
 
 
 \subsubsection{Hodge Duals and Quasi-Four-Vectors}
