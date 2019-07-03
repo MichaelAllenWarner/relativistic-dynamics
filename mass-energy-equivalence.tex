@@ -2128,21 +2128,21 @@ Since information can travel no faster than $\beta = 1$, it also follows that in
 
 \subsection{Rindler Coordinates}
 
-So far in this paper, we've \emph{only} used ($ct$ + Cartesian) coordinate to describe events and four-vector components. And after this little section, we'll continue that practice. But there are other possibilities! For example, we can use ($ct$ + spherical) or ($ct$ + cylindrical) coordinates, and we can figure out how those spatial coordinates transform under a Lorentz boost by combining our knowledge of how Cartesian coordinates transform with our knowledge of how Cartesian coordinates are related to spherical or cylindrical coordinates.
-
-Now take it one step further: if we can ``keep" the $ct$ coordinate but ``mix" the Cartesian coordinates as we've just described, why can't we instead \emph{include} the $ct$ coordinate in the mixing? The answer is, we can! And for our traveler with constant proper acceleration, this is actually the natural choice. Let's assume ``ideal" conditions, so that a qualifying inertial observer writes the traveler's world line in ($ct$ + Cartesian) coordinates like this:
-\begin{equation*}
-x(ct_0) = \dfrac{\cosh \big( \zeta_0 \mkern2mu ct_0 \big)}{ \zeta_0 } \qquad \qquad ct(ct_0) = \dfrac{\sinh \big( \zeta_0 \mkern2mu ct_0 \big)}{ \zeta_0 }.
-\end{equation*}
-What we'd like to do is mix the ``old" $ct$ and $x$ coordinates into a pair of ``new" ones in such a way that one of the new coordinates \emph{remains constant} along the traveler's world line (the traveler will regard this as a kind of ``position" coordinate) while the other \emph{changes proportionally with the invariant $ct_0$} (a kind of ``time" coordinate). The idea is that in the new coordinate system, the traveler will be ``at rest," and ``time" will be what the traveler's wristwatch logs---that's why it's the ``natural choice." There's more than one way to accomplish this. Here is maybe the simplest, called \textbf{Rindler coordinates}:
-\begin{equation*}
-X = \sqrt{x^2 - (ct)^2} \qquad \qquad cT = \dfrac{1}{\zeta_0} \, \tanh^{-1} \dfrac{ct}{x} ,
-\end{equation*}
-with the ``inverse" transformation:
-\begin{equation*}
-x = X \cosh \big( \zeta_0 \mkern2mu cT \big) \qquad \qquad ct = X \sinh \big( \zeta_0 \mkern2mu cT \big),
-\end{equation*}
-($Y = y$ and $Z = z$). Note that the Rindler ``time" coordinate $cT$ is just the traveler's proper time $ct_0$, and that along the traveler's world line the ``position" coordinate $X$ is constant (equals $1 / \zeta_0$).
+%So far in this paper, we've \emph{only} used ($ct$ + Cartesian) coordinate to describe events and four-vector components. And after this little section, we'll continue that practice. But there are other possibilities! For example, we can use ($ct$ + spherical) or ($ct$ + cylindrical) coordinates, and we can figure out how those spatial coordinates transform under a Lorentz boost by combining our knowledge of how Cartesian coordinates transform with our knowledge of how Cartesian coordinates are related to spherical or cylindrical coordinates.
+%
+%Now take it one step further: if we can ``keep" the $ct$ coordinate but ``mix" the Cartesian coordinates as we've just described, why can't we instead \emph{include} the $ct$ coordinate in the mixing? The answer is, we can! And for our traveler with constant proper acceleration, this is actually the natural choice. Let's assume ``ideal" conditions, so that a qualifying inertial observer writes the traveler's world line in ($ct$ + Cartesian) coordinates like this:
+%\begin{equation*}
+%x(ct_0) = \dfrac{\cosh \big( \zeta_0 \mkern2mu ct_0 \big)}{ \zeta_0 } \qquad \qquad ct(ct_0) = \dfrac{\sinh \big( \zeta_0 \mkern2mu ct_0 \big)}{ \zeta_0 }.
+%\end{equation*}
+%What we'd like to do is mix the ``old" $ct$ and $x$ coordinates into a pair of ``new" ones in such a way that one of the new coordinates \emph{remains constant} along the traveler's world line (the traveler will regard this as a kind of ``position" coordinate) while the other \emph{changes proportionally with the invariant $ct_0$} (a kind of ``time" coordinate). The idea is that in the new coordinate system, the traveler will be ``at rest," and ``time" will be what the traveler's wristwatch logs---that's why it's the ``natural choice." There's more than one way to accomplish this. Here is maybe the simplest, called \textbf{Rindler coordinates}:
+%\begin{equation*}
+%X = \sqrt{x^2 - (ct)^2} \qquad \qquad cT = \dfrac{1}{\zeta_0} \, \tanh^{-1} \dfrac{ct}{x} ,
+%\end{equation*}
+%with the ``inverse" transformation:
+%\begin{equation*}
+%x = X \cosh \big( \zeta_0 \mkern2mu cT \big) \qquad \qquad ct = X \sinh \big( \zeta_0 \mkern2mu cT \big),
+%\end{equation*}
+%($Y = y$ and $Z = z$). Note that the Rindler ``time" coordinate $cT$ is just the traveler's proper time $ct_0$, and that along the traveler's world line the ``position" coordinate $X$ is constant (equals $1 / \zeta_0$).
 
 %The Rindler wedge (the knowable and pingable part of the $ct$/$x$-plane) is of particular interest. Let's now stipulate that our ``ideal" initial conditions hold ($x_{\mathrm{i}} = \gamma_{\mkern1mu \mathrm{i}} / \zeta_{0 \mkern2mu x}$, $ct_{\mathrm{i}} = \omega_{x \mkern2mu \textrm{i} } / \zeta_{0 \mkern2mu x}$, and $\phi_{x \mkern2mu \textrm{i} } = 0$, with the traveler's acceleration in the positive $x$-direction), and also that $y_{\mathrm{i}} = z_{\mathrm{i}} = 0$. Then the center event has coordinates $ct = ct_{\mathrm{i}} - \omega_{x \mkern2mu \textrm{i} } / \zeta_{0 \mkern2mu x} = 0$ and $x = x_{\mathrm{i}} - \gamma_{\mkern1mu \mathrm{i}} / \zeta_{0 \mkern2mu x} = 0$, and the accelerating traveler's four-position in component form is: 
 %\begin{equation*}
@@ -2330,7 +2330,7 @@ Now, scale an infinitesimal charge distribution's normalized four-velocity $\vv 
 \begin{equation}\label{eq:fc}
 \boxed{ \vv J \equiv \rho_0 \vv B = \rho_0 \langle \gamma , \gamma \vvbeta \rangle = \langle \rho, \, \vv j \rangle } \, ,
 \end{equation}
-called the \textbf{four-current density} (the three-vector $\vv j = \rho \vvbeta$ is the ``normalized" \textbf{three-current density} of the infinitesimal distribution). If we associate a (proper) charge density with every event in spacetime, we can speak of $\vv J = \vv J (\vv R)$ as a four-vector \emph{field}.\footnote{We've defined $\vv J$ in such a way that it's necessarily timelike (or the zero vector). This would seem to rule out situations in which $\rho = 0$ and $\vv j \neq \vv 0$, but then what of an electrically neutral current-carrying wire? Isn't that a counterexample? Not exactly. The wire with its ``overlapping" positive and negative charges doesn't fit neatly into our ``continuous charge distribution" model. To accommodate it, we'd handle the positive and negative charges \emph{separately}, treating each collection as a continuous distribution with its own $\vv J^+$ or $\vv J^-$ field. For the positive-charge distribution, $\rho_0^+$ is everywhere non-negative and $\vv J^+ = \rho_0^+ \vv B^+$ is consequently either zero or future-pointing-timelike at a given event; for the negative-charge distribution, $\vv J^- = \rho_0^- \vv B^-$ must be either zero or \emph{past}-pointing-timelike. When we sum up $\vv J^+$ and $\vv J^-$ to get the ``total" $\vv J$ at an event, we'll find that it can be timelike, spacelike, or lightlike. Note that when we deal with this kind of composite scenario, we can't use $\vv J = \rho_0 \vv B$, but we can still use $\vv J = \langle \rho, \, \vv j \rangle = \langle \rho^+ + \rho^- , \, \vv j^+ + \vv j^- \rangle $.} An important property of this field is that its four-divergence vanishes:
+called the \textbf{four-current density} (the three-vector $\vv j = \rho \vvbeta$ is the ``normalized" \textbf{three-current density} of the infinitesimal distribution). If we associate a (proper) charge density with every event in spacetime, we can speak of $\vv J = \vv J (\vv R)$ as a four-vector \emph{field}.\footnote{We've defined $\vv J$ in such a way that it's necessarily timelike (or the zero vector). This would seem to rule out situations in which $\rho = 0$ and $\vv j \neq \vv 0$, but then what of an electrically neutral current-carrying wire? Isn't that a counterexample? Not exactly. The wire with its ``overlapping" positive and negative charges doesn't fit neatly into our ``continuous charge distribution" model. To accommodate it, we'd handle the positive and negative charges \emph{separately}, treating each collection as a continuous distribution with its own $\vv J^+$ or $\vv J^-$ field. For the positive-charge distribution, $\rho_0^+$ is everywhere non-negative and $\vv J^+ = \rho_0^+ \vv B^+$ is consequently either zero or future-pointing timelike at a given event; for the negative-charge distribution, $\vv J^- = \rho_0^- \vv B^-$ must be either zero or \emph{past}-pointing timelike. When we sum up $\vv J^+$ and $\vv J^-$ to get the ``total" $\vv J$ at an event, we'll find that it can be timelike, spacelike, or lightlike. Note that when we deal with this kind of composite scenario, we can't use $\vv J = \rho_0 \vv B$, but we can still use $\vv J = \langle \rho, \, \vv j \rangle = \langle \rho^+ + \rho^- , \, \vv j^+ + \vv j^- \rangle $.} An important property of this field is that its four-divergence vanishes:
 \begin{equation}\label{eq:con}
 {\partialup \cdot \vv J = 0} ,
 \end{equation}
@@ -2352,7 +2352,7 @@ This four-potential isn't uniquely defined because given an $\vv A$ that satisfi
 \begin{equation*}
 0 = \partialup \cdot \vv J = \partialup \cdot (\Box \vv A) = \Box ( \partialup \cdot \vv A) .
 \end{equation*}
-If $\Box ( \partialup \cdot \vv A) = 0$, then either there are sourceless ``waves of $\partialup \cdot \vv A$" that do nothing (there aren't), or $\partialup \cdot \vv A = 0$. The Lorenz gauge condition is Lorentz-invariant, and it makes Equation \ref{eq:fp} consistent with the physical aspects of electromagnetic theory that we'll soon discuss.\footnote{\label{fn:fp}The most general way to define $\vv A$ that's consistent with the physical aspects of the theory is by having it satisfy $\Box \vv A - \partialup (\partialup \cdot \vv A) = \vv J$, which is inherently compatible with the continuity equation because the four-divergence of the left side is \emph{necessarily} zero: $\partialup \cdot (\Box \vv A) - \partialup \cdot \partialup (\partialup \cdot \vv A) = \Box (\partialup \cdot \vv A) - \Box (\partialup \cdot \vv A)$. But for any spacetime scalar field $\chi = \chi (\vv R)$, we also have $\Box (\vv A + \partialup \chi) - \partialup [\partialup \cdot (\vv A + \partialup \chi)] = \Box \vv A + \Box (\partialup \chi) - \partialup (\partialup \cdot \vv A) - \partialup (\Box \chi) = \Box \vv A - \partialup (\partialup \cdot \vv A)$, and we see that transformations taking $\vv A$ to $\vv A + \partialup \chi$ are of no consequence here. We are therefore always free to impose the Lorenz gauge by choosing $\chi$ so that $\Box \chi = - \partialup \cdot \vv A$, rendering the ``new" four-potential divergenceless and reducing its relationship with $\vv J$ to Equation \ref{eq:fp}: $\partialup \cdot (\vv A + \partialup \chi) = \partialup \cdot \vv A + \Box \chi = 0$. The Lorenz gauge isn't always the most convenient choice in practice, but it's ideal for the relativistic treatment of electrodynamics.}
+If $\Box ( \partialup \cdot \vv A) = 0$, then either there are sourceless ``waves of $\partialup \cdot \vv A$" that do nothing (there aren't), or $\partialup \cdot \vv A = 0$. The Lorenz gauge condition is Lorentz-invariant, and it makes Equation \ref{eq:fp} consistent with the physical aspects of electromagnetic theory that we'll soon discuss.\footnote{\label{fn:fp}The most general way to define $\vv A$ that's consistent with the physical aspects of the theory is by having it satisfy $\Box \vv A - \partialup (\partialup \cdot \vv A) = \vv J$, which is inherently compatible with the continuity equation because the four-divergence of the left side is \emph{necessarily} zero: $\partialup \cdot (\Box \vv A) - \partialup \cdot \partialup (\partialup \cdot \vv A) = \Box (\partialup \cdot \vv A) - \Box (\partialup \cdot \vv A)$. But for any spacetime scalar field $\chi = \chi (\vv R)$, we also have $\Box (\vv A + \partialup \chi) - \partialup [\partialup \cdot (\vv A + \partialup \chi)] = \Box \vv A + \Box (\partialup \chi) - \partialup (\partialup \cdot \vv A) - \partialup (\Box \chi) = \Box \vv A - \partialup (\partialup \cdot \vv A)$, and we see that transformations taking $\vv A$ to $\vv A + \partialup \chi$ are of no physical consequence. We are therefore always free to make such a transformation with whatever $\chi$ we like. Choosing one that satisfies $\Box \chi = - \partialup \cdot \vv A$ is called \emph{imposing the Lorenz gauge}, as this renders the ``new" four-potential $(\vv A + \partialup \chi)$ divergenceless and reduces its relationship with $\vv J$ to Equation \ref{eq:fp}: $\Box (\vv A + \partialup \chi) - \partialup [ \partialup \cdot (\vv A + \partialup \chi) ] = \Box (\vv A + \partialup \chi) - \partialup ( \partialup \cdot \vv A + \Box \chi ) = \Box (\vv A + \partialup \chi)$. The Lorenz gauge isn't always the most convenient choice in practice, but it's ideal for the relativistic treatment of electrodynamics. More on all this in the supplemental Section \ref{ssec:dy}.}
 
 Equation \ref{eq:fp} is \emph{the} electromagnetic field equation. It's an inhomogeneous wave equation, and it says that a non-zero value of the $\vv J$ field at an event in spacetime generates a commensurate disturbance in the $\vv A$ field that propagates outward in space at $\beta = 1$:
 \begin{equation*}
@@ -2367,7 +2367,7 @@ We've introduced the four-potential $\vv A = \vv A (\vv R)$ (in the Lorenz gauge
 \begin{equation}\label{eq:ff}
 \boxed{\vv F_{\textrm{L}} = q \, \bigl[ \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) \bigr]} \, .
 \end{equation}
-This is the physical effect that information about the four-current density's value elsewhere has on a test charge upon reaching it.\footnote{By ``test charge" we mean that we neglect the influence of the particle's charge on the four-potential field, which, in turn, affects the particle! Accounting for it is beyond our scope, and perhaps not an entirely solvable problem. We do note that accelerating charges are what generate electromagnetic waves, and that the ``recoil" four-force that a radiating particle experiences (called the \textbf{Abraham--Lorentz--Dirac four-force}) is, to first approximation, $\vv F = (2q^2 / 3)[\mathring{\vv Z} - (\vv Z \cdot \vv Z) \vv B]$, where $q$ is the particle's charge, $\vv B$ its normalized four-velocity, $\vv Z$ its ``normalized" four-acceleration, and $\mathring{\vv Z}$ its ``normalized" four-jerk.} We call $\vv F_{\textrm{L}}$ the \textbf{Lorentz four-force}. The quantities on the right side are the particle's charge $q$, the particle's normalized four-velocity $\vv B$, and the ``value" of the four-potential field $\vv A$ at the particle's spacetime position (we're differentiating the four-potential, so its non-uniqueness doesn't matter). This differential four-vector triple product can also be written:
+This is the physical effect that information about the four-current density's value elsewhere has on a test charge upon reaching it.\footnote{By ``test charge" we mean that we neglect the influence of the particle's charge on the four-potential field, which, in turn, affects the particle! Accounting for it is beyond our scope and not entirely possible in classical electrodynamics. We do note that accelerating charges are what generate electromagnetic waves, and that the ``recoil" four-force that a radiating particle experiences (called the \textbf{Abraham--Lorentz--Dirac four-force}) is, \emph{to first approximation}, $\vv F = (2q^2 / 3)[\mathring{\vv Z} - (\vv Z \cdot \vv Z) \vv B]$, where $q$ is the particle's charge, $\vv B$ its normalized four-velocity, $\vv Z$ its ``normalized" four-acceleration, and $\mathring{\vv Z}$ its ``normalized" four-jerk.} We call $\vv F_{\textrm{L}}$ the \textbf{Lorentz four-force}. The quantities on the right side are the particle's charge $q$, the particle's normalized four-velocity $\vv B$, and the ``value" of the four-potential field $\vv A$ at the particle's spacetime position (we're differentiating the four-potential, so its non-uniqueness doesn't matter). This differential four-vector triple product can also be written:
 \begin{equation}\label{eq:lff}
 \begin{split}
 \vv F_{\textrm{L}} &= q \, \bigl[ \partialup_{\vv A} (\vv B \cdot \vv A) - (\vv B \cdot \partialup) \vv A \bigr] \\
@@ -3047,7 +3047,7 @@ e_y & b_z & 0 & -b_x \\[.5ex]
 e_z & -b_y & b_x & 0
 \end{bmatrix} .
 \end{equation}
-The matrix is clearly antisymmetric, and we likewise call the dyadic itself antisymmetric. There's a shorthand notation for the operation we performed to produce this antisymmetric dyadic: $\vv Q \wedge \vv W \equiv \vv Q \otimes \vv W - \vv W \otimes \vv Q$. So:
+The matrix is antisymmetric, and we call the dyadic itself antisymmetric. (Likewise, a dyadic whose matrix representation is \emph{symmetric} is said to be symmetric.) There's a shorthand notation for the operation we performed to produce this antisymmetric dyadic: $\vv Q \wedge \vv W \equiv \vv Q \otimes \vv W - \vv W \otimes \vv Q$. So:
 \begin{equation}\label{eq:emta}
 \boxed{ \vphantom{A_{A_A}} \capdy{\mathrm{F}} \equiv \partialup \wedge \vv A } \, . 
 \end{equation}
@@ -3295,7 +3295,7 @@ In Section \ref{sssec:li}, we discussed electromagnetic plane waves in an explic
 \begin{equation*}
 \Box \vv A = \partialup(\partialup \cdot \vv A).
 \end{equation*}
-Next, take the d'Alembertian of the Faraday tensor (Equation \ref{eq:emta}) and sub in $\partialup(\partialup \cdot \vv A)$ for $\Box \vv A$, letting $\chi = \partialup \cdot \vv A$ for short:
+Next, take the d'Alembertian of the Faraday tensor (Equation \ref{eq:emta}) and sub in $\partialup(\partialup \cdot \vv A)$ for $\Box \vv A$, letting $\chi = \partialup \cdot \vv A$ for short:\footnote{We're verging on rank-3 territory now, since the d'Alembertian is the divergence of the gradient. This implied gradient of a dyadic is as close as we'll come to tensors beyond the second rank; any closer and we'd really need to introduce more flexible notation.}
 \begin{equation}\label{eq:fthwe}
 \begin{split}
 \Box \capdy{\mathrm{F}} &= \Box ( \partialup \wedge \vv A ) \\
@@ -3376,23 +3376,28 @@ The key is to bring in the matrix \emph{trace}, which is the sum of the main-dia
 \begin{aligned}
 (\vv Q \otimes \vv W) : (\vv S \otimes \vv U) &= (\vv Q \cdot \vv S) (\vv W \cdot \vv U) \\
 &= (\vv S \cdot \vv Q) (\vv W \cdot \vv U) \\
-&= \mathrm{Tr} \left( [\vv S]^{\mathrm{T}} \eta [\vv Q] [\vv W]^{\mathrm{T}} \eta [\vv U] \right) \\
-&= \mathrm{Tr} \left( \eta [\vv Q] [\vv W]^{\mathrm{T}} \eta [\vv U] [\vv S]^{\mathrm{T}} \right) \\
+&= \mathrm{Tr} \left( [\vv S]^{\mathrm{T}} \eta [\vv Q] [\vv W]^{\mathrm{T}} \eta [\vv U] \right) \\[2pt]
+&= \mathrm{Tr} \left( \eta [\vv Q] [\vv W]^{\mathrm{T}} \eta [\vv U] [\vv S]^{\mathrm{T}} \right) \\[2pt]
 &= \mathrm{Tr} \left( \eta [\vv Q \otimes \vv W] \eta [\vv S \otimes \vv U]^\mathrm{T} \right).
 \end{aligned}
 \end{equation*}
-\emph{Now} we have a matrix representation of the double dot product that we can use for arbitrary four-dyadics $\inlinedy{\mathrm{D}}$ and $\inlinedy{\mathrm{K}}$:
+\emph{Now} we have a matrix representation of the double dot product (several, actually) that we can use for arbitrary four-dyadics $\inlinedy{\mathrm{D}}$ and $\inlinedy{\mathrm{K}}$:
 \begin{equation*}
-\capdy{\mathrm{D}} : \capdy{\mathrm{K}} = \mathrm{Tr} \left( \eta [\capdy{\mathrm{D}}] \eta [ \capdy{\mathrm{K}} ]^{\mathrm{T}} \right) .
+\capdy{\mathrm{D}} : \capdy{\mathrm{K}} = \mathrm{Tr} \left( \eta [\capdy{\mathrm{D}}] \eta [ \capdy{\mathrm{K}} ]^{\mathrm{T}} \right) = \mathrm{Tr} \left( [\capdy{\mathrm{K}}] \eta [ \capdy{\mathrm{D}} ]^{\mathrm{T}} \eta \right) = \mathrm{Tr} \left( \eta [\capdy{\mathrm{K}}] \eta [ \capdy{\mathrm{D}} ]^{\mathrm{T}} \right) = \capdy{\mathrm{K}} : \capdy{\mathrm{D}} ,
 \end{equation*}
-A special case is when one of the two dyadics is $\inlinedy{\upeta}$, the Minkowski metric tensor (whose matrix representation in every frame is the symmetric $\eta$):
+where we've transposed the matrix product to show that commutativity still applies (a matrix and its transpose share a trace). A special case is when a dyadic is double-dotted with $\inlinedy{\upeta}$, the Minkowski metric tensor (whose matrix representation in every frame is the symmetric $\eta$):
 \begin{equation*}
 \begin{split}
 \capdy{\mathrm{D}} : \inlinedy{\upeta} &= \mathrm{Tr} \left( \eta [\capdy{\mathrm{D}}] \eta [ \mkern1mu \inlinedy{\upeta} \mkern.5mu ]^{\mathrm{T}} \right) \\
 &= \mathrm{Tr} \left( \eta [\capdy{\mathrm{D}}] \right) = D^{ct \mkern1.5mu ct} - D^{xx} - D^{yy} - D^{zz}
 \end{split}
 \end{equation*}
-(verify that $\eta \eta = I_4$, the 4-by-4 identity matrix). This invariant is called the trace \emph{of the dyadic} $\inlinedy{\mathrm{D}}$, though its matrix representation is $\mathrm{Tr} (\eta [ \inlinedy{\mathrm{D}} ])$, \emph{not} $\mathrm{Tr} ( [ \inlinedy{\mathrm{D}} ] )$. Obviously all antisymmetric dyadics are traceless (their matrix representations have only zeros on the main diagonal). As an exercise, show that $\inlinedy{\upeta} : \inlinedy{\upeta} = 4$.
+(verify that $\eta \eta = I_4$, the 4-by-4 identity matrix). This invariant is called the trace \emph{of the dyadic} $\inlinedy{\mathrm{D}}$, though its matrix representation is $\mathrm{Tr} (\eta [ \inlinedy{\mathrm{D}} ])$, \emph{not} $\mathrm{Tr} ( [ \inlinedy{\mathrm{D}} ] )$. For example, the trace of $\inlinedy{\upeta}$ is $\mathrm{Tr} (I_4) = 4$. Obviously all antisymmetric dyadics are traceless (their matrix representations have only zeros on the main diagonal). More generally, the double dot product of an antisymmetric dyadic $\inlinedy{\mathrm{A}}$ with \emph{any symmetric} dyadic $\inlinedy{\mathrm{S}}$ is zero, since $[\inlinedy{\mathrm{A}}] = - [\inlinedy{\mathrm{A}}]^\mathrm{T}$ and $[\inlinedy{\mathrm{S}}] = [\inlinedy{\mathrm{S}}]^\mathrm{T}$:
+\begin{equation*}
+\capdy{\mathrm{A}} : \capdy{\mathrm{S}} = \mathrm{Tr} \left( \eta [\capdy{\mathrm{A}}] \eta [\capdy{\mathrm{S}}]^\mathrm{T} \right)
+= - \mathrm{Tr} \left( \eta [ \capdy{\mathrm{A}}]^\mathrm{T} \eta [\capdy{\mathrm{S}}] \right) = - \capdy{\mathrm{A}} : \capdy{\mathrm{S}}
+\end{equation*}
+(if it's equal to its additive inverse then it must be zero).
 
 An immediate application of the double dot product is to discover new(?) Lorentz invariants by double-dotting the Faraday and Maxwell tensors (Equations \ref{eq:emt} and \ref{eq:mt}) with each other and with themselves. First:
 \begin{equation}\label{eq:fddg}
@@ -3473,7 +3478,7 @@ where again the matrix trace is convenient for extending the operation to arbitr
 \begin{equation*}
 \capdy{\mathrm{D}} \cdot \cdot \, \mkern1mu \capdy{\mathrm{K}} = \mathrm{Tr} \left( \eta [\capdy{\mathrm{D}}] \eta [ \capdy{\mathrm{K}} ] \right) .
 \end{equation*}
-This second ``kind" of double dot product is likewise commutative, and in general it produces an altogether different scalar than the first kind does. But if at least one of the input-dyadics is antisymmetric, then $\inlinedy{\mathrm{D}}  \cdot \cdot \inlinedy{\mathrm{K}} = - \inlinedy{\mathrm{D}} : \inlinedy{\mathrm{K}}$ (verify this!). Both the Faraday and Maxwell tensors are antisymmetric, so we don't get any \emph{new} electromagnetic invariants with the second kind of double dot product; rather, we get $\inlinedy{\mathrm{F}}  \cdot \cdot \inlinedy{\mathrm{G}} = - \inlinedy{\mathrm{F}} : \inlinedy{\mathrm{G}}$, and so on.
+This second ``kind" of double dot product is likewise commutative, and in general it produces an altogether different scalar than the first kind does. But if at least one of the input-dyadics is symmetric then $\inlinedy{\mathrm{D}}  \cdot \cdot \inlinedy{\mathrm{K}} = \inlinedy{\mathrm{D}} : \inlinedy{\mathrm{K}}$ (because we can replace one of the matrices with its transpose), and if at least one is antisymmetric then $\inlinedy{\mathrm{D}}  \cdot \cdot \inlinedy{\mathrm{K}} = - \inlinedy{\mathrm{D}} : \inlinedy{\mathrm{K}}$ (because we can replace a matrix with its negative transpose). Both the Faraday and Maxwell tensors are antisymmetric, so we don't get any new electromagnetic invariants with the second kind of double dot product; rather, $\inlinedy{\mathrm{F}}  \cdot \cdot \inlinedy{\mathrm{G}} = - \inlinedy{\mathrm{F}} : \inlinedy{\mathrm{G}}$, and so on. 
 
 
 \subsubsection{Single-Dotting Four-Dyadics; EM Stress--Energy Tensor}
@@ -3499,7 +3504,7 @@ So the dot product between two four-dyads generates a new dyad, and the operatio
 \begin{equation*}
 [\capdy{\mathrm{D}} \cdot \capdy{\mathrm{K}}] = [\capdy{\mathrm{D}}] \eta [\capdy{\mathrm{K}}] .
 \end{equation*}
-We see that $\inlinedy{\mathrm{D}} \cdot \inlinedy{\upeta} = \inlinedy{\upeta} \cdot \inlinedy{\mathrm{D}} =  \inlinedy{\mathrm{D}}$, and also that $(\inlinedy{\mathrm{D}} \cdot \inlinedy{\mathrm{K}}) : \inlinedy{\upeta} = \inlinedy{\mathrm{D}}  \cdot \cdot \inlinedy{\mathrm{K}}$ (that's $- \inlinedy{\mathrm{D}} : \inlinedy{\mathrm{K}}$ if at least one of the input-dyadics is antisymmetric).
+We see that $\inlinedy{\mathrm{D}} \cdot \inlinedy{\upeta} = \inlinedy{\upeta} \cdot \inlinedy{\mathrm{D}} =  \inlinedy{\mathrm{D}}$, and also that $(\inlinedy{\mathrm{D}} \cdot \inlinedy{\mathrm{K}}) : \inlinedy{\upeta} = \inlinedy{\mathrm{D}} \mkern1mu \cdot \cdot \inlinedy{\mathrm{K}}$, which equals $- \inlinedy{\mathrm{D}} : \inlinedy{\mathrm{K}}$ if $\inlinedy{\mathrm{D}}$ and/or $\inlinedy{\mathrm{K}}$ is antisymmetric.
 
 Let's test out the operation on the Faraday and Maxwell tensors (Equations \ref{eq:emt} and \ref{eq:mt}). First $\inlinedy{\mathrm{F}} \cdot \inlinedy{\mathrm{G}}$:
 \begin{equation*}
@@ -3529,9 +3534,9 @@ e_z & -b_y & b_x & 0
 - \dfrac{1}{4} \, ( \capdy{\mathrm{F}} : \capdy{\mathrm{G}} ) \eta
 \end{aligned}
 \end{equation*}
-(we've used Equation \ref{eq:fddg}), and $\inlinedy{\mathrm{F}} \cdot \inlinedy{\mathrm{G}} = - ( \inlinedy{\mathrm{F}} : \inlinedy{\mathrm{G}} ) \inlinedy{\upeta} / 4$, a pseudodyadic. The ``reverse" operation $\inlinedy{\mathrm{G}} \cdot \inlinedy{\mathrm{F}}$ actually gives the same pseudodyadic, even though the dot product between dyadics isn't generally commutative.
+(we've used Equation \ref{eq:fddg}), and $\inlinedy{\mathrm{F}} \cdot \inlinedy{\mathrm{G}} = - ( \inlinedy{\mathrm{F}} : \inlinedy{\mathrm{G}} ) \inlinedy{\upeta} / 4$, a symmetric pseudodyadic. The ``reverse" operation $\inlinedy{\mathrm{G}} \cdot \inlinedy{\mathrm{F}}$ actually gives the same pseudodyadic, even though the dot product between dyadics isn't generally commutative.
 
-Now let's try $\inlinedy{\mathrm{F}} \cdot \inlinedy{\mathrm{F}}$:
+Now $\inlinedy{\mathrm{F}} \cdot \inlinedy{\mathrm{F}}$:
 \begin{equation*}
 \begin{aligned}
 \mkern0mu [\capdy{\mathrm{F}}] \eta [\capdy{\mathrm{F}}]
@@ -3550,21 +3555,21 @@ e_z & -b_y & b_x & 0
 \end{bmatrix} \\[5pt]
 &=
 \begin{bmatrix}
-e^2 & e_y b_z - e_z b_y & e_z b_x - e_x b_z & e_x b_y - e_y b_x \\[1ex]
-e_y b_z - e_z b_y & b_y^2 + b_z^2 - e_x^2 & -e_x e_y - b_x b_y & - e_x e_z - b_x b_z \\[1ex]
-e_z b_x - e_x b_z & -e_x e_y - b_x b_y & b_z^2 + b_x^2 - e_y^2  & - e_y e_z - b_y b_z \\[1ex]
-e_x b_y - e_y b_x & - e_x e_z - b_x b_z & - e_y e_z - b_y b_z & b_x^2 + b_y^2 - e_z^2
+e^2 & (e_y b_z - e_z b_y) & (e_z b_x - e_x b_z) & (e_x b_y - e_y b_x) \\[1ex]
+(e_y b_z - e_z b_y) & (b_y^2 + b_z^2 - e_x^2) & (-e_x e_y - b_x b_y) & (- e_x e_z - b_x b_z) \\[1ex]
+(e_z b_x - e_x b_z) & (-e_x e_y - b_x b_y) & (b_z^2 + b_x^2 - e_y^2)  & (- e_y e_z - b_y b_z) \\[1ex]
+(e_x b_y - e_y b_x) & (- e_x e_z - b_x b_z) & (- e_y e_z - b_y b_z) & (b_x^2 + b_y^2 - e_z^2)
 \end{bmatrix} \\[5pt]
 &=
 \begin{bmatrix}
 e^2 & s_x & s_y & s_z \\[1ex]
-s_x & b^2 - b_x^2 - e_x^2 & - \sigma_{x y} & - \sigma_{x z} \\[1ex]
-s_y & - \sigma_{y x} & b^2 - b_y^2 - e_y^2  & - \sigma_{y z} \\[1ex]
-s_z & - \sigma_{z x} & - \sigma_{z y} & b^2 - b_z^2 - e_z^2 
+s_x & (b^2 - b_x^2 - e_x^2) & - \sigma_{x y} & - \sigma_{x z} \\[1ex]
+s_y & - \sigma_{y x} & (b^2 - b_y^2 - e_y^2)  & - \sigma_{y z} \\[1ex]
+s_z & - \sigma_{z x} & - \sigma_{z y} & (b^2 - b_z^2 - e_z^2) 
 \end{bmatrix} ,
 \end{aligned}
 \end{equation*}
-where $\vv s = \vv e \times \vv b$ is the Poynting vector, $\inlinedy{\upsigma} = \vv e \otimes \vv e + \vv b \otimes \vv b - u \mkern-5mu \inlinedy{\upiota}$ is the Maxwell stress tensor, $u = (e^2 + b^2) / 2$ is the electromagnetic energy density, and $\inlinedy{\upiota}$ is the Euclidean unit dyadic. Similarly, $\inlinedy{\mathrm{G}} \cdot \inlinedy{\mathrm{G}}$:
+where $\vv s = \vv e \times \vv b$ (Poynting vector), $\inlinedy{\upsigma} = \vv e \otimes \vv e + \vv b \otimes \vv b - u \mkern-5mu \inlinedy{\upiota}$ (Maxwell stress tensor), $u = (e^2 + b^2) / 2$ (electromagnetic energy density), and $\inlinedy{\upiota}$ is the Euclidean unit dyadic. Similarly, $\inlinedy{\mathrm{G}} \cdot \inlinedy{\mathrm{G}}$:
 \begin{equation*}
 \begin{aligned}
 \mkern0mu [\capdy{\mathrm{G}}] \eta [\capdy{\mathrm{G}}]
@@ -3584,13 +3589,13 @@ b_z & e_y & -e_x & 0
 &=
 \begin{bmatrix}
 b^2 & s_x & s_y & s_z \\[1ex]
-s_x & e^2 - e_x^2 - b_x^2 & - \sigma_{x y} & - \sigma_{x z} \\[1ex]
-s_y & - \sigma_{y x} & e^2 - e_y^2 - b_y^2  & - \sigma_{y z} \\[1ex]
-s_z & - \sigma_{z x} & - \sigma_{z y} & e^2 - e_z^2 - b_z^2 
+s_x & (e^2 - e_x^2 - b_x^2) & - \sigma_{x y} & - \sigma_{x z} \\[1ex]
+s_y & - \sigma_{y x} & (e^2 - e_y^2 - b_y^2)  & - \sigma_{y z} \\[1ex]
+s_z & - \sigma_{z x} & - \sigma_{z y} & (e^2 - e_z^2 - b_z^2) 
 \end{bmatrix}
 \end{aligned}
 \end{equation*}
-(not a pseudodyadic). The dyadics $\inlinedy{\mathrm{F}} \cdot \inlinedy{\mathrm{F}}$ and $\inlinedy{\mathrm{G}} \cdot \inlinedy{\mathrm{G}}$ are begging to be summed!
+(not a pseudodyadic). The symmetric dyadics $\inlinedy{\mathrm{F}} \cdot \inlinedy{\mathrm{F}}$ and $\inlinedy{\mathrm{G}} \cdot \inlinedy{\mathrm{G}}$ are begging to be summed!
 \begin{equation*}
 [\capdy{\mathrm{F}}] \eta [\capdy{\mathrm{F}}] + [\capdy{\mathrm{G}}] \eta [\capdy{\mathrm{G}}]
 =
@@ -3614,7 +3619,7 @@ u & [\vv s]^{\mathrm{T}} \\[1ex]
 [\vv s] & - [ \mkern1mu \inlinedy{\upsigma} \mkern1mu ]
 \end{bmatrix} .
 \end{equation*}
-The matrix is symmetric, and we call the dyadic itself symmetric. The dyadic is also traceless ($\inlinedy{\mathrm{T}} : \inlinedy{\upeta} = 0$):
+This dyadic is symmetric and also traceless ($\inlinedy{\mathrm{T}} : \inlinedy{\upeta} = 0$):
 \begin{equation*}
 \begin{split}
 2 \mkern1mu \capdy{\mathrm{T}} : \inlinedy{\upeta} &= ( \capdy{\mathrm{F}} \cdot \capdy{\mathrm{F}}  ) : \inlinedy{\upeta} \, + \; ( \capdy{\mathrm{G}} \cdot \capdy{\mathrm{G}}  ) : \inlinedy{\upeta} \\
@@ -3622,15 +3627,15 @@ The matrix is symmetric, and we call the dyadic itself symmetric. The dyadic is 
 &=  - \capdy{\mathrm{F}} : \capdy{\mathrm{F}} - \capdy{\mathrm{G}} : \capdy{\mathrm{G}} ,
 \end{split}
 \end{equation*}
-which vanishes by Equations \ref{eq:fddf} and \ref{eq:gddg}. Note that to get from $[\inlinedy{\mathrm{F}} \cdot \inlinedy{\mathrm{F}}]$ to $[\inlinedy{\mathrm{T}}]$ requires only the addition of the invariant $(b^2 - e^2) / 2 = ( \inlinedy{\mathrm{F}} : \inlinedy{\mathrm{F}} ) / 4$ to the top-left entry and $( \inlinedy{\mathrm{G}} : \inlinedy{\mathrm{G}} ) / 4 = - ( \inlinedy{\mathrm{F}} : \inlinedy{\mathrm{F}} ) / 4$ to the other three entries on the main diagonal. Likewise for getting from $[ \inlinedy{\mathrm{G}} \cdot \inlinedy{\mathrm{G}} ]$ to $[ \inlinedy{\mathrm{T}} ]$, but with the signs of the added invariants reversed. So there are several alternative ways to express $\inlinedy{\mathrm{T}}$ in terms of the Faraday and Maxwell tensors, all equivalent to Equation \ref{eq:eset}. For example:
+which vanishes by Equations \ref{eq:fddf} and \ref{eq:gddg}. Note that to get from $[\inlinedy{\mathrm{F}} \cdot \inlinedy{\mathrm{F}}]$ to $[\inlinedy{\mathrm{T}}]$ requires only the addition of the invariant $(b^2 - e^2) / 2 = ( \inlinedy{\mathrm{F}} : \inlinedy{\mathrm{F}} ) / 4$ to the top-left entry and $( \inlinedy{\mathrm{G}} : \inlinedy{\mathrm{G}} ) / 4 = - ( \inlinedy{\mathrm{F}} : \inlinedy{\mathrm{F}} ) / 4$ to the other three entries on the main diagonal. Likewise for getting from $[ \inlinedy{\mathrm{G}} \cdot \inlinedy{\mathrm{G}} ]$ to $[ \inlinedy{\mathrm{T}} ]$, but with the signs of the added invariants reversed. So there are several alternative ways to express $\inlinedy{\mathrm{T}}$ in terms of the Faraday and Maxwell tensors, all equivalent to Equation \ref{eq:eset}. Here are a few of them:
 \begin{equation*}
 \begin{aligned}
-\capdy{\mathrm{T}} &= \capdy{\mathrm{F}} \cdot \capdy{\mathrm{F}} +  \dfrac{1}{4} \, ( \capdy{\mathrm{F}} : \capdy{\mathrm{F}} ) \inlinedy{\upeta} \\[5pt]
-&= \capdy{\mathrm{G}} \cdot \capdy{\mathrm{G}} -  \dfrac{1}{4} \, ( \capdy{\mathrm{G}} \cdot \cdot \, \capdy{\mathrm{G}} ) \inlinedy{\upeta} \\[5pt]
-&= \capdy{\mathrm{F}} \cdot \capdy{\mathrm{F}} -  \dfrac{1}{4} \, ( \capdy{\mathrm{G}} : \capdy{\mathrm{G}} ) \inlinedy{\upeta} \\[5pt]
-&= \capdy{\mathrm{G}} \cdot \capdy{\mathrm{G}} +  \dfrac{1}{4} \, ( \capdy{\mathrm{F}} \cdot \cdot \, \mkern1mu \capdy{\mathrm{F}} ) \inlinedy{\upeta} .
+\capdy{\mathrm{T}} &= \capdy{\mathrm{F}} \cdot \capdy{\mathrm{F}} +  \dfrac{1}{4} \, ( \capdy{\mathrm{F}} : \capdy{\mathrm{F}} ) \inlinedy{\upeta} \, = \, \capdy{\mathrm{F}} \cdot \capdy{\mathrm{F}} -  \dfrac{1}{4} \, ( \capdy{\mathrm{F}} \cdot \cdot \, \mkern1mu \capdy{\mathrm{F}} ) \inlinedy{\upeta} \\[5pt]
+&= \capdy{\mathrm{G}} \cdot \capdy{\mathrm{G}} +  \dfrac{1}{4} \, ( \capdy{\mathrm{G}} : \capdy{\mathrm{G}} ) \inlinedy{\upeta}  \, = \,  \capdy{\mathrm{G}} \cdot \capdy{\mathrm{G}} -  \dfrac{1}{4} \, ( \capdy{\mathrm{G}} \cdot \cdot \, \capdy{\mathrm{G}} ) \inlinedy{\upeta}  \\[5pt]
+&= \capdy{\mathrm{F}} \cdot \capdy{\mathrm{F}} -  \dfrac{1}{4} \, ( \capdy{\mathrm{G}} : \capdy{\mathrm{G}} ) \inlinedy{\upeta} \, = \, \capdy{\mathrm{G}} \cdot \capdy{\mathrm{G}} +  \dfrac{1}{4} \, ( \capdy{\mathrm{F}} \cdot \cdot \, \mkern1mu \capdy{\mathrm{F}} ) \inlinedy{\upeta}
 \end{aligned}
 \end{equation*}
+(the first two with just $\inlinedy{\mathrm{F}}$ are most common in the literature).
 
 Our new dyadic $\inlinedy{\mathrm{T}}$ is the \textbf{electromagnetic stress--energy tensor}. Its significance is revealed when we closely examine Equation \ref{eq:py} (Poynting's theorem, a statement of energy conservation) and Equation \ref{eq:tmc} (the corresponding statement of three-momentum conservation). Together, these expressions convey exactly the same information as:
 \begin{equation}\label{eq:fmc}
