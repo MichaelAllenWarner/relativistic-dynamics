@@ -3005,7 +3005,7 @@ where $\Lambda$ is the Lorentz-transformation matrix and $\Lambda^{\mathrm{T}}$ 
 \end{equation}
 (we're keeping our double-sided arrow notation, though instead of the lowercase roman type that we use for Euclidean three-dyadics we'll prefer \emph{uppercase} roman for four-dyadics, mirroring our use of lowercase for three-vectors and uppercase for four-vectors).
 
-In the context of electromagnetism, a particularly useful four-dyadic (field) is $\partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A}$.\footnote{The four-potential need not be in the Lorenz gauge here (see Footnote \ref{fn:fp}).} In matrix notation, that's $[\partialup][\vv A]^{\mathrm{T}} - [\vv A][\partialup_{\vv A}]^{\mathrm{T}}$, or:
+In the context of electromagnetism, a particularly useful four-dyadic (field) is $\partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A}$.\footnote{The quantity $\partialup \otimes \vv A$ is the \emph{gradient} of the four-potential. The four-potential needn't be in the Lorenz gauge here (see Footnote \ref{fn:fp}).} In matrix notation, that's $[\partialup][\vv A]^{\mathrm{T}} - [\vv A][\partialup_{\vv A}]^{\mathrm{T}}$, or:
 \begin{equation*}
 \begin{bmatrix}
 \partial^{ct} \\
@@ -3167,7 +3167,7 @@ b_y & -e_z & 0 & e_x \\[.5ex]
 b_z & e_y & -e_x & 0
 \end{bmatrix}
 \end{equation}
-(to verify that $\inlinedy{\mathrm{G}}$ is a four-dyadic, check that its components transform according to Equation \ref{eq:ltd} under a Lorentz boost). Then:
+(to verify that $\inlinedy{\mathrm{G}}$ is a four-dyadic, check that its components transform according to Equation \ref{eq:ltd} under a Lorentz boost; for standard configuration, use Equations \ref{eq:bm} and \ref{eq:ebt}). Then:
 \begin{equation}\label{eq:hme}
 \boxed{ \vphantom{A_{A_A}} \partialup \cdot \capdy{\mathrm{G}} = \textrm{\mbox{\boldmath $\emptyset$}} } \, ,
 \end{equation}
@@ -3185,18 +3185,33 @@ b_y & -e_z & 0 & e_x \\
 b_z & e_y & -e_x & 0
 \end{bmatrix} ,
 \end{equation*}
-giving $\partialup \cdot \inlinedy{\mathrm{G}} = \langle \del \cdot \vv b , \, - \partial^{ct} \vv b - \del \times \vv e \rangle$. Equations \ref{eq:ime} and \ref{eq:hme} are Maxwell's equations in an explicitly relativistic and \emph{gauge-invariant} form (Equation \ref{eq:fp} contains the same information but is specific to the Lorenz gauge).
+giving $\partialup \cdot \inlinedy{\mathrm{G}} = \langle \del \cdot \vv b , \, - \partial^{ct} \vv b - \del \times \vv e \rangle$. By Equations \ref{eq:ebc}, $[\inlinedy{\mathrm{G}}]$ is also:
+\begin{equation*}
+\begin{bmatrix}
+0 & ( \partial^y A^z - \partial^z A^y ) & ( \partial^z A^x - \partial^x A^z ) & ( \partial^x A^y - \partial^y A^x ) \\[1.5ex]
+( \partial^z A^y - \partial^y A^z ) & 0 & ( \partial^z A^{ct} - \partial^{ct} A^z ) & ( \partial^{ct} A^y - \partial^y A^{ct} ) \\[1.5ex]
+( \partial^x A^z - \partial^z A^x ) & ( \partial^{ct} A^z - \partial^z A^{ct} ) & 0 & ( \partial^x A^{ct} - \partial^{ct} A^x ) \\[1.5ex]
+( \partial^y A^x - \partial^x A^y ) & ( \partial^y A^{ct} - \partial^{ct} A^y ) & ( \partial^{ct} A^x - \partial^x A^{ct} ) & 0
+\end{bmatrix} .
+\end{equation*}
+Using \emph{that} matrix to carry out $[\partialup]^{\mathrm{T}} \eta [\inlinedy{\mathrm{G}}]$, we see clearly why each component of $\partialup \cdot \inlinedy{\mathrm{G}}$ vanishes. For example, the time component is:
+\begin{equation*}
+(\partialup \cdot \capdy{\mathrm{G}})^{ct} = - \partial^x ( \partial^z A^y - \partial^y A^z ) - \partial^y ( \partial^x A^z - \partial^z A^x ) - \partial^z ( \partial^y A^x - \partial^x A^y ) ,
+\end{equation*}
+with each term canceling its additive inverse. So we get Equation \ref{eq:hme} ``for free" by virtue of the Faraday tensor's having the form $\partialup \wedge \vv A$.
+
+Equations \ref{eq:ime} and \ref{eq:hme} are Maxwell's equations in an explicitly relativistic and \emph{gauge-invariant} form. Equation \ref{eq:fp} contains the same information but is specific to the Lorenz gauge. By the way, our new four-dyadic $\inlinedy{\mathrm{G}}$ is called the \textbf{Maxwell tensor} (not to be confused with the Euclidean Maxwell \emph{stress} tensor $\inlinedy{\upsigma}$ that we encountered in Section \ref{sssec:emm}).
 
 
 \subsubsection{Hodge Duals and Quasi-Four-Vectors}
 
-The four-dyadic $\inlinedy{\mathrm{G}}$ we just defined, called the $\textbf{Maxwell tensor}$ (not to be confused with the Maxwell \emph{stress} tensor $\inlinedy{\upsigma}$, the three-dyadic we encountered in Section \ref{sssec:emm}), is the \textbf{Hodge dual} of the Faraday tensor $\inlinedy{\mathrm{F}}$. To explain what this means ``geometrically," we first introduce a limited sense in which three-vectors may be treated as ``quasi"-four-vectors: \emph{at a single moment for a given inertial frame}, we can ``append" a zero temporal component to a three-vector (that isn't already the spatial component of a true four-vector) and manipulate the four ``components" as if they constituted a spacelike four-vector orthogonal to the frame's (normalized) four-velocity $\vv B = \langle 1, \vv 0 \rangle$. We stress that such quasi-four-vectors aren't \emph{actually} four-vectors---their ``components" don't transform Lorentzianly between frames! But sometimes intra-frame equations involving them \emph{have the same form} in all inertial frames.
+The Maxwell tensor $\inlinedy{\mathrm{G}}$ is the \textbf{Hodge dual} of the Faraday tensor $\inlinedy{\mathrm{F}}$. To explain what this means ``geometrically," we first introduce a limited sense in which three-vectors may be treated as ``quasi"-four-vectors: \emph{at a single moment for a given inertial frame}, we can ``append" a zero temporal component to a three-vector (that isn't already the spatial component of a true four-vector) and manipulate the four ``components" as if they constituted a spacelike four-vector orthogonal to the frame's (normalized) four-velocity $\vv B = \langle 1, \vv 0 \rangle$. We stress that such quasi-four-vectors aren't \emph{actually} four-vectors---their ``components" don't transform Lorentzianly between frames! But sometimes intra-frame equations involving them \emph{have the same form} in all inertial frames.
 
 We'll now demonstrate that for a given inertial frame, we can form an antisymmetric Minkowski dyadic $\inlinedy{\mathrm{D}}$ in terms of two of these quasi-four-vectors $\tilde{\vv q} = \langle 0, \vv q \rangle$ and $\tilde{\vv w} = \langle 0, \vv w \rangle$ like this:
 \begin{equation*}
 \capdy{\mathrm{D}} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \},
 \end{equation*}
-where $\vv B$ is the frame's four-velocity $\langle 1, \vv 0 \rangle$, and where $\{ \tilde{\vv w} \times \}$ symbolizes the quasi-four-dyadic that satisfies $\{ \tilde{\vv w} \times \} \cdot \vv H = \langle 0, \vv w \times \vv h \rangle$ for \emph{any} four-vector ${\vv H = \langle H^{ct}, \vv h \rangle}$ (again, we're working with one inertial frame at a single moment). Explicitly, the matrix representation of $\{ \tilde{\vv w} \times \}$ must be:
+where $\vv B$ is the frame's four-velocity $\langle 1, \vv 0 \rangle$, and where $\{ \tilde{\vv w} \times \}$ denotes the quasi-four-dyadic that satisfies $\{ \tilde{\vv w} \times \} \cdot \vv H = \langle 0, \vv w \times \vv h \rangle$ for \emph{any} four-vector ${\vv H = \langle H^{ct}, \vv h \rangle}$ (again, we're working with one inertial frame at a single moment). Explicitly, the matrix representation of $\{ \tilde{\vv w} \times \}$ must be:
 \begin{equation}\label{eq:wt}
 [\{ \tilde{\vv w} \times \}] =
 \begin{bmatrix}
@@ -3274,15 +3289,18 @@ q_y & w_z & 0 & -w_x \\[.5ex]
 q_z & -w_y & w_x & 0
 \end{bmatrix},
 \end{equation*}
-and we see that the matrix representation of $\inlinedy{\mathrm{D}}$ has exactly the same form as that of the Faraday tensor $\inlinedy{\mathrm{F}}$ (Equation \ref{eq:emt}). It follows that if we transform $\vv q$ and $\vv w$ under a Lorentz boost in the same way that we transform the electric and magnetic fields (Equations \ref{eq:ebt} or \ref{eq:ebr}), we'll find that the form $\inlinedy{\mathrm{D}} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ holds for \emph{all} inertial frames (where for each frame $\vv B$ is \emph{that frame's} four-velocity $\langle 1, \vv 0 \rangle$), and $\inlinedy{\mathrm{D}}$ must be a true antisymmetric Minkowski dyadic like $\inlinedy{\mathrm{F}}$ is. With the right choice of $\tilde{\vv q}$ and $\tilde{\vv w}$, any antisymmetric four-dyadic can be expressed in this manner.\footnote{For a deeper dive that proves it, see this unpublished paper from 2018 by Jonas Larsson and Karl Larsson: \url{https://urn.kb.se/resolve?urn=urn:nbn:se:umu:diva-152747}.}
+and we see that the matrix representation of $\inlinedy{\mathrm{D}}$ has exactly the same form as that of the Faraday tensor $\inlinedy{\mathrm{F}}$ (Equation \ref{eq:emt}). It follows that if we transform $\vv q$ and $\vv w$ under a Lorentz boost in the same way that we transform the electric and magnetic fields (Equations \ref{eq:ebt} or \ref{eq:ebr}), we'll find that the form $\inlinedy{\mathrm{D}} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ holds for \emph{all} inertial frames (where for each frame $\vv B$ is \emph{that frame's} four-velocity $\langle 1, \vv 0 \rangle$), and $\inlinedy{\mathrm{D}}$ must be a true antisymmetric Minkowski dyadic like $\inlinedy{\mathrm{F}}$ is. With the right choice of $\tilde{\vv q}$ and $\tilde{\vv w}$, any antisymmetric four-dyadic can be expressed in this manner.
+%\footnote{For a deeper dive that proves it, see this unpublished paper from 2018 by Jonas Larsson and Karl Larsson: \url{https://urn.kb.se/resolve?urn=urn:nbn:se:umu:diva-152747}.}
 
-So the combination of quasi-four-dyadics $\tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ makes a \emph{true} antisymmetric dyadic. For the Faraday tensor, it's $\inlinedy{\mathrm{F}} = \tilde{\vv e} \wedge \vv B - \{ \tilde{\vv b} \times \}$. And if we study the matrix representation of the Maxwell tensor (Equation \ref{eq:mt}), we find that $\inlinedy{\mathrm{G}} = \tilde{\vv b} \wedge \vv B + \{ \tilde{\vv e} \times \} = \tilde{\vv b} \wedge \vv B - \{ - \tilde{\vv e} \times \}$. That's how $\inlinedy{\mathrm{F}}$ and $\inlinedy{\mathrm{G}}$ are related: the \emph{Hodge dual} of an antisymmetric Minkowski dyadic $\inlinedy{\mathrm{D}} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ is given by $\star \inlinedy{\mathrm{D}} = \tilde{\vv w} \wedge \vv B - \{ - \tilde{\vv q} \times \}$ (for obvious reasons, we call $\star$ the \textbf{star operator}). The Hodge dual of the Hodge dual is then $\star \star \inlinedy{\mathrm{D}} = - \tilde{\vv q} \wedge \vv B - \{ - \tilde{\vv w} \times \} = - \inlinedy{\mathrm{D}}$. Thus:
+So the combination of quasi-four-dyadics $\tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ makes a \emph{true} antisymmetric dyadic. For the Faraday tensor, it's $\inlinedy{\mathrm{F}} = \tilde{\vv e} \wedge \vv B - \{ \tilde{\vv b} \times \}$. And if we study the matrix representation of the Maxwell tensor (Equation \ref{eq:mt}), we find that $\inlinedy{\mathrm{G}} = \tilde{\vv b} \wedge \vv B + \{ \tilde{\vv e} \times \} = \tilde{\vv b} \wedge \vv B - \{ - \tilde{\vv e} \times \}$. That's how $\inlinedy{\mathrm{F}}$ and $\inlinedy{\mathrm{G}}$ are related: the \emph{Hodge dual} of an antisymmetric Minkowski dyadic $\inlinedy{\mathrm{D}} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ is given by $\star \inlinedy{\mathrm{D}} = \tilde{\vv w} \wedge \vv B - \{ - \tilde{\vv q} \times \}$ (for obvious reasons, we call $\star$ the \textbf{star operator}).\footnote{Some other types of geometric objects have Hodge duals, too, but we're only concerning ourselves with the Hodge duals of antisymmetric Minkowski dyadics.} The Hodge dual of the Hodge dual is then $\star \star \inlinedy{\mathrm{D}} = - \tilde{\vv q} \wedge \vv B - \{ - \tilde{\vv w} \times \} = - \inlinedy{\mathrm{D}}$. Thus:
 \begin{equation}\label{eq:mthd}
 \boxed{ \vphantom{A_{A_A}} \capdy{\mathrm{G}} \equiv \star \capdy{\mathrm{F}} } \, ,
 \end{equation}
 and $\star \inlinedy{\mathrm{G}} = \star \star \inlinedy{\mathrm{F}} = - \inlinedy{\mathrm{F}}$.
 
 It \emph{is} possible to express $\inlinedy{\mathrm{G}}$ as a sum of Minkowski dyads, as we've done with $\inlinedy{\mathrm{F}}$ (Equation \ref{eq:emta}), and as is true of all non-dyad four-dyadics. But we won't bother; for our purposes, Equation \ref{eq:mthd} will suffice as a geometric definition of the Maxwell tensor. We should note, though, that because $\vv b$ is a pseudovector that changes sign under certain types of coordinate transformations (see Footnote \ref{fn:ps}), the act of ``swapping" $\tilde{\vv e}$ and $\tilde{\vv b}$ to get the Hodge dual of $\inlinedy{\mathrm{F}}$ makes the resulting Maxwell tensor $\inlinedy{\mathrm{G}}$ itself a \emph{pseudodyadic} (or \emph{pseudotensor}) that does the same. The Hodge dual of an ordinary antisymmetric four-dyadic is \emph{always} a Minkowski pseudodyadic, and vice versa.
+
+Last, we now understand that getting Equation \ref{eq:hme} ``for free" by virtue of the Faraday tensor's having the form $\partialup \wedge \vv A$ is an instance of a mathematical rule: for any four-vector (field) $\vv Q$, the Hodge dual of $\partialup \wedge \vv Q$ is divergenceless (i.e., $\partialup \cdot \, \star ( \partialup \wedge \vv Q ) = \textrm{\mbox{\boldmath $\emptyset$}}$). And this rule, it turns out, is in turn an instance of an even broader one called the \textbf{Bianchi identity} (or sometimes the \emph{second} Bianchi identity). The details involve differential forms and are well beyond our scope, but the basic geometric idea is that ``the boundary of a boundary is zero" (as John Wheeler famously put it). Other manifestations of the Bianchi identity include the divergencelessness of the curl and the curllessness of the gradient in three-dimensional Euclidean space.
 
 
 \subsubsection{Light with Four-Dyadics}
