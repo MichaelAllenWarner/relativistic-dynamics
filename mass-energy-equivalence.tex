@@ -28,6 +28,9 @@
 \newcommand{\tightoverset}[2]{%
   \mathop{#2}\limits^{\vbox to -.5ex{\kern-0.75ex\hbox{$#1$}\vss}}}
 \newcommand{\inlinedy}[1]{\tightoverset{\text{\tiny$\bm\leftrightarrow$}}{#1}}
+\newcommand{\fnoverset}[2]{%
+  \mathop{#2}\limits^{\vbox to -.5ex{\kern-0.85ex\hbox{$#1$}\vss}}}
+\newcommand{\footnotedy}[1]{\fnoverset{\text{\tiny$\bm\leftrightarrow$}}{#1}}
 \newcommand{\capdy}[1]{ \overset{ \text{\tiny$\bm\leftrightarrow$} }{\vphantom{\text{\small{A}}}\smash{#1}} }
 \usepackage{tkz-euclide}
 \usetkzobj{all}
@@ -2158,7 +2161,7 @@ Near the beginning of this document, we took a quantum shortcut: instead of usin
 \subsection{The Math (Spacetime Vector Calculus)}
 
 
-\subsubsection{The Four-Del}
+\subsubsection{The Four-Del}\label{sssec:fd}
 
 We'll need a four-vector equivalent of the ``del" (``nabla") symbol:
 \begin{equation*}
@@ -3036,7 +3039,7 @@ which comes to
 ( \partial^z A^{ct} - \partial^{ct} A^z ) & ( \partial^z A^x - \partial^x A^z ) & ( \partial^z A^y - \partial^y A^z ) & 0
 \end{bmatrix} .
 \end{equation*}
-We call this dyadic the \textbf{Faraday tensor}, or the \textbf{electromagnetic field tensor}.\footnote{Specifically, dyadics are \emph{contravariant} rank-2 tensors, a detail that matters in more advanced treatments of Minkowski spacetime (doesn't matter for Euclidean space---in practice, anyway).} Labeling it $\inlinedy{\mathrm{F}} = \inlinedy{\mathrm{F}} (\vv R)$, and invoking Equations \ref{eq:ebc}, we have:
+We call this dyadic the \textbf{Faraday tensor}, or the \textbf{electromagnetic field tensor}.\footnote{\label{fn:dy}Specifically, dyadics are \emph{contravariant} rank-2 tensors, a detail that matters in more advanced treatments of Minkowski spacetime (doesn't matter for Euclidean space---in practice, anyway).} Labeling it $\inlinedy{\mathrm{F}} = \inlinedy{\mathrm{F}} (\vv R)$, and invoking Equations \ref{eq:ebc}, we have:
 \begin{equation}\label{eq:emt}
 [\capdy{\mathrm{F}}]
 =
@@ -3047,7 +3050,7 @@ e_y & b_z & 0 & -b_x \\[.5ex]
 e_z & -b_y & b_x & 0
 \end{bmatrix} .
 \end{equation}
-The matrix is antisymmetric, and we call the dyadic itself antisymmetric. (Likewise, a dyadic whose matrix representation is \emph{symmetric} is said to be symmetric.) There's a shorthand notation for the operation we performed to produce this antisymmetric dyadic: $\vv Q \wedge \vv W \equiv \vv Q \otimes \vv W - \vv W \otimes \vv Q$. So:
+The matrix is antisymmetric, and we call the dyadic itself antisymmetric. (Likewise, a dyadic whose matrix representation is \emph{symmetric} is said to be symmetric.) It's also convenient to call a dyadic's \emph{transpose} the dyadic whose matrix representation is the transpose of the first's. Then we can say ${\inlinedy{\mathrm{F}} = \partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A} = \partialup \otimes \vv A - (\partialup \otimes \vv A)^\mathrm{T}}$, dropping the subscript notation. Finally, there's a shorthand notation for this procedure of producing an antisymmetric dyadic from a pair of vectors: $\vv Q \wedge \vv W \equiv \vv Q \otimes \vv W - \vv W \otimes \vv Q$. So:
 \begin{equation}\label{eq:emta}
 \boxed{ \vphantom{A_{A_A}} \capdy{\mathrm{F}} \equiv \partialup \wedge \vv A } \, . 
 \end{equation}
@@ -3063,7 +3066,7 @@ To see why the Faraday tensor is useful, we'll define the Minkowski dot product(
 0 & 0 & 0 & -1
 \end{bmatrix} .
 \end{equation}
-Using the matrix $\eta$, we define $\vv Q \cdot \inlinedy{\mathrm{D}}$ as the four-vector whose row-matrix representation is $[\vv Q]^{\mathrm{T}} \eta [\inlinedy{\mathrm{D}}]$, and we define $\inlinedy{\mathrm{D}} \cdot \, \vv Q$ as the four-vector whose column-matrix representation is $[\inlinedy{\mathrm{D}}] \eta [\vv Q]$. The four-\emph{divergence} of the dyadic $\inlinedy{\mathrm{D}}$ we notate $\partialup \cdot \inlinedy{\mathrm{D}}$, and so we define it as the four-vector whose row-matrix representation is $[\partialup]^{\mathrm{T}} \eta [\inlinedy{\mathrm{D}}]$. When we have the combination $[\partialup]^\mathrm{T} \eta$ in our matrix equations, it's understood that $\partialup$ operates on what's to the \emph{right} of $\eta$, after we matrix-multiply $\eta$ with one of its neighbors to give everything the right sign. As a quick example:
+Using the matrix $\eta$, we define $\vv Q \cdot \inlinedy{\mathrm{D}}$ as the four-vector whose row-matrix representation is $[\vv Q]^{\mathrm{T}} \eta [\inlinedy{\mathrm{D}}]$, and we define $\inlinedy{\mathrm{D}} \cdot \, \vv Q$ as the four-vector whose column-matrix representation is $[\inlinedy{\mathrm{D}}] \eta [\vv Q]$. The four-\emph{divergence} of the dyadic $\inlinedy{\mathrm{D}}$ we notate $\partialup \cdot \inlinedy{\mathrm{D}}$, and so we define it as the four-vector whose row-matrix representation is $[\partialup]^{\mathrm{T}} \eta [\inlinedy{\mathrm{D}}]$. When we have the combination $[\partialup]^\mathrm{T} \eta$ in our matrix equations, it's understood that $\partialup$ operates on what's to the \emph{right} of $\eta$, after we matrix-multiply $\eta$ with one of its neighbors to give everything the right sign. As a quick example:\footnote{Notice that the product $[\partialup]^\mathrm{T} \eta$ is a row matrix whose entries are our \emph{positive} partial derivatives. Back in Section \ref{sssec:fd}, we found that these four operators together transform \emph{inverse}-Lorentzianly, and we mentioned in Footnote \ref{fn:cv} that an object whose components transform this way is a four-covector (or covariant four-vector). We won't make direct use of the covector concept, but we remark in passing that for \emph{any} four-vector $\vv Q$, the products $[\vv Q]^\mathrm{T} \eta$ and $\eta [\vv Q]$ give matrix representations of the covector whose components are $\langle Q_{ct}, \, Q_x, \, Q_y, \, Q_z \rangle = \langle Q^{ct}, \, -Q^x, \, -Q^y, \, -Q^z \rangle$.}
 \begin{equation*}
 \begin{aligned}
 \mkern0mu [\partialup]^{\mathrm{T}} \eta [\capdy{\mathrm{D}}]
@@ -3108,7 +3111,7 @@ D^{ct \mkern1.5mu ct} & D^{ct \mkern1.5mu x} & D^{ct \mkern1.5mu y} & D^{ct \mke
 \end{aligned}
 \end{equation*}
 
-Really, Equation \ref{eq:mmt} is the matrix representation of a four-dyadic, since it satisfies the four-dyadic transformation rule Equation \ref{eq:ltd} (try it!---under a Lorentz boost, the $1$ transforms to $1$, the $-1$'s transform to $-1$'s, and the $0$'s transform to $0$'s). This dyadic is called the \textbf{Minkowski metric tensor}, and we use it implicitly every time we take a Minkowski dot product.\footnote{To be precise, the dyadic in question is the \emph{contravariant} Minkowski metric tensor, whereas what we use implicitly when we take Minkowski dot products is the \emph{covariant} Minkowski metric tensor (they have the same matrix representation).} It's essentially the spacetime equivalent of the Euclidean unit dyadic we introduced in Section \ref{sssec:emm}. When we want to notate it explicitly \emph{as} a four-dyadic, we'll write $\inlinedy{\upeta}$ (a conventional exception to our preference for uppercase). Mostly, though, we'll keep using the familiar dot notation and throw $\eta = [ \mkern1mu \inlinedy{\upeta} \mkern.5mu ]$ into matrix equations as needed.
+Really, Equation \ref{eq:mmt} is the matrix representation of a four-dyadic, since it satisfies the four-dyadic transformation rule Equation \ref{eq:ltd} (try it!---under a Lorentz boost, the $1$ transforms to $1$, the $-1$'s transform to $-1$'s, and the $0$'s transform to $0$'s). This dyadic is called the \textbf{Minkowski metric tensor}, and we use it implicitly every time we take a Minkowski dot product.\footnote{To be precise, what we use implicitly when we take Minkowski dot products is the \emph{covariant} Minkowski metric tensor, whereas the dyadic we're introducing is the \emph{contravariant} Minkowski metric tensor (see Footnote \ref{fn:dy}).} It's essentially the spacetime equivalent of the Euclidean unit dyadic we encountered in Section \ref{sssec:emm}. When we want to notate it explicitly \emph{as} a four-dyadic, we'll write $\inlinedy{\upeta}$ (a conventional exception to our preference for uppercase). Mostly, though, we'll keep using the familiar dot notation and throw $\eta = [ \mkern1mu \inlinedy{\upeta} \mkern.5mu ]$ into matrix equations as needed.
 
 Anyway, now we can write the Lorentz four-force (Equation \ref{eq:ff}) more compactly in terms of the Faraday tensor:
 \begin{equation}\label{eq:lfffd}
@@ -3200,7 +3203,7 @@ Using \emph{that} matrix to carry out $[\partialup]^{\mathrm{T}} \eta [\inlinedy
 \end{equation*}
 with each term canceling its additive inverse. So we get Equation \ref{eq:hme} ``for free" by virtue of the Faraday tensor's having the form $\partialup \wedge \vv A$.
 
-Equations \ref{eq:ime} and \ref{eq:hme} are Maxwell's equations in an explicitly relativistic and \emph{gauge-invariant} form. Equation \ref{eq:fp} contains the same information but is specific to the Lorenz gauge. By the way, our new four-dyadic $\inlinedy{\mathrm{G}}$ is called the \textbf{Maxwell tensor} (not to be confused with the Euclidean Maxwell \emph{stress} tensor $\inlinedy{\upsigma}$ that we encountered in Section \ref{sssec:emm}).
+Equations \ref{eq:ime} and \ref{eq:hme} are Maxwell's equations in an explicitly relativistic and \emph{gauge-invariant} form. Equation \ref{eq:fp} contains the same information but is specific to the Lorenz gauge. By the way, our new four-dyadic $\inlinedy{\mathrm{G}}$ is called the \textbf{Maxwell tensor} (not to be confused with the Euclidean Maxwell \emph{stress} tensor $\inlinedy{\upsigma}$ that we met in Section \ref{sssec:emm}).
 
 
 \subsubsection{Hodge Duals and Quasi-Four-Vectors}
@@ -3230,16 +3233,10 @@ so that $[\{ \tilde{\vv w} \times \}] \eta [\vv H]$ (the matrix representation o
 0 & w_y & -w_x & 0
 \end{bmatrix}
 \begin{bmatrix}
-1 & 0 & 0 & 0 \\
-0 & -1 & 0 & 0 \\
-0 & 0 & -1 & 0 \\
-0 & 0 & 0 & -1
-\end{bmatrix}
-\begin{bmatrix}
 H^{ct} \\
-h_x \\
-h_y \\
-h_z
+- h_x \\
+- h_y \\
+- h_z
 \end{bmatrix}
 =
 \begin{bmatrix}
@@ -3300,7 +3297,7 @@ and $\star \inlinedy{\mathrm{G}} = \star \star \inlinedy{\mathrm{F}} = - \inline
 
 It \emph{is} possible to express $\inlinedy{\mathrm{G}}$ as a sum of Minkowski dyads, as we've done with $\inlinedy{\mathrm{F}}$ (Equation \ref{eq:emta}), and as is true of all non-dyad four-dyadics. But we won't bother; for our purposes, Equation \ref{eq:mthd} will suffice as a geometric definition of the Maxwell tensor. We should note, though, that because $\vv b$ is a pseudovector that changes sign under certain types of coordinate transformations (see Footnote \ref{fn:ps}), the act of ``swapping" $\tilde{\vv e}$ and $\tilde{\vv b}$ to get the Hodge dual of $\inlinedy{\mathrm{F}}$ makes the resulting Maxwell tensor $\inlinedy{\mathrm{G}}$ itself a \emph{pseudodyadic} (or \emph{pseudotensor}) that does the same. The Hodge dual of an ordinary antisymmetric four-dyadic is \emph{always} a Minkowski pseudodyadic, and vice versa.
 
-Last, we now understand that getting Equation \ref{eq:hme} ``for free" by virtue of the Faraday tensor's having the form $\partialup \wedge \vv A$ is an instance of a mathematical rule: for any four-vector (field) $\vv Q$, the Hodge dual of $\partialup \wedge \vv Q$ is divergenceless (i.e., $\partialup \cdot \, \star ( \partialup \wedge \vv Q ) = \textrm{\mbox{\boldmath $\emptyset$}}$). And this rule, it turns out, is in turn an instance of an even broader one called the \textbf{Bianchi identity} (or sometimes the \emph{second} Bianchi identity). The details involve differential forms and are well beyond our scope, but the basic geometric idea is that ``the boundary of a boundary is zero" (as John Wheeler famously put it). Other manifestations of the Bianchi identity include the divergencelessness of the curl and the curllessness of the gradient in three-dimensional Euclidean space.
+Last, we now understand that getting Equation \ref{eq:hme} ``for free" by virtue of the Faraday tensor's having the form $\partialup \wedge \vv A$ is an instance of a mathematical rule: for any four-vector (field) $\vv Q$, the Hodge dual of $\partialup \wedge \vv Q$ is divergenceless (i.e., $\partialup \cdot \, \star ( \partialup \wedge \vv Q ) = \textrm{\mbox{\boldmath $\emptyset$}}$). And this rule, it turns out, is in turn an instance of an even broader one called the \textbf{Bianchi identity}. The details involve differential forms and are well beyond our scope, but the basic geometric idea is that ``the boundary of a boundary is zero" (as John Wheeler famously put it). Other manifestations of the Bianchi identity include the divergencelessness of the curl and the curllessness of the gradient in three-dimensional Euclidean space.
 
 
 \subsubsection{Light with Four-Dyadics}
@@ -3403,17 +3400,20 @@ The key is to bring in the matrix \emph{trace}, which is the sum of the main-dia
 \begin{equation*}
 \capdy{\mathrm{D}} : \capdy{\mathrm{K}} = \mathrm{Tr} \left( \eta [\capdy{\mathrm{D}}] \eta [ \capdy{\mathrm{K}} ]^{\mathrm{T}} \right) = \mathrm{Tr} \left( [\capdy{\mathrm{K}}] \eta [ \capdy{\mathrm{D}} ]^{\mathrm{T}} \eta \right) = \mathrm{Tr} \left( \eta [\capdy{\mathrm{K}}] \eta [ \capdy{\mathrm{D}} ]^{\mathrm{T}} \right) = \capdy{\mathrm{K}} : \capdy{\mathrm{D}} ,
 \end{equation*}
-where we've transposed the matrix product to show that commutativity still applies (a matrix and its transpose share a trace). A special case is when a dyadic is double-dotted with $\inlinedy{\upeta}$, the Minkowski metric tensor (whose matrix representation in every frame is the symmetric $\eta$):
+where we've transposed the matrix product to show that commutativity still holds (the transpose of a matrix product is the product of the transposes in reverse order, and the symmetric $\eta$ is its own transpose). This works because a matrix and its transpose share a trace. Trivially from the above, then:
+\begin{equation*}
+\capdy{\mathrm{D}} \mkern0mu ^\mathrm{T} : \capdy{\mathrm{K}} \mkern0mu ^\mathrm{T} = \mathrm{Tr} \left( \eta [\capdy{\mathrm{D}}]^{\mathrm{T}} \eta [ \capdy{\mathrm{K}} ] \right) = \capdy{\mathrm{D}} : \capdy{\mathrm{K}} .
+\end{equation*}
+A special case is when a dyadic is double-dotted with $\inlinedy{\upeta}$, the Minkowski metric tensor (whose matrix representation in every frame is $\eta$):
 \begin{equation*}
 \begin{split}
 \capdy{\mathrm{D}} : \inlinedy{\upeta} &= \mathrm{Tr} \left( \eta [\capdy{\mathrm{D}}] \eta [ \mkern1mu \inlinedy{\upeta} \mkern.5mu ]^{\mathrm{T}} \right) \\
 &= \mathrm{Tr} \left( \eta [\capdy{\mathrm{D}}] \right) = D^{ct \mkern1.5mu ct} - D^{xx} - D^{yy} - D^{zz}
 \end{split}
 \end{equation*}
-(verify that $\eta \eta = I_4$, the 4-by-4 identity matrix). This invariant is called the trace \emph{of the dyadic} $\inlinedy{\mathrm{D}}$, though its matrix representation is $\mathrm{Tr} (\eta [ \inlinedy{\mathrm{D}} ])$, \emph{not} $\mathrm{Tr} ( [ \inlinedy{\mathrm{D}} ] )$. For example, the trace of $\inlinedy{\upeta}$ is $\mathrm{Tr} (I_4) = 4$. Obviously all antisymmetric dyadics are traceless (their matrix representations have only zeros on the main diagonal). More generally, the double dot product of an antisymmetric dyadic $\inlinedy{\mathrm{A}}$ with \emph{any symmetric} dyadic $\inlinedy{\mathrm{S}}$ is zero, since $[\inlinedy{\mathrm{A}}] = - [\inlinedy{\mathrm{A}}]^\mathrm{T}$ and $[\inlinedy{\mathrm{S}}] = [\inlinedy{\mathrm{S}}]^\mathrm{T}$:
+(verify that $\eta \eta = I_4$, the 4-by-4 identity matrix). This invariant is called the trace \emph{of the dyadic} $\inlinedy{\mathrm{D}}$, though its matrix representation is $\mathrm{Tr} (\eta [ \inlinedy{\mathrm{D}} ])$, \emph{not} $\mathrm{Tr} ( [ \inlinedy{\mathrm{D}} ] )$. For example, the trace of $\inlinedy{\upeta}$ is $\mathrm{Tr} (I_4) = 4$. Obviously all antisymmetric dyadics are traceless (their matrix representations have only zeros on the main diagonal). More generally, the double dot product of an antisymmetric dyadic $\inlinedy{\mathrm{A}}$ with \emph{any symmetric} dyadic $\inlinedy{\mathrm{S}}$ is zero, since $\inlinedy{\mathrm{A}} = - \inlinedy{\mathrm{A}} \mkern-2mu ^\mathrm{T}$ and $\inlinedy{\mathrm{S}} = \inlinedy{\mathrm{S}} \mkern-2mu^\mathrm{T}$:
 \begin{equation*}
-\capdy{\mathrm{A}} : \capdy{\mathrm{S}} = \mathrm{Tr} \left( \eta [\capdy{\mathrm{A}}] \eta [\capdy{\mathrm{S}}]^\mathrm{T} \right)
-= - \mathrm{Tr} \left( \eta [ \capdy{\mathrm{A}}]^\mathrm{T} \eta [\capdy{\mathrm{S}}] \right) = - \capdy{\mathrm{A}} : \capdy{\mathrm{S}}
+\capdy{\mathrm{A}} : \capdy{\mathrm{S}} = - \capdy{\mathrm{A}} \mkern0mu ^\mathrm{T} : \capdy{\mathrm{S}} \mkern0mu ^\mathrm{T} = - \capdy{\mathrm{A}} : \capdy{\mathrm{S}}
 \end{equation*}
 (if it's equal to its additive inverse then it must be zero).
 
@@ -3496,7 +3496,7 @@ where again the matrix trace is convenient for extending the operation to arbitr
 \begin{equation*}
 \capdy{\mathrm{D}} \cdot \cdot \, \mkern1mu \capdy{\mathrm{K}} = \mathrm{Tr} \left( \eta [\capdy{\mathrm{D}}] \eta [ \capdy{\mathrm{K}} ] \right) .
 \end{equation*}
-This second ``kind" of double dot product is likewise commutative, and in general it produces an altogether different scalar than the first kind does. But if at least one of the input-dyadics is symmetric then $\inlinedy{\mathrm{D}}  \cdot \cdot \inlinedy{\mathrm{K}} = \inlinedy{\mathrm{D}} : \inlinedy{\mathrm{K}}$ (because we can replace one of the matrices with its transpose), and if at least one is antisymmetric then $\inlinedy{\mathrm{D}}  \cdot \cdot \inlinedy{\mathrm{K}} = - \inlinedy{\mathrm{D}} : \inlinedy{\mathrm{K}}$ (because we can replace a matrix with its negative transpose). Both the Faraday and Maxwell tensors are antisymmetric, so we don't get any new electromagnetic invariants with the second kind of double dot product; rather, $\inlinedy{\mathrm{F}}  \cdot \cdot \inlinedy{\mathrm{G}} = - \inlinedy{\mathrm{F}} : \inlinedy{\mathrm{G}}$, and so on. 
+This second ``kind" of double dot product is likewise commutative, and in general it produces an altogether different scalar than the first kind does. But if at least one of the input-dyadics is symmetric then $\inlinedy{\mathrm{D}}  \cdot \cdot \inlinedy{\mathrm{K}} = \inlinedy{\mathrm{D}} : \inlinedy{\mathrm{K}}$ (because we can replace the symmetric dyadic with its transpose), and if at least one is antisymmetric then $\inlinedy{\mathrm{D}}  \cdot \cdot \inlinedy{\mathrm{K}} = - \inlinedy{\mathrm{D}} : \inlinedy{\mathrm{K}}$ (because we can replace the antisymmetric dyadic with its \emph{negative} transpose). Both the Faraday and Maxwell tensors are antisymmetric, so we don't get new electromagnetic invariants with the second kind of double dot product; rather, ${\inlinedy{\mathrm{F}}  \cdot \cdot \inlinedy{\mathrm{G}} = - \inlinedy{\mathrm{F}} : \inlinedy{\mathrm{G}}}$, and so on. 
 
 
 \subsubsection{Single-Dotting Four-Dyadics; EM Stress--Energy Tensor}
@@ -3522,7 +3522,7 @@ So the dot product between two four-dyads generates a new dyad, and the operatio
 \begin{equation*}
 [\capdy{\mathrm{D}} \cdot \capdy{\mathrm{K}}] = [\capdy{\mathrm{D}}] \eta [\capdy{\mathrm{K}}] .
 \end{equation*}
-We see that $\inlinedy{\mathrm{D}} \cdot \inlinedy{\upeta} = \inlinedy{\upeta} \cdot \inlinedy{\mathrm{D}} =  \inlinedy{\mathrm{D}}$, and also that $(\inlinedy{\mathrm{D}} \cdot \inlinedy{\mathrm{K}}) : \inlinedy{\upeta} = \inlinedy{\mathrm{D}} \mkern1mu \cdot \cdot \inlinedy{\mathrm{K}}$, which equals $- \inlinedy{\mathrm{D}} : \inlinedy{\mathrm{K}}$ if $\inlinedy{\mathrm{D}}$ and/or $\inlinedy{\mathrm{K}}$ is antisymmetric.
+We see that $\inlinedy{\mathrm{D}} \cdot \inlinedy{\upeta} = \inlinedy{\upeta} \cdot \inlinedy{\mathrm{D}} =  \inlinedy{\mathrm{D}}$, further ``justifying" the notion that the Minkowski metric tensor is like the unit dyadic of spacetime. We also have $(\inlinedy{\mathrm{D}} \cdot \inlinedy{\mathrm{K}}) : \inlinedy{\upeta} = \inlinedy{\mathrm{D}} \mkern1mu \cdot \cdot \inlinedy{\mathrm{K}}$, which equals $- \inlinedy{\mathrm{D}} : \inlinedy{\mathrm{K}}$ in the case that $\inlinedy{\mathrm{D}}$ or $\inlinedy{\mathrm{K}}$ is antisymmetric (relevant for the Faraday and Maxwell tensors). Along the same lines, $ \inlinedy{\mathrm{A}} \mkern-2mu ^\mathrm{T} \cdot \inlinedy{\mathrm{D}} = - \inlinedy{\mathrm{A}} \cdot \inlinedy{\mathrm{D}}$ and $\inlinedy{\mathrm{D}} \cdot \inlinedy{\mathrm{A}} \mkern-2mu ^\mathrm{T} = - \inlinedy{\mathrm{D}} \cdot \inlinedy{\mathrm{A}}$ for antisymmetric $\inlinedy{\mathrm{A}}$.
 
 Let's test out the operation on the Faraday and Maxwell tensors (Equations \ref{eq:emt} and \ref{eq:mt}). First $\inlinedy{\mathrm{F}} \cdot \inlinedy{\mathrm{G}}$:
 \begin{equation*}
@@ -3577,15 +3577,19 @@ e^2 & (e_y b_z - e_z b_y) & (e_z b_x - e_x b_z) & (e_x b_y - e_y b_x) \\[1ex]
 (e_y b_z - e_z b_y) & (b_y^2 + b_z^2 - e_x^2) & (-e_x e_y - b_x b_y) & (- e_x e_z - b_x b_z) \\[1ex]
 (e_z b_x - e_x b_z) & (-e_x e_y - b_x b_y) & (b_z^2 + b_x^2 - e_y^2)  & (- e_y e_z - b_y b_z) \\[1ex]
 (e_x b_y - e_y b_x) & (- e_x e_z - b_x b_z) & (- e_y e_z - b_y b_z) & (b_x^2 + b_y^2 - e_z^2)
-\end{bmatrix} \\[5pt]
-&=
+\end{bmatrix} ,
+\end{aligned}
+\end{equation*}
+or:
+\begin{equation*}
+\mkern0mu [\capdy{\mathrm{F}}] \eta [\capdy{\mathrm{F}}]
+=
 \begin{bmatrix}
 e^2 & s_x & s_y & s_z \\[1ex]
 s_x & (b^2 - b_x^2 - e_x^2) & - \sigma_{x y} & - \sigma_{x z} \\[1ex]
 s_y & - \sigma_{y x} & (b^2 - b_y^2 - e_y^2)  & - \sigma_{y z} \\[1ex]
 s_z & - \sigma_{z x} & - \sigma_{z y} & (b^2 - b_z^2 - e_z^2) 
 \end{bmatrix} ,
-\end{aligned}
 \end{equation*}
 where $\vv s = \vv e \times \vv b$ (Poynting vector), $\inlinedy{\upsigma} = \vv e \otimes \vv e + \vv b \otimes \vv b - u \mkern-5mu \inlinedy{\upiota}$ (Maxwell stress tensor), $u = (e^2 + b^2) / 2$ (electromagnetic energy density), and $\inlinedy{\upiota}$ is the Euclidean unit dyadic. Similarly, $\inlinedy{\mathrm{G}} \cdot \inlinedy{\mathrm{G}}$:
 \begin{equation*}
@@ -3626,7 +3630,7 @@ s_z & - \sigma_{z x} & - \sigma_{z y} & (e^2 - e_z^2 - b_z^2)
 \end{equation*}
 Define:
 \begin{equation}\label{eq:eset}
-\boxed { \capdy{\mathrm{T}} \equiv \dfrac{1}{2} \, ( \capdy{\mathrm{F}} \cdot \capdy{\mathrm{F}} + \capdy{\mathrm{G}} \cdot \capdy{\mathrm{G}} ) } \, ,
+\boxed { \capdy{\mathrm{T}} \equiv \dfrac{1}{2} \, ( \capdy{\mathrm{F}} \cdot \capdy{\mathrm{F}} \, + \, \capdy{\mathrm{G}} \cdot \capdy{\mathrm{G}} ) } \, ,
 \end{equation}
 and we have a four-dyadic that combines $u$, $\vv s$, and $\inlinedy{\upsigma}$:
 \begin{equation*}
@@ -3653,7 +3657,7 @@ which vanishes by Equations \ref{eq:fddf} and \ref{eq:gddg}. Note that to get fr
 &= \capdy{\mathrm{F}} \cdot \capdy{\mathrm{F}} -  \dfrac{1}{4} \, ( \capdy{\mathrm{G}} : \capdy{\mathrm{G}} ) \inlinedy{\upeta} \, = \, \capdy{\mathrm{G}} \cdot \capdy{\mathrm{G}} +  \dfrac{1}{4} \, ( \capdy{\mathrm{F}} \cdot \cdot \, \mkern1mu \capdy{\mathrm{F}} ) \inlinedy{\upeta}
 \end{aligned}
 \end{equation*}
-(the first two with just $\inlinedy{\mathrm{F}}$ are most common in the literature).
+(expressions with just $\inlinedy{\mathrm{F}}$ are most common in the literature).\footnote{Because the Faraday and Maxwell tensors are antisymmetric, we have relationships like $\footnotedy{\mathrm{F}} \cdot \footnotedy{\mathrm{F}} \mkern-2mu^\mathrm{T} = \footnotedy{\mathrm{F}} \mkern-2mu^\mathrm{T} \cdot \footnotedy{\mathrm{F}} = - \footnotedy{\mathrm{F}} \cdot \footnotedy{\mathrm{F}}$, and we get even more expressions for $\footnotedy{\mathrm{T}}$ if we throw those into the mix. The signs of terms would also be affected if we'd chosen the ($-$$+$$+$$+$) sign convention instead of ($+$$-$$-$$-$). All this is to say, don't be alarmed to find different ``variations" on how $\footnotedy{\mathrm{T}}$ is written in other sources; they're reconcilable. Where index notation is used, check the \emph{order} and \emph{placement} of the indices.}
 
 Our new dyadic $\inlinedy{\mathrm{T}}$ is the \textbf{electromagnetic stress--energy tensor}. Its significance is revealed when we closely examine Equation \ref{eq:py} (Poynting's theorem, a statement of energy conservation) and Equation \ref{eq:tmc} (the corresponding statement of three-momentum conservation). Together, these expressions convey exactly the same information as:
 \begin{equation}\label{eq:fmc}
