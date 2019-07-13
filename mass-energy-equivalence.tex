@@ -53,9 +53,10 @@
 \date{Last updated: \today}
 \maketitle
 
-\section{Preface}\label{sec:p}
+\section*{Preface}\label{sec:p}
+\addcontentsline{toc}{section}{Preface}
 
-This is the gentlest introduction to relativistic dynamics you'll find. It assumes that you're already familiar with basic relativistic kinematics, but we'll review what we need in Section \ref{ssec:sr}. Through Section \ref{sec:ra}, the only calculus we'll use is simple single-variable differentiation. Section \ref{sec:ak} involves some integration, and Section \ref{sec:rem} has vector calculus. The rest of the math is mostly high-school stuff.
+This is the gentlest introduction to relativistic dynamics you'll find. It assumes that you're already familiar with basic relativistic kinematics, but we'll review what we need in Section \ref{ssec:sr}. Through Section \ref{ssec:ra}, the only calculus we'll use is simple single-variable differentiation. Section \ref{ssec:ak} involves some integration, and Section \ref{sec:rem} has vector calculus. The rest of the math is mostly high-school stuff.
 
 I've made a couple of unconventional choices in notation:
 \begin{itemize}
@@ -68,14 +69,20 @@ The ``massless" in the title is half tongue-in-cheek. The serious bit is that be
 
 On vector notation: vectors are boldface, their magnitudes are italic (like any scalar), a vector in component form is enclosed by angle brackets (not parentheses), and squaring a vector means taking its dot product with itself, which is equivalent to squaring its magnitude. So velocity is $\vv v = \langle v_x, v_y, v_z \rangle$, speed is $v$, and $\vv v^2 = \vv v \cdot \vv v = v^2$. Occasionally italics aren't suitable for notating a vector's magnitude. A good example is the vector $\Delta \vv r$, because $\Delta r$ already signifies the change in $r$ (magnitude of position $\vv r$). In such cases we'll indicate the vector's magnitude with double bars instead (e.g., $\Vert \Delta \vv r \Vert$).
 
+\clearpage
 
-\section[Einstein's Thought Experiment without Einstein]{Einstein's Thought Experiment\\without Einstein}
- 
-\subsection{So This Body Emits Two Light Waves \ldots}
- 
+
+\section{Relativistic Dynamics, No Four-Vectors}
+
+
 In Einstein's original ``$E=mc^2$" paper,\footnote{Einstein, A.: Ist die Tr\"agheit eines K\"orpers von seinem Energieinhalt abh\"angig? Ann.\ Phys.\ \textbf{18}, 639--641 (1905). English translation here: \url{https://www.fourmilab.ch/etexts/einstein/E_mc2/www/}.} he proposes a thought experiment in which a body at rest briefly emits two equally energetic light waves in opposite directions at the same time.\footnote{We treat them as idealized monochromatic plane waves, though we'll soon temporarily invoke the photon model as a shortcut (later we'll reproduce our results without it).} With the aid of his newly developed special theory of relativity, he considers the situation from the perspectives of two observers: one at rest relative to the body, the other moving with an arbitrary constant velocity.
  
 The paper is concise---almost perfunctory---but it's also rather subtle. We're going to walk through the thought experiment twice. The first time we'll feign ignorance of special relativity, putting ourselves in the shoes of a physicist in mid-1905. We'll fail, but our failure will be instructive. On the second pass, we'll retrace Einstein's steps (more or less).
+
+
+\subsection{Einstein's Thought Experiment without Einstein}
+ 
+\subsubsection{Newton and Maxwell; Additivity and Conservation}
 
 Diving right in, what can we say about that light-emitting body if we have Newtonian physics and Maxwell's equations (plus the Planck--Einstein relation), but no special relativity? To start, classical mechanics gives us linear momentum
 \begin{equation}\label{eq:1}
@@ -103,9 +110,9 @@ Now on to the thought experiment!
 
 First we consider things from the perspective of the observer at rest relative to the body. In this observer's frame, the body's initial speed is zero, which means its initial momentum and kinetic energy are also zero. The light waves, however, carry energy, and that energy had to come from somewhere. Did it come from the body's kinetic energy?
 
-No, because the $E_{\mkern.5mu \textrm{k}}$ was already zero, and Equation \ref{eq:2} tells us that $E_{\mkern.5mu \textrm{k}}$ can't be negative (mass is always positive). Here's another argument that leads to the same conclusion: By Equation \ref{eq:3}, our equally energetic light waves carry momenta that are equal in magnitude. Since those momenta have opposite direction, the vectors cancel, leaving the body's momentum unaffected. The massless light likewise leaves the body's \emph{mass} unaffected.\footnote{\label{fn:ma}Or so we think. If it turns out that mass isn't additive, then we'll have to be open to the possibility that the body's mass \emph{is} affected, even though light is massless.} If neither the body's momentum nor its mass changes, then neither does its velocity (Equation \ref{eq:1})---the body remains at rest. And if neither its mass nor its velocity changes, then neither does its kinetic energy (Equation \ref{eq:2}).
+No, because the $E_{\mkern.5mu \textrm{k}}$ was already zero, and Equation \ref{eq:2} tells us that $E_{\mkern.5mu \textrm{k}}$ can't be negative (mass can't be negative). Here's another argument that leads to the same conclusion: By Equation \ref{eq:3}, our equally energetic light waves carry momenta that are equal in magnitude. Since those momenta have opposite direction, the vectors cancel, leaving the body's momentum unaffected. The massless light likewise leaves the body's \emph{mass} unaffected.\footnote{\label{fn:ma}Or so we think. If it turns out that mass isn't additive, then we'll have to be open to the possibility that the body's mass \emph{is} affected, even though light is massless.} If neither the body's momentum nor its mass changes, then neither does its velocity (Equation \ref{eq:1})---the body remains at rest. And if neither its mass nor its velocity changes, then neither does its kinetic energy (Equation \ref{eq:2}).
 
-\subsection{Systems and Rest Energy All the Way Down}\label{ssec:sy}
+\subsubsection{Systems and Rest Energy All the Way Down}\label{sssec:sy}
 
 This energy carried off by the light waves---where did it come from? All we really know is that it came from the resting body itself, and not from the body's kinetic energy, which remains zero for our first observer. By conservation and additivity of energy, anything at rest that can radiate energy without moving must already have some to lose, \emph{independent} of its motion.
 
@@ -119,7 +126,7 @@ where different observers disagree on the velocity-dependent $E_{\mkern.5mu \tex
 \begin{equation}\label{eq:6}
 E=E_0 \quad \textrm{\footnotesize{ (for $E_{\mkern.5mu \textrm{k}}=0$)}}.
 \end{equation}
-A quantity like rest energy whose value everyone agrees on is said to be \textbf{invariant}.\footnote{\label{fn:inv}Really, one must specify the \emph{context} in which a quantity is invariant. Take kinetic energy: it certainly isn't invariant with respect to a change in observer velocity (a \textbf{boost}), but it \emph{is} invariant under rotation of an observer's spatial axes. In this paper, when we say that a quantity is invariant, it's implied that we mean with respect to observer velocity. Also: in more advanced treatments, the word \textbf{scalar} is reserved for \emph{invariant} quantities (rank-0 tensors, technically), but we'll use the looser definition that a scalar is \emph{any} physical quantity describable by number (and unit) alone, in contrast with vectors. So we'll regard total energy and kinetic energy as scalars, and rest energy as an \emph{invariant} scalar.} Mass is another invariant, and (spoiler alert) we'll soon discover a close connection between mass and rest energy.
+A quantity like rest energy whose value everyone agrees on is said to be \textbf{invariant}.\footnote{\label{fn:inv}Really, one must specify the \emph{context} in which a quantity is invariant. Take kinetic energy: it certainly isn't invariant with respect to a change in observer velocity (a \textbf{boost}), but it \emph{is} invariant under rotation of an observer's spatial axes. In this paper, when we say that a quantity is invariant, it's implied that we mean with respect to observer velocity.} Mass is another invariant, and (spoiler alert) we'll soon discover a close connection between mass and rest energy.
 
 If your instinct is to resist Equation \ref{eq:5} on the grounds that an open system may also have potential energy owing to its position relative to some outside body, remember that the potential energy in that case is a property not of the open system or the outside body, but rather of the greater system that encompasses both. It's accounted for in the greater system's \emph{rest energy}. Equation \ref{eq:5} works. Resistance is futile.\footnote{Okay, one caveat: we're assuming that the potential energy isn't associated with the kind of gravitational field that would require the \emph{general} theory of relativity to analyze. Actually, let's broaden that caveat---for this entire paper, \emph{assume the absence of gravity}!}
 
@@ -143,7 +150,7 @@ Let's zoom back out, lest we forget that the beauty of the rest-energy concept i
 
 Equations \ref{eq:5} and \ref{eq:6} are simple but profound. Get to know them.
 
-\subsection{The Catch}\label{ssec:tc}
+\subsubsection{The Catch}\label{sssec:tc}
 
 Now let's return to Einstein's thought experiment and ponder how things are for the observer moving at some constant velocity relative to the body.
 
@@ -162,8 +169,6 @@ Where was the flaw in our ``lovely but wrong" analysis? We've unsubtly hinted at
 But how is that possible? Isn't mass just the ``amount of matter"? Maybe not! Stay tuned.
 
 
-
-\section[Einstein's Thought Experiment \emph{with} Einstein]{Einstein's Thought Experiment\\ \emph{with} Einstein}
 
 \subsection{New Ground Rules: Special Relativity Review}\label{ssec:sr}
 
@@ -218,7 +223,7 @@ with the ``inverse" transformation on the right. Equations \ref{eq:lt2} are argu
 
 From the Lorentz transformation for differences in the coordinates between events, we can derive many important results. The most novel is probably the inequality of $c \mkern.5mu \Delta t^{\prime}$ and $c \mkern.5mu \Delta t$, which holds even when one of them equals zero, as long as $\Delta x$ and $\Delta x^\prime$ don't also equal zero (this is the \textbf{relativity of simultaneity}). Let's now examine three further results that we'll use in this paper: \textbf{time dilation}, \textbf{length contraction}, and the invariance of the \textbf{spacetime interval} between two events, $\Delta s \equiv [(c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2]^{1/2}$, where $\vv r$ is position and ${\Delta \vv r = \langle \Delta x, \Delta y, \Delta z \rangle}$ is the separation vector.\footnote{We'll call $\Delta \vv r$ \emph{displacement} when referring to the physical motion of something, and \emph{separation} when speaking in the abstract of a vector ``connecting" two points.}
 
-When $\Delta x^{\prime} = 0$ in Equations \ref{eq:lt2}, the expression for time dilation emerges: $c \mkern.5mu \Delta t = \gamma \mkern2mu c \mkern.5mu \Delta t^{\prime}$. In the special case that $\Delta x^{\prime} = \Delta y^{\prime} = \Delta z^{\prime} = 0$, the primed time $ct^{\prime}$ corresponds to the time logged by the wristwatch of an inertial traveler (real or imagined) who is physically present at both events. This invariant ``wristwatch time" is what we call the traveler's \textbf{proper time}, and we label it $c \mkern.5mu t_0$. Hence, $c \mkern.5mu \Delta t = \gamma \mkern2mu c \mkern.5mu \Delta t_0$ (where $ct$ is now actually the coordinate time in an \emph{arbitrary} inertial frame, standard configuration or no). For a traveler whose velocity isn't constant, we can still use infinitesimals: $c \, \dd t = \gamma \mkern2mu c \, \dd t_0$ (more on this in Section \ref{ssec:ds}).
+When $\Delta x^{\prime} = 0$ in Equations \ref{eq:lt2}, the expression for time dilation emerges: $c \mkern.5mu \Delta t = \gamma \mkern2mu c \mkern.5mu \Delta t^{\prime}$. In the special case that $\Delta x^{\prime} = \Delta y^{\prime} = \Delta z^{\prime} = 0$, the primed time $ct^{\prime}$ corresponds to the time logged by the wristwatch of an inertial traveler (real or imagined) who is physically present at both events. This invariant ``wristwatch time" is what we call the traveler's \textbf{proper time}, and we label it $c \mkern.5mu t_0$. Hence, $c \mkern.5mu \Delta t = \gamma \mkern2mu c \mkern.5mu \Delta t_0$ (where $ct$ is now actually the coordinate time in an \emph{arbitrary} inertial frame, standard configuration or no). For a traveler whose velocity isn't constant, we can still use infinitesimals: $c \, \dd t = \gamma \mkern2mu c \, \dd t_0$ (more on this in Section \ref{sssec:ds}).
 
 To derive length contraction, we'll use time dilation.\footnote{If one instead uses the Lorentz transformation directly, one must remember that length is the distance between an object's endpoints \emph{at a single moment in coordinate time}. So in a given inertial frame, an observer measures the spatial separation of two \emph{simultaneous} events---one located at each of the object's endpoints.} Say a ruler has length $L_0$ in its rest frame (this is its \textbf{proper length}), and that a clock moving at speed $\beta$ relative to the ruler traverses its length in a time $c \mkern.5mu \Delta t$ (the ruler's rest frame is unprimed). We then have $\beta = L_0 / (c \mkern.5mu \Delta t)$. In the clock's (primed) rest frame, the entire length of the ruler $L^\prime$ passes the clock's location in a time $c \mkern.5mu \Delta t^\prime$, giving $\beta = L^\prime / (c \mkern.5mu \Delta t^\prime)$. Now we've got two expressions for the relative speed $\beta$. Put them together: $L_0 = L^\prime \mkern2mu c \mkern.5mu \Delta t / (c \mkern.5mu \Delta t^\prime) = \gamma L^\prime$ (by time dilation). So an object's length when moving is shorter than its proper length by a factor of $\gamma$. Note that an object's \emph{volume} when moving is likewise scaled down from its ``proper volume" by a factor of $\gamma$, since only the length along the axis of relative motion is contracted.
 
@@ -230,10 +235,14 @@ which, after some algebra, yields:
 \begin{equation*}
 \begin{aligned}
 (c \mkern.5mu \Delta t^{\prime})^2 - (\Delta x^{\prime})^2 &= \gamma^2 \left( 1 - \beta^2 \right) \left[ (c \mkern.5mu \Delta t)^2 - ( \Delta x )^2 \right] \\[2pt]
-&= (c \mkern.5mu \Delta t)^2 - ( \Delta x )^2
+&= (c \mkern.5mu \Delta t)^2 - ( \Delta x )^2 ,
 \end{aligned}
 \end{equation*}
-(because $1 - \beta^2 = \gamma^{-2}$). So $(\Delta s)^2 = (c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2$ is invariant. In case you're rusty:
+where we've used the useful identity
+\begin{equation}\label{eq:20}
+\gamma^{-2} = 1 - \beta^2 .
+\end{equation}
+So $(\Delta s)^2 = (c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2$ is invariant. In case you're rusty:
 \begin{itemize}
 \item When $(\Delta s)^2<0$, the interval is \textbf{spacelike}, and $\lvert (\Delta s)^2 \rvert ^{1/2} = \Delta s / \mathrm{i}$ represents the \textbf{proper distance} between two events, which is their spatial separation in an inertial frame for which they occur simultaneously (there are infinitely many such frames, since motion perpendicular to the line connecting the locations of simultaneous events doesn't ``break" their simultaneity). Nothing---not even a light signal---can travel from one event to the other. The events cannot have a causal relationship, and their chronological order depends on one's frame of reference.
 \item When $(\Delta s)^2>0$, the interval is \textbf{timelike}, and $\lvert(\Delta s)^2\rvert ^{1/2} = \Delta s $ represents the \textbf{inertial proper time interval} between the events, which is the proper time $c \mkern.5mu \Delta t_0$ that elapses for an inertial traveler who journeys from one event to the other.\footnote{The qualifier \emph{inertial} is crucial because non-inertial journeys between timelike-separated events are possible, too. But among all travelers who make the journey, it's the inertial one who ages the most en route. This maximal aging---the inertial traveler's elapsed proper time---is the spacetime interval between the events.} Equivalently, it's the coordinate time that elapses between the events in the unique inertial frame for which they occur at the same location. The events may be causally related, and their chronological order is fixed.
@@ -278,7 +287,7 @@ When the third party whose velocity is being measured is a light wave, we have $
 \cos \theta^\prime =\frac{\cos \theta - \beta_{\textrm{rel}}}{1 - \beta_{\textrm{rel}} \cos \theta} \qquad \cos \theta =\frac{\cos \theta^\prime + \beta_{\textrm{rel}}}{1 + \beta_{\textrm{rel}} \cos \theta^\prime}.
 \end{equation}
 
-Equations \ref{eq:7} are pertinent to Einstein's thought experiment because source and moving observer don't agree on the angle between an emitted light wave and the axis of their relative motion. In the observer's frame, the light is ``tilted" toward the direction of the source's velocity vector, and by more than Galilean relativity would predict. Near the end of Section \ref{ssec:tc}, we alluded qualitatively to the fact that two light waves emitted in opposite directions according to the source do \emph{not} generally travel in opposite directions in other frames. Now we can actually crunch the numbers, even for observers moving near the speed of light relative to the source.
+Equations \ref{eq:7} are pertinent to Einstein's thought experiment because source and moving observer don't agree on the angle between an emitted light wave and the axis of their relative motion. In the observer's frame, the light is ``tilted" toward the direction of the source's velocity vector, and by more than Galilean relativity would predict. Near the end of Section \ref{sssec:tc}, we alluded qualitatively to the fact that two light waves emitted in opposite directions according to the source do \emph{not} generally travel in opposite directions in other frames. Now we can actually crunch the numbers, even for observers moving near the speed of light relative to the source.
 
 Because all traces of $\vvbeta$ and $\vvbeta^{\prime}$ have disappeared, we're free to drop the ``rel" subscript when we apply Equations \ref{eq:7}.
 
@@ -299,12 +308,15 @@ So in the observer's frame, the source emits the light wave's second peak a time
 \end{equation*}
 
 For our purposes, it will be more useful to express this \textbf{relativistic Doppler formula} in terms of the unprimed angle $\theta$ (measured in the \emph{source's} frame), and in terms of photon energy. By Equations \ref{eq:7} (aberration):
-\begin{equation}\label{eq:rdw}
+\begin{equation*}
 \begin{split}
 \lambda^\prime &= \gamma \lambda \left( 1 + \beta \, \frac{\cos \theta - \beta}{1 - \beta \cos \theta} \right) \\[3pt]
-&= \frac{\lambda}{\sqrt{1 - \beta^2}} \left( \frac{ 1 - \beta \cos \theta + \beta \cos \theta - \beta^2 }{1 - \beta \cos \theta} \right) \\[3pt]
-\lambda^\prime &= \frac{\lambda}{\gamma \left( 1 - \beta \cos \theta \right)}.
+&= \gamma \lambda \left( \frac{ 1 - \beta \cos \theta + \beta \cos \theta - \beta^2 }{1 - \beta \cos \theta} \right) ,
 \end{split}
+\end{equation*}
+which by Equation \ref{eq:20} is:
+\begin{equation}\label{eq:rdw}
+\lambda^\prime = \frac{\lambda}{\gamma \left( 1 - \beta \cos \theta \right)}.
 \end{equation}
 The frequency is inversely proportional to the wavelength, so:
 \begin{equation}\label{eq:rdf}
@@ -316,13 +328,14 @@ And by Equation \ref{eq:4} for photons:
 \end{equation}
 Bingo! In words: if we know the energy $E$ of (the photons in) a light wave as measured in the source's frame, as well as the angle $\theta$ that the light's direction of propagation makes with a moving observer's velocity vector $\vvbeta$ (again, as measured in the source's frame), then we can calculate the energy $E^\prime$ of (the photons in) the light wave as measured in the \emph{observer's} frame. As you may suspect, Equation \ref{eq:8} will be the key to overcoming our earlier impasse.
 
-Actually, our photonic parentheticals in the previous paragraph weren't necessary: Equation \ref{eq:8} works for Maxwell's wave model of light, too, though demonstrating this requires digging a bit deeper into classical electromagnetism (we'll do this at the end of Section \ref{sec:rem}). Heuristically, we can reason that if the energies of all the photons transform this way, then the energy of the light wave must also. As promised when we introduced Equation \ref{eq:4}, we've used the Planck--Einstein relation to take a shortcut. From now on we'll drop the photon talk.
+Actually, our photonic parentheticals in the previous paragraph weren't necessary: Equation \ref{eq:8} works for Maxwell's wave model of light, too, though demonstrating this requires digging a bit deeper into classical electromagnetism (we'll do this in Section \ref{sec:rem}). Heuristically, we can reason that if the energies of all the photons transform this way, then the energy of the light wave must also. As promised when we introduced Equation \ref{eq:4}, we've used the Planck--Einstein relation to take a shortcut. From now on we'll drop the photon talk.
 
 If you're wondering how the observers in Einstein's thought experiment can possibly detect both waves (because nobody can be in more than one place at once!), recall that a frame of reference isn't just a single observer. We pretend that each inertial frame is full of magically incorporeal measuring devices: a grid of arbitrarily precise rulers, synchronized clocks, and whatever else might come in handy, like spectrometers for analyzing light waves passing through. Every measurement is made at a place and time specified by the imagined clock-and-ruler lattice, and everyone \emph{at rest in that frame} agrees on the measurement's where and when. Further, a measurement like $E^\prime$ in Equation \ref{eq:8} that depends only on relative velocity is \emph{itself} valid for the whole frame.
 
 So when we apply Equation \ref{eq:8} to our thought experiment, we can arrange for the moving observer to personally detect one of the light waves with a spectrometer, but then the other wave must be detected by a \emph{second} spectrometer elsewhere in the frame, along the wave's path. Or we can disregard the observer altogether and simply speak of two spectrometers. It doesn't matter. The important thing is that the spectrometers move with the same velocity $\vvbeta$ relative to the light-emitting body. And since the light waves propagate in opposite directions from the body's perspective, the angles they form with $\vvbeta$ must differ by $\pi$. How convenient! The cosines of such angles sum to zero (i.e., $\cos \mkern1.5mu (\theta+\pi)=-\cos\theta$), and that's just what we'll need for all the $\theta$'s to disappear when we use Equation \ref{eq:8} to add the $E^{\prime}$ of one light wave to the $E^{\prime}$ of the other. Apparently this Einstein fellow knew what he was doing. But we're getting ahead of ourselves.
 
-\subsection [Retracing Einstein's Steps (More or Less): Relativistic Energy and $m=E_0/c^2$] {Retracing Einstein's Steps (More or Less):\\Relativistic Energy and \boldmath{$m=E_0/c^2$}}\label{ssec:re}
+
+\subsection[Einstein's Thought Experiment \emph{with} Einstein: Relativistic Energy and $m=E_0/c^2$]{Einstein's Thought Experiment \emph{with} Einstein:\\Relativistic Energy and $m=E_0/c^2$}\label{ssec:re}
 
 Let's take stock. When we analyzed the thought experiment without special relativity, we hit a roadblock: on the one hand, the additivity of mass implies that the observers should agree that the light waves have equal-and-opposite momenta and carry away a combined energy equal to $-\Delta E_0$ (the rest energy lost by the body); on the other hand, Maxwell and Doppler say that \emph{only} our rest observer can find that to be the case. Now we have a path forward---prioritize Maxwell and Doppler, and retrace Einstein's steps (more or less) in deriving a new equation for kinetic energy. Then we'll tackle momentum.
 
@@ -365,7 +378,7 @@ When $\beta = 0$ (i.e., when $\gamma = 1$), that's just $E^{\prime} = E_0 + C$, 
 E^{\prime} = \gamma E_0.
 \end{equation*}
 
-Look at this beautiful new equation for total energy! It might not be immediately apparent, but that result is good for \emph{any} system with a rest frame.\footnote{As mentioned in Footnote \ref{fn:rl}, some systems are ``restless" and have no rest frame or rest energy. We'll discuss these in Section \ref{ssec:em}.} Why? First, because there's nothing special about the energy carried by electromagnetic radiation. Energy is energy, so we would have arrived at this equation regardless of what mechanism caused the body to lose some of its $E_0$. But second (and here's the kicker), this result holds \emph{even if the body's velocity is changing}. Calculus permits us to model an accelerating body's trajectory as a succession of infinitesimally short and \emph{instantaneously inertial} mini-trajectories. For every such mini-trajectory, the body's $\beta$ (and $\gamma$) is momentarily fixed in a given frame---the condition stipulated by our thought experiment---and our new relation naturally applies.\footnote{It's a common misconception that analyzing accelerated motion requires the mathematical tools of general relativity. Basic calculus suffices, in both classical mechanics and special relativity. More on these ``instantaneous" mini-trajectories in Section \ref{ssec:ds}.} This is why Einstein's setup is so clever. Its symmetry facilitates analysis but leads to general results. It doesn't matter how a system's $\gamma$ and $E_0$ came to be what they are, or how they're changing over time. An inertial observer simply uses their current values when calculating the system's total energy.
+Look at this beautiful new equation for total energy! It might not be immediately apparent, but that result is good for \emph{any} system with a rest frame.\footnote{As mentioned in Footnote \ref{fn:rl}, some systems are ``restless" and have no rest frame or rest energy. We'll discuss these in Section \ref{ssec:em}.} Why? First, because there's nothing special about the energy carried by electromagnetic radiation. Energy is energy, so we would have arrived at this equation regardless of what mechanism caused the body to lose some of its $E_0$. But second (and here's the kicker), this result holds \emph{even if the body's velocity is changing}. Calculus permits us to model an accelerating body's trajectory as a succession of infinitesimally short and \emph{instantaneously inertial} mini-trajectories. For every such mini-trajectory, the body's $\beta$ (and $\gamma$) is momentarily fixed in a given frame---the condition stipulated by our thought experiment---and our new relation naturally applies.\footnote{It's a common misconception that analyzing accelerated motion requires the mathematical tools of general relativity. Basic calculus suffices, in both classical mechanics and special relativity. More on these ``instantaneous" mini-trajectories in Section \ref{sssec:ds}.} This is why Einstein's setup is so clever. Its symmetry facilitates analysis but leads to general results. It doesn't matter how a system's $\gamma$ and $E_0$ came to be what they are, or how they're changing over time. An inertial observer simply uses their current values when calculating the system's total energy.
 
 Since our result is a general one, let's ditch the prime symbol and make it official:
 \begin{equation}\label{eq:12}
@@ -410,7 +423,7 @@ better known as ``$E = mc^2$" (mind the subscript).\footnote{Here's how Einstein
 Equation \ref{eq:15} does \emph{not} mean that mass and rest energy can be ``converted" into one another. It means that they're \emph{exactly the same thing} expressed in different units, like $\vvbeta$ and $\vv v$ are. Therefore anything we know about one of them applies to the other. Notably:
 \begin{itemize}
 \item Mass is an invariant that quantifies a system's total energy in its rest frame. A ``restless" system is a massless system (see Footnote \ref{fn:rl}).
-\item Since rest energy isn't additive, mass isn't additive either, though they're approximately so in the classical limit (see Footnote \ref{fn:ad}). We surmised as much in Section \ref{ssec:tc}, but now we see why.
+\item Since rest energy isn't additive, mass isn't additive either, though they're approximately so in the classical limit (see Footnote \ref{fn:ad}). We surmised as much in Section \ref{sssec:tc}, but now we see why.
 \item Similarly, we now see why the body in Einstein's thought experiment lost mass when it emitted the massless (restless) light waves: it lost rest energy, and mass \emph{is} rest energy! We must abandon the idea that mass is the ``amount of matter" (an ill-defined concept in the first place).
 \item The mass of everything around us comes almost entirely from the kinetic and potential energies ``inside" nucleons, rather than from the masses of elementary particles (see Footnote \ref{fn:mwm}).
 \item We were looking for a way to measure a system's rest energy (see Footnote \ref{fn:re}). Well, now we have one: weigh it!
@@ -421,14 +434,13 @@ Equation \ref{eq:15} does \emph{not} mean that mass and rest energy can be ``con
 The \textbf{equivalence of mass and rest energy} presents us with a redundancy. Keeping them both around and treating them as different concepts is kind of like reserving the word \emph{temperature} for thermometer-readings in Fahrenheit and \emph{hotness} for thermometer-readings in Celsius, and carrying on as though the distinction were physically meaningful. We certainly \emph{could} take a ``more the merrier" approach and use them both, but why should we when our purpose is to lay down the foundation of relativistic mechanics? Let's take a ``less is more" approach instead, and stick with $E_0$. We're kicking $m$ to the curb with $\vv v$. Of course, we can always replace $E_0$ and $\vvbeta$ with $mc^2$ and $\vv v/c$ if the need or inclination arises.
 
 
-\section{The Energy--Momentum Relation}
 \subsection{Relativistic Momentum}\label{ssec:rm}
 
 Using Equation \ref{eq:15} and $\vv v = \vvbeta c$, we can rewrite Equation \ref{eq:1} with $E_0$ and $\vvbeta$:
 \begin{equation}\label{eq:16}
 \vv p c \approx E_0 \vvbeta \quad \textrm{\footnotesize{ (for $\beta \ll 1$)}}.
 \end{equation}
-We've put the ``spare" $c$ on the left side so that the equation has the units of energy ($\vvbeta$ is dimensionless, remember). We'll find it convenient to express energy and momentum in the same unit---they're our additive-and-conserved scalar and vector!---so from now on it's always $\vv p c$ for us, never $\vv p$ alone.\footnote{We could go further and introduce a new \emph{symbol} that equals $\vv p c$, allowing us to carry around fewer $c$'s. We could do the same for $ct$, moreover. Tempting as this is, time and momentum are of such importance that it's best to use the same notation that everyone else uses. Convention trumps elegance this time. In Section \ref{ssec:ff}, however, we'll be a bit bolder with a less central quantity (power).}
+We've put the ``spare" $c$ on the left side so that the equation has the units of energy ($\vvbeta$ is dimensionless, remember). We'll find it convenient to express energy and momentum in the same unit---they're our additive-and-conserved scalar and vector!---so from now on it's always $\vv p c$ for us, never $\vv p$ alone.\footnote{We could go further and introduce a new \emph{symbol} that equals $\vv p c$, allowing us to carry around fewer $c$'s. We could do the same for $ct$, moreover. Tempting as this is, time and momentum are of such importance that it's best to use the same notation that everyone else uses. Convention trumps elegance this time. In Section \ref{sssec:ff}, however, we'll be a bit bolder with a less central quantity (power).}
 
 Now, we'd like to find a definition of $\vv p c$ that works for \emph{arbitrary} $\vvbeta$. If we're being good epistemologists, we must admit that we don't yet know whether such a universal quantity even exists! Assuming it does, it will help to ask ourselves, ``What \emph{is} momentum, anyway?" First and foremost, it's our motion-related additive-and-conserved vector, and we'll insist that it remain so as we try to generalize it. Consequently, we can't posit an upper limit on the magnitude of $\vv p c$ like we already have with $\beta$. To see why, consider what additivity entails: a system of two particles with identical momenta must have a magnitude of momentum twice that of either particle alone; and if we double the number of particles with identical momenta in the system, then the system's magnitude of momentum doubles also, ad infinitum. So Equation \ref{eq:16} will have to change to allow $p c$ to grow arbitrarily large as $\beta \rightarrow 1$. Something must replace the invariant $E_0$, because the current limitation $pc < E_0$ precludes additivity.
 
@@ -440,7 +452,7 @@ What about when $\beta \centernot{\ll} 1$? Can rest energy be the measure of ine
 
 Along similar lines, whatever takes the place of $E_0$ in the generalization of Equation \ref{eq:16} must \emph{increase without bound} as $\beta \rightarrow 1$. Otherwise we'd have superluminal velocities at sufficiently large $p c$. So this $E_0$-replacement reduces to $E_0$ in the classical limit but is also some monotonic function of speed. That being the case, \emph{momentum and velocity cannot be directly proportional like they are in Newtonian mechanics}.
 
-It follows, by the way, that a \emph{change} in momentum over time (``force") does \emph{not} imply a simple proportional change in velocity as it does when $\beta \ll 1$. We won't actually do that calculus for a while (see Sections \ref{ssec:pf} and \ref{sec:in}), but already we see that special relativity complicates the relationship between force and acceleration. For now we'll withhold judgment on whether the mystery $E_0$-replacement we're looking for can reasonably be called the ``measure of inertia" for arbitrary $\vvbeta$.
+It follows, by the way, that a \emph{change} in momentum over time (``force") does \emph{not} imply a simple proportional change in velocity as it does when $\beta \ll 1$. We won't actually do that calculus for a while (see Sections \ref{sssec:pf} and \ref{ssec:in}), but already we see that special relativity complicates the relationship between force and acceleration. For now we'll withhold judgment on whether the mystery $E_0$-replacement we're looking for can reasonably be called the ``measure of inertia" for arbitrary $\vvbeta$.
 
 As for the matter at hand, we \emph{can} make an educated guess about our mystery quantity. After all, we've already encountered a (very important additive-and-conserved) monotonic function of speed that both reduces to $E_0$ in the classical limit and increases without bound as $\beta \rightarrow 1$: total energy $E$ (see Equation \ref{eq:12}). If our educated guess is correct, then relativistic momentum is $\vv p c = E \vvbeta = \gamma E_0 \vvbeta$. Are we on the right track? Well, $E \vvbeta$ certainly reduces to Equation \ref{eq:16} when $\beta \ll 1$, because then $\gamma \approx 1$. Explicitly:
 \begin{equation*}\begin{split}
@@ -488,11 +500,7 @@ and
 \begin{equation*}
 (\vv p c)^2 = (\gamma E_0 \vvbeta)^2.
 \end{equation*}
-Then, noting the useful identity
-\begin{equation}\label{eq:20}
-\gamma^{-2} = 1 - \beta^2,
-\end{equation}
-we see that all we need to do is subtract one square from the other:
+Then by Equation \ref{eq:20}, we see that all we need to do is subtract one square from the other:
 \begin{equation*}
 \begin{split}
 E^2 - (\vv p c)^2 &= (\gamma E_0)^2 - (\gamma E_0 \vvbeta)^2 \\[2pt]
@@ -526,7 +534,7 @@ Mission accomplished! That's the \textbf{energy--momentum relation}, and it's on
 \end{tikzpicture}
 \end{figure}
 
-What about when $E_0 = 0$? We haven't really addressed this head-on yet, but earlier we mentioned in passing that some systems are massless or ``restless" (Footnote \ref{fn:rl})---i.e., they have no rest energy because they have no rest frame. What does it mean for a system to have no rest frame? It means that no frame of reference exists for which the momenta of the system's constituents sum to zero. Put differently, all observers agree that the system's $E \vvbeta \neq \vv 0$ (Equation \ref{eq:18}). Assuming that $E > 0$ (wouldn't be much of a system, otherwise!), this implies that the system's $\beta > 0$ for \emph{everyone}. Nobody can catch up to it. And special relativity tells us that that can only be true if the system travels at the universal speed limit, $\beta = 1$. \emph{A restless system travels at the speed of light}, and vice versa.\footnote{In Section \ref{ssec:sy}, we remarked that a system's velocity is the velocity of its rest frame relative to an observer. Obviously that's nonsense if the system is restless and \emph{has} no rest frame. In this special case, \emph{every constituent of the system} travels at $\beta = 1$ in the same direction.} By Equation \ref{eq:18}, then, $\vv p c = E \hatbeta$ when $E_0 = 0$ (where $\hatbeta$ is a unit vector).
+What about when $E_0 = 0$? We haven't really addressed this head-on yet, but earlier we mentioned in passing that some systems are massless or ``restless" (Footnote \ref{fn:rl})---i.e., they have no rest energy because they have no rest frame. What does it mean for a system to have no rest frame? It means that no frame of reference exists for which the momenta of the system's constituents sum to zero. Put differently, all observers agree that the system's $E \vvbeta \neq \vv 0$ (Equation \ref{eq:18}). Assuming that $E > 0$ (wouldn't be much of a system, otherwise!), this implies that the system's $\beta > 0$ for \emph{everyone}. Nobody can catch up to it. And special relativity tells us that that can only be true if the system travels at the universal speed limit, $\beta = 1$. \emph{A restless system travels at the speed of light}, and vice versa.\footnote{In Section \ref{sssec:sy}, we remarked that a system's velocity is the velocity of its rest frame relative to an observer. Obviously that's nonsense if the system is restless and \emph{has} no rest frame. In this special case, \emph{every constituent of the system} travels at $\beta = 1$ in the same direction.} By Equation \ref{eq:18}, then, $\vv p c = E \hatbeta$ when $E_0 = 0$ (where $\hatbeta$ is a unit vector).
 
 Turning our attention back to Figure \ref{f:1}, we see that for $c$-faring things like light that have no rest frame, the rest-energy leg shrinks to zero, the triangle again collapses to a straight line, and Equation \ref{eq:21} reduces to
 \begin{equation}\label{eq:22}
@@ -554,7 +562,7 @@ A word of caution: traveling at $\beta = 1$ is perfectly compatible with being a
 
 
 
-\section{Vectorless Magnitudes:\\ The Tail Wagging the Dog}
+\subsection{Vectorless Magnitudes: The Tail Wagging the Dog}
 
 If we rearrange Equation \ref{eq:21} like so,
 \begin{equation}\label{eq:23}
@@ -568,7 +576,7 @@ You should be reminded of a similar tool:
 \end{equation*}
 where $\Delta s$ is the invariant spacetime interval between two events. Clearly, the familiar equation for the squared interval has something in common with our new Equation \ref{eq:23}. Inertial observers in relative motion will disagree on the distance and elapsed time between events, but they'll agree on the difference of their squares, $(c \mkern.5mu \Delta t)^2 - (\Delta \vv r)^2$. There's a pattern here, and this isn't the first time we've seen an intriguing connection between $\vv p c$ and $E$ on the one hand and $\vv r$ and $ct$ on the other (Equation \ref{eq:19}). To get to the bottom of this, we'll need the \emph{infinitesimal} spacetime interval, $\dd s$.
 
-\subsection{The Spacetime Distance-Analogue}\label{ssec:ds}
+\subsubsection{The Spacetime Distance-Analogue}\label{sssec:ds}
 
 It's important to understand that proper time $ct_0$ isn't restricted to inertial travelers. Proper time is the wristwatch time of \emph{any} traveler.\footnote{\label{fn:tr}In this discussion, we model an accelerating ``traveler" as a point particle.} To reckon the proper time interval $c \mkern.5mu \Delta t_0$ for a non-inertial journey, we'd use calculus. First we'd chop up the traveler's path through spacetime (the traveler's \textbf{world line}) into infinitely small segments, each constituting an instantaneous inertial journey with its own \emph{infinitesimal} timelike interval, as above but with d's instead of deltas:
 \begin{equation}\label{eq:24}
@@ -578,7 +586,7 @@ Corresponding to each instantaneous journey is an inertial frame of reference fo
 
 But we don't need $c \mkern.5mu \Delta t_0$ right now. It's the infinitesimals we're interested in. This $\dd s$, the infinitesimal spacetime interval, is analogous to an infinitesimal distance in space $\Vert \dd \vv r \Vert$. Like a spatial distance, $\dd s$ doesn't have direction. It's an infinitesimal scalar quantity. Unlike $\Vert \dd \vv r \Vert$, however, $\dd s$ is invariant with respect to observer velocity (i.e., under a Lorentz boost). Different inertial observers will disagree on the traveler's $c \, \dd t$ and $\dd \vv r$, but they'll agree on the traveler's $(c \, \dd t)^2 - (\dd \vv r)^2$.
 
-\subsection{The (Normalized) Spacetime Speed-Analogue}\label{ssec:b}
+\subsubsection{The (Normalized) Spacetime Speed-Analogue}\label{sssec:b}
 
 In light of this spacetime distance-analogue, a question arises naturally: can we assign the traveler a \emph{rate} of spacetime traversal, analogous to (normalized) speed? Mind, the name of the game is maintaining invariance---that's what makes the interval and the energy--momentum relation so useful---so any spacetime analogue we fashion must have a value that all inertial observers agree on. Dividing $\dd s$ by infinitesimal coordinate time $c \, \dd t$, for example, wouldn't work, since coordinate time is a relative measurement. Still, the answer is yes, we \emph{can} construct an invariant spacetime $\beta$-analogue. We can divide $\dd s$ by the invariant infinitesimal \emph{proper} time interval, $c \, \dd t_0$:\footnote{(that is, differentiate $s$ with respect to $ct_0$)}
 \begin{equation*}
@@ -598,7 +606,7 @@ Now \emph{that's} rather interesting. Our spacetime $\beta$-analogue is, well, o
 
 Do note that Equation \ref{eq:25} doesn't permit setting $\beta=1$ (leads to division by zero in the Lorentz factors). That's consistent with the fact that proper time is only defined for timelike journeys. No spacelike or lightlike intervals allowed here. To speak of restless systems ``experiencing" time is meaningless.
 
-\subsection{The Spacetime Magnitude-of-Momentum-Analogue}\label{ssec:pc}
+\subsubsection{The Spacetime Magnitude-of-Momentum-Analogue}\label{sssec:pc}
 
 So we have a spacetime distance-analogue $\dd s$ and a (normalized) spacetime speed-analogue $(\dd s/\dd t_0)/c=1$, both invariant and the latter constant. We could keep going. Taking a $c t_0$-derivative of the $\beta$-analogue, for instance, would lead us to a spacetime $\zeta$-analogue (magnitude-of-``normalized"-acceleration).\footnote{Recall that we've dubbed $\vvzeta = \dot{\vvbeta} = \vv a / c^2$ the ``normalized" acceleration.} Taking yet another would get us an analogue of ``normalized" jerk. The calculus gets more involved, but the principle is the same. We won't do either of those here, though. Instead, we'll find a spacetime magnitude-of-momentum-analogue to bring this section to a close.\footnote{``Spacetime magnitude-of-momentum-analogue"? Oy. Surely we can do better than this. Read on!}
 
@@ -621,7 +629,7 @@ p c \textrm{-analogue} = E_0 \times \beta \textrm{-analogue}.
 This situation mirrors that of the low-$\beta$ Equation \ref{eq:16}, where $E_0$ is straightforwardly the resistance to change in motion through space. For constant $E_0$, a change in our spacetime $p c$-analogue would imply a strictly proportional change in our spacetime $\beta$-analogue, with $E_0$ as the constant of proportionality. Rest energy, it seems, is the resistance to change in ``motion" \emph{through spacetime}! But wait a minute. Our $\beta$-analogue \emph{can't} change. It's always one; that's why the $p c$-analogue ended up equaling $E_0$. If only there were some aspect of it that \emph{could} change, something that we're overlooking, then it would make sense to speak of $E_0$ as the measure of ``spacetime inertia." Hmm. We'll come back to this.
 
 
-\subsection{Celerity (Not Proper Velocity)}\label{ssec:ce}
+\subsubsection{Celerity (Not Proper Velocity)}\label{sssec:ce}
 
 Hidden in our steps for Equation \ref{eq:26} is a pair of relations worth making explicit:
 \begin{equation}\label{eq:27}
@@ -641,11 +649,12 @@ or introducing the symbol $\vvomega \equiv \mathring{\vv r} = \gamma \dot{\vv r}
 \end{equation}
 Looks identical to our low-$\beta$ approximation for momentum but with a \emph{proper}-time derivative instead of a coordinate-time derivative (cf.\ Equation \ref{eq:16}). It goes without saying that Equation \ref{eq:29} is another way of writing Equation \ref{eq:17}; it's only a matter of where we put the Lorentz factor.
 
-We'll call the vector $\vvomega = \gamma \vvbeta$ the (``normalized") \textbf{celerity}.\footnote{The ``unnormalized" celerity $\gamma \vv v$ is usually notated $\vv w$, so $\vvomega = \vv w / c$.} The scare quotes around \emph{normalized} are there because although $\vvomega$ is indeed dimensionless like $\vvbeta$, it has no upper limit (its magnitude $\omega = \gamma \beta$ can exceed one). Celerity often goes by the name ``proper velocity," but that's a confusing misnomer. We'll reserve the word \emph{proper} for rest-frame ``versions" of frame-dependent quantities.\footnote{\label{fn:pr}A competing convention prepends \emph{proper} to $t_0$-derivatives (hence ``proper velocity").} For instance, proper energy $E_0$ is a traveler's total energy $E$ as measured by an observer at rest relative to the traveler. Likewise, a proper time interval $c \mkern.5mu \Delta t_0$ (or $c \, \dd t_0$) is the coordinate time interval $c \mkern.5mu \Delta t$ (or $c \, \dd t$) in the traveler's (instantaneous) rest frame, where $\beta = 0$ and $\gamma = 1$. Proper energy and proper time intervals have \emph{invariant} values, as do all proper quantities; celerity does not. (For proper quantities that are vectors, it's the magnitude that's invariant.) Granted, proper velocity defined ``properly" would be a quantity of little interest---a zero vector---so the term is arguably up for grabs. Still, for the sake of consistency, we won't use it. Further, all our proper quantities will get the naught subscript, like $E_0$ and $c \mkern.5mu \Delta t_0$. The next one we'll encounter is the (``normalized") proper acceleration $\vvzeta_{\mkern1mu 0}$ (Section \ref{ssec:pa}).
+We'll call the vector $\vvomega = \gamma \vvbeta$ the (``normalized") \textbf{celerity}.\footnote{The ``unnormalized" celerity $\gamma \vv v$ is usually notated $\vv w$, so $\vvomega = \vv w / c$.} The scare quotes around \emph{normalized} are there because although $\vvomega$ is indeed dimensionless like $\vvbeta$, it has no upper limit (its magnitude $\omega = \gamma \beta$ can exceed one). Celerity often goes by the name ``proper velocity," but that's a confusing misnomer. We'll reserve the word \emph{proper} for rest-frame ``versions" of frame-dependent quantities.\footnote{\label{fn:pr}A competing convention prepends \emph{proper} to $t_0$-derivatives (hence ``proper velocity").} For instance, proper energy $E_0$ is a traveler's total energy $E$ as measured by an observer at rest relative to the traveler. Likewise, a proper time interval $c \mkern.5mu \Delta t_0$ (or $c \, \dd t_0$) is the coordinate time interval $c \mkern.5mu \Delta t$ (or $c \, \dd t$) in the traveler's (instantaneous) rest frame, where $\beta = 0$ and $\gamma = 1$. Proper energy and proper time intervals have \emph{invariant} values, as do all proper quantities; celerity does not. (For proper quantities that are vectors, it's the magnitude that's invariant.) Granted, proper velocity defined ``properly" would be a quantity of little interest---a zero vector---so the term is arguably up for grabs. Still, for the sake of consistency, we won't use it. Further, all our proper quantities will get the naught subscript, like $E_0$ and $c \mkern.5mu \Delta t_0$. The next one we'll encounter is the (``normalized") proper acceleration $\vvzeta_{\mkern1mu 0}$ (Section \ref{sssec:pa}).
 
 Anyway, we've uncovered a definite pattern: we started with the equation for the (squared) invariant infinitesimal interval, with its (squared) scalar ``time contribution" and its (squared) vector ``space contribution," and we've multiplied (or differentiated) it by (squared) invariants to create new invariants, all (squared) spacetime analogues of familiar vector magnitudes. In the following sections, we'll look more closely at our analogy and find a much more convenient way to express it.
 
 
+\clearpage
 
 \section{Four-Vectors: The Elephant in the Room}
 %
@@ -740,7 +749,9 @@ Anyway, we've uncovered a definite pattern: we started with the equation for the
 %All of this is fine, but in a sense we're barking up the wrong tree: the Pythagorean theorem treats the \emph{hypotenuse} as the special quantity---the Euclidean distance---whereas the quantities of most interest to us are represented by the red catheti in Figure \ref{f:2}. Next we'll bring these invariants to the center of our attention. Instead of studying how, say, $E_0$ and $\vv p c$ combine to make $E$ (informative in its own right), we'll focus on how $E$ and $\vv p c$ combine to make $E_0$.
 
 
-\subsection{Invariant Magnitudes, Transformable Components}
+\subsection{The Basics}
+
+\subsubsection{Invariant Magnitudes, Transformable Components}
 
 What do Equations \ref{eq:24}, \ref{eq:25}, and \ref{eq:26} \emph{really} have in common? We've already put our finger on some of it, but there's more.
 
@@ -789,7 +800,7 @@ A bit of algebra leads directly back to Equations \ref{eq:vt}.
 We're finally ready to put it all together. Our spacetime analogues really are just like vector magnitudes. They're invariant, and their squares are found by combining the squares of quantities that aren't invariant but which transform together according to a family of linear formulas. What's different is the \emph{method} of combination. Instead of adding all the squares like we're used to doing with vector components in Euclidean geometry (Pythagorean theorem), we subtract the squares of the space contributions from the square of the time contribution. This difference reflects the fact that although space and time are intimately connected, they're not the same thing.
 
 
-\subsection{Four-Displacement: The Ur-Four-Vector}\label{ssec:fd}
+\subsubsection{Four-Displacement: The Ur-Four-Vector}\label{sssec:fdi}
 
 We're missing one ingredient---direction! This is easily remedied. In what direction does a traveler journey through spacetime? The question answers itself: in the direction the traveler happens to be going. Now, direction is relative, even in three-dimensional Euclidean space, and so it must be specified in relation to something. Strictly speaking, a whole coordinate system isn't necessary; it's enough to have two events (two points in spacetime) to specify the direction from one to the other, from ``here-and-now" to ``there-and-then." Coordinate systems have their advantages, though. Once an inertial observer has adopted one, ``now" and ``then" can be expressed as coordinate times, and ``here" and ``there" can be expressed as spatial coordinates in reference to the observer's chosen spatial origin $(x,y,z)=(0,0,0)$. But the observer can also put ``from now to then" on an equal footing with ``from here$_{x, y, z}$ to there$_{x, y, z}$," and catalog all events a traveler reaches in reference to a chosen \emph{spacetime} origin, $(ct,x,y,z)=(0,0,0,0)$. That way, the \emph{spacetime} direction from one event on the traveler's world line to the ``next" (infinitesimally close to the first) can be thought of as an arrow pointing from the temporally earlier event ($ct$, $x$, $y$, $z$) to the temporally later event ($ct + c \, \dd t$, $x + \dd x$, $y + \dd y$, $z + \dd z$). In the traveler's instantaneous rest frame, $\dd \vv r = \vv 0$, and the spacetime direction is entirely temporal. In all other frames, however, observers say that the traveler's spacetime direction is both temporal and spatial. And they're all correct! Different inertial observers have different ideas of how far apart ``here" and ``there" are, and how much time passes between ``now" and ``then," but they agree on the spacetime interval between events, and they agree on the \emph{chronological order} of timelike- (and lightlike-) separated events.
 
@@ -810,17 +821,17 @@ Its magnitude is
 \end{equation*}
 the invariant interval (timelike, but let's allow lightlike too). We already knew that, but now we see explicitly that the dot product of two four-vectors differs from the dot product of two three-vectors by the signs of the products of the components: instead of ($+$$+$$+$), we have ($+$$-$$-$$-$), with the product of the time components in first position.\footnote{\label{fn:sc}It works just as well to use the convention ($-$$+$$+$$+$), or even to multiply the time component by the imaginary unit $\mathrm{i}$ and use ($+$$+$$+$$+$).} Why? Because of the equation for the spacetime interval (Equation \ref{eq:24}). That's just how it is in our \textbf{Minkowski spacetime}.\footnote{The mathematician Hermann Minkowski developed the geometric approach to special relativity we're exploring. He used the ($+$$+$$+$$+$) convention mentioned in the previous footnote, by the way, but it's fallen out of favor.} For constant velocity, we can of course use a finite four-displacement $\Delta \vv R = \langle c \mkern.5mu \Delta t, \Delta \vv r \rangle$.\footnote{\label{fn:sp}We can speak more abstractly of a \textbf{four-separation} $\Delta \vv R = \langle c \mkern.5mu \Delta t, \Delta \vv r \rangle$ that ``points" from one event to another. They needn't be on a traveler's world line, and the ``from" event needn't be chronologically earlier than the ``to" event. Indeed, the events may be spacelike-separated, in which case they don't even \emph{have} a fixed chronological order, and the vector's magnitude is then a \emph{spacelike} interval (times $\mathrm{i}$---see Section \ref{sssec:td}).}
 
-You may be wondering if our new \textbf{Minkowski dot product} has a geometric definition like the Euclidean dot product does ($\vv q \cdot \vv w = qw \cos \theta$). The answer is a qualified yes: for \emph{qualifying} four-vectors $\vv Q$ and $\vv W$, the analogous relation is $\vv Q \cdot \vv W = QW \cosh \phi$. Here we have the hyperbolic cosine function and its argument $\phi$, which in this context can be thought of as the \emph{hyperbolic angle} between $\vv Q$ and $\vv W$ (itself a concept that needs qualifying). We'll forgo the details until Section \ref{sec:ra}. For now, it's enough to know that in Minkowski spacetime, \textbf{orthogonal vectors} remain those whose dot product is zero, and \textbf{parallel vectors} remain those that are scalar multiples of each other (\textbf{codirectional} if the scalar is positive, \textbf{contradirectional} if it's negative).\footnote{The words \emph{parallel} and \emph{antiparallel} are often used instead of \emph{codirectional} and \emph{contradirectional}, but then there's no word left to mean ``codirectional or contradirectional." For us, \emph{parallel} means ``codirectional or contradirectional" and gets the symbol $\parallel$. So if $\vv Q \parallel \vv W$, then $\vv Q$ and $\vv W$ are either codirectional or contradirectional. (Same for three-vectors.)}
+You may be wondering if our new \textbf{Minkowski dot product} has a geometric definition like the Euclidean dot product does ($\vv q \cdot \vv w = qw \cos \theta$). The answer is a qualified yes: for \emph{qualifying} four-vectors $\vv Q$ and $\vv W$, the analogous relation is $\vv Q \cdot \vv W = QW \cosh \phi$. Here we have the hyperbolic cosine function and its argument $\phi$, which in this context can be thought of as the \emph{hyperbolic angle} between $\vv Q$ and $\vv W$ (itself a concept that needs qualifying). We'll forgo the details until Section \ref{ssec:ra}. For now, it's enough to know that in Minkowski spacetime, \textbf{orthogonal vectors} remain those whose dot product is zero, and \textbf{parallel vectors} remain those that are scalar multiples of each other (\textbf{codirectional} if the scalar is positive, \textbf{contradirectional} if it's negative).\footnote{The words \emph{parallel} and \emph{antiparallel} are often used instead of \emph{codirectional} and \emph{contradirectional}, but then there's no word left to mean ``codirectional or contradirectional." For us, \emph{parallel} means ``codirectional or contradirectional" and gets the symbol $\parallel$. So if $\vv Q \parallel \vv W$, then $\vv Q$ and $\vv W$ are either codirectional or contradirectional. (Same for three-vectors.)}
 
 
-\subsection{Four-Position?}
+\subsubsection{Four-Position?}
 
 We could have started with a \emph{position} four-vector, but the \textbf{four-position} $\vv R = \langle ct, \vv r \rangle$ has the same limitation as the position three-vector mentioned in Footnote \ref{fn:pv}---namely, its magnitude isn't invariant under translation because its tail is always at the (spacetime) origin. Different origin? Different position vector. With standard configuration, this is no problem, since the frames share a spacetime origin and are merely ``boosted" relative to each other along their coincident $x$-axes. But all the other four-vectors we'll discuss have magnitudes that are invariant even under translation. In the jargon, these vector magnitudes are \textbf{Poincar\'e-invariant}. The magnitude of the four-position is \emph{Lorentz}-invariant like the others, but not Poincar\'e-invariant. For that reason, we take the \emph{displacement} four-vector as our prototype, rather than the four-position.
 
 
-\subsection{(Normalized) Four-Velocity}
+\subsubsection{(Normalized) Four-Velocity}
 
-Next, we define the normalized \textbf{four-velocity} by replicating our steps for obtaining the spacetime $\beta$-analogue from the $\Vert \dd \vv r \Vert$-analogue (cf.\ Section \ref{ssec:b}). Again, we use uppercase (we'll always use uppercase for four-vectors and lowercase for three-vectors):
+Next, we define the normalized \textbf{four-velocity} by replicating our steps for obtaining the spacetime $\beta$-analogue from the $\Vert \dd \vv r \Vert$-analogue (cf.\ Section \ref{sssec:b}). Again, we use uppercase (we'll always use uppercase for four-vectors and lowercase for three-vectors):
 \begin{equation}\label{eq:31}
 \boxed{
 \begin{aligned}
@@ -835,9 +846,9 @@ Its magnitude is $B = \sqrt{\vv B \cdot \vv B} = \gamma \sqrt{1 - (\vvbeta \cdot
 Because proper time is undefined for lightlike intervals (or, if you prefer, because $\gamma$ is undefined for $\beta = 1$), $\vv B$ is undefined for light and anything else without a rest frame.
 
 
-\subsection{Four-Momentum:\\ One Conservation Law to Rule Them All}
+\subsubsection{Four-Momentum:\\ One Conservation Law to Rule Them All}
 
-By the same logic, we can construct a \textbf{four-momentum} in terms of the normalized four-velocity, replicating our steps for obtaining the spacetime $p c$-analogue from the $\beta$-analogue (cf.\ Section \ref{ssec:pc}). We'll define it so that it has the dimension of energy:\footnote{Many authors use $\vv P \equiv \langle E/c , \, \vv p \rangle = m \vv V$ instead, giving it the dimension of momentum.}
+By the same logic, we can construct a \textbf{four-momentum} in terms of the normalized four-velocity, replicating our steps for obtaining the spacetime $p c$-analogue from the $\beta$-analogue (cf.\ Section \ref{sssec:pc}). We'll define it so that it has the dimension of energy:\footnote{Many authors use $\vv P \equiv \langle E/c , \, \vv p \rangle = m \vv V$ instead, giving it the dimension of momentum.}
 \begin{equation}\label{eq:32}
 \boxed{
 \begin{aligned}
@@ -880,9 +891,9 @@ which works even if the decay products are restless (massless) particles, as whe
 Because the conservation of four-momentum holds for any inertial observer, many problems in relativistic dynamics are best solved by considering the rest frame of either the system or one of its constituents. There, the only non-zero component of $\vv P_{\mathrm{system}}$ (or of $\vv P_{\mathrm{constituent}}$) is the time component, $E_{\mathrm{system}}$ ($E_{\mathrm{constituent}}$), which equals the system's (constituent's) rest energy. Since rest energy is invariant, one can then use that result in conjunction with the conservation of four-momentum to find unknowns in other frames.
 
 
-\subsection{Four-Force, Three-Force, and Power}\label{ssec:ff}
+\subsubsection{Four-Force, Three-Force, and Power}\label{sssec:ff}
 
-In Section \ref{ssec:pc}, we puzzled over the notion that rest energy is the measure of ``spacetime inertia." Now with Equation \ref{eq:32} we can understand what that means. Although $\vv B$'s magnitude is invariant and fixed at one, its \emph{direction} is certainly changeable. A system's rest energy must be its resistance to change in its direction of ``motion" through \emph{spacetime}.
+In Section \ref{sssec:pc}, we puzzled over the notion that rest energy is the measure of ``spacetime inertia." Now with Equation \ref{eq:32} we can understand what that means. Although $\vv B$'s magnitude is invariant and fixed at one, its \emph{direction} is certainly changeable. A system's rest energy must be its resistance to change in its direction of ``motion" through \emph{spacetime}.
 
 With all this talk about resistance to change in velocity, it's about time we introduced a relativistic concept of force. But before we do, let's reiterate the stipulation we made in Footnote \ref{fn:tr}: for now, we model any accelerating system (or ``traveler") as a point particle. Otherwise we'd need to account for the fact that the whole system doesn't accelerate ``as one" under the influence of a (non-gravitational) force, and we'd have to allow for different parts of the system to have different rest frames. Let's also remind ourselves of a related issue we encountered back in Section \ref{ssec:re}: if the transfer of rest energy into or out of a composite system occurs at more than one location on the system's bounds, then the relativity of simultaneity makes it difficult if not impossible to consider the rest energy ``invariant." If the energy-transfer occurs at a single location on the system's bounds, or if the system is modeled as a point particle, then the relativity of simultaneity presents no such issue.
 
@@ -915,7 +926,7 @@ In the common scenario that a system's $E_0$ doesn't change, the relativistic po
 \vv F = \gamma \mkern1.5mu \big \langle \vv f \cdot \vvbeta, \, \vv f \big \rangle \quad \textrm{\footnotesize{ (for $\mathring{E}_0 = 0$)}}.
 \end{equation}
 
-\subsection{Invariance of the Minkowski Dot Product}
+\subsubsection{Invariance of the Minkowski Dot Product}
 
 Now, we've seen what happens when we take the dot product of a four-vector with itself: we get its (squared) magnitude, which is invariant. But what happens when we take the Minkowski dot product of one four-vector with another? A four-momentum and a four-displacement, say:
 \begin{equation*}
@@ -961,8 +972,12 @@ E_{0 \, \textrm{blob}} = \sqrt{E_{0 \mkern.5mu h}^2 + 2 \gamma E_{0 \mkern.5mu h
 This solution is also a nice illustration of the non-additivity of rest energy (mass): $E_{0 \, \textrm{blob}} \neq E_{0 \mkern.5mu h} + E_{0j}$, except in the classical limit when the approximation $\gamma \approx 1$ suffices. Note that $E_{0 \, \textrm{blob}}$ was equal to the rest energy of the closed \emph{system} the whole time; it's just that before the collision, some of it came from the kinetic energy of particles $h$ and $j$.
 
 
+\subsubsection{Manifest Covariance}
 
-\subsection[Orthogonality, ("Normalized") Four-Acceleration]{Orthogonality, (``Normalized") Four-Acceleration}
+Having established that the Minkowski dot product is invariant, we see that an equation written in terms of only four-vectors, their dot products, and Lorentz-invariants necessarily has the same form in all frames. Such an equation is said to be \textbf{manifestly covariant}. (More generally, an equation written in terms of only four-\emph{tensors} is manifestly covariant, but we needn't worry about that for now.) In this context, the word \emph{covariant} means ``having the same form in all frames," and \emph{manifestly} means ``transparently." It's possible for an equation not written in terms of four-vectors and Lorentz-invariants to be covariant, but an equation written in terms of four-vectors and Lorentz-invariants is \emph{manifestly} covariant.
+
+
+\subsubsection[Orthogonality, ("Normalized") Four-Acceleration]{Orthogonality, (``Normalized") Four-Acceleration}
 
 So we have the four-displacement $\dd \vv R$, the normalized four-velocity $\vv B$, the four-momentum $\vv P$, and the four-force $\vv F$. Question: in what direction do they point? We began by \emph{defining} $\dd \vv R$ as tangent to a traveler's world line, pointing in whatever spacetime direction the traveler happens to be going. Common sense says that the same is true of the traveler's $\vv B$ and $\vv P$, but let's take a moment to think about what that means mathematically. Two vectors are codirectional if one is obtained by scaling the other by a positive number. We know that $\vv B$ and $\vv P$ are codirectional, since the latter is simply the former scaled by the traveler's $E_0$. Can we make a similar argument for $\dd \vv R$ and $\vv B$, and say that the latter is simply the former ``scaled" by the infinitesimal $1/(c \, \dd t_0)$? We can, but we need to be careful---we're \emph{not} saying that $\vv B$ is codirectional with $\vv R$! We're ``scaling" $\dd \vv R$, but \emph{differentiating} $\vv R$.
 
@@ -992,7 +1007,7 @@ Then we sub that result into Equation \ref{eq:34}:
 \end{equation}
 And now we note that in a traveler's instantaneous rest frame, the three-velocity $\vvbeta = \vv 0$, which means that the spatial components of $\vv B$ are zero (Equation \ref{eq:31}) and the time component of $\vv Z$ is zero (Equation \ref{eq:35}). So the (invariant!) dot product $\vv B \cdot \vv Z$ is $(B^{ct})(0) - (0)(Z^x) - (0)(Z^y) - (0)(Z^z) = 0$. QED.\footnote{It's standard practice to use superscript for the components of a four-vector.}
 
-Confession: we could have demonstrated that orthogonality more quickly without using the components of $\vv B$ and $\vv Z$ at all:
+Confession: we could have demonstrated that orthogonality more quickly in a manifestly covariant way:
 \begin{equation*}
 \begin{split}
 \dfrac{1}{c} \, \dfrac{\dd}{\dd t_0} \left( \vv B \cdot \vv B \right) &= \dfrac{1}{c} \, \dfrac{\dd}{\dd t_0} \, B^2 \\[2pt]
@@ -1003,7 +1018,7 @@ Confession: we could have demonstrated that orthogonality more quickly without u
 But our circuitous route was a good excuse to derive some useful equations.
 
 
-\subsection{Proper Acceleration}\label{ssec:pa}
+\subsubsection{Proper Acceleration}\label{sssec:pa}
 
 Equation \ref{eq:35} isn't quite so messy when the three-acceleration is parallel to the three-velocity. The time component doesn't look much different: ${Z^{ct} = \gamma^4 (\vvbeta \cdot \vvzeta) = \pm \, \gamma^4 \beta \zeta}$ (positive if $\vvbeta$ and $\vvzeta$ are codirectional, negative if they're contradirectional). The spatial component, however, gets much cleaner. Recognizing that parallel unit vectors can differ only by sign, we use $\vvzeta = \pm \, \zeta \hatbeta$ (where $\hatbeta = \vvbeta / \beta$ is the unit vector corresponding to velocity):
 \begin{equation*}
@@ -1037,7 +1052,7 @@ Z &= \sqrt{\vv Z \cdot \vv Z} = \sqrt{ \left[ \gamma^4 (\vvbeta \cdot \vvzeta) \
 Z &= \mathrm{i} \, \sqrt{\gamma^6 (\vvbeta \cdot \vvzeta)^2 + \gamma^4 \zeta^2} .
 \end{split}
 \end{equation}
-That's one way to write it. Let's find a more intuitive way, starting like this:\footnote{The derivation that follows is a variation of an answer on Stack Exchange contributed by the user Pulsar: \url{https://physics.stackexchange.com/questions/66839/relativistic-factor-between-coordinate-acceleration-and-proper-acceleration/66853\#66853}.}
+That's one way to write it. Let's find a more intuitive way, starting like this:\footnote{The derivation that follows is a variation of an answer on Stack Exchange contributed by the user Pulsar: \url{https://physics.stackexchange.com/q/66853}.}
 \begin{equation*}
 Z = \gamma^3 \zeta \mkern1mu \mathrm{i} \, \sqrt{\frac{(\vvbeta \cdot \vvzeta)^2}{\zeta^2} + \frac{1}{\gamma^2}}.
 \end{equation*}
@@ -1064,7 +1079,7 @@ That's $\zeta \mkern1mu \mathrm{i}$ in the traveler's instantaneous rest frame, 
 with invariant magnitude $\zeta_0 = [ \gamma^6 (\vvbeta \cdot \vvzeta)^2 + \gamma^4 \zeta^2 ]^{-1/2} = \gamma^3 \zeta / \gamma_{\perp}$ (by Equations \ref{eq:pa2} and \ref{eq:37}). When $\vvbeta \parallel \vvzeta$, Equation \ref{eq:37} reduces to Equation \ref{eq:36} (because then $\gamma_{\perp} = 1$). Another important special case is when $\vvbeta \perp \vvzeta$, as in uniform circular motion. Then $\gamma_{\perp} = \gamma$, and we get $\vvzeta_{\mkern1mu 0} = \gamma^2 \vvzeta$.
 
 
-\subsection{Classifying Four-Vectors}\label{ssec:cf}
+\subsubsection{Classifying Four-Vectors}
 
 We see now that the magnitude $Z$ of the four-acceleration \emph{must} contain the imaginary unit. Why $\mathrm{i}$? Because four-acceleration is orthogonal to four-velocity, and $\mathrm{i}$ \emph{never} appears in the magnitude of four-velocity.
 
@@ -1100,9 +1115,9 @@ This says symbolically what we've already put into words: rest energy is the mea
 
 If \emph{both} $E_0$ and $\vv B$ change (the general case), then the product rule gives us $\vv F = \mathring E_0 \mkern.5mu \vv B + E_0 \mkern.5mu \vv Z$. Such a four-force might be spacelike, timelike, or even lightlike, depending on whether the magnitude of the spatial component (three-force) is greater than, less than, or equal to the absolute value of the time component (power).
 
-\subsection{Proper Power, Proper Force}\label{ssec:pf}
+\subsubsection{Proper Power, Proper Force}\label{sssec:pf}
 
-When we discussed the four-force in Section \ref{ssec:ff}, we didn't bother finding its magnitude $F$. We could have ``plug-and-chugged" with the temporal and spatial components (like we later did to calculate the four-acceleration's magnitude), but that would have been a chore. Now that we've covered the four-acceleration $\vv Z$ and the proper acceleration $\vvzeta_{\mkern1mu 0}$ (with invariant magnitude $Z/\mathrm{i}$), we have a better option:
+When we discussed the four-force in Section \ref{sssec:ff}, we didn't bother finding its magnitude $F$. We could have ``plug-and-chugged" with the temporal and spatial components (like we later did to calculate the four-acceleration's magnitude), but that would have been a chore. Now that we've covered the four-acceleration $\vv Z$ and the proper acceleration $\vvzeta_{\mkern1mu 0}$ (with invariant magnitude $Z/\mathrm{i}$), we have a better option, manifestly covariant:
 \begin{equation}\label{eq:40}
 \begin{split}
 F &= \sqrt{\vv F \cdot \vv F} = \sqrt{\mathring{\vv P} \cdot \mathring{\vv P}} \\[2pt]
@@ -1111,9 +1126,9 @@ F &= \sqrt{\vv F \cdot \vv F} = \sqrt{\mathring{\vv P} \cdot \mathring{\vv P}} \
 F &= \sqrt{ \mathring{E}_0^2 - \left( E_0 \vvzeta_{\mkern1mu 0} \right)^2 }
 \end{split}
 \end{equation}
-because $\vv B$ and $\vv Z$ are orthogonal, $\vv B \cdot \vv B = B^2 = 1$, and $Z^2 = - (\vvzeta_{\mkern1mu 0} \cdot \vvzeta_{\mkern1mu 0})$.\footnote{Because the four-force concept is inapplicable to restless systems (see Section \ref{ssec:ff}), we don't lose generality by working with the rest energy. Whether the concepts of power and three-force are likewise inapplicable to restless systems is a thornier question. The simple answer is yes, they're inapplicable. A more complete answer would wrestle with optical phenomena like reflection and refraction. For instance, should we regard a reflected light wave as the same system before and after reflection? (Probably not.) And does it even make sense to label an electromagnetic wave ``restless" when it's traveling at $\beta < 1$ through a medium? (Probably not, and such a wave is better described as a \emph{polarization} wave.) There's also gravitational redshift/blueshift and gravitational lensing, but these are topics for general relativity, and it would be misleading to naively use the words \emph{power} and \emph{force} here.}
+because $\vv B$ and $\vv Z$ are orthogonal, $\vv B \cdot \vv B = B^2 = 1$, and $Z^2 = - (\vvzeta_{\mkern1mu 0} \cdot \vvzeta_{\mkern1mu 0})$.\footnote{Because the four-force concept is inapplicable to restless systems (see Section \ref{sssec:ff}), we don't lose generality by working with the rest energy. Whether the concepts of power and three-force are likewise inapplicable to restless systems is a thornier question. The simple answer is yes, they're inapplicable. A more complete answer would wrestle with optical phenomena like reflection and refraction. For instance, should we regard a reflected light wave as the same system before and after reflection? (Probably not.) And does it even make sense to label an electromagnetic wave ``restless" when it's traveling at $\beta < 1$ through a medium? (Probably not, and such a wave is better described as a \emph{polarization} wave.) There's also gravitational redshift/blueshift and gravitational lensing, but these are topics for general relativity, and it would be misleading to naively use the words \emph{power} and \emph{force} here.}
 
-All right, but that four-vector magnitude is less straightforward than the others we've seen. What does it tell us? First, note that it accords with Equations \ref{eq:38} and \ref{eq:39}: when $\vv B$ is constant ($\vvzeta_{\mkern1mu 0} = \vv 0$), $\vv F = \mathring{E}_0 \vv B$ and $F = \mathring{E}_0 B = \mathring{E}_0$; when $E_0$ is constant, $\vv F = E_0 \vv Z$ and $F = E_0 Z = E_0 \mkern.5mu \zeta_0 \mkern1mu \mathrm{i}$. And what \emph{are} these quantities $\mathring{E}_0$ and $E_0 \mkern.5mu \zeta_0$? They're certainly both invariant---the first is the derivative of the invariant rest energy with respect to the invariant $c t_0$, and the second is the invariant rest energy times the invariant magnitude of the proper acceleration.\footnote{This is a good time to remind ourselves of the caveats we mentioned at the beginning of Section \ref{ssec:ff}. First, we're still modeling any accelerating system as a point particle. Second, the relativity of simultaneity means that for an open composite system, it's not always possible to speak of the rest energy (or its proper-time derivative!) as ``invariant."} But they also represent the power and three-force (magnitude) that the traveler ``feels," or that an observer in any of the traveler's successive instantaneous rest frames measures. Why? For power:
+All right, but that four-vector magnitude is less straightforward than the others we've seen. What does it tell us? First, note that it accords with Equations \ref{eq:38} and \ref{eq:39}: when $\vv B$ is constant ($\vvzeta_{\mkern1mu 0} = \vv 0$), $\vv F = \mathring{E}_0 \vv B$ and $F = \mathring{E}_0 B = \mathring{E}_0$; when $E_0$ is constant, $\vv F = E_0 \vv Z$ and $F = E_0 Z = E_0 \mkern.5mu \zeta_0 \mkern1mu \mathrm{i}$. And what \emph{are} these quantities $\mathring{E}_0$ and $E_0 \mkern.5mu \zeta_0$? They're certainly both invariant---the first is the derivative of the invariant rest energy with respect to the invariant $c t_0$, and the second is the invariant rest energy times the invariant magnitude of the proper acceleration.\footnote{This is a good time to remind ourselves of the caveats we mentioned at the beginning of Section \ref{sssec:ff}. First, we're still modeling any accelerating system as a point particle. Second, the relativity of simultaneity means that for an open composite system, it's not always possible to speak of the rest energy (or its proper-time derivative!) as ``invariant."} But they also represent the power and three-force (magnitude) that the traveler ``feels," or that an observer in any of the traveler's successive instantaneous rest frames measures. Why? For power:
 \begin{equation}\label{eq:po}
 \begin{split}
 \mathcal{P} &= \dot{E}\\
@@ -1131,7 +1146,7 @@ All right, but that four-vector magnitude is less straightforward than the other
 \end{equation}
 where, again, only the last term remains in the traveler's instantaneous rest frame, but its magnitude there is $E_0 \mkern.5mu \zeta_0$, our desired invariant.
 
-So inertial observers can use their own coordinate measurements of the traveler's $\mathring{E}_0 = \gamma \dot{E}_0$ and $E_0 \mkern.5mu \zeta_0 = E_0 \gamma^3 \zeta / \gamma_{\perp}$ (Equation \ref{eq:37}) to calculate the traveler's power and three-force (magnitude) as measured in the traveler's instantaneous rest frame. These are therefore ``proper" quantities: the \textbf{proper power} $\mathcal{P}_0 \equiv \mathring{E}_0$, and the \textbf{proper force} $\vv f_0 \equiv E_0 \vvzeta_{\mkern1mu 0}$ ($= [mc^2][\vv a_0 / c^2] = m \vv a_0$).\footnote{Beware that another convention defines proper power and proper force as something else entirely---$\dd E / \dd t_0$ and $\dd \vv p / \dd t_0$, in keeping with defining proper velocity ``improperly" as $\dd \vv r / \dd t_0$ (see Footnote \ref{fn:pr} in Section \ref{ssec:ce}).} Equation \ref{eq:40} can now be expressed more intelligibly:
+So inertial observers can use their own coordinate measurements of the traveler's $\mathring{E}_0 = \gamma \dot{E}_0$ and $E_0 \mkern.5mu \zeta_0 = E_0 \gamma^3 \zeta / \gamma_{\perp}$ (Equation \ref{eq:37}) to calculate the traveler's power and three-force (magnitude) as measured in the traveler's instantaneous rest frame. These are therefore ``proper" quantities: the \textbf{proper power} $\mathcal{P}_0 \equiv \mathring{E}_0$, and the \textbf{proper force} $\vv f_0 \equiv E_0 \vvzeta_{\mkern1mu 0}$ ($= [mc^2][\vv a_0 / c^2] = m \vv a_0$).\footnote{Beware that another convention defines proper power and proper force as something else entirely---$\dd E / \dd t_0$ and $\dd \vv p / \dd t_0$, in keeping with defining proper velocity ``improperly" as $\dd \vv r / \dd t_0$ (see Footnote \ref{fn:pr} in Section \ref{sssec:ce}).} Equation \ref{eq:40} can now be expressed more intelligibly:
 \begin{equation}\label{eq:42}
 F = \sqrt{\mathcal{P}_0^2 - (\vv f_0 \cdot \vv f_0)} .
 \end{equation}
@@ -1139,7 +1154,7 @@ F = \sqrt{\mathcal{P}_0^2 - (\vv f_0 \cdot \vv f_0)} .
 Now, about this proper force: we've got $\vv f_0 = E_0 \vvzeta_{\mkern1mu 0}$, which in the traveler's instantaneous rest frame is simply $\vv f = E_0 \vvzeta$ ($= m \vv a$). Is the point of all this merely to restate the mundane fact that the relativistic three-force reduces to the Newtonian three-force in the classical limit? No! The point is that the magnitude $f_0 = E_0 \mkern.5mu \zeta_0$ ($= m a_0$) is an invariant whose value is calculable by all inertial observers. In $\vv f_0 = E_0 \vvzeta_{\mkern1mu 0}$ $(= m \vv a_0)$, then, we have something like a relativistic version of Newton's $\vv f_{\mathrm{classical}} = m \vv a$, but valid even when $\dot{E}_0 \neq 0$ ($\dot{m} \neq 0$).\footnote{In principle, the concept of proper force is applicable to Newtonian mechanics, too, provided one has defined classical force as the time-derivative of momentum (rather than as $m \vv a$---see Footnote \ref{fn:cf}). But it could only be useful in a variable-mass situation. That's because acceleration-magnitude is invariant in the classical limit. Proper acceleration differs appreciably from ordinary coordinate acceleration only when $\beta \centernot{\ll} 1$.}
 
 
-\section["Measure of Inertia" Revisited]{``Measure of Inertia" Revisited}\label{sec:in}
+\subsection["Measure of Inertia" Revisited]{``Measure of Inertia" Revisited}\label{ssec:in}
 
 We see in Equation \ref{eq:41} that $\vv f \neq E_0 \vvzeta$ $( = m \vv a)$, even when $\dot{E}_0 = 0$ ($\dot{m} = 0$ being the condition under which $\vv f_\textrm{classical} = m \vv a$ is true). That's not surprising; back in Section \ref{ssec:rm} we ruled out the possibility that $E_0$ is the resistance to change in three-velocity for arbitrary $\vvbeta$. More interesting is that our \emph{candidate} for the relativistic measure of inertia, total energy $E$, likewise cannot be unambiguously described as the resistance to change in velocity under the influence of a three-force. Yes, the last term in Equation \ref{eq:41} is $E \vvzeta$, and the middle term disappears when $\dot{E}_0 = 0$, but there's still that pesky first term that doesn't vanish unless $\vvbeta = \vv 0$:
 \begin{equation}\label{eq:43}
@@ -1231,7 +1246,7 @@ Equations \ref{eq:48} and \ref{eq:49} are nice! Perhaps the matrices $\mathcal{E
 
 
 
-\section{Lorentz Transformation Revisited}
+\subsection{Lorentz Transformation Revisited}
 
 We've spent a lot of time on invariant ``proper" quantities that allow observers to figure out what's happening in a traveler's (instantaneous) rest frame. That was time well spent, but what if an observer is less interested in a traveler's rest frame than in some other observer's measurements of the traveler's observables? Or what if there isn't a traveler at all, and an observer just wants to know what the components of some four-vector are in someone else's rest frame?\footnote{Most of the four-vectors we've considered pertain directly to something that's moving, but that's not a requirement. For instance, we're free to construct a four-separation that ``connects" a pair of spacelike-separated events and whose magnitude is the spacetime interval between them (times $\mathrm{i}$)---see Footnote \ref{fn:sp}.}
 
@@ -1308,7 +1323,7 @@ As we'll see, the details of a transformation can be an eyesore, so these one-li
 
 Care is required when the four-vector's components contain speeds or Lorentz factors (e.g., four-velocity and four-acceleration). We mustn't confuse these $\beta$'s and $\gamma$'s with the $\beta$'s and $\gamma$'s in the boost matrices. Our solution, remember, is to add a ``rel" subscript to the $\beta$'s and $\gamma$'s that correspond to the relative motion of the primed and unprimed frames---that is, we notate the boost parameters $\beta_{\mathrm{rel}}$ and $\gamma_{\mathrm{rel}}$.
 
-\subsection{Acceleration Transformed}\label{ssec:at}
+\subsubsection{Acceleration Transformed}
 
 We've already explicitly written out the Lorentz transformation for the components of four-displacement (Equations \ref{eq:lt2} and \ref{eq:fd}), four-velocity (Equations \ref{eq:fv}), and four-momentum (Equations \ref{eq:fm}). Let's go ahead and do the same for the components of four-acceleration (Equation \ref{eq:34}).
 \begin{equation*}
@@ -1441,12 +1456,12 @@ We can use these ugly equations if we must, but transforming to the \emph{travel
 & \zeta_{0 \mkern1.5mu z} = \zeta_z^\prime  = \gamma^2 \zeta_z .
 \end{aligned}
 \end{equation*}
-This accords with our results from Section \ref{ssec:pa}: if $\vvbeta \parallel \vvzeta$, then $\vvzeta_{\mkern1mu 0} = \gamma^3 \vvzeta$; and if $\vvbeta \perp \vvzeta$, then $\vvzeta_{\mkern1mu 0} = \gamma^2 \vvzeta$. In general, an observer can split the proper acceleration into a sum of two component vectors, one parallel and the other perpendicular to the traveler's three-velocity:
+This accords with our results from Section \ref{sssec:pa}: if $\vvbeta \parallel \vvzeta$, then $\vvzeta_{\mkern1mu 0} = \gamma^3 \vvzeta$; and if $\vvbeta \perp \vvzeta$, then $\vvzeta_{\mkern1mu 0} = \gamma^2 \vvzeta$. In general, an observer can split the proper acceleration into a sum of two component vectors, one parallel and the other perpendicular to the traveler's three-velocity:
 \begin{equation}\label{eq:pa}
 \vvzeta_{\mkern1mu 0} = \gamma^3 \vvzeta_{\parallel \vvbeta} + \gamma^2 \vvzeta_{\perp \vvbeta}.
 \end{equation}
 
-\subsection{Force Transformed}\label{ssec:ft}
+\subsubsection{Force Transformed}\label{sssec:ft}
 
 That wasn't pleasant. Transforming the components of four-force won't be pleasant either, but it won't be quite as bad. First:
 \begin{equation*}
@@ -1553,11 +1568,11 @@ And if the primed observer \emph{is} the traveler (standard configuration), then
 That first result means that the Cartesian component of three-force whose corresponding component vector is parallel to a traveler's three-velocity is always equal to the matching component of the traveler's \emph{proper} force (provided that the traveler's rest energy isn't changing); i.e., the component is invariant under a Lorentz boost along the axis of the traveler's motion (though that axis may change as the force acts!). This is a generalization of our earlier finding that $\vv f = \vv f_0$ when $\vv f \parallel \vvbeta$ (see the text after Equation \ref{eq:46}).
 
 
-\section{Hyperbolic Angles}\label{sec:ra}
+\subsection{Hyperbolic Angles}\label{ssec:ra}
 
-\subsection{What and Why?}
+\subsubsection{What and Why?}
 
-Back in Section \ref{ssec:fd}, we made passing reference to a special case in which the Minkowski dot product \emph{can} be expressed in a way that's analogous to the Euclidean relation $\vv q \cdot \vv w = qw \cos \theta$. The expression is $\vv Q \cdot \vv W = QW \cosh \phi$, where $\phi$ is the hyperbolic angle between the qualifying four-vectors $\vv Q$ and $\vv W$, but we noted that this equation---and indeed the very notion of an angle between four-vectors---is conditional.
+Back in Section \ref{sssec:fdi}, we made passing reference to a special case in which the Minkowski dot product \emph{can} be expressed in a way that's analogous to the Euclidean relation $\vv q \cdot \vv w = qw \cos \theta$. The expression is $\vv Q \cdot \vv W = QW \cosh \phi$, where $\phi$ is the hyperbolic angle between the qualifying four-vectors $\vv Q$ and $\vv W$, but we noted that this equation---and indeed the very notion of an angle between four-vectors---is conditional.
 
 Conditional on what? What's this special case?\footnote{Beyond the special case we'll discuss, there are actually a couple of others in which one might reasonably associate a hyperbolic argument with a pair of four-vectors. But they're unimportant for our purposes, and the particular relation $\vv Q \cdot \vv W = QW \cosh \phi$ doesn't hold for them.} What do hyperbolas have to do with anything, and where does that equation come from?
 
@@ -1603,7 +1618,7 @@ That's an invariant result: the dot product of the four-velocities of a pair of 
 \end{equation}
 For any timelike $\vv Q$ and $\vv W$ that are both future-pointing or both past-pointing, then, Equation \ref{eq:52} holds, and $\phi$ can be interpreted as the hyperbolic angle between them. Further, $\cosh{\phi}$ is the relative Lorentz factor of a pair of travelers whose four-velocities are parallel to $\vv Q$ and $\vv W$.
 
-\subsection{Rapidity}
+\subsubsection{Rapidity}
 
 Of course, the four-velocities that are parallel to $\vv Q$ and $\vv W$ in Equation \ref{eq:52} need not correspond with \emph{actual} travelers in a given scenario. For instance, the four-force acting on the light-emitting body in Einstein's thought experiment isn't parallel to the four-velocity \emph{of} anything that we care about (see Footnote \ref{fn:nt}); rather, the ``four-velocity" there is just a unit vector with no physical significance. If that four-force were dotted with another past-pointing timelike vector, we could identify the hyperbolic angle $\phi$ between them, but we'd probably have little interest in the associated relative $\gamma = \cosh{\phi}$ or the rest of Equations \ref{eq:51}, because, well, $\gamma$ and $\beta$ of \emph{what}?
 
@@ -1646,7 +1661,7 @@ This allows us to understand a Lorentz boost as a hyperbolic rotation of the $ct
 \end{bmatrix} .
 \end{equation*}
 
-As a geometric quantity---the hyperbolic angle between a traveler's and observer's four-velocities---the rapidity is arguably more ``fundamental" than speed or celerity or the Lorentz factor. There's something satisfying about recasting relativistic mechanics in terms of four-vectors, invariants, and rapidities alone. Four-velocity (normalized):
+As a palpably geometric quantity---the hyperbolic angle between a traveler's and observer's four-velocities---the rapidity is perhaps more ``fundamental" than speed or celerity or the Lorentz factor. There's something satisfying about recasting relativistic mechanics in terms of four-vectors, invariants, and rapidities alone. Four-velocity (normalized):
 \begin{equation*}
 \vv B = \langle \cosh{\phi}, \, \hatphi \sinh{\phi} \rangle
 \end{equation*}
@@ -1670,11 +1685,11 @@ which is just $\mathring{\phi}$ for rectilinear motion ($\mathring{\vvphi} \para
 \begin{equation*}
 \vv F = \mathring{\vv P} = \mathcal{P}_0 \vv B + E_0 \vv Z
 \end{equation*}
-($\mathcal{P}_0 = \mathring{E}_0$ being the proper power), or
+($\mathcal{P}_0 = \mathring{E}_0$ being the proper power in force-units), or
 \begin{equation*}
 \vv F = \langle \mathcal{P}_0 \cosh{\phi} + E_0 \mkern1.5mu \mathring{\phi} \sinh{\phi} , \, \hatphi ( \mathcal{P}_0 \sinh{\phi} + E_0 \mkern1.5mu \mathring{\phi} \cosh{\phi} ) + \mathring{\hatphi} E_0 \sinh{\phi} \rangle .
 \end{equation*}
-Admittedly, the components of four-acceleration and four-force are somewhat unwieldy when written out like this, but they're even worse in terms of $\vvbeta$, $\vvomega$, and $\gamma$, and the user-friendly nature of hyperbolic functions is a plus. Just look how easy it is to obtain an expression for the squared proper acceleration using the rapidity (and Equation \ref{eq:pa4}):
+Admittedly, the components of four-acceleration and four-force are somewhat unwieldy when written out like this, but they're arguably even worse in terms of $\vvbeta$, $\vvomega$, and $\gamma$, and the user-friendly nature of hyperbolic functions is a plus. Just look how easy it is to obtain an expression for the squared proper acceleration using the rapidity (and Equation \ref{eq:pa4}):
 \begin{equation}\label{eq:pa3}
 \begin{split}
 - \, Z^2 &= - \, \vv Z \cdot \vv Z = \left( \hatphi \mkern1.5mu \mathring{\phi} \cosh{\phi} + \mathring{\hatphi} \sinh{\phi} \right)^2 - \left( \mathring{\phi} \sinh{\phi} \right)^2 \\
@@ -1686,7 +1701,7 @@ because $\hatphi \cdot \mathring{\hatphi} = 0$ (unit vector is orthogonal to its
 Equation \ref{eq:pa3} also gives us the appealing relation $\zeta_0 = \mathring{\phi}$ for $\mathring{\vvphi} \parallel \vvphi$.\footnote{In this case, $\mathring{\phi} = \Vert \mathring{\vvphi} \Vert$ (see Footnote \ref{fn:ph}), and $\vvzeta_{\mkern1mu 0} = \mathring{\vvphi}$.} When the traveler's motion is rectilinear, then, $\mathring{\phi}$ is the magnitude of the proper acceleration and therefore invariant under a Lorentz boost in the $\pm \, \hatphi$ direction. Same goes for $\dd \phi = \mathring{\phi} \, c \, \dd t_0$: incremental \emph{changes} in the traveler's rapidity are invariant among observers for whom the traveler's $\mathring{\vvphi} \parallel \vvphi$. Now we're getting somewhere! Note that because we've defined rapidity as a magnitude, we cannot extend this argument to say that \emph{differences} in the rapidities of two rectilinear travelers with parallel velocities are necessarily invariant among the would-be qualifying observers. If one traveler is moving to your left at the same speed that the other is moving to your right, then you'll say the difference in their rapidities is zero, but you'd give a different answer after a boost to your left or right (imagine boosting all the way to one of the travelers' rest frames---is the other traveler now at rest? no). Partly to remedy this ``shortcoming," we'll introduce a \emph{signed} rapidity-like parameter in the next section. Naively we might guess that this signed parameter will be the Cartesian component of $\vvphi$ corresponding to the boost axis ($\phi_x$ if the boost is along the $x$-axis), but we'll see that that's not generally so.
 
 
-\subsection{Longitudinal Rapidity}\label{ssec:lr}
+\subsubsection{Longitudinal Rapidity}
 
 Since the inverse hyperbolic tangent is an odd function with a domain of $(-1, 1)$, there's nothing stopping us from feeding it signed velocity \emph{components} and working with the identically signed rapidity-like quantities it outputs. The hyperbolic tangent function is likewise odd and also returns values that retain the sign of their inputs, so the process is ``reversible." Let's experiment with this. Say we've got two inertial observers whose rest frames are in standard configuration (boost along the $x^{[\prime]}$-axis), and say they're measuring the velocity $\vvbeta$ ($\vvbeta^\prime$) of some third party. By Equations \ref{eq:vt}, the velocity component corresponding to the boost axis transforms like this:
 \begin{equation*}
@@ -1730,7 +1745,7 @@ Bear in mind that, in general, $\varphi \neq \phi_x$ ($x$ being the boost-axis).
 \end{aligned}
 \end{equation}
 
-Here's a neat application. Twice now---first after deriving Equation \ref{eq:46}, and then at the end of Section \ref{ssec:ft}---we've shown that among observers for whom a traveler's three-velocity and three-force are parallel, the magnitude of the three-force is equal to the magnitude of the proper force and thus invariant under a Lorentz boost in the $\pm \, \hatbeta$ direction (provided that the traveler's rest energy remains constant). More generally, we found that even if the three-force isn't parallel to the three-velocity, the Cartesian \emph{component} of three-force whose corresponding component vector is (momentarily) parallel to the three-velocity is invariant under such a boost. Another demonstration of this conditional invariance, more attractive perhaps, uses longitudinal rapidity and begins with Equation \ref{eq:29}:
+Here's a neat application. Twice now---first after deriving Equation \ref{eq:46}, and then at the end of Section \ref{sssec:ft}---we've shown that among observers for whom a traveler's three-velocity and three-force are parallel, the magnitude of the three-force is equal to the magnitude of the proper force and thus invariant under a Lorentz boost in the $\pm \, \hatbeta$ direction (provided that the traveler's rest energy remains constant). More generally, we found that even if the three-force isn't parallel to the three-velocity, the Cartesian \emph{component} of three-force whose corresponding component vector is (momentarily) parallel to the three-velocity is invariant under such a boost. Another demonstration of this conditional invariance, more attractive perhaps, uses longitudinal rapidity and begins with Equation \ref{eq:29}:
 \begin{equation*}
 \begin{split}
 \vv f &= \dot{\vv p} c = E_0 \dot{\vvomega} =  \dfrac{E_0}{\gamma} \, \mathring{\vvomega} \\[3pt]
@@ -1747,7 +1762,7 @@ f_x &= E_0 \mkern1.5mu \mathring{\varphi} .
 Since $E_0$ and $c \, \dd t_0$ are Lorentz-invariant, and since $\dd \varphi$ (infinitesimal change in longitudinal rapidity) is invariant under a boost along the $x$-axis, the component $f_x = E_0 (\dd \varphi / \dd t_0) / c$ must also be invariant under a boost along the $x$-axis---that is, under a boost in the $\pm \, \hatbeta$ direction.
 
 
-\subsection{Pseudorapidity and the Ultrarelativistic Limit}
+\subsubsection{Pseudorapidity and the Ultrarelativistic Limit}
 
 Particle physicists are keen on longitudinal rapidity (they often call it ``particle rapidity" or even just ``rapidity," and they label it $y$). That's because they deal with particles emitted from collisions in accelerators, and there's need to analyze this debris in the center-of-momentum frame of the colliding-particle system, which generally isn't the same as the lab frame. This puts a premium on quantities that are invariant under a Lorentz boost along the axis of the original beam (the $z$-axis, customarily), and differences in the corresponding longitudinal rapidities of ejecta fit the bill.
 
@@ -1842,7 +1857,7 @@ where we've used the ``half-angle" trig identities $\cos^2{(\theta / 2)} = (1 + 
 Because $\eta$ is such a good approximation for $y$ in the ultrarelativistic limit, particle physicists sometimes loosely refer to the pseudorapidity as just \emph{rapidity}. All this inconsistent usage can be confusing, so let's recap. In our lingo, rapidity is $\phi = \Vert \bm{\upphi} \Vert = \tanh^{-1}{\beta}$, and the longitudinal rapidity $\varphi$ is the inverse hyperbolic tangent of the velocity component corresponding to the axis of a given Lorentz boost ($\tanh^{-1}{\beta_x}$ if $x$ is the boost axis). In particle physics, longitudinal rapidity gets the symbol $y$ and is often called the ``particle rapidity" or even just the ``rapidity" for short, although the pseudorapidity $\eta$ is also sometimes called the rapidity.
 
 
-\section{Advanced Rectilinear Kinematics:\\ Constant Proper Acceleration}\label{sec:ak}
+\subsection{Advanced Rectilinear Kinematics:\\ Constant Proper Acceleration}\label{ssec:ak}
 
 With an important caveat, the Newtonian kinematic equations for constant acceleration are still applicable in special relativity, provided that only \emph{coordinate} quantities appear in them. This is merely a matter of defining velocity and acceleration as the first and second time-derivatives of position. In our notation, for example, and using the subscript i for \emph{initial} values ($ct = 0$):\footnote{It's common to use the naught subscript for initial values, but we're already using that for \emph{proper} quantities.}
 \begin{equation*}
@@ -1873,7 +1888,7 @@ or in terms of the traveler's proper time:
 The time-dependence of the angle between $\vvzeta$ and $\vvbeta$ complicates things, but we'll concern ourselves only with rectilinear motion ($\vvzeta \parallel \vvbeta$), where that's not a problem. First we'll derive kinematic functions of coordinate time, then we'll derive kinematic functions in terms of proper time, and finally we'll discuss the significance of this rectilinear constant-$\vvzeta_{\mkern1mu 0}$ scenario.
 
 
-\subsection{Functions of Coordinate Time (Team Celerity)}
+\subsubsection{Functions of Coordinate Time (Team Celerity)}
 
 With $\vvzeta \parallel \vvbeta$, we have:
 \begin{equation*}
@@ -1980,7 +1995,7 @@ ct_0 (ct) &= \dfrac{ \phi (ct) }{ \zeta_0} = \dfrac{\sinh^{-1} \big( \zeta_0 \mk
 \end{equation*}
 
 
-\subsection{Functions of Proper Time (Team Rapidity)}
+\subsubsection{Functions of Proper Time (Team Rapidity)}
 
 For constant $\vvzeta_{\mkern1mu 0} = \langle \zeta_{0 \mkern2mu x} , 0, 0 \rangle$ and $\vvzeta \parallel \vvbeta$ (the same rectilinear case we dealt with in the previous section), we can find kinematic functions of the accelerating traveler's \emph{proper} time by starting with Equation \ref{eq:pa3} (for $\mathring{\vvphi} \parallel \vvphi$):
 \begin{equation*}
@@ -2062,7 +2077,7 @@ ct(ct_0) &= \dfrac{\omega (ct_0) }{ \zeta_0} = \dfrac{\sinh \big( \zeta_0 \mkern
 
 
 
-\subsection{Hyperbolic Motion}
+\subsubsection{Hyperbolic Motion}
 
 The rectilinear motion with constant proper acceleration we've been studying goes by another name: \textbf{hyperbolic motion} (through spacetime). To see why, let's use our lovely functions of proper time (though we could obtain similar results with Equations \ref{eq:ce} and \ref{eq:x}).
 
@@ -2125,11 +2140,11 @@ Next, consider the asymptotes. With their slopes of $\pm \, 1$, they correspond 
 Since information can travel no faster than $\beta = 1$, it also follows that information about any event \emph{beyond} the ``approaching" asymptote (the one that comes arbitrarily close to the relevant hyperbola branch in the \emph{future}) will never reach the ever-accelerating traveler. That asymptote then represents an unphysical but nonetheless meaningful ``boundary" in spacetime---called the \textbf{future Rindler horizon}---that ``splits" the $ct$/$x$-plane into two regions: a ``knowable" region populated by events whose existence the traveler may learn of, and an ``unknowable" region populated by events whose existence the traveler must remain forever ignorant of.\footnote{The future Rindler horizon (named after Wolfgang Rindler) is quite like the \textbf{event horizon} of a \textbf{black hole}, though the former's existence depends on the traveler's ``choice" to continue accelerating, whereas the latter is a gravitational phenomenon.} The other asymptote (the one that was arbitrarily close to the accelerating traveler in the \emph{past}) is the \textbf{past Rindler horizon}, and it splits the $ct$/$x$-plane into two regions as well: a ``pingable" region that can receive light signals from the traveler, and an ``unpingable" region that cannot. Altogether the asymptotes quarter the $ct$/$x$-plane into four \textbf{Rindler wedges}: one contains the traveler's world line and is both knowable and pingable; a second is knowable but unpingable (it's behind the past horizon but not the future horizon); a third is pingable but unknowable (behind the future horizon but not the past horizon); and the last is both unknowable and unpingable (behind both Rindler horizons).
 
 
-\subsection{Born Rigidity}
+\subsubsection{Born Rigidity}
 
 
 
-\subsection{Rindler Coordinates}
+\subsubsection{Rindler Coordinates}
 
 %So far in this paper, we've \emph{only} used ($ct$ + Cartesian) coordinate to describe events and four-vector components. And after this little section, we'll continue that practice. But there are other possibilities! For example, we can use ($ct$ + spherical) or ($ct$ + cylindrical) coordinates, and we can figure out how those spatial coordinates transform under a Lorentz boost by combining our knowledge of how Cartesian coordinates transform with our knowledge of how Cartesian coordinates are related to spherical or cylindrical coordinates.
 %
@@ -2153,9 +2168,13 @@ Since information can travel no faster than $\beta = 1$, it also follows that in
 %\end{equation*}
 %Actually, if all this is true for one inertial frame, then it's true for \emph{every} frame that's in standard configuration with it, since all such frames share a spacetime origin that is the center event. [...]
 
-\section{Electromagnetism}\label{sec:rem}
 
-Near the beginning of this document, we took a quantum shortcut: instead of using classical electromagnetism to show that the energy of light transforms between frames in the same manner as its frequency, we used the Planck--Einstein relation. This wasn't quite ahistorical, but it wasn't entirely satisfactory, either, and we pledged that we'd come back and redo it the ``right" way, without invoking the photon model. The time has come to settle that unfinished business. We'll start by formulating electrodynamics from scratch using four-vectors---no explicit tensor analysis, no index gymnastics, no differential forms.\footnote{At the end there's a supplemental foray into dyadics, which is kind of like ``tensors lite" (see Section \ref{ssec:dy}).} Then we'll derive the transformation law for the energy of a light wave the way that Einstein did it (more or less). But first we'll need to go over some spacetime vector calculus. Familiarity with Euclidean vector calculus is assumed, though we'll keep our steps transparent and point out the identities we use.
+
+\clearpage
+
+\section{Manifestly Covariant Electrodynamics}\label{sec:rem}
+
+Near the beginning of this document, we took a quantum shortcut: instead of using classical electromagnetism to show that the energy of light transforms between frames in the same manner as its frequency, we used the Planck--Einstein relation. This wasn't quite ahistorical, but it wasn't entirely satisfactory, either, and we pledged that we'd come back and redo it the ``right" way, without invoking the photon model. The time has come to settle that unfinished business. We'll start by formulating the basics of electrodynamics from scratch using four-vectors---no explicit tensor analysis, no index gymnastics, no differential forms.\footnote{At the end there's a supplemental foray into dyadics, which is kind of like ``tensors lite" (see Section \ref{ssec:dy}).} Then we'll derive the transformation law for the energy of a light wave the way that Einstein did it (more or less). But first we'll need to go over some spacetime vector calculus. Familiarity with Euclidean vector calculus is assumed, though we'll keep our steps transparent and point out the identities we use.
 
 
 \subsection{The Math (Spacetime Vector Calculus)}
@@ -2180,7 +2199,7 @@ but do these components transform Lorentzianly under a boost? If not, then $\par
 \dfrac{\partial}{\partial z^\prime} &= \dfrac{\partial}{\partial z} ,
 \end{split}
 \end{equation*}
-That's not the Lorentz transformation; it's the \emph{inverse} Lorentz transformation! The \emph{Lorentz} transformation would then get us the unprimed components from the primed ones. This is precisely the opposite of how a four-vector's components transform.\footnote{\label{fn:cv}An object in Minkowski spacetime whose components transform in this ``backward" way is called a \textbf{four-\emph{co}vector}. Covectors are also called one-forms, dual vectors, or covariant vectors (if the latter, then vectors are called ``contravariant vectors").} If we simply change the sign of $\del$, then the components transform like those of a four-vector:
+That's not the Lorentz transformation; it's the \emph{inverse} Lorentz transformation! The \emph{Lorentz} transformation would then get us the unprimed components from the primed ones. This is precisely the opposite of how a four-vector's components transform.\footnote{\label{fn:cv}An object in Minkowski spacetime whose components transform in this ``backward" way is called a \textbf{four-\emph{co}vector}. Covectors are also called one-forms, dual vectors, or covariant vectors (if the latter, then vectors are called ``contravariant vectors"); the word \emph{covariant} here has a different meaning than it does in the term \emph{manifestly covariant}.} If we simply change the sign of $\del$, then the components transform like those of a four-vector:
 \begin{equation*}
 \begin{split}
 \dfrac{\partial}{\partial (ct^\prime)} &= \gamma \left[ \dfrac{\partial}{\partial (ct)} - \beta \left(- \dfrac{\partial}{\partial x} \right) \right] \\[3pt]
@@ -2318,15 +2337,15 @@ Now, we know that $\vv a \times [ \del \times (\vv c + \del f) ] = \vv a \times 
 &= \vv a \times (\del \times \vv c) ,
 \end{split}
 \end{equation*}
-where we've used $\del_{f} ( \vv a \cdot \del f ) = \del_{f} ( \vv a \cdot \del ) f = ( \vv a \cdot \del ) \del f$ (write it out in terms of components if you need convincing). By precisely the same logic, we find that our differential \emph{four-vector} triple product is invariant under a transformation that takes the vector field $\vv Q$ to $(\vv Q + \partialup \psi)$ for any spacetime scalar field $\psi$:
+where we've used $\del_{f} ( \vv a \cdot \del f ) = \del_{f} ( \vv a \cdot \del ) f = ( \vv a \cdot \del ) \del f$ (write it out in terms of components if you need convincing). By the same token, we find that our differential \emph{four-vector} triple product is invariant under a transformation that takes the vector field $\vv Q$ to $(\vv Q + \partialup \psi)$ for any spacetime scalar field $\psi$:
 \begin{equation*}
 \begin{split}
-\vv W \mkern1mu `` \mkern-4mu \times [ \partialup \times \mkern-4mu " \mkern1mu ( \vv Q + \partialup \psi ) ] &= \partialup_{\vv Q, \, \psi} [ \vv W \cdot ( \vv Q + \partialup \psi ) ] - (\vv W \cdot \partialup) ( \vv Q + \partialup \psi ) \\
+\vv W \mkern1mu `` \mkern-4mu \times [ \partialup \times \mkern-4mu " \mkern1mu ( \vv Q + \partialup \psi ) ] &= \partialup_{\vv Q, \, \psi} \, [ \vv W \cdot ( \vv Q + \partialup \psi ) ] - (\vv W \cdot \partialup) ( \vv Q + \partialup \psi ) \\
 &= \partialup_{\vv Q} ( \vv W \cdot \vv Q ) + ( \vv W \cdot \partialup) \partialup \psi - (\vv W \cdot \partialup) \vv Q - (\vv W \cdot \partialup) \partialup \psi \\
 &= \vv W \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv Q) .
 \end{split}
 \end{equation*}
-This is an important identity! Its value is perhaps most salient when the ``input vector" $\vv W$ is the four-del:
+This is an important identity! Its worth is perhaps most salient when the ``input vector" $\vv W$ is the four-del:
 \begin{equation*}
 \begin{split}
 \partialup \mkern1mu `` \mkern-4mu \times \partialup \times \mkern-4mu " \mkern1mu \vv Q &= \partialup ( \partialup \cdot \vv Q) - ( \partialup \cdot \partialup) \vv Q \\
@@ -2349,7 +2368,7 @@ In this context our new identity looks like:
 &= \partialup \mkern1mu `` \mkern-4mu \times \partialup \times \mkern-4mu " \mkern1mu \vv Q .
 \end{split}
 \end{equation*}
-This means that if we ever encounter a physical quantity equal to the ``double curl" of a four-vector field $\vv Q$ (we will!), it's also equal to the ``double curl" of $(\vv Q + \partialup \psi)$ for any $\psi$ we choose. This is an example of \textbf{gauge invariance}, and adding a $\partialup \psi$ to $\vv Q$ is called making a \textbf{gauge transformation}. Often it's convenient to choose a $\psi$ that satisfies $\Box \psi = - \partialup \cdot \vv Q$, because then the ``$bac$" term vanishes:
+This means that if we ever encounter a physical quantity equal to the ``double curl" of a four-vector field $\vv Q$ (we will!), we can be sure that it's also equal to the ``double curl" of $(\vv Q + \partialup \psi)$ for any $\psi$ we choose. This is an example of \textbf{gauge invariance}, and adding a $\partialup \psi$ to $\vv Q$ here is called making a \textbf{gauge transformation}. Often it's convenient to choose a $\psi$ that satisfies ${\Box \psi = - \partialup \cdot \vv Q}$, because then the ``$bac$" term vanishes:
 \begin{equation*}
 \begin{split}
 \partialup \mkern1mu `` \mkern-4mu \times \partialup \times \mkern-4mu " \mkern1mu ( \vv Q + \partialup \psi ) &= \partialup [ \partialup \cdot ( \vv Q + \partialup \psi ) ] - \Box ( \vv Q + \partialup \psi ) \\
@@ -2399,9 +2418,9 @@ Without motivation, we define the \textbf{four-potential} as any four-vector fie
 \boxed{
 \begin{split}
 \vv J &= - \partialup \mkern1mu `` \mkern-4mu \times \partialup \times \mkern-4mu " \mkern1mu \vv A  \\
-&= \Box \vv A - \partialup ( \partialup \cdot \vv A) .
+&= \Box \vv A - \partialup ( \partialup \cdot \vv A)
 \end{split}
-}
+} \, .
 \end{equation}
 We say ``any" because, as we discussed in Section \ref{sssec:tp}, gauge transformations taking $\vv A$ to $(\vv A + \partialup \psi)$ for any spacetime scalar field $\psi$ leave the ``double curl" of $\vv A$ unchanged. This non-uniqueness of the four-potential doesn't bother us; \emph{differences} in $\vv A$ (and \emph{derivatives} of $\vv A$) are what matter physically, and they're uniquely defined and measurable. Note that Equation \ref{eq:gfp} is inherently compatible with the continuity equation (Equation \ref{eq:con}) because the four-divergence of the right side is necessarily zero: $\partialup \cdot (\Box \vv A) - \partialup \cdot \partialup (\partialup \cdot \vv A) = \Box (\partialup \cdot \vv A) - \Box (\partialup \cdot \vv A)$. 
 
@@ -2458,7 +2477,7 @@ and the temporal component is the particle's $\gamma$ times the \textbf{Lorentz 
 \end{equation}
 The magnetic field $\vv b$ plays no role in Equation \ref{eq:lp} because the \textbf{magnetic force} $q \vvbeta \times \vv b$ in Equation \ref{eq:ltf} is perpendicular to $\vvbeta$ and therefore only changes the \emph{direction} of the particle's velocity (and momentum), not its magnitude. In other words, the magnetic field does no work. The \textbf{electric force} $q \vv e$, on the other hand, is parallel to $\vv e$ regardless of the direction of $\vvbeta$, and generally changes both the direction and magnitude of the particle's velocity.
 
-As four-vectors, $\vv J$, $\vv A$, and $\vv F_{\mathrm{L}}$ have components that obey the Lorentz transformation. As three-vectors, $\vv e$ and $\vv b$ do not, but their components are \emph{built} from the components of four-vectors ($\partialup$ and $\vv A$) and transform accordingly. Here are the Cartesian components of $\vv e$ and $\vv b$ in terms of those four-vector components (using Equations \ref{eq:fn} and \ref{eq:eb}):
+As four-vectors, $\vv J$, $\vv A$, and $\vv F_{\mathrm{L}}$ have components that obey the Lorentz transformation. As three-vectors, $\vv e$ and $\vv b$ do not, and equations involving them may be covariant but not manifestly so. Their components are \emph{built} from the components of four-vectors, however ($\partialup$ and $\vv A$), and transform accordingly. Here are the Cartesian components of $\vv e$ and $\vv b$ in terms of those four-vector components (using Equations \ref{eq:fn} and \ref{eq:eb}):
 \begin{equation}\label{eq:ebc}
 \begin{aligned}
 e_x = \partial^x A^{ct} - \partial^{ct} A^x \qquad \qquad b_x = \partial^z A^y - \partial^y A^z \\
@@ -2972,7 +2991,7 @@ and our other two eigenvalues are $\lambda = \gamma^2 (1 - \beta \cos \theta)(1 
 
 In Section \ref{sssec:lffd}, we simplified the temporal component of the Lorentz four-force density into a succinct statement of energy conservation. Now that we've taken care of our unfinished business concerning light and energy, we return to the Lorentz four-force density and simplify its three-vector \emph{spatial} component into a succinct statement of \emph{three-momentum} conservation. As we might expect from what we saw with Poynting's theorem (Equation \ref{eq:py}), this statement will equate the rate of decrease of electromagnetic three-momentum from a region to the outward ``flux" of electromagnetic three-momentum plus the rate at which the fields transfer three-momentum to particles within the region. Why the scare quotes around the word \emph{flux}? Because flux is the rate of flow of a \emph{scalar} quantity through a surface, and three-momentum is a \emph{vector} quantity. In particular, flux (of a scalar quantity) is the volume-integral of the divergence of a vector field, whereas the corresponding integrand for the ``flux" of a \emph{vector} quantity would have to be the ``divergence" of a \emph{rank-2 tensor} field (see Footnote \ref{fn:gd}). As we haven't dealt explicitly with tensor notation or the ``divergence" of anything but a vector field, this presents a challenge!\footnote{That said, we deal implicitly with rank-2 tensors every time we take the Laplacian or d'Alembertian of a vector field (the gradient of a vector is a rank-2 tensor).}
 
-We take this opportunity to dip our toes into rank-2 tensors, without getting into their full machinery, and without getting bogged down in too much new notation. Actually, we've already done so: at the end of Section \ref{sec:in}, we represented one three-vector as a column matrix and another as a row matrix, we multiplied the matrices (in that order---column times row), and we mentioned in passing that the resulting 3-by-3 was the matrix representation of the \emph{dyadic product} of the two vectors (we used the symbol $\otimes$ for this operation). What we didn't mention is that the dyadic product is a special case of the \textbf{tensor product}, and that the \textbf{dyad} it outputs is indeed a kind of rank-2 tensor. We'll limit our discussion of rank-2 tensors to \textbf{dyadics}, which are dyads and their sums.
+We take this opportunity to dip our toes into rank-2 tensors, without getting into their full machinery, and without getting bogged down in too much new notation. Actually, we've already done so: at the end of Section \ref{ssec:in}, we represented one three-vector as a column matrix and another as a row matrix, we multiplied the matrices (in that order---column times row), and we mentioned in passing that the resulting 3-by-3 was the matrix representation of the \emph{dyadic product} of the two vectors (we used the symbol $\otimes$ for this operation). What we didn't mention is that the dyadic product is a special case of the \textbf{tensor product}, and that the \textbf{dyad} it outputs is indeed a kind of rank-2 tensor. We'll limit our discussion of rank-2 tensors to \textbf{dyadics}, which are dyads and their sums.
 
 It's important to understand that tensors, like vectors (but unlike matrices), are \emph{geometric} objects, characterized by components that transform a certain way under a coordinate transformation. In fact, vectors \emph{are} tensors---of rank-1. And scalars are tensors of rank-0. A tensor's rank tells you (among other things) how many indices you need to uniquely specify one of its components. Not all three-dimensional Euclidean dyadics are dyads (that is, the dyadic product of two vectors), but those that aren't are \emph{sums} of dyads, and all Euclidean dyadics have nine ``doubled up" Cartesian components ($xx$, $xy$, $xz$, $yx$, $yy$, $yz$, $zx$, $zy$, $zz$), perfect for a square-matrix representation.\footnote{To keep things simple we'll continue to use Cartesian coordinates only.} (A rank-3 tensor can be represented by a cubic array, and so on.)
 
@@ -3258,7 +3277,7 @@ Using \emph{that} matrix to carry out $[\partialup]^{\mathrm{T}} \eta [\inlinedy
 \end{equation*}
 with each term canceling its additive inverse. So we get Equation \ref{eq:hme} ``for free" by virtue of the Faraday tensor's having the form $\partialup \wedge \vv A$.
 
-Equations \ref{eq:ime} and \ref{eq:hme} are Maxwell's equations in an explicitly relativistic and \emph{gauge-invariant} form. Equation \ref{eq:fp} contains the same information but is specific to the Lorenz gauge. By the way, our new four-dyadic $\inlinedy{\mathrm{G}}$ is called the \textbf{Maxwell tensor} (not to be confused with the Euclidean Maxwell \emph{stress} tensor $\inlinedy{\upsigma}$ that we met in Section \ref{sssec:emm}).
+Equations \ref{eq:ime} and \ref{eq:hme} are Maxwell's equations in a manifestly covariant and \emph{gauge-invariant} form. Equation \ref{eq:fp} contains the same information but is specific to the Lorenz gauge. By the way, our new four-dyadic $\inlinedy{\mathrm{G}}$ is called the \textbf{Maxwell tensor} (not to be confused with the Euclidean Maxwell \emph{stress} tensor $\inlinedy{\upsigma}$ that we met in Section \ref{sssec:emm}).
 
 
 \subsubsection{Hodge Duals and Quasi-Four-Vectors}
@@ -3357,11 +3376,11 @@ Last, we now understand that getting Equation \ref{eq:hme} ``for free" by virtue
 
 \subsubsection{Light with Four-Dyadics}
 
-In Section \ref{sssec:li}, we discussed electromagnetic plane waves in an explicitly relativistic fashion by starting with Equation \ref{eq:fp} ($\vv J = \Box \vv A$). But that equation is valid only in the Lorenz gauge, and combining Equations \ref{eq:ime} and \ref{eq:emta} we see that in general $\vv J = \partialup \cdot ( \partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A} )$, or:
+In Section \ref{sssec:li}, we discussed electromagnetic plane waves in a manifestly covariant fashion by starting with Equation \ref{eq:fp} ($\vv J = \Box \vv A$). But that equation is valid only in the Lorenz gauge, and combining Equations \ref{eq:ime} and \ref{eq:emta} we see that in general $\vv J = \partialup \cdot ( \partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A} )$, or:
 \begin{equation*}
 \vv J = \Box \vv A - \partialup (\partialup \cdot \vv A)
 \end{equation*}
-(Equation \ref{eq:gfp}, which we originally gave without motivation). We might wonder, then, whether it's possible to describe light in a way that's both explicitly relativistic \emph{and gauge-invariant}. It is! First impose the free-space condition ($\vv J = \textrm{\mbox{\boldmath $\emptyset$}}$) on Equation \ref{eq:gfp}:
+(Equation \ref{eq:gfp}, which we originally gave without motivation). We might wonder, then, whether it's possible to describe light in a way that's both manifestly covariant \emph{and gauge-invariant}. It is! First impose the free-space condition ($\vv J = \textrm{\mbox{\boldmath $\emptyset$}}$) on Equation \ref{eq:gfp}:
 \begin{equation*}
 \Box \vv A = \partialup(\partialup \cdot \vv A).
 \end{equation*}
@@ -3393,7 +3412,7 @@ If we label the ``barred" four-dyadic's components $\bar{e}_x$, $\bar{b}_x$, etc
 \begin{equation*}
 \textrm{\mbox{\boldmath $\emptyset$}} = \vv K \cdot \bar{\capdy{\mathrm{G}}} ,
 \end{equation*}
-wherefrom $\vv k \cdot \bar{\vv b} = 0$ and ${\bar{\vv b} = \vv{\hat k}} \times \bar{\vv e}$. So everything checks out, and Equation \ref{eq:ftwe} is an explicitly relativistic \emph{gauge-invariant} description of monochromatic electromagnetic plane waves.\footnote{You might note that the real part of Equation \ref{eq:ftwe} gives a \emph{cosine} function for $\vv e$ and $\vv b$, whereas Equations \ref{eq:bpw} and \ref{eq:epw} gave \emph{sine} functions. Strictly speaking, we should allow for a phase constant in the exponential argument.}
+wherefrom $\vv k \cdot \bar{\vv b} = 0$ and ${\bar{\vv b} = \vv{\hat k}} \times \bar{\vv e}$. So everything checks out, and Equation \ref{eq:ftwe} is a manifestly covariant \emph{gauge-invariant} description of monochromatic electromagnetic plane waves.\footnote{You might note that the real part of Equation \ref{eq:ftwe} gives a \emph{cosine} function for $\vv e$ and $\vv b$, whereas Equations \ref{eq:bpw} and \ref{eq:epw} gave \emph{sine} functions. Strictly speaking, we should allow for a phase constant in the exponential argument.}
 
 For the Lorenz gauge specifically, we can just combine Equations \ref{eq:pw} and \ref{eq:emta} (real part implied):
 \begin{equation*}
