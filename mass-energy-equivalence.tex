@@ -2242,17 +2242,17 @@ When it's dotted with a four-vector field $\vv Q = \vv Q (\vv R) = \langle Q^{ct
 whose value at every event is Lorentz-invariant.
 }
 \item{
-When $\partialup$ is dotted with \emph{itself}, the resulting function is called the \textbf{wave operator}, the \textbf{four-Laplacian}, or the \textbf{d'Alembertian}, labeled $\Box$:\footnote{Another convention---preferable, perhaps, but less common these days---uses $\Box$ as the four-del symbol and $\Box^2$ as the d'Alembertian, mirroring the use of $\del$ for the three-del and $\del^2 = \del \cdot \del$ for the three-Laplacian.}
+When $\partialup$ is dotted with \emph{itself}, the resulting function is called the \textbf{wave operator}, the \textbf{four-Laplacian}, or the \textbf{d'Alembertian}, labeled $\Box$:\footnote{Another convention---preferable, perhaps, but less common these days---uses $\Box$ as the four-del symbol and $\Box^2$ as the d'Alembertian, mirroring the use of $\del$ for the three-del and $\nabla ^2 = \del \cdot \del$ for the three-Laplacian.}
 \begin{equation*}
 \begin{split}
 \Box &\equiv \partialup \cdot \partialup = \dfrac{1}{c^2} \, \dfrac{\partial^2}{\partial t^2} - \left[ \left( - \del \right) \cdot \left( - \del \right) \right] \\
-&= \dfrac{1}{c^2} \, \dfrac{\partial^2}{\partial t^2} - \del^2 \\[4pt]
+&= \dfrac{1}{c^2} \, \dfrac{\partial^2}{\partial t^2} - \nabla ^2 \\[4pt]
 &= \dfrac{1}{c^2} \, \dfrac{\partial^2}{\partial t^2} - \dfrac{\partial^2}{\partial x^2} - \dfrac{\partial^2}{\partial y^2} - \dfrac{\partial^2}{\partial z^2} .
 \end{split}
 \end{equation*}
 }
 \end{itemize}
-The d'Alembertian is the four-divergence of the four-gradient. Like the Laplacian, it can operate on a scalar field \emph{or} a vector field, always outputting a field of the same kind as its input.\footnote{\label{fn:gd}Does this mean that a vector field can have a gradient? Doesn't that contradict what we said above about the four-gradient acting on scalar fields? It depends on how we define the word \emph{gradient}, but basically the answer is yes! The details involve tensors (briefly---the gradient of a tensor field of rank $n$ is a tensor field of rank $n + 1$, and the divergence of a tensor field of rank $n$ is a tensor field of rank $n - 1$), but for now it's enough to know that the Laplacian and d'Alembertian can operate on both scalar and vector fields.} Think of the d'Alembertian as the four-del's invariant ``squared magnitude." It acts like a \emph{scalar} when combined with other operators, in the sense that the order of the operations is reversible: $\Box (\partialup \psi) = \partialup (\Box \psi)$ and $\Box (\partialup \cdot \vv Q) = \partialup \cdot (\Box \vv Q)$.\footnote{It's a good exercise to verify these relations. Use the analogous Laplacian identities $\del^2 (\del f) = \del (\del^2 f)$ and $\del^2 (\del \cdot \vv c) = \del \cdot (\del^2 \vv c)$, and also the fact that the order of mixed partials doesn't matter (e.g., $\partial^{ct} \del \cdot \vv c = \del \cdot \partial^{ct} \vv c$, and $\partial^{ct} \del f = \del \partial^{ct} f$).} By contrast, the four-gradient of the four-divergence is not equivalent to the four-divergence of the four-gradient (the d'Alembertian): $\partialup (\partialup \cdot \vv Q) \neq \Box \vv Q$.
+The d'Alembertian is the four-divergence of the four-gradient. Like the Laplacian, it can operate on a scalar field \emph{or} a vector field, always outputting a field of the same kind as its input.\footnote{\label{fn:gd}Does this mean that a vector field can have a gradient? Doesn't that contradict what we said above about the four-gradient acting on scalar fields? It depends on how we define the word \emph{gradient}, but basically the answer is yes! The details involve tensors (briefly---the gradient of a tensor field of rank $n$ is a tensor field of rank $n + 1$, and the divergence of a tensor field of rank $n$ is a tensor field of rank $n - 1$), but for now it's enough to know that the Laplacian and d'Alembertian can operate on both scalar and vector fields.} Think of the d'Alembertian as the four-del's invariant ``squared magnitude." It acts like a \emph{scalar} when combined with other operators, in the sense that the order of the operations is reversible: $\Box (\partialup \psi) = \partialup (\Box \psi)$ and $\Box (\partialup \cdot \vv Q) = \partialup \cdot (\Box \vv Q)$.\footnote{It's a good exercise to verify these relations. Use the analogous Laplacian identities $\nabla ^2 (\del f) = \del (\nabla ^2 f)$ and $\nabla ^2 (\del \cdot \vv c) = \del \cdot (\nabla ^2 \vv c)$, and also the fact that the order of mixed partials doesn't matter (e.g., $\partial^{ct} \del \cdot \vv c = \del \cdot \partial^{ct} \vv c$, and $\partial^{ct} \del f = \del \partial^{ct} f$).} By contrast, the four-gradient of the four-divergence is not equivalent to the four-divergence of the four-gradient (the d'Alembertian): $\partialup (\partialup \cdot \vv Q) \neq \Box \vv Q$.
 
 
 \subsubsection{Differential Triple Products; Gauge Transformations}\label{sssec:tp}
@@ -2345,18 +2345,20 @@ where we've used $\del_{f} ( \vv a \cdot \del f ) = \del_{f} ( \vv a \cdot \del 
 &= \vv W \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv Q) .
 \end{split}
 \end{equation*}
-This is an important identity! Its worth is perhaps most salient when the ``input vector" $\vv W$ is the four-del:
+This is an important identity! It means that if we ever encounter a physical quantity equal to $\vv W \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv Q)$ (we will!), we can be sure that it's also equal to $\vv W \mkern1mu `` \mkern-4mu \times [ \partialup \times \mkern-4mu " \mkern1mu ( \vv Q + \partialup \psi ) ]$ for any $\psi$ we choose. This is an example of \textbf{gauge invariance}, and adding a $\partialup \psi$ to $\vv Q$ here is called making a \textbf{gauge transformation}.
+
+Why might we want to make a gauge transformation? Well, consider a differential four-vector triple product whose ``input vector" is the four-del:
 \begin{equation*}
 \begin{split}
 \partialup \mkern1mu `` \mkern-4mu \times \partialup \times \mkern-4mu " \mkern1mu \vv Q &= \partialup ( \partialup \cdot \vv Q) - ( \partialup \cdot \partialup) \vv Q \\
 &= \partialup ( \partialup \cdot \vv Q) - \Box \vv Q ,
 \end{split}
 \end{equation*}
-analogous to the curl of the curl:
+a four-vector field analogous to the curl of the curl:
 \begin{equation*}
 \begin{split}
 \del \times \del \times \vv c &= \del (\del \cdot \vv c) - (\del \cdot \del) \vv c \\
-&=  \del (\del \cdot \vv c) - \del^2 \vv c .
+&=  \del (\del \cdot \vv c) - \nabla ^2 \vv c .
 \end{split}
 \end{equation*}
 In this context our new identity looks like:
@@ -2368,7 +2370,7 @@ In this context our new identity looks like:
 &= \partialup \mkern1mu `` \mkern-4mu \times \partialup \times \mkern-4mu " \mkern1mu \vv Q .
 \end{split}
 \end{equation*}
-This means that if we ever encounter a physical quantity equal to the ``double curl" of a four-vector field $\vv Q$ (we will!), we can be sure that it's also equal to the ``double curl" of $(\vv Q + \partialup \psi)$ for any $\psi$ we choose. This is an example of \textbf{gauge invariance}, and adding a $\partialup \psi$ to $\vv Q$ here is called making a \textbf{gauge transformation}. Often it's convenient to choose a $\psi$ that satisfies ${\Box \psi = - \partialup \cdot \vv Q}$, because then the ``$bac$" term vanishes:
+If we now choose a $\psi$ that satisfies ${\Box \psi = - \partialup \cdot \vv Q}$, then adding $\partialup \psi$ to the $\vv Q$ field causes the whole ``$bac$" term to vanish:
 \begin{equation*}
 \begin{split}
 \partialup \mkern1mu `` \mkern-4mu \times \partialup \times \mkern-4mu " \mkern1mu ( \vv Q + \partialup \psi ) &= \partialup [ \partialup \cdot ( \vv Q + \partialup \psi ) ] - \Box ( \vv Q + \partialup \psi ) \\
@@ -2376,7 +2378,7 @@ This means that if we ever encounter a physical quantity equal to the ``double c
 &=  - \Box ( \vv Q + \partialup \psi ) ,
 \end{split}
 \end{equation*}
-leaving just a wave equation for the divergenceless(!) $\vv Q^\prime = \vv Q + \partialup \psi$. Performing this transformation imposes the \textbf{Lorenz gauge} (named for Ludvig Lorenz, not Hendrik Lorentz). We still have limited \textbf{gauge freedom} within the Lorenz gauge---for any spacetime scalar field $\chi$ whose d'Alembertian is zero ($\Box \chi = 0$), we get $\Box ( \vv Q^\prime + \partialup \chi ) = \Box \vv Q^\prime + \partialup \Box \chi = \Box \vv Q^\prime$.
+leaving just a wave equation for the divergenceless(!) $\vv Q^\prime = \vv Q + \partialup \psi$, a far more tractable expression than the full ``$bac - cab$" expansion. Performing this particular transformation is called imposing the \textbf{Lorenz gauge} (named for Ludvig Lorenz, not Hendrik Lorentz); other gauges are convenient in their own ways. Note that we still have limited \textbf{gauge freedom} within the Lorenz gauge---for any spacetime scalar field $\chi$ whose d'Alembertian is zero (${\Box \chi = 0}$), we'd get $\Box ( \vv Q^\prime + \partialup \chi ) = \Box \vv Q^\prime + \partialup \Box \chi = \Box \vv Q^\prime$.
 
 That's all the math we'll need. Back to the physics.
 
@@ -2431,9 +2433,9 @@ Something beautiful happens when we impose the Lorenz gauge:
 \begin{equation}\label{eq:lg}
 \boxed{ \partialup \cdot \vv A = 0 } \quad \textrm{\footnotesize{ (Lorenz gauge condition)}}
 \end{equation}
-(again, see Section \ref{sssec:tp}). Equation \ref{eq:fp} is \emph{the} electromagnetic field equation. It's an inhomogeneous wave equation, and it says that a non-zero value of the $\vv J$ field at an event in spacetime generates a commensurate disturbance in the  (Lorenz-gauge) $\vv A$ field that propagates outward in space at $\beta = 1$:
+(again, see Section \ref{sssec:tp}). Equation \ref{eq:fp} is \emph{the} electromagnetic field equation. It's an inhomogeneous wave equation, and it says that a non-zero value of the $\vv J$ field at an event in spacetime generates a commensurate disturbance in the (Lorenz-gauge) $\vv A$ field that propagates outward in space at $\beta = 1$:
 \begin{equation*}
-\dfrac{1}{c^2} \, \dfrac{\partial^2 \vv A}{\partial t^2} - \del^2 \vv A = \vv J .
+\dfrac{1}{c^2} \, \dfrac{\partial^2 \vv A}{\partial t^2} - \nabla ^2 \vv A = \vv J .
 \end{equation*}
 The disturbance propagates forever, though it can undergo interference with other disturbances. This is how information about $\vv J$ spreads. The sum of all such disturbances passing through a point in space at a given time determines the ``value" of $\vv A$ at that event (scare quotes because the value isn't uniquely defined---we have ``gauge freedom" even within the Lorenz gauge). A disturbance passing through a region where $\vv J = \textrm{\mbox{\boldmath $\emptyset$}}$ (\textbf{free space}) is called an \textbf{electromagnetic wave}.
 
@@ -2543,21 +2545,21 @@ Equivalently, though maybe less elegantly:
 \end{equation*}
 where $\gamma = \cosh{\phi}$ and $\beta = \tanh{\phi}$ are boost parameters (and $\hatbeta = \vvbeta / \beta = \hatphi$).
 
-Finally, it's useful to derive a relationship between $\vv J$ and the $\vv e$ and $\vv b$ fields (Equations \ref{eq:eb}). Let's use the Lorenz gauge, with $\vv J= \Box \vv A = \langle \Box A^{ct}, \Box \vv a \rangle$. By the Lorenz condition ${\partialup \cdot \vv A = 0}$ (that is, $\partial^{ct} A^{ct} = - \del \cdot \vv a$):
+Finally, it's useful to derive a relationship between $\vv J$ and the $\vv e$ and $\vv b$ fields (Equations \ref{eq:eb}). Let's use the Lorenz gauge, with $\vv J= \Box \vv A = \langle \Box A^{ct}, \Box \vv a \rangle$. By the Lorenz condition ${\partialup \cdot \vv A = 0}$ (Equation \ref{eq:lg}), or $\partial^{ct} A^{ct} = - \del \cdot \vv a$:
 \begin{equation}\label{eq:ace}
 \begin{split}
 \rho &= \Box A^{ct} \\
-&= \partial^{ct} (\partial^{ct} A^{ct}) - \del^2 A^{ct} \\
+&= \partial^{ct} (\partial^{ct} A^{ct}) - \nabla ^2 A^{ct} \\
 &= \partial^{ct} (- \del \cdot \vv a) - \del \cdot \del A^{ct} \\
 &= \del \cdot (- \partial^{ct} \vv a - \del A^{ct}) \\
 \rho &= \del \cdot \vv e
 \end{split}
 \end{equation}
-(we can swap $\partial^{ct}$ and $\del \cdot$ because the order of mixed partials is reversible). Then using the identity ${\del^2 \vv a = \del(\del \cdot \vv a) - \del \times (\del \times \vv a)}$ for the vector Laplacian (and Equations \ref{eq:eb}), we also have:
+(we can swap $\partial^{ct}$ and $\del \cdot$ because the order of mixed partials is reversible). Then using the identity ${\nabla ^2 \vv a = \del(\del \cdot \vv a) - \del \times (\del \times \vv a)}$ for the vector Laplacian (and Equations \ref{eq:eb}), we also have:
 \begin{equation}\label{eq:abe}
 \begin{split}
 \vv j &= \Box \vv a \\
-&= \partial^{ct} (\partial^{ct} \vv a) - \del^2 \vv a \\
+&= \partial^{ct} (\partial^{ct} \vv a) - \nabla ^2 \vv a \\
 &= \del \times (\del \times \vv a) + \del(\partial^{ct} A^{ct}) + \partial^{ct} (\partial^{ct} \vv a) \\
 \vv j &=  \del \times \vv b - \partial^{ct} \vv e ,
 \end{split}
@@ -2737,7 +2739,7 @@ We have what we need from the Lorentz four-force density to take care of our unf
 
 Light is an electromagnetic wave---a disturbance in the (Lorenz-gauge!) four-potential field $\vv A = \vv A (\vv R)$ that propagates through free space (where the four-current density field $\vv J = \vv J (\vv R)$ is zero).\footnote{Our ``potential-first" approach in this section is \emph{only} valid in the Lorenz gauge. The results it generates for the $\vv e$ and $\vv b$ fields, however, are gauge-invariant.} To discuss it mathematically, then, means working with solutions to the homogeneous wave equation
 \begin{equation*}
-\Box \vv A =  \left( \dfrac{1}{c^2} \, \dfrac{\partial^2}{\partial t^2} - \del^2 \right) \vv A = \textrm{\mbox{\boldmath $\emptyset$}}
+\Box \vv A =  \left( \dfrac{1}{c^2} \, \dfrac{\partial^2}{\partial t^2} - \nabla ^2 \right) \vv A = \textrm{\mbox{\boldmath $\emptyset$}}
 \end{equation*}
 (Equation \ref{eq:fp} with $\vv J = \textrm{\mbox{\boldmath$\emptyset$}}$). We won't go over \emph{how to solve} this second-order linear partial differential equation. Rather, we'll take for granted the result from Fourier analysis that any of its solutions can be expressed as a superposition of monochromatic plane waves, and that its general monochromatic solution is:
 \begin{equation}\label{eq:pw}
@@ -2763,7 +2765,7 @@ which requires that $\Box f = 0$ and $\partialup f \cdot \partialup f = 0$. But 
 &= \left \langle K^{ct} \dfrac{\partial (ct)}{\partial (ct)}, \, K^x \dfrac{\partial x}{\partial x}, \, K^y \dfrac{\partial y}{\partial y} , \, K^z \dfrac{\partial z}{\partial z} \right \rangle = \vv K ,
 \end{aligned}
 \end{equation*}
-and our constraints become $\partialup \cdot \vv K = 0$ (trivial---$\vv K$ is constant) and $\vv K \cdot \vv K = 0$. So $\vv K$ \emph{is} lightlike, and let's further insist that it's future-pointing (otherwise we allow for light waves traveling backward in time!). The Lorenz condition ($\partialup \cdot \vv A = 0$) imposes an additional constraint on $\vv K$:
+and our constraints become $\partialup \cdot \vv K = 0$ (trivial---$\vv K$ is constant) and $\vv K \cdot \vv K = 0$. So $\vv K$ \emph{is} lightlike, and let's further insist that it's future-pointing (otherwise we allow for light waves traveling backward in time!). The Lorenz condition $\partialup \cdot \vv A = 0$ (Equation \ref{eq:lg}) imposes an additional constraint on $\vv K$:
 \begin{equation*}
 \begin{aligned}
 0 &= \partialup \cdot \left( \bar{\vv A} \mathrm{e}^{\mathrm{i} f} \right) \\
@@ -3277,7 +3279,7 @@ Using \emph{that} matrix to carry out $[\partialup]^{\mathrm{T}} \eta [\inlinedy
 \end{equation*}
 with each term canceling its additive inverse. So we get Equation \ref{eq:hme} ``for free" by virtue of the Faraday tensor's having the form $\partialup \wedge \vv A$.
 
-Equations \ref{eq:ime} and \ref{eq:hme} are Maxwell's equations in a manifestly covariant and \emph{gauge-invariant} form. Equation \ref{eq:fp} contains the same information but is specific to the Lorenz gauge. By the way, our new four-dyadic $\inlinedy{\mathrm{G}}$ is called the \textbf{Maxwell tensor} (not to be confused with the Euclidean Maxwell \emph{stress} tensor $\inlinedy{\upsigma}$ that we met in Section \ref{sssec:emm}).
+Equations \ref{eq:ime} and \ref{eq:hme} are Maxwell's equations in a manifestly covariant and \emph{gauge-invariant} form. Equations \ref{eq:gfp} and \ref{eq:fp} contain the same information, but the former is intractable and the latter is specific to the Lorenz gauge. By the way, our new four-dyadic $\inlinedy{\mathrm{G}}$ is called the \textbf{Maxwell tensor} (not to be confused with the Euclidean Maxwell \emph{stress} tensor $\inlinedy{\upsigma}$ that we met in Section \ref{sssec:emm}).
 
 
 \subsubsection{Hodge Duals and Quasi-Four-Vectors}
@@ -3431,7 +3433,7 @@ Let's make sure that the plane-wave solutions for $\vv e$ and $\vv b$ that we fo
 =
 \begin{bmatrix}
 0 & [ - \vv e]^\mathrm{T} \\[1ex]
-[\vv e] & [ \{ \vv b \times \} ]
+[\vv e] & [ - \del \wedge \vv a ]
 \end{bmatrix}
 =
 \mathrm{i} \mathrm{e}^{\mathrm{i} f}
@@ -3440,7 +3442,7 @@ Let's make sure that the plane-wave solutions for $\vv e$ and $\vv b$ that we fo
 [\bar{A}^{ct} \vv k - K^{ct} \bar{\vv a}] & [ \vv k \wedge \bar{\vv a} ] 
 \end{bmatrix} ,
 \end{equation*}
-where $\{ \vv b \times \}$ is the three-dyadic that satisfies $\{ \vv b \times \} \cdot \vv q = \vv b \times \vv q$ for any three-vector $\vv q$, and where the three-dyadic $\vv k \wedge \bar{\vv a} = {\vv k \otimes \bar{\vv a} - \bar{\vv a} \otimes \vv k}$. This gives $\vv b = \mathrm{i} \mathrm{e}^{\mathrm{i} f} \, \bar{\vv a} \times \vv k$ (check that!) and $\vv e = \mathrm{i} \mathrm{e}^{\mathrm{i} f} ( \bar{A}^{ct} \vv k - K^{ct} \bar{\vv a} )$, which were indeed steps on the way to Equations \ref{eq:bpw} and \ref{eq:epw}. Everything checks out again (and by now we've noticed a relationship between cross products and antisymmetric dyadics, yes?).
+where the $\wedge$ sign means the same thing between three-vectors that it does between four-vectors (confirm that $\vv a \otimes \del_{\vv a} - \del \otimes \vv a$ correctly delivers the $\vv b$ components in the Faraday tensor). This gives $\vv b = \mathrm{i} \mathrm{e}^{\mathrm{i} f} \, \bar{\vv a} \times \vv k$ (check that!) and $\vv e = \mathrm{i} \mathrm{e}^{\mathrm{i} f} ( \bar{A}^{ct} \vv k - K^{ct} \bar{\vv a} )$, which were indeed steps on the way to Equations \ref{eq:bpw} and \ref{eq:epw}. Everything checks out again (and by now we've noticed a relationship between cross products and antisymmetric dyadics, yes?).
 
 
 \subsubsection{Double-Dotting Four-Dyadics; Trace; Field Invariants}
@@ -3712,7 +3714,7 @@ and we have a four-dyadic that combines $u$, $\vv s$, and $\inlinedy{\upsigma}$:
 =
 \begin{bmatrix}
 u & [\vv s]^{\mathrm{T}} \\[1ex]
-[\vv s] & - [ \mkern1mu \inlinedy{\upsigma} \mkern1mu ]
+[\vv s] & [ - \mkern-2mu \inlinedy{\upsigma} \mkern1mu ]
 \end{bmatrix} .
 \end{equation*}
 This dyadic is symmetric and also traceless ($\inlinedy{\mathrm{T}} : \inlinedy{\upeta} = 0$):
@@ -3744,7 +3746,7 @@ because in matrix notation that's:
 \end{bmatrix}
 \begin{bmatrix}
 u & [\vv s]^{\mathrm{T}} \\[1ex]
-[\vv s] & - [ \mkern1mu \inlinedy{\upsigma} \mkern1mu ]
+[\vv s] & [ - \mkern-2mu \inlinedy{\upsigma} \mkern1mu ]
 \end{bmatrix}
 =
 \begin{bmatrix}
