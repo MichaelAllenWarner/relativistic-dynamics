@@ -2276,10 +2276,10 @@ where the subscript clarifies that $\del$ operates on $\vv c$ (and $\vv c$ alone
 \begin{equation*}
 \vv a \times (\del \times \vv c) = \del_{\vv c} ( \vv a \cdot \vv c ) - ( \vv a \cdot \del ) \vv c ,
 \end{equation*}
-which we'll call the \textbf{differential three-vector triple product}.\footnote{Of course, $\del \times (\vv b \times \vv c)$ is also a ``differential" vector triple product, but we need a name for $\vv a \times (\del \times \vv c)$.} Explicitly, the right side is:
+and we note in passing that $(\vv a \cdot \del)$ is the \textbf{directional derivative} operator $(\vv{\hat a} \cdot \del)$ scaled by the magnitude of $\vv a$. We'll call $\vv a \times (\del \times \vv c)$ the \textbf{differential three-vector triple product}. Carrying out the dot products:
 \begin{equation*}
 \begin{split}
-&\del_{\vv c} \left( a_x c_x + a_y c_y + a_z c_z \right) - \left( a_x \, \dfrac{\partial}{\partial x} + a_y \, \dfrac{\partial}{\partial y} + a_z \, \dfrac{\partial}{\partial z} \right) \vv c \\[3pt]
+\vv a \times (\del \times \vv c) &= \del_{\vv c} \left( a_x c_x + a_y c_y + a_z c_z \right) - \left( a_x \, \dfrac{\partial}{\partial x} + a_y \, \dfrac{\partial}{\partial y} + a_z \, \dfrac{\partial}{\partial z} \right) \vv c \\[3pt]
 &= \left( a_x \del c_x + a_y \del c_y + a_z \del c_z \right) - \left( a_x \, \dfrac{\partial \vv c}{\partial x} + a_y \, \dfrac{\partial \vv c}{\partial y} + a_z \, \dfrac{\partial \vv c}{\partial z} \right) ,
 \end{split}
 \end{equation*}
@@ -2301,16 +2301,16 @@ Input a four-vector $\vv W$, and we have:
 \begin{equation*}
 \partialup_{\vv Q} ( \vv W \cdot \vv Q) - ( \vv W \cdot \partialup) \vv Q ,
 \end{equation*}
-a new four-vector. This is our \textbf{differential four-vector triple product}. For convenience, we'll use a shorter notation for it, modeled after its Euclidean three-vector counterpart:
+a new four-vector (the second term is a directional derivative scaled by $W$). This is our \textbf{differential four-vector triple product}. For convenience, we'll use a shorter notation for it, modeled after its three-vector counterpart:
 \begin{equation}\label{eq:dtp}
 \vv W \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv Q) \equiv \partialup_{\vv Q} ( \vv W \cdot \vv Q) - ( \vv W \cdot \partialup) \vv Q .
 \end{equation}
-The scare quotes remind us that we have \emph{not} defined the cross product or curl as four-vector operations.\footnote{Warning: neither this notation nor the very concept of a ``differential four-vector triple product" is standard. But with the differential four-vector triple product in our toolkit, we can cover the basics of relativistic electrodynamics without getting mired in tensor analysis and index gymnastics.}
+The scare quotes remind us that we have \emph{not} defined the cross product or curl as four-vector operations (don't take the $\times$ notation literally!).\footnote{Warning: neither this notation nor the very concept of a ``differential four-vector triple product" is standard. But with the differential four-vector triple product in our toolkit, we can cover the basics of relativistic electrodynamics without getting mired in tensor analysis and index gymnastics.}
  
-With $\vv W = \langle W^{ct}, \, \vv w \rangle$ and $\vv Q = \langle Q^{ct} , \, \vv q \rangle$, we can put the right side of Equation \ref{eq:dtp} into component form. Here is the first step:
+With $\vv W = \langle W^{ct}, \, \vv w \rangle$ and $\vv Q = \langle Q^{ct} , \, \vv q \rangle$, we can put the right side of Equation \ref{eq:dtp} into component form. First carry out the dot products:
 \begin{equation*}
 \begin{split}
-&\partialup_{\vv Q} \left[ W^{ct} Q^{ct} - \left( \vv w \cdot \vv q \right) \right] - \left[ W^{ct} \partial^{ct} - \big(  \vv w \cdot [ - \del ] \big) \right] \vv Q \\[8pt]
+\vv W \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv Q) &= \partialup_{\vv Q} \left[ W^{ct} Q^{ct} - \left( \vv w \cdot \vv q \right) \right] - \left[ W^{ct} \partial^{ct} - \big(  \vv w \cdot [ - \del ] \big) \right] \vv Q \\[8pt]
 &= W^{ct} \partialup Q^{ct} - \partialup_{\vv q} ( \vv w \cdot \vv q ) - W^{ct} \partial^{ct} \vv Q - ( \vv w \cdot \del ) \vv Q
 \end{split}
 \end{equation*}
@@ -2319,7 +2319,7 @@ With $\vv W = \langle W^{ct}, \, \vv w \rangle$ and $\vv Q = \langle Q^{ct} , \,
 \begin{split}
 & \left \langle W^{ct} \partial^{ct} Q^{ct} - \vv w \cdot \partial^{ct} \vv q - W^{ct} \partial^{ct} Q^{ct} - \vv w \cdot \del Q^{ct} , \right. \\[3pt]
 & \qquad \left. W^{ct} (- \del Q^{ct}) - [- \del_{\vv q} (\vv w \cdot \vv q)]  -  W^{ct} \partial^{ct} \vv q - (\vv w \cdot \del) \vv q \right \rangle \\[10pt]
-&= \left \langle \vv w \cdot \left( - \del Q^{ct} - \partial^{ct} \vv q  \right) , \, W^{ct} \left( - \del Q^{ct} - \partial^{ct} \vv q \right) + \big[ \vv w \times (\del \times \vv q) \big] \right \rangle ,
+&= \left \langle \vv w \cdot \left( - \del Q^{ct} - \partial^{ct} \vv q  \right) , \, W^{ct} \left( - \del Q^{ct} - \partial^{ct} \vv q \right) \, + \, \vv w \times (\del \times \vv q) \right \rangle ,
 \end{split}
 \end{equation*}
 where we've again used the identity $\del_{\vv q} (\vv w \cdot \vv q) - (\vv w \cdot \del) \vv q = \vv w \times (\del \times \vv q)$ (differential \emph{three}-vector triple product). Not much to look at, but there's a logic to it, and if we define the three-vectors ${\vv m \equiv - \del Q^{ct} - \partial^{ct} \vv q}$ and ${\vv n \equiv \del \times \vv q}$ (time-dependent three-vector \emph{fields}, really, since $\vv Q$ is a four-vector field), then:
@@ -2378,7 +2378,7 @@ If we now choose a $\psi$ that satisfies ${\Box \psi = - \partialup \cdot \vv Q}
 &=  - \Box ( \vv Q + \partialup \psi ) ,
 \end{split}
 \end{equation*}
-leaving just a wave equation for the divergenceless(!) $\vv Q^\prime = \vv Q + \partialup \psi$, a far more tractable expression than the full ``$bac - cab$" expansion. Performing this particular transformation is called imposing the \textbf{Lorenz gauge} (named for Ludvig Lorenz, not Hendrik Lorentz); other gauges are convenient in their own ways. Note that we still have limited \textbf{gauge freedom} within the Lorenz gauge---for any spacetime scalar field $\chi$ whose d'Alembertian is zero (${\Box \chi = 0}$), we'd get $\Box ( \vv Q^\prime + \partialup \chi ) = \Box \vv Q^\prime + \partialup \Box \chi = \Box \vv Q^\prime$.
+leaving just a wave equation for the divergenceless(!) $\vv Q^\prime = \vv Q + \partialup \psi$, a far more tractable expression than the full ``$bac - cab$" apparatus. Performing this particular transformation is called imposing the \textbf{Lorenz gauge} (named for Ludvig Lorenz, not Hendrik Lorentz); other gauges are convenient in their own ways. Note that we still have limited \textbf{gauge freedom} within the Lorenz gauge---for any spacetime scalar field $\chi$ whose d'Alembertian is zero (${\Box \chi = 0}$), we'd get $\Box ( \vv Q^\prime + \partialup \chi ) = \Box \vv Q^\prime + \partialup \Box \chi = \Box \vv Q^\prime$.
 
 That's all the math we'll need. Back to the physics.
 
@@ -2642,14 +2642,14 @@ E_0 \mathring{\vv B} + q \mathring{\vv A} &= q \, \partialup (\vv B \cdot \vv A)
 \end{equation*}
 where we've used $\vv F = E_0 \mathring{\vv B}$.
 
-One more step. Consider the following operator, which appears in the Lorentz four-force (Equation \ref{eq:lff}):
+One more step. Consider the following operator, a directional derivative (``scaled" by $B = 1$) that appears in the Lorentz four-force (Equation \ref{eq:lff}):
 \begin{equation*}
 \begin{split}
 \vv B \cdot \partialup &= \left \langle c \mathring{t}, \mathring{\vv r} \right \rangle \cdot \left \langle \partial^{ct}, - \del \right \rangle \\[4pt]
 &= \dfrac{\dd (ct)}{\dd (ct_0)} \, \dfrac{\partial}{\partial (ct)} + \dfrac{\dd x}{\dd (ct_0)} \, \dfrac{\partial}{\partial x} +  \dfrac{\dd y}{\dd (ct_0)} \, \dfrac{\partial}{\partial y} + \dfrac{\dd z}{\dd (ct_0)} \, \dfrac{\partial}{\partial z} .
 \end{split}
 \end{equation*}
-By the multivariable chain rule, this operator is equivalently $\dd / \dd (ct_0)$ (the total $ct_0$-derivative) if the function being differentiated depends only on ${\vv R (ct_0) = \langle ct (ct_0), \, x (ct_0), \, y (ct_0), \, z (ct_0) \rangle}$. Our four-potential fits the bill, so $\mathring{\vv A} = (\vv B \cdot \partialup) \vv A $, and:
+By the multivariable chain rule, this operator is equivalently $\dd / \dd (ct_0)$ (sometimes called the \textbf{convective derivative} in this context) if the function being differentiated depends only on ${\vv R (ct_0) = \langle ct (ct_0), \, x (ct_0), \, y (ct_0), \, z (ct_0) \rangle}$.\footnote{The analogous Newtonian convective derivative is $\dd / \dd t = \partial / \partial t + \vv v \cdot \del$.} Our four-potential fits the bill, so $\mathring{\vv A} = (\vv B \cdot \partialup) \vv A $, and:
 \begin{equation*}
 \begin{split}
 \vv F &= q \, \bigl[ \partialup (\vv B \cdot \vv A) - (\vv B \cdot \partialup) \vv A \bigr] = q \, \bigl[ \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) \bigr] ,
