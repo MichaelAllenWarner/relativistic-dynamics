@@ -31,6 +31,9 @@
 \newcommand{\fnoverset}[2]{%
   \mathop{#2}\limits^{\vbox to -.5ex{\kern-0.85ex\hbox{$#1$}\vss}}}
 \newcommand{\footnotedy}[1]{\fnoverset{\text{\tiny$\bm\leftrightarrow$}}{#1}}
+\newcommand{\superoverset}[2]{%
+  \mathop{#2}\limits^{\vbox to -.5ex{\kern-0.95ex\hbox{$#1$}\vss}}}
+\newcommand{\superdy}[1]{\superoverset{\text{\tiny$\bm\leftrightarrow$}}{#1}}
 \newcommand{\capdy}[1]{ \overset{ \text{\tiny$\bm\leftrightarrow$} }{\vphantom{\text{\small{A}}}\smash{#1}} }
 \usepackage{tkz-euclide}
 \usetkzobj{all}
@@ -44,7 +47,11 @@
 \DeclareFontEncoding{FML}{}{}%
 \DeclareFontSubstitution{FML}{futm}{m}{it}%
 \DeclareSymbolFont{fourier}{FML}{futm}{b}{it}%
-\DeclareMathSymbol{\partialup}{\mathord}{fourier}{130} % Upright partial derivative symbol
+\DeclareMathSymbol{\partialup}{\mathord}{fourier}{130} % Upright partial derivative symbol, bold
+\DeclareFontEncoding{FML}{}{}%
+\DeclareFontSubstitution{FML}{futm}{m}{it}%
+\DeclareSymbolFont{fourierNotBold}{FML}{futm}{m}{it}%
+\DeclareMathSymbol{\partialrm}{\mathord}{fourierNotBold}{130} % Upright partial derivative symbol, not bold
 
 \begin{document}
 
@@ -2190,7 +2197,7 @@ Let's notate it $\partialup$ (``vectorized" $\partial$ symbol). A natural guess 
 \begin{equation*}
 \partialup \stackrel{?}{=} \left \langle \dfrac{1}{c} \, \dfrac{\partial}{\partial t} , \, \dfrac{\partial}{\partial x}, \, \dfrac{\partial}{\partial y}, \, \dfrac{\partial}{\partial z} \right \rangle = \left \langle \dfrac{1}{c} \, \dfrac{\partial}{\partial t} , \, \del \right \rangle ,
 \end{equation*}
-but do these components transform Lorentzianly under a boost? If not, then $\partialup$ isn't a four-vector, and (say) dotting it with a four-vector field won't have the intended effect of producing a scalar field whose value at each event in spacetime is invariant (dotting with it wouldn't even be defined!). To find out, use the multivariable chain rule and Equations \ref{eq:lt} (standard configuration, so $ct^\prime$ and $x^\prime$ are functions of $ct$ and $x$, and vice versa):
+but do these components transform Lorentzianly under a boost? If not, then $\partialup$ isn't a four-vector, and using it to operate on a spacetime scalar field (whose value at each event is invariant) won't have the intended effect of producing a four-vector field. To find out, use the multivariable chain rule and Equations \ref{eq:lt} (standard configuration, so $ct^\prime$ and $x^\prime$ are functions of $ct$ and $x$, and vice versa):
 \begin{equation*}
 \begin{split}
 \dfrac{\partial}{\partial (ct^\prime)} &= \dfrac{\partial (ct)}{\partial (ct^\prime)} \, \dfrac{\partial}{\partial (ct)} \, + \, \dfrac{\partial x}{\partial (ct^\prime)} \, \dfrac{\partial}{\partial x} = \gamma \left( \dfrac{\partial}{\partial (ct)} + \beta \, \dfrac{\partial}{\partial x} \right) \\[3pt]
@@ -2242,7 +2249,7 @@ When it's dotted with a four-vector field $\vv Q = \vv Q (\vv R) = \langle Q^{ct
 whose value at every event is Lorentz-invariant.
 }
 \item{
-When $\partialup$ is dotted with \emph{itself}, the resulting function is called the \textbf{wave operator}, the \textbf{four-Laplacian}, or the \textbf{d'Alembertian}, labeled $\Box$:\footnote{Another convention---preferable, perhaps, but less common these days---uses $\Box$ as the four-del symbol and $\Box^2$ as the d'Alembertian, mirroring the use of $\del$ for the three-del and $\nabla ^2 = \del \cdot \del$ for the three-Laplacian.}
+When $\partialup$ is dotted with \emph{itself}, the resulting function is called the \textbf{wave operator}, the \textbf{four-Laplacian}, or the \textbf{d'Alembertian}, labeled $\Box$:\footnote{Another convention---preferable, perhaps, but less common these days---uses $\Box$ as the four-del symbol and $\Box^2$ as the d'Alembertian, mirroring the use of $\del$ for the three-del and $\nabla ^2 = \del \cdot \del$ for the three-Laplacian. The symbol $\Box$ is sometimes called \emph{quabla}.}
 \begin{equation*}
 \begin{split}
 \Box &\equiv \partialup \cdot \partialup = \dfrac{1}{c^2} \, \dfrac{\partial^2}{\partial t^2} - \left[ \left( - \del \right) \cdot \left( - \del \right) \right] \\
@@ -2578,31 +2585,31 @@ where we've again invoked the Lorenz condition $\partial^{ct} A^{ct} = - \del \c
 We've used Equations \ref{eq:eb}, \ref{eq:ace}, and \ref{eq:abe}, and a pair of vector calculus identities (the divergence of a curl is $0$, and the curl of a gradient is $\vv 0$).\footnote{If we weren't working in the Lorenz gauge, we'd instead want to find a relationship between $\vv J = \Box \vv A - \partialup (\partialup \cdot \vv A)$ and the $\vv e$ and $\vv b$ fields (see Equation \ref{eq:gfp}), and of course we couldn't invoke the Lorenz condition. But we'd still get Equations \ref{eq:me}! For example: $\rho = \Box A^{ct} - \partial^{ct}(\partialup \cdot \vv A) = \partial^{ct} (\partial^{ct} A^{ct}) - \del \cdot \del A^{ct} - \partial^{ct} (\partial^{ct} A^{ct} + \del \cdot \vv a) = \del \cdot \vv e$.} Note that the first two of Maxwell's equations together constitute a four-vector (equal to the four-current density $\vv J = \langle \rho, \vv j \rangle$), and that the last two do the same (equal to the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}} = \langle 0, \vv 0 \rangle$). The left sides are suggestive; each four-vector looks like it might be expressible with the four-del $\partialup$ somehow. We'll come back to this in Section \ref{sssec:md}.
 
 
-\subsubsection{For Fun: Lorentz Force via the Euler--Lagrange Equation}
+\subsubsection{The Lorentz Four-Force via the Euler--Lagrange Equation}\label{sssec:ele}
 
-Earlier we called the Lorentz four-force (Equation \ref{eq:ff}) an ``empirical result." Alternatively, we can start with a suitable Lorentz-invariant Lagrangian and use the Minkowski-spacetime version of the Euler--Lagrange equation to \emph{derive} the Lorentz four-force. This is typically done with index gymnastics and covectors, which we haven't covered, but our four-vector notation will suffice if we define:
+Earlier we called the Lorentz four-force (Equation \ref{eq:ff}) an ``empirical result." Alternatively, we can start with a suitable Lorentz-invariant Lagrangian and use the four-vector version of the Euler--Lagrange equation to \emph{derive} the Lorentz four-force. This is typically done with covectors and index gymnastics, which we haven't covered, but our present toolkit will suffice if we define a new vector operator whose component-partials are with respect to the \emph{four-velocity} components. With some notational poetic license:
 \begin{equation*}
-\partialup^\ddagger \equiv \left \langle \dfrac{\partial}{\partial B^{ct}} , \,  - \dfrac{\partial}{\partial B^x} , \, - \dfrac{\partial}{\partial B^y} , \, - \dfrac{\partial}{\partial B^z} \right \rangle
+\mathring{\partialup} \equiv \left \langle \dfrac{1}{c} \, \dfrac{\partial}{\partial \mathring{t}} , \,  - \dfrac{\partial}{\partial \mathring{x}} , \, - \dfrac{\partial}{\partial \mathring{y}} , \, - \dfrac{\partial}{\partial \mathring{z}} \right \rangle = \left \langle \dfrac{\partial}{\partial B^{ct}} , \,  - \dfrac{\partial}{\partial B^x} , \, - \dfrac{\partial}{\partial B^y} , \, - \dfrac{\partial}{\partial B^z} \right \rangle
 \end{equation*}
-(the minus signs make it a four-vector, as was the case with $\partialup$---otherwise we'd have an object whose components transform \emph{inverse}-Lorentzianly, rather than Lorentzianly). With $L$ as the Lagrangian, the four-vector version of the Euler--Lagrange equation in our unorthodox notation is:
-\begin{equation*}
-\dfrac{1}{c} \, \dfrac{\dd}{\dd t_0} \left( \partialup^\ddagger L \right) = \partialup L .
-\end{equation*}
+(the minus signs make it a four-vector, as was the case with $\partialup$---otherwise the components would transform \emph{inverse}-Lorentzianly, recall). With $L$ as the Lagrangian and $\vv P _\textrm{c} = \mathring{\partialup} L$ as the ``canonical four-momentum," the four-vector version of the Euler--Lagrange equation is:
+\begin{equation}\label{eq:ele}
+\mathring{\vv P}_\textrm{c} = \partialup L .
+\end{equation}
 
-To cut to the chase, the Lagrangian we want for a particle in an electromagnetic field should have two terms constructed from four-vectors and invariants: one for the particle as if it were inertial (absent the field and any other forces) and one for its coupling with the field. Now, we haven't yet dealt with the principle of stationary action directly, but here and there we've had occasion to discuss the elapsed proper time along a particle's trajectory, and we even mentioned in passing that the \emph{inertial} journey between a pair of timelike-separated events is the one that maximizes the proper time elapsed en route. Because of this principle of maximal aging, the Lagrangian term for the inertial particle ($L_{\textrm{inertial}}$) should be a \emph{constant}, so that its action integral $\int \mkern-4mu L_{\textrm{inertial}} \, c \, dt_0$ for the path taken is proportional to the particle's elapsed proper time.\footnote{If we were actually using the calculus of variations to \emph{find} the path of stationary action, we'd have to integrate over some other variable whose values at the integration limits are \emph{fixed}, regardless of the path taken between them (i.e., not the path-dependent proper time). After finding the path of stationary action, it's fine to equate the integration variable with the particle's proper time \emph{for that path}, and that's all we've done.} Something like $L_{\textrm{inertial}} = E_0 (\vv B \cdot \vv B)$ should do the trick (we don't want to reduce $\vv B \cdot \vv B$ to $B^2 = 1$ at this stage---if we do, we won't get a four-acceleration when we differentiate, and then how will we recover the Lorentz four-force?). For the coupling term, perhaps the simplest sensible invariant we can make from the field and the particle is $q (\vv B \cdot \vv A)$. Let's try it. Our candidate Lagrangian is then:
+To cut to the chase, the Lagrangian we want for a particle in an electromagnetic field should have two manifestly covariant terms: one for the particle as if it were inertial (absent the field and any other forces) and one for its coupling with the field. Now, we haven't yet dealt with the principle of stationary action directly, but here and there we've had occasion to discuss the elapsed proper time along a particle's trajectory, and we even mentioned in passing that the \emph{inertial} journey between a pair of timelike-separated events is the one that maximizes the proper time elapsed en route. Because of this principle of maximal aging, the Lagrangian term for the inertial particle ($L_{\textrm{inertial}}$) should be a \emph{constant}, so that its action integral $\int \mkern-4mu L_{\textrm{inertial}} \, c \, dt_0$ for the path taken is proportional to the particle's elapsed proper time.\footnote{If we were actually using the calculus of variations to \emph{find} the path of stationary action, we'd have to integrate over some other variable whose values at the integration limits are \emph{fixed}, regardless of the path taken between them (i.e., not the path-dependent proper time). After finding the path of stationary action, it's fine to equate the integration variable with the particle's proper time \emph{for that path}, and that's all we've done.} Something like $L_{\textrm{inertial}} = E_0 (\vv B \cdot \vv B)$ should do the trick (we don't want to reduce $\vv B \cdot \vv B$ to $B^2 = 1$ at this stage---if we do, we won't get a four-acceleration when we differentiate, and then how will we recover the Lorentz four-force?). For the coupling term, perhaps the simplest sensible invariant we can make from the field and the particle is $q (\vv B \cdot \vv A)$. Let's try it. Our candidate Lagrangian is then:
 \begin{equation*}
 L = \dfrac{1}{2} \, E_0 (\vv B \cdot \vv B) + q (\vv B \cdot \vv A)
 \end{equation*}
-(we've tossed in the $1/2$ to cancel the $2$ that will inevitably arise when we differentiate). Here, $\vv B = \vv B (ct_0)$ is the particle's four-velocity, $E_0$ its rest energy, $q$ its charge, and $\vv A = \vv A (\vv R (ct_0))$ the four-potential at the particle's four-position $\vv R = \vv R (ct_0)$. If we've chosen well, then plugging our Lagrangian into the four-vector version of the Euler--Lagrange equation and carrying out the derivatives should get us the Lorentz four-force.
+(we've tossed in the $1/2$ to cancel the $2$ that will inevitably arise when we differentiate). Here, $\vv B = \vv B (ct_0)$ is the particle's four-velocity, $E_0$ its rest energy, $q$ its charge, and $\vv A = \vv A (\vv R (ct_0))$ the four-potential at the particle's four-position $\vv R = \vv R (ct_0)$. If we've chosen well, then plugging our Lagrangian into the four-vector version of the Euler--Lagrange equation (Equation \ref{eq:ele}) and carrying out the derivatives should get us the Lorentz four-force.
 
-First we'll handle the ``canonical four-momentum" $\partialup^\ddagger L$:
+First we'll handle the canonical four-momentum $\vv P _\textrm{c} = \mathring{\partialup} L$:
 \begin{equation*}
-\partialup^\ddagger L =  \dfrac{1}{2} \, E_0 \, \partialup^\ddagger (\vv B \cdot \vv B) + q \, \partialup^\ddagger (\vv B \cdot \vv A) .
+\mathring{\partialup} L =  \dfrac{1}{2} \, E_0 \, \mathring{\partialup} (\vv B \cdot \vv B) + q \, \mathring{\partialup} (\vv B \cdot \vv A) .
 \end{equation*}
-We can express $\partialup^\ddagger (\vv B \cdot \vv B)$ and $\partialup^\ddagger (\vv B \cdot \vv A)$ in component form to make sense of them:
+We can express $\mathring{\partialup} (\vv B \cdot \vv B)$ and $\mathring{\partialup} (\vv B \cdot \vv A)$ in component form to make sense of them:
 \begin{equation*}
 \begin{split}
-& \partialup^\ddagger(\vv B \cdot \vv B) \\[2pt]
+&\mathring{\partialup} (\vv B \cdot \vv B) \\[2pt]
 &= \left \langle \dfrac{\partial}{\partial B^{ct}} , \,  - \dfrac{\partial}{\partial B^x} , \, - \dfrac{\partial}{\partial B^y} , \, - \dfrac{\partial}{\partial B^z} \right \rangle \left( B^{ct \, 2} - B^{x \, 2} - B^{y \, 2} - B^{z \, 2} \right) \\[3pt]
 &= \left \langle \dfrac{\partial}{\partial B^{ct}} \left( B^{ct \, 2} \right) , \, - \dfrac{\partial}{\partial B^x} \left( - B^{x \, 2} \right) , \, - \dfrac{\partial}{\partial B^y} \left( - B^{y \, 2} \right)  , \, - \dfrac{\partial}{\partial B^z} \left( - B^{z \, 2} \right)  \right \rangle \\[2pt]
 &= 2 \vv B
@@ -2611,7 +2618,7 @@ We can express $\partialup^\ddagger (\vv B \cdot \vv B)$ and $\partialup^\ddagge
 (there's that $2$); likewise:
 \begin{equation*}
 \begin{split}
-&\partialup^\ddagger (\vv B \cdot \vv A) \\[2pt]
+&\mathring{\partialup} (\vv B \cdot \vv A) \\[2pt]
 &= \left \langle \dfrac{\partial}{\partial B^{ct}} , \,  - \dfrac{\partial}{\partial B^x} , \, - \dfrac{\partial}{\partial B^y} , \, - \dfrac{\partial}{\partial B^z} \right \rangle \left( B^{ct} A^{ct} - B^x A^x - B^y A^y - B^z A^z \right) \\[3pt]
 &= \left \langle A^{ct} \, \dfrac{\partial B^{ct}}{\partial B^{ct}} , \,  (- A^x) \left( - \dfrac{\partial B^x}{\partial B^x} \right) , \, (-A^y) \left( - \dfrac{\partial B^y}{\partial B^y} \right) , \, (-A^z) \left( - \dfrac{\partial B^z}{\partial B^z} \right) \right \rangle \\[2pt]
 &= \vv A 
@@ -2619,11 +2626,11 @@ We can express $\partialup^\ddagger (\vv B \cdot \vv B)$ and $\partialup^\ddagge
 \end{equation*}
 ($\vv A = \vv A(\vv R(ct_0))$ has no $\vv B$-dependence). So canonical four-momentum is:
 \begin{equation*}
-\partialup^\ddagger L =  E_0 \vv B + q \vv A
+\vv P _\textrm{c} =  E_0 \vv B + q \vv A
 \end{equation*}
-(the sum of $q \vv A$ and the ``normal" four-momentum $\vv P = E_0 \vv B$), and the left side of our Euler--Lagrange equation is its $ct_0$-derivative:
+(the sum of $q \vv A$ and the ``mechanical" four-momentum $\vv P = E_0 \vv B$), and the left side of our Euler--Lagrange equation is its $ct_0$-derivative:
 \begin{equation*}
-\dfrac{1}{c} \, \dfrac{\dd}{\dd t_0} \left( \partialup^\ddagger L \right) =  E_0 \mathring{\vv B} + q \mathring{\vv A} .
+\mathring{\vv P}_\textrm{c}  =  E_0 \mathring{\vv B} + q \mathring{\vv A} .
 \end{equation*}
 The right side of the Euler--Lagrange equation is easy:
 \begin{equation*}
@@ -2635,7 +2642,7 @@ The right side of the Euler--Lagrange equation is easy:
 (subscript optional, since $\vv B = \vv B(ct_0)$ doesn't depend on $\vv R$). Putting it all together:
 \begin{equation*}
 \begin{split}
-\dfrac{1}{c} \, \dfrac{\dd}{\dd t_0} \left( \partialup^\ddagger L \right) &= \partialup L \\[2pt]
+\mathring{\vv P}_\textrm{c} &= \partialup L \\[2pt]
 E_0 \mathring{\vv B} + q \mathring{\vv A} &= q \, \partialup (\vv B \cdot \vv A) \\[3pt]
 \vv F &= q \, \partialup (\vv B \cdot \vv A) - q \mathring{\vv A} ,
 \end{split}
@@ -2671,17 +2678,16 @@ Only $q$ has volume-dependence here, so that's:
 \begin{equation*}
 \dfrac{\dd \vv F_{\mathrm{L}}}{\dd V_0} = \rho_0 \bigl[ \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) \bigr] .
 \end{equation*}
-Now apply Equations \ref{eq:fc} and \ref{eq:fp} ($\rho_0 \vv B = \vv J = \Box \vv A$ in the Lorenz gauge):
+Now apply Equation \ref{eq:fc} ($\rho_0 \vv B = \vv J$):
 \begin{equation}\label{eq:lffd}
-\boxed{ \dfrac{\dd \vv F_{\mathrm{L}}}{\dd V_0} = \Box \vv A \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) } \, ,
+\boxed{ \dfrac{\dd \vv F_{\mathrm{L}}}{\dd V_0} = \vv J \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) } \, ,
 \end{equation}
 or
 \begin{equation*}
-\dfrac{\dd \vv F_{\mathrm{L}}}{\dd V_0} = \partialup_{\vv A} (\Box \vv A \cdot \vv A) - (\Box \vv A \cdot \partialup) \vv A ,
+\dfrac{\dd \vv F_{\mathrm{L}}}{\dd V_0} = \partialup_{\vv A} (\vv J \cdot \vv A) - ( \vv J \cdot \partialup) \vv A .
 \end{equation*}
-where $\partialup_{\vv A}$ operates only on the ``boxless" $\vv A$.
 
-We can associate a Lorentz four-force density with every event in spacetime, so it's really a vector \emph{field}. Its value represents the (proper) per-unit-volume rate at which the $\vv A$ field transfers four-momentum to an infinitesimal charge distribution. Equation \ref{eq:lffd} beautifully expresses this quantity in terms of the Lorenz-gauge $\vv A$ field alone! In free space (where $\vv J = \Box \vv A = \textrm{\mbox{\boldmath $\emptyset$}}$), the Lorentz four-force density vanishes, as it must if four-momentum is to be conserved. That doesn't mean there's no four-momentum in the $\vv A$ field in free space---just that whatever four-momentum is there doesn't magically disappear.
+We can associate a Lorentz four-force density with every event in spacetime, so it's really a vector \emph{field}. Its value represents the (proper) per-unit-volume rate at which the $\vv A$ field transfers four-momentum to an infinitesimal charge distribution. In free space (where $\vv J = \textrm{\mbox{\boldmath $\emptyset$}}$), the Lorentz four-force density vanishes, as it must if four-momentum is to be conserved. That doesn't mean there's no four-momentum in the $\vv A$ field in free space---just that whatever four-momentum is there doesn't magically disappear.
 
 Recall that the temporal and spatial components of the Lorentz four-force are $\gamma \mathcal{P}_{\mathrm{L}}$ and $\gamma \vv f_{\textrm{L}}$, where $\gamma$ is a test particle's Lorentz factor, and $\mathcal{P}_{\mathrm{L}}$ and $\vv f_{\textrm{L}}$ are the power and three-force exerted on the particle as a result of its interaction with the $\vv A$ field (see Equations  \ref{eq:ltf} and \ref{eq:lp}). The component form of the Lorentz four-force \emph{density} is then:
 \begin{equation*}
@@ -2701,7 +2707,7 @@ and with substitutions from Equations \ref{eq:ace} and \ref{eq:abe}:
 \begin{equation}\label{eq:lffdc2}
 \dfrac{\dd \vv F_{\mathrm{L}}}{\dd V_0} = \Big \langle \left( \del \times \vv b - \partial^{ct} \vv e \right) \cdot \vv e , \, \left( \del \cdot \vv e \right) \vv e + \left( \del \times \vv b - \partial^{ct} \vv e \right) \times \vv b \Big \rangle .
 \end{equation}
-Doesn't look promising! Yet, these components can be simplified in a way that yields succinct statements of the (local) conservation of energy and three-momentum that explicitly account for the energy and momentum stored in the $\vv e$ and $\vv b$ fields. Let's go ahead and spruce up that temporal component. Start with the identity $\del \cdot (\vv e \times \vv b) = \vv b \cdot (\del \times \vv e) - \vv e \cdot (\del \times \vv b)$:
+Doesn't look promising! Yet, these components can be simplified in a way that yields succinct statements of the (local) conservation of energy and three-momentum that explicitly account for the energy and momentum stored in the $\vv e$ and $\vv b$ fields. (And in the supplemental Section \ref{ssec:dy} we'll see how to read Equation \ref{eq:lffd} as a statement of \emph{four-momentum} conservation.) Let's go ahead and spruce up that temporal component. Start with the identity $\del \cdot (\vv e \times \vv b) = \vv b \cdot (\del \times \vv e) - \vv e \cdot (\del \times \vv b)$:
 \begin{equation*}
 \vv e \cdot \left( \del \times \vv b - \partial^{ct} \vv e \right) = \vv b \cdot \left( \del \times \vv e \right) - \del \cdot \left( \vv e \times \vv b \right) - \vv e \cdot \partial^{ct} \vv e .
 \end{equation*}
@@ -2724,11 +2730,11 @@ Equation \ref{eq:py} is \textbf{Poynting's theorem}. That it's the energy-conser
 \end{equation*}
 and use the divergence theorem:
 \begin{equation*}
-- \dfrac{1}{c} \, \dfrac{\dd}{\dd t} \int_V u \, \dd V = \int_S \left( \vv s \cdot \vv{\hat{n}} \right) \dd S + \int_V \dd \mathcal{P}_{\textrm{L}} 
+- \dfrac{1}{c} \, \dfrac{\dd}{\dd t} \int_V u \, \dd V = \int_S \left( \vv s \cdot \vv{\hat{n}} \right) \dd S + \int_V \dfrac{\dd \mathcal{P}_{\textrm{L}}}{\dd V} \, \dd V
 \end{equation*}
-($S$ is the bounding surface of $V$, and $\vv{\hat{n}}$ is an outward-pointing unit vector normal to the surface element $\dd S$). Let's also sub in $\dot{E}_{\mkern1mu \textrm{particles}}$ for $\mathcal{P}_{\textrm{L}}$ (it's the charged particles in the volume that the Lorentz four-force acts on):
+($S$ is the bounding surface of $V$, and $\vv{\hat{n}}$ is an outward-pointing unit vector normal to the surface element $\dd S$). Let's also write the last integral as the rate of change of the energy of all the charged particles in the volume:
 \begin{equation*}
-- \dfrac{1}{c} \, \dfrac{\dd}{\dd t} \int_V u \, \dd V = \int_S \left( \vv s \cdot \vv{\hat{n}} \right) \dd S + \dfrac{1}{c} \, \dfrac{\dd}{\dd t} \int_V \dd E_{\mkern1mu \textrm{particles}}.
+- \dfrac{1}{c} \, \dfrac{\dd}{\dd t} \int_V u \, \dd V = \int_S \left( \vv s \cdot \vv{\hat{n}} \right) \dd S + \dot{E}_{\mkern1mu \textrm{particles}} .
 \end{equation*}
 Evidently, $u$ is the volume-density of something, and the surface integral is the flux of that something (that is, the rate at which that something flows out of the volume's bounds). The last term clues us in as to what that something is: the energy stored in the fields. Poynting's theorem says that the rate at which electromagnetic energy decreases in a volume equals the rate at which electromagnetic energy is flowing out of the region through its surface plus the rate at which the fields are doing work on charged particles within the region (via the Lorentz four-force). Naturally, we call $u = (e^2 + b^2)/2$ the \textbf{electromagnetic energy density}. The \textbf{Poynting vector} $\vv s = \vv e \times \vv b$ gives the flow of electromagnetic energy (its per-unit-area rate of transport).
 
@@ -2747,7 +2753,7 @@ Light is an electromagnetic wave---a disturbance in the (Lorenz-gauge!) four-pot
 \end{equation}
 where the magnitude of the constant four-vector $\bar{\vv A} = \langle \bar{A}^{ct}, \, \bar{\vv a} \rangle$ is the wave's peak amplitude, and the likewise constant \textbf{four-wavevector} ${\vv K = \langle K^{ct}, \, \vv k \rangle}$ points in the spacetime-direction of the wave's propagation ($\vv k$ points in the \emph{spatial} direction of the wave's propagation).\footnote{The usual notation for the amplitude vector is $\vv A_0$, but we've been using the naught subscript for proper quantities, so we'll use bar notation instead.} If you were expecting a sinusoidal function of something like $(\vv k \cdot \vv r - 2 \pi \nu t )$, note that by Euler's formula ${\Re \lbrace \mathrm{e}^{\mathrm{i} \mkern.5mu \theta} \rbrace = \Re \lbrace \cos \theta + \mathrm{i} \sin \theta \rbrace = \cos \theta}$, and also that $\vv K \cdot \vv R = K^{ct}ct - \vv k \cdot \vv r$, with $K^{ct}$ related to the frequency $\nu$ by $K^{ct} = 2 \pi \nu / c$ (cosine is an even function, so it doesn't matter which term gets subtracted from the other). The complex exponential function is convenient for linear operations; only when we perform non-linear operations (we won't) or need the field itself do we take the real part.
 
-We'll assume that the amplitude vector $\bar{\vv A}$ is real, but it's worth mentioning that in general it may be complex. In the simplest case of complex $\bar{\vv A}$, we'd have $\bar{\vv A} = \mathcal{A} \mathrm{e}^{\mathrm{i} \mkern.5mu \delta}$ for some real four-vector $\mathcal{A}$, and $\vv A$ would then be the real part of ${\mathcal{A} \mathrm{e}^{\mathrm{i} \mkern.5mu \delta} \mathrm{e}^{\mathrm{i} \mkern.5mu \vv K \cdot \vv R} = \mathcal{A} \mathrm{e}^{\mathrm{i} \mkern.5mu ( \vv K \cdot \vv R \, + \, \delta )}}$, which differs from Equation \ref{eq:pw} for real $\bar{\vv A}$ only by the inclusion of a phase constant in the exponent. A more complicated scenario arises when complex $\bar{\vv A}$ \emph{cannot} be expressed as $\mathcal{A} \mathrm{e}^{\mathrm{i} \mkern.5mu \delta}$ for real $\mathcal{A}$, but no matter---the resulting wave is always equivalent to a superposition of solutions that are free of this complication.\footnote{Such a wave is elliptically or circularly polarized, as opposed to linearly polarized.} In the end, keeping $\bar{\vv A}$ real won't affect our main results, though strictly speaking we should add a phase constant to the exponential and sinusoidal arguments we encounter. The four-wavevector $\vv K$ is necessarily real (for our free-space waves).
+We'll assume that the amplitude vector $\bar{\vv A}$ is real, but it's worth mentioning that in general it may be complex. In the simplest case of complex $\bar{\vv A}$, we'd have $\bar{\vv A} = \mathcal{A} \mathrm{e}^{\mathrm{i} \mkern.5mu \delta}$ for some real four-vector $\mathcal{A}$, and $\vv A$ would then be the real part of ${\mathcal{A} \mathrm{e}^{\mathrm{i} \mkern.5mu \delta} \mathrm{e}^{\mathrm{i} \mkern.5mu \vv K \cdot \vv R} = \mathcal{A} \mathrm{e}^{\mathrm{i} \mkern.5mu ( \vv K \cdot \vv R \, + \, \delta )}}$, which differs from Equation \ref{eq:pw} for real $\bar{\vv A}$ only by the inclusion of a phase constant in the exponent. A more complicated scenario arises when complex $\bar{\vv A}$ \emph{cannot} be expressed as $\mathcal{A} \mathrm{e}^{\mathrm{i} \mkern.5mu \delta}$ for real $\mathcal{A}$, but no matter---the resulting wave is always equivalent to a superposition of solutions that are free of this complication.\footnote{This applies to a wave that's elliptically or circularly polarized.} In the end, keeping $\bar{\vv A}$ real won't affect our main results, though strictly speaking we should add a phase constant to the exponential and sinusoidal arguments we encounter. The four-wavevector $\vv K$ is necessarily real (for our free-space waves).
 
 Now, surely $\vv K$ is lightlike (null), yes? As a sanity check, let's set the d'Alembertian of Equation \ref{eq:pw} to zero and see what happens (we need not take the real part, since differentiation is a linear operation). Introducing $f(\vv R) \equiv \vv K \cdot \vv R$ to avoid clutter, and using a product rule:\footnote{This product rule is $\partialup \cdot (g \vv Q) = g (\partialup \cdot \vv Q) + (\partialup g) \cdot \vv Q$ for a four-vector $\vv Q$ and a spacetime scalar function $g$, easily verified by writing it out in component form. In our case, $\vv Q = \partialup h$ (four-gradient of a scalar $h$), and so $\partialup \cdot (g \, \partialup h) = g \Box h + \partialup g \cdot \partialup h$.}
 \begin{equation*}
@@ -3187,7 +3193,7 @@ D^{ct \mkern1.5mu ct} & D^{ct \mkern1.5mu x} & D^{ct \mkern1.5mu y} & D^{ct \mke
 \end{aligned}
 \end{equation*}
 
-Really, Equation \ref{eq:mmt} is the matrix representation of a four-dyadic, since it satisfies the four-dyadic transformation rule Equation \ref{eq:ltd} (try it!---under a Lorentz boost, the $1$ transforms to $1$, the $-1$'s transform to $-1$'s, and the $0$'s transform to $0$'s). This dyadic is called the \textbf{Minkowski metric tensor}, and we use it implicitly every time we take a Minkowski dot product.\footnote{To be precise, what we use implicitly when we take Minkowski dot products is the \emph{covariant} Minkowski metric tensor, whereas the dyadic we're introducing is the \emph{contravariant} Minkowski metric tensor (see Footnote \ref{fn:dy}).} It's essentially the spacetime equivalent of the Euclidean unit dyadic we encountered in Section \ref{sssec:emm}. When we want to notate it explicitly \emph{as} a four-dyadic, we'll write $\inlinedy{\upeta}$ (a conventional exception to our preference for uppercase). Mostly, though, we'll keep using the familiar dot notation and throw $\eta = [ \mkern1mu \inlinedy{\upeta} \mkern.5mu ]$ into matrix equations as needed.
+Really, Equation \ref{eq:mmt} is the matrix representation of a four-dyadic, since it satisfies the four-dyadic transformation rule Equation \ref{eq:ltd} (try it!---under a Lorentz boost, the $1$ transforms to $1$, the $-1$'s transform to $-1$'s, and the $0$'s transform to $0$'s). This dyadic is called the \textbf{Minkowski metric tensor}, and we use it implicitly every time we take a Minkowski dot product.\footnote{To be precise, what we use implicitly when we take Minkowski dot products is the \emph{covariant} Minkowski metric tensor, whereas the dyadic we're introducing now is the \emph{contravariant} Minkowski metric tensor (see Footnote \ref{fn:dy}).} It's functionally analogous to the Euclidean unit dyadic we encountered in Section \ref{sssec:emm}. When we want to notate it explicitly \emph{as} a four-dyadic, we'll write $\inlinedy{\upeta}$ (a conventional exception to our preference for uppercase). Mostly, though, we'll keep using the familiar dot notation and throw $\eta = [ \mkern1mu \inlinedy{\upeta} \mkern.5mu ]$ into matrix equations as needed.
 
 Anyway, now we can write the Lorentz four-force (Equation \ref{eq:ff}) more compactly in terms of the Faraday tensor:
 \begin{equation}\label{eq:lfffd}
@@ -3282,7 +3288,7 @@ with each term canceling its additive inverse. So we get Equation \ref{eq:hme} `
 Equations \ref{eq:ime} and \ref{eq:hme} are Maxwell's equations in a manifestly covariant and \emph{gauge-invariant} form. Equations \ref{eq:gfp} and \ref{eq:fp} contain the same information, but the former is intractable and the latter is specific to the Lorenz gauge. By the way, our new four-dyadic $\inlinedy{\mathrm{G}}$ is called the \textbf{Maxwell tensor} (not to be confused with the Euclidean Maxwell \emph{stress} tensor $\inlinedy{\upsigma}$ that we met in Section \ref{sssec:emm}).
 
 
-\subsubsection{Hodge Duals and Quasi-Four-Vectors}
+\subsubsection{Quasi-Four-Vectors, Hodge Duals, and the Bianchi Identity}\label{sssec:hd}
 
 The Maxwell tensor $\inlinedy{\mathrm{G}}$ is the \textbf{Hodge dual} of the Faraday tensor $\inlinedy{\mathrm{F}}$. To explain what this means ``geometrically," we first introduce a limited sense in which three-vectors may be treated as ``quasi"-four-vectors: \emph{at a single moment for a given inertial frame}, we can ``append" a zero temporal component to a three-vector (that isn't already the spatial component of a true four-vector) and manipulate the four ``components" as if they constituted a spacelike four-vector orthogonal to the frame's (normalized) four-velocity $\vv B = \langle 1, \vv 0 \rangle$. We stress that such quasi-four-vectors aren't \emph{actually} four-vectors---their ``components" don't transform Lorentzianly between frames! But sometimes intra-frame equations involving them \emph{have the same form} in all inertial frames.
 
@@ -3562,7 +3568,7 @@ b_z & e_y & -e_x & 0
 \capdy{\mathrm{G}} : \capdy{\mathrm{G}} &= 2 (e^2 - b^2)
 \end{split}
 \end{equation}
-(double-dotting a pseudodyadic with a pseudodyadic gives an ordinary scalar).
+(double-dotting two pseudodyadics gives an ordinary scalar).
 
 There's another Lorentz invariant we can make from a pair of four-dyads:
 \begin{equation*}
@@ -3753,10 +3759,105 @@ u & [\vv s]^{\mathrm{T}} \\[1ex]
 - \dfrac{\dd \mathcal{P}_{\textrm{L}}}{\dd V} & \left[ - \dfrac{\dd \vv f_{\mathrm{L}}}{\dd V} \right] ^{\mkern-2mu \mathrm{T} \; }
 \end{bmatrix}
 \end{equation*}
-(no naught subscripts on the right---see Equation \ref{eq:lffdc}). Equation \ref{eq:fmc} is a statement of \emph{four-momentum} conservation that explicitly accounts for the electromagnetic field. The four-divergence of $\inlinedy{\mathrm{T}}$ vanishes when the fields are transferring no four-momentum to charged particles. We can express the right side of Equation \ref{eq:fmc} in terms of the fields and charges (differentiate Equation \ref{eq:lfffd} with respect to proper volume, and sub in $\vv J$ for $\rho_0 \vv B$):
+(no naught subscripts on the right---see Equation \ref{eq:lffdc}). Equation \ref{eq:fmc} is a statement of \emph{four-momentum} conservation that explicitly accounts for the electromagnetic field. Technically so is Equation \ref{eq:lffd}, but our dyadic notation here is more transparent. The four-divergence of $\inlinedy{\mathrm{T}}$ vanishes when the fields are transferring no four-momentum to charged particles. We can express the right side of Equation \ref{eq:fmc} in terms of the fields and charges (differentiate Equation \ref{eq:lfffd} with respect to proper volume, and sub in $\vv J$ for $\rho_0 \vv B$):
 \begin{equation*}
 \partialup \cdot \capdy{\mathrm{T}} = - \capdy{\mathrm{F}} \cdot \, \vv J .
 \end{equation*}
 
+
+\subsubsection{A Dyadic Operator and the Field Lagrangian}
+
+In Section \ref{sssec:ele}, we fed a well-chosen Lagrangian $L$ into the four-vector version of the Euler--Lagrange equation (Equation \ref{eq:ele}) and successfully derived the Lorentz four-force. In this section, we'll derive Maxwell's equations by feeding the appropriate Lagrangian \emph{density} $\mathcal{L}$ into the four-vector \emph{field} version of the Euler--Lagrange equation, which we'll notate like this:
+\begin{equation}\label{eq:elef}
+\partialup \cdot \capdy{\partialrm} {}^{\partialup \mkern2mu \otimes \vv A} \mathcal{L} = \partialup^{\vv A} \mathcal{L} .
+\end{equation}
+This requires some explanation! Essentially, the four-potential field ${\vv A (\vv R)}$ is playing the role here that the particle's four-position $\vv R (ct_0)$ played in Equation \ref{eq:ele}, and the gradient of the four-potential ($\partialup \otimes \vv A$) is playing the role that the particle's four-velocity $\vv B (ct_0) = \mathring{\vv R}$ played. So on the right side, instead of the four-gradient $\partialup = \partialup^{\vv R}$, we have a new four-vector operator:
+\begin{equation*}
+\partialup^{\vv A} \equiv \left \langle \dfrac{\partial}{\partial A^{ct}} , \,  - \dfrac{\partial}{\partial A^x} , \, - \dfrac{\partial}{\partial A^y} , \, - \dfrac{\partial}{\partial A^z} \right \rangle ,
+\end{equation*}
+and on the left side we've got some sort of \emph{dyadic} operator $\inlinedy{\partialrm} {}^{\partialup \mkern2mu \otimes \vv A}$ that's taking the place of $\mathring{\partialup} = \partialup^{\vv B} = \partialup^{\mathring{\vv R}}$. We've yet to define this dyadic operator, but we know that it must output a four-dyadic when it acts on the scalar $\mathcal{L}$, and the left side of Equation \ref{eq:elef} is the divergence of that four-dyadic (whereas the left side of Equation \ref{eq:ele} was the $ct_0$-derivative of the \emph{vector} resulting from the operation $\mathring{\partialup} L$).
+
+Defining our new dyadic operator is the same kind of task we faced when we defined the four-del back in Section \ref{sssec:fd}---namely, we've got to get the signs of the partial derivatives right, and a transformation rule will tell us when we've done it. This time, the components of our operator must obey Equation \ref{eq:ltd} under a Lorentz boost. But rather than use Equation \ref{eq:ltd} directly, let's make a naive guess and see what happens (and for brevity we'll use a generic four-dyadic field $\inlinedy{\mathrm{D}} = \inlinedy{\mathrm{D}} (\vv R)$ instead of $\partialup \otimes \vv A$):
+\begin{equation*}
+\begin{bmatrix}
+\capdy{\partialrm} {}^{\superdy{\mathrm{D}}} \\[-.375ex]
+\end{bmatrix}
+\stackrel{?}{=}
+\begin{bmatrix}
+\\[-2ex]
+\dfrac{\partial}{\partial D^{ct \mkern1.5mu ct}} & \dfrac{\partial}{\partial D^{ct \mkern1.5mu x}} & \dfrac{\partial}{\partial D^{ct \mkern1.5mu y}} & \dfrac{\partial}{\partial D^{ct \mkern1.5mu z}} \\[2ex]
+\dfrac{\partial}{\partial D^{x \mkern1.5mu ct}} & \dfrac{\partial}{\partial D^{x x}} & \dfrac{\partial}{\partial D^{x y}} & \dfrac{\partial}{\partial D^{x z}}  \\[2ex]
+\dfrac{\partial}{\partial D^{y \mkern1.5mu ct}} & \dfrac{\partial}{\partial D^{y x}} & \dfrac{\partial}{\partial D^{y y}} & \dfrac{\partial}{\partial D^{y z}}  \\[2ex]
+\dfrac{\partial}{\partial D^{z \mkern1.5mu ct}} & \dfrac{\partial}{\partial D^{z x}} & \dfrac{\partial}{\partial D^{z y}} & \dfrac{\partial}{\partial D^{z z}} \\[2ex]
+\end{bmatrix}
+\equiv
+\dfrac{\partial}{\partial [ \capdy{\mathrm{D}} ]}
+,
+\end{equation*}
+where we've defined the last expression as shorthand for that four-by-four in the middle. Note that we could have defined it as the \emph{transpose} of that four-by-four---it's a matter of convention. The convention we've chosen is called the ``denominator" or ``Hessian" layout; the other convention is the ``numerator" or ``Jacobian" layout.
+
+Now we'll take the $[\inlinedy{\mathrm{D}}]$-derivative of $\inlinedy{\mathrm{D}} : \inlinedy{\mathrm{D}} = \mathrm{Tr} (\eta [ \inlinedy{\mathrm{D}} ] \eta [ \inlinedy{\mathrm{D}} ] ^{\mathrm{T}} )$, a Minkowski scalar, and see whether the result is the matrix representation of a four-dyadic. The procedure is to first obtain the differential of the trace, with $\dd [ \inlinedy{\mathrm{D}} ]$ ``factored out." Everything else in the trace will then be the transpose of the $[\inlinedy{\mathrm{D}}]$-derivative of $\inlinedy{\mathrm{D}} : \inlinedy{\mathrm{D}}$.\footnote{In the numerator layout, it would be ``everything else in the trace" (not its transpose). Wikipedia's article on matrix calculus has a \href{https://en.wikipedia.org/wiki/Matrix_calculus\#Scalar-by-matrix_identities}{step-by-step example} of differentiating a trace with respect to a matrix.} Using the product rule and properties of the trace, the differential is:
+\begin{equation*}
+\begin{aligned}
+\dd \, \mathrm{Tr} \left( \eta [\capdy{\mathrm{D}}] \eta [ \capdy{\mathrm{D}} ]^{\mathrm{T}} \right) &= \mathrm{Tr} \left( \eta (\dd [\capdy{\mathrm{D}}]) \eta [ \capdy{\mathrm{D}} ]^{\mathrm{T}} + \eta [\capdy{\mathrm{D}}] \eta (\dd [ \capdy{\mathrm{D}} ]^{\mathrm{T}}) \right) \\[3pt]
+&= \mathrm{Tr} \left( \eta [ \capdy{\mathrm{D}} ]^{\mathrm{T}} \eta (\dd [\capdy{\mathrm{D}}]) + (\dd [\capdy{\mathrm{D}}]) \eta^\mathrm{T} [\capdy{\mathrm{D}}]^\mathrm{T} \eta^{\mathrm{T}} \right) \\[3pt]
+&= \mathrm{Tr} \left( ( \eta [ \capdy{\mathrm{D}} ]^{\mathrm{T}} \eta + \eta [\capdy{\mathrm{D}}]^\mathrm{T} \eta ) \, \dd [\capdy{\mathrm{D}}] \right)
+\end{aligned}
+\end{equation*}
+(because $\eta$ is symmetric). With $\dd [ \inlinedy{\mathrm{D}} ]$ ``factored out," the $[\inlinedy{\mathrm{D}}]$-derivative of $\inlinedy{\mathrm{D}} : \inlinedy{\mathrm{D}}$ is the transpose of everything else in the trace:
+\begin{equation*}
+\dfrac{\partial}{\partial [ \capdy{\mathrm{D}} ]} \, ( \capdy{\mathrm{D}} : \capdy{\mathrm{D}} ) = 2 \eta [\capdy{\mathrm{D}}] \eta .
+\end{equation*}
+That is \emph{not} the matrix representation of a four-dyadic! The sixteen quantities $\eta [\inlinedy{\mathrm{D}}] \eta$ transform not by Equation \ref{eq:ltd}, but rather by its ``inverse" (replace $\Lambda$ with $(\Lambda^{-1})^\mathrm{T}$ and $\Lambda^\mathrm{T}$ with $\Lambda^{-1}$; for a boost in standard configuration, $\Lambda^{-1}$ and its transpose are both Equation \ref{eq:im}).\footnote{An object whose components transform like this is a \emph{co}dyadic, or a covariant rank-2 tensor. This is related to the covector concept we've mentioned in passing here and there.} So our naive guess was incorrect. But this is easily remedied: we just need to differentiate with respect to the matrix $\eta [\inlinedy{\mathrm{D}}] \eta$ instead of $[\inlinedy{\mathrm{D}}]$. Then using $\eta \eta = I_4$ (the identity matrix):
+\begin{equation*}
+\begin{aligned}
+\dd \, \mathrm{Tr} \left( \eta [\capdy{\mathrm{D}}] \eta [ \capdy{\mathrm{D}} ]^{\mathrm{T}} \right) &= \dd \, \mathrm{Tr} \left( \eta [\capdy{\mathrm{D}}] \eta \eta \eta [ \capdy{\mathrm{D}} ]^{\mathrm{T}} \eta \eta \right) \\[3pt]
+&= \mathrm{Tr} \left( \dd (\eta [\capdy{\mathrm{D}}] \eta ) I_4 [ \capdy{\mathrm{D}} ]^{\mathrm{T}} I_4 +  \eta [\capdy{\mathrm{D}}] I_4 \, \dd ( \eta [\capdy{\mathrm{D}}]^\mathrm{T} \eta ) \eta \right) \\[3pt]
+&= \mathrm{Tr} \left( 2 [\capdy{\mathrm{D}}]^\mathrm{T} \, \dd (\eta [\capdy{\mathrm{D}}] \eta ) \right) ,
+\end{aligned}
+\end{equation*}
+giving
+\begin{equation*}
+\dfrac{\partial}{\partial (\eta [ \capdy{\mathrm{D}} ] \eta)} \, ( \capdy{\mathrm{D}} : \capdy{\mathrm{D}} ) = 2 [\capdy{\mathrm{D}}],
+\end{equation*}
+the matrix representation of a four-dyadic. Thus:
+\begin{equation*}
+\begin{bmatrix}
+\capdy{\partialrm} {}^{\superdy{\mathrm{D}}} \\[-.375ex]
+\end{bmatrix}
+=
+\dfrac{\partial}{\partial (\eta [ \capdy{\mathrm{D}} ] \eta)}
+=
+\begin{bmatrix}
+\\[-2ex]
+\dfrac{\partial}{\partial D^{ct \mkern1.5mu ct}} & -\dfrac{\partial}{\partial D^{ct \mkern1.5mu x}} & -\dfrac{\partial}{\partial D^{ct \mkern1.5mu y}} & -\dfrac{\partial}{\partial D^{ct \mkern1.5mu z}} \\[2ex]
+-\dfrac{\partial}{\partial D^{x \mkern1.5mu ct}} & \dfrac{\partial}{\partial D^{x x}} & \dfrac{\partial}{\partial D^{x y}} & \dfrac{\partial}{\partial D^{x z}}  \\[2ex]
+-\dfrac{\partial}{\partial D^{y \mkern1.5mu ct}} & \dfrac{\partial}{\partial D^{y x}} & \dfrac{\partial}{\partial D^{y y}} & \dfrac{\partial}{\partial D^{y z}}  \\[2ex]
+-\dfrac{\partial}{\partial D^{z \mkern1.5mu ct}} & \dfrac{\partial}{\partial D^{z x}} & \dfrac{\partial}{\partial D^{z y}} & \dfrac{\partial}{\partial D^{z z}} \\[2ex]
+\end{bmatrix} ,
+\end{equation*}
+and we've found a ``self-product" rule that goes:
+\begin{equation}\label{eq:dyoprule1}
+\capdy{\partialrm} {}^{\superdy{\mathrm{D}}} \, ( \capdy{\mathrm{D}} : \capdy{\mathrm{D}} ) = 2 \capdy{\mathrm{D}}.
+\end{equation}
+As an exercise, show that also:
+ \begin{equation}\label{eq:dyoprule2}
+\capdy{\partialrm} {}^{\superdy{\mathrm{D}}} \, ( \capdy{\mathrm{D}} : \capdy{\mathrm{D}} {}^\mathrm{T} ) = 2 \capdy{\mathrm{D}} {}^\mathrm{T}.
+\end{equation}
+
+Returning to Equation \ref{eq:elef}, let's try to come up with a Lagrangian density $\mathcal{L}$ that will give us Maxwell's equations. Since the Bianchi identity hands us Equation \ref{eq:hme} ``for free" (see Sections \ref{sssec:md} and \ref{sssec:hd}), we only need to worry about Equation \ref{eq:ime} here: $\partialup \cdot \inlinedy{\mathrm{F}} = \vv J$. Our Lagrangian density should have one term for the ``free field" (absent the source field $\vv J$) and another term that accounts for the field's interaction with charges. For the interaction term, we can simply ``densitize" the interaction term $q (\vv B \cdot \vv A)$ that we used for the \emph{particle} Lagrangian $L$ in Section \ref{sssec:ele}. That gives $\vv J \cdot \vv A$, which will vanish on the left side of Equation \ref{eq:elef} and evaluate to $\vv J$ on the right side.\footnote{That $\vv J \cdot \vv A$ isn't gauge-invariant sometimes causes confusion. In fact, the Lagrangian density doesn't \emph{have} to be gauge-invariant. The \emph{variation of the action} does, and the action is given by the integral of the Lagrangian density over all of spacetime (INSERT SOMETHING ABOUT VARIATIONS AT BOUNDARY HERE). Under a gauge transformation that takes $\vv A$ to $\vv A + \partialup \psi$, the term $\vv J \cdot \partialup \psi$ arises in $\mathcal{L}$. By a product rule, that's $\vv J \cdot \partialup \psi = \partialup \cdot (\psi \vv J) - \psi \partialup \cdot \vv J$. When varying the ``new" action, then, the spacetime integrals of $\partialup \cdot (\psi \vv J)$ and $\psi \partialup \cdot \vv J$ had better contribute nothing! The first does because (a generalization of) the divergence theorem turns it into an integral involving $\psi \vv J$ over the bounding ``hypersurface," which vanishes by (REASON PROVIDED ABOVE). That leaves only the $\psi \partialup \cdot \vv J$ term, which vanishes by the continuity equation (Equation \ref{eq:con}). \emph{Charge-conservation and gauge-invariance are two sides of the same coin}!}
+
+We're halfway there. Now we need the left side of Equation \ref{eq:elef} to produce $\partialup \cdot \inlinedy{\mathrm{F}}$. The question is: what Lorentz invariant can we feed $\inlinedy{\partialrm} {}^{\partialup \mkern2mu \otimes \vv A}$ to get $\inlinedy{\mathrm{F}} = \partialup \otimes \vv A - (\partialup \otimes \vv A)^\mathrm{T}$? Equations \ref{eq:dyoprule1} and \ref{eq:dyoprule2} provide the answer---we feed it $.5(\partialup \otimes \vv A):(\partialup \otimes \vv A) - .5(\partialup \otimes \vv A):(\partialup \otimes \vv A)^\mathrm{T}$. Some algebra shows that that's equivalently a quarter of the field invariant $\inlinedy{\mathrm{F}} : \inlinedy{\mathrm{F}}$ (Equation \ref{eq:fddf}):
+\begin{equation*}
+\begin{aligned}
+\capdy{\mathrm{F}} : \capdy{\mathrm{F}} &= \left( \partialup \otimes \vv A - (\partialup \otimes \vv A)^\mathrm{T} \right) : \left( \partialup \otimes \vv A - (\partialup \otimes \vv A)^\mathrm{T} \right) \\[2pt]
+&= (\partialup \otimes \vv A):(\partialup \otimes \vv A) + (\partialup \otimes \vv A)^\mathrm{T} : (\partialup \otimes \vv A)^\mathrm{T}  - 2 (\partialup \otimes \vv A):(\partialup \otimes \vv A)^\mathrm{T} \\[2pt]
+&= 2 (\partialup \otimes \vv A):(\partialup \otimes \vv A) - 2 (\partialup \otimes \vv A):(\partialup \otimes \vv A)^\mathrm{T}.
+\end{aligned}
+\end{equation*}
+So we can write the Lagrangian density for the electromagnetic field like this:
+\begin{equation*}
+\mathcal{L} = \dfrac{\capdy{\mathrm{F}} : \capdy{\mathrm{F}}}{4} \, + \, \vv J \cdot \vv A .
+\end{equation*}
 
 \end{document}
