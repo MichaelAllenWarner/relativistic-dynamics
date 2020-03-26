@@ -2413,7 +2413,7 @@ Now, scale an infinitesimal charge distribution's normalized four-velocity $\vv 
 \end{equation}
 called the (``normalized") \textbf{four-current density} (the three-vector $\vv j = \rho \vvbeta$ is the ``normalized" \textbf{three-current density} of the infinitesimal distribution).\footnote{We're working in \textbf{Heaviside--Lorentz units}. The ``unnormalized" four-current density in these units is $\rho_0 \vv V = \langle \rho c, \rho \vv v \rangle$, but dividing by $c$ here makes later equations nicer.} If we associate a (proper) charge density with every event in spacetime, we can speak of $\vv J = \vv J (\vv R)$ as a four-vector \emph{field}.\footnote{We've defined $\vv J$ in such a way that it's necessarily timelike (or the zero vector). This would seem to rule out situations in which $\rho = 0$ and $\vv j \neq \vv 0$, but then what of an electrically neutral current-carrying wire? Isn't that a counterexample? Not exactly. The wire with its ``overlapping" positive and negative charges doesn't fit neatly into our ``continuous charge distribution" model. To accommodate it, we'd handle the positive and negative charges \emph{separately}, treating each collection as a continuous distribution with its own $\vv J^+$ or $\vv J^-$ field. For the positive-charge distribution, $\rho_0^+$ is everywhere non-negative and $\vv J^+ = \rho_0^+ \vv B^+$ is consequently either zero or future-pointing timelike at a given event; for the negative-charge distribution, $\vv J^- = \rho_0^- \vv B^-$ must be either zero or \emph{past}-pointing timelike. When we sum up $\vv J^+$ and $\vv J^-$ to get the ``total" $\vv J$ at an event, we'll find that it can be timelike, spacelike, or lightlike. Note that when we deal with this kind of composite scenario, we can't use $\vv J = \rho_0 \vv B$, but we can still use $\vv J = \langle \rho, \, \vv j \rangle = \langle \rho^+ + \rho^- , \, \vv j^+ + \vv j^- \rangle $.} An important property of this field is that its four-divergence vanishes:
 \begin{equation}\label{eq:con}
-{\partialup \cdot \vv J = 0} ,
+\boxed{\partialup \cdot \vv J = 0} \, ,
 \end{equation}
 or $\partial^{ct} \rho + \del \cdot \vv j = 0$. This \textbf{continuity equation} says simply that charge is locally conserved---if the charge density in a region is changing, it must be because charge is crossing the region's boundaries. As a quantity that's both invariant and (additive-and-)conserved, charge is rather special.
 
@@ -2522,14 +2522,14 @@ Similar calculations give:
 \end{equation}
 For the inverse transformation, swap primed and unprimed components and switch the sign of each $\sinh{\phi}$. From Equations \ref{eq:ebt} and \ref{eq:50}, it follows (after some algebra) that  ${e^{\prime \, 2} - b^{\prime \, 2} = e^2 - b^2}$ and that $\vv e^\prime \cdot \vv b^\prime = \vv e \cdot \vv b$.\footnote{\label{fn:ps}As the curl of an ordinary vector, $\vv b$ is a \emph{pseudovector}, which means that it switches sign under some types of coordinate transformations (e.g., reflection across a plane). The Lorentz-invariant $\vv e \cdot \vv b$ inherits this property (it's a \emph{pseudoscalar}). For this reason, some people regard its square $(\vv e \cdot \vv b)^2$ as the quantity of interest.} These are the fundamental invariants we can construct from $\vv e$ and $\vv b$. An immediate consequence is the invariance of the special cases $\vv e \perp \vv b$ and $e = b$; i.e., if the electric and magnetic fields are perpendicular in one frame ($\vv e \cdot \vv b = 0$), then they're perpendicular in all frames, and if their magnitudes are equal in one frame ($e^2 - b^2 = 0$), then their magnitudes are equal in all frames.
 
-Another way of writing Equations \ref{eq:ebt} is in terms of component vectors parallel and perpendicular to the boost direction $\hatphi$. Using $\vv e_\perp = \langle 0, e_y, e_z \rangle$ and $\hatphi \times \vv b = \langle 0, -b_z, b_y \rangle$, and also $\vv b_\perp = \langle 0, b_y, b_z \rangle$ and $\hatphi \times \vv e = \langle 0, -e_z, e_y \rangle$:
+Another way of writing Equations \ref{eq:ebt} is in terms of component vectors parallel and perpendicular to the boost direction $\hatphi = \langle 1, 0, 0 \rangle$. Using ${\vv e_\perp = \langle 0, e_y, e_z \rangle}$ and $\hatphi \times \vv b = \langle 0, -b_z, b_y \rangle$, and also $\vv b_\perp = \langle 0, b_y, b_z \rangle$ and $\hatphi \times \vv e = \langle 0, -e_z, e_y \rangle$:
 \begin{equation*}
 \begin{aligned}
 & \vv e^\prime_\parallel = \vv e_\parallel  \qquad \qquad& & \vv b^\prime_\parallel = \vv b_\parallel  \\
 & \vv e^\prime_\perp =  \cosh{\phi} \; \vv e_\perp  +  \sinh{\phi} \; ( \hatphi \times \vv b )   \qquad& & \vv b^\prime_\perp = \cosh{\phi} \; \vv b_\perp  - \sinh{\phi} \; ( \hatphi \times \vv e ) ,
 \end{aligned}
 \end{equation*}
-which holds for a boost in an \emph{arbitrary} direction. With $\vv e_\parallel = (\hatphi \cdot \vv e) \hatphi$ and $\vv e_\perp = \vv e - \vv e_\parallel$, we can condense the transformation of $\vv e$ to a single equation that doesn't mention components or component vectors at all:
+which holds for a boost in an \emph{arbitrary} direction (not just $\langle 1, 0, 0 \rangle$). With $\vv e_\parallel = (\hatphi \cdot \vv e) \hatphi$ and $\vv e_\perp = \vv e - \vv e_\parallel$, we can condense the transformation of $\vv e$ to a single equation that doesn't mention component vectors at all:
 \begin{equation*}
 \begin{split}
 \vv e^\prime &= \vv e^\prime_\perp  + \vv e^\prime_\parallel \\
@@ -2552,7 +2552,7 @@ Equivalently, though maybe less elegantly:
 \end{equation*}
 where $\gamma = \cosh{\phi}$ and $\beta = \tanh{\phi}$ are boost parameters ($\hatbeta = \vvbeta / \beta = \hatphi$).\footnote{As an exercise, express $ct^\prime$ and $\vv r^\prime$ in terms of $ct$ and $\vv r$ (\href{https://en.wikipedia.org/wiki/Lorentz_transformation\#Vector_transformations}{boost in an arbitrary direction}).}
 
-Finally, it's useful to derive a relationship between $\vv J$ and the $\vv e$ and $\vv b$ fields (Equations \ref{eq:eb}). Let's use the Lorenz gauge, with $\vv J= \Box \vv A = \langle \Box A^{ct}, \Box \vv a \rangle$. By the Lorenz condition ${\partialup \cdot \vv A = 0}$ (Equation \ref{eq:lg}), or $\partial^{ct} A^{ct} = - \del \cdot \vv a$:
+Finally, it's useful to find a relationship between $\vv J$ and the $\vv e$ and $\vv b$ fields (Equations \ref{eq:eb}). Let's use the Lorenz gauge, with $\vv J= \Box \vv A = \langle \Box A^{ct}, \Box \vv a \rangle$. By the Lorenz condition ${\partialup \cdot \vv A = 0}$ (Equation \ref{eq:lg}), or $\partial^{ct} A^{ct} = - \del \cdot \vv a$:
 \begin{equation}\label{eq:ace}
 \begin{split}
 \rho &= \Box A^{ct} \\
@@ -3765,7 +3765,7 @@ u & [\vv s]^{\mathrm{T}} \\[1ex]
 \end{equation*}
 
 
-\subsubsection{A Dyadic Operator and the Field Lagrangian}
+\subsubsection{Dyadic Operators and the Field Lagrangian}
 
 In Section \ref{sssec:ele}, we fed a well-chosen Lagrangian $L$ into the four-vector version of the Euler--Lagrange equation (Equation \ref{eq:ele}) and successfully derived the Lorentz four-force. In this section, we'll derive Maxwell's equations by feeding the appropriate Lagrangian \emph{density} $\mathcal{L}$ into the four-vector \emph{field} version of the Euler--Lagrange equation, which we'll notate like this:
 \begin{equation}\label{eq:elef}
@@ -3804,7 +3804,7 @@ Now we'll take the $[\inlinedy{\mathrm{D}}]$-derivative of $\inlinedy{\mathrm{D}
 &= \mathrm{Tr} \left( ( \eta [ \capdy{\mathrm{D}} ]^{\mathrm{T}} \eta + \eta [\capdy{\mathrm{D}}]^\mathrm{T} \eta ) \, \dd [\capdy{\mathrm{D}}] \right)
 \end{aligned}
 \end{equation*}
-(because $\eta$ is symmetric). With $\dd [ \inlinedy{\mathrm{D}} ]$ ``factored out," the $[\inlinedy{\mathrm{D}}]$-derivative of $\inlinedy{\mathrm{D}} : \inlinedy{\mathrm{D}}$ is the transpose of everything else in the trace:
+(because $\eta$ is symmetric). With $\dd [ \inlinedy{\mathrm{D}} ]$ ``factored out," the $[\inlinedy{\mathrm{D}}]$-derivative of the scalar $\inlinedy{\mathrm{D}} : \inlinedy{\mathrm{D}}$ is the transpose of everything else in the trace:
 \begin{equation*}
 \dfrac{\partial}{\partial [ \capdy{\mathrm{D}} ]} \, ( \capdy{\mathrm{D}} : \capdy{\mathrm{D}} ) = 2 \eta [\capdy{\mathrm{D}}] \eta .
 \end{equation*}
@@ -3852,13 +3852,13 @@ We're halfway there. Now we need the left side of Equation \ref{eq:elef} to prod
 \begin{aligned}
 \capdy{\mathrm{F}} : \capdy{\mathrm{F}} &= \left( \partialup \otimes \vv A - (\partialup \otimes \vv A)^\mathrm{T} \right) : \left( \partialup \otimes \vv A - (\partialup \otimes \vv A)^\mathrm{T} \right) \\[2pt]
 &= (\partialup \otimes \vv A):(\partialup \otimes \vv A) + (\partialup \otimes \vv A)^\mathrm{T} : (\partialup \otimes \vv A)^\mathrm{T}  - 2 (\partialup \otimes \vv A):(\partialup \otimes \vv A)^\mathrm{T} \\[2pt]
-&= 2 (\partialup \otimes \vv A):(\partialup \otimes \vv A) - 2 (\partialup \otimes \vv A):(\partialup \otimes \vv A)^\mathrm{T}.
+&= 2 (\partialup \otimes \vv A):(\partialup \otimes \vv A) - 2 (\partialup \otimes \vv A):(\partialup \otimes \vv A)^\mathrm{T},
 \end{aligned}
 \end{equation*}
-So we can write the Lagrangian density for the electromagnetic field like this:
-\begin{equation*}
-\mathcal{L} = \dfrac{\capdy{\mathrm{F}} : \capdy{\mathrm{F}}}{4} \, + \, \vv J \cdot \vv A
-\end{equation*}
-(if we'd defined our dyadic operator according to the \emph{numerator} layout, the first term would have the opposite sign).
+so we can write the Lagrangian density for the electromagnetic field like this:
+\begin{equation}\label{eq:emld}
+\boxed{\mathcal{L} = \dfrac{1}{4} \, ( \capdy{\mathrm{F}} : \capdy{\mathrm{F}} ) \, + \, \vv J \cdot \vv A} \, .
+\end{equation}
+(If we'd defined our dyadic operator according to the \emph{numerator} layout, then the $\inlinedy{\mathrm{F}} : \inlinedy{\mathrm{F}}$ term in Equation \ref{eq:emld} would have the opposite sign).
 
 \end{document}
