@@ -3384,7 +3384,7 @@ Last, we now understand that getting Equation \ref{eq:hme} ``for free" by virtue
 
 \subsubsection{Light with Four-Dyadics}
 
-In Section \ref{sssec:li}, we discussed electromagnetic plane waves in a manifestly covariant fashion by starting with Equation \ref{eq:fp} ($\vv J = \Box \vv A$). But that equation is valid only in the Lorenz gauge, and combining Equations \ref{eq:ime} and \ref{eq:emta} we see that in general $\vv J = \partialup \cdot ( \partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A} )$, or:
+In Section \ref{sssec:li}, we discussed electromagnetic plane waves in a manifestly covariant fashion by starting with Equation \ref{eq:fp} ($\vv J = \Box \vv A$). But that equation is valid only in the Lorenz gauge, and combining Equations \ref{eq:ime} and \ref{eq:emta} we see that in general $\vv J = \partialup \cdot (\partialup \wedge \vv A) = \partialup \cdot ( \partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A} )$, or:
 \begin{equation*}
 \vv J = \Box \vv A - \partialup (\partialup \cdot \vv A)
 \end{equation*}
@@ -3495,7 +3495,7 @@ A special case is when a dyadic is double-dotted with $\inlinedy{\upeta}$, the M
 \end{equation*}
 (verify that $\eta \eta = I_4$, the 4-by-4 identity matrix). This invariant is called the trace \emph{of the dyadic} $\inlinedy{\mathrm{D}}$, though its matrix representation is $\mathrm{Tr} (\eta [ \inlinedy{\mathrm{D}} ])$, \emph{not} $\mathrm{Tr} ( [ \inlinedy{\mathrm{D}} ] )$. For example, the trace of $\inlinedy{\upeta}$ is $\mathrm{Tr} (I_4) = 4$. Obviously all antisymmetric dyadics are traceless (their matrix representations have only zeros on the main diagonal). More generally, the double dot product of an antisymmetric dyadic $\inlinedy{\mathrm{A}}$ with \emph{any symmetric} dyadic $\inlinedy{\mathrm{S}}$ is zero, since $\inlinedy{\mathrm{A}} = - \inlinedy{\mathrm{A}} \mkern-2mu ^\mathrm{T}$ and $\inlinedy{\mathrm{S}} = \inlinedy{\mathrm{S}} \mkern-2mu^\mathrm{T}$:
 \begin{equation*}
-\capdy{\mathrm{A}} : \capdy{\mathrm{S}} = - \capdy{\mathrm{A}} \mkern0mu ^\mathrm{T} : \capdy{\mathrm{S}} \mkern0mu ^\mathrm{T} = - \capdy{\mathrm{A}} : \capdy{\mathrm{S}}
+\capdy{\mathrm{A}} : \capdy{\mathrm{S}} = ( - \capdy{\mathrm{A}} \mkern0mu ^\mathrm{T} ) : ( + \capdy{\mathrm{S}} \mkern0mu ^\mathrm{T} ) = - ( \capdy{\mathrm{A}} \mkern0mu ^\mathrm{T} : \capdy{\mathrm{S}} \mkern0mu ^\mathrm{T} ) = - ( \capdy{\mathrm{A}} : \capdy{\mathrm{S}} )
 \end{equation*}
 (if it's equal to its additive inverse then it must be zero).
 
@@ -3731,7 +3731,7 @@ This dyadic is symmetric and also traceless ($\inlinedy{\mathrm{T}} : \inlinedy{
 &=  - \capdy{\mathrm{F}} : \capdy{\mathrm{F}} - \capdy{\mathrm{G}} : \capdy{\mathrm{G}} ,
 \end{split}
 \end{equation*}
-which vanishes by Equations \ref{eq:fddf} and \ref{eq:gddg}. Note that to get from $[\inlinedy{\mathrm{F}} \cdot \inlinedy{\mathrm{F}}]$ to $[\inlinedy{\mathrm{T}}]$ requires only the addition of the invariant $(b^2 - e^2) / 2 = ( \inlinedy{\mathrm{F}} : \inlinedy{\mathrm{F}} ) / 4$ to the top-left entry and $( \inlinedy{\mathrm{G}} : \inlinedy{\mathrm{G}} ) / 4 = - ( \inlinedy{\mathrm{F}} : \inlinedy{\mathrm{F}} ) / 4$ to the other three entries on the main diagonal. Likewise for getting from $[ \inlinedy{\mathrm{G}} \cdot \inlinedy{\mathrm{G}} ]$ to $[ \inlinedy{\mathrm{T}} ]$, but with the signs of the added invariants reversed. So there are several alternative ways to express $\inlinedy{\mathrm{T}}$ in terms of the Faraday and Maxwell tensors, all equivalent to Equation \ref{eq:eset}. Here are a few of them:
+which vanishes by Equations \ref{eq:fddf} and \ref{eq:gddg}.\footnote{This tracelessness reflects the masslessness of the electromagnetic field.} Note that to get from $[\inlinedy{\mathrm{F}} \cdot \inlinedy{\mathrm{F}}]$ to $[\inlinedy{\mathrm{T}}]$ requires only the addition of the invariant $(b^2 - e^2) / 2 = ( \inlinedy{\mathrm{F}} : \inlinedy{\mathrm{F}} ) / 4$ to the top-left entry and $( \inlinedy{\mathrm{G}} : \inlinedy{\mathrm{G}} ) / 4 = - ( \inlinedy{\mathrm{F}} : \inlinedy{\mathrm{F}} ) / 4$ to the other three entries on the main diagonal. Likewise for getting from $[ \inlinedy{\mathrm{G}} \cdot \inlinedy{\mathrm{G}} ]$ to $[ \inlinedy{\mathrm{T}} ]$, but with the signs of the added invariants reversed. So there are several alternative ways to express $\inlinedy{\mathrm{T}}$ in terms of the Faraday and Maxwell tensors, all equivalent to Equation \ref{eq:eset}. Here are a few of them:
 \begin{equation*}
 \begin{aligned}
 \capdy{\mathrm{T}} &= \capdy{\mathrm{F}} \cdot \capdy{\mathrm{F}} +  \dfrac{1}{4} \, ( \capdy{\mathrm{F}} : \capdy{\mathrm{F}} ) \inlinedy{\upeta} \, = \, \capdy{\mathrm{F}} \cdot \capdy{\mathrm{F}} -  \dfrac{1}{4} \, ( \capdy{\mathrm{F}} \cdot \cdot \, \mkern1mu \capdy{\mathrm{F}} ) \inlinedy{\upeta} \\[5pt]
@@ -3859,6 +3859,6 @@ so we can write the Lagrangian density for the electromagnetic field like this:
 \begin{equation}\label{eq:emld}
 \boxed{\mathcal{L} = \dfrac{1}{4} \, ( \capdy{\mathrm{F}} : \capdy{\mathrm{F}} ) \, + \, \vv J \cdot \vv A} \, .
 \end{equation}
-(If we'd defined our dyadic operator according to the \emph{numerator} layout, then the $\inlinedy{\mathrm{F}} : \inlinedy{\mathrm{F}}$ term in Equation \ref{eq:emld} would have the opposite sign).
+(If we'd defined our dyadic operator according to the \emph{numerator} layout, then the $\inlinedy{\mathrm{F}} : \inlinedy{\mathrm{F}}$ term in Equation \ref{eq:emld} would have the opposite sign). In more advanced treatments, the action principle is used to derive the electromagnetic stress--energy tensor, too.
 
 \end{document}
