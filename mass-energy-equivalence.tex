@@ -3480,7 +3480,7 @@ The key is to bring in the matrix \emph{trace}, which is the sum of the main-dia
 \end{equation*}
 \emph{Now} we have a matrix representation of the double dot product (several, actually) that we can use for arbitrary four-dyadics $\inlinedy{\mathrm{D}}$ and $\inlinedy{\mathrm{K}}$:
 \begin{equation*}
-\capdy{\mathrm{D}} : \capdy{\mathrm{K}} = \mathrm{Tr} \left( \eta [\capdy{\mathrm{D}}] \eta [ \capdy{\mathrm{K}} ]^{\mathrm{T}} \right) = \mathrm{Tr} \left( [\capdy{\mathrm{K}}] \eta [ \capdy{\mathrm{D}} ]^{\mathrm{T}} \eta \right) = \mathrm{Tr} \left( \eta [\capdy{\mathrm{K}}] \eta [ \capdy{\mathrm{D}} ]^{\mathrm{T}} \right) = \capdy{\mathrm{K}} : \capdy{\mathrm{D}} ,
+\capdy{\mathrm{D}} : \capdy{\mathrm{K}} = \mathrm{Tr} \left( \eta [\capdy{\mathrm{D}}] \eta [ \capdy{\mathrm{K}} ]^{\mathrm{T}} \right) = \mathrm{Tr} \left( [\capdy{\mathrm{K}}] \eta^{\mathrm{T}} [ \capdy{\mathrm{D}} ]^{\mathrm{T}} \eta^{\mathrm{T}} \right) = \mathrm{Tr} \left( \eta [\capdy{\mathrm{K}}] \eta [ \capdy{\mathrm{D}} ]^{\mathrm{T}} \right) = \capdy{\mathrm{K}} : \capdy{\mathrm{D}} ,
 \end{equation*}
 where we've transposed the matrix product to show that commutativity still holds (the transpose of a matrix product is the product of the transposes in reverse order, and the symmetric $\eta$ is its own transpose). This works because a matrix and its transpose share a trace. Trivially from the above, then:
 \begin{equation*}
@@ -3761,9 +3761,12 @@ u & [\vv s]^{\mathrm{T}} \\[1ex]
 \end{equation*}
 (no naught subscripts on the right---see Equation \ref{eq:lffdc}). Equation \ref{eq:fmc} is a statement of \emph{four-momentum} conservation that explicitly accounts for the electromagnetic field. Technically so is Equation \ref{eq:lffd}, but our dyadic notation here is more transparent. The four-divergence of $\inlinedy{\mathrm{T}}$ vanishes when the fields are transferring no four-momentum to charged particles. We can express the right side of Equation \ref{eq:fmc} in terms of the fields and charges (differentiate Equation \ref{eq:lfffd} with respect to proper volume, and sub in $\vv J$ for $\rho_0 \vv B$):
 \begin{equation*}
-\partialup \cdot \capdy{\mathrm{T}} = - \capdy{\mathrm{F}} \cdot \, \vv J .
+\partialup \cdot \capdy{\mathrm{T}} = - \capdy{\mathrm{F}} \cdot \, \vv J ,
 \end{equation*}
-
+or in terms of the fields alone (by Equation \ref{eq:ime}):
+\begin{equation*}
+\partialup \cdot \capdy{\mathrm{T}} = - \capdy{\mathrm{F}} \cdot ( \partialup \cdot \capdy{\mathrm{F}} ).
+\end{equation*}
 
 \subsubsection{Dyadic Operators and the Field Lagrangian}
 
@@ -3808,7 +3811,7 @@ Now we'll take the $[\inlinedy{\mathrm{D}}]$-derivative of $\inlinedy{\mathrm{D}
 \begin{equation*}
 \dfrac{\partial}{\partial [ \capdy{\mathrm{D}} ]} \, ( \capdy{\mathrm{D}} : \capdy{\mathrm{D}} ) = 2 \eta [\capdy{\mathrm{D}}] \eta .
 \end{equation*}
-That is \emph{not} the matrix representation of a four-dyadic! The sixteen quantities $\eta [\inlinedy{\mathrm{D}}] \eta$ transform not by Equation \ref{eq:ltd}, but rather by its ``inverse" (replace $\Lambda$ with $(\Lambda^{-1})^\mathrm{T}$ and $\Lambda^\mathrm{T}$ with $\Lambda^{-1}$; for a boost in standard configuration, $\Lambda^{-1}$ and its transpose are both Equation \ref{eq:im}).\footnote{An object whose components transform like this is a \emph{co}dyadic, or a covariant rank-2 tensor. This is related to the covector concept we've mentioned in passing here and there.} So our naive guess was incorrect. But this is easily remedied: we just need to differentiate with respect to the matrix $\eta [\inlinedy{\mathrm{D}}] \eta$ instead of $[\inlinedy{\mathrm{D}}]$. Then using $\eta \eta = I_4$ (the identity matrix):
+That is \emph{not} the matrix representation of a four-dyadic! The sixteen quantities $\eta [\inlinedy{\mathrm{D}}] \eta$ transform not by Equation \ref{eq:ltd}, but rather by its ``inverse" (replace $\Lambda$ with $(\Lambda^{-1})^\mathrm{T}$ and $\Lambda^\mathrm{T}$ with $\Lambda^{-1}$; for a boost in standard configuration, $\Lambda^{-1}$ and its transpose are both Equation \ref{eq:im}).\footnote{An object whose components transform like this is called a \emph{co}dyadic or a covariant rank-2 tensor (or, if it's antisymmetric, a two-form). This is related to the covector concept we've mentioned in passing here and there.} So our naive guess was incorrect. But this is easily remedied: we just need to differentiate with respect to the matrix $\eta [\inlinedy{\mathrm{D}}] \eta$ instead of $[\inlinedy{\mathrm{D}}]$. Then using $\eta \eta = I_4$ (the identity matrix):
 \begin{equation*}
 \begin{aligned}
 \dd \, \mathrm{Tr} \left( \eta [\capdy{\mathrm{D}}] \eta [ \capdy{\mathrm{D}} ]^{\mathrm{T}} \right) &= \dd \, \mathrm{Tr} \left( \eta [\capdy{\mathrm{D}}] \eta \eta \eta [ \capdy{\mathrm{D}} ]^{\mathrm{T}} \eta \eta \right) \\[3pt]
@@ -3825,7 +3828,7 @@ the matrix representation of a four-dyadic. Thus:
 \begin{bmatrix}
 \capdy{\partialrm} {}^{\superdy{\mathrm{D}}} \\[-.375ex]
 \end{bmatrix}
-=
+\equiv
 \dfrac{\partial}{\partial (\eta [ \capdy{\mathrm{D}} ] \eta)}
 =
 \begin{bmatrix}
