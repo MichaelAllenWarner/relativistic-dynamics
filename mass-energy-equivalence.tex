@@ -3132,7 +3132,7 @@ e_y & b_z & 0 & -b_x \\[.5ex]
 e_z & -b_y & b_x & 0
 \end{bmatrix} .
 \end{equation}
-The matrix is antisymmetric, and we call the dyadic itself antisymmetric. (Likewise, a dyadic whose matrix representation is \emph{symmetric} is said to be symmetric.) It's also convenient to call a dyadic's \emph{transpose} the dyadic whose matrix representation is the transpose of the first's. Then we can say ${\inlinedy{\mathrm{F}} = \partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A} = \partialup \otimes \vv A - (\partialup \otimes \vv A)^\mathrm{T}}$, dropping the subscript notation. Finally, there's a shorthand notation for this procedure of producing an antisymmetric dyadic from a pair of vectors: $\vv Q \wedge \vv W \equiv \vv Q \otimes \vv W - \vv W \otimes \vv Q$.\footnote{This is the \textbf{wedge product}. The resulting antisymmetric dyadic is a \textbf{bivector}.} So:
+The matrix is antisymmetric, and we call the dyadic itself antisymmetric. (Likewise, a dyadic whose matrix representation is \emph{symmetric} is said to be symmetric.) It's also convenient to call a dyadic's \emph{transpose} the dyadic whose matrix representation is the transpose of the first's. Then we can say ${\inlinedy{\mathrm{F}} = \partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A} = \partialup \otimes \vv A - (\partialup \otimes \vv A)^\mathrm{T}}$, dropping the subscript notation. Finally, there's a shorthand notation for this procedure of producing an antisymmetric dyadic from a pair of vectors: $\vv Q \wedge \vv W \equiv \vv Q \otimes \vv W - \vv W \otimes \vv Q$ (called the \textbf{wedge product}).\footnote{The antisymmetric dyadic produced by the wedge product is called a \textbf{bivector}.} So:
 \begin{equation}\label{eq:emta}
 \boxed{ \vphantom{A_{A_A}} \capdy{\mathrm{F}} \equiv \partialup \wedge \vv A } \, . 
 \end{equation}
@@ -3195,13 +3195,17 @@ D^{ct \mkern1.5mu ct} & D^{ct \mkern1.5mu x} & D^{ct \mkern1.5mu y} & D^{ct \mke
 
 Really, Equation \ref{eq:mmt} is the matrix representation of a four-dyadic, since it satisfies the four-dyadic transformation rule Equation \ref{eq:ltd} (try it!---under a Lorentz boost, the $1$ transforms to $1$, the $-1$'s transform to $-1$'s, and the $0$'s transform to $0$'s). This dyadic is called the \textbf{Minkowski metric tensor}, and we use it implicitly every time we take a Minkowski dot product.\footnote{To be precise, what we use implicitly when we take Minkowski dot products is the \emph{covariant} Minkowski metric tensor, whereas the dyadic we're introducing now is the \emph{contravariant} Minkowski metric tensor (see Footnote \ref{fn:dy}).} It's functionally analogous to the Euclidean unit dyadic we encountered in Section \ref{sssec:emm}. When we want to notate it explicitly \emph{as} a four-dyadic, we'll write $\inlinedy{\upeta}$ (a conventional exception to our preference for uppercase). Mostly, though, we'll keep using the familiar dot notation and throw $\eta = [ \mkern1mu \inlinedy{\upeta} \mkern.5mu ]$ into matrix equations as needed.
 
-Anyway, now we can write the Lorentz four-force (Equation \ref{eq:lff}) with the dyadic product:
+Anyway, now we can make good use of the Faraday tensor. First establish a useful identity connecting ``vector triple products" with wedge products:
+\begin{equation}\label{eq:vtpi}
+\begin{split}
+\vv S \mkern1mu `` \mkern-4mu \times (\vv Q \times \mkern-4mu " \mkern1mu \vv W) &= \vv Q ( \vv W \cdot \vv S) - \vv W ( \vv Q \cdot \vv S)  \\[2pt]
+&= ( \vv Q \otimes \vv W ) \cdot \vv S - ( \vv W \otimes \vv Q ) \cdot \vv S \\[2pt]
+\vv S \mkern1mu `` \mkern-4mu \times (\vv Q \times \mkern-4mu " \mkern1mu \vv W) &= ( \vv Q \wedge \vv W ) \cdot \vv S .
+\end{split}
+\end{equation}
+Then apply it to our core electrodynamic equations. Here is the Lorentz four-force (Equation \ref{eq:ff}):
 \begin{equation*}
-\begin{aligned}
-\vv F_{\textrm{L}} &= q \, \bigl[ \partialup_{\vv A} (\vv A \cdot \vv B) -  \vv A (\partialup_{\vv A} \cdot \vv B ) \bigr] \\[2pt]
-&= q \, \bigl[ ( \partialup \otimes \vv A) \cdot \vv B -  ( \vv A \otimes \partialup_{\vv A}) \cdot \vv B \bigr] \\[2pt]
-&= q \, \bigl[ (\partialup \wedge \vv A) \cdot \vv B \bigr] ,
-\end{aligned}
+\vv F_{\textrm{L}} = q \, \bigl[ \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) \bigr] = q \, \bigl[ (\partialup \wedge \vv A) \cdot \vv B \bigr] ,
 \end{equation*}
 or more compactly in terms of the Faraday tensor (Equation \ref{eq:emta}):
 \begin{equation}\label{eq:lfffd}
@@ -3231,15 +3235,11 @@ q
 [ \gamma \vv e + \gamma \vvbeta \times \vv b ]
 \end{bmatrix}
 \end{equation*}
-(cf. Equation \ref{eq:lfc}). And remember when we noted that Maxwell's equations (Equations \ref{eq:me}) actually constitute two four-vectors, and that their forms suggest expressions involving $\partialup$? Well, now we get the first of them (for $\del \cdot \vv e = \rho$ and $ \del \times \vv b - \partial^{ct} \vv e = \vv j$) by rewriting Equation \ref{eq:gfp} with the dyadic product:
+(cf. Equation \ref{eq:lfc}). And remember when we noted that Maxwell's equations (Equations \ref{eq:me}) actually constitute two four-vectors, and that their forms suggest expressions involving $\partialup$? Well, now we get the first of them (for $\del \cdot \vv e = \rho$ and $ \del \times \vv b - \partial^{ct} \vv e = \vv j$) from Equations \ref{eq:gfp} and \ref{eq:vtpi}:
 \begin{equation*}
-\begin{aligned}
-\vv J &= (\partialup \cdot \partialup) \vv A - ( \partialup \cdot \vv A) \partialup_{\vv A} \\[2pt]
-&= \partialup \cdot (\partialup \otimes \vv A) - \partialup \cdot ( \vv A  \otimes \partialup_{\vv A} ) \\[2pt]
-&= \partialup \cdot (\partialup \wedge \vv A),
-\end{aligned}
+\vv J = - \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A ) = - ( \partialup \wedge \vv A ) \cdot \partialup_{\vv A} = \partialup \cdot (\partialup \wedge \vv A),
 \end{equation*}
-or
+where the last step follows from the wedge product's antisymmetry, and:
 \begin{equation}\label{eq:ime}
 \boxed{ \vphantom{A_{A_A}} \partialup \cdot \capdy{\mathrm{F}} = \vv J } \, .
 \end{equation}
@@ -3257,7 +3257,7 @@ e_y & b_z & 0 & -b_x \\
 e_z & -b_y & b_x & 0
 \end{bmatrix} ,
 \end{equation*}
-giving $\partialup \cdot \inlinedy{\mathrm{F}} = \langle \del \cdot \vv e , \, - \partial^{ct} \vv e + \del \times \vv b \rangle$ (mind that $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$). As for the other one (for $\del \cdot \vv b = 0$ and $\del \times \vv e + \partial^{ct} \vv b = \vv 0$), we note that the left sides of the remaining Maxwell equations are just like the left sides of the first two, but with the roles of $\vv e$ and $\vv b$ reversed and a sign changed. It should therefore be possible to form a new Minkowski dyadic $\inlinedy{\mathrm{G}}$ from the Faraday tensor (Equation \ref{eq:emt}) by ``swapping" the $\vv e$ and $\vv b$ components and flipping the appropriate signs; the four-divergence of this new dyadic should equal the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}}$. A bit of thought (or trial and error) shows that the way to do this is to replace $\vv e$ with $\vv b$ and $\vv b$ with $- \vv e$:
+giving $\partialup \cdot \inlinedy{\mathrm{F}} = \langle \del \cdot \vv e , \, - \partial^{ct} \vv e + \del \times \vv b \rangle$ (mind $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$). As for the remaining Maxwell equations ($\del \cdot \vv b = 0$ and $\del \times \vv e + \partial^{ct} \vv b = \vv 0$), we note that their left sides are just like the left sides of the first two, but with the roles of $\vv e$ and $\vv b$ reversed and a sign changed. It should therefore be possible to form a new Minkowski dyadic $\inlinedy{\mathrm{G}}$ from the Faraday tensor (Equation \ref{eq:emt}) by ``swapping" the $\vv e$ and $\vv b$ components and flipping the appropriate signs; the four-divergence of this new dyadic should equal the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}}$. A bit of thought (or trial and error) shows that the way to do this is to replace $\vv e$ with $\vv b$ and $\vv b$ with $- \vv e$:
 \begin{equation}\label{eq:mt}
 [ \capdy{\mathrm{G}} ]
 =
