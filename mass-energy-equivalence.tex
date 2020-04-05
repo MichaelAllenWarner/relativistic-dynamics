@@ -3312,7 +3312,7 @@ We'll now demonstrate that at a single moment for a given inertial frame with fo
 \begin{equation*}
 \capdy{\mathrm{A}} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \},
 \end{equation*}
-where the funny-looking $\{ \tilde{\vv w} \times \}$ denotes the quasi-four-\emph{dyadic} that satisfies ${ \{ \tilde{\vv w} \times \} \cdot \vv H = \langle 0, \vv w \times \vv h \rangle }$ for \emph{any} four-vector ${\vv H = \langle H^{ct}, \vv h \rangle}$. More formally, we can say that $\{ \tilde{\vv w} \times \} = \tilde{\vv m} \wedge \tilde{\vv n}$ for some $\tilde{\vv m} = \langle 0, \vv m \rangle$ and $\tilde{\vv n} = \langle 0, \vv n \rangle$, implying ${ \vv w = \vv m \times \vv n }$:
+where the funny-looking $\{ \tilde{\vv w} \times \}$ denotes the quasi-four-\emph{dyadic} that satisfies ${ \{ \tilde{\vv w} \times \} \cdot \vv H = \langle 0, \vv w \times \vv h \rangle }$ for \emph{any} four-vector ${\vv H = \langle H^{ct}, \vv h \rangle}$. More formally, we can say that $\{ \tilde{\vv w} \times \} \equiv \tilde{\vv m} \wedge \tilde{\vv n}$ for some $\tilde{\vv m} = \langle 0, \vv m \rangle$ and $\tilde{\vv n} = \langle 0, \vv n \rangle$, implying ${ \vv w = \vv m \times \vv n }$:
 \begin{equation*}
 \begin{bmatrix}
 0 \\
@@ -3418,9 +3418,9 @@ It \emph{is} possible to express $\inlinedy{\mathrm{G}}$ as a sum of Minkowski d
 
 Hodge duality isn't specific to antisymmetric Minkowski dyadics. Other types of geometric objects have Hodge duals, too, and that includes vectors and scalars. The mathematical toolkit we're using isn't equipped to handle the more advanced facets of this topic---for that, something like differential forms or index gymnastics is necessary---but a few remarks are in order.
 
-In an $n$-dimensional space, the Hodge dual maps an antisymmetric tensor of rank $k$ to an antisymmetric \emph{pseudo}tensor of rank $n - k$, and vice versa (all vectors and scalars are regarded as antisymmetric in this context). The Hodge dual of the Hodge dual is either the original tensor or its additive inverse, depending on the parity $s$ of the space's dot-product signature ($s = 1$ for Euclidean space, but $s = -1$ for Minkowski spacetime because of the minus signs in $\eta$ [Equation \ref{eq:mmt}]): if $n$ is odd, then $s$ \emph{alone} determines which it is ($s = 1$ means original tensor, $s = -1$ means additive inverse); if $n$ is even, then it's a little more complicated, and we use the formula $(-1)^k s$ (again, positive means original tensor, negative means additive inverse).
+In an $n$-dimensional space, the Hodge dual maps an antisymmetric tensor of rank $k$ to an antisymmetric \emph{pseudo}tensor of rank $n - k$, and vice versa (all vectors and scalars are regarded as antisymmetric in this context).\footnote{To get a feel for what antisymmetry means for higher-rank tensors, see \href{https://en.wikipedia.org/wiki/Levi-Civita_symbol\#/media/File:Epsilontensor.svg}{this illustration} (Wikipedia) that shows the cubic-array representation of an antisymmetric rank-3 tensor in three-dimensional Euclidean space (that particular tensor is in fact $\star 1$, the rank-3 pseudotensor that's the Hodge dual of the scalar $1$).} The Hodge dual of the Hodge dual (the ``double Hodge") is either the original tensor or its additive inverse, depending on the parity $s$ of the space's dot-product signature ($s = 1$ for Euclidean space, but $s = -1$ for Minkowski spacetime because of the minus signs in $\eta$ [Equation \ref{eq:mmt}]): if $n$ is odd, then $s$ \emph{alone} determines the double Hodge ($s = 1$ means original tensor, $s = -1$ means additive inverse); if $n$ is even, then it's a little more complicated, and we use the formula $(-1)^k s$ (again, positive means original tensor, negative means additive inverse).
 
-So in four-dimensional Minkowski spacetime ($n = 4$, $s = -1$), the Hodge dual maps rank-2 to rank-2 (dyadics to dyadics, as we've seen), rank-4 to rank-0 (scalars), rank-3 to rank-1 (vectors), and vice versa for all of the above, with the ``double Hodge" returning the additive inverse of the original tensor in all but the odd-rank cases. But in three-dimensional Euclidean space ($n = 3$, $s = 1$), the Hodge dual operates between rank-3 and rank-0 and between rank-2 and rank-1, with the double Hodge \emph{always} returning the original tensor.
+So in four-dimensional Minkowski spacetime ($n = 4$, $s = -1$), the Hodge dual maps rank-2 to rank-2 (dyadics to dyadics, as we've seen), rank-4 to rank-0 (scalars), rank-3 to rank-1 (vectors), and vice versa for all of the above, with the double Hodge returning the additive inverse of the original tensor in all but the odd-rank cases. But in three-dimensional Euclidean space ($n = 3$, $s = 1$), the Hodge dual operates between rank-3 and rank-0 and between rank-2 and rank-1, with the double Hodge \emph{always} returning the original tensor.
 
 We've already tacitly used the Hodge dual of a three-vector many times. For example, in Section \ref{sssec:hd}, our funny-looking $\{ \tilde{\vv w} \times \}$ housed the components of ${ \vv m \wedge \vv n = \vv m \otimes \vv n - \vv n \otimes \vv m }$, which turned out to be nothing but the components of $\pm ( \vv m \times \vv n )$. And we first encountered the $\pm ( \vv m \times \vv n )$ pattern all the way back in Section \ref{sssec:tp}, when we noted that both the positive and negative components of $\del \times \vv c$ were present in the components of $\vv a \times ( \del \times \vv c )$. The cross product and the three-vector wedge product contain exactly the same ``information." They are a ``Hodge pair":
 \begin{equation*}
@@ -3456,7 +3456,7 @@ and the Maxwell tensor like this:
 \end{equation*}
 (cf. Equations \ref{eq:emt} and \ref{eq:mt}).
 
-To reiterate, each member of a Hodge pair contains the same information as its counterpart, but one is a pseudotensor. In the Hodge pair $\inlinedy{\mathrm{F}}$ and $\inlinedy{\mathrm{G}}$, the pseudotensor is the four-dyadic $\inlinedy{\mathrm{G}}$. In the Hodge pair $\vv e$ and $\star \vv e$, the pseudotensor is the three-dyadic $\star \vv e$. In the Hodge pair $\vv b$ and $\star \vv b$, the pseudotensor is the three-vector $\vv b$.
+To reiterate, each member of a Hodge pair is antisymmetric and contains the same information as its counterpart, but one is a pseudotensor. In the Hodge pair $\inlinedy{\mathrm{F}}$ and $\inlinedy{\mathrm{G}}$, the pseudotensor is the four-dyadic $\inlinedy{\mathrm{G}}$. In the Hodge pair $\vv e$ and $\star \vv e$, the pseudotensor is the three-dyadic $\star \vv e$. In the Hodge pair $\vv b$ and $\star \vv b$, the pseudotensor is the three-vector $\vv b$.
 
 \subsubsection{The Bianchi Identity}\label{sssec:bi}
 
@@ -3480,7 +3480,7 @@ Next, take the d'Alembertian of the Faraday tensor (Equation \ref{eq:emta}) and 
 \Box \capdy{\mathrm{F}} &= \capdy{0} .
 \end{split}
 \end{equation}
-Here $\inlinedy{0}$ is the \textbf{zero four-dyadic} whose components are all zero. The key step $\partialup \wedge (\partialup \chi) = (\partialup \wedge \partialup) \chi$ is just like the $( \del \wedge \del f ) = ( \del \wedge \del ) f$ we encountered in the previous section and likewise follows from the fact that the order of mixed partials is reversible. Equation \ref{eq:fthwe} is a homogeneous wave equation for the Faraday tensor in free space. Its general monochromatic plane-wave solution is (the real part of):
+Here $\inlinedy{0}$ is the \textbf{zero four-dyadic} whose components are all zero. The key step $\partialup \wedge (\partialup \chi) = (\partialup \wedge \partialup) \chi$ is just like the $( \del \wedge \del f ) = ( \del \wedge \del ) f$ we encountered in Section \ref{sssec:bi} and likewise follows from the fact that the order of mixed partials is reversible. Equation \ref{eq:fthwe} is a homogeneous wave equation for the Faraday tensor in free space. Its general monochromatic plane-wave solution is (the real part of):
 \begin{equation}\label{eq:ftwe}
 \capdy{\mathrm{F}} (\vv R) = \bar{\capdy{\mathrm{F}}} \mathrm{e}^{\mathrm{i} \mkern.5mu \vv K \cdot \vv R} ,
 \end{equation}
@@ -3940,6 +3940,6 @@ so we can write the Lagrangian density for the electromagnetic field like this:
 \begin{equation}\label{eq:emld}
 \boxed{\mathcal{L} = \dfrac{1}{4} \, ( \capdy{\mathrm{F}} : \capdy{\mathrm{F}} ) \, + \, \vv J \cdot \vv A} \, .
 \end{equation}
-(If we'd defined our dyadic operator according to the \emph{numerator} layout, then the $\inlinedy{\mathrm{F}} : \inlinedy{\mathrm{F}}$ term in Equation \ref{eq:emld} would have the opposite sign). In more advanced treatments, the action principle is used to derive the electromagnetic stress--energy tensor, too.
+(If we'd defined our dyadic operator according to the \emph{numerator} layout, then the $\inlinedy{\mathrm{F}} : \inlinedy{\mathrm{F}}$ term in Equation \ref{eq:emld} would have the opposite sign.) In more advanced treatments, the action principle is used to derive the electromagnetic stress--energy tensor, too.
 
 \end{document}
