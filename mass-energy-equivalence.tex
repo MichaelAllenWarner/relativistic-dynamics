@@ -807,7 +807,7 @@ A bit of algebra leads directly back to Equations \ref{eq:vt}.
 We're finally ready to put it all together. Our spacetime analogues really are just like vector magnitudes. They're invariant, and their squares are found by combining the squares of quantities that aren't invariant but which transform together according to a family of linear formulas. What's different is the \emph{method} of combination. Instead of adding all the squares like we're used to doing with vector components in Euclidean geometry (Pythagorean theorem), we subtract the squares of the space contributions from the square of the time contribution. This difference reflects the fact that although space and time are intimately connected, they're not the same thing.
 
 
-\subsubsection{Four-Displacement: The Ur-Four-Vector}\label{sssec:fdi}
+\subsubsection{Four-Displacement and the Minkowski Dot Product}\label{sssec:fdi}
 
 We're missing one ingredient---direction! This is easily remedied. In what direction does a traveler journey through spacetime? The question answers itself: in the direction the traveler happens to be going. Now, direction is relative, even in three-dimensional Euclidean space, and so it must be specified in relation to something. Strictly speaking, a whole coordinate system isn't necessary; it's enough to have two events (two points in spacetime) to specify the direction from one to the other, from ``here-and-now" to ``there-and-then." Coordinate systems have their advantages, though. Once an inertial observer has adopted one, ``now" and ``then" can be expressed as coordinate times, and ``here" and ``there" can be expressed as spatial coordinates in reference to the observer's chosen spatial origin $(x,y,z)=(0,0,0)$. But the observer can also put ``from now to then" on an equal footing with ``from here$_{x, y, z}$ to there$_{x, y, z}$," and catalog all events a traveler reaches in reference to a chosen \emph{spacetime} origin, $(ct,x,y,z)=(0,0,0,0)$. That way, the \emph{spacetime} direction from one event on the traveler's world line to the ``next" (infinitesimally close to the first) can be thought of as an arrow pointing from the temporally earlier event ($ct$, $x$, $y$, $z$) to the temporally later event ($ct + c \, \dd t$, $x + \dd x$, $y + \dd y$, $z + \dd z$). In the traveler's instantaneous rest frame, $\dd \vv r = \vv 0$, and the spacetime direction is entirely temporal. In all other frames, however, observers say that the traveler's spacetime direction is both temporal and spatial. And they're all correct! Different inertial observers have different ideas of how far apart ``here" and ``there" are, and how much time passes between ``now" and ``then," but they agree on the spacetime interval between events, and they agree on the \emph{chronological order} of timelike- (and lightlike-) separated events.
 
@@ -815,9 +815,9 @@ One more step. We take this notion of a traveler's spacetime direction, and we p
 
 We'll need some notation. To distinguish the four-displacement from the three-displacement $\dd \vv r$, let's use uppercase for the former:
 \begin{equation}\label{eq:30}
-\boxed{\dd \vv R\equiv \langle c \, \dd t, \, \dd \vv r \rangle = \langle c\, \dd t, \, \dd x, \, \dd y, \, \dd z \rangle} \, .
+\boxed{\dd \vv R \equiv \langle c \, \dd t, \, \dd \vv r \rangle = \langle c\, \dd t, \, \dd x, \, \dd y, \, \dd z \rangle} \, .
 \end{equation}
-Its magnitude is
+And defining a dot-product for four-vectors, we have $\dd \vv R$'s magnitude:
 \begin{equation*}
 \begin{split}
 \Vert \dd \vv R \Vert &= \sqrt{\dd \vv R \cdot \dd \vv R}\\
