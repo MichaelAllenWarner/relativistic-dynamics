@@ -3971,7 +3971,7 @@ where the Minkowski metric tensor enters as the ``unit dyadic" of spacetime. By 
 &= \left( \partialup \otimes \vv A \right)^\mathrm{T} \cdot \capdy{\mathsf{F}} \, + \, \capdy{\mathsf{F}} \cdot \capdy{\mathsf{F}} \, + \, \dfrac{1}{4} \, ( \capdy{\mathsf{F}} : \capdy{\mathsf{F}} ) \inlinedy{\upeta},
 \end{split}
 \end{equation*}
-and we recognize the sum of the last two terms as the symmetric electromagnetic stress--energy tensor $\inlinedy{\mathsf{T}}$ that we've already discussed (Equations \ref{eq:eseta}):
+and we recognize the sum of the last two terms as the symmetric electromagnetic stress--energy tensor $\inlinedy{\mathsf{T}}$ that we've already discussed (Equation \ref{eq:eseta}):
 \begin{equation*}
 \capdy{\mathsf{H}} \, \stackrel{?}{=} \, \left( \partialup \otimes \vv A \right)^\mathrm{T} \cdot \capdy{\mathsf{F}} \, + \, \capdy{\mathsf{T}} .
 \end{equation*}
@@ -3993,32 +3993,52 @@ e_z & -b_y & b_x & 0
 - \partial^z A^{ct} & - \partial^z A^x & - \partial^z A^y & - \partial^z A^z
 \end{bmatrix} .
 \end{equation*}
-Taking the four-divergence means putting $[\partialup]^\mathrm{T}\eta$ in front. The time component of the resulting four-vector would then be:
+Taking the four-divergence means putting $[\partialup]^\mathrm{T}\eta$ in front:
+\begin{equation*}
+\begin{bmatrix}
+\partial^{ct} & [ \del ]^\mathrm{T}
+\end{bmatrix}
+\left(
+\begin{bmatrix}
+0 & -e_x & -e_y & -e_z \\
+e_x & 0 & -b_z & b_y \\
+e_y & b_z & 0 & -b_x \\
+e_z & -b_y & b_x & 0
+\end{bmatrix}
+\begin{bmatrix}
+\partial^{ct} A^{ct} & \partial^{ct} A^x & \partial^{ct} A^y & \partial^{ct} A^z \\
+- \partial^x A^{ct} & - \partial^x A^x & - \partial^x A^y & - \partial^x A^z  \\
+- \partial^y A^{ct} & - \partial^y A^x & - \partial^y A^y & - \partial^y A^z \\
+- \partial^z A^{ct} & - \partial^z A^x & - \partial^z A^y & - \partial^z A^z
+\end{bmatrix}
+\right)
+\end{equation*}
+(using $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$). We won't write out the full four-by-four in the parentheses, but if we visualize carrying out that matrix-multiplication first, then it's not difficult to see that each component of the four-vector $\partialup \cdot (\inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ))$ will involve just a single column of the rightmost matrix in the above expression, and that any such component $\mu$ is then:
 \begin{equation*}
 \begin{split}
-\Big( \partialup \cdot \big( \capdy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ) \big) \Big)^{ct} &= \partial^{ct} \left( e_x \partial^x A^{ct} + e_y \partial^y A^{ct} + e_z \partial^z A^{ct} \right) \\[-.9ex]
-& \; - \partial^x \left( e_x \partial^{ct} A^{ct} + b_z \partial^y A^{ct} - b_y \partial^z A^{ct} \right) \\
-& \; - \partial^y \left( e_y \partial^{ct} A^{ct} - b_z \partial^x A^{ct} + b_x \partial^z A^{ct} \right) \\
-& \; - \partial^z \left( e_z \partial^{ct} A^{ct} + b_y \partial^x A^{ct} - b_x \partial^y A^{ct} \right)
+\Big( \partialup \cdot \big( \capdy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ) \big) \Big)^{\mu} &= \partial^{ct} \, \bigl( e_x \partial^x A^{\mu} + e_y \partial^y A^{\mu} + e_z \partial^z A^{\mu} \bigr) \\[-.9ex]
+& \; - \partial^x \left( e_x \partial^{ct} A^{\mu} + b_z \partial^y A^{\mu} - b_y \partial^z A^{\mu} \right) \\
+& \; - \partial^y \left( e_y \partial^{ct} A^{\mu} - b_z \partial^x A^{\mu} + b_x \partial^z A^{\mu} \right) \\
+& \; - \partial^z \left( e_z \partial^{ct} A^{\mu} + b_y \partial^x A^{\mu} - b_x \partial^y A^{\mu} \right)
 \end{split},
 \end{equation*}
-or, using $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$:
+or:
 \begin{equation*}
-\Big( \partialup \cdot \big( \capdy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ) \big) \Big)^{ct} = - \partial^{ct} ( \vv e \cdot \del A^{ct} ) \, + \, \del \cdot \left( (\partial^{ct} A^{ct}) \vv e \, + \, \vv b \times \del A^{ct} \right) .
+\Big( \partialup \cdot \big( \capdy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ) \big) \Big)^{\mu} = - \partial^{ct} ( \vv e \cdot \del A^{\mu} ) \, + \, \del \cdot \left( (\partial^{ct} A^{\mu}) \vv e \, + \, \vv b \times \del A^{\mu} \right) .
 \end{equation*}
 Expanding, and using some vector-calculus product rules, that's:
 \begin{equation*}
--(\partial^{ct} \vv e) \cdot \del A^{ct} - \vv e \cdot \partial^{ct} \del A^{ct} + (\partial^{ct} A^{ct})(\del \cdot \vv e) + \vv e \cdot \del \partial^{ct} A^{ct} + (\del \times \vv b) \cdot \del A^{ct}
+-(\partial^{ct} \vv e) \cdot \del A^{\mu} - \vv e \cdot \partial^{ct} \del A^{\mu} + (\partial^{ct} A^{\mu})(\del \cdot \vv e) + \vv e \cdot \del \partial^{ct} A^{\mu} + (\del \times \vv b) \cdot \del A^{\mu}
 \end{equation*}
-(we've omitted the last term $ - (\del \times \del A^{ct}) \cdot \vv b
+(we've omitted the last term $ - (\del \times \del A^{\mu}) \cdot \vv b
 $, which vanishes because it contains the curl of a gradient). The second and fourth terms cancel, leaving:
 \begin{equation*}
--(\partial^{ct} \vv e) \cdot \del A^{ct} + (\partial^{ct} A^{ct})(\del \cdot \vv e) + (\del \times \vv b) \cdot \del A^{ct}.
+-(\partial^{ct} \vv e) \cdot \del A^{\mu} + (\partial^{ct} A^{\mu})(\del \cdot \vv e) + (\del \times \vv b) \cdot \del A^{\mu}.
 \end{equation*}
 Finally, by the free-space condition $\vv J = \textrm{\mbox{\boldmath $\emptyset$}}$, Maxwell's equations give $\del \cdot \vv e = 0$ and $\del \times \vv b = \partial^{ct} \vv e$ (Equations \ref{eq:me}), and we get:
 \begin{equation*}
-\Big( \partialup \cdot \big( \capdy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ) \big) \Big)^{ct} = 0 ,
+\Big( \partialup \cdot \big( \capdy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ) \big) \Big)^{\mu} = 0 ,
 \end{equation*}
-as promised. Similar calculations show that the other components vanish, too, and we've indeed arrived at the conservation of electromagnetic four-momentum from a Lagrangian approach.
+as promised. So $\inlinedy{\mathsf{H}} = \inlinedy{\mathsf{T}} - \inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A )$ and $\partialup \cdot \inlinedy{\mathsf{H}} = \textrm{\mbox{\boldmath $\emptyset$}}$ in free space, and we've indeed arrived at the conservation of electromagnetic four-momentum from a Lagrangian approach.
 
 \end{document}
