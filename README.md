@@ -1,3 +1,3 @@
 # A Gentle Introduction to Relativistic Dynamics And Electromagnetism
 
-This is a long paper (or short book) on relativistic dynamics and electromagnetism that I’ve been working on for some time, written in LaTeX. The `.tex` file is an eyesore, and trying to prettify it with a hard line-wrap at this stage causes too many breaking bugs to count, but the [PDF it generates](https://drive.google.com/open?id=0BzbijOFcLYkTSWJ5R0s5U1ZMYWM) looks great. I hope to finish it soon.
+This is a long paper (or short book) on relativistic dynamics and electromagnetism that I’ve been working on for some time, written in LaTeX. Feel free to download the [PDF](https://drive.google.com/file/d/0BzbijOFcLYkTSWJ5R0s5U1ZMYWM/view?usp=sharing&resourcekey=0-VMvPOHPxyPgNhBhy-7ZcDQ). Disclaimer: I am not a physicist.
