@@ -3339,9 +3339,9 @@ The Maxwell tensor $\inlinedy{\mathsf{G}}$ is the \textbf{Hodge dual} of the Far
 
 We'll now demonstrate that at a single moment for a given inertial frame with four-velocity $\vv B$, we can form an antisymmetric Minkowski dyadic $\inlinedy{\mathsf{A}}$ in terms of two of these quasi-four-vectors $\tilde{\vv q} = \langle 0, \vv q \rangle$ and $\tilde{\vv w} = \langle 0, \vv w \rangle$ like this:
 \begin{equation*}
-\capdy{\mathsf{A}} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \},
+\capdy{\mathsf{A}} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \},
 \end{equation*}
-where the funny-looking $\{ \tilde{\vv w} \times \}$ denotes the quasi-four-\emph{dyadic} that satisfies ${ \{ \tilde{\vv w} \times \} \cdot \vv H = \langle 0, \vv w \times \vv h \rangle }$ for \emph{any} four-vector ${\vv H = \langle H^{ct}, \vv h \rangle}$. More formally, we can say that $\{ \tilde{\vv w} \times \} \equiv \tilde{\vv m} \wedge \tilde{\vv n}$ for some $\tilde{\vv m} = \langle 0, \vv m \rangle$ and $\tilde{\vv n} = \langle 0, \vv n \rangle$, implying ${ \vv w = \vv m \times \vv n }$:
+where the funny-looking $\{ \tilde{\vv w} \}$ denotes the quasi-four-\emph{dyadic} that satisfies ${ \{ \tilde{\vv w} \} \cdot \vv H = \langle 0, \vv w \times \vv h \rangle }$ for \emph{any} four-vector ${\vv H = \langle H^{ct}, \vv h \rangle}$. More formally, we can say that $\{ \tilde{\vv w} \} \equiv \tilde{\vv m} \wedge \tilde{\vv n}$ for some $\tilde{\vv m} = \langle 0, \vv m \rangle$ and $\tilde{\vv n} = \langle 0, \vv n \rangle$, implying ${ \vv w = \vv m \times \vv n }$:
 \begin{equation*}
 \begin{bmatrix}
 0 \\
@@ -3370,7 +3370,7 @@ n_z
 0 & w_y & -w_x & 0
 \end{bmatrix},
 \end{equation*}
-so that $[\{ \tilde{\vv w} \times \}] \eta [\vv H]$ (the matrix representation of $\{ \tilde{\vv w} \times \} \cdot \vv H$) is:
+so that $[\{ \tilde{\vv w} \}] \eta [\vv H]$ (the matrix representation of $\{ \tilde{\vv w} \} \cdot \vv H$) is:
 \begin{equation*}
 \begin{bmatrix}
 0 & 0 & 0 & 0 \\
@@ -3423,7 +3423,7 @@ q_z & 0 & 0 & 0
 \end{equation*}
 Thus:
 \begin{equation*}
-[\capdy{\mathsf{A}}] = [\tilde{\vv q} \wedge \vv B] - [\{ \tilde{\vv w} \times \}]
+[\capdy{\mathsf{A}}] = [\tilde{\vv q} \wedge \vv B] - [\{ \tilde{\vv w} \}]
 =
 \begin{bmatrix}
 0 & -q_x & -q_y & -q_z \\[.5ex]
@@ -3432,10 +3432,10 @@ q_y & w_z & 0 & -w_x \\[.5ex]
 q_z & -w_y & w_x & 0
 \end{bmatrix},
 \end{equation*}
-and we see that the matrix representation of $\inlinedy{\mathsf{A}}$ has exactly the same form as that of the Faraday tensor $\inlinedy{\mathsf{F}}$ (Equation \ref{eq:emt}). It follows that if we transform $\vv q$ and $\vv w$ under a Lorentz boost in the same way that we transform the electric and magnetic fields (Equations \ref{eq:ebt} or \ref{eq:ebr}), we'll find that the form $\inlinedy{\mathsf{A}} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ holds for \emph{all} inertial frames (where for each frame $\vv B$ is \emph{that frame's} four-velocity $\langle 1, \vv 0 \rangle$), and $\inlinedy{\mathsf{A}}$ must be a true antisymmetric Minkowski dyadic like $\inlinedy{\mathsf{F}}$ is. With the right choice of $\tilde{\vv q}$ and $\tilde{\vv w}$, any antisymmetric four-dyadic can be expressed in this manner.
+and we see that the matrix representation of $\inlinedy{\mathsf{A}}$ has exactly the same form as that of the Faraday tensor $\inlinedy{\mathsf{F}}$ (Equation \ref{eq:emt}). It follows that if we transform $\vv q$ and $\vv w$ under a Lorentz boost in the same way that we transform the electric and magnetic fields (Equations \ref{eq:ebt} or \ref{eq:ebr}), we'll find that the form $\inlinedy{\mathsf{A}} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \}$ holds for \emph{all} inertial frames (where for each frame $\vv B$ is \emph{that frame's} four-velocity $\langle 1, \vv 0 \rangle$), and $\inlinedy{\mathsf{A}}$ must be a true antisymmetric Minkowski dyadic like $\inlinedy{\mathsf{F}}$ is. With the right choice of $\tilde{\vv q}$ and $\tilde{\vv w}$, any antisymmetric four-dyadic can be expressed in this manner.
 %\footnote{For a deeper dive that proves it, see this unpublished paper from 2018 by Jonas Larsson and Karl Larsson: \url{https://urn.kb.se/resolve?urn=urn:nbn:se:umu:diva-152747}.}
 
-So the combination of quasi-four-dyadics $\tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}$ makes a \emph{true} antisymmetric dyadic. For the Faraday tensor, it's $\inlinedy{\mathsf{F}} = \tilde{\vv e} \wedge \vv B - \{ \tilde{\vv b} \times \}$. And if we study the matrix representation of the Maxwell tensor (Equation \ref{eq:mt}), we find that $\inlinedy{\mathsf{G}} = \tilde{\vv b} \wedge \vv B - \{ - \tilde{\vv e} \times \}$. That's how $\inlinedy{\mathsf{F}}$ and $\inlinedy{\mathsf{G}}$ are related in terms of (quasi-)geometric objects: a given antisymmetric Minkowski dyadic ${\inlinedy{\mathsf{A}} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \times \}}$ can be mapped to another one, its \emph{Hodge dual} ${\tilde{\vv w} \wedge \vv B - \{ - \tilde{\vv q} \times \}}$, by swapping the quasi-four-vectors and slapping a negative sign on the one that ends up in second position. We use the $\star$ symbol to indicate the Hodge dual (some people use an asterisk):
+So the combination of quasi-four-dyadics $\tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \}$ makes a \emph{true} antisymmetric dyadic. For the Faraday tensor, it's $\inlinedy{\mathsf{F}} = \tilde{\vv e} \wedge \vv B - \{ \tilde{\vv b} \}$. And if we study the matrix representation of the Maxwell tensor (Equation \ref{eq:mt}), we find that $\inlinedy{\mathsf{G}} = \tilde{\vv b} \wedge \vv B - \{ - \tilde{\vv e} \}$. That's how $\inlinedy{\mathsf{F}}$ and $\inlinedy{\mathsf{G}}$ are related in terms of (quasi-)geometric objects: a given antisymmetric Minkowski dyadic ${\inlinedy{\mathsf{A}} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \}}$ can be mapped to another one, its \emph{Hodge dual} ${\tilde{\vv w} \wedge \vv B - \{ - \tilde{\vv q} \}}$, by swapping the quasi-four-vectors and slapping a negative sign on the one that ends up in second position. We use the $\star$ symbol to indicate the Hodge dual (some people use an asterisk):
 \begin{equation}\label{eq:mthd}
 \boxed{ \vphantom{A_{A_A}} \capdy{\mathsf{G}} \equiv \star \capdy{\mathsf{F}} } \, .
 \end{equation}
@@ -3451,7 +3451,7 @@ In an $n$-dimensional space, the Hodge dual maps an antisymmetric tensor of rank
 
 So in four-dimensional Minkowski spacetime ($n = 4$, $s = -1$), the Hodge dual maps rank-2 to rank-2 (dyadics to dyadics, as we've seen), rank-4 to rank-0 (scalars), rank-3 to rank-1 (vectors), and vice versa for all of the above, with the double Hodge returning the additive inverse of the original tensor in all but the odd-rank cases. But in three-dimensional Euclidean space ($n = 3$, $s = 1$), the Hodge dual operates between rank-3 and rank-0 and between rank-2 and rank-1, with the double Hodge \emph{always} returning the original tensor.
 
-We've already tacitly used the Hodge dual of a three-vector many times. For example, in Section \ref{sssec:hd}, our funny-looking $\{ \tilde{\vv w} \times \}$ housed the components of ${ \vv m \wedge \vv n = \vv m \otimes \vv n - \vv n \otimes \vv m }$, which turned out to be nothing but the components of $\pm ( \vv m \times \vv n )$. And we first encountered the $\pm ( \vv m \times \vv n )$ pattern all the way back in Section \ref{sssec:tp}, when we noted that both the positive and negative components of $\del \times \vv c$ were present in the components of $\vv a \times ( \del \times \vv c )$. The cross product and the three-vector wedge product contain exactly the same ``information." They are a ``Hodge pair":
+We've already tacitly used the Hodge dual of a three-vector many times. For example, in Section \ref{sssec:hd}, our funny-looking $\{ \tilde{\vv w} \}$ housed the components of ${ \vv m \wedge \vv n = \vv m \otimes \vv n - \vv n \otimes \vv m }$, which turned out to be nothing but the components of $\pm ( \vv m \times \vv n )$. And we first encountered the $\pm ( \vv m \times \vv n )$ pattern all the way back in Section \ref{sssec:tp}, when we noted that both the positive and negative components of $\del \times \vv c$ were present in the components of $\vv a \times ( \del \times \vv c )$. The cross product and the three-vector wedge product contain exactly the same ``information." They are a ``Hodge pair":
 \begin{equation*}
 \star \star ( \vv m \wedge \vv n ) = \star ( \vv m \times \vv n ) = \vv m \wedge \vv n . 
 \end{equation*}
