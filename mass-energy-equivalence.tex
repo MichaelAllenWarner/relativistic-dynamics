@@ -2736,7 +2736,7 @@ and with substitutions from Equations \ref{eq:ace} and \ref{eq:abe}:
 \begin{equation}\label{eq:lffdc2}
 \dfrac{\dd \vv F_{\mathrm{L}}}{\dd V_0} = \Big \langle \left( \del \times \vv b - \partial^{ct} \vv e \right) \cdot \vv e , \, \left( \del \cdot \vv e \right) \vv e + \left( \del \times \vv b - \partial^{ct} \vv e \right) \times \vv b \Big \rangle .
 \end{equation}
-Doesn't look promising! Yet, these components can be simplified in a way that yields succinct statements of the (local) conservation of energy and three-momentum that explicitly account for the energy and momentum stored in the $\vv e$ and $\vv b$ fields. (And in the supplemental Section \ref{ssec:dy} we'll see how to read Equation \ref{eq:lffd} as a statement of \emph{four-momentum} conservation.) Let's go ahead and spruce up that temporal component. Start with the identity $\del \cdot (\vv e \times \vv b) = \vv b \cdot (\del \times \vv e) - \vv e \cdot (\del \times \vv b)$:
+Doesn't look promising! Yet, these components can be simplified in a way that yields succinct statements of the (local) conservation of energy and three-momentum of the $\vv e$ and $\vv b$ fields. (And in the supplemental Section \ref{ssec:dy} we'll see how to read Equation \ref{eq:lffd} as a statement of \emph{four-momentum} conservation.) Let's go ahead and spruce up that temporal component. Start with the identity $\del \cdot (\vv e \times \vv b) = \vv b \cdot (\del \times \vv e) - \vv e \cdot (\del \times \vv b)$:
 \begin{equation*}
 \vv e \cdot \left( \del \times \vv b - \partial^{ct} \vv e \right) = \vv b \cdot \left( \del \times \vv e \right) - \del \cdot \left( \vv e \times \vv b \right) - \vv e \cdot \partial^{ct} \vv e .
 \end{equation*}
@@ -3866,7 +3866,7 @@ u & [\vv s]^{\mathrm{T}} \\[1ex]
 - \dfrac{\dd \mathcal{P}_{\textrm{L}}}{\dd V} & \left[ - \dfrac{\dd \vv f_{\mathrm{L}}}{\dd V} \right] ^{\mkern-2mu \mathrm{T} \; }
 \end{bmatrix}
 \end{equation*}
-(no naught subscripts on the right---see Equation \ref{eq:lffdc}). Equation \ref{eq:fmc} is a statement of \emph{four-momentum} conservation that explicitly accounts for the electromagnetic field. Technically so is Equation \ref{eq:lffd}, but our dyadic notation here is more transparent. The four-divergence of $\inlinedy{\mathsf{T}}$ vanishes when the fields are transferring no four-momentum to charged particles. We can express the right side of Equation \ref{eq:fmc} in terms of the fields and charges (differentiate Equation \ref{eq:lfffd} with respect to proper volume, and sub in $\vv J$ for $\rho_0 \vv B$):
+(no naught subscripts on the right---see Equation \ref{eq:lffdc}). Equation \ref{eq:fmc} is a statement of the conservation of \emph{four-momentum} of the electromagnetic field. Technically so is Equation \ref{eq:lffd}, but our dyadic notation here is more transparent. The four-divergence of $\inlinedy{\mathsf{T}}$ vanishes when the fields are transferring no four-momentum to charged particles. We can express the right side of Equation \ref{eq:fmc} in terms of the fields and charges (differentiate Equation \ref{eq:lfffd} with respect to proper volume, and sub in $\vv J$ for $\rho_0 \vv B$):
 \begin{equation*}
 \partialup \cdot \capdy{\mathsf{T}} = \vv J \cdot \capdy{\mathsf{F}} ,
 \end{equation*}
