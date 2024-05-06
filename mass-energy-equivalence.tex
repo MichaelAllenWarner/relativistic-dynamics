@@ -3838,7 +3838,7 @@ This dyadic is symmetric and also traceless ($\inlinedy{\mathsf{T}} : \inlinedy{
 &=  - \capdy{\mathsf{F}} : \capdy{\mathsf{F}} - \capdy{\mathsf{G}} : \capdy{\mathsf{G}} ,
 \end{split}
 \end{equation*}
-which vanishes by Equations \ref{eq:fddf} and \ref{eq:gddg}.\footnote{This tracelessness turns out to reflect the masslessness of the electromagnetic field.} Note that to get from $[\inlinedy{\mathsf{F}} \cdot \inlinedy{\mathsf{F}}]$ to $[\inlinedy{\mathsf{T}}]$ requires only the addition of the invariant $(b^2 - e^2) / 2 = ( \inlinedy{\mathsf{F}} : \inlinedy{\mathsf{F}} ) / 4$ to the top-left entry and $( \inlinedy{\mathsf{G}} : \inlinedy{\mathsf{G}} ) / 4 = - ( \inlinedy{\mathsf{F}} : \inlinedy{\mathsf{F}} ) / 4$ to the other three entries on the main diagonal. Likewise for getting from $[ \inlinedy{\mathsf{G}} \cdot \inlinedy{\mathsf{G}} ]$ to $[ \inlinedy{\mathsf{T}} ]$, but with the signs of the added invariants reversed. So there are several alternative ways to express $\inlinedy{\mathsf{T}}$ in terms of the Faraday and Maxwell tensors, all equivalent to Equation \ref{eq:eset}. Here are a few of them:
+which vanishes by Equations \ref{eq:fddf} and \ref{eq:gddg}.\footnote{\label{fn:tlt}This tracelessness turns out to reflect the masslessness of the electromagnetic field.} Note that to get from $[\inlinedy{\mathsf{F}} \cdot \inlinedy{\mathsf{F}}]$ to $[\inlinedy{\mathsf{T}}]$ requires only the addition of the invariant $(b^2 - e^2) / 2 = ( \inlinedy{\mathsf{F}} : \inlinedy{\mathsf{F}} ) / 4$ to the top-left entry and $( \inlinedy{\mathsf{G}} : \inlinedy{\mathsf{G}} ) / 4 = - ( \inlinedy{\mathsf{F}} : \inlinedy{\mathsf{F}} ) / 4$ to the other three entries on the main diagonal. Likewise for getting from $[ \inlinedy{\mathsf{G}} \cdot \inlinedy{\mathsf{G}} ]$ to $[ \inlinedy{\mathsf{T}} ]$, but with the signs of the added invariants reversed. So there are several alternative ways to express $\inlinedy{\mathsf{T}}$ in terms of the Faraday and Maxwell tensors, all equivalent to Equation \ref{eq:eset}. Here are a few of them:
 \begin{equation}\label{eq:eseta}
 \begin{aligned}
 \capdy{\mathsf{T}} &= \capdy{\mathsf{F}} \cdot \capdy{\mathsf{F}} +  \dfrac{1}{4} \, ( \capdy{\mathsf{F}} : \capdy{\mathsf{F}} ) \inlinedy{\upeta} \, = \, \capdy{\mathsf{F}} \cdot \capdy{\mathsf{F}} -  \dfrac{1}{4} \, ( \capdy{\mathsf{F}} \cdot \cdot \, \mkern1mu \capdy{\mathsf{F}} ) \inlinedy{\upeta} \\[5pt]
@@ -3846,7 +3846,7 @@ which vanishes by Equations \ref{eq:fddf} and \ref{eq:gddg}.\footnote{This trace
 &= \capdy{\mathsf{F}} \cdot \capdy{\mathsf{F}} -  \dfrac{1}{4} \, ( \capdy{\mathsf{G}} : \capdy{\mathsf{G}} ) \inlinedy{\upeta} \, = \, \capdy{\mathsf{G}} \cdot \capdy{\mathsf{G}} +  \dfrac{1}{4} \, ( \capdy{\mathsf{F}} \cdot \cdot \, \mkern1mu \capdy{\mathsf{F}} ) \inlinedy{\upeta}
 \end{aligned}
 \end{equation}
-(expressions with just $\inlinedy{\mathsf{F}}$ are most common in the literature).\footnote{Because the Faraday and Maxwell tensors are antisymmetric, we have relationships like $\footnotedy{\mathsf{F}} \cdot \footnotedy{\mathsf{F}} \mkern-2mu^\mathrm{T} = \footnotedy{\mathsf{F}} \mkern-2mu^\mathrm{T} \cdot \footnotedy{\mathsf{F}} = - \footnotedy{\mathsf{F}} \cdot \footnotedy{\mathsf{F}}$, and we get even more expressions for $\footnotedy{\mathsf{T}}$ if we throw those into the mix. The signs of terms would also be affected if we'd chosen the ($-$$+$$+$$+$) sign convention instead of ($+$$-$$-$$-$). All this is to say, don't be alarmed to find different ``variations" on how $\footnotedy{\mathsf{T}}$ is written in other sources; they're reconcilable. Where index notation is used, check the \emph{order} and \emph{placement} of the indices.}
+(expressions with just $\inlinedy{\mathsf{F}}$ are most common in the literature).\footnote{Because the Faraday and Maxwell tensors are antisymmetric, we have relationships like $\footnotedy{\mathsf{F}} \cdot \footnotedy{\mathsf{F}} \mkern-2mu^\mathrm{T} = \footnotedy{\mathsf{F}} \mkern-2mu^\mathrm{T} \cdot \footnotedy{\mathsf{F}} = - \footnotedy{\mathsf{F}} \cdot \footnotedy{\mathsf{F}}$, and we get even more expressions for $\footnotedy{\mathsf{T}}$ if we throw those into the mix. The signs of terms would also be affected if we'd chosen the ($-$$+$$+$$+$) sign convention instead of ($+$$-$$-$$-$). All this is to say, don't be alarmed to find different ``variations" on how $\footnotedy{\mathsf{T}}$ is written in other sources; they're reconcilable.}
 
 Our new dyadic $\inlinedy{\mathsf{T}}$ is the \textbf{electromagnetic stress--energy tensor}. Its significance is revealed when we closely examine Equation \ref{eq:py} (Poynting's theorem, a statement of energy conservation) and Equation \ref{eq:tmc} (the corresponding statement of three-momentum conservation). Together, these expressions convey exactly the same information as:
 \begin{equation}\label{eq:fmc}
@@ -3874,6 +3874,13 @@ u & [\vv s]^{\mathrm{T}} \\[1ex]
 \begin{equation*}
 \partialup \cdot \capdy{\mathsf{T}} = ( \partialup \cdot \capdy{\mathsf{F}} ) \cdot \capdy{\mathsf{F}} .
 \end{equation*}
+
+The electromagnetic stress--energy tensor and its role in the conservation of the field's four-momentum (Equation \ref{eq:fmc}) just sort of jumped out at us. Convenient! From here, let's surmise (correctly) that there exists a more general stress--energy tensor---a dyadic field we'll label ${\inlinedy{\mathsf{T}}} _{\textrm{total}}$---whose everywhere-\emph{vanishing} divergence expresses the conservation of \emph{all} four-momentum, electromagnetic and otherwise:
+\begin{equation*}
+{ \partialup \cdot \capdy{\mathsf{T}} } _{\mathrm{total}} = \textrm{\mbox{\boldmath $\emptyset$}} \, .
+\end{equation*}
+This ``total" stress--energy tensor assumes great importance in general relativity, as the source of the gravitational field. If we weren't focused on electrodynamics, we'd label \emph{it} $\inlinedy{\mathsf{T}}$ and its electromagnetic part ${\inlinedy{\mathsf{T}}} _{\textrm{em}}$. The stress--energy dyadic is always symmetric but \emph{not} generally traceless (see Footnote \ref{fn:tlt}).
+
 
 \subsubsection{Dyadic Operators; Lagrangian Approach to the Field}
 
