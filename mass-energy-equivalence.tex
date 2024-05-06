@@ -3980,7 +3980,7 @@ so we can write the Lagrangian density for the electromagnetic field like this:
 
 With our ``canonical momentum" $\inlinedy{\partialrm} {}^{\partialup \mkern2mu \otimes \vv A} \mathcal{L} = \inlinedy{\mathsf{F}}$, our ``velocity" $( \partialup \otimes \vv A )$, and our free-field Lagrangian density $- \inlinedy{\mathsf{F}} : \inlinedy{\mathsf{F}} / 4$, we should be able to construct some kind of conserved quantity associated with the (sourceless) electromagnetic field, analogous to a Hamiltonian. Recall from Section \ref{sssec:ele} that our Hamiltonian for a particle in an electromagnetic field was $\vv B \cdot \vv P_{\mathrm{c}} - L$ (dot product of four-velocity and canonical four-momentum minus the Lagrangian), a Lorentz scalar with a vanishing $ct_0$-derivative. For the field itself, we'll combine the analogous quantities in a similar way, and the result should be a \emph{dyadic} with a vanishing \emph{four-divergence}. We'll call this dyadic the \textbf{canonical electromagnetic stress--energy tensor}, and since it's analogous to a Hamiltonian we'll label it $\inlinedy{\mathsf{H}}$.
 
-We have to be careful, though: our ``velocity" dyadic $( \partialup \otimes \vv A )$ is neither symmetric nor antisymmetric, so order of multiplication will matter, both when dotting it with the ``canonical momentum" and when taking the divergence of the canonical stress--energy tensor (because for a dyadic $\inlinedy{\mathsf{D}}$ that isn't symmetric or antisymmetric, a vanishing $\partialup \cdot \inlinedy{\mathsf{D}}$ doesn't imply a vanishing $\inlinedy{\mathsf{D}} \cdot \, \partialup _{\footnotedy{\mathsf{D}}} = \partialup \cdot \inlinedy{\mathsf{D}} {}^{\mathrm{T}} $, and vice versa). For the record, we're entering territory now that's considerably easier with index notation, but we'll make do. Let's try it this way:
+We have to be careful, though: our ``velocity" dyadic $( \partialup \otimes \vv A )$ is neither symmetric nor antisymmetric, so order of multiplication will matter, both when dotting it with the ``canonical momentum" and when taking the divergence of the canonical stress--energy tensor (because for a dyadic $\inlinedy{\mathsf{D}}$ that isn't symmetric or antisymmetric, a vanishing $\partialup \cdot \inlinedy{\mathsf{D}}$ doesn't imply a vanishing $\inlinedy{\mathsf{D}} \cdot \, \partialup _{\footnotedy{\mathsf{D}}} = \partialup \cdot \inlinedy{\mathsf{D}} {}^{\mathrm{T}} $, and vice versa). A price we pay for being so informal here is that we have no choice but to start with a guess! Let's try it this way:
 \begin{equation*}
 \capdy{\mathsf{H}} \, \stackrel{?}{=} \, \left( \partialup \otimes \vv A \right) \cdot \capdy{\mathsf{F}} - \mathcal{L} \inlinedy{\upeta} ,
 \end{equation*}
@@ -3995,7 +3995,7 @@ and we recognize the sum of the last two terms as the symmetric electromagnetic 
 \begin{equation*}
 \capdy{\mathsf{H}} \, \stackrel{?}{=} \, \left( \partialup \otimes \vv A \right)^\mathrm{T} \cdot \capdy{\mathsf{F}} \, + \, \capdy{\mathsf{T}} .
 \end{equation*}
-Looks like we're on the right track. We know $\inlinedy{\mathsf{T}}$ to be divergenceless in the absence of sources (Equation \ref{eq:fmc}), and its symmetry means that its four-divergence vanishes ``both ways" (i.e., ${\partialup \cdot \inlinedy{\mathsf{T}} = \inlinedy{\mathsf{T}} \cdot \, \partialup _{\footnotedy{\mathsf{T}}} = \partialup \cdot \inlinedy{\mathsf{T}} {}^{\mathrm{T}} = \textrm{\mbox{\boldmath $\emptyset$}}}$), so we need only verify that $( \partialup \otimes \vv A )^\mathrm{T} \cdot \inlinedy{\mathsf{F}}$ \emph{or its transpose} is divergenceless. We'll now use matrix multiplication to demonstrate that it's the \emph{transpose} that's divergenceless (though we note that we could do this much more quickly in index notation, with a product rule involving a 3rd-rank tensor).
+Looks like we're on the right track. We know $\inlinedy{\mathsf{T}}$ to be divergenceless in the absence of sources (Equation \ref{eq:fmc}), and its symmetry means that its four-divergence vanishes ``both ways" (i.e., ${\partialup \cdot \inlinedy{\mathsf{T}} = \inlinedy{\mathsf{T}} \cdot \, \partialup _{\footnotedy{\mathsf{T}}} = \partialup \cdot \inlinedy{\mathsf{T}} {}^{\mathrm{T}} = \textrm{\mbox{\boldmath $\emptyset$}}}$), so we need only verify that $( \partialup \otimes \vv A )^\mathrm{T} \cdot \inlinedy{\mathsf{F}}$ \emph{or its transpose} is divergenceless. We'll now use matrix multiplication to demonstrate that we guessed wrong at the start, and that it's the \emph{transpose} of $( \partialup \otimes \vv A )^\mathrm{T} \cdot \inlinedy{\mathsf{F}}$ that's divergenceless.
 
 The claim is that $\partialup \cdot ( ( \partialup \otimes \vv A )^\mathrm{T} \cdot \inlinedy{\mathsf{F}} )^{\mathrm{T}} = \partialup \cdot ( \inlinedy{\mathsf{F}} {}^{\mathrm{T}} \cdot ( \partialup \otimes \vv A ) )  = \textrm{\mbox{\boldmath $\emptyset$}}$, and consequently that the canonical electromagnetic stress--energy tensor is actually $\inlinedy{\mathsf{H}} = \inlinedy{\mathsf{F}} {}^{\mathrm{T}} \cdot ( \partialup \otimes \vv A ) + \inlinedy{\mathsf{T}} = \inlinedy{\mathsf{T}} - \inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ) $ (because the Faraday tensor is antisymmetric). In matrix notation, the dyadic $ \inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A )$ is:
 \begin{equation*}
@@ -4033,7 +4033,7 @@ e_z & -b_y & b_x & 0
 \end{bmatrix}
 \right)
 \end{equation*}
-(using $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$). We won't write out the full four-by-four in the parentheses, but if we visualize carrying out that matrix-multiplication first, then it's not difficult to see that each component of the four-vector $\partialup \cdot (\inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ))$ will involve just a single column of the rightmost matrix in the above expression, and that any such component $\mu$ is then:
+(using $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$). We won't write out the full four-by-four in the parentheses, but if we visualize carrying out that matrix-multiplication first, we see that each component of the four-vector $\partialup \cdot (\inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ))$ will involve just a single column of the rightmost matrix in the above expression, and that any such component $\mu$ is then:
 \begin{equation*}
 \begin{split}
 \Big( \partialup \cdot \big( \capdy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ) \big) \Big)^{\mu} &= \partial^{ct} \, \bigl( e_x \partial^x A^{\mu} + e_y \partial^y A^{\mu} + e_z \partial^z A^{\mu} \bigr) \\[-.9ex]
@@ -4044,9 +4044,9 @@ e_z & -b_y & b_x & 0
 \end{equation*}
 or:
 \begin{equation*}
-\Big( \partialup \cdot \big( \capdy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ) \big) \Big)^{\mu} = - \partial^{ct} ( \vv e \cdot \del A^{\mu} ) \, + \, \del \cdot \left( (\partial^{ct} A^{\mu}) \vv e \, + \, \vv b \times \del A^{\mu} \right) .
+\Big( \partialup \cdot \big( \capdy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ) \big) \Big)^{\mu} = - \partial^{ct} ( \vv e \cdot \del A^{\mu} ) \, + \, \del \cdot \left( (\partial^{ct} A^{\mu}) \vv e \, + \, \vv b \times \del A^{\mu} \right) ,
 \end{equation*}
-Expanding, and using some vector-calculus product rules, that's:
+and I suppose we're dabbling in index notation after all. Expanding, and using some vector-calculus product rules, that's:
 \begin{equation*}
 -(\partial^{ct} \vv e) \cdot \del A^{\mu} - \vv e \cdot \partial^{ct} \del A^{\mu} + (\partial^{ct} A^{\mu})(\del \cdot \vv e) + \vv e \cdot \del \partial^{ct} A^{\mu} + (\del \times \vv b) \cdot \del A^{\mu}
 \end{equation*}
