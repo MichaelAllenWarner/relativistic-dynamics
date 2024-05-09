@@ -3876,9 +3876,9 @@ u & [\vv s]^{\mathrm{T}} \\[1ex]
 \end{equation*}
 
 The electromagnetic stress--energy tensor and its role in the conservation of the field's four-momentum (Equation \ref{eq:fmc}) just sort of jumped out at us. Convenient! From here, let's surmise (correctly) that there exists a more general stress--energy tensor---a dyadic field we'll label ${\inlinedy{\mathsf{T}}} _{\textrm{total}}$---whose everywhere-\emph{vanishing} divergence expresses the conservation of \emph{all} four-momentum, electromagnetic and otherwise:
-\begin{equation*}
+\begin{equation}\label{eq:set}
 { \partialup \cdot \capdy{\mathsf{T}} } _{\mathrm{total}} = \textrm{\mbox{\boldmath $\emptyset$}} \, .
-\end{equation*}
+\end{equation}
 This ``total" stress--energy tensor assumes great importance in general relativity, as the source of the gravitational field. If we weren't focused on electrodynamics, we'd label \emph{it} $\inlinedy{\mathsf{T}}$ and its electromagnetic part ${\inlinedy{\mathsf{T}}} _{\textrm{em}}$. The stress--energy dyadic is always symmetric but \emph{not} generally traceless (see Footnote \ref{fn:tlt}).
 
 
@@ -4060,5 +4060,35 @@ Finally, by the free-space condition $\vv J = \textrm{\mbox{\boldmath $\emptyset
 \Big( \partialup \cdot \big( \capdy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ) \big) \Big)^{\mu} = 0 ,
 \end{equation*}
 as promised. So $\inlinedy{\mathsf{H}} = \inlinedy{\mathsf{T}} - \inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A )$ and $\partialup \cdot \inlinedy{\mathsf{H}} = \textrm{\mbox{\boldmath $\emptyset$}}$ in free space, and we've indeed arrived at the conservation of electromagnetic four-momentum from a Lagrangian approach.
+
+
+\subsubsection{Relativistic Angular Momentum}
+
+We haven't yet discussed \emph{angular} momentum, and we'll only say a little about it here. In Newtonian mechanics, it's defined as $\vv l_{\mathrm{classical}} = \vv r \times \vv p_{\mathrm{classical}}$, where $\vv r$ is the three-position (relative to some origin) and $\vv p_{\mathrm{classical}}$ is the classical three-momentum. We care about angular momentum because it's additive and conserved, and it turns out that it remains so in special relativity if we just replace the classical momentum with its relativistic counterpart:
+\begin{equation*}
+\vv l \equiv \vv r \times \vv p c
+\end{equation*}
+(we could drop the $c$ to give $\vv l$ its conventional units, but we won't).
+
+Having established that Equation \ref{eq:set} expresses the conservation of four-momentum as the divergence of the stress--energy dyadic, we might ask whether it's possible to likewise express the conservation of \emph{angular} momentum as the vanishing four-divergence of some sort of ``angular stress--energy tensor." The answer is yes, but first we have to express angular momentum in a manifestly covariant form. We do this by noting that $\vv l$ is a pseudovector whose information is actually more ``naturally" conveyed in the guise of its Hodge dual, a (conserved) three-dyadic that isn't a pseudotensor:
+\begin{equation*}
+\star \vv l =  \star ( \vv r \times \vv p c ) = \vv r \wedge \vv p c .
+\end{equation*}
+From here, the manifestly covariant formulation practically writes itself:
+\begin{equation*}
+\capdy{\mathsf{L}} \equiv \vv R \wedge \vv P
+\end{equation*}
+(where $\vv R$ is the four-position relative to some spacetime origin and $\vv P$ is the four-momentum), as in matrix notation that's
+\begin{equation*}
+[ \capdy{\mathsf{L}} ]
+=
+\begin{bmatrix}
+0 & [ - \vv n ]^\mathrm{T} \\[1ex]
+[ \vv n ] & [ \star \vv l ]
+\end{bmatrix} ,
+\end{equation*}
+with $\vv n \equiv E \vv r - (ct)(\vv p c) = E (  \vv r - ct \vvbeta )$ (a conserved three-vector).
+
+This $\inlinedy{\mathsf{L}}$ is the conserved geometric object we were looking for. Similar to how the conservation of four-momentum subsumes that of energy and three-momentum, the conservation of $\inlinedy{\mathsf{L}}$ subsumes that of angular momentum and $\vv n$. But four-momentum is a \emph{vector} (a rank-1 tensor), and $\inlinedy{\mathsf{L}}$ is a \emph{dyadic} (rank-2). So while the tensor whose vanishing divergence expresses the conservation of four-momentum is a dyadic, the tensor whose vanishing divergence expresses the conservation of the dyadic $\inlinedy{\mathsf{L}}$ must be a rank-3 tensor, which our notation frankly isn't equipped to handle. Read a better book.
 
 \end{document}
