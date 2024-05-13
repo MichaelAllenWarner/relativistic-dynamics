@@ -3475,14 +3475,14 @@ and the magnetic field $\vv b = \del \times \vv a$, with $\star \vv b = \del \we
 \end{bmatrix} ,
 \end{equation}
 and the Maxwell tensor like this:
-\begin{equation*}
+\begin{equation}\label{eq:gtc}
 [ \capdy{\mathsf{G}} ]
 =
 \begin{bmatrix}
 0 & [ - \vv b ]^\mathrm{T} \\[1ex]
 [ \vv b ] & [ \star \vv e ]
 \end{bmatrix}
-\end{equation*}
+\end{equation}
 (cf. Equations \ref{eq:emt} and \ref{eq:mt}).
 
 To reiterate, each member of a Hodge pair is antisymmetric and contains the same information as its counterpart, but one is a pseudotensor. In the Hodge pair $\inlinedy{\mathsf{F}}$ and $\inlinedy{\mathsf{G}}$, the pseudotensor is the four-dyadic $\inlinedy{\mathsf{G}}$. In the Hodge pair $\vv e$ and $\star \vv e$, the pseudotensor is the three-dyadic $\star \vv e$. In the Hodge pair $\vv b$ and $\star \vv b$, the pseudotensor is the three-vector $\vv b$.
@@ -4089,6 +4089,17 @@ From here, the manifestly covariant formulation practically writes itself:
 \end{equation*}
 with $\vv n \equiv E \vv r - (ct)(\vv p c) = E (  \vv r - ct \vvbeta )$ (a conserved three-vector).
 
-This $\inlinedy{\mathsf{L}}$ is the conserved geometric object we were looking for. Similar to how the conservation of four-momentum subsumes that of energy and three-momentum, the conservation of $\inlinedy{\mathsf{L}}$ subsumes that of angular momentum and $\vv n$. But four-momentum is a \emph{vector} (a rank-1 tensor), and $\inlinedy{\mathsf{L}}$ is a \emph{dyadic} (rank-2). So while the tensor whose vanishing divergence expresses the conservation of four-momentum is a dyadic, the tensor whose vanishing divergence expresses the conservation of the dyadic $\inlinedy{\mathsf{L}}$ must be a rank-3 tensor, which our notation frankly isn't equipped to handle. Read a better book.
+This $\inlinedy{\mathsf{L}}$ is the conserved geometric object we were looking for. Similar to how the conservation of four-momentum subsumes that of energy and three-momentum, the conservation of $\inlinedy{\mathsf{L}}$ subsumes that of angular momentum and $\vv n$. But four-momentum is a \emph{vector} (a rank-1 tensor), and $\inlinedy{\mathsf{L}}$ is a \emph{dyadic} (rank-2). So while the tensor whose vanishing divergence expresses the conservation of four-momentum is a dyadic, the tensor whose vanishing divergence expresses the conservation of the dyadic $\inlinedy{\mathsf{L}}$ must be a rank-3 tensor, which our notation frankly isn't equipped to handle (read a better book!).
+
+The antisymmetric $\inlinedy{\mathsf{L}}$ is clearly close in form to the Faraday dyadic (see Equation \ref{eq:ftc}). Following our earlier procedure for the electromagnetic case, we identify the Hodge dual $\star \inlinedy{\mathsf{L}}$ as the pseudodyadic with components
+\begin{equation*}
+[ \star \capdy{\mathsf{L}} ]
+=
+\begin{bmatrix}
+0 & [ \vv l ]^\mathrm{T} \\[1ex]
+[ - \vv l ] & [ \star \vv n ]
+\end{bmatrix}
+\end{equation*}
+(cf. Equation \ref{eq:gtc}). Continuing in the same vein, we can extract from our dyadics a pair of Lorentz invariants: $\inlinedy{\mathsf{L}} : \star \inlinedy{\mathsf{L}} =  4 ( \vv n \cdot \vv l )$ (cf. Equation \ref{eq:fddg}), which is trivially $0$ (because it involves dotting a cross product with its constituent vectors), and $\inlinedy{\mathsf{L}} : \inlinedy{\mathsf{L}} = - \star \inlinedy{\mathsf{L}} : \star \inlinedy{\mathsf{L}} = 2 ( l^2 - n^2 )$ (cf. Equations \ref{eq:fddf} and \ref{eq:gddg}), which doesn't have a straightforward interpretation but reduces to $2E_0^2 r^2$ in the center-of-momentum frame (so it's got something to do with the relativistic ``center of energy"). The second scalar is \emph{not} Poincar\'e-invariant, however; its invariance depends on a fixed spacetime origin.
 
 \end{document}
