@@ -199,7 +199,7 @@ When Einstein wrote about this thought experiment, he'd already published his fi
 
 An \textbf{event}, you should already know, is a location in space at a moment in time, or a point in \textbf{spacetime}. We begin our review of special relativity by taking for granted\footnote{The invariance of the spacetime interval can be derived from the invariance of $c$, but we won't bother.} the invariance of the \textbf{spacetime interval} between two events:
 \begin{equation}\label{eq:sti}
-\Delta s \equiv [(c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2]^{1/2} ,
+\Delta s \equiv \sqrt{ (c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2 } ,
 \end{equation}
 where $\vv r$ is position and ${\Delta \vv r = \langle \Delta x, \Delta y, \Delta z \rangle}$ is the spatial separation vector.\footnote{We'll call $\Delta \vv r$ \emph{displacement} when referring to the physical motion of something, and \emph{separation} when speaking in the abstract of a vector ``connecting" two points.}
 
@@ -3375,13 +3375,9 @@ Equations \ref{eq:ime} and \ref{eq:hme} are Maxwell's equations in a manifestly 
 
 \subsubsection{Hodge Duality for Four-Dyadics}\label{sssec:hd}
 
-The Maxwell tensor $\inlinedy{\mathsf{G}}$ is the \textbf{Hodge dual} of the Faraday tensor $\inlinedy{\mathsf{F}}$. To explain what this means ``geometrically," we first introduce a limited sense in which three-vectors may be treated as ``quasi"-four-vectors: \emph{at a single moment for a given inertial frame}, we can ``append" a zero temporal component to a three-vector (that isn't already the spatial component of a true four-vector) and manipulate the four ``components" as if they constituted a spacelike four-vector orthogonal to the frame's (normalized) four-velocity $\vv B = \langle 1, \vv 0 \rangle$. We stress that such quasi-four-vectors aren't \emph{actually} four-vectors---their ``components" don't transform Lorentzianly between frames! But sometimes intra-frame equations involving them \emph{have the same form} in all inertial frames.
+The Maxwell tensor $\inlinedy{\mathsf{G}}$ is the \textbf{Hodge dual} of the Faraday tensor $\inlinedy{\mathsf{F}}$. To explain what this means ``geometrically," we first introduce a limited sense in which three-vectors may be treated as ``quasi"-four-vectors: \emph{at a single moment for a given inertial frame}, we can ``append" a zero temporal component to a three-vector (that isn't already the spatial component of a true four-vector) and manipulate the four ``components" as if they constituted a spacelike four-vector orthogonal to the frame's (normalized) four-velocity $\vv B = \langle 1, \vv 0 \rangle$. We'll notate these quasi-four-vectors like $\tilde{\vv w} = \langle 0, \vv w \rangle$, with a tilde over the symbol for the corresponding three-vector. We stress that quasi-four-vectors aren't \emph{actually} four-vectors---their ``components" don't transform Lorentzianly between frames! But sometimes intra-frame equations involving them \emph{have the same form} in all inertial frames.
 
-We'll now demonstrate that at a single moment for a given inertial frame with four-velocity $\vv B$, we can form an antisymmetric Minkowski dyadic $\inlinedy{\mathsf{A}}$ in terms of two of these quasi-four-vectors $\tilde{\vv q} = \langle 0, \vv q \rangle$ and $\tilde{\vv w} = \langle 0, \vv w \rangle$ like this:
-\begin{equation*}
-\capdy{\mathsf{A}} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \},
-\end{equation*}
-where the funny-looking $\{ \tilde{\vv w} \}$ denotes the quasi-four-\emph{dyadic} that satisfies ${ \{ \tilde{\vv w} \} \cdot \vv H = \langle 0, \vv w \times \vv h \rangle }$ for \emph{any} four-vector ${\vv H = \langle H^{ct}, \vv h \rangle}$. This condition for $\{ \tilde{\vv w} \}$ is rather abstract. To clarify what it means, consider a scenario in which ${\{ \tilde{\vv w} \} = \tilde{\vv m} \wedge \tilde{\vv n}}$ for some $\tilde{\vv m} = \langle 0, \vv m \rangle$ and $\tilde{\vv n} = \langle 0, \vv n \rangle$, so that ${ \vv w = \vv m \times \vv n }$:
+Since any three-vector $\vv w$ can be expressed as a cross product ${ \vv m \times \vv n }$ (or curl, if $\vv m$ is $\del$), we can always construct a unique quasi-four-\emph{dyadic} from a quasi-four-vector $\tilde{\vv w} = \langle 0, \vv w \rangle$ by taking the wedge product $\tilde{\vv m} \wedge \tilde{\vv n}$ for some $\tilde{\vv m} = \langle 0, \vv m \rangle$ and $\tilde{\vv n} = \langle 0, \vv n \rangle$ that satisfy ${ \vv m \times \vv n = \vv w }$. In matrix form, that's:
 \begin{equation*}
 \begin{bmatrix}
 0 \\
@@ -3408,31 +3404,15 @@ n_z
 0 & 0 & w_z & -w_y \\
 0 & -w_z & 0 & w_x \\
 0 & w_y & -w_x & 0
-\end{bmatrix}.
+\end{bmatrix} .
 \end{equation*}
-Then $[\{ \tilde{\vv w} \}] \eta [\vv H]$ (the matrix representation of $\{ \tilde{\vv w} \} \cdot \vv H$) is:
+Let's label this quasi-four-dyadic $\{ \tilde{\vv w} \}$.
+
+We'll now demonstrate that at a single moment for a given inertial frame with four-velocity $\vv B$, we can form an antisymmetric Minkowski dyadic $\inlinedy{\mathsf{A}}$ in terms of two quasi-four-vectors $\tilde{\vv q} = \langle 0, \vv q \rangle$ and $\tilde{\vv w} = \langle 0, \vv w \rangle$ like this:
 \begin{equation*}
-\begin{bmatrix}
-0 & 0 & 0 & 0 \\
-0 & 0 & w_z & -w_y \\
-0 & -w_z & 0 & w_x \\
-0 & w_y & -w_x & 0
-\end{bmatrix}
-\begin{bmatrix}
-H^{ct} \\
-- h_x \\
-- h_y \\
-- h_z
-\end{bmatrix}
-=
-\begin{bmatrix}
-0 \\
-w_y h_z - w_z h_y \\
-w_z h_x - w_x h_z \\
-w_x h_y - w_y h_x
-\end{bmatrix},
+\capdy{\mathsf{A}} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \}.
 \end{equation*}
-which is indeed the column-matrix representation of $\langle 0, \vv w \times \vv h \rangle$. So $\{ \tilde{\vv w} \}$ has to have the indicated matrix representation. For the antisymmetric quasi-four-dyadic $\tilde{\vv q} \wedge \vv B = \tilde{\vv q} \otimes \vv B - \vv B \otimes \tilde{\vv q}$, we have the matrix representation:
+We've already established the matrix representation of $\{ \tilde{\vv w} \}$. For the other quasi-four-dyadic $\tilde{\vv q} \wedge \vv B = \tilde{\vv q} \otimes \vv B - \vv B \otimes \tilde{\vv q}$, we have the matrix representation:
 \begin{equation*}
 \begin{bmatrix}
 0 \\
@@ -3491,7 +3471,7 @@ In an $n$-dimensional space, the Hodge dual maps an antisymmetric tensor of rank
 
 So in four-dimensional Minkowski spacetime ($n = 4$, $s = -1$), the Hodge dual maps rank-2 to rank-2 (dyadics to dyadics, as we've seen), rank-4 to rank-0 (scalars), rank-3 to rank-1 (vectors), and vice versa for all of the above, with the double Hodge returning the additive inverse of the original tensor in all but the odd-rank cases. But in three-dimensional Euclidean space ($n = 3$, $s = 1$), the Hodge dual operates between rank-3 and rank-0 and between rank-2 and rank-1, with the double Hodge \emph{always} returning the original tensor.
 
-We've already tacitly used the Hodge dual of a three-vector many times. For example, in Section \ref{sssec:hd}, we considered a scenario in which our funny-looking $\{ \tilde{\vv w} \}$ housed the components of $ \vv m \wedge \vv n = \vv m \otimes \vv n - \vv n \otimes \vv m $, which turned out to be nothing but the components of $\pm ( \vv m \times \vv n )$. And we first encountered the $\pm ( \vv m \times \vv n )$ pattern all the way back in Section \ref{sssec:tp}, when we noted that both the positive and negative components of $\del \times \vv c$ were present in the components of $\vv a \times ( \del \times \vv c )$. The cross product and the three-vector wedge product contain exactly the same ``information." They are a ``Hodge pair":
+We've already tacitly used the Hodge dual of a three-vector many times. For example, in Section \ref{sssec:hd}, our quasi-four-dyadic $\{ \tilde{\vv w} \}$ housed the components of $ \vv m \wedge \vv n = \vv m \otimes \vv n - \vv n \otimes \vv m $, which turned out to be nothing but the components of $\pm ( \vv m \times \vv n )$. And we first encountered the $\pm ( \vv m \times \vv n )$ pattern all the way back in Section \ref{sssec:tp}, when we noted that both the positive and negative components of $\del \times \vv c$ were present in the components of $\vv a \times ( \del \times \vv c )$. The cross product and the three-vector wedge product contain exactly the same ``information." They are a ``Hodge pair":
 \begin{equation*}
 \star \star ( \vv m \wedge \vv n ) = \star ( \vv m \times \vv n ) = \vv m \wedge \vv n . 
 \end{equation*}
@@ -3563,7 +3543,7 @@ The solution is constrained by $\partialup \cdot \inlinedy{\mathsf{F}} = \textrm
 \textrm{\mbox{\boldmath $\emptyset$}} &= \vv K \cdot \bar{\capdy{\mathsf{F}}} .
 \end{split}
 \end{equation*}
-If we label the ``barred" four-dyadic's components $\bar{e}_x$, $\bar{b}_x$, etc. (corresponding to their ``unbarred" counterparts in the Faraday tensor), and if we remember that $K^{ct} = k$ (because the four-wavevector is future-pointing lightlike), then carrying out the associated matrix multiplication gives us the conditions $\vv k \cdot \bar{\vv e} = 0$ and ${\bar{\vv e} = \bar{\vv b} \times \vv{\hat k}}$, matching part of what we found in Section \ref{sssec:li}. To show the rest ($\bar{e} = \bar{b}$ and $\bar{\vv b} \perp \vv k$), take the Hodge dual of Equation \ref{eq:ftwe} and apply $\partialup \cdot \inlinedy{\mathsf{G}} = \textrm{\mbox{\boldmath $\emptyset$}}$ (Equation \ref{eq:hme}), yielding:
+If we label the ``barred" four-dyadic's components $\bar{e}_x$, $\bar{b}_x$, etc. (corresponding to their ``unbarred" counterparts in the Faraday tensor), and if we remember that $K^{ct} = k$ (because the four-wavevector is future-pointing lightlike), then carrying out the associated matrix multiplication gives us the conditions $\vv k \cdot \bar{\vv e} = 0$ and ${\bar{\vv e} = \bar{\vv b} \times \vv{\hat k}}$, matching part of what we found in Section \ref{sssec:li}. To show the rest ($\bar{e} = \bar{b}$ and $\bar{\vv b} \perp \vv k$), repeat the process with the Maxwell tensor and apply $\partialup \cdot \inlinedy{\mathsf{G}} = \textrm{\mbox{\boldmath $\emptyset$}}$ (Equation \ref{eq:hme}), yielding:
 \begin{equation*}
 \textrm{\mbox{\boldmath $\emptyset$}} = \vv K \cdot \bar{\capdy{\mathsf{G}}} ,
 \end{equation*}
