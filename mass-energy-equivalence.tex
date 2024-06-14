@@ -3931,7 +3931,7 @@ Defining our new dyadic operator is the same kind of task we faced when we defin
 \dfrac{\partial}{\partial [ \capdy{\mathsf{D}} ]}
 ,
 \end{equation*}
-where we've defined the last expression as shorthand for that four-by-four in the middle. Note that we could have defined it as the \emph{transpose} of that four-by-four---it's a matter of convention. The convention we've chosen is called the ``numerator" or ``Jacobian" layout; the other convention is the ``denominator" or ``Hessian" layout. We could work with either, but the numerator layout will save us a step.
+where we've defined the last expression as shorthand for that 4-by-4 in the middle. Note that we could have defined it as the \emph{transpose} of that 4-by-4---it's a matter of convention. The convention we've chosen is called the ``numerator" or ``Jacobian" layout; the other convention is the ``denominator" or ``Hessian" layout. We could work with either, but the numerator layout will save us a step.
 
 Now we'll take the $[\inlinedy{\mathsf{D}}]$-derivative of $\inlinedy{\mathsf{D}} : \inlinedy{\mathsf{D}} = \mathrm{Tr} (\eta [ \inlinedy{\mathsf{D}} ] \eta [ \inlinedy{\mathsf{D}} ] ^{\mathrm{T}} )$, a Minkowski scalar, and see whether the result is the matrix representation of a four-dyadic. The procedure is to obtain the differential of the trace, with $\dd [ \inlinedy{\mathsf{D}} ]$ ``factored out." Everything else in the trace will then be the $[\inlinedy{\mathsf{D}}]$-derivative of $\inlinedy{\mathsf{D}} : \inlinedy{\mathsf{D}}$.\footnote{In the denominator layout, it would be the \emph{transpose} of everything else in the trace. Wikipedia's article on matrix calculus has a \href{https://en.wikipedia.org/wiki/Matrix_calculus\#Scalar-by-matrix_identities}{step-by-step example} of differentiating a trace with respect to a matrix; it uses the numerator layout.} Using the product rule and properties of the trace discussed in Section \ref{sssec:dd}, the differential is:
 \begin{equation*}
@@ -4053,7 +4053,7 @@ e_z & -b_y & b_x & 0
 \end{bmatrix}
 \right)
 \end{equation*}
-(using $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$). We won't write out the full four-by-four in the parentheses, but if we visualize carrying out that matrix-multiplication first, we see that each component of the four-vector $\partialup \cdot (\inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ))$ will involve just a single column of the rightmost matrix in the above expression, and that any such component $\mu$ is then:
+(using $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$). We won't write out the full 4-by-4 in the parentheses, but if we visualize carrying out that matrix-multiplication first, we see that each component of the four-vector $\partialup \cdot (\inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ))$ will involve just a single column of the rightmost matrix in the above expression, and that any such component $\mu$ is then:
 \begin{equation*}
 \begin{split}
 \Big( \partialup \cdot \big( \capdy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ) \big) \Big)^{\mu} &= \partial^{ct} \, \bigl( e_x \partial^x A^{\mu} + e_y \partial^y A^{\mu} + e_z \partial^z A^{\mu} \bigr) \\[-.9ex]
