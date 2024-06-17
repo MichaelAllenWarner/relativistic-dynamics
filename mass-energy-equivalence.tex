@@ -204,7 +204,7 @@ An \textbf{event}, you should already know, is a location in space at a moment i
 where $\vv r$ is position and ${\Delta \vv r = \langle \Delta x, \Delta y, \Delta z \rangle}$ is the spatial separation vector.\footnote{We'll call $\Delta \vv r$ \emph{displacement} when referring to the physical motion of something, and \emph{separation} when speaking in the abstract of a vector ``connecting" two points.}
 
 
-\subsubsection{The Lorentz Transformation and Standard Configuration}\label{sssec:lt}
+\subsubsection{Standard Configuration and the Lorentz Transformation}\label{sssec:lt}
 
 We'll say more about the interval in a bit, but first we'll use its invariance to work out how space and time coordinates transform under a change of inertial frames. In \emph{Newtonian} physics, the coordinates transform according to the \textbf{Galilean transformation} (and its inverse, on the right side below):
 \begin{equation*}
@@ -217,7 +217,7 @@ z^{\prime} &= z& z&= z^\prime .
 \end{equation*}
 Here the frames are in \textbf{standard configuration} for a \textbf{boost} along the coincident $x$/$x^\prime$-axes. That means that the Cartesian axes of each frame are parallel to the corresponding axes of the other, the origins coincide at $t=t^\prime=0$, and the ``primed" frame moves with speed $v$ in the positive ``unprimed" $x$-direction (equivalently, the unprimed frame moves with speed $v$ in the negative $x^\prime$-direction, so that the \textbf{relative speed} $v$ is really the shared magnitude of two different velocity vectors, each the velocity of one frame relative to the other).\footnote{Having the primed frame move in the \emph{positive} $x$-direction is an arbitrary and unnecessary restriction that often isn't included as part of the ``standard configuration." We include it because it lets us speak unambiguously of relative \emph{speed} as the boost parameter. Allowing the frames to move in either direction relative to each other is of course just fine, but it requires using relative \emph{velocity} as the boost parameter, and one must then choose (arbitrarily!) which of the two velocity vectors to use (primed frame's velocity in unprimed frame? or unprimed frame's velocity in primed frame?). By making a slightly more restrictive arbitrary decision up front, we avoid ``polluting" our transformation equations with a boost parameter that ``privileges" one frame over the other.} How do things change in special relativity?
 
-An elegant way to answer that question starts with the observation that, \emph{under standard configuration}, the invariance of the interval implies the invariance of $(ct)^2 - x^2$, since that's just the squared interval between an arbitrary event and the event that constitutes the frames' shared spacetime origin (where $ct = ct^{\prime} = 0$ and $\vv r ^{\prime} = \vv r = \vv 0$).\footnote{We've safely assumed that we'll still have $y^{\prime} = y$ and $z^{\prime} = z$ in special relativity.} Defining $A \equiv ct + x$ and $B \equiv ct - x$, we can express that invariant \emph{difference} as an invariant \emph{product}, $A^{\prime} B^{\prime} = AB$. This is nice because, unlike $ct$ and $x$, $A$ and $B$ aren't ``coupled" to each other under a boost: in the language of $A$ and $B$, the linear transformation\footnote{By linear, we mean that we'll have $ct^{\prime} = \mu(v) ct + \nu(v) x$ and $x^{\prime} = \sigma(v) x + \rho(v) ct$, where $ct$ and $x$ appear \emph{only to first order}, and where $\mu$, $\nu$, $\sigma$, and $\rho$ are some functions of $v$ (the frames' relative speed). This must be true if we're free to choose any event we like as our frames' shared spacetime origin.} that takes $ct$ and $x$ to $ct^{\prime}$ and $x^{\prime}$ can \emph{only} entail multiplying $A$ by some function of the frames' relative speed $v$ and \emph{dividing $B$ by the same factor}. In other words, to satisfy $A^{\prime} B^{\prime} = AB$, we're restricted to ${A^{\prime} = hA}$ and ${B^{\prime} = h^{-1}B}$ for some $h = h(v)$.\footnote{$A$ and $B$ are known as \textbf{light-cone coordinates}.} Now the algebra will be a breeze!
+An elegant way to answer that question starts with the observation that, \emph{under standard configuration}, the invariance of the interval implies the invariance of $(ct)^2 - x^2$, since that's just the squared interval between an arbitrary event and the event that constitutes the frames' shared spacetime origin (where $ct = ct^{\prime} = 0$ and $\vv r ^{\prime} = \vv r = \vv 0$).\footnote{We've safely assumed that we'll still have $y^{\prime} = y$ and $z^{\prime} = z$ in special relativity.} Defining $A \equiv ct + x$ and $B \equiv ct - x$, we can express that invariant \emph{difference} as an invariant \emph{product}, $A^{\prime} B^{\prime} = AB$. This is nice because, unlike $ct$ and $x$, $A$ and $B$ aren't ``coupled" to each other under a boost: in the language of $A$ and $B$, the linear transformation\footnote{By linear, we mean that we'll have $ct^{\prime} = \mu(v) ct + \nu(v) x$ and $x^{\prime} = \sigma(v) x + \rho(v) ct$, where $ct$ and $x$ appear \emph{only to first order}, and where $\mu$, $\nu$, $\sigma$, and $\rho$ are some functions of $v$ (the frames' relative speed). This must be true if we're free to choose any event we like as our frames' shared spacetime origin.} that takes $ct$ and $x$ to $ct^{\prime}$ and $x^{\prime}$ can \emph{only} entail multiplying $A$ by some function of the frames' relative speed $v$ and \emph{dividing $B$ by the same factor}. In other words, to satisfy $A^{\prime} B^{\prime} = AB$, we're restricted to ${A^{\prime} = hA}$ and ${B^{\prime} = B/h}$ for some $h = h(v)$.\footnote{$A$ and $B$ are known as \textbf{light-cone coordinates}.} Now the algebra will be a breeze!
 
 From the definitions of $A$ and $B$, we have $A^{\prime} + B^{\prime} = 2ct^{\prime}$. Then:
 \begin{equation}\label{eq:ctp}
@@ -240,7 +240,7 @@ This is a good time to remind ourselves of the definitions of the hyperbolic sin
 \tanh^{-1}{q} &= \dfrac{1}{2} \mkern1mu \ln{ \left( \dfrac{1 + q}{1 - q} \right) } .
 \end{aligned}
 \end{equation}
-We immediately see an opportunity to rewrite Equations \ref{eq:ctp} and \ref{eq:xp} with the substitution $h = e^{- \phi}$ for some function $\phi (v)$ (where we've chosen $- \phi$ instead of $+ \phi$ so that we'll end up with the primed frame moving in the \emph{positive} unprimed $x$-direction, as stipulated by our standard configuration; $\sinh \phi$ is an odd function and $\cosh \phi$ is an even function):
+We immediately see an opportunity to rewrite Equations \ref{eq:ctp} and \ref{eq:xp} with the substitution $h = e^{- \phi}$ for some function $\phi (v)$ (where we've chosen $- \phi$ instead of $+ \phi$ so that we'll end up with the primed frame moving in the \emph{positive} unprimed $x$-direction, as stipulated by our standard configuration):
 \begin{equation*}
 ct^{\prime} = ( \cosh \phi ) \, ct - ( \sinh \phi ) \, x , \qquad x^{\prime} = ( \cosh \phi ) \, x - ( \sinh \phi ) \, ct .
 \end{equation*}
@@ -254,7 +254,7 @@ y^{\prime} &= y& y&= y^\prime \\
 z^{\prime} &= z& z&= z^\prime,
 \end{aligned}
 \end{equation}
-valid for frames in standard configuration.\footnote{More general transformations drop the stipulations about the axes and origins, but our rotation-free standard-configuration boosts are much simpler and have everything we need to study the ``new" physics of special relativity.} Here we've introduced the \textbf{normalized speed} $\beta$, which is the magnitude of the \textbf{normalized velocity} $\vvbeta=\vv v/c$. By \emph{normalized}, we mean that $\beta$ is a dimensionless number between 0 and 1.
+valid for frames in standard configuration.\footnote{More general transformations drop certain stipulations about the axes and origins. We'll soon get a \emph{little} more general, but we'll stick with rotation-free boosts, which have everything we need to study the ``new" physics of special relativity.} Here we've introduced the \textbf{normalized speed} $\beta$, which is the magnitude of the \textbf{normalized velocity} $\vvbeta=\vv v/c$. By \emph{normalized}, we mean that $\beta$ is a dimensionless number between 0 and 1.
 
 Don't think of $\vvbeta$ as shorthand! The universe has a speed limit, and all speeds \emph{really are} fractions of it. Plus, working with $\vvbeta$ reveals mathematical elegance that's masked when working with $\vv v$. A good example is the symmetry of the $ct^\prime$ and $x^\prime$ equations above; if we use $v$ instead of $\beta$ (or $t$ instead of $ct$, for that matter), the symmetry of the numerators is obscured:
 \begin{equation*}
@@ -275,7 +275,22 @@ c \mkern.5mu \Delta t^{\prime} &= \gamma \left( c \mkern.5mu \Delta t - \beta \D
 \Delta z^{\prime} &= \Delta z& \Delta z&= \Delta z^\prime ,
 \end{aligned}
 \end{equation}
-with the inverse transformation on the right. Equations \ref{eq:lt2} are arguably a better definition of ``the" Lorentz transformation than Equations \ref{eq:lt}---they're more useful in practice, and they don't require the chosen spatial origins of the frames to coincide at $ct = ct^\prime = 0$ (or ever!). In any case, we'll later broaden our usage so that ``a" Lorentz transformation refers to how \emph{any} four quantities transform between inertial frames, provided that they transform together in the same way that differences in coordinates do in Equations \ref{eq:lt2}.
+with the inverse transformation on the right. Equations \ref{eq:lt2} have slightly broader applicability than Equations \ref{eq:lt}, as they don't require the frames to share a spacetime origin. They're sometimes called the ``inhomogeneous" Lorentz transformation or the Poincar\'e transformation, but we'll usually just call them the Lorentz transformation. Later we'll identify other sets of four quantities that transform together under a Lorentz boost in the same way, and we'll say that they too transform Lorentzianly.
+
+For the sake of completeness, let's derive the transformation for a boost in an arbitrary direction, $\hatbeta = \vvbeta / \beta$. Under standard configuration, Equations \ref{eq:lt} are in play, and we have (going from unprimed frame to primed) ${ \hatbeta = \langle 1, 0, 0 \rangle }$. With the position vector $\vv r = \langle x, y, z \rangle$, we've got ${ \vv r _\parallel = \langle x, 0, 0 \rangle }$ and ${\vv r _\perp = \langle 0, y, z \rangle}$ for the component-vectors of $\vv r$ that are parallel and perpendicular to the boost-direction (respectively the ``projection" of $\vv r$ onto $\hatbeta$ and the ``rejection" of $\vv r$ from $\hatbeta$). Since then $\vv r _\parallel \cdot \hatbeta = x$, substitution gives:
+\begin{equation*}
+c t^{\prime} = \gamma \big( c t - \beta (\vv r _\parallel \cdot \hatbeta ) \big),
+\end{equation*}
+which clearly works for \emph{arbitrary} $\hatbeta$. Likewise, we must have $\vv r^{\prime} _\perp = \vv r _\perp$ and (by $\vv r _\parallel = x \langle 1, 0, 0 \rangle = x \hatbeta$):
+\begin{equation*}
+\vv r^{\prime} _\parallel = \gamma ( \vv r _\parallel - \beta \mkern1mu c t \, \hatbeta ),
+\end{equation*}
+where again $\hatbeta$ can be arbitrary. Finally, we use $\vv r = \vv r _\parallel + \vv r _\perp$, the vector-projection formula $\vv r _\parallel = (\vv r \cdot \hatbeta) \hatbeta$, and a bit of algebra to condense our new arbitrary-boost relations to two equations without $\vv r _\parallel$ or $\vv r _\perp$:
+\begin{equation}\label{eq:lt3}
+c t^{\prime} = \gamma \big( c t - \beta ( \vv r \cdot \hatbeta ) \big) \qquad \quad
+\vv r^{\prime} = \vv r + \big( (\gamma - 1)(\vv r \cdot \hatbeta) - \gamma \beta c t \big) \hatbeta .
+\end{equation}
+For the arbitrary-direction version of Equations \ref{eq:lt2}, insert $\Delta$'s.
 
 
 \subsubsection{Relative Simultaneity, Time Dilation, Length Contraction}\label{sssec:td}
@@ -2594,7 +2609,11 @@ Equivalently, though maybe less elegantly:
 \begin{equation*}
 \vv e^\prime = \gamma \left( \vv e + \vvbeta \times \vv b \right) - \dfrac{\gamma^2 (\vvbeta \cdot \vv e) \vvbeta}{\gamma + 1} \qquad \quad \vv b^\prime = \gamma \left( \vv b - \vvbeta \times \vv e \right) - \dfrac{\gamma^2 (\vvbeta \cdot \vv b) \vvbeta}{\gamma + 1},
 \end{equation*}
-where $\gamma = \cosh{\phi}$ and $\beta = \tanh{\phi}$ are boost parameters ($\hatbeta = \vvbeta / \beta = \hatphi$).\footnote{As an exercise, express $ct^\prime$ and $\vv r^\prime$ in terms of $ct$ and $\vv r$ (\href{https://en.wikipedia.org/wiki/Lorentz_transformation\#Vector_transformations}{boost in an arbitrary direction}).}
+where $\gamma = \cosh{\phi}$ and $\beta = \tanh{\phi}$ are boost parameters ($\hatbeta = \vvbeta / \beta = \hatphi$).\footnote{Equations \ref{eq:lt3} (transformation of $ct$ and $\vv r$ under a Lorentz boost in an arbitrary direction) arguably are more elegant in terms of the boost-rapidity, too:
+\begin{equation*}
+c t^{\prime} = \cosh \phi \; c t - \sinh \phi \; ( \hatphi \cdot \vv r ) \qquad \quad
+\vv r^{\prime} = \vv r + \big( 2 \sinh^2 \frac{\phi}{2} \; ( \hatphi \cdot \vv r ) - \sinh \phi \; c t \big) \hatphi .
+\end{equation*}}
 
 Finally, it's useful to find a relationship between $\vv J$ and the $\vv e$ and $\vv b$ fields (Equations \ref{eq:eb}). Let's use the Lorenz gauge, with $\vv J= \Box \vv A = \langle \Box A^{ct}, \Box \vv a \rangle$. By the Lorenz condition ${\partialup \cdot \vv A = 0}$ (Equation \ref{eq:lg}), or $\partial^{ct} A^{ct} = - \del \cdot \vv a$:
 \begin{equation}\label{eq:ace}
