@@ -2581,14 +2581,14 @@ Similar calculations give:
 \end{equation}
 For the inverse transformation, swap primed and unprimed components and switch the sign of each $\sinh{\phi}$. From Equations \ref{eq:ebt} and \ref{eq:50}, it follows (after some algebra) that  ${e^{\prime \, 2} - b^{\prime \, 2} = e^2 - b^2}$ and that $\vv e^\prime \cdot \vv b^\prime = \vv e \cdot \vv b$.\footnote{\label{fn:ps}As the curl of an ordinary vector, $\vv b$ is a \emph{pseudovector}, which means that it gains an extra sign-flip under ``orientation-reversing" coordinate transformations. The Lorentz-invariant $\vv e \cdot \vv b$ inherits this property (it's a \emph{pseudoscalar}). For this reason, some people regard its square $(\vv e \cdot \vv b)^2$ as the quantity of interest.} These are the fundamental invariants we can construct from $\vv e$ and $\vv b$. An immediate consequence is the invariance of the special cases $\vv e \perp \vv b$ and $e = b$; i.e., if the electric and magnetic fields are perpendicular in one frame ($\vv e \cdot \vv b = 0$), then they're perpendicular in all frames, and if their magnitudes are equal in one frame ($e^2 - b^2 = 0$), then their magnitudes are equal in all frames.
 
-Another way of writing Equations \ref{eq:ebt} is in terms of component vectors parallel and perpendicular to the boost direction $\hatphi = \langle 1, 0, 0 \rangle$. Using ${\vv e_\perp = \langle 0, e_y, e_z \rangle}$ and $\hatphi \times \vv b = \langle 0, -b_z, b_y \rangle$, and also $\vv b_\perp = \langle 0, b_y, b_z \rangle$ and $\hatphi \times \vv e = \langle 0, -e_z, e_y \rangle$:
+Another way of writing Equations \ref{eq:ebt} is in terms of component vectors parallel and perpendicular to the boost direction $\hatphi = \langle 1, 0, 0 \rangle$ (this will be similar to how we arrived at Equations \ref{eq:lt3}). Using ${\vv e_\perp = \langle 0, e_y, e_z \rangle}$ and $\hatphi \times \vv b = \langle 0, -b_z, b_y \rangle$, and also $\vv b_\perp = \langle 0, b_y, b_z \rangle$ and $\hatphi \times \vv e = \langle 0, -e_z, e_y \rangle$:
 \begin{equation*}
 \begin{aligned}
 & \vv e^\prime_\parallel = \vv e_\parallel  \qquad \qquad& & \vv b^\prime_\parallel = \vv b_\parallel  \\
 & \vv e^\prime_\perp =  \cosh{\phi} \; \vv e_\perp  +  \sinh{\phi} \; ( \hatphi \times \vv b )   \qquad& & \vv b^\prime_\perp = \cosh{\phi} \; \vv b_\perp  - \sinh{\phi} \; ( \hatphi \times \vv e ) ,
 \end{aligned}
 \end{equation*}
-which holds for a boost in an \emph{arbitrary} direction (not just $\langle 1, 0, 0 \rangle$). With $\vv e_\parallel = (\hatphi \cdot \vv e) \hatphi$ and $\vv e_\perp = \vv e - \vv e_\parallel$, we can condense the transformation of $\vv e$ to a single equation that doesn't mention component vectors at all:
+which holds for a boost in an \emph{arbitrary} direction (not just $\langle 1, 0, 0 \rangle$). With $\vv e_\parallel = (\hatphi \cdot \vv e) \hatphi$ (vector-projection formula) and $\vv e_\perp = \vv e - \vv e_\parallel$, we can condense the transformation of $\vv e$ to a single equation that doesn't mention component vectors at all:
 \begin{equation*}
 \begin{split}
 \vv e^\prime &= \vv e^\prime_\perp  + \vv e^\prime_\parallel \\
@@ -3178,7 +3178,37 @@ where $\Lambda$ is the Lorentz-transformation matrix and $\Lambda^{\mathrm{T}}$ 
 \end{equation}
 (we're keeping our double-sided arrow notation, though instead of the lowercase roman type that we use for Euclidean three-dyadics we'll prefer \emph{uppercase} roman for four-dyadics, mirroring our use of lowercase for three-vectors and uppercase for four-vectors).
 
-In the context of electromagnetism, a particularly useful four-dyadic (field) is $\partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A}$.\footnote{We'll call the quantity $\partialup \otimes \vv A$ the \emph{gradient} of the four-potential.} In matrix notation, that's $[\partialup][\vv A]^{\mathrm{T}} - [\vv A][\partialup_{\vv A}]^{\mathrm{T}}$, or:
+Let's verify that the ``transforms-like-a-dyad" definition of \emph{dyadic} is compatible with the ``sum-of-dyads" definition. Given a four-dyadic $\inlinedy{\mathsf{D}}$ (whose components are known to transform correctly), we have for its matrix representation in some inertial frame:
+\begin{equation*}
+\begin{bmatrix}
+\mathsfit D^{ct \mkern1.5mu ct} & \mathsfit D^{ct \mkern1.5mu x} & \mathsfit D^{ct \mkern1.5mu y} & \mathsfit D^{ct \mkern1.5mu z} \\
+\mathsfit D^{x \mkern1.5mu ct} & \mathsfit D^{x x} & \mathsfit D^{x y} & \mathsfit D^{x z}  \\
+\mathsfit D^{y \mkern1.5mu ct} & \mathsfit D^{y x} & \mathsfit D^{y y} & \mathsfit D^{y z}  \\
+\mathsfit D^{z \mkern1.5mu ct} & \mathsfit D^{z x} & \mathsfit D^{z y} & \mathsfit D^{z z} 
+\end{bmatrix}.
+\end{equation*}
+Define a four-vector $\vv D_1$ with components $\langle \mathsfit D^{ct \mkern1.5mu ct}, \mathsfit D^{x \mkern1.5mu ct}, \mathsfit D^{y \mkern1.5mu ct}, \mathsfit D^{z \mkern1.5mu ct} \rangle$ in this frame (first column of $[ \inlinedy{\mathsf{D}} ]$), and another $\vv E_1$ with components $\langle 1, 0, 0, 0 \rangle$, and observe that the matrix representation of the dyad $\vv D_1 \otimes \vv E_1$ shares its first column with $[ \inlinedy{\mathsf{D}} ]$ but otherwise has only zeros:
+\begin{equation*}
+\begin{bmatrix}
+\mathsfit D^{ct \mkern1.5mu ct} \\
+\mathsfit D^{x \mkern1.5mu ct} \\
+ \mathsfit D^{y \mkern1.5mu ct} \\
+\mathsfit D^{z \mkern1.5mu ct}
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 & 0 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+\mathsfit D^{ct \mkern1.5mu ct} & 0 & 0 & 0 \\
+\mathsfit D^{x \mkern1.5mu ct} & 0 & 0 & 0 \\
+\mathsfit D^{y \mkern1.5mu ct} & 0 & 0 & 0 \\
+\mathsfit D^{z \mkern1.5mu ct} & 0 & 0 & 0
+\end{bmatrix}.
+\end{equation*}
+Define similar four-vectors corresponding to the other columns of $[ \inlinedy{\mathsf{D}} ]$, and obtain: $\inlinedy{\mathsf{D}} = \vv D_1 \otimes \vv E_1 + \vv D_2 \otimes \vv E_2 + \vv D_3 \otimes \vv E_3 + \vv D_4 \otimes \vv E_4$. So yes, a dyadic can always be decomposed into a sum of dyads. In fact, the decomposition isn't unique; a simple way to convince yourself of this is to double $\vv D_1$ and halve $\vv E_1$.
+
+In the context of electromagnetism, a particularly useful four-dyadic (field) is $\partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A}$, where $\vv A$ is the four-potential.\footnote{We'll call the quantity $\partialup \otimes \vv A$ the \emph{gradient} of the four-potential.} In matrix notation, that's $[\partialup][\vv A]^{\mathrm{T}} - [\vv A][\partialup_{\vv A}]^{\mathrm{T}}$, or:
 \begin{equation*}
 \begin{bmatrix}
 \partial^{ct} \\
