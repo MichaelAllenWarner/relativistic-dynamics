@@ -2645,7 +2645,7 @@ where we've again invoked the Lorenz condition $\partial^{ct} A^{ct} = - \del \c
 \end{aligned}
 } \, .
 \end{equation}
-To obtain the ``homogeneous" pair, we've used Equations \ref{eq:eb} and two vector calculus identities: the divergence of a curl is $0$, and the curl of a gradient is $\vv 0$. Note that each pair constitutes a four-vector, the first equal to the four-current density $\vv J = \langle \rho, \vv j \rangle$, and the second equal to the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}} = \langle 0, \vv 0 \rangle$. The left sides are suggestive; each four-vector looks like it might be expressible with the four-del $\partialup$ somehow. We'll come back to this in Section \ref{sssec:md}.
+To obtain the ``homogeneous" pair, we've used Equations \ref{eq:eb} and two vector calculus identities: the divergence of a curl is $0$, and the curl of a gradient is $\vv 0$. Note that each pair constitutes a four-vector, the first equal to the four-current density $\vv J = \langle \rho, \vv j \rangle$, and the second equal to the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}} = \langle 0, \vv 0 \rangle$. The left sides are suggestive; each four-vector looks like it might be expressible with the four-del $\partialup$ somehow. We'll come back to this in Section \ref{sssec:mfd}.
 
 
 \subsubsection{The Lorentz Four-Force via the Euler--Lagrange Equation}\label{sssec:ele}
@@ -3120,7 +3120,7 @@ where the dyadic $\inlinedy{\upsigma} \equiv u \mkern-4.5mu \inlinedy{\upiota} -
 A comparison with Poynting's theorem (Equation \ref{eq:py}) shows that $\vv s$ and $\inlinedy{\upsigma}$ are to electromagnetic three-momentum as $u$ and $\vv s$ are to electromagnetic energy. The Poynting vector does ``double duty": from Poynting's theorem we learned that it represents the flow of electromagnetic energy, but with Equation \ref{eq:tmc} we see that it's also the \textbf{electromagnetic momentum density}.\footnote{In light of what we learned in Section \ref{sssec:li} (see Footnote \ref{fn:epc}), we've now derived $E = pc$ for electromagnetic waves (full version of Equation \ref{eq:3}).} And the Maxwell stress tensor represents the flow of electromagnetic three-momentum.
 
 
-\subsubsection{Minkowski Dyadics; Metric and Field Tensors}\label{sssec:md}
+\subsubsection{Dyadic Transformations; Minkowski Dyadics}\label{sssec:md}
 
 Let's take a closer look at the matrix representation of the Euclidean dyadic product $\vv c \otimes \vv d$:
 \begin{equation*}
@@ -3207,6 +3207,9 @@ Define a four-vector $\vv D_1$ with components $\langle \mathsfit D^{ct \mkern1.
 \end{bmatrix}.
 \end{equation*}
 Define similar four-vectors corresponding to the other columns of $[ \inlinedy{\mathsf{D}} ]$, and obtain: $\inlinedy{\mathsf{D}} = \vv D_1 \otimes \vv E_1 + \vv D_2 \otimes \vv E_2 + \vv D_3 \otimes \vv E_3 + \vv D_4 \otimes \vv E_4$. So yes, a dyadic can always be decomposed into a sum of dyads. In fact, the decomposition isn't unique; a simple way to convince yourself of this is to double $\vv D_1$ and halve $\vv E_1$.
+
+
+\subsubsection{Metric and Field Tensors}\label{sssec:mfd}
 
 In the context of electromagnetism, a particularly useful four-dyadic (field) is $\partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A}$, where $\vv A$ is the four-potential.\footnote{We'll call the quantity $\partialup \otimes \vv A$ the \emph{gradient} of the four-potential.} In matrix notation, that's $[\partialup][\vv A]^{\mathrm{T}} - [\vv A][\partialup_{\vv A}]^{\mathrm{T}}$, or:
 \begin{equation*}
@@ -4047,9 +4050,11 @@ so we can write the Lagrangian density for the electromagnetic field like this:
 \end{equation}
 (If we'd defined our dyadic operator according to the \emph{denominator} layout, then the $\inlinedy{\mathsf{F}} : \inlinedy{\mathsf{F}}$ term in Equation \ref{eq:emld} would have the opposite sign.)
 
-With our ``canonical momentum" $\inlinedy{\partialrm} {}^{\partialup \mkern2mu \otimes \vv A} \mathcal{L} = \inlinedy{\mathsf{F}}$, our ``velocity" $( \partialup \otimes \vv A )$, and our free-field Lagrangian density $- \inlinedy{\mathsf{F}} : \inlinedy{\mathsf{F}} / 4$, we should be able to construct some kind of conserved quantity associated with the (sourceless) electromagnetic field, analogous to a Hamiltonian. Recall from Section \ref{sssec:ele} that our Hamiltonian for a particle in an electromagnetic field was $\vv B \cdot \vv P_{\mathrm{c}} - L$ (dot product of four-velocity and canonical four-momentum minus the Lagrangian), a Lorentz scalar with a vanishing $ct_0$-derivative. For the field itself, we'll combine the analogous quantities in a similar way, and the result should be a \emph{dyadic} with a vanishing \emph{four-divergence}. We'll call this dyadic the \textbf{canonical electromagnetic stress--energy tensor}, and since it's analogous to a Hamiltonian we'll label it $\inlinedy{\mathsf{H}}$.
+With our ``canonical momentum" $\inlinedy{\partialrm} {}^{\partialup \mkern2mu \otimes \vv A} \mathcal{L} = \inlinedy{\mathsf{F}}$, our ``velocity" $( \partialup \otimes \vv A )$, and our free-field Lagrangian density $- \inlinedy{\mathsf{F}} : \inlinedy{\mathsf{F}} / 4$, we should be able to construct a conserved quantity associated with the (sourceless) electromagnetic field, analogous to a Hamiltonian. Recall from Section \ref{sssec:ele} that our Hamiltonian for a particle in an electromagnetic field was $\vv B \cdot \vv P_{\mathrm{c}} - L$ (dot product of four-velocity and canonical four-momentum minus the Lagrangian), a Lorentz scalar with a vanishing $ct_0$-derivative. For the field itself, we'll combine the analogous quantities in a similar way, and the result should be a \emph{dyadic} with a vanishing \emph{four-divergence} (in free space). We'll call this dyadic the \textbf{canonical electromagnetic stress--energy tensor}, and since it's analogous to a Hamiltonian we'll label it $\inlinedy{\mathsf{H}}$. Its divergencelessness will signify the conservation of electromagnetic four-momentum; we should expect the ``normal" electromagnetic stress--energy tensor $\inlinedy{\mathsf{T}}$ to make an appearance.
 
-We have to be careful, though: our ``velocity" dyadic $( \partialup \otimes \vv A )$ is neither symmetric nor antisymmetric, so order of multiplication will matter, both when dotting it with the ``canonical momentum" and when taking the divergence of the canonical stress--energy tensor (because for a dyadic $\inlinedy{\mathsf{D}}$ that isn't symmetric or antisymmetric, a vanishing $\partialup \cdot \inlinedy{\mathsf{D}}$ doesn't imply a vanishing $\inlinedy{\mathsf{D}} \cdot \, \partialup _{\footnotedy{\mathsf{D}}} = \partialup \cdot \inlinedy{\mathsf{D}} {}^{\mathrm{T}} $, and vice versa). A price we pay for being so informal here is that we have no choice but to start with a guess! Let's try it this way:
+We have to be careful, though: our ``velocity" dyadic $( \partialup \otimes \vv A )$ is neither symmetric nor antisymmetric, so order of multiplication matters when dotting it with the ``canonical momentum". Do we want $(\partialup \otimes \vv A) \cdot \inlinedy{\mathsf{F}}$, or the reverse? Or maybe we need the \emph{transpose} of $(\partialup \otimes \vv A)$? What about the sign of this term (or the other, for that matter)? A price we pay for being so informal here and working from analogy is that we aren't in a position to do more than guess. Then we can ``adjust" as needed as we go, by demanding that $\inlinedy{\mathsf{T}}$ be involved and that $\inlinedy{\mathsf{H}}$ be divergenceless (remembering that for a dyadic $\inlinedy{\mathsf{D}}$ that isn't symmetric or antisymmetric, a vanishing $\partialup \cdot \inlinedy{\mathsf{D}}$ doesn't imply a vanishing $\inlinedy{\mathsf{D}} \cdot \, \partialup _{\footnotedy{\mathsf{D}}} = \partialup \cdot \inlinedy{\mathsf{D}} {}^{\mathrm{T}} $, and vice versa). If this is a subject that interests you, I recommend learning index notation and consulting a real textbook.
+
+That said, let's try it this way:
 \begin{equation*}
 \capdy{\mathsf{H}} \, \stackrel{?}{=} \, \left( \partialup \otimes \vv A \right) \cdot \capdy{\mathsf{F}} - \mathcal{L} \inlinedy{\upeta} ,
 \end{equation*}
@@ -4066,7 +4071,7 @@ and we recognize the sum of the last two terms as the symmetric electromagnetic 
 \end{equation*}
 Looks like we're on the right track. We know $\inlinedy{\mathsf{T}}$ to be divergenceless in the absence of sources (Equation \ref{eq:fmc}), and its symmetry means that its four-divergence vanishes ``both ways" (i.e., ${\partialup \cdot \inlinedy{\mathsf{T}} = \inlinedy{\mathsf{T}} \cdot \, \partialup _{\footnotedy{\mathsf{T}}} = \partialup \cdot \inlinedy{\mathsf{T}} {}^{\mathrm{T}} = \textrm{\mbox{\boldmath $\emptyset$}}}$), so we need only verify that $( \partialup \otimes \vv A )^\mathrm{T} \cdot \inlinedy{\mathsf{F}}$ \emph{or its transpose} is divergenceless. We'll now use matrix multiplication to demonstrate that we guessed wrong at the start, and that it's the \emph{transpose} of $( \partialup \otimes \vv A )^\mathrm{T} \cdot \inlinedy{\mathsf{F}}$ that's divergenceless.
 
-The claim is that $\partialup \cdot ( ( \partialup \otimes \vv A )^\mathrm{T} \cdot \inlinedy{\mathsf{F}} )^{\mathrm{T}} = \partialup \cdot ( \inlinedy{\mathsf{F}} {}^{\mathrm{T}} \cdot ( \partialup \otimes \vv A ) )  = \textrm{\mbox{\boldmath $\emptyset$}}$, and consequently that the canonical electromagnetic stress--energy tensor is actually $\inlinedy{\mathsf{H}} = \inlinedy{\mathsf{F}} {}^{\mathrm{T}} \cdot ( \partialup \otimes \vv A ) + \inlinedy{\mathsf{T}} = \inlinedy{\mathsf{T}} - \inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ) $ (because the Faraday tensor is antisymmetric). In matrix notation, the dyadic $ \inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A )$ is:
+The claim, then, is that $\partialup \cdot ( ( \partialup \otimes \vv A )^\mathrm{T} \cdot \inlinedy{\mathsf{F}} )^{\mathrm{T}} = \partialup \cdot ( \inlinedy{\mathsf{F}} {}^{\mathrm{T}} \cdot ( \partialup \otimes \vv A ) )  = \textrm{\mbox{\boldmath $\emptyset$}}$, and consequently that the canonical electromagnetic stress--energy tensor is actually $\inlinedy{\mathsf{H}} = \inlinedy{\mathsf{F}} {}^{\mathrm{T}} \cdot ( \partialup \otimes \vv A ) + \inlinedy{\mathsf{T}} = \inlinedy{\mathsf{T}} - \inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ) $ (because the Faraday tensor is antisymmetric). In matrix notation, the dyadic $ \inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A )$ is:
 \begin{equation*}
 \mkern0mu [\capdy{\mathsf{F}}] \eta [\partialup] [\vv A]^{\mathrm{T}} =
 \begin{bmatrix}
@@ -4082,7 +4087,7 @@ e_z & -b_y & b_x & 0
 - \partial^z A^{ct} & - \partial^z A^x & - \partial^z A^y & - \partial^z A^z
 \end{bmatrix} .
 \end{equation*}
-Taking the four-divergence means putting $[\partialup]^\mathrm{T}\eta$ in front:
+Taking the four-divergence $\partialup \cdot (\inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ))$ means putting $[\partialup]^\mathrm{T}\eta$ in front:
 \begin{equation*}
 \begin{bmatrix}
 \partial^{ct} & [ \del ]^\mathrm{T}
@@ -4102,7 +4107,7 @@ e_z & -b_y & b_x & 0
 \end{bmatrix}
 \right)
 \end{equation*}
-(using $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$). We won't write out the full 4-by-4 in the parentheses, but if we visualize carrying out that matrix-multiplication first, we see that each component of the four-vector $\partialup \cdot (\inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ))$ will involve just a single column of the rightmost matrix in the above expression, and that any such component $\mu$ is then:
+(using $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$). We won't write out the full 4-by-4 in the parentheses, but if we visualize carrying out that matrix-multiplication first, we see that each component of the four-vector $\partialup \cdot (\inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ))$ will involve just a single column of the rightmost matrix in the above expression, and that any such component $\mu$ (where $\mu$ can be $ct$, $x$, $y$, or $z$) is then:
 \begin{equation*}
 \begin{split}
 \Big( \partialup \cdot \big( \capdy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ) \big) \Big)^{\mu} &= \partial^{ct} \, \bigl( e_x \partial^x A^{\mu} + e_y \partial^y A^{\mu} + e_z \partial^z A^{\mu} \bigr) \\[-.9ex]
@@ -4128,7 +4133,9 @@ Finally, by the free-space condition $\vv J = \textrm{\mbox{\boldmath $\emptyset
 \begin{equation*}
 \Big( \partialup \cdot \big( \capdy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ) \big) \Big)^{\mu} = 0 ,
 \end{equation*}
-as promised. So $\inlinedy{\mathsf{H}} = \inlinedy{\mathsf{T}} - \inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A )$ and $\partialup \cdot \inlinedy{\mathsf{H}} = \textrm{\mbox{\boldmath $\emptyset$}}$ in free space, and we've indeed arrived at the conservation of electromagnetic four-momentum from a Lagrangian approach. To express $\inlinedy{\mathsf{H}}$ in terms of the quantities we started with (``canonical momentum" $\inlinedy{\mathsf{F}}$, ``velocity" $ \partialup \otimes \vv A $, and the free-field Lagrangian density $\mathcal{L} = - \inlinedy{\mathsf{F}} : \inlinedy{\mathsf{F}} / 4$), we can reverse our steps with some algebra to obtain $\inlinedy{\mathsf{H}} = \inlinedy{\mathsf{F}} {}^{\mathrm{T}} \cdot ( \partialup \otimes \vv A) {}^{\mathrm{T}} - \mathcal{L} \inlinedy{\upeta}$.
+as promised. So $\inlinedy{\mathsf{H}} = \inlinedy{\mathsf{T}} - \inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A )$ and $\partialup \cdot \inlinedy{\mathsf{H}} = \textrm{\mbox{\boldmath $\emptyset$}}$ in free space, and we've indeed arrived at the conservation of electromagnetic four-momentum from a Lagrangian approach. To express $\inlinedy{\mathsf{H}}$ in terms of the quantities we started with (``canonical momentum" $\inlinedy{\mathsf{F}}$, ``velocity" $ \partialup \otimes \vv A $, and the free-field Lagrangian density $\mathcal{L} = - \inlinedy{\mathsf{F}} : \inlinedy{\mathsf{F}} / 4$), we can reverse our steps with some algebra to obtain $\inlinedy{\mathsf{H}} = - \inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A) {}^{\mathrm{T}} - \mathcal{L} \inlinedy{\upeta}$. Flipping the overall sign would work, too.
+
+In practice, one would rarely use $\inlinedy{\mathsf{H}}$ (if ever). Unlike $\inlinedy{\mathsf{T}} = \inlinedy{\mathsf{H}} +  \inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A )$, it isn't symmetric.
 
 
 \subsubsection{Relativistic Angular Momentum}
@@ -4158,7 +4165,7 @@ From here, the manifestly covariant formulation practically writes itself:
 \end{equation*}
 with $\vv n \equiv E \vv r - (ct)(\vv p c) = E (  \vv r - ct \vvbeta )$ (a conserved three-vector).
 
-This $\inlinedy{\mathsf{L}}$ is the conserved geometric object we were looking for. Similar to how the conservation of four-momentum subsumes that of energy and three-momentum, the conservation of $\inlinedy{\mathsf{L}}$ subsumes that of angular momentum and $\vv n$. But four-momentum is a \emph{vector} (a rank-1 tensor), and $\inlinedy{\mathsf{L}}$ is a \emph{dyadic} (rank-2). So while the tensor whose vanishing divergence expresses the conservation of four-momentum is a dyadic, the tensor whose vanishing divergence expresses the conservation of the dyadic $\inlinedy{\mathsf{L}}$ must be a rank-3 tensor, which our notation frankly isn't equipped to handle (read a better book!).
+This $\inlinedy{\mathsf{L}}$ is the conserved geometric object we were looking for. Similar to how the conservation of four-momentum subsumes that of energy and three-momentum, the conservation of $\inlinedy{\mathsf{L}}$ subsumes that of angular momentum and $\vv n$. But four-momentum is a \emph{vector} (a rank-1 tensor), and $\inlinedy{\mathsf{L}}$ is a \emph{dyadic} (rank-2). So while the tensor whose vanishing divergence expresses the conservation of four-momentum is a dyadic, the tensor whose vanishing divergence expresses the conservation of the dyadic $\inlinedy{\mathsf{L}}$ must be a rank-3 tensor, which our notation frankly isn't equipped to handle (one really must learn index notation to go deeper with this material). If you're curious: the rank-3 tensor in question is formed by the stress--energy tensor ${\inlinedy{\mathsf{T}}} _{\textrm{total}}$ and the position four-vector $\vv R$, in a combination that's related to the wedge product between four-vectors we've already studied.\footnote{In index notation it's like $T^{\alpha \beta} R^{\gamma} - T^{\alpha \gamma} R^{\beta}$ (our wedge product is $A^{\alpha} B^{\beta} - A^{\beta} B^{\alpha}$).} For the electromagnetic part, only the symmetric $\inlinedy{\mathsf{T}}$ will suffice for this purpose; the canonical electromagnetic stress--energy tensor $\inlinedy{\mathsf{H}}$ we encountered in the previous section won't work.
 
 The antisymmetric $\inlinedy{\mathsf{L}}$ is clearly close in form to the Faraday dyadic (see Equation \ref{eq:ftc}). Following our earlier procedure for the electromagnetic case, we identify the Hodge dual $\star \inlinedy{\mathsf{L}}$ as the pseudodyadic with components
 \begin{equation*}
