@@ -3537,7 +3537,7 @@ More to the point, \emph{every} three-vector has an antisymmetric three-dyadic f
 e_y & -e_x & 0
 \end{bmatrix} ,
 \end{equation*}
-and the magnetic field $\vv b = \del \times \vv a$, with $\star \vv b = \del \wedge \vv a$. With this understanding, we can write the Faraday tensor in a nice ``block matrix" notation like this:
+and the magnetic field $\vv b = \del \times \vv a$, with $\star \vv b = \del \wedge \vv a$. Now we can represent the Faraday tensor with a nice ``block matrix" notation:
 \begin{equation}\label{eq:ftc}
 [ \capdy{\mathsf{F}} ]
 =
@@ -3546,7 +3546,7 @@ and the magnetic field $\vv b = \del \times \vv a$, with $\star \vv b = \del \we
 [ \vv e ] & [ - \star \mkern-3mu \vv b ]
 \end{bmatrix} ,
 \end{equation}
-and the Maxwell tensor like this:
+and the Maxwell tensor:
 \begin{equation}\label{eq:gtc}
 [ \capdy{\mathsf{G}} ]
 =
@@ -3557,7 +3557,8 @@ and the Maxwell tensor like this:
 \end{equation}
 (cf. Equations \ref{eq:emt} and \ref{eq:mt}).
 
-To reiterate, each member of a Hodge pair is antisymmetric and contains the same information as its counterpart, but one is a pseudotensor. In the Hodge pair $\inlinedy{\mathsf{F}}$ and $\inlinedy{\mathsf{G}}$, the pseudotensor is the four-dyadic $\inlinedy{\mathsf{G}}$. In the Hodge pair $\vv e$ and $\star \vv e$, the pseudotensor is the three-dyadic $\star \vv e$. In the Hodge pair $\vv b$ and $\star \vv b$, the pseudotensor is the three-vector $\vv b$.
+To reiterate, each member of a Hodge pair is antisymmetric and contains the same information as its counterpart, but one is a pseudotensor. In the Hodge pair $\inlinedy{\mathsf{F}}$ and $\inlinedy{\mathsf{G}}$, the pseudotensor is the four-dyadic $\inlinedy{\mathsf{G}}$. In the Hodge pair $\vv e$ and $\star \vv e$, the pseudotensor is the three-dyadic $\star \vv e$. In the Hodge pair $\vv b$ and $\star \vv b$, the pseudotensor is the three-vector $\vv b$. (And $\star \star = - 1$ for the four-dyadics, but $\star \star = 1$ for the three-vectors/dyadics.)
+
 
 \subsubsection{Double Exterior Derivative Vanishes}\label{sssec:dedv}
 
@@ -4052,7 +4053,7 @@ so we can write the Lagrangian density for the electromagnetic field like this:
 
 With our ``canonical momentum" $\inlinedy{\partialrm} {}^{\partialup \mkern2mu \otimes \vv A} \mathcal{L} = \inlinedy{\mathsf{F}}$, our ``velocity" $( \partialup \otimes \vv A )$, and our free-field Lagrangian density $- \inlinedy{\mathsf{F}} : \inlinedy{\mathsf{F}} / 4$, we should be able to construct a conserved quantity associated with the (sourceless) electromagnetic field, analogous to a Hamiltonian. Recall from Section \ref{sssec:ele} that our Hamiltonian for a particle in an electromagnetic field was $\vv B \cdot \vv P_{\mathrm{c}} - L$ (dot product of four-velocity and canonical four-momentum minus the Lagrangian), a Lorentz scalar with a vanishing $ct_0$-derivative. For the field itself, we'll combine the analogous quantities in a similar way, and the result should be a \emph{dyadic} with a vanishing \emph{four-divergence} (in free space). We'll call this dyadic the \textbf{canonical electromagnetic stress--energy tensor}, and since it's analogous to a Hamiltonian we'll label it $\inlinedy{\mathsf{H}}$. Its divergencelessness will signify the conservation of electromagnetic four-momentum; we should expect the ``normal" electromagnetic stress--energy tensor $\inlinedy{\mathsf{T}}$ to make an appearance.
 
-We have to be careful, though: our ``velocity" dyadic $( \partialup \otimes \vv A )$ is neither symmetric nor antisymmetric, so order of multiplication matters when dotting it with the ``canonical momentum". Do we want $(\partialup \otimes \vv A) \cdot \inlinedy{\mathsf{F}}$, or the reverse? Or maybe we need the \emph{transpose} of $(\partialup \otimes \vv A)$? What about the sign of this term (or the other, for that matter)? A price we pay for being so informal here and working from analogy is that we aren't in a position to do more than guess. Then we can ``adjust" as needed as we go, by demanding that $\inlinedy{\mathsf{T}}$ be involved and that $\inlinedy{\mathsf{H}}$ be divergenceless (remembering that for a dyadic $\inlinedy{\mathsf{D}}$ that isn't symmetric or antisymmetric, a vanishing $\partialup \cdot \inlinedy{\mathsf{D}}$ doesn't imply a vanishing $\inlinedy{\mathsf{D}} \cdot \, \partialup _{\footnotedy{\mathsf{D}}} = \partialup \cdot \inlinedy{\mathsf{D}} {}^{\mathrm{T}} $, and vice versa). If this is a subject that interests you, I recommend learning index notation and consulting a real textbook.
+We have to be careful, though: our ``velocity" dyadic $( \partialup \otimes \vv A )$ is neither symmetric nor antisymmetric, so order of multiplication matters when dotting it with the ``canonical momentum." Do we want $(\partialup \otimes \vv A) \cdot \inlinedy{\mathsf{F}}$, or the reverse? Or maybe we need the \emph{transpose} of $(\partialup \otimes \vv A)$? What about the sign of this term (or the other, for that matter)? A price we pay for being so informal here and working from analogy is that we aren't in a position to do more than guess. Then we can ``adjust" as needed as we go, by demanding that $\inlinedy{\mathsf{T}}$ be involved and that $\inlinedy{\mathsf{H}}$ be divergenceless (remembering that for a dyadic $\inlinedy{\mathsf{D}}$ that isn't symmetric or antisymmetric, a vanishing $\partialup \cdot \inlinedy{\mathsf{D}}$ doesn't imply a vanishing $\inlinedy{\mathsf{D}} \cdot \, \partialup _{\footnotedy{\mathsf{D}}} = \partialup \cdot \inlinedy{\mathsf{D}} {}^{\mathrm{T}} $, and vice versa). If this is a subject that interests you, I recommend learning index notation and consulting a real textbook.
 
 That said, let's try it this way:
 \begin{equation*}
@@ -4133,7 +4134,7 @@ Finally, by the free-space condition $\vv J = \textrm{\mbox{\boldmath $\emptyset
 \begin{equation*}
 \Big( \partialup \cdot \big( \capdy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ) \big) \Big)^{\mu} = 0 ,
 \end{equation*}
-as promised. So $\inlinedy{\mathsf{H}} = \inlinedy{\mathsf{T}} - \inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A )$ and $\partialup \cdot \inlinedy{\mathsf{H}} = \textrm{\mbox{\boldmath $\emptyset$}}$ in free space, and we've indeed arrived at the conservation of electromagnetic four-momentum from a Lagrangian approach. To express $\inlinedy{\mathsf{H}}$ in terms of the quantities we started with (``canonical momentum" $\inlinedy{\mathsf{F}}$, ``velocity" $ \partialup \otimes \vv A $, and the free-field Lagrangian density $\mathcal{L} = - \inlinedy{\mathsf{F}} : \inlinedy{\mathsf{F}} / 4$), we can reverse our steps with some algebra to obtain $\inlinedy{\mathsf{H}} = - \inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A) {}^{\mathrm{T}} - \mathcal{L} \inlinedy{\upeta}$. Flipping the overall sign would work, too.
+as promised. So $\inlinedy{\mathsf{H}} = \inlinedy{\mathsf{T}} - \inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A )$ and $\partialup \cdot \inlinedy{\mathsf{H}} = \textrm{\mbox{\boldmath $\emptyset$}}$ in free space, and we've indeed arrived at the conservation of electromagnetic four-momentum from a Lagrangian approach. To express $\inlinedy{\mathsf{H}}$ in terms of the quantities we started with (``canonical momentum" $\inlinedy{\mathsf{F}}$, ``velocity" $ \partialup \otimes \vv A $, and the free-field Lagrangian density $\mathcal{L} = - \inlinedy{\mathsf{F}} : \inlinedy{\mathsf{F}} / 4$), we can reverse our steps with some algebra to obtain $\inlinedy{\mathsf{H}} = - \inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A) {}^{\mathrm{T}} - \mathcal{L} \inlinedy{\upeta}$.
 
 In practice, one would rarely use $\inlinedy{\mathsf{H}}$ (if ever). Unlike $\inlinedy{\mathsf{T}} = \inlinedy{\mathsf{H}} +  \inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A )$, it isn't symmetric.
 
