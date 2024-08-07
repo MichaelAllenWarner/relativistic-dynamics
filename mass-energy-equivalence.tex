@@ -2646,7 +2646,7 @@ where we've again invoked the Lorenz condition $\partial^{ct} A^{ct} = - \del \c
 \end{aligned}
 } \, .
 \end{equation}
-To obtain the ``homogeneous" pair, we've used Equations \ref{eq:eb} and two vector calculus identities: the divergence of a curl is $0$, and the curl of a gradient is $\vv 0$. Note that each pair looks like it might constitute a four-vector, the first equal to the four-current density $\vv J = \langle \rho, \, \vv j \rangle$, and the second equal to the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}} = \langle 0, \vv 0 \rangle$. If each pair \emph{is} a four-vector, then the left sides are suggestive; might they be expressed with the four-del $\partialup$ somehow? We'll come back to this in Section \ref{sssec:mfd}.
+To obtain the ``homogeneous" pair, we've used Equations \ref{eq:eb} and two vector calculus identities: the divergence of a curl is $0$, and the curl of a gradient is $\vv 0$. Note that each pair constitutes a four-vector, the first equivalent to $\Box \vv A - \partialup ( \partialup \cdot \vv A) = \vv J$ (or $\Box \vv A = \vv J$ in the Lorenz gauge), and the second equal to the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}} = \langle 0, \vv 0 \rangle$. The left sides are suggestive; might they somehow be expressed with the four-del $\partialup$ appearing as a \emph{first} derivative of something? We'll come back to this in Section \ref{sssec:mfd}.
 
 
 \subsubsection{The Lorentz Four-Force via the Euler--Lagrange Equation}\label{sssec:ele}
@@ -3357,7 +3357,7 @@ q
 [ \gamma \vv e + \gamma \vvbeta \times \vv b ]
 \end{bmatrix}
 \end{equation*}
-(cf. Equation \ref{eq:lfc}). And remember when we noted that Maxwell's equations (Equations \ref{eq:me}) appear to constitute two four-vectors, and that their forms suggest expressions involving $\partialup$? Well, now we can show that we were on the right track, and we get the first of them (for the inhomogeneous $\del \cdot \vv e = \rho$ and ${ \del \times \vv b - \partial^{ct} \vv e = \vv j }$) from Equations \ref{eq:gfp} and \ref{eq:vtpi}:
+(cf. Equation \ref{eq:lfc}). And remember when we noted that Maxwell's equations (Equations \ref{eq:me}) constitute two four-vectors, and that their forms suggest expressions involving $\partialup$ as the \emph{first} derivative of something? Well, now we get the first of them (for the inhomogeneous $\del \cdot \, \vv e = \rho$ and ${ \del \times \vv b - \partial^{ct} \vv e = \vv j }$) from Equations \ref{eq:gfp} and \ref{eq:vtpi}:
 \begin{equation*}
 \vv J = - \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A ) = - ( \partialup \wedge \vv A ) \cdot \partialup_{\vv A} = - \partialup \cdot ( \partialup \wedge \vv A )^\mathrm{T} = \partialup \cdot (\partialup \wedge \vv A),
 \end{equation*}
@@ -3379,7 +3379,7 @@ e_y & b_z & 0 & -b_x \\
 e_z & -b_y & b_x & 0
 \end{bmatrix} ,
 \end{equation*}
-giving $\partialup \cdot \inlinedy{\mathsf{F}} = \langle \del \cdot \vv e , \, - \partial^{ct} \vv e + \del \times \vv b \rangle$ (mind $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$). As for the remaining Maxwell equations (the homogeneous $\del \cdot \vv b = 0$ and ${ \del \times \vv e + \partial^{ct} \vv b = \vv 0 }$), we note that their left sides are just like the left sides of the first two, but with the roles of $\vv e$ and $\vv b$ reversed and a sign changed. It should therefore be possible to form a new Minkowski dyadic $\inlinedy{\mathsf{G}}$ from the Faraday tensor (Equation \ref{eq:emt}) by ``swapping" the $\vv e$ and $\vv b$ components and flipping the appropriate signs; the four-divergence of this new dyadic should equal the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}}$. Writing $\del \times \vv e + \partial^{ct} \vv b = \vv 0$ as $- \partial^{ct} \vv b - \del \times \vv e = \vv 0$ reveals that one way to proceed is to replace $\vv e$ with $\vv b$ and $\vv b$ with $- \vv e$:\footnote{The other way is to replace $\vv b$ with $\vv e$ and $\vv e$ with $- \vv b$, giving $-\footnotedy{\mathsf{G}}$ (by antisymmetry).}
+giving $\partialup \cdot \inlinedy{\mathsf{F}} = \langle \del \cdot \vv e , \, - \partial^{ct} \vv e + \del \times \vv b \rangle$ (mind $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$). As for the remaining Maxwell equations (the homogeneous $\del \cdot \vv b = 0$ and ${ \del \times \vv e + \partial^{ct} \vv b = \vv 0 }$), we note that their left sides are just like the left sides of the first two, but with the roles of $\vv e$ and $\vv b$ reversed and a sign changed. It should therefore be possible to form a new Minkowski dyadic $\inlinedy{\mathsf{G}}$ from the Faraday tensor (Equation \ref{eq:emt}) by ``swapping" the $\vv e$ and $\vv b$ components and flipping the appropriate signs; the four-divergence of this new dyadic should equal the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}}$. Writing $\del \times \vv e \, + \, \partial^{ct} \vv b = \vv 0$ as $- \partial^{ct} \vv b \, - \, \del \times \vv e = \vv 0$ reveals that one way to proceed is to replace $\vv e$ with $\vv b$ and $\vv b$ with $- \vv e$:\footnote{The other way is to replace $\vv b$ with $\vv e$ and $\vv e$ with $- \vv b$, giving $-\footnotedy{\mathsf{G}}$ (by antisymmetry).}
 \begin{equation}\label{eq:mt}
 [ \capdy{\mathsf{G}} ]
 =
@@ -3423,7 +3423,7 @@ Using \emph{that} matrix to carry out $[\partialup]^{\mathrm{T}} \eta [\inlinedy
 \end{equation*}
 with each of the six terms canceling its additive inverse. So we get Equation \ref{eq:hme} ``for free" by virtue of the Faraday tensor's having the form $\partialup \wedge \vv A$.
 
-Equations \ref{eq:ime} and \ref{eq:hme} are Maxwell's equations in a manifestly covariant and \emph{gauge-invariant} form. Equations \ref{eq:gfp} and \ref{eq:fp} contain the same information as Equation \ref{eq:ime}, but the former is intractable and the latter is specific to the Lorenz gauge. By the way, we'll call our new four-dyadic $\inlinedy{\mathsf{G}}$ the \textbf{Maxwell tensor} (not to be confused with the Euclidean Maxwell \emph{stress} tensor $\inlinedy{\upsigma}$ that we met in Section \ref{sssec:emm}).
+Equations \ref{eq:ime} and \ref{eq:hme} are Maxwell's equations in a manifestly covariant and gauge-invariant form. Equations \ref{eq:gfp} and \ref{eq:fp} contain the same information as Equation \ref{eq:ime}, but the former is rather opaque and the latter is specific to the Lorenz gauge. By the way, we'll call our new four-dyadic $\inlinedy{\mathsf{G}}$ the \textbf{Maxwell tensor} (not to be confused with the Euclidean Maxwell \emph{stress} tensor $\inlinedy{\upsigma}$ that we met in Section \ref{sssec:emm}).
 
 
 \subsubsection{Hodge Duality for Four-Dyadics}\label{sssec:hd}
