@@ -2726,7 +2726,7 @@ One more step. Consider the following operator, a directional derivative that ap
 &= \dfrac{\dd (ct)}{\dd (ct_0)} \, \dfrac{\partial}{\partial (ct)} + \dfrac{\dd x}{\dd (ct_0)} \, \dfrac{\partial}{\partial x} +  \dfrac{\dd y}{\dd (ct_0)} \, \dfrac{\partial}{\partial y} + \dfrac{\dd z}{\dd (ct_0)} \, \dfrac{\partial}{\partial z} .
 \end{split}
 \end{equation*}
-By the multivariable chain rule, this operator is equivalently $\dd / \dd (ct_0)$. Sometimes called the \textbf{convective derivative} in this context,\footnote{The analogous Newtonian convective derivative is $\dd / \dd t = \partial / \partial t + \vv v \cdot \del$.} it acts on functions of ${\vv R (ct_0) = \langle ct (ct_0), \, x (ct_0), \, y (ct_0), \, z (ct_0) \rangle}$. Our four-potential fits the bill, so $\mathring{\vv A} = (\vv B \cdot \partialup) \vv A $, and Equation \ref{eq:emeom} becomes:
+By the multivariable chain rule, this operator is equivalently $\dd / \dd (ct_0)$, the total derivative with respect to proper time.\footnote{The relation $\dd / \dd (ct_0) = \vv B \cdot \partialup$ is often used in general relativity. It's the spacetime analogue of the ``material derivative" from continuum mechanics ($\dd / \dd t = \partial / \partial t + \vv v \cdot \del$).} It acts on functions of ${\vv R (ct_0) = \langle ct (ct_0), \, x (ct_0), \, y (ct_0), \, z (ct_0) \rangle}$. Our four-potential fits the bill, so $\mathring{\vv A} = (\vv B \cdot \partialup) \vv A $, and Equation \ref{eq:emeom} becomes:
 \begin{equation*}
 \begin{split}
 \vv F &= q \, \bigl[ \partialup (\vv B \cdot \vv A) - (\vv B \cdot \partialup) \vv A \bigr] = q \, \bigl[ \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) \bigr] ,
