@@ -2608,14 +2608,14 @@ Do the same for $\vv b$, and simplify both expressions using the ``half-angle" h
 \end{aligned}
 } \, .
 \end{equation}
-Equivalently, though maybe less elegantly:
+Equivalently, though maybe less elegantly (just a matter of taste):
 \begin{equation*}
 \vv e^\prime = \gamma \left( \vv e + \vvbeta \times \vv b \right) - \dfrac{\gamma^2 (\vvbeta \cdot \vv e) \vvbeta}{\gamma + 1} \qquad \quad \vv b^\prime = \gamma \left( \vv b - \vvbeta \times \vv e \right) - \dfrac{\gamma^2 (\vvbeta \cdot \vv b) \vvbeta}{\gamma + 1},
 \end{equation*}
-where $\gamma = \cosh{\phi}$ and $\beta = \tanh{\phi}$ are boost parameters ($\hatbeta = \vvbeta / \beta = \hatphi$).\footnote{Equations \ref{eq:lt3} (transformation of $ct$ and $\vv r$ under a Lorentz boost in an arbitrary direction) arguably are more elegant in terms of the boost-rapidity, too:
+where $\gamma = \cosh{\phi}$ and $\beta = \tanh{\phi}$ are boost parameters ($\hatbeta = \vvbeta / \beta = \hatphi$).\footnote{Naturally, transformations of \emph{four-vector components} under a Lorentz boost in an arbitrary direction can likewise be expressed in terms of the boost-rapidity. From Equations \ref{eq:lt3} (for the components of the four-position $\vv R$), it's not difficult to show that for some four-vector $\vv Q = \langle Q^{ct}, \vv q \rangle$, that's:
 \begin{equation*}
-c t^{\prime} = \cosh \phi \; c t - \sinh \phi \; ( \hatphi \cdot \vv r ) \qquad \quad
-\vv r^{\prime} = \vv r + \big( 2 \sinh^2 \frac{\phi}{2} \; ( \hatphi \cdot \vv r ) - \sinh \phi \; c t \big) \hatphi .
+Q^{\prime  \mkern1.5mu ct} = \cosh \phi \; Q^{ct} - \sinh \phi \; ( \hatphi \cdot \vv q ) \qquad \quad
+\vv q^{\prime} = \vv q + \big( 2 \sinh^2 \frac{\phi}{2} \; ( \hatphi \cdot \vv q ) - \sinh \phi \; Q^{ct} \big) \hatphi .
 \end{equation*}}
 
 Finally, it's useful to find a relationship between $\vv J$ and the $\vv e$ and $\vv b$ fields (Equations \ref{eq:eb}). Let's use the Lorenz gauge, with $\vv J= \Box \vv A = \langle \Box A^{ct}, \Box \vv a \rangle$. By the Lorenz condition ${\partialup \cdot \vv A = 0}$ (Equation \ref{eq:lg}), or $\partial^{ct} A^{ct} = - \del \cdot \vv a$:
