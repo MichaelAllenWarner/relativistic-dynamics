@@ -2515,7 +2515,7 @@ We've introduced the four-potential $\vv A = \vv A (\vv R)$ as any vector field 
 \begin{equation}\label{eq:ff}
 \boxed{\vv F_{\textrm{L}} = q \, \bigl[ \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) \bigr]} \, .
 \end{equation}
-This is the physical effect that information about the four-current density's value elsewhere has on a test charge upon reaching it. We call $\vv F_{\textrm{L}}$ the \textbf{Lorentz four-force}.\footnote{By ``test charge" we mean that we neglect the influence of the particle's charge on the four-potential field, which, in turn, affects the particle! Accounting for it is beyond our scope and not entirely possible in classical electrodynamics anyway. (As mentioned in Footnote \ref{fn:ddf}, the theory is really about \emph{continua}, not \emph{particles}. In fact, the Lorentz force \emph{density}, which we'll soon cover, is arguably more fundamental than $\vv F_{\textrm{L}}$. Better still: regard the field energy, momentum, and stress as fundamental---we'll cover them, too---and derive the four-force density from there. All that said, we start with force because it's easier.) We do note that accelerating charges are what generate electromagnetic waves, and that the ``recoil" four-force that a radiating particle experiences (called the \textbf{Abraham--Lorentz--Dirac four-force}) is, \emph{to first approximation}, $\vv F = (q^2 / (6 \pi))[\mathring{\vv Z} + (\vv Z \cdot \vv Z) \vv B]$, where $q$ is the particle's charge, $\vv B$ its normalized four-velocity, $\vv Z$ its ``normalized" four-acceleration, and $\mathring{\vv Z}$ its ``normalized" four-jerk. In Gaussian units, the numeric factor is $2/3$ instead of $1/(6 \pi)$; also, the sign of the second term depends on the chosen dot-product convention (see Footnote \ref{fn:sc}). In most practical applications, this ``recoil" force is negligible.} The quantities on the right side are the particle's charge $q$, the particle's normalized four-velocity $\vv B$, and the ``value" of the four-potential field $\vv A$ at the particle's spacetime position (we're differentiating the four-potential, so its non-uniqueness doesn't matter). As we learned in Section \ref{sssec:tp}, this differential four-vector triple product is gauge-invariant and can also be written:
+This is the physical effect that information about the four-current density's value elsewhere has on a test charge upon reaching it. We call $\vv F_{\textrm{L}}$ the \textbf{Lorentz four-force}.\footnote{\label{fn:recoil}By ``test charge" we mean that we neglect the influence of the particle's charge on the four-potential field, which, in turn, affects the particle! Accounting for it is beyond our scope and not entirely possible in classical electrodynamics anyway. (As mentioned in Footnote \ref{fn:ddf}, the theory is really about \emph{continua}, not \emph{particles}. In fact, the Lorentz force \emph{density}, which we'll soon cover, is arguably more fundamental than $\vv F_{\textrm{L}}$. Better still: regard the field energy, momentum, and stress as fundamental---we'll cover them, too---and derive the four-force density from there. All that said, we start with force because it's easier.) We do note that accelerating charges are what generate electromagnetic waves, and that the ``recoil" four-force that a radiating particle experiences (called the \textbf{Abraham--Lorentz--Dirac four-force}) is, \emph{to first approximation}, $\vv F = (q^2 / (6 \pi))[\mathring{\vv Z} + (\vv Z \cdot \vv Z) \vv B]$, where $q$ is the particle's charge, $\vv B$ its normalized four-velocity, $\vv Z$ its ``normalized" four-acceleration, and $\mathring{\vv Z}$ its ``normalized" four-jerk. In Gaussian units, the numeric factor is $2/3$ instead of $1/(6 \pi)$; also, the sign of the second term depends on the chosen dot-product convention (see Footnote \ref{fn:sc}). In most practical applications, this ``recoil" force is negligible.} The quantities on the right side are the particle's charge $q$, the particle's normalized four-velocity $\vv B$, and the ``value" of the four-potential field $\vv A$ at the particle's spacetime position (we're differentiating the four-potential, so its non-uniqueness doesn't matter). As we learned in Section \ref{sssec:tp}, this differential four-vector triple product is gauge-invariant and can also be written:
 \begin{equation}\label{eq:lff}
 \begin{split}
 \vv F_{\textrm{L}} &= q \, \bigl[ \partialup_{\vv A} (\vv B \cdot \vv A) - (\vv B \cdot \partialup) \vv A \bigr] \\
@@ -3929,7 +3929,7 @@ Our new dyadic $\inlinedy{\mathsf{T}}$ is the \textbf{electromagnetic stress--en
 \boxed{ \partialup \cdot \capdy{\mathsf{T}} = - \dfrac{\dd \vv F_{\mathrm{L}}}{\dd V_0} } \, ,
 \end{equation}
 because in matrix notation that's:
-\begin{equation*}
+\begin{equation}\label{eq:fmcm}
 \begin{bmatrix}
 \partial^{ct} & [ \del ]^{\mathrm{T}} \mkern1mu
 \end{bmatrix}
@@ -3941,7 +3941,7 @@ u & [\vv s]^{\mathrm{T}} \\[1ex]
 \begin{bmatrix}
 - \dfrac{\dd \mathcal{P}_{\textrm{L}}}{\dd V} & \left[ - \dfrac{\dd \vv f_{\mathrm{L}}}{\dd V} \right] ^{\mkern-2mu \mathrm{T} \; }
 \end{bmatrix}
-\end{equation*}
+\end{equation}
 (no naught subscripts on the right---see Equation \ref{eq:lffdc}). Equation \ref{eq:fmc} is a statement of the conservation of \emph{four-momentum} of the electromagnetic field. Technically so is Equation \ref{eq:lffd}, but our dyadic notation here is more transparent. The four-divergence of $\inlinedy{\mathsf{T}}$ vanishes when the fields are transferring no four-momentum to charged particles. We can express the right side of Equation \ref{eq:fmc} in terms of the fields and charges (differentiate Equation \ref{eq:lfffd} with respect to proper volume, and sub in $\vv J$ for $\rho_0 \vv B$):
 \begin{equation*}
 \partialup \cdot \capdy{\mathsf{T}} = \vv J \cdot \capdy{\mathsf{F}} ,
@@ -3951,11 +3951,59 @@ u & [\vv s]^{\mathrm{T}} \\[1ex]
 \partialup \cdot \capdy{\mathsf{T}} = ( \partialup \cdot \capdy{\mathsf{F}} ) \cdot \capdy{\mathsf{F}} .
 \end{equation*}
 
-The electromagnetic stress--energy tensor and its role in the conservation of the field's four-momentum (Equation \ref{eq:fmc}) just sort of jumped out at us. Convenient! From here, let's surmise (correctly) that there exists a more general stress--energy tensor---a dyadic field we'll label ${\inlinedy{\mathsf{T}}} _{\textrm{total}}$---whose everywhere-\emph{vanishing} divergence expresses the conservation of \emph{all} four-momentum, electromagnetic and otherwise:
+
+\subsubsection{The Total Stress--Energy Tensor}
+
+The electromagnetic stress--energy tensor and its role in the conservation of the field's four-momentum (Equation \ref{eq:fmc}) more or less jumped out at us. Convenient! From here, let's surmise (correctly) that there exists a more general stress--energy tensor---a dyadic field we'll label ${\inlinedy{\mathsf{T}}} _{\textrm{total}}$---whose everywhere-\emph{vanishing} divergence expresses the conservation of \emph{all} four-momentum, electromagnetic and otherwise:
 \begin{equation}\label{eq:set}
-{ \partialup \cdot \capdy{\mathsf{T}} } _{\mathrm{total}} = \textrm{\mbox{\boldmath $\emptyset$}} \, .
+\partialup \cdot \capdy{\mathsf{T}} _{\mathrm{total}} = \textrm{\mbox{\boldmath $\emptyset$}} \, .
 \end{equation}
-This ``total" stress--energy tensor assumes great importance in general relativity, as the source of the gravitational field. If we weren't focused on electrodynamics, we'd label \emph{it} $\inlinedy{\mathsf{T}}$ and its electromagnetic part ${\inlinedy{\mathsf{T}}} _{\textrm{em}}$. The stress--energy dyadic is always symmetric but \emph{not} generally traceless (see Footnote \ref{fn:tlt}).
+This ``total" stress--energy tensor assumes great importance in general relativity, as the gravitational source field. If we weren't focused on electrodynamics, we'd label \emph{it} $\inlinedy{\mathsf{T}}$ and its electromagnetic part ${\inlinedy{\mathsf{T}}} _{\textrm{em}}$. The stress--energy dyadic is always symmetric but \emph{not} generally traceless (see Footnote \ref{fn:tlt}).
+
+Although the \emph{electromagnetic} stress--energy tensor can be constructed from other quantities (Equations \ref{eq:eset} and \ref{eq:eseta}), there does not exist a general ``formula" for ${\inlinedy{\mathsf{T}}} _{\textrm{total}}$. There are formulas for special cases, like ``dust" and perfect fluids, but ultimately the stress--energy tensor at a given event simply is what it is, determined by the configuration and interactions of whatever's there. For a given inertial observer, however, the \emph{components} of ${\inlinedy{\mathsf{T}}} _{\textrm{total}}$ always have an unambiguous meaning, and the meaning is the same as it is in the electromagnetic case: $\mathsfit T^{ct \mkern1.5mu ct}_{\textrm{total}}$ is the energy density $\dd E / \dd V$, $\mathsfit T^{ct \mkern1.5mu x}_{\textrm{total}}$ is the density of the $x$-component of three-momentum $\dd (c p_x) / \dd V$ (etc.),$\mathsfit T^{x \mkern1.5mu ct}_{\textrm{total}}$ is the flow of energy in the $x$-direction (etc., and by symmetry equal to $\mathsfit T^{ct \mkern1.5mu x}_{\textrm{total}}$),\footnote{Many sources give the opposite interpretation of $\mathsfit T^{ct \mkern1.5mu x}_{\textrm{total}}$ and $\mathsfit T^{x \mkern1.5mu ct}_{\textrm{total}}$. Our interpretation comes from how we wrote Equation \ref{eq:fmcm} (the quantities involved are explained after Equations \ref{eq:py} and \ref{eq:tmc}).} and then the ``space--space" components give the flow of each Cartesian component of three-momentum in each Cartesian direction (i.e., normal and shear stresses, which we won't elaborate on).
+
+It follows that we can ``extract" the four-momentum $\vv P$ from the total stress--energy tensor. Start with $\vv B \cdot {\inlinedy{\mathsf{T}}} _{\textrm{total}}$, where $\vv B$ is some inertial observer's four-velocity, and calculate \emph{in that observer's rest frame}, such that ${ \vv B = \langle 1, \vv 0 \rangle }$:
+\begin{equation*}
+\begin{aligned}
+\, [ \vv B ]^{\mathrm{T}} \eta [ \capdy{\mathsf{T}} _{\mathrm{total}} ]
+&=
+\begin{bmatrix}
+1 & 0 & 0 & 0
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1
+\end{bmatrix}
+\begin{bmatrix}
+\mathsfit T^{ct \mkern1.5mu ct} & \mathsfit T^{ct \mkern1.5mu x} & \mathsfit T^{ct \mkern1.5mu y} & \mathsfit T^{ct \mkern1.5mu z} \\
+\mathsfit T^{x \mkern1.5mu ct} & \mathsfit T^{x x} & \mathsfit T^{x y} & \mathsfit T^{x z}  \\
+\mathsfit T^{y \mkern1.5mu ct} & \mathsfit T^{y x} & \mathsfit T^{y y} & \mathsfit T^{y z}  \\
+\mathsfit T^{z \mkern1.5mu ct} & \mathsfit T^{z x} & \mathsfit T^{z y} & \mathsfit T^{z z} 
+\end{bmatrix} _{\mathrm{total}}
+\\[3pt]
+&=
+\begin{bmatrix}
+1 & 0 & 0 & 0
+\end{bmatrix}
+\begin{bmatrix}
+\mathsfit T^{ct \mkern1.5mu ct} & \mathsfit T^{ct \mkern1.5mu x} & \mathsfit T^{ct \mkern1.5mu y} & \mathsfit T^{ct \mkern1.5mu z} \\
+\mathsfit T^{x \mkern1.5mu ct} & \mathsfit T^{x x} & \mathsfit T^{x y} & \mathsfit T^{x z}  \\
+\mathsfit T^{y \mkern1.5mu ct} & \mathsfit T^{y x} & \mathsfit T^{y y} & \mathsfit T^{y z}  \\
+\mathsfit T^{z \mkern1.5mu ct} & \mathsfit T^{z x} & \mathsfit T^{z y} & \mathsfit T^{z z} 
+\end{bmatrix} _{\mathrm{total}}
+\\[3pt]
+&=
+\begin{bmatrix}
+\mathsfit T^{ct \mkern1.5mu ct} & \mathsfit T^{ct \mkern1.5mu x} & \mathsfit T^{ct \mkern1.5mu y} & \mathsfit T^{ct \mkern1.5mu z}
+\end{bmatrix}_{\mathrm{total}}
+\\[3pt]
+&=
+\left[ \dfrac{\dd \vv P}{\dd V} \right]^{\mathrm{T}}
+\end{aligned}
+\end{equation*}
+(by the meaning of the relevant components established in the previous paragraph). This is \emph{not} a manifestly covariant expression, since $V$ isn't invariant. But \emph{in this observer's rest frame}, it's clear that the total four-momentum flowing through a spatial region is the volume-integral of $\vv B \cdot {\inlinedy{\mathsf{T}}} _{\textrm{total}}$, and it turns out that Equation \ref{eq:set} can be used to prove that this volume-integral is in fact Lorentz-covariant (though it isn't manifestly so, and we won't bother with the proof). It's therefore possible to \emph{define} the four-momentum in terms of the stress--energy tensor. In classical field theory, which is really more about continua than particles, this is probably the ``right" way to do things. Then in electrodynamics in particular, one might likewise derive the Lorentz force (density) from the electromagnetic stress--energy tensor (with Maxwell's equations); see Footnote \ref{fn:recoil}.
 
 
 \subsubsection{Dyadic Operators; Lagrangian Approach to the Field}
