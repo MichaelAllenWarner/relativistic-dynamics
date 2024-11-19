@@ -3209,12 +3209,11 @@ Define a four-vector $\vv D_1$ with components $\langle \mathsfit D^{ct \mkern1.
 \mathsfit D^{z \mkern1.5mu ct} & 0 & 0 & 0
 \end{bmatrix}.
 \end{equation*}
-Define similar four-vectors corresponding to the other columns of $[ \inlinedy{\mathsf{D}} ]$, and obtain: $\inlinedy{\mathsf{D}} = \vv D_1 \otimes \vv E_{ct} + \vv D_2 \otimes \vv E_{x} + \vv D_3 \otimes \vv E_{y} + \vv D_4 \otimes \vv E_{z}$.\footnote{$\vv E_{ct}$, $\vv E_{x}$, $\vv E_{y}$, and $\vv E_{z}$ are the basis vectors we briefly discussed in Section \ref{sssec:mc}.} So yes, a dyadic can always be decomposed into a sum of dyads. In fact, the decomposition isn't unique; a simple way to convince yourself of this is to double $\vv D_1$ and halve $\vv E_{ct}$.
-
+Define similar four-vectors corresponding to the other columns of $[ \inlinedy{\mathsf{D}} ]$, and obtain: $\inlinedy{\mathsf{D}} = \vv D_1 \otimes \vv E_{ct} + \vv D_2 \otimes \vv E_{x} + \vv D_3 \otimes \vv E_{y} + \vv D_4 \otimes \vv E_{z}$.\footnote{$\vv E_{ct}$, $\vv E_{x}$, $\vv E_{y}$, and $\vv E_{z}$ are the basis vectors we briefly discussed in Section \ref{sssec:mc}.} So yes, a dyadic can always be decomposed into a sum of dyads.
 
 \subsubsection{Metric and Field Tensors}\label{sssec:mfd}
 
-In the context of electromagnetism, a particularly useful four-dyadic (field) is $\partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A}$, where $\vv A$ is the four-potential.\footnote{We'll call the quantity $\partialup \otimes \vv A$ the \emph{gradient} of the four-potential.} In matrix notation, that's $[\partialup][\vv A]^{\mathrm{T}} - [\vv A][\partialup_{\vv A}]^{\mathrm{T}}$, or:
+In the context of electromagnetism, a particularly useful four-dyadic (field) is $\partialup \otimes \vv A - \vv A \otimes \partialup_{\vv A}$, where $\vv A$ is the four-potential (we'll refer to the dyad $\partialup \otimes \vv A$ as the \emph{gradient} of the four-vector $\vv A$). In matrix notation, that's ${[\partialup][\vv A]^{\mathrm{T}} - [\vv A][\partialup_{\vv A}]^{\mathrm{T}}}$, or:
 \begin{equation*}
 \begin{bmatrix}
 \partial^{ct} \\
