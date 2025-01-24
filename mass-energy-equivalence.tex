@@ -2599,7 +2599,7 @@ which holds for a boost in an \emph{arbitrary} direction (not just $\langle 1, 0
 &= \cosh{\phi} \; \big[ \vv e - (\hatphi \cdot \vv e) \hatphi \big] + \sinh{\phi} \; (\hatphi \times \vv b) + (\hatphi \cdot \vv e) \hatphi .
 \end{split}
 \end{equation*}
-Do the same for $\vv b$, and simplify both expressions using the ``half-angle" hyperbolic identity $\cosh{\phi} - 1 = 2 \sinh^2{(\phi/2)}$:
+Do the same for $\vv b$, and simplify both expressions. Using a ``half-angle" identity to substitute $2 \sinh^2{(\phi/2)}$ for $\cosh{\phi} - 1$ (personal preference), that's:
 \begin{equation}\label{eq:ebr}
 \boxed{
 \begin{aligned}
@@ -2608,7 +2608,7 @@ Do the same for $\vv b$, and simplify both expressions using the ``half-angle" h
 \end{aligned}
 } \, .
 \end{equation}
-Equivalently, though maybe less elegantly (just a matter of taste):
+Equivalently, though maybe less elegantly:\footnote{Equations \ref{eq:ebr} are rather analogous the \href{https://en.wikipedia.org/wiki/Rodrigues\%27_rotation_formula}{Rodrigues rotation formula} (Wikipedia).}
 \begin{equation*}
 \vv e^\prime = \gamma \left( \vv e + \vvbeta \times \vv b \right) - \dfrac{\gamma^2 (\vvbeta \cdot \vv e) \vvbeta}{\gamma + 1} \qquad \quad \vv b^\prime = \gamma \left( \vv b - \vvbeta \times \vv e \right) - \dfrac{\gamma^2 (\vvbeta \cdot \vv b) \vvbeta}{\gamma + 1},
 \end{equation*}
