@@ -2964,7 +2964,7 @@ where $R$ is the sphere's radius and the point $(x_0, y_0, z_0)$ is the sphere's
 \begin{equation*}
 x^2 + y^2 + z^2 = R^2.
 \end{equation*}
-When time is ``unpaused," the sphere and its center move at the speed of light in the direction of the light's three-wavevector $\vv k$. At some later time $ct = ct$, then, the $x$-coordinate of the sphere's center is its initial $x$-coordinate ($0$) plus the $x$-component of the light's ``displacement" since $ct = 0$, which is the $x$-component of the light's (normalized) velocity vector $\vv{\hat{k}}$ times $ct$.\footnote{The three-wavevector $\vv k$ isn't dimensionless, but the unit vector $\vv{\hat{k}} = \vv k / k$ is, so $\vv{\hat{k}}$ is indeed the light's normalized velocity. Same goes for $\vv{\hat s} = \vv s / s$.} If $\theta$ is the angle between the positive $x$-direction and $\vv{\hat{k}}$, then the $x$-component of $\vv{\hat{k}}$ is $\Vert \vv{\hat{k}} \Vert \cos{\theta} = \cos{\theta}$. The $x$-coordinate of the sphere's center is therefore $x_0 = \cos{\theta} \, ct$. Likewise, $y_0 = \cos{\alpha} \, \mkern.5mu ct$ and $z_0 = \cos{\kappa} \, \mkern.5mu ct$ for the corresponding angles $\alpha$ and $\kappa$, and the sphere's equation is:
+When time is ``unpaused," the sphere and its center move at the speed of light in the direction of the light's three-wavevector $\vv k$. At some later time $ct = ct$, then, the $x$-coordinate of the sphere's center is its initial $x$-coordinate ($0$) plus the $x$-component of the light's ``displacement" since $ct = 0$, which is the $x$-component of the light's (normalized) velocity vector $\vv{\hat{k}}$ times $ct$.\footnote{The three-wavevector $\vv k$ isn't dimensionless, but the unit vector $\vv{\hat{k}} = \vv k / k$ is, so $\vv{\hat{k}}$ is indeed the light's normalized velocity. Same goes for $\vv{\hat s} = \vv s / s$.} If $\theta$ is the angle between the positive $x$-direction and $\vv{\hat{k}}$, then the $x$-component of $\vv{\hat{k}}$ is $\Vert \vv{\hat{k}} \Vert \cos{\theta} = \cos{\theta}$. The $x$-coordinate of the sphere's center as a function of time is therefore $x_0 = \cos{\theta} \, ct$. Likewise, $y_0 = \cos{\alpha} \, \mkern.5mu ct$ and $z_0 = \cos{\kappa} \, \mkern.5mu ct$ for the corresponding angles $\alpha$ and $\kappa$, and the sphere's equation is:
 \begin{equation*}
 (x - \cos{\theta} \, ct)^2 + (y - \cos{\alpha} \, \mkern.5mu ct)^2 + (z - \cos{\kappa} \, \mkern.5mu ct)^2 = R^2 .
 \end{equation*}
@@ -3017,7 +3017,7 @@ E^\prime &= u^\prime V^\prime \\
 E^\prime &= \gamma E \left( 1 - \beta \cos{\theta} \right) .
 \end{split}
 \end{equation}
-Equations \ref{eq:len} and \ref{eq:8} are identical, and light's energy transforms the same way as its frequency (Equation \ref{eq:rdf}). We've made good on our promise to show this without resorting to the Planck--Einstein relation.
+Equations \ref{eq:len} and \ref{eq:8} are identical, and light's energy transforms the same way as its frequency (Equation \ref{eq:rdf}). At long last, we've made good on our promise to show this without resorting to the Planck--Einstein relation!
 
 For the sake of completeness, here is the hard way to get the volume of the ellipsoid in Equation \ref{eq:ell} (consult a linear algebra text if you have trouble following along). Start by expanding it into quadratic form:
 \begin{equation*}
@@ -3038,7 +3038,7 @@ x^\prime \\
 y^\prime \\
 z^\prime
 \end{bmatrix}
-= R^2 .
+= \begin{bmatrix} R^2 \end{bmatrix} .
 \end{equation}
 To reduce this ellipsoid to standard form, we'll have to make the appropriate \emph{orthogonal} coordinate transformation (one that maps orthonormal bases to orthonormal bases). In the new coordinates, then, we'll have:
 \begin{equation*}
@@ -3055,7 +3055,7 @@ X^\prime \\
 Y^\prime \\
 Z^\prime
 \end{bmatrix}
-= R^2 ,
+= \begin{bmatrix} R^2 \end{bmatrix} ,
 \end{equation*}
 where $\lambda_1$, $\lambda_2$, and $\lambda_3$ are the eigenvalues of the 3-by-3 matrix in Equation \ref{eq:ellm} (i.e., we diagonalize the original 3-by-3 to avoid cross-terms in the new coordinates). It follows that the lengths of the ellipsoid's principal semi-axes are $R / \sqrt{\lambda_1}$, $R / \sqrt{\lambda_2}$, and $R / \sqrt{\lambda_3}$, and we need only find the eigenvalues to determine the volume. We find them by solving for $\lambda$ here:
 \begin{equation*}
@@ -3080,7 +3080,7 @@ One eigenvalue is $1$. Getting the others isn't as bad as it looks. Sub in our $
 \begin{equation*}
 \lambda^2 - \left[ 1 + \gamma^2 (1 - \beta \cos \theta)^2 + (\gamma \beta)^2 ( \cos^2 \alpha + \cos^2 \kappa ) \right] \lambda + \gamma^2 (1 - \beta \cos \theta)^2 = 0.
 \end{equation*}
-Use $\cos^2 \alpha + \cos^2 \kappa = 1 - \cos^2 \theta$ (squared direction cosines sum to $1$), and simplify what's in the square brackets (we'll also need $\gamma^2 \beta^2 + 1 = \gamma^2$):
+In the square brackets, expand $(1 - \beta \cos \theta)^2$, replace ${\cos^2 \alpha + \cos^2 \kappa}$ with ${1 - \cos^2 \theta}$ (squared direction cosines sum to $1$), and use $\gamma^2 \beta^2 + 1 = \gamma^2$:
 \begin{equation*}
 \lambda^2 - 2 \gamma^2 ( 1 - \beta \cos \theta ) \lambda + \gamma^2 (1 - \beta \cos \theta)^2 = 0.
 \end{equation*}
