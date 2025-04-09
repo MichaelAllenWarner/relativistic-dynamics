@@ -1562,7 +1562,7 @@ That wasn't pleasant. Transforming the components of four-force won't be pleasan
 \begin{equation*}
 [\vv F^\prime] = \Lambda \mkern1mu [\vv F] \qquad \qquad [\vv F] = \Lambda^{-1} \mkern1mu [\vv F^\prime] ,
 \end{equation*}
-which is:
+which is (Equation \ref{eq:33}):
 \begin{equation*}
 \begin{bmatrix}
 \gamma^\prime \mathcal{P}^\prime \\[.15 em]
@@ -1604,9 +1604,9 @@ and
 \gamma^\prime f_x^\prime \\[.15 em]
 \gamma^\prime f_y^\prime \\[.15 em]
 \gamma^\prime f_z^\prime\\[.1 em]
-\end{bmatrix} .
+\end{bmatrix}
 \end{equation*}
-That's:
+(remember that we've defined the relativistic power like $\mathcal{P} = \dot{E} = (\dd E / \dd t)/c$, so that it has force-units). That's:
 \begin{equation*}
 \begin{aligned}
 \gamma^\prime \mathcal{P}^\prime &= \gamma_{\textrm{rel}} \mkern1mu \gamma \left( \mathcal{P} - \beta_{\textrm{rel}} \mkern1mu f_x \right) \qquad & \gamma \mathcal{P} &= \gamma_{\textrm{rel}} \mkern1mu \gamma^\prime \left( \mathcal{P}^\prime + \beta_{\textrm{rel}} \mkern1mu f^\prime_x \right) \\[1pt]
@@ -2565,7 +2565,7 @@ We know from our study of the differential four-vector triple product that $\vv 
 \vv f_{\textrm{L}} &= q ( \vv e + \vvbeta \times \vv b ),
 \end{split}
 \end{equation}
-and the temporal component is the particle's $\gamma$ times the \textbf{Lorentz power} $\mathcal{P}_{\textrm{L}}$ (the particle's $\dot{E} = \dot{E}_{\mkern.5mu \textrm{k}} = \vv f \cdot \vvbeta$):
+and the temporal component is the particle's $\gamma$ times the \textbf{Lorentz power} $\mathcal{P}_{\textrm{L}}$, which we define as having units of force (the particle's $\dot{E} = \dot{E}_{\mkern.5mu \textrm{k}} = \vv f \cdot \vvbeta$):
 \begin{equation}\label{eq:lp}
 \begin{split}
 \gamma \mathcal{P}_{\textrm{L}} &= q ( \gamma \vvbeta \cdot \vv e ) \\
@@ -2644,17 +2644,17 @@ Q^{\prime  \mkern1.5mu ct} = \cosh \phi \; Q^{ct} - \sinh \phi \; ( \hatphi \cdo
 \vv q^{\prime} = \vv q + \big( 2 \sinh^2 \frac{\phi}{2} \; ( \hatphi \cdot \vv q ) - \sinh \phi \; Q^{ct} \big) \hatphi .
 \end{equation*}}
 
-Finally, it's useful to find a relationship between $\vv J$ and the $\vv e$ and $\vv b$ fields (Equations \ref{eq:eb}). Let's use the Lorenz gauge, with $\vv J= \Box \vv A = \langle \Box A^{ct}, \Box \vv a \rangle$. By the Lorenz condition ${\partialup \cdot \vv A = 0}$ (Equation \ref{eq:lg}), or $\partial^{ct} A^{ct} = - \del \cdot \vv a$:
+Finally, it's useful to find a relationship between $\vv J = \langle \rho, \, \vv j \rangle$ and the $\vv e$ and $\vv b$ fields. Let's work in the Lorenz gauge, with $\vv J= \Box \vv A = \langle \Box A^{ct}, \Box \vv a \rangle$. By the Lorenz condition ${\partialup \cdot \vv A = 0}$ (Equation \ref{eq:lg}), or $\partial^{ct} A^{ct} = - \del \cdot \vv a$:
 \begin{equation}\label{eq:ace}
 \begin{split}
 \rho &= \Box A^{ct} \\
 &= \partial^{ct} (\partial^{ct} A^{ct}) - \nabla ^2 A^{ct} \\
 &= \partial^{ct} (- \del \cdot \vv a) - \del \cdot \del A^{ct} \\
 &= \del \cdot (- \partial^{ct} \vv a - \del A^{ct}) \\
-\rho &= \del \cdot \vv e
+\rho &= \del \cdot \vv e ,
 \end{split}
 \end{equation}
-(we can swap $\partial^{ct}$ and $\del \cdot$ because the order of mixed partials is reversible). Then using the ``$bac - cab$" identity ${\nabla ^2 \vv a = \del(\del \cdot \vv a) - \del \times (\del \times \vv a)}$ for the vector Laplacian (and Equations \ref{eq:eb}), we also have:
+by Equations \ref{eq:eb} (we can swap $\partial^{ct}$ and $\del \cdot$ in the penultimate step because mixed partials commute). Then using ${\nabla ^2 \vv a = \del(\del \cdot \vv a) - \del \times (\del \times \vv a)}$ (the ``$bac - cab$" identity for the vector Laplacian), we also have:
 \begin{equation}\label{eq:abe}
 \begin{split}
 \vv j &= \Box \vv a \\
