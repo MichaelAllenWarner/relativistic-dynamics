@@ -52,13 +52,26 @@
 \DeclareSymbolFont{fourierNotBold}{FML}{futm}{m}{it}%
 \DeclareMathSymbol{\partialrm}{\mathord}{fourierNotBold}{130} % Upright partial derivative symbol, not bold
 \DeclareMathAlphabet{\mathsfit}{T1}{\sfdefault}{\mddefault}{\sldefault}
+\usepackage{titling}
+\renewcommand\maketitlehooka{\null\mbox{}\vfill}
+\renewcommand\maketitlehookd{\vfill\null}
+
 
 \begin{document}
 
 \title{Covariant ``Electrodyadics":\\A Gentle, ``Massless" Introduction to\\Relativistic Dynamics and Maxwell's Theory}
 \author{Michael Allen Warner}
 \date{Last updated: \today}
+
+\begin{titlingpage}
 \maketitle
+\end{titlingpage}
+
+\clearpage
+
+\tableofcontents
+
+\clearpage
 
 \section*{Preface}\label{sec:p}
 \addcontentsline{toc}{section}{Preface}
