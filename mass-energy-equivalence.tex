@@ -55,7 +55,7 @@
 
 \begin{document}
 
-\title{Energy, Momentum, and Four-Vectors:\\A Gentle, ``Massless" Introduction to\\Relativistic Dynamics and Electromagnetism}
+\title{Covariant ``Electrodyadics":\\A Gentle, ``Massless" Introduction to\\Relativistic Dynamics and Maxwell's Theory}
 \author{Michael Allen Warner}
 \date{Last updated: \today}
 \maketitle
@@ -63,9 +63,9 @@
 \section*{Preface}\label{sec:p}
 \addcontentsline{toc}{section}{Preface}
 
-This is the gentlest introduction to relativistic dynamics you'll find. Ideally you're already familiar with basic relativistic kinematics, but we'll review what we need in Section \ref{ssec:sr}. Math prerequisites are minimal. Through Section \ref{ssec:ra}, the only calculus we'll use is simple single-variable differentiation. After that, there are integrals here and there, and Section \ref{sec:rem} on electromagnetism has partial derivatives and vector calculus. Section \ref{sec:dy} uses tensors but doesn't require prior experience with them.
+This is the gentlest introduction to relativistic dynamics you'll find. Ideally you're already familiar with basic relativistic kinematics, but we'll review what we need in Section \ref{ssec:sr}. Math prerequisites are minimal. Through Section \ref{ssec:ra}, the only calculus we'll use is simple single-variable differentiation. After that, there are integrals here and there, and Section \ref{sec:rem} on electromagnetism has partial derivatives and vector calculus. Section \ref{sec:dy} on ``electrodyadics" (from the title!) adds tensors to the mix but doesn't require prior experience with them.
 
-The ``massless" in the title is half tongue-in-cheek. The serious bit is that beyond Newtonian mechanics, I mostly avoid the word \emph{mass} and the symbol $m$. This does set my approach apart, but you'll see that it's just a linguistic and notational preference. There's nothing radical about it.
+And ``massless"? Just a half-tongue-in-cheek attention-grabber. The serious bit is that beyond Newtonian mechanics, I mostly avoid the word \emph{mass} and the symbol $m$. This does set my approach apart, but you'll see that it's just a linguistic and notational preference. There's nothing radical about it.
 
 You should know that I'm not a physicist. I'm a motivated amateur, and this document amounts to glorified notes I've made for myself as a self-study aid. I have no professional aspirations, and my focus is resolutely \emph{not} on developing problem-solving techniques. \emph{This isn't a textbook}; I'm not nearly qualified to write one! What you'll find here is a unique path through the material that worked for me. When I started, I was competent in algebra, rusty at calculus, and somewhat familiar with Newtonian mechanics, classical electromagnetism, and rudimentary special relativity. To be honest, I'm still only competent in algebra and mediocre at calculus, but I do now understand a lot of physics for a layman.
 
@@ -3136,7 +3136,7 @@ This ``derivation" is little more than an acknowledgment that the components of 
 
 \clearpage
 
-\section["Electrodyadics" (Tensors Lite)]{``Electrodyadics" (Tensors Lite)}\label{sec:dy}
+\section[Covariant "Electrodyadics" (Tensors Lite)]{Covariant ``Electrodyadics" (Tensors Lite)}\label{sec:dy}
 
 In Section \ref{sssec:lffd}, we simplified the temporal component of the Lorentz four-force density into a succinct statement of energy conservation. Now that we've taken care of our unfinished business concerning light and energy, we return to the Lorentz four-force density and simplify its three-vector \emph{spatial} component into a succinct statement of \emph{three-momentum} conservation. As we might expect from what we saw with Poynting's theorem (Equation \ref{eq:py} et seq.), this statement will equate the rate of decrease of electromagnetic three-momentum in a region to the outward ``flux" of electromagnetic three-momentum plus the rate at which the fields transfer three-momentum to particles within the region. Why the scare quotes around the word \emph{flux}? Because flux is traditionally the rate of flow of a \emph{scalar} quantity through a surface,\footnote{(according to our definition, anyway; see Footnote \ref{fn:flux})} and three-momentum is a \emph{vector} quantity. The usual divergence theorem equates a \emph{scalar}-valued flux to the volume-integral of the divergence of a \emph{vector} field, whereas the corresponding volume-integrand for a \emph{vector}-valued ``flux" would have to be the ``divergence" of a \emph{rank-2 tensor} field (see Footnote \ref{fn:gd}). As we haven't dealt explicitly with tensor notation or the ``divergence" of anything but a vector field, this presents a challenge!\footnote{That said, we deal implicitly with rank-2 tensors every time we take a directional derivative or Laplacian/d'Alembertian of a vector field.}
 
