@@ -64,11 +64,15 @@
 \date{Last updated: \today}
 
 \begin{titlingpage}
+\addcontentsline{toc}{section}{Title}
 \maketitle
 \end{titlingpage}
 
 \clearpage
 
+\phantomsection
+\setcounter{page}{2}
+\addcontentsline{toc}{section}{Contents}
 \tableofcontents
 
 \clearpage
@@ -952,7 +956,7 @@ Its magnitude is $B = \sqrt{\vv B \cdot \vv B} = \gamma \sqrt{1 - (\vvbeta \cdot
 Because proper time is undefined for lightlike intervals (or, if you prefer, because $\gamma$ is undefined for $\beta = 1$), $\vv B$ is undefined for light and anything else without a rest frame.
 
 
-\subsubsection{Four-Momentum:\\ One Conservation Law to Rule Them All}
+\subsubsection[Four-Momentum: One Conservation Law to Rule Them All]{Four-Momentum:\\ One Conservation Law to Rule Them All}
 
 By the same logic, we can construct a \textbf{four-momentum} in terms of the normalized four-velocity, replicating our steps for obtaining the spacetime $p c$-analogue from the $\beta$-analogue (cf.\ Section \ref{sssec:pc}). We'll define it so that it has the dimension of energy:\footnote{Many authors use $\vv P \equiv \langle E/c , \, \vv p \rangle = m \vv V$ instead, giving it the dimension of momentum.}
 \begin{equation}\label{eq:32}
@@ -1084,7 +1088,7 @@ Having established that the Minkowski dot product is invariant, we see that an e
 
 Here's a ``trick": given an arbitrary inertial frame and an arbitrary four-vector, it's always possible to write a manifestly covariant expression for the value that any one of the vector's components takes in that frame. Say we're interested in the time component of a particle's four-momentum $\vv P$ (i.e., the particle's total energy $E$). The method is to define a four-vector $\vv E _{ct}$ whose components \emph{in the frame in question} are $\langle 1, 0, 0, 0 \rangle$ (where the $ct$-component gets the $1$ because it's the $ct$-component of $\vv P$ that we care about), and then just take the Minkowski dot product of the two vectors: ${\vv P \cdot \vv E_{ct} = (E)(1) - (cp_x)(0) - (cp_y)(0) - (cp_z)(0) = E}$. Note that $\vv E_{ct}$ is nothing but the frame's normalized four-velocity $\vv B$, since $\vv B = \langle \gamma, \gamma \vvbeta \rangle$ reduces to $\langle 1, \vv 0 \rangle$ in one's own rest frame. If it were one of $\vv P$'s \emph{spatial} components that we wanted---the $z$-component, say---then we'd define a vector $\vv E_z$ whose components are $\langle 0, 0, 0, 1 \rangle$ in the relevant frame, and we'd again take the dot product, though this time with a negative sign: $- \vv P \cdot \vv E_z = c p_z$.\footnote{Perhaps you've already pieced together that $\vv E_{ct}$, $\vv E_{x}$, $\vv E_{y}$, and $\vv E_z$ are \textbf{basis vectors}.}
 
-\subsubsection[Orthogonality, ("Normalized") Four-Acceleration]{Orthogonality, (``Normalized") Four-Acceleration}
+\subsubsection[Orthogonality, (“Normalized”) Four-Acceleration]{Orthogonality, (``Normalized") Four-Acceleration}
 
 So we have the four-displacement $\dd \vv R$, the normalized four-velocity $\vv B$, the four-momentum $\vv P$, and the four-force $\vv F$. Question: in what direction do they point? We began by \emph{defining} $\dd \vv R$ as tangent to a traveler's world line, pointing in whatever spacetime direction the traveler happens to be going. Common sense says that the same is true of the traveler's $\vv B$ and $\vv P$, but let's take a moment to think about what that means mathematically. Two vectors are codirectional if one is obtained by scaling the other by a positive number. We know that $\vv B$ and $\vv P$ are codirectional, since the latter is simply the former scaled by the traveler's $E_0$. Can we make a similar argument for $\dd \vv R$ and $\vv B$, and say that the latter is simply the former ``scaled" by the infinitesimal $1/(c \, \dd t_0)$? We can, but we need to be careful---we're \emph{not} saying that $\vv B$ is codirectional with $\vv R$! We're ``scaling" $\dd \vv R$, but \emph{differentiating} $\vv R$.
 
@@ -1261,7 +1265,7 @@ F = \sqrt{\mathcal{P}_0^2 - (\vv f_0 \cdot \vv f_0)} .
 Now, about this proper force: we've got $\vv f_0 = E_0 \vvzeta_{\mkern1mu 0}$, which in the traveler's instantaneous rest frame is simply $\vv f = E_0 \vvzeta$ ($= m \vv a$). Is the point of all this merely to restate the mundane fact that the relativistic three-force reduces to the Newtonian three-force in the classical limit? No! The point is that the magnitude $f_0 = E_0 \mkern.5mu \zeta_0$ ($= m a_0$) is an invariant whose value is calculable by all inertial observers. In $\vv f_0 = E_0 \vvzeta_{\mkern1mu 0}$ $(= m \vv a_0)$, then, we have something like a relativistic version of Newton's $\vv f_{\mathrm{classical}} = m \vv a$, but valid even when $\dot{E}_0 \neq 0$ ($\dot{m} \neq 0$).\footnote{In principle, the concept of proper force is applicable to Newtonian mechanics, too, provided one has defined classical force as the time-derivative of momentum (rather than as $m \vv a$---see Footnote \ref{fn:cf}). But it could only be relevant in a variable-mass situation. That's because acceleration-magnitude is invariant in the classical limit. Proper acceleration differs appreciably from ordinary coordinate acceleration only when $\beta \centernot{\ll} 1$.}
 
 
-\subsection["Measure of Inertia" Revisited]{``Measure of Inertia" Revisited}\label{ssec:in}
+\subsection[“Measure of Inertia” Revisited]{``Measure of Inertia" Revisited}\label{ssec:in}
 
 We see in Equation \ref{eq:41} that $\vv f \neq E_0 \vvzeta$ $( = m \vv a)$, even when $\dot{E}_0 = 0$ ($\dot{m} = 0$ being the condition under which $\vv f_\textrm{classical} = m \vv a$ is true). That's not surprising; back in Section \ref{ssec:rm} we ruled out the possibility that $E_0$ is the resistance to change in three-velocity for arbitrary $\vvbeta$. More interesting is that our \emph{candidate} for the relativistic measure of inertia, total energy $E$, likewise cannot be unambiguously described as the resistance to change in velocity under the influence of a three-force. Yes, the last term in Equation \ref{eq:41} is $E \vvzeta$, and the middle term disappears when $\dot{E}_0 = 0$, but there's still that pesky first term that doesn't vanish unless $\vvbeta = \vv 0$:
 \begin{equation}\label{eq:43}
@@ -1956,7 +1960,7 @@ where we've used the ``half-angle" trig identities $\cos^2{(\theta / 2)} = (1 + 
 Because $\eta$ is such a good approximation for $y$ in the ultrarelativistic limit, particle physicists sometimes loosely refer to the pseudorapidity as just \emph{rapidity}. All this inconsistent usage can be confusing, so let's recap. In our lingo, rapidity is $\phi = \Vert \bm{\upphi} \Vert = \tanh^{-1}{\beta}$, and the longitudinal rapidity $\varphi$ is the inverse hyperbolic tangent of the velocity component corresponding to the axis of a given Lorentz boost ($\tanh^{-1}{\beta_x}$ if $x$ is the boost axis). In particle physics, longitudinal rapidity gets the symbol $y$ and is often called the ``particle rapidity" or even just the ``rapidity" for short, although the pseudorapidity $\eta$ is also sometimes called the rapidity.
 
 
-\subsection{Advanced Rectilinear Kinematics:\\ Constant Proper Acceleration}\label{ssec:ak}
+\subsection[Advanced Rectilinear Kinematics: Constant Proper Acceleration]{Advanced Rectilinear Kinematics:\\ Constant Proper Acceleration}\label{ssec:ak}
 
 With an important caveat, the Newtonian kinematic equations for constant acceleration are still applicable in special relativity, provided that only \emph{coordinate} quantities appear in them. This is merely a matter of defining velocity and acceleration as the first and second time-derivatives of position. In our notation, for example, and using the subscript i for \emph{initial} values ($ct = 0$):\footnote{It's common to use the naught subscript for initial values, but we're already using that for \emph{proper} quantities.}
 \begin{equation*}
@@ -2491,7 +2495,7 @@ We start by acknowledging that classical electrodynamics isn't our best theory o
 
 So here is what we'll do. While formulating the theory, we'll usually pretend that charge is a continuous property of matter. We'll go a step further and regard charge \emph{density} as more fundamental than charge itself (or at least consider this perspective). We'll throw in some asides about the reality of charge-discreteness. We'll mention in passing how density can still be defined in the presence of discrete charges. Sometimes, \emph{we'll even use the particle model while developing the theory}, just because it's so convenient, though not without reminding ourselves that we're doing something a little ``wrong," and that strictly speaking it would be better to stick with continua. And we grant that, once the theory has been formulated in terms of continua, it's \emph{perfectly fine} to invoke particles when working problems or dealing with real-world situations. It would be foolish to reject a useful tool just because it's got theoretical issues. \emph{The inconsistency between reality and the classical theory means that the theory itself has issues!}
 
-\subsubsection[("Normalized") Four-Current Density]{(``Normalized") Four-Current Density}\label{sssec:fcd}
+\subsubsection[(“Normalized”) Four-Current Density]{(``Normalized") Four-Current Density}\label{sssec:fcd}
 
 Experiment shows that electric charge $q$ is Lorentz-invariant. This allows for the construction of new four-vectors by scaling existing ones by $q$, but that turns out not to be so useful. What we need is a \emph{related} invariant called the \textbf{proper charge density}, defined only for a special class of charge distributions.
 
@@ -3149,7 +3153,7 @@ This ``derivation" is little more than an acknowledgment that the components of 
 
 \clearpage
 
-\section[Covariant "Electrodyadics" (Tensors Lite)]{Covariant ``Electrodyadics" (Tensors Lite)}\label{sec:dy}
+\section[Covariant “Electrodyadics” (Tensors Lite)]{Covariant ``Electrodyadics" (Tensors Lite)}\label{sec:dy}
 
 In Section \ref{sssec:lffd}, we simplified the temporal component of the Lorentz four-force density into a succinct statement of energy conservation. Now that we've taken care of our unfinished business concerning light and energy, we return to the Lorentz four-force density and simplify its three-vector \emph{spatial} component into a succinct statement of \emph{three-momentum} conservation. As we might expect from what we saw with Poynting's theorem (Equation \ref{eq:py} et seq.), this statement will equate the rate of decrease of electromagnetic three-momentum in a region to the outward ``flux" of electromagnetic three-momentum plus the rate at which the fields transfer three-momentum to particles within the region. Why the scare quotes around the word \emph{flux}? Because flux is traditionally the rate of flow of a \emph{scalar} quantity through a surface,\footnote{(according to our definition, anyway; see Footnote \ref{fn:flux})} and three-momentum is a \emph{vector} quantity. The usual divergence theorem equates a \emph{scalar}-valued flux to the volume-integral of the divergence of a \emph{vector} field, whereas the corresponding volume-integrand for a \emph{vector}-valued ``flux" would have to be the ``divergence" of a \emph{rank-2 tensor} field (see Footnote \ref{fn:gd}). As we haven't dealt explicitly with tensor notation or the ``divergence" of anything but a vector field, this presents a challenge!\footnote{That said, we deal implicitly with rank-2 tensors every time we take a directional derivative or Laplacian/d'Alembertian of a vector field.}
 
@@ -4340,7 +4344,7 @@ On the right, we have the total system momentum over the total system energy, by
 %\end{equation*}
 %(cf. Equation \ref{eq:gtc}). Continuing in the same vein, we can extract from our dyadics a pair of Lorentz invariants: $\inlinedy{\mathsf{L}} : \star \inlinedy{\mathsf{L}} =  4 ( \vv n \cdot \vv l )$ (cf. Equation \ref{eq:fddg}), which is trivially $0$ (because it involves dotting a cross product with its constituent vectors), and $\inlinedy{\mathsf{L}} : \inlinedy{\mathsf{L}} = - \star \inlinedy{\mathsf{L}} : \star \inlinedy{\mathsf{L}} = 2 ( l^2 - n^2 )$ (cf. Equations \ref{eq:fddf} and \ref{eq:gddg}), which doesn't vanish but also doesn't have a straightforward physical interpretation, and where for a system you'd have to be careful to use $(\sum \inlinedy{\mathsf{L}}) : (\sum \inlinedy{\mathsf{L}})$, summing over the system's constituents. The second scalar is \emph{not} Poincar\'e-invariant, however; its invariance depends on a fixed spacetime origin.
 
-\subsubsection["Angular Stress--Energy Tensor" and Conservation]{``Angular Stress--Energy Tensor" and Conservation}
+\subsubsection[“Angular Stress--Energy Tensor” and Conservation]{``Angular Stress--Energy Tensor" and Conservation}
 
 This $\inlinedy{\mathsf{L}}$ is the conserved geometric object we were looking for. Just as the conservation of four-momentum $\vv P$ subsumes that of energy and three-momentum, the conservation of $\inlinedy{\mathsf{L}}$ subsumes that of angular momentum and $\vv n$. But four-momentum is a \emph{vector} (a rank-1 tensor), and $\inlinedy{\mathsf{L}}$ is a \emph{dyadic} (rank-2). So while the tensor whose vanishing divergence expresses the conservation of four-momentum is a dyadic ($\inlinedy{\mathsf{T}}$), the tensor whose vanishing divergence expresses the conservation of the dyadic $\inlinedy{\mathsf{L}}$ must be a rank-3 tensor (the ``angular stress--energy tensor"), which our notation frankly isn't equipped to handle.\footnote{One really must learn index notation to go deeper with this material; see Section \ref{ssec:index} below for more on why.} Without getting into the full machinery of higher-order tensors, let's sketch this out just a bit.
 
