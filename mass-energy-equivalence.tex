@@ -52,10 +52,20 @@
 \DeclareSymbolFont{fourierNotBold}{FML}{futm}{m}{it}%
 \DeclareMathSymbol{\partialrm}{\mathord}{fourierNotBold}{130} % Upright partial derivative symbol, not bold
 \DeclareMathAlphabet{\mathsfit}{T1}{\sfdefault}{\mddefault}{\sldefault}
+% center title
 \usepackage{titling}
 \renewcommand\maketitlehooka{\null\mbox{}\vfill}
 \renewcommand\maketitlehookd{\vfill\null}
 
+% TOC formatting
+\usepackage{etoolbox}
+\makeatletter
+\pretocmd{\section}{\addtocontents{toc}{\protect\addvspace{14\p@}}}{}{}
+\pretocmd{\subsection}{\addtocontents{toc}{\protect\addvspace{6\p@}}}{}{}
+\pretocmd{\subsubsection}{\addtocontents{toc}{\protect\addvspace{4\p@}}}{}{}
+\makeatother
+\usepackage{tocloft}
+\cftsetrmarg{9em}% TOC right-margin (default is 2.55em)
 
 \begin{document}
 
@@ -73,7 +83,9 @@
 \phantomsection
 \setcounter{page}{2}
 \addcontentsline{toc}{section}{Contents}
+\hyphenchar\font=-1 % disable hyphen
 \tableofcontents
+\hyphenchar\font=`\- % reset hyphen
 
 \clearpage
 
