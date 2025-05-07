@@ -1,9 +1,9 @@
 \nomenclatureentry{010\( ct_0 \)@[{\( ct_0 \)}]\begingroup Proper time. The naught subscript almost always means the ``proper" version of a quantity---i.e., the quantity as measured in the relevant rest frame.\nomeqref {0}|nompageref}{7}
-\nomenclatureentry{020\( \dot{ \text{\underline{\hspace{.6em}}} } \)@[{\( \dot{ \text{\underline{\hspace{.6em}}} } \)}]\begingroup Overdot means derivative with respect to $ct$.\nomeqref {0}|nompageref}{7}
+\nomenclatureentry{020\( \dot{ \text{\underline{\hspace{.6em}}} } \)@[{\( \dot{ \text{\underline{\hspace{.6em}}} } \)}]\begingroup Overdot means derivative with respect to $ct$ (coordinate time).\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{030\( \mathring{ \text{\underline{\hspace{.6em}}} } \)@[{\( \mathring{ \text{\underline{\hspace{.6em}}} } \)}]\begingroup Over-circle means derivative with respect to $ct_0$ (proper time).\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{040\( \vv r \)@[{\( \vv r \)}]\begingroup Position vector.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{050\( \vv R \)@[{\( \vv R \)}]\begingroup Position four-vector (four-position).\nomeqref {0}|nompageref}{7}
-\nomenclatureentry{053\( \Delta \vv r \)@[{\( \Delta \vv r \)}]\begingroup Displacement or separation vector (``displacement" for something in motion, ``separation" for an abstract vector ``connecting" two points).\nomeqref {0}|nompageref}{7}
+\nomenclatureentry{053\( \Delta \vv r \)@[{\( \Delta \vv r \)}]\begingroup Displacement or separation vector (\emph{displacement} for something in motion, \emph{separation} for an abstract vector ``connecting" two points).\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{055\( \Delta \vv R \)@[{\( \Delta \vv R \)}]\begingroup Four-displacement or four-separation.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{057\( \Delta s \)@[{\( \Delta s \)}]\begingroup Spacetime interval $\sqrt{ (c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2 }$ (magnitude of $\Delta \vv R$).\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{060\( \vvbeta, \beta \)@[{\( \vvbeta, \beta \)}]\begingroup Normalized velocity $\dot{\vv r}$ and its magnitude.\nomeqref {0}|nompageref}{7}
@@ -25,7 +25,7 @@
 \nomenclatureentry{180\( \phi \)@[{\( \phi \)}]\begingroup Rapidity $\tanh^{-1} \beta$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{190\( \vvphi \)@[{\( \vvphi \)}]\begingroup Rapidity vector $\phi \hatbeta$ (where $\hatbeta = \vvbeta / \beta$).\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{200\( \varphi \)@[{\( \varphi \)}]\begingroup Longitudinal rapidity (signed rapidity along the axis of a Lorentz boost; e.g., a particle's $\tanh^{-1} \beta_x$ if the boost is along the $x$-axis).\nomeqref {0}|nompageref}{7}
-\nomenclatureentry{210\( \del \)@[{\( \del \)}]\begingroup Del $\big \langle \frac{\partial}{\partial x}, \, \frac{\partial}{\partial y}, \, \frac{\partial}{\partial z}  \big \rangle$.\nomeqref {0}|nompageref}{7}
+\nomenclatureentry{210\( \del \)@[{\( \del \)}]\begingroup Del operator $\big \langle \frac{\partial}{\partial x}, \, \frac{\partial}{\partial y}, \, \frac{\partial}{\partial z}  \big \rangle$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{215\( \nabla^2 \)@[{\( \nabla^2 \)}]\begingroup Laplacian $\del \cdot \del = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{220\( \partialup \)@[{\( \partialup \)}]\begingroup Four-del $\big \langle \frac{\partial}{\partial (ct)}, \, - \del \big \rangle = \big \langle \partial^{ct}, \, \partial^{x}, \, \partial^{y}, \, \partial^{z} \big \rangle$ (indices of four-vector components are always superscript; mind the signs here).\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{230\( \Box \)@[{\( \Box \)}]\begingroup D'Alembertian $\partialup \cdot \partialup = \frac{\partial^2}{\partial (ct)^2} - \frac{\partial^2}{\partial x^2} - \frac{\partial^2}{\partial y^2} - \frac{\partial^2}{\partial z^2}$.\nomeqref {0}|nompageref}{7}
@@ -41,14 +41,15 @@
 \nomenclatureentry{310\( u \)@[{\( u \)}]\begingroup Electromagnetic energy density $(e^2 + b^2)/2$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{320\( \vv s \)@[{\( \vv s \)}]\begingroup Poynting vector $\vv e \times \vv b$ (the flux density of electromagnetic energy, and also the electromagnetic momentum density).\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{330\( \otimes \)@[{\( \otimes \)}]\begingroup Symbol for the dyadic product (and the tensor product generally).\nomeqref {0}|nompageref}{7}
-\nomenclatureentry{340\( \inlinedy{\upiota} \)@[{\( \inlinedy{\upiota} \)}]\begingroup Euclidean unit dyadic.\nomeqref {0}|nompageref}{7}
+\nomenclatureentry{335\( I_n \)@[{\( I_n \)}]\begingroup $n$-by-$n$ identity matrix (e.g., $I_3 = \diag(1, 1, 1)$).\nomeqref {0}|nompageref}{7}
+\nomenclatureentry{340\( \inlinedy{\upiota} \)@[{\( \inlinedy{\upiota} \)}]\begingroup Euclidean unit dyadic, with Cartesian matrix-representation $I_3$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{350\( \inlinedy{\upsigma} \)@[{\( \inlinedy{\upsigma} \)}]\begingroup Maxwell stress tensor $u \mkern-4.5mu \inlinedy{\upiota} - \, \vv e \otimes \vv e - \vv b \otimes \vv b$ (the flux density of electromagnetic momentum).\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{360\( \vv K \)@[{\( \vv K \)}]\begingroup Four-wavevector.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{370\( \nu \)@[{\( \nu \)}]\begingroup Frequency.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{380\( \lambda \)@[{\( \lambda \)}]\begingroup Wavelength.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{390\( \wedge \)@[{\( \wedge \)}]\begingroup Wedge product for vectors: $\vv Q \wedge \vv W = \vv Q \otimes \vv W - \vv W \otimes \vv Q$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{400\( \inlinedy{\upeta} \)@[{\( \inlinedy{\upeta} \)}]\begingroup Minkowski metric dyadic (inverse/contravariant metric tensor).\nomeqref {0}|nompageref}{7}
-\nomenclatureentry{410\( \eta \)@[{\( \eta \)}]\begingroup Matrix representation of Minkowski metric, $[\inlinedy{\upeta}] = \diag(1, -1, -1, -1)$.\nomeqref {0}|nompageref}{7}
+\nomenclatureentry{410\( \eta \)@[{\( \eta \)}]\begingroup Matrix representation of Minkowski metric, $\diag(1, -1, -1, -1)$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{420\( \inlinedy{\mathsf{F}} \)@[{\( \inlinedy{\mathsf{F}} \)}]\begingroup Faraday tensor $\partialup \wedge \vv A$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{430\( \inlinedy{\mathsf{G}} \)@[{\( \inlinedy{\mathsf{G}} \)}]\begingroup Maxwell tensor $\star \inlinedy{\mathsf{F}}$ (Hodge dual of Faraday).\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{440\( {\inlinedy{\mathsf{T}}}_{\textrm{em}} \)@[{\( {\inlinedy{\mathsf{T}}}_{\textrm{em}} \)}]\begingroup Electromagnetic stress--energy tensor $( \inlinedy{\mathsf{F}} \cdot \inlinedy{\mathsf{F}} + \inlinedy{\mathsf{G}} \cdot \inlinedy{\mathsf{G}} )/2$.\nomeqref {0}|nompageref}{7}
