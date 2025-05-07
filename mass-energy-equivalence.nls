@@ -52,7 +52,7 @@
   \item [{\( \wedge \)}]\begingroup Wedge product for vectors: $\vv Q \wedge \vv W = \vv Q \otimes \vv W - \vv W \otimes \vv Q$.\nomeqref {0}\nompageref{7}
   \item [{\( \inlinedy{\upeta} \)}]\begingroup Minkowski metric dyadic (inverse/contravariant metric tensor).\nomeqref {0}\nompageref{7}
   \item [{\( \eta \)}]\begingroup Matrix representation of Minkowski metric, $[\inlinedy{\upeta}] = \diag(1, -1, -1, -1)$.\nomeqref {0}\nompageref{7}
-  \item [{\( \inlinedy{\mathsf{F}} \)}]\begingroup Faraday tensor $\partialup \otimes \vv A$.\nomeqref {0}\nompageref{7}
+  \item [{\( \inlinedy{\mathsf{F}} \)}]\begingroup Faraday tensor $\partialup \wedge \vv A$.\nomeqref {0}\nompageref{7}
   \item [{\( \inlinedy{\mathsf{G}} \)}]\begingroup Maxwell tensor $\star \inlinedy{\mathsf{F}}$ (Hodge dual of Faraday).\nomeqref {0}\nompageref{7}
   \item [{\( {\inlinedy{\mathsf{T}}}_{\textrm{em}} \)}]\begingroup Electromagnetic stress--energy tensor $( \inlinedy{\mathsf{F}} \cdot \inlinedy{\mathsf{F}} + \inlinedy{\mathsf{G}} \cdot \inlinedy{\mathsf{G}} )/2$.\nomeqref {0}\nompageref{7}
   \item [{\( \inlinedy{\mathsf{T}} \)}]\begingroup Total stress--energy tensor.\nomeqref {0}\nompageref{7}
