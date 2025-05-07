@@ -52,6 +52,7 @@
 \DeclareSymbolFont{fourierNotBold}{FML}{futm}{m}{it}%
 \DeclareMathSymbol{\partialrm}{\mathord}{fourierNotBold}{130} % Upright partial derivative symbol, not bold
 \DeclareMathAlphabet{\mathsfit}{T1}{\sfdefault}{\mddefault}{\sldefault}
+\DeclareMathOperator{\diag}{diag}
 % center title
 \usepackage{titling}
 \renewcommand\maketitlehooka{\null\mbox{}\vfill}
@@ -66,6 +67,13 @@
 \makeatother
 \usepackage{tocloft}
 \cftsetrmarg{9em}% TOC right-margin (default is 2.55em)
+
+\usepackage{nomencl}
+\makenomenclature
+
+\renewcommand{\nomname}{List of Symbols}
+
+\renewcommand{\nompreamble}{This list isn't comprehensive. The symbols are presented in a kind of ``logical" order, corresponding loosely with their order of appearance in the text.}
 
 \begin{document}
 
@@ -86,6 +94,73 @@
 \hyphenchar\font=-1 % disable hyphen
 \tableofcontents
 \hyphenchar\font=`\- % reset hyphen
+
+\clearpage
+
+\phantomsection
+\addcontentsline{toc}{section}{List of Symbols}
+
+\nomenclature[010]{\( ct_0 \)}{Proper time. The naught subscript almost always means the ``proper" version of a quantity---i.e., the quantity as measured in the relevant rest frame.}
+\nomenclature[020]{\( \dot{ \text{\underline{\hspace{.6em}}} } \)}{Overdot means derivative with respect to $ct$.}
+\nomenclature[030]{\( \mathring{ \text{\underline{\hspace{.6em}}} } \)}{Over-circle means derivative with respect to $ct_0$ (proper time).}
+\nomenclature[040]{\( \vv r \)}{Position vector.}
+\nomenclature[050]{\( \vv R \)}{Position four-vector (four-position).}
+\nomenclature[053]{\( \Delta \vv r \)}{Displacement or separation vector (``displacement" for something in motion, ``separation" for an abstract vector ``connecting" two points).}
+\nomenclature[055]{\( \Delta \vv R \)}{Four-displacement or four-separation.}
+\nomenclature[057]{\( \Delta s \)}{Spacetime interval $\sqrt{ (c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2 }$ (magnitude of $\Delta \vv R$).}
+\nomenclature[060]{\( \vvbeta, \beta \)}{Normalized velocity $\dot{\vv r}$ and its magnitude.}
+\nomenclature[070]{\( \vv B, B \)}{Normalized four-velocity $\mathring{\vv R}$ and its magnitude.}
+\nomenclature[080]{\( \vvzeta, \zeta \)}{``Normalized" acceleration $\dot{\vvbeta}$ and its magnitude.}
+\nomenclature[090]{\( \vv Z, Z \)}{``Normalized" four-acceleration $\mathring{\vv B}$ and its magnitude.}
+\nomenclature[095]{\( \gamma \)}{Lorentz factor $1 / \sqrt{1 - \beta^2}$.}
+\nomenclature[097]{\( \vvomega, \omega \)}{``Normalized" celerity $\mathring{\vv r} = \gamma \vvbeta$ and its magnitude.}
+\nomenclature[100]{\( E_0 \)}{Rest energy (proper energy). Equals zero when $\beta = 1$ (e.g., for light).}
+\nomenclature[110]{\( E \)}{Total energy. Equals $\gamma E_0$ when $E_0 > 0$.}
+\nomenclature[120]{\( E_{\mkern.5mu \textrm{k}} \)}{Kinetic energy $E - E_0$. Equals $E_0 (\gamma - 1)$ when $E_0 > 0$.}
+\nomenclature[130]{\( \mathcal{P} \)}{``Normalized" power $\dot{E}$.}
+\nomenclature[140]{\( \vv pc \)}{Momentum $E \vvbeta$. Equals $\gamma E_0 \vvbeta$ when $E_0 > 0$.}
+\nomenclature[150]{\( \vv P \)}{Four-momentum $\langle E, \mkern.5mu  \vv pc \rangle$. Equals $E_0 \vv B$ when $E_0 > 0$.}
+\nomenclature[160]{\( \vv f \)}{Force $\dot{\vv p}c$.}
+\nomenclature[170]{\( \vv F \)}{Four-force $\mathring{\vv P} = \gamma \langle \mathcal{P}, \mkern.5mu \vv f \rangle$.}
+\nomenclature[173]{\( \vv 0 \)}{Zero vector.}
+\nomenclature[179]{\( \textrm{\mbox{\boldmath$\emptyset$}} \)}{Zero four-vector.}
+\nomenclature[180]{\( \phi \)}{Rapidity $\tanh^{-1} \beta$.}
+\nomenclature[190]{\( \vvphi \)}{Rapidity vector $\phi \hatbeta$ (where $\hatbeta = \vvbeta / \beta$).}
+\nomenclature[200]{\( \varphi \)}{Longitudinal rapidity (signed rapidity along the axis of a Lorentz boost; e.g., a particle's $\tanh^{-1} \beta_x$ if the boost is along the $x$-axis).}
+\nomenclature[210]{\( \del \)}{Del $\big \langle \frac{\partial}{\partial x}, \, \frac{\partial}{\partial y}, \, \frac{\partial}{\partial z}  \big \rangle$.}
+\nomenclature[215]{\( \nabla^2 \)}{Laplacian $\del \cdot \del = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$.}
+\nomenclature[220]{\( \partialup \)}{Four-del $\big \langle \frac{\partial}{\partial (ct)}, \, - \del \big \rangle = \big \langle \partial^{ct}, \, \partial^{x}, \, \partial^{y}, \, \partial^{z} \big \rangle$ (indices of four-vector components are always superscript; mind the signs here).}
+\nomenclature[230]{\( \Box \)}{D'Alembertian $\partialup \cdot \partialup = \frac{\partial^2}{\partial (ct)^2} - \frac{\partial^2}{\partial x^2} - \frac{\partial^2}{\partial y^2} - \frac{\partial^2}{\partial z^2}$.}
+\nomenclature[240]{\( q \)}{Electric charge.}
+\nomenclature[250]{\( \rho \)}{Charge density.}
+\nomenclature[260]{\( \vv j \)}{``Normalized" current density (the flux density of charge).}
+\nomenclature[270]{\( \vv J \)}{``Normalized" four-current density $\langle \rho, \, \vv j \rangle$.}
+\nomenclature[280]{\( \vv A \)}{Four-potential $\langle A^{ct}, \, \vv a \rangle$.}
+\nomenclature[290]{\( \vv F_{\textbf{L}} \)}{Lorentz four-force.}
+\nomenclature[293]{\( \vv e \)}{Electric field $- \del A^{ct} - \partial^{ct} \vv a$.}
+\nomenclature[296]{\( \vv b \)}{Magnetic field $\del \times \vv a$.}
+\nomenclature[300]{\( \bm{\mathfrak{F}} \)}{Lorentz four-force density.}
+\nomenclature[310]{\( u \)}{Electromagnetic energy density $(e^2 + b^2)/2$.}
+\nomenclature[320]{\( \vv s \)}{Poynting vector $\vv e \times \vv b$ (the flux density of electromagnetic energy, and also the electromagnetic momentum density).}
+\nomenclature[330]{\( \otimes \)}{Symbol for the dyadic product (and the tensor product generally).}
+\nomenclature[340]{\( \inlinedy{\upiota} \)}{Euclidean unit dyadic.}
+\nomenclature[350]{\( \inlinedy{\upsigma} \)}{Maxwell stress tensor $u \mkern-4.5mu \inlinedy{\upiota} - \, \vv e \otimes \vv e - \vv b \otimes \vv b$ (the flux density of electromagnetic momentum).}
+\nomenclature[360]{\( \vv K \)}{Four-wavevector.}
+\nomenclature[370]{\( \nu \)}{Frequency.}
+\nomenclature[380]{\( \lambda \)}{Wavelength.}
+\nomenclature[390]{\( \wedge \)}{Wedge product for vectors: $\vv Q \wedge \vv W = \vv Q \otimes \vv W - \vv W \otimes \vv Q$.}
+\nomenclature[400]{\( \inlinedy{\upeta} \)}{Minkowski metric dyadic (inverse/contravariant metric tensor).}
+\nomenclature[410]{\( \eta \)}{Matrix representation of Minkowski metric, $[\inlinedy{\upeta}] = \diag(1, -1, -1, -1)$.}
+\nomenclature[420]{\( \inlinedy{\mathsf{F}} \)}{Faraday tensor $\partialup \otimes \vv A$.}
+\nomenclature[430]{\( \inlinedy{\mathsf{G}} \)}{Maxwell tensor $\star \inlinedy{\mathsf{F}}$ (Hodge dual of Faraday).}
+\nomenclature[440]{\( {\inlinedy{\mathsf{T}}}_{\textrm{em}} \)}{Electromagnetic stress--energy tensor $( \inlinedy{\mathsf{F}} \cdot \inlinedy{\mathsf{F}} + \inlinedy{\mathsf{G}} \cdot \inlinedy{\mathsf{G}} )/2$.}
+\nomenclature[450]{\( \inlinedy{\mathsf{T}} \)}{Total stress--energy tensor.}
+\nomenclature[460]{\( \vv l \)}{Angular momentum $\vv r \times \vv pc$.}
+\nomenclature[470]{\( \inlinedy{\mathsf{L}} \)}{Angular-momentum four-dyadic $\vv R \wedge \vv P$.}
+\nomenclature[480]{\( \inlinedy{\mathsf{0}} \)}{Zero four-dyadic.}
+
+
+\printnomenclature
 
 \clearpage
 
@@ -350,7 +425,7 @@ When $\Delta x^{\prime} = 0$ in Equations \ref{eq:lt2}, the expression for time 
 To derive length contraction, we'll use time dilation.\footnote{If one instead uses the Lorentz transformation directly, one must remember that length is the distance between an object's endpoints \emph{at a single moment in coordinate time}. So in a given inertial frame, an observer measures the spatial separation of two \emph{simultaneous} events---one located at each of the object's endpoints.} Say a ruler has length $L_0$ in its rest frame (this is its \textbf{proper length}), and that a clock moving at speed $\beta$ relative to the ruler traverses its length in a time $c \mkern.5mu \Delta t$ (the ruler's rest frame is unprimed). We then have $\beta = L_0 / (c \mkern.5mu \Delta t)$. In the clock's (primed) rest frame, the entire length of the ruler $L^\prime$ passes the clock's location in a time $c \mkern.5mu \Delta t^\prime$, giving $\beta = L^\prime / (c \mkern.5mu \Delta t^\prime)$. Now we've got two expressions for the relative speed $\beta$. Put them together: $L_0 = L^\prime \mkern2mu c \mkern.5mu \Delta t / (c \mkern.5mu \Delta t^\prime) = \gamma L^\prime$ (by time dilation).\footnote{Be sure you understand how time dilation applies here. The clock is the inertial ``traveler" present at both events (the events being ``clock and one end of ruler coincide" and ``clock and other end of ruler coincide"); in the clock's rest frame (\emph{but not the ruler's}), these two events occur at the same spatial position.} So an object's length when moving is shorter than its proper length by a factor of $\gamma$. Note that an object's \emph{volume} when moving is likewise scaled down from its ``proper volume" by a factor of $\gamma$, since only the length along the axis of relative motion is contracted.
 
 
-\subsubsection{More on the Spacetime Interval}
+\subsubsection{More on the Spacetime Interval}\label{sssec:sti2}
 Before moving on, we'll say a few more things about the spacetime interval $\Delta s = [(c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2]^{1/2}$. First, let's confirm that the Lorentz transformation keeps it invariant (if it doesn't, then we made a mistake when deriving the Lorentz transformation from the interval's invariance!). In standard configuration, we can ignore the $y$ and $z$ coordinates without sacrificing generality:
 \begin{equation*}
 (c \mkern.5mu \Delta t^{\prime})^2 - (\Delta x^{\prime})^2 = \big[ \gamma \left( c \mkern.5mu \Delta t - \beta \Delta x \right) \big] ^2 - \big[ \gamma \left( \Delta x - \beta \mkern1mu c \mkern.5mu \Delta t \right) \big]^2 ,
@@ -941,7 +1016,7 @@ And defining a dot-product for four-vectors, we have $\dd \vv R$'s magnitude:
 &= \dd s,
 \end{split}
 \end{equation*}
-the invariant interval (timelike, but let's allow lightlike too). We already knew that, but now we see explicitly that the dot product of two four-vectors differs from the dot product of two three-vectors by the signs of the products of the components: instead of ($+$$+$$+$), we have ($+$$-$$-$$-$), with the product of the time components in first position.\footnote{\label{fn:sc}It works just as well to use the convention ($-$$+$$+$$+$), or even to multiply the time component by the imaginary unit $\mathrm{i}$ and use ($+$$+$$+$$+$).} Why? Because of the equation for the spacetime interval (Equation \ref{eq:24}). That's just how it is in our \textbf{Minkowski spacetime}.\footnote{The mathematician Hermann Minkowski developed the geometric approach to special relativity we're exploring. He used the ($+$$+$$+$$+$) convention mentioned in the previous footnote, by the way, but it's fallen out of favor (it causes problems in \emph{general} relativity).} For constant velocity, we can of course use a finite four-displacement $\Delta \vv R = \langle c \mkern.5mu \Delta t, \Delta \vv r \rangle$.\footnote{\label{fn:sp}We can speak more abstractly of a \textbf{four-separation} $\Delta \vv R = \langle c \mkern.5mu \Delta t, \Delta \vv r \rangle$ that ``points" from one event to another. They needn't be on a traveler's world line, and the ``from" event needn't be chronologically earlier than the ``to" event. Indeed, the events may be spacelike-separated, in which case they don't even \emph{have} a fixed chronological order, and the vector's magnitude is then a \emph{spacelike} interval (times $\mathrm{i}$---see Section \ref{sssec:td}).}
+the invariant interval (timelike, but let's allow lightlike too). We already knew that, but now we see explicitly that the dot product of two four-vectors differs from the dot product of two three-vectors by the signs of the products of the components: instead of ($+$$+$$+$), we have ($+$$-$$-$$-$), with the product of the time components in first position.\footnote{\label{fn:sc}It works just as well to use the convention ($-$$+$$+$$+$), or even to multiply the time component by the imaginary unit $\mathrm{i}$ and use ($+$$+$$+$$+$).} Why? Because of the equation for the spacetime interval (Equation \ref{eq:24}). That's just how it is in our \textbf{Minkowski spacetime}.\footnote{The mathematician Hermann Minkowski developed the geometric approach to special relativity we're exploring. He used the ($+$$+$$+$$+$) convention mentioned in the previous footnote, by the way, but it's fallen out of favor (it causes problems in \emph{general} relativity).} For constant velocity, we can of course use a finite four-displacement $\Delta \vv R = \langle c \mkern.5mu \Delta t, \Delta \vv r \rangle$.\footnote{\label{fn:sp}We can speak more abstractly of a \textbf{four-separation} $\Delta \vv R = \langle c \mkern.5mu \Delta t, \Delta \vv r \rangle$ that ``points" from one event to another. They needn't be on a traveler's world line, and the ``from" event needn't be chronologically earlier than the ``to" event. Indeed, the events may be spacelike-separated, in which case they don't even \emph{have} a fixed chronological order, and the vector's magnitude is then a \emph{spacelike} interval (an imaginary number---see Section \ref{sssec:sti2}).}
 
 You may be wondering if our new \textbf{Minkowski dot product} has a geometric definition like the Euclidean dot product does ($\vv q \cdot \vv w = qw \cos \theta$). The answer is a qualified yes: for \emph{qualifying} four-vectors $\vv Q$ and $\vv W$, the analogous relation is $\vv Q \cdot \vv W = QW \cosh \phi$. Here we have the hyperbolic cosine function and its argument $\phi$, which in this context can be thought of as the \emph{hyperbolic angle} between $\vv Q$ and $\vv W$ (itself a concept that needs qualifying). We'll forgo the details until Section \ref{ssec:ra}. For now, it's enough to know that in Minkowski spacetime, \textbf{orthogonal vectors} remain those whose dot product with each other is zero, and \textbf{parallel vectors} remain those that are scalar multiples of each other (\textbf{codirectional} if the scalar is positive, \textbf{contradirectional} if it's negative).\footnote{The words \emph{parallel} and \emph{antiparallel} are often used instead of \emph{codirectional} and \emph{contradirectional}, but then there's no word left to mean ``codirectional or contradirectional." For us, \emph{parallel} means ``codirectional or contradirectional" and gets the symbol $\parallel$. So if $\vv Q \parallel \vv W$, then $\vv Q$ and $\vv W$ are either codirectional or contradirectional. (Same for three-vectors.)}
 
@@ -1208,7 +1283,7 @@ We see now that the magnitude $Z$ of the four-acceleration \emph{must} contain t
 
 That warrants some fleshing out.
 
-The $\mathrm{i}$ is physically meaningless, an artifact of the ($+$$-$$-$$-$) sign convention we've adopted (see Footnote \ref{fn:sc}). What's physically meaningful is that four-acceleration has something in common with spacelike intervals---namely, the sign of its squared magnitude (negative for us). Likewise, the squared magnitude of the four-velocity (Equation \ref{eq:31}) is \emph{positive} under our sign convention, which is the distinguishing characteristic of \emph{timelike} intervals. And the squared magnitude of the four-displacement (Equation \ref{eq:30}) or the four-momentum (Equation \ref{eq:32}) can be either positive ($\beta < 1$) or zero ($\beta = 1$), like a timelike or lightlike interval.\footnote{The magnitude of a four-displacement \emph{is} a spacetime interval! More broadly, the magnitude of a four-\emph{separation} is a spacetime interval (times $\mathrm{i}$ if the interval is spacelike)---see Footnote \ref{fn:sp}.} A way of classifying four-vectors suggests itself:
+The $\mathrm{i}$ is physically meaningless, an artifact of the ($+$$-$$-$$-$) sign convention we've adopted (see Footnote \ref{fn:sc}). What's physically meaningful is that four-acceleration has something in common with spacelike intervals---namely, the sign of its squared magnitude (negative for us). Likewise, the squared magnitude of the four-velocity (Equation \ref{eq:31}) is \emph{positive} under our sign convention, which is the distinguishing characteristic of \emph{timelike} intervals. And the squared magnitude of the four-displacement (Equation \ref{eq:30}) or the four-momentum (Equation \ref{eq:32}) can be either positive ($\beta < 1$) or zero ($\beta = 1$), like a timelike or lightlike interval.\footnote{The magnitude of a four-displacement \emph{is} a spacetime interval! More broadly, the magnitude of a four-\emph{separation} is a spacetime interval (an imaginary number if the interval is spacelike)---see Footnote \ref{fn:sp}.} A way of classifying four-vectors suggests itself:
 \begin{itemize}
 \item A four-vector is spacelike if the magnitude of its spatial three-vector component is greater than the absolute value of its time component.
 \item A four-vector is timelike if the opposite is true.
@@ -1371,7 +1446,7 @@ Equations \ref{eq:48} and \ref{eq:49} are nice! Perhaps the matrices $\mathcal{E
 
 \subsection{Lorentz Transformation Revisited}
 
-We've spent a lot of time on invariant ``proper" quantities that allow observers to figure out what's happening in a traveler's (instantaneous) rest frame. That was time well spent, but what if an observer is less interested in a traveler's rest frame than in some other observer's measurements of the traveler's observables? Or what if there isn't a traveler at all, and an observer just wants to know what the components of some four-vector are in someone else's rest frame?\footnote{Most of the four-vectors we've considered pertain directly to something that's moving, but that's not a requirement. For instance, we're free to construct a four-separation that ``connects" a pair of spacelike-separated events and whose magnitude is the spacetime interval between them (times $\mathrm{i}$)---see Footnote \ref{fn:sp}.}
+We've spent a lot of time on invariant ``proper" quantities that allow observers to figure out what's happening in a traveler's (instantaneous) rest frame. That was time well spent, but what if an observer is less interested in a traveler's rest frame than in some other observer's measurements of the traveler's observables? Or what if there isn't a traveler at all, and an observer just wants to know what the components of some four-vector are in someone else's rest frame?\footnote{Most of the four-vectors we've considered pertain directly to something that's moving, but that's not a requirement. For instance, we're free to construct a four-separation that ``connects" a pair of spacelike-separated events and whose magnitude is the spacetime interval between them (an imaginary number in this case)---see Footnote \ref{fn:sp}.}
 
 We already have the answer: four-vector components obey the Lorentz transformation. Let's now focus on this for a bit. We'll stick with standard-configuration Lorentz boosts. Matrix notation served us well at the end of the previous section, and as we apply the Lorentz transformation to four-vectors we'll find it convenient to use matrix notation once again.
 
