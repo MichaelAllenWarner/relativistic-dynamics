@@ -2028,7 +2028,7 @@ where we set $(1 - \beta)^2 \approx 0$, leaving:
 \end{equation}
 Equation \ref{eq:ug} is convenient if you know $\gamma$. Equation \ref{eq:ub} ($=$ Equation \ref{eq:ur}) is good if you know $E_0$ and $p c$. If you know the rapidity, take your pick.
 
-That was a productive diversion, but we don't need any of it for the pseudorapidity. The pseudorapidity is what the longitudinal rapidity $\varphi$ becomes---er, what the particle physicist's ``rapidity" $y$ becomes---when we set $\beta \approx 1$:
+That was a productive digression, but we don't need any of it for the pseudorapidity. The pseudorapidity is what the longitudinal rapidity $\varphi$ becomes---er, what the particle physicist's ``rapidity" $y$ becomes---when we set $\beta \approx 1$:
 \begin{equation*}
 \begin{aligned}
 y \equiv \varphi &= \tanh^{-1} \beta_z \\
@@ -2111,11 +2111,11 @@ Next, $\gamma$ and $\beta_x$ in terms of $\phi_x$:
 \end{equation*}
 Alternatively, we can use the identity $\cosh{(\sinh^{-1} q) = \sqrt{1 + q^2}}$ (or Equation \ref{eq:25}) to write the Lorentz factor like this:
 \begin{equation*}
-\gamma (ct) = \sqrt{1 + \omega^2_x (ct)} ,
+\gamma (ct) = \sqrt{1 + \omega^2_x} \, ,
 \end{equation*}
 and we can use $\beta_x = \omega_x / \gamma$ or the identity $\tanh{(\sinh^{-1} q)} = q / \sqrt{1 + q^2}$ to write $\beta_x$ like this:
 \begin{equation*}
-\beta_x (ct) = \dfrac{\omega_x (ct)}{\sqrt{1 + \omega^2_x (ct)}} .
+\beta_x (ct) = \dfrac{\omega_x}{\sqrt{1 + \omega^2_x}} \, .
 \end{equation*}
 As for position, $\vv r (ct) = \langle x (ct) , y_{\mkern1mu \mathrm{i}}, z_{\mkern1mu \mathrm{i}} \rangle$, and we integrate the above equation for $\beta_x = \dot{x}$ to find $x$:
 \begin{equation*}
@@ -2130,7 +2130,7 @@ x (ct) - x_{\mathrm{i}} &= \dfrac{1}{2 \zeta_{0 \mkern2mu x}} \int_{ct = 0}^{ct 
 \end{equation*}
 (division by a vector is illegal---this is why we switched to component notation). But $\gamma = \sqrt{1 + \omega^2_x}$, so that's:
 \begin{equation}\label{eq:x}
-x (ct) = x_{\mathrm{i}} + \dfrac{ \gamma (ct) - \gamma_{\mkern1mu \mathrm{i}} }{ \zeta_{0 \mkern2mu x}} \qquad \textrm{\footnotesize{ (for constant $\vvzeta_{\mkern1mu 0} = \langle \zeta_{0 \mkern1mu x} , 0, 0 \rangle$ and $\vvzeta \parallel \vvbeta$)}}.
+x (ct) = x_{\mathrm{i}} + \dfrac{ \gamma - \gamma_{\mkern1mu \mathrm{i}} }{ \zeta_{0 \mkern2mu x}} \qquad \textrm{\footnotesize{ (for constant $\vvzeta_{\mkern1mu 0} = \langle \zeta_{0 \mkern1mu x} , 0, 0 \rangle$ and $\vvzeta \parallel \vvbeta$)}}.
 \end{equation}
 
 We can also express the accelerating traveler's \emph{proper time} as a function of the inertial observer's coordinate time. By time dilation and $\gamma = \sqrt{1 + \omega^2_x}$:
@@ -2142,15 +2142,15 @@ We can also express the accelerating traveler's \emph{proper time} as a function
 \end{equation*}
 ($ct_{0 \mkern2mu \mathrm{i}} = ct_0 (ct = 0)$ need not be zero!). Use $\dd \omega_x = \zeta_{0 \mkern2mu x} \, c \, \dd t$ (Equation \ref{eq:ce}):
 \begin{equation*}
-ct_0 (ct) - ct_{0 \mkern2mu \mathrm{i}} = \dfrac{1}{\zeta_{0 \mkern2mu x}} \int^{\omega_x}_{\omega_{x \mkern1mu \textrm{i} }} \dfrac{\dd \omega_x}{\sqrt{1 + \omega^2_x}},
+ct_0 (ct) - ct_{0 \mkern2mu \mathrm{i}} = \dfrac{1}{\zeta_{0 \mkern2mu x}} \int^{\omega_x}_{\omega_{x \mkern1mu \textrm{i} }} \dfrac{\dd \omega_x}{\sqrt{1 + \omega^2_x}} \, ,
 \end{equation*}
 and since $1/\sqrt{1 + q^2}$ is the derivative of $\sinh^{-1} q$:
 \begin{equation*}
-ct_0 (ct) = ct_{0 \mkern2mu \mathrm{i}} + \dfrac{\sinh^{-1} \omega_x (ct) - \sinh^{-1} \omega_{x \mkern2mu \textrm{i} }}{ \zeta_{0 \mkern2mu x}},
+ct_0 (ct) = ct_{0 \mkern2mu \mathrm{i}} + \dfrac{\sinh^{-1} \omega_x - \sinh^{-1} \omega_{x \mkern2mu \textrm{i} }}{ \zeta_{0 \mkern2mu x}} \, ,
 \end{equation*}
 or:
 \begin{equation}\label{eq:pt}
-ct_0 (ct) = ct_{0 \mkern2mu \mathrm{i}} + \dfrac{ \phi_x (ct) - \phi_{x \mkern2mu \mathrm{i} }}{ \zeta_{0 \mkern2mu x}}  \qquad \textrm{\footnotesize{ (for constant $\vvzeta_{\mkern1mu 0} = \langle \zeta_{0 \mkern1mu x} , 0, 0 \rangle$ and $\vvzeta \parallel \vvbeta$)}}.
+ct_0 (ct) = ct_{0 \mkern2mu \mathrm{i}} + \dfrac{ \phi_x - \phi_{x \mkern2mu \mathrm{i} }}{ \zeta_{0 \mkern2mu x}}  \qquad \textrm{\footnotesize{ (for constant $\vvzeta_{\mkern1mu 0} = \langle \zeta_{0 \mkern1mu x} , 0, 0 \rangle$ and $\vvzeta \parallel \vvbeta$)}}.
 \end{equation}
 
 
@@ -2161,27 +2161,27 @@ To sum up, for constant $\vvzeta_{\mkern1mu 0} = \langle \zeta_{0 \mkern2mu x} ,
 and the kinematic functions of $ct$ we built on it are:
 \begin{equation*}
 \begin{aligned}
-\phi_x (ct) &= \sinh^{-1} \omega_x (ct) , \\[5pt]
-\gamma (ct) &= \cosh \phi_x(ct) = \sqrt{1 + \omega^2_x (ct)} , \\[3pt]
-\beta_x (ct) &= \tanh \phi_x(ct) = \dfrac{\omega_x (ct)}{\sqrt{1 + \omega^2_x (ct)}}
+\phi_x (ct) &= \sinh^{-1} \omega_x , \\[5pt]
+\gamma (ct) &= \cosh \phi_x = \sqrt{1 + \omega^2_x} \, , \\[3pt]
+\beta_x (ct) &= \tanh \phi_x = \dfrac{\omega_x}{\sqrt{1 + \omega^2_x }}
 \end{aligned}
 \end{equation*}
 (from relations we already knew), and the new Equations \ref{eq:x} and \ref{eq:pt} (specific to the given conditions):
 \begin{equation*}
 \begin{aligned}
-x (ct) &= x_{\mathrm{i}} + \dfrac{ \gamma (ct) - \gamma_{\mkern1mu \mathrm{i}} }{ \zeta_{0 \mkern2mu x}} \\[5pt]
-ct_0 (ct) &= ct_{0 \mkern2mu \mathrm{i}} + \dfrac{ \phi_x (ct) - \phi_{x \mkern2mu \mathrm{i} }}{ \zeta_{0 \mkern2mu x}} .
+x (ct) &= x_{\mathrm{i}} + \dfrac{ \gamma - \gamma_{\mkern1mu \mathrm{i}} }{ \zeta_{0 \mkern2mu x}} \\[5pt]
+ct_0 (ct) &= ct_{0 \mkern2mu \mathrm{i}} + \dfrac{ \phi_x - \phi_{x \mkern2mu \mathrm{i} }}{ \zeta_{0 \mkern2mu x}} .
 \end{aligned}
 \end{equation*}
-``Ideal" initial conditions for Equations \ref{eq:x} and \ref{eq:pt} are of course $x_{\mathrm{i}} = \gamma_{\mkern1mu \mathrm{i}} / \zeta_{0 \mkern2mu x}$ and $ct_{0 \mkern2mu \mathrm{i}} = \phi_{x \mkern2mu \mathrm{i} } / \zeta_{0 \mkern2mu x}$, leaving $x = \gamma / \zeta_{0 \mkern2mu x}$ and $ct_0 = \phi_x / \zeta_{0 \mkern2mu x}$. For the whole set of equations, the ``ideal" initial condition is $\omega_{\mkern1mu \textrm{i}} = 0$, so that every $\omega_x (ct)$ can be replaced with $\zeta_{0 \mkern2mu x} \mkern2mu ct$.\footnote{Note that if all three conditions are met, then $ct_{0 \mkern2mu \mathrm{i}} = 0$ but $x_{\mathrm{i}} = 1 / \zeta_{0 \mkern1mu x}$ [$\neq 0$].} Also, if our $x$-components are all non-negative, then we can replace them with their corresponding vector magnitudes (drop the $x$ subscripts). The exception is $x(ct)$ itself---we can't replace it with $r(ct)$ because $\vv r$ has its tail at the origin, and we haven't required that the (constant) $y$- and $z$-coordinates be zero. Putting that all together, ``ideally":
+``Ideal" initial conditions for Equations \ref{eq:x} and \ref{eq:pt} are of course $x_{\mathrm{i}} = \gamma_{\mkern1mu \mathrm{i}} / \zeta_{0 \mkern2mu x}$ and $ct_{0 \mkern2mu \mathrm{i}} = \phi_{x \mkern2mu \mathrm{i} } / \zeta_{0 \mkern2mu x}$, leaving $x = \gamma / \zeta_{0 \mkern2mu x}$ and $ct_0 = \phi_x / \zeta_{0 \mkern2mu x}$. For the whole set of equations, the ``ideal" initial condition is $\omega_{\mkern1mu \textrm{i}} = 0$, so that every $\omega_x = \omega_x (ct)$ can be replaced with $\zeta_{0 \mkern2mu x} \mkern2mu ct$.\footnote{Note that if all three conditions are met, then $ct_{0 \mkern2mu \mathrm{i}} = 0$ but $x_{\mathrm{i}} = 1 / \zeta_{0 \mkern1mu x}$ [$\neq 0$].} Also, if our $x$-components are all non-negative, then we can replace them with their corresponding vector magnitudes (drop the $x$ subscripts). The exception is $x(ct)$ itself---we can't replace it with $r(ct)$ because $\vv r$ has its tail at the origin, and we haven't required that the (constant) $y$- and $z$-coordinates be zero. Putting that all together, ``ideally":
 \begin{equation*}
 \begin{aligned}
 \omega (ct) &= \zeta_0 \mkern2mu ct \\[3pt]
 \phi (ct) &= \sinh^{-1} \big( \zeta_0 \mkern2mu ct \big) \\[5pt]
 \gamma (ct) &= \sqrt{1 + \big( \zeta_0 \mkern2mu ct \big)^2} \\[5pt]
 \beta (ct) &= \dfrac{\zeta_0 \mkern2mu ct}{\sqrt{1 + \big( \zeta_0 \mkern2mu ct \big)^2}} \\[5pt]
-x (ct) &= \dfrac{ \gamma (ct) }{ \zeta_0} = \dfrac{\sqrt{1 + \big( \zeta_0 \mkern2mu ct \big)^2}}{ \zeta_0} \\[5pt]
-ct_0 (ct) &= \dfrac{ \phi (ct) }{ \zeta_0} = \dfrac{\sinh^{-1} \big( \zeta_0 \mkern2mu ct \big)}{ \zeta_0}.
+x (ct) &= \dfrac{ \gamma }{ \zeta_0} = \dfrac{\sqrt{1 + \big( \zeta_0 \mkern2mu ct \big)^2}}{ \zeta_0} \\[5pt]
+ct_0 (ct) &= \dfrac{ \phi }{ \zeta_0} = \dfrac{\sinh^{-1} \big( \zeta_0 \mkern2mu ct \big)}{ \zeta_0}.
 \end{aligned}
 \end{equation*}
 
@@ -2220,7 +2220,7 @@ x(ct_0) - x_{\mathrm{i}} &= \dfrac{1}{\zeta_{0 \mkern2mu x}} \int^{\phi_x}_{\phi
 \end{equation*}
 (by Equation \ref{eq:ra}). Since $\sinh{q}$ is the derivative of $\cosh{q}$, that's:
 \begin{equation}\label{eq:x2}
-x(ct_0) = x_{\mathrm{i}} + \dfrac{\gamma(ct_0) - \gamma_{\mkern1mu \mathrm{i}}}{ \zeta_{0 \mkern2mu x}} \qquad \textrm{\footnotesize{ (for constant $\vvzeta_{\mkern1mu 0} = \langle \zeta_{0 \mkern1mu x} , 0, 0 \rangle$ and $\vvzeta \parallel \vvbeta$)}}
+x(ct_0) = x_{\mathrm{i}} + \dfrac{\gamma - \gamma_{\mkern1mu \mathrm{i}}}{ \zeta_{0 \mkern2mu x}} \qquad \textrm{\footnotesize{ (for constant $\vvzeta_{\mkern1mu 0} = \langle \zeta_{0 \mkern1mu x} , 0, 0 \rangle$ and $\vvzeta \parallel \vvbeta$)}}
 \end{equation}
 ($\gamma = \cosh{\phi_x}$). Last, we can express our inertial observer's coordinate time as a function of our accelerating traveler's proper time. By time dilation and Equation \ref{eq:ra}:
 \begin{equation*}
@@ -2231,7 +2231,7 @@ x(ct_0) = x_{\mathrm{i}} + \dfrac{\gamma(ct_0) - \gamma_{\mkern1mu \mathrm{i}}}{
 \end{equation*}
 ($ct_{\mathrm{i}} = ct (ct_0 = 0)$ need not be zero). Since $\cosh q$ is the derivative of $\sinh q$:
 \begin{equation}\label{eq:ct}
-ct(ct_0) = ct_{\mathrm{i}} + \dfrac{\omega_x (ct_0) - \omega_{x \mkern2mu \textrm{i} }}{ \zeta_{0 \mkern2mu x}} \qquad \textrm{\footnotesize{ (for constant $\vvzeta_{\mkern1mu 0} = \langle \zeta_{0 \mkern1mu x} , 0, 0 \rangle$ and $\vvzeta \parallel \vvbeta$)}}
+ct(ct_0) = ct_{\mathrm{i}} + \dfrac{\omega_x - \omega_{x \mkern2mu \textrm{i} }}{ \zeta_{0 \mkern2mu x}} \qquad \textrm{\footnotesize{ (for constant $\vvzeta_{\mkern1mu 0} = \langle \zeta_{0 \mkern1mu x} , 0, 0 \rangle$ and $\vvzeta \parallel \vvbeta$)}}
 \end{equation}
 ($\omega_x = \sinh{\phi_x}$).
 
@@ -2242,16 +2242,16 @@ To recap, for constant $\vvzeta_{\mkern1mu 0} = \langle \zeta_{0 \mkern2mu x} , 
 and the kinematic functions of $ct_0$ we built on it are:
 \begin{equation*}
 \begin{aligned}
-\gamma (ct_0) &= \cosh{\phi_x (ct_0)}  , \\[3pt]
-\beta_x (ct_0) &= \tanh{\phi_x (ct_0)}  , \\[3pt]
-\omega_x (ct_0) &= \sinh{\phi_x (ct_0)} 
+\gamma (ct_0) &= \cosh{\phi_x }  , \\[3pt]
+\beta_x (ct_0) &= \tanh{\phi_x }  , \\[3pt]
+\omega_x (ct_0) &= \sinh{\phi_x } 
 \end{aligned}
 \end{equation*}
 (from relations we already knew), and the new Equations \ref{eq:x2} and \ref{eq:ct} (specific to the given conditions):
 \begin{equation*}
 \begin{aligned}
-x(ct_0) &= x_{\mathrm{i}} + \dfrac{\gamma(ct_0) - \gamma_{\mkern1mu \mathrm{i}}}{ \zeta_{0 \mkern2mu x}} \\[5pt]
-ct(ct_0) &= ct_{\mathrm{i}} + \dfrac{\omega_x (ct_0) - \omega_{x \mkern2mu \textrm{i} }}{ \zeta_{0 \mkern2mu x}} .
+x(ct_0) &= x_{\mathrm{i}} + \dfrac{\gamma - \gamma_{\mkern1mu \mathrm{i}}}{ \zeta_{0 \mkern2mu x}} \\[5pt]
+ct(ct_0) &= ct_{\mathrm{i}} + \dfrac{\omega_x - \omega_{x \mkern2mu \textrm{i} }}{ \zeta_{0 \mkern2mu x}} .
 \end{aligned}
 \end{equation*}
 They're a tad sleeker than their coordinate-time counterparts, as there's no $\sinh^{-1}$ function playing middleman here. ``Ideal" initial conditions for Equations \ref{eq:x2} and \ref{eq:ct} are $x_{\mathrm{i}} = \gamma_{\mkern1mu \mathrm{i}} / \zeta_{0 \mkern2mu x}$ and $ct_{\mathrm{i}} = \omega_{x \mkern2mu \textrm{i} } / \zeta_{0 \mkern2mu x}$, leaving $x = \gamma / \zeta_{0 \mkern2mu x}$ and $ct = \omega_x / \zeta_{0 \mkern2mu x}$. If also the initial rapidity is zero, then $\phi_x (ct_0) = \zeta_{0 \mkern2mu x} \mkern2mu ct_0$, $ct_{\mathrm{i}} = 0$, and $x_{\mathrm{i}} = 1 / \zeta_{0 \mkern2mu x}$, and the initial values in this section (at $ct_0 = 0$) \emph{are} equivalent to the corresponding initial values in the previous section (at $ct = 0$). Finally, if all $x$-components are non-negative, then we can replace them with the appropriate vector magnitudes (except for $x (ct_0)$ itself, since the $y$- and $z$-coordinates---though constant---might not be zero, and $\vv r$ has its tail at the origin). So the ``ideal" versions of our proper-time functions are:
@@ -2261,8 +2261,8 @@ They're a tad sleeker than their coordinate-time counterparts, as there's no $\s
 \gamma (ct_0) &= \cosh \big( \zeta_0 \mkern2mu ct_0 \big) \\[3pt]
 \beta (ct_0) &= \tanh \big( \zeta_0 \mkern2mu ct_0 \big) \\[3pt]
 \omega (ct_0) &= \sinh \big( \zeta_0 \mkern2mu ct_0 \big) \\[3pt]
-x(ct_0) &= \dfrac{\gamma(ct_0)}{ \zeta_0 } = \dfrac{\cosh \big( \zeta_0 \mkern2mu ct_0 \big)}{ \zeta_0 } \\[5pt]
-ct(ct_0) &= \dfrac{\omega (ct_0) }{ \zeta_0} = \dfrac{\sinh \big( \zeta_0 \mkern2mu ct_0 \big)}{ \zeta_0 }.
+x(ct_0) &= \dfrac{\gamma}{ \zeta_0 } = \dfrac{\cosh \big( \zeta_0 \mkern2mu ct_0 \big)}{ \zeta_0 } \\[5pt]
+ct(ct_0) &= \dfrac{\omega}{ \zeta_0} = \dfrac{\sinh \big( \zeta_0 \mkern2mu ct_0 \big)}{ \zeta_0 }.
 \end{aligned}
 \end{equation*}
 
@@ -2274,7 +2274,7 @@ The rectilinear motion with constant proper acceleration we've been studying goe
 
 Start with Equations \ref{eq:x2} and \ref{eq:ct}, and rearrange them:
 \begin{equation*}
-x(ct_0) - \left( x_{\mathrm{i}} - \dfrac{\gamma_{\mkern1mu \mathrm{i}}}{ \zeta_{0 \mkern2mu x}} \right) = \dfrac{\gamma(ct_0) }{ \zeta_{0 \mkern2mu x}} \qquad \qquad  ct(ct_0) - \left( ct_{\mathrm{i}} - \dfrac{\omega_{x \mkern2mu \textrm{i} }}{ \zeta_{0 \mkern2mu x}} \right) = \dfrac{\omega_x (ct_0) }{ \zeta_{0 \mkern2mu x}} .
+x(ct_0) - \left( x_{\mathrm{i}} - \dfrac{\gamma_{\mkern1mu \mathrm{i}}}{ \zeta_{0 \mkern2mu x}} \right) = \dfrac{\gamma }{ \zeta_{0 \mkern2mu x}} \qquad \qquad  ct(ct_0) - \left( ct_{\mathrm{i}} - \dfrac{\omega_{x \mkern2mu \textrm{i} }}{ \zeta_{0 \mkern2mu x}} \right) = \dfrac{\omega_x }{ \zeta_{0 \mkern2mu x}} .
 \end{equation*}
 The right sides of these expressions stand out: by Equation \ref{eq:25}, we know that the square of the first minus the square of the second is just $1 / \zeta^2_{0 \mkern2mu x}$, so we can eliminate two variables by squaring and subtracting our equations. Here:
 \begin{equation}\label{eq:hm}
@@ -2306,15 +2306,15 @@ There are some intriguing consequences to all this. First, notice that Equation 
 \begin{equation*}
 (\Delta s)^2 = (c \mkern.5mu \Delta t)^2 - (\Delta x)^2 = - \dfrac{1}{ \zeta^2_{0 \mkern2mu x}},
 \end{equation*}
-where $c \mkern.5mu \Delta t = ct(ct_0) - (ct_{\mathrm{i}} - \omega_{x \mkern2mu \textrm{i} } / \zeta_{0 \mkern2mu x})$ and $\Delta x = x(ct_0) - (x_{\mathrm{i}} - \gamma_{\mkern1mu \mathrm{i}} / \zeta_{0 \mkern2mu x})$ are the differences in the time and space coordinates of the events (again, as measured in any of the infinitely many inertial frames for which the traveler's $y$ and $z$ coordinates don't change). This interval is spacelike, since its square is negative, and it's also constant. The invariant $\Delta s / \mathrm{i} = |1 / \zeta_{0 \mkern2mu x}|$ is therefore the proper distance between the center event and \emph{every event on the traveler's world line}! What's more, $ct(ct_0) = ct_{\mathrm{i}} - \omega_{x \mkern2mu \textrm{i} } / \zeta_{0 \mkern2mu x}$ when the traveler is momentarily at rest in any of these frames (Equation \ref{eq:ct} with $\omega_x = 0$), giving $c \mkern.5mu \Delta t = 0$ and $(\Delta s)^2 = - (\Delta x)^2$ at that instant. This means that the center event is simultaneous with the traveler's ``turnaround event" (graphically this is obvious: the turnaround event is one of the hyperbola's vertices, and the vertices and the center lie on the major axis $ct = ct_{\mathrm{i}} - \omega_{x \mkern2mu \textrm{i} } / \zeta_{0 \mkern2mu x}$). But there's an instantaneous rest frame corresponding to \emph{every} event on the traveler's world line; they \emph{all} get their ``turn" as the turnaround event. So what we're really saying is that for each of the traveler's successive instantaneous rest frames, the center event is simultaneous with the traveler's coming to momentary rest. As far as the traveler is concerned, the center event is always happening ``right now" at a distance $|1 / \zeta_{0 \mkern2mu x}|$ in the direction opposite to the acceleration.\footnote{When we speak of \emph{right now} and \emph{at a distance} here, we're assuming that the accelerating traveler always adopts the $(ct, x, y, z)$ coordinates of the current instantaneous rest frame. But it's important to understand that although these are the only kinds of coordinates we've worked with in this paper, \emph{they are just coordinates}, and there are other options. For a traveler with constant proper acceleration, a better choice is arguably \textbf{Rindler coordinates}, which are like the spacetime analogue of polar coordinates, and in which the center event is \emph{not} ``eternal" and a fixed distance away (actually, the center event \emph{has no representation} in Rindler coordinates, much as the pole has no representation in polar coordinates). This ``eternal" and ``fixed-distance" business is just an artifact of choosing particular coordinate systems. There's nothing truly physical about it!}
+where $c \mkern.5mu \Delta t = ct - (ct_{\mathrm{i}} - \omega_{x \mkern2mu \textrm{i} } / \zeta_{0 \mkern2mu x})$ and $\Delta x = x - (x_{\mathrm{i}} - \gamma_{\mkern1mu \mathrm{i}} / \zeta_{0 \mkern2mu x})$ are the differences in the time and space coordinates of the events (again, as measured in any of the infinitely many inertial frames for which the traveler's $y$ and $z$ coordinates don't change). This interval is spacelike, since its square is negative, and it's also constant. The invariant $\Delta s / \mathrm{i} = |1 / \zeta_{0 \mkern2mu x}|$ is therefore the proper distance between the center event and \emph{every event on the traveler's world line}! What's more, $ct(ct_0) = ct_{\mathrm{i}} - \omega_{x \mkern2mu \textrm{i} } / \zeta_{0 \mkern2mu x}$ when the traveler is momentarily at rest in any of these frames (Equation \ref{eq:ct} with $\omega_x = 0$), giving $c \mkern.5mu \Delta t = 0$ and $(\Delta s)^2 = - (\Delta x)^2$ at that instant. This means that the center event is simultaneous with the traveler's ``turnaround event" (graphically this is obvious: the turnaround event is one of the hyperbola's vertices, and the vertices and the center lie on the major axis $ct = ct_{\mathrm{i}} - \omega_{x \mkern2mu \textrm{i} } / \zeta_{0 \mkern2mu x}$). But there's an instantaneous rest frame corresponding to \emph{every} event on the traveler's world line; they \emph{all} get their ``turn" as the turnaround event. So what we're really saying is that for each of the traveler's successive instantaneous rest frames, the center event is simultaneous with the traveler's coming to momentary rest. As far as the traveler is concerned, the center event is always happening ``right now" at a distance $|1 / \zeta_{0 \mkern2mu x}|$ in the direction opposite to the acceleration.\footnote{When we speak of \emph{right now} and \emph{at a distance} here, we're assuming that the accelerating traveler always adopts the $(ct, x, y, z)$ coordinates of the current instantaneous rest frame. But it's important to understand that although these are the only kinds of coordinates we've worked with in this paper, \emph{they are just coordinates}, and there are other options. For a traveler with constant proper acceleration, a better choice is arguably \textbf{Rindler coordinates}, which are like the spacetime analogue of polar coordinates, and in which the center event is \emph{not} ``eternal" and a fixed distance away (actually, the center event \emph{has no representation} in Rindler coordinates, much as the pole has no representation in polar coordinates). This ``eternal" and ``fixed-distance" business is just an artifact of choosing particular coordinate systems. There's nothing truly physical about it!}
 
 If the center event's perpetual ``now-and-there-ness" for the accelerating traveler is difficult to take in, it may help to confirm it with a Lorentz transformation of $c \mkern.5mu \Delta t $ and $\Delta x$ from the preceding paragraph (i.e., the differences in the $ct$ and $x$ coordinates of the center event and an arbitrary event on the traveler's world line, as reckoned in one of our qualifying frames). First, by Equations \ref{eq:ct} and \ref{eq:x2}:
 \begin{equation*}
-c \mkern.5mu \Delta t = ct(ct_0) - \left( ct_{\mathrm{i}} - \dfrac{\omega_{x \mkern2mu \textrm{i} }}{ \zeta_{0 \mkern2mu x}} \right) = \dfrac{\omega_x}{ \zeta_{0 \mkern2mu x}}
+c \mkern.5mu \Delta t = ct - \left( ct_{\mathrm{i}} - \dfrac{\omega_{x \mkern2mu \textrm{i} }}{ \zeta_{0 \mkern2mu x}} \right) = \dfrac{\omega_x}{ \zeta_{0 \mkern2mu x}}
 \end{equation*}
 and
 \begin{equation*}
-\Delta x = x(ct_0) - \left( x_{\mathrm{i}} - \dfrac{\gamma_{\mkern1mu \textrm{i} }}{ \zeta_{0 \mkern2mu x}} \right) = \dfrac{\gamma}{ \zeta_{0 \mkern2mu x}} .
+\Delta x = x - \left( x_{\mathrm{i}} - \dfrac{\gamma_{\mkern1mu \textrm{i} }}{ \zeta_{0 \mkern2mu x}} \right) = \dfrac{\gamma}{ \zeta_{0 \mkern2mu x}} .
 \end{equation*}
 Now use Equations \ref{eq:lt2} to boost to the traveler's (primed) instantaneous rest frame, noting that the boost parameters are $\gamma_{\mathrm{rel}} = \gamma$ and $\omega_{\mathrm{rel}} = \pm \, \omega_x$ (negative if $\omega_x < 0$, in which case this is an ``inverse" transformation and the $\omega_{\textrm{rel}}$ terms below take the $+$ sign):
 \begin{equation*}
