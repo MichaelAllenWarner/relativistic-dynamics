@@ -103,8 +103,8 @@
 \nomenclature[010]{\( ct_0 \)}{Proper time. The naught subscript almost always means the ``proper" version of a quantity---i.e., the quantity as measured in the relevant rest frame.}
 \nomenclature[020]{\( \dot{ \text{\underline{\hspace{.6em}}} } \)}{Overdot means derivative with respect to $ct$ (coordinate time).}
 \nomenclature[030]{\( \mathring{ \text{\underline{\hspace{.6em}}} } \)}{Over-circle means derivative with respect to $ct_0$ (proper time).}
-\nomenclature[040]{\( \vv r \)}{Position vector.}
-\nomenclature[050]{\( \vv R \)}{Position four-vector (four-position).}
+\nomenclature[040]{\( \vv r \)}{Position vector $\langle x, y, z \rangle$.}
+\nomenclature[050]{\( \vv R \)}{Position four-vector $\langle ct, \vv r \rangle$ (four-position).}
 \nomenclature[053]{\( \Delta \vv r \)}{Displacement or separation vector (\emph{displacement} for something in motion, \emph{separation} for an abstract vector ``connecting" two points).}
 \nomenclature[055]{\( \Delta \vv R \)}{Four-displacement or four-separation.}
 \nomenclature[057]{\( \Delta s \)}{Spacetime interval $\sqrt{ (c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2 }$ (magnitude of $\Delta \vv R$).}
@@ -128,18 +128,20 @@
 \nomenclature[190]{\( \vvphi \)}{Rapidity vector $\phi \hatbeta$ (where $\hatbeta = \vvbeta / \beta$).}
 \nomenclature[200]{\( \varphi \)}{Longitudinal rapidity (signed rapidity along the axis of a Lorentz boost; e.g., a particle's $\tanh^{-1} \beta_x$ if the boost is along the $x$-axis).}
 \nomenclature[210]{\( \del \)}{Del operator $\big \langle \frac{\partial}{\partial x}, \, \frac{\partial}{\partial y}, \, \frac{\partial}{\partial z}  \big \rangle$.}
+\nomenclature[213]{\( \del_{\vv q} \)}{Feynman subscript. Example: $\del_{\vv q} ( \vv w \cdot \vv q ) = w_x \del q_x + w_y \del q_y + w_z \del q_z$.}
 \nomenclature[215]{\( \nabla^2 \)}{Laplacian $\del \cdot \del = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$.}
-\nomenclature[220]{\( \partialup \)}{Four-del $\big \langle \frac{\partial}{\partial (ct)}, \, - \del \big \rangle = \big \langle \partial^{ct}, \, \partial^{x}, \, \partial^{y}, \, \partial^{z} \big \rangle$ (indices of four-vector components are always superscript; mind the signs here).}
+\nomenclature[220]{\( \partialup \)}{Four-del $\big \langle \frac{\partial}{\partial (ct)}, \, - \del \big \rangle = \big \langle \partial^{ct}, \, \partial^{x}, \, \partial^{y}, \, \partial^{z} \big \rangle$. Admits Feynman subscript.}
+\nomenclature[225]{\( \)}{``Triple product": $\vv W \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv Q) \equiv \partialup_{\vv Q} ( \vv W \cdot \vv Q) - ( \vv W \cdot \partialup) \vv Q$.}
 \nomenclature[230]{\( \Box \)}{D'Alembertian $\partialup \cdot \partialup = \frac{\partial^2}{\partial (ct)^2} - \frac{\partial^2}{\partial x^2} - \frac{\partial^2}{\partial y^2} - \frac{\partial^2}{\partial z^2}$.}
 \nomenclature[240]{\( q \)}{Electric charge.}
 \nomenclature[250]{\( \rho \)}{Charge density.}
 \nomenclature[260]{\( \vv j \)}{``Normalized" current density (the flux density of charge).}
-\nomenclature[270]{\( \vv J \)}{``Normalized" four-current density $\langle \rho, \, \vv j \rangle$.}
-\nomenclature[280]{\( \vv A \)}{Four-potential $\langle A^{ct}, \, \vv a \rangle$.}
-\nomenclature[290]{\( \vv F_{\textbf{L}} \)}{Lorentz four-force.}
-\nomenclature[293]{\( \vv e \)}{Electric field $- \del A^{ct} - \partial^{ct} \vv a$.}
-\nomenclature[296]{\( \vv b \)}{Magnetic field $\del \times \vv a$.}
-\nomenclature[300]{\( \bm{\mathfrak{F}} \)}{Lorentz four-force density.}
+\nomenclature[270]{\( \vv J \)}{``Normalized" four-current density $\langle \rho, \, \vv j \rangle$, with $\partialup \cdot \vv J =  0$.}
+\nomenclature[280]{\( \vv A \)}{Four-potential $\langle A^{ct}, \, \vv a \rangle$. Any vector satisfying $\vv J = - \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A )$.}
+\nomenclature[283]{\( \vv e \)}{Electric field $- \del A^{ct} - \partial^{ct} \vv a$.}
+\nomenclature[286]{\( \vv b \)}{Magnetic field $\del \times \vv a$.}
+\nomenclature[290]{\( \vv F_{\textbf{L}} \)}{Lorentz four-force $q \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) = \gamma q \mkern.5mu \langle \vv \vvbeta \cdot \vv e , \, \vv e + \vvbeta \times \vv b \rangle$.}
+\nomenclature[300]{\( \bm{\mathfrak{F}} \)}{Lorentz four-force density $\vv J \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) = \langle \, \vv j \cdot \vv e, \, \rho \mkern1mu \vv e + \vv j \times \vv b \rangle$.}
 \nomenclature[310]{\( u \)}{Electromagnetic energy density $(e^2 + b^2)/2$.}
 \nomenclature[320]{\( \vv s \)}{Poynting vector $\vv e \times \vv b$ (the flux density of electromagnetic energy, and also the electromagnetic momentum density).}
 \nomenclature[330]{\( \otimes \)}{Symbol for the dyadic product (and the tensor product generally).}
@@ -2671,7 +2673,7 @@ The disturbance propagates forever, though it can undergo interference with othe
 
 We've introduced the four-potential $\vv A = \vv A (\vv R)$ as any vector field whose negative ``double curl" equals the four-current density $\vv J$, but we haven't yet established why we should care about it. We care about it because of the following empirical result:\footnote{In the next section, we'll actually ``derive" it with the Euler--Lagrange equation.}
 \begin{equation}\label{eq:ff}
-\boxed{\vv F_{\textrm{L}} = q \, \bigl[ \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) \bigr]} \, .
+\boxed{\vv F_{\textrm{L}} = q \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A)} \, .
 \end{equation}
 This $\vv F_{\textrm{L}}$ is called the \textbf{Lorentz four-force}.\footnote{Since $\vv F$ has dimensions of $E / L$ (where $E$ and $L$ are energy- and length-units), you should now be able to show that $q$ has dimensions of $\sqrt{EL}$. (Not so in the SI, by the way.)} It's the physical effect that information about the four-current density's value elsewhere has on a test charge upon reaching it.\footnote{\label{fn:recoil}By ``test charge" we mean that we neglect the influence of the particle's charge on the four-potential, which, in turn, affects the particle! Accounting for it is beyond our scope and not entirely possible in classical electrodynamics anyway. (Remember: the theory is really about \emph{continua}, not \emph{particles}. In fact, instead of starting with $\vv F_{\textrm{L}}$, it's better to regard the field energy, momentum, and stress as fundamental, derive from them and Maxwell's equations the Lorentz four-force \emph{density}, and use a limiting procedure to obtain $\vv F_{\textrm{L}}$ by neglecting higher-order terms. We'll cover all those quantities, but we start with force because it's easier.) We do note that accelerating charges are what generate electromagnetic waves, and that the ``recoil" four-force that a radiating particle is subject to (``beyond" $\vv F_{\textrm{L}}$) is, \emph{to first approximation}, $\vv F = (q^2 / (6 \pi))[\mathring{\vv Z} + (\vv Z \cdot \vv Z) \vv B]$, where $q$ is the particle's charge, $\vv B$ its normalized four-velocity, $\vv Z$ its ``normalized" four-acceleration, and $\mathring{\vv Z}$ its ``normalized" four-jerk. In most practical applications, this additional \textbf{Abraham--Lorentz--Dirac four-force} is negligible.} The quantities on the right side are the particle's charge $q$, the particle's normalized four-velocity $\vv B$, and the ``value" of the four-potential $\vv A$ at the particle's spacetime position (we're differentiating the four-potential, so its non-uniqueness doesn't matter). As we learned in Section \ref{sssec:tp}, this differential four-vector triple product is gauge-invariant and can also be written:
 \begin{equation}\label{eq:lff}
@@ -2883,7 +2885,7 @@ One more step. Consider the following operator, a directional derivative that ap
 By the multivariable chain rule, this operator is equivalently $\dd / \dd (ct_0)$, the total derivative with respect to proper time.\footnote{The relation $\dd / \dd (ct_0) = \vv B \cdot \partialup$ often arises in general relativity. It's analogous to the Newtonian ``convective derivative," ${\dd / \dd t = \partial / \partial t + \vv v \cdot \del}$, though that term is sometimes reserved for when the operand is a property of a \emph{continuum} (where $\vv v$ is the continuum's velocity field), as opposed to a ``background" field's value along a particle's world line.} It acts on functions of ${\vv R (ct_0) = \langle ct (ct_0), \, x (ct_0), \, y (ct_0), \, z (ct_0) \rangle}$. Our four-potential fits the bill, so $\mathring{\vv A} = (\vv B \cdot \partialup) \vv A $, and Equation \ref{eq:emeom} becomes:
 \begin{equation*}
 \begin{split}
-\vv F &= q \, \bigl[ \partialup_{\vv A} (\vv B \cdot \vv A) - (\vv B \cdot \partialup) \vv A \bigr] = q \, \bigl[ \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) \bigr] ,
+\vv F &= q \, \bigl[ \partialup_{\vv A} (\vv B \cdot \vv A) - (\vv B \cdot \partialup) \vv A \bigr] = q \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) ,
 \end{split}
 \end{equation*}
 which is indeed the Lorentz four-force (Equations \ref{eq:ff} and \ref{eq:lff}).
@@ -2909,11 +2911,11 @@ H = \dfrac{\left( \vv P_\mathrm{c} - q \vv A \right) ^2}{2 E_0} .
 
 If we differentiate the Lorentz four-force (Equation \ref{eq:ff}) with respect to the proper volume ${V_0 = \gamma V}$ of a small piece of a continuous fluid-like charge distribution, we get a four-vector called the \textbf{Lorentz four-force density}:\footnote{A more sophisticated continuum-based approach would reverse this: start with the force \emph{density}, and obtain the Lorentz force for a particle from a limiting procedure.}
 \begin{equation*}
-\bm{\mathfrak{F}} = \dfrac{\dd \vv F_{\mathrm{L}}}{\dd V_0} = \dfrac{\dd}{\dd V_0} \left( q \, \bigl[ \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) \bigr]  \right) .
+\bm{\mathfrak{F}} = \dfrac{\dd \vv F_{\mathrm{L}}}{\dd V_0} = \dfrac{\dd}{\dd V_0} \bigl[ q \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) \bigr] .
 \end{equation*}
 Only $q$ has volume-dependence here, so that's:
 \begin{equation*}
-\bm{\mathfrak{F}} = \rho_0 \bigl[ \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) \bigr] .
+\bm{\mathfrak{F}} = \rho_0 \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) .
 \end{equation*}
 Now apply Equation \ref{eq:fcc} ($\rho_0 \vv B = \vv J$):
 \begin{equation}\label{eq:lffd}
@@ -3500,7 +3502,7 @@ Anyway, now we can make good use of the Faraday tensor. First establish a handy 
 \end{equation}
 Then apply it to our core electrodynamic equations. Here is the Lorentz four-force (Equation \ref{eq:ff}):
 \begin{equation*}
-\vv F_{\textrm{L}} = q \, \bigl[ \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) \bigr] = q \, \bigl[ (\partialup \wedge \vv A) \cdot \vv B \bigr] ,
+\vv F_{\textrm{L}} = q \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) = q (\partialup \wedge \vv A) \cdot \vv B ,
 \end{equation*}
 or more compactly in terms of the Faraday tensor (Equation \ref{eq:emta}):
 \begin{equation}\label{eq:lfffd}
