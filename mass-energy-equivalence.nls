@@ -13,8 +13,8 @@
   \item [{\( \vv B, B \)}]\begingroup Normalized four-velocity $\mathring{\vv R}$ and its magnitude.\nomeqref {0}\nompageref{7}
   \item [{\( \vvzeta, \zeta \)}]\begingroup ``Normalized" acceleration $\dot{\vvbeta}$ and its magnitude.\nomeqref {0}\nompageref{7}
   \item [{\( \vv Z, Z \)}]\begingroup ``Normalized" four-acceleration $\mathring{\vv B}$ and its magnitude.\nomeqref {0}\nompageref{7}
-  \item [{\( \gamma \)}]\begingroup Lorentz factor $1 / \sqrt{1 - \beta^2}$.\nomeqref {0}\nompageref{7}
-  \item [{\( \vvomega, \omega \)}]\begingroup ``Normalized" celerity $\mathring{\vv r} = \gamma \vvbeta$ and its magnitude.\nomeqref {0}\nompageref{7}
+  \item [{\( \gamma \)}]\begingroup Lorentz factor $1 / \sqrt{1 - \beta^2} = \frac{\dd (ct)}{\dd (c t_0)}$ (time-dilation factor).\nomeqref {0}\nompageref{7}
+  \item [{\( \vvomega, \omega \)}]\begingroup ``Normalized" celerity $\mathring{\vv r} = \gamma \dot{\vv r} = \gamma \vvbeta$ and its magnitude.\nomeqref {0}\nompageref{7}
   \item [{\( E_0 \)}]\begingroup Rest energy (proper energy). Equals zero when $\beta = 1$ (e.g., for light).\nomeqref {0}\nompageref{7}
   \item [{\( E \)}]\begingroup Total energy. Equals $\gamma E_0$ when $E_0 > 0$.\nomeqref {0}\nompageref{7}
   \item [{\( E_{\mkern.5mu \textrm{k}} \)}]\begingroup Kinetic energy $E - E_0$. Equals $E_0 (\gamma - 1)$ when $E_0 > 0$.\nomeqref {0}\nompageref{7}
@@ -33,7 +33,7 @@
   \item [{\( \nabla^2 \)}]\begingroup Laplacian $\del \cdot \del = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$.\nomeqref {0}\nompageref{7}
   \item [{\( \partialup \)}]\begingroup Four-del $\big \langle \frac{\partial}{\partial (ct)}, \, - \del \big \rangle = \big \langle \partial^{ct}, \, \partial^{x}, \, \partial^{y}, \, \partial^{z} \big \rangle$. Admits Feynman subscript.\nomeqref {0}\nompageref{7}
   \item [{\( \)}]\begingroup ``Triple product": $\vv W \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv Q) \equiv \partialup_{\vv Q} ( \vv W \cdot \vv Q) - ( \vv W \cdot \partialup) \vv Q$.\nomeqref {0}\nompageref{7}
-  \item [{\( \Box \)}]\begingroup D'Alembertian $\partialup \cdot \partialup = \frac{\partial^2}{\partial (ct)^2} - \frac{\partial^2}{\partial x^2} - \frac{\partial^2}{\partial y^2} - \frac{\partial^2}{\partial z^2}$.\nomeqref {0}\nompageref{7}
+  \item [{\( \Box \)}]\begingroup d'Alembertian $\partialup \cdot \partialup = \frac{\partial^2}{\partial (ct)^2} - \frac{\partial^2}{\partial x^2} - \frac{\partial^2}{\partial y^2} - \frac{\partial^2}{\partial z^2}$ (the wave operator).\nomeqref {0}\nompageref{7}
   \item [{\( q \)}]\begingroup Electric charge.\nomeqref {0}\nompageref{7}
   \item [{\( \rho \)}]\begingroup Charge density.\nomeqref {0}\nompageref{7}
   \item [{\( \vv j \)}]\begingroup ``Normalized" current density (the flux density of charge).\nomeqref {0}\nompageref{7}

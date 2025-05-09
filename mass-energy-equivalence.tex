@@ -112,8 +112,8 @@
 \nomenclature[070]{\( \vv B, B \)}{Normalized four-velocity $\mathring{\vv R}$ and its magnitude.}
 \nomenclature[080]{\( \vvzeta, \zeta \)}{``Normalized" acceleration $\dot{\vvbeta}$ and its magnitude.}
 \nomenclature[090]{\( \vv Z, Z \)}{``Normalized" four-acceleration $\mathring{\vv B}$ and its magnitude.}
-\nomenclature[095]{\( \gamma \)}{Lorentz factor $1 / \sqrt{1 - \beta^2}$.}
-\nomenclature[097]{\( \vvomega, \omega \)}{``Normalized" celerity $\mathring{\vv r} = \gamma \vvbeta$ and its magnitude.}
+\nomenclature[095]{\( \gamma \)}{Lorentz factor $1 / \sqrt{1 - \beta^2} = \frac{\dd (ct)}{\dd (c t_0)}$ (time-dilation factor).}
+\nomenclature[097]{\( \vvomega, \omega \)}{``Normalized" celerity $\mathring{\vv r} = \gamma \dot{\vv r} = \gamma \vvbeta$ and its magnitude.}
 \nomenclature[100]{\( E_0 \)}{Rest energy (proper energy). Equals zero when $\beta = 1$ (e.g., for light).}
 \nomenclature[110]{\( E \)}{Total energy. Equals $\gamma E_0$ when $E_0 > 0$.}
 \nomenclature[120]{\( E_{\mkern.5mu \textrm{k}} \)}{Kinetic energy $E - E_0$. Equals $E_0 (\gamma - 1)$ when $E_0 > 0$.}
@@ -132,7 +132,7 @@
 \nomenclature[215]{\( \nabla^2 \)}{Laplacian $\del \cdot \del = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$.}
 \nomenclature[220]{\( \partialup \)}{Four-del $\big \langle \frac{\partial}{\partial (ct)}, \, - \del \big \rangle = \big \langle \partial^{ct}, \, \partial^{x}, \, \partial^{y}, \, \partial^{z} \big \rangle$. Admits Feynman subscript.}
 \nomenclature[225]{\( \)}{``Triple product": $\vv W \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv Q) \equiv \partialup_{\vv Q} ( \vv W \cdot \vv Q) - ( \vv W \cdot \partialup) \vv Q$.}
-\nomenclature[230]{\( \Box \)}{D'Alembertian $\partialup \cdot \partialup = \frac{\partial^2}{\partial (ct)^2} - \frac{\partial^2}{\partial x^2} - \frac{\partial^2}{\partial y^2} - \frac{\partial^2}{\partial z^2}$.}
+\nomenclature[230]{\( \Box \)}{d'Alembertian $\partialup \cdot \partialup = \frac{\partial^2}{\partial (ct)^2} - \frac{\partial^2}{\partial x^2} - \frac{\partial^2}{\partial y^2} - \frac{\partial^2}{\partial z^2}$ (the wave operator).}
 \nomenclature[240]{\( q \)}{Electric charge.}
 \nomenclature[250]{\( \rho \)}{Charge density.}
 \nomenclature[260]{\( \vv j \)}{``Normalized" current density (the flux density of charge).}
@@ -192,8 +192,8 @@ More notable things about this paper:
 
 I've made a few unconventional choices in notation. Most aren't particularly consequential, but here are two worth mentioning straight away:
 \begin{itemize}
-\item Newton's overdot notation signals a derivative taken with respect to $ct$, not $t$. For example, where $\vv r$ is position and $\vv v$ velocity, ${\dot{\vv r} \neq \dd \vv r / \dd t = \vv v}$. Instead, $\dot{\vv r} = (\dd \vv r / \dd t)/c \equiv \vvbeta$. Likewise, where $\vv a = (\dd \vv v / \dd t)$ is acceleration, $\ddot{\vv r} = \dot{\vvbeta} = (\dd \vvbeta / \dd t)/c = \vv a / c^2 \equiv \vvzeta$. Once I introduce the dimensionless $\vvbeta$ (and the dimensionful $\vvzeta$), I treat it not as shorthand but as the natural way to express velocity. I have no use for $\vv v$ (or $\vv a$).
-\item For $c t_0$-derivatives (where $ct_0$ is \emph{proper} time), I use a little over-circle instead of an overdot: $\mathring{\vv r} = (\dd \vv r / \dd t_0)/c$.
+\item Newton's overdot notation signals a derivative taken with respect to $ct$, not $t$. For example, where $\vv r$ is position and $\vv v$ velocity, ${\dot{\vv r} \neq \dd \vv r / \dd t = \vv v}$. Instead, $\dot{\vv r} = \dd \vv r / \dd (ct) \equiv \vvbeta$. Likewise, where $\vv a = \dd \vv v / \dd t$ is acceleration, $\ddot{\vv r} = \dot{\vvbeta} = \dd \vvbeta / \dd (ct) = \vv a / c^2 \equiv \vvzeta$. Once I introduce the dimensionless $\vvbeta$ (and the dimensionful $\vvzeta$), I treat it not as shorthand but as the natural way to express velocity. I have no use for $\vv v$ (or $\vv a$).
+\item For $c t_0$-derivatives (where $ct_0$ is \emph{proper} time), I use a little over-circle instead of an overdot: $\mathring{\vv r} = \dd \vv r / \dd (c t_0)$.
 \end{itemize}
 I'll remind you of this dot and circle business along the way.
 
@@ -456,7 +456,7 @@ So $(\Delta s)^2 = (c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2$ remains invar
 In deriving the relativistic transformation rules for velocity components, we must not confuse the relative speed of two inertial observers in standard configuration with their measurements of some third party's velocity. To that end, let's append the subscript ``rel" to the observers' relative speed for now ($\beta_{\textrm{rel}}$), and also to the corresponding Lorentz factor: $\gamma_{\textrm{rel}} = (1 - \beta_{\textrm{rel}}^2)^{-1/2}$. Then $\vvbeta$ and $\vvbeta^{\prime}$ are the observers' measurements of the third party's velocity. To find how the components of $\vvbeta$ transform into those of $\vvbeta^{\prime}$ (and vice versa), we divide $\Delta x^\prime$ and $\Delta x$ (etc.) by $c \mkern.5mu \Delta t^\prime$ and $c \mkern.5mu \Delta t$, respectively, and evaluate the limits of the quotients as $c \mkern.5mu \Delta t^\prime \rightarrow 0$ and $c \mkern.5mu \Delta t \rightarrow 0$ (equivalent conditions, since we're not dealing with spacelike-separated events). For example:
 \begin{equation*}
 \begin{aligned}
-\beta_x^\prime &\equiv \dfrac{1}{c} \, \dfrac{\dd x^\prime}{\dd t^\prime} = \lim_{\substack{c \mkern.5mu \Delta t^\prime \to 0 \\[1.5pt] [c \mkern.5mu \Delta t \to 0]}} \, \frac{\Delta x^\prime}{c \mkern.5mu \Delta t^\prime}\\[6pt]
+\beta_x^\prime &\equiv \dfrac{\dd x^\prime}{\dd (ct^\prime)} = \lim_{\substack{c \mkern.5mu \Delta t^\prime \to 0 \\[1.5pt] [c \mkern.5mu \Delta t \to 0]}} \, \frac{\Delta x^\prime}{c \mkern.5mu \Delta t^\prime}\\[6pt]
 &= \lim_{\substack{\\ c \mkern.5mu \Delta t \to 0}} \, \frac{\gamma_{\textrm{rel}} \left( \Delta x - \beta_{\textrm{rel}} \, c \mkern.5mu \Delta t \right)}{\gamma_{\textrm{rel}} \left( c \mkern.5mu \Delta t - \beta_{\textrm{rel}} \, \Delta x \right)}
 \end{aligned}
 \end{equation*}
@@ -682,11 +682,11 @@ Finally, we can view Equation \ref{eq:18} as an expression for $\vvbeta$:
 \end{equation*}
 So velocity is momentum over total energy. That's the additive-and-conserved vector over the additive-and-conserved scalar. \emph{Constant} velocity being displacement $\Delta \vv r$ per time elapsed $c \mkern.5mu \Delta t$, we find a curious relationship among momentum, energy, space, and time:
 \begin{equation*}
-\dfrac {\vv p c}{E} = \dfrac{\Delta \vv r}{c \mkern.5mu \Delta t} \quad \textrm{\footnotesize{ (for $\vvzeta \equiv \dot{\vvbeta} = \vv 0$)}}.\footnote{Remember that we're using the dot to indicate $ct$-derivatives, in keeping with $\vvbeta = \dot{\vv r}$ for the normalized velocity. So $\vvzeta=(\dd \vvbeta / \dd t)/c = \vv a / c^2$, and we'll call this the ``normalized" acceleration. Note, though, that it isn't dimensionless and its magnitude $\zeta$ can exceed one---hence the square quotes.}
+\dfrac {\vv p c}{E} = \dfrac{\Delta \vv r}{c \mkern.5mu \Delta t} \quad \textrm{\footnotesize{ (for $\vvzeta \equiv \dot{\vvbeta} = \vv 0$)}}.\footnote{Remember that we're using the dot to indicate $ct$-derivatives, in keeping with $\vvbeta = \dot{\vv r}$ for the normalized velocity. So $\vvzeta=\dd \vvbeta / \dd (ct) = \vv a / c^2$, and we'll call this the ``normalized" acceleration. Note, though, that it isn't dimensionless and its magnitude $\zeta$ can exceed one---hence the square quotes.}
 \end{equation*}
 To generalize for instantaneous velocity when the ``normalized" acceleration $\vvzeta \neq \vv 0$, we use infinitesimal changes in $\vv r$ and $ct$ (or take the limit as $c \mkern.5mu \Delta t \rightarrow 0$):
 \begin{equation}\label{eq:19}
-\vvbeta = \dfrac {\vv p c}{E} = \dfrac{\dd \vv r}{\dd t} \, \dfrac{1}{c}.
+\vvbeta = \dfrac {\vv p c}{E} =  \dfrac{\dd \vv r}{\dd (ct)} .
 \end{equation}
 
 
@@ -790,30 +790,30 @@ But we don't need $c \mkern.5mu \Delta t_0$ right now. It's the infinitesimals w
 
 In light of this spacetime distance-analogue, a question arises naturally: can we assign the traveler a \emph{rate} of spacetime traversal, analogous to (normalized) speed? Mind, the name of the game is maintaining invariance---that's what makes the interval and the energy--momentum relation so useful---so any spacetime analogue we fashion must have a value that all inertial observers agree on. Dividing $\dd s$ by infinitesimal coordinate time $c \, \dd t$, for example, wouldn't work, since coordinate time is a relative measurement. Still, the answer is yes, we \emph{can} construct an invariant spacetime $\beta$-analogue. We can divide $\dd s$ by the invariant infinitesimal \emph{proper} time interval, $c \, \dd t_0$:\footnote{(that is, differentiate $s$ with respect to $ct_0$)}
 \begin{equation*}
-\left(\dfrac{\dd s}{\dd t_0} \, \dfrac{1}{c}\right)^2 = \left(c \, \dfrac{\dd t}{\dd t_0} \, \dfrac{1}{c}\right)^2 - \left(\dfrac{\dd \vv r}{\dd t_0} \, \dfrac{1}{c}\right)^2.
+\left(\dfrac{\dd s}{\dd (ct_0)} \right)^2 = \left(\dfrac{\dd (ct)}{\dd (c t_0)} \right)^2 - \left(\dfrac{\dd \vv r}{\dd (c t_0)} \right)^2.
 \end{equation*}
 
-Before simplifying this, let's make sure we understand all the terms. We interpret the three derivatives as ratios. So $(\dd s/\dd t_0)/c$, our $\beta$-analogue, represents the infinitesimal ``distance" of spacetime a traveler covers per infinitesimal duration of the traveler's own wristwatch time, and all inertial observers agree on this rate. On the far right, $(\dd \vv r/\dd t_0)/c$ is the traveler's infinitesimal displacement as measured by an inertial observer---a frame-dependent vector quantity---divided by the infinitesimal passage of time according to the traveler's watch (the invariant proper time). And the middle term? It's the frame-dependent infinitesimal passage of time according to synchronized clocks in an inertial observer's rest frame (i.e., the observer's coordinate time), divided by the invariant infinitesimal passage of time according to the \emph{traveler} (again, proper time). In other words, it's the time-dilation ratio, which we know is just the Lorentz factor! And didn't we already establish that $\dd s = c \, \dd t_0$? We can work with this. First, by the chain rule we have:
+Before simplifying this, let's make sure we understand all the terms. We interpret the three derivatives as ratios. So $\dd s/\dd (c t_0)$, our $\beta$-analogue, represents the infinitesimal ``distance" of spacetime a traveler covers per infinitesimal duration of the traveler's own wristwatch time, and all inertial observers agree on this rate. On the far right, $\dd \vv r/\dd (c t_0)$ is the traveler's infinitesimal displacement as measured by an inertial observer---a frame-dependent vector quantity---divided by the infinitesimal passage of time according to the traveler's watch (the invariant proper time). And the middle term? It's the frame-dependent infinitesimal passage of time according to synchronized clocks in an inertial observer's rest frame (i.e., the observer's coordinate time), divided by the invariant infinitesimal passage of time according to the \emph{traveler} (again, proper time). In other words, it's the time-dilation ratio, which we know is just the Lorentz factor! And didn't we already establish that $\dd s = c \, \dd t_0$? We can work with this. First, by the chain rule we have:
 \begin{equation*}
-\left(\dfrac{\dd s}{\dd t_0} \, \dfrac{1}{c} \right)^2 = \left(c \, \dfrac{\dd t}{\dd t_0} \, \dfrac{1}{c}\right)^2 - \left(\dfrac{\dd \vv r}{\dd t} \, \dfrac{\dd t}{\dd t_0} \, \frac{1}{c} \right)^2,
+\left(\dfrac{\dd s}{\dd (c t_0)} \right)^2 = \left(\dfrac{\dd (ct)}{\dd (c t_0)} \right)^2 - \left( \dfrac{\dd \vv r}{\dd (ct)} \, \dfrac{\dd (ct)}{\dd (c t_0)} \right)^2,
 \end{equation*}
-and subbing in $1 = (\dd s / \dd t_0)/c$, $\gamma = \dd t / \dd t_0$, and $\vvbeta = (\dd \vv r / \dd t)/c$:\footnote{\label{fn:cr}Observe here that since $\gamma = \dd t / \dd t_0$, the chain rule lets us rewrite any $c t_0$-derivative as $\gamma$ times the corresponding $ct$-derivative. Now recall that we're using Newton's overdot notation for $ct$-derivatives and a little circle for $c t_0$-derivatives. Thus, e.g., $\mathring{\vv r} = \gamma \dot{\vv r}$.}
+and subbing in $1 = \dd s / \dd (c t_0)$, $\gamma = \dd (ct) / \dd (c t_0)$, and $\vvbeta = \dd \vv r / \dd (ct)$:\footnote{\label{fn:cr}Observe here that since $\gamma = \dd (ct) / \dd (c t_0)$, the chain rule lets us rewrite any $c t_0$-derivative as $\gamma$ times the corresponding $ct$-derivative. Now recall that we're using Newton's overdot notation for $ct$-derivatives and a little circle for $c t_0$-derivatives. Thus, e.g., $\mathring{\vv r} = \gamma \dot{\vv r}$.}
 \begin{equation}\label{eq:25}
 \boxed{1 = \gamma^2 - \left(\gamma \vvbeta \right)^2} \, .
 \end{equation}
 
-Now \emph{that's} rather interesting. Our spacetime $\beta$-analogue is, well, one! That's the invariant and \emph{constant} $c t_0$-rate of all ``motion" through spacetime. And from the perspective of any given inertial observer, the time and space ``contributions" to that rate are, respectively, $\dd t/ \dd t_0=\gamma$ and $(\dd \vv r / \dd t_0)/c = \gamma \vvbeta$. The difference of their squares equals the squared rate, $1^2 = 1$. When $\beta \ll 1$, inertial observers calculate a time contribution $\gamma$ of about one, and a space contribution $\gamma \vvbeta$ of about zero---exactly one and zero in the traveler's instantaneous rest frame. What happens as $\beta$ gets larger? Perhaps you've encountered the unfortunately common pop-sci factoid that the time contribution should then decrease, that ``speed through time" must diminish to accommodate a greater ``speed through space" so that they always sum to one (or to $c$ in different units). As Equation \ref{eq:25} shows, that's a white lie at best (and ``speed through time" is gibberish). Yes, the $ct_0$-rate of spacetime-traversal is always one, and yes, the magnitude of $\gamma \vvbeta$ obviously increases with $\beta$. But look at the time contribution. It doesn't decrease; it blows up to infinity as $\beta$ approaches one! The space contribution does, too, but it can never catch up to the time contribution, since $1>\beta$. So no, the contributions aren't inversely related, and they don't balance to one (or $c$ if unnormalized). The \emph{difference of their squares} balances to $1^2=1$.
+Now \emph{that's} rather interesting. Our spacetime $\beta$-analogue is, well, one! That's the invariant and \emph{constant} $c t_0$-rate of all ``motion" through spacetime. And from the perspective of any given inertial observer, the time and space ``contributions" to that rate are, respectively, $\dd (ct) / \dd (c t_0) =\gamma$ and $\dd \vv r / \dd (c t_0) = \gamma \vvbeta$. The difference of their squares equals the squared rate, $1^2 = 1$. When $\beta \ll 1$, inertial observers calculate a time contribution $\gamma$ of about one, and a space contribution $\gamma \vvbeta$ of about zero---exactly one and zero in the traveler's instantaneous rest frame. What happens as $\beta$ gets larger? Perhaps you've encountered the unfortunately common pop-sci factoid that the time contribution should then decrease, that ``speed through time" must diminish to accommodate a greater ``speed through space" so that they always sum to one (or to $c$ in different units). As Equation \ref{eq:25} shows, that's a white lie at best (and ``speed through time" is gibberish). Yes, the $ct_0$-rate of spacetime-traversal is always one, and yes, the magnitude of $\gamma \vvbeta$ obviously increases with $\beta$. But look at the time contribution. It doesn't decrease; it blows up to infinity as $\beta$ approaches one! The space contribution does, too, but it can never catch up to the time contribution, since $1>\beta$. So no, the contributions aren't inversely related, and they don't balance to one (or $c$ if unnormalized). The \emph{difference of their squares} balances to $1^2=1$.
 
 Note that Equation \ref{eq:25} doesn't permit setting $\beta=1$ (leads to division by zero in the Lorentz factors), consistent with the fact that proper time is only defined for timelike journeys. No spacelike or lightlike intervals allowed here. To speak of ``restless" (massless) systems ``experiencing" time is meaningless.
 
 \subsubsection{The Spacetime Magnitude-of-Momentum-Analogue}\label{sssec:pc}
 
-So we have a spacetime distance-analogue $\dd s$ and a (normalized) spacetime speed-analogue $(\dd s/\dd t_0)/c=1$, both invariant and the latter constant. We could keep going. Taking a $c t_0$-derivative of the $\beta$-analogue, for instance, would lead us to a spacetime $\zeta$-analogue (magnitude-of-``normalized"-acceleration).\footnote{Recall that we've dubbed $\vvzeta = \dot{\vvbeta} = \vv a / c^2$ the ``normalized" acceleration.} Taking yet another would get us an analogue of ``normalized" jerk. The calculus gets more involved, but the principle is the same. We won't do either of those here, though. Instead, we'll find a spacetime magnitude-of-momentum-analogue to bring this section to a close.\footnote{``Spacetime magnitude-of-momentum-analogue"? Oy. Surely we can do better than this. Read on!}
+So we have a spacetime distance-analogue $\dd s$ and a (normalized) spacetime speed-analogue $\dd s/\dd (c t_0)=1$, both invariant and the latter constant. We could keep going. Taking a $c t_0$-derivative of the $\beta$-analogue, for instance, would lead us to a spacetime $\zeta$-analogue (magnitude-of-``normalized"-acceleration).\footnote{Recall that we've dubbed $\vvzeta = \dot{\vvbeta} = \vv a / c^2$ the ``normalized" acceleration.} Taking yet another would get us an analogue of ``normalized" jerk. The calculus gets more involved, but the principle is the same. We won't do either of those here, though. Instead, we'll find a spacetime magnitude-of-momentum-analogue to bring this section to a close.\footnote{``Spacetime magnitude-of-momentum-analogue"? Oy. Surely we can do better than this. Read on!}
 
-How do we obtain our $p c$-analogue? Well, we already have a $\beta$-analogue, and we know from Equation \ref{eq:18} that momentum is $\vvbeta$ times $E$. But multiplying by $E$ won't do; it isn't invariant. How about rest energy $E_0$? That's the traveler's total energy $E$ as measured in the traveler's instantaneous rest frame, and it's definitely invariant. Yes, that will work, and so our spacetime $p c$-analogue is $(\dd s/\dd t_0)/c$ times $E_0$. By Equation \ref{eq:25}, we have:
+How do we obtain our $p c$-analogue? Well, we already have a $\beta$-analogue, and we know from Equation \ref{eq:18} that momentum is $\vvbeta$ times $E$. But multiplying by $E$ won't do; it isn't invariant. How about rest energy $E_0$? That's the traveler's total energy $E$ as measured in the traveler's instantaneous rest frame, and it's definitely invariant. Yes, that will work, and so our spacetime $p c$-analogue is $\dd s/\dd (c t_0)$ times $E_0$. By Equation \ref{eq:25}, we have:
 \begin{equation*}
 \begin{split}
-\left[ \left(\dfrac{\dd s}{\dd t_0} \, \dfrac{1}{c} \right) E_0 \right]^2 &= \left[ \left(c \, \dfrac{\dd t}{\dd t_0} \, \dfrac{1}{c}\right) E_0\right]^2 - \left[ \left(\dfrac{\dd \vv r}{\dd t_0} \, \dfrac{1}{c} \right)E_0\right]^2 \\[5pt]
+\left[ \left( \dfrac{\dd s}{\dd (c t_0)} \right) E_0 \right]^2 &= \left[ \left( \dfrac{\dd (ct)}{\dd (c t_0)} \right) E_0\right]^2 - \left[ \left( \dfrac{\dd \vv r}{\dd (c t_0)} \right)E_0\right]^2 \\[5pt]
 \bigl[ (1)E_0 \bigr]^2 &=  \bigl[ (\gamma) E_0 \bigr] ^2 - \bigl[ (\gamma \bm{\upbeta}) E_0 \bigr] ^2 ,
 \end{split}
 \end{equation*}
@@ -833,15 +833,15 @@ This situation mirrors that of the low-$\beta$ Equation \ref{eq:16}, where $E_0$
 
 Hidden in our steps for Equation \ref{eq:26} is a pair of relations worth making explicit:
 \begin{equation}\label{eq:27}
-\dfrac{E}{E_0} = c \, \dfrac{\dd t}{\dd t_0} \, \dfrac{1}{c}
+\dfrac{E}{E_0} = \dfrac{\dd (ct)}{\dd (c t_0)}
 \end{equation}
 and
 \begin{equation}\label{eq:28}
-\dfrac{\vv p c}{E_0} = \dfrac{\dd \vv r}{\dd t_0} \, \dfrac{1}{c}
+\dfrac{\vv p c}{E_0} = \dfrac{\dd \vv r}{\dd (c t_0)}
 \end{equation}
-Constants aside, total energy and momentum are to invariant rest energy as coordinate time and displacement are to invariant proper time. A comparison with Equation \ref{eq:19} is instructive (it's Equation \ref{eq:28} divided by Equation \ref{eq:27}). Of course, Equation \ref{eq:27} becomes Equation \ref{eq:12} if we sub in $\gamma$ for $\dd t / \dd t_0$. Additionally, we can extract from Equation \ref{eq:28} a ``new" expression for momentum:
+Constants aside, total energy and momentum are to invariant rest energy as coordinate time and displacement are to invariant proper time. A comparison with Equation \ref{eq:19} is instructive (it's Equation \ref{eq:28} divided by Equation \ref{eq:27}). Of course, Equation \ref{eq:27} becomes Equation \ref{eq:12} if we sub in $\gamma$ for $\dd (ct) / \dd (c t_0)$. Additionally, we can extract from Equation \ref{eq:28} a ``new" expression for momentum:
 \begin{equation*}
-\vv p c = E_0 \, \dfrac{\dd \vv r}{\dd t_0} \, \dfrac{1}{c} = E_0 \mkern.5mu \mathring{\vv r},
+\vv p c = E_0 \, \dfrac{\dd \vv r}{\dd (c t_0)} = E_0 \mkern.5mu \mathring{\vv r},
 \end{equation*}
 or introducing the symbol $\vvomega \equiv \mathring{\vv r} = \gamma \dot{\vv r} = \gamma \vvbeta$ (see Footnote \ref{fn:cr}):
 \begin{equation}\label{eq:29}
@@ -960,7 +960,7 @@ Our instinct might be to note that the Pythagorean relationship we previously id
 So here again are our Equations \ref{eq:24}, \ref{eq:25}, and \ref{eq:26}, unsquared this time and with the vectors broken down into their Cartesian components:
 \begin{align*}
 \dd s&=\sqrt{(c \, \dd t)^2 - \Bigl[ (\dd x)^2 + (\dd y)^2 + (\dd z)^2 \Bigr]} \tag{$\Vert \dd \vv r \Vert$-analogue} \\[10pt]
-\mathring{s} = \dfrac{\dd s}{\dd t_0} \, \dfrac{1}{c} =1&=\sqrt{\gamma^2 - \Bigl[ (\gamma \beta_x)^2 + (\gamma \beta_y)^2 + (\gamma \beta_z)^2 \Bigr]} \tag{$\beta$-analogue} \\[10pt]
+\mathring{s} = \dfrac{\dd s}{\dd (c t_0)} =1&=\sqrt{\gamma^2 - \Bigl[ (\gamma \beta_x)^2 + (\gamma \beta_y)^2 + (\gamma \beta_z)^2 \Bigr]} \tag{$\beta$-analogue} \\[10pt]
 E_0 \mkern1mu \mathring{s} = E_0 &=\sqrt{E^2 - \Bigl[ (cp_x)^2 + (cp_y)^2 + (cp_z)^2 \Bigr] } \tag{$p c$-analogue}
 \end{align*}
 And here's what we've already acknowledged about them:
@@ -1035,7 +1035,7 @@ Next, we define the normalized \textbf{four-velocity} by replicating our steps f
 \begin{equation}\label{eq:31}
 \boxed{
 \begin{aligned}
-\vv B&\equiv \mathring{\vv R} = \dfrac{1}{c} \, \dfrac{\dd \vv R}{\dd t_0} \\[3pt]
+\vv B&\equiv \mathring{\vv R} = \dfrac{\dd \vv R}{\dd (c t_0)} \\[3pt]
 &= \langle \gamma, \gamma \vvbeta \rangle = \langle \gamma, \mkern1mu \vvomega \rangle \\[4pt]
 &= \gamma \mkern1.5mu \big \langle 1, \, \beta_x, \, \beta_y, \, \beta_z \big \rangle
 \end{aligned}
@@ -1097,7 +1097,7 @@ In Section \ref{sssec:pc}, we puzzled over the notion that rest energy is the me
 
 With all this talk about resistance to change in velocity, it's about time we introduced a relativistic concept of force. But before we do, let's reiterate the stipulation we made in Footnote \ref{fn:tr}: for now, we model any accelerating system (or ``traveler") as a point particle. Otherwise we'd need to account for the fact that the whole system doesn't accelerate ``as one" under the influence of a (non-gravitational) force, and we'd have to allow for different parts of the system to have different rest frames. Let's also remind ourselves of a related issue we encountered back in Section \ref{ssec:re}: if the transfer of rest energy into or out of a composite system occurs at more than one location on the system's bounds, then the relativity of simultaneity makes it difficult if not impossible to consider the rest energy ``invariant." If the energy-transfer occurs at a single location on the system's bounds, or if the system is modeled as a point particle, then the relativity of simultaneity presents no such issue.
 
-On to force. In Newtonian mechanics, force is $\vv f_{\mathrm{classical}} \equiv \dd \vv p_{\mathrm{classical}} / \dd t$.\footnote{\label{fn:cf}We regard $\vv f_{\mathrm{classical}} = m \vv a$ as incidental, valid only in the ``special case" that $\dot{m} = 0$. It's probably more common to \emph{define} classical force as $m \vv a$, so that its magnitude is \emph{always} invariant under a Galilean boost (even in a variable-mass situation). The definition we're using falls short in that regard (the chain rule produces a frame-dependent $(\dd m / \dd t) \vv v$ term), but it has two advantages for us: first, it emphasizes a conserved quantity (momentum); and second, it makes the transition to force in special relativity rather straightforward.} Let's take this as our cue and define a \textbf{four-force}---sometimes called the \textbf{Minkowski force}---in terms of the four-momentum (we'll use the chain rule with $\dd t / \dd t_0 = \gamma$):
+On to force. In Newtonian mechanics, force is $\vv f_{\mathrm{classical}} \equiv \dd \vv p_{\mathrm{classical}} / \dd t$.\footnote{\label{fn:cf}We regard $\vv f_{\mathrm{classical}} = m \vv a$ as incidental, valid only in the ``special case" that $\dot{m} = 0$. It's probably more common to \emph{define} classical force as $m \vv a$, so that its magnitude is \emph{always} invariant under a Galilean boost (even in a variable-mass situation). The definition we're using falls short in that regard (the chain rule produces a frame-dependent $(\dd m / \dd t) \vv v$ term), but it has two advantages for us: first, it emphasizes a conserved quantity (momentum); and second, it makes the transition to force in special relativity rather straightforward.} Let's take this as our cue and define a \textbf{four-force}---sometimes called the \textbf{Minkowski force}---in terms of the four-momentum (we'll use the chain rule with $\dd (ct) / \dd (c t_0) = \gamma$):
 \begin{equation}\label{eq:33}
 \boxed{
 \begin{aligned}
@@ -1108,14 +1108,14 @@ On to force. In Newtonian mechanics, force is $\vv f_{\mathrm{classical}} \equiv
 \end{aligned}
 } \, ,
 \end{equation}
-where $\mathcal{P} \equiv \dot{E} = (\dd E / \dd t)/c$ is the ``normalized" \textbf{relativistic power}, and where ${\vv f \equiv \dot{\vv p} c = (\dd \vv p c / \dd t)/c}$ is the \textbf{relativistic three-force}. If we wanted to be dimensionally consistent with classical physics we could instead write ${\vv F = \gamma \langle P/c, \mkern.5mu \vv f \rangle}$ (where $P = \mathcal{P}c$ is power in traditional units, not $\Vert \vv P \Vert$), but I'm allergic to unnecessary $c^{-1}$'s.\footnote{Setting $c = 1$ renders all of this moot, but we're not doing that. My strategy is: make symbols for ``normalized" quantities to hide $c^{-1}$ ($\mathcal P$, $\vvbeta$, $\vvzeta$), admit $c$ sometimes by ``attaching" it to certain quantities ($\vv p c$, $ct$), and always take $ct$-derivatives (never $t$-derivatives).} Like the four-velocity, the four-force is defined as a $ct_0$-derivative and is therefore inapplicable when $E_0 = 0$.
+where $\mathcal{P} \equiv \dot{E} = \dd E / \dd (ct)$ is the ``normalized" \textbf{relativistic power}, and where ${\vv f \equiv \dot{\vv p} c = \dd (\vv p c) / \dd (ct)}$ is the \textbf{relativistic three-force}. If we wanted to be dimensionally consistent with classical physics we could instead write ${\vv F = \gamma \langle P/c, \mkern.5mu \vv f \rangle}$ (where $P = \mathcal{P}c$ is power in traditional units, not $\Vert \vv P \Vert$), but I'm allergic to unnecessary $c^{-1}$'s.\footnote{Setting $c = 1$ renders all of this moot, but we're not doing that. My strategy is: make symbols for ``normalized" quantities to hide $c^{-1}$ ($\mathcal P$, $\vvbeta$, $\vvzeta$), admit $c$ sometimes by ``attaching" it to certain quantities ($\vv p c$, $ct$), and always take $ct$-derivatives (never $t$-derivatives).} Like the four-velocity, the four-force is defined as a $ct_0$-derivative and is therefore inapplicable when $E_0 = 0$.
 
 So the greater a system's rest energy $E_0$, the greater its resistance to change in (direction of) four-velocity $\vv B$ under the influence of an acceleration-causing four-force $\vv F$. We specify ``acceleration-causing" because a system whose $E_0$ changes while its $\vvbeta$ (and hence $\vv B$) doesn't---like the light-emitting body in Einstein's thought experiment---is under the influence of a four-force, too.\footnote{\label{fn:fo}Unlike the classical force, whose magnitude isn't Galilean-invariant in a variable-mass scenario because of the frame-dependent $(\dd m / \dd t) \vv v$ term mentioned in Footnote \ref{fn:cf}, the four-force has a magnitude that's \emph{always} Lorentz-invariant (provided we model the system in question as a point particle). The chain rule does produce an analogous $\mathring{E}_0 \vv B$ term ($\vv F = \mathring{\vv P} = \mathring{E}_0 \vv B + E_0 \mathring{\vv B}$), but $\vv B$ is itself a four-vector with a Lorentz-invariant magnitude, whereas $\vv v$'s magnitude varies under a Galilean boost. \emph{The four-velocity is \emph{not} to the Lorentz transformation as the three-velocity is to the Galilean transformation.}}
 
 In the common scenario that a system's $E_0$ doesn't change, the relativistic power $\mathcal{P} = \dot{E} = \dot{E}_{\mkern.5mu \textrm{k}}$, and we're inclined to ask ourselves whether the \textbf{work--kinetic energy principle} from Newtonian mechanics holds in special relativity: does $\dd E_{\mkern.5mu \textrm{k}} = \vv f \cdot \dd \vv r$ in this case? Or equivalently, does $\dot{E}_{\mkern.5mu \textrm{k}} = \vv f \cdot \vvbeta$? It does, as we discover if we take the $ct$-derivative of Equation \ref{eq:21}:
 \begin{equation}\label{eq:rp}
 \begin{split}
-\frac{1}{c} \frac{\dd}{\dd t} \Big[ E^2 \Big] &= \frac{1}{c} \frac{\dd}{\dd t} \Big[ E_0^2 + (\vv p c)^2 \Big] \\[5pt]
+\frac{\dd}{\dd (ct)} \Big[ E^2 \Big] &= \frac{\dd}{\dd (ct)} \Big[ E_0^2 + (\vv p c)^2 \Big] \\[5pt]
 2E \dot{E} &= 2 E_0 \dot{E}_0 + 2 \vv p c \cdot \dot{\vv p} c\\[5pt]
 \dot{E} &= \dfrac{E_0}{E} \, \dot{E}_0 + \dot{\vv p} c \mkern1mu \cdot \dfrac{\vv p c}{E} \\[5pt]
 \mathcal{P} &= \dfrac{\mathring{E}_0}{\gamma^2} + \vv f \cdot \vvbeta
@@ -1182,7 +1182,7 @@ Here's a ``trick": given an arbitrary inertial frame and an arbitrary four-vecto
 
 So we have the four-displacement $\dd \vv R$, the normalized four-velocity $\vv B$, the four-momentum $\vv P$, and the four-force $\vv F$. Question: in what direction do they point? We began by \emph{defining} $\dd \vv R$ as tangent to a traveler's world line, pointing in whatever spacetime direction the traveler happens to be going. Common sense says that the same is true of the traveler's $\vv B$ and $\vv P$, but let's take a moment to think about what that means mathematically. Two vectors are codirectional if one is obtained by scaling the other by a positive number. We know that $\vv B$ and $\vv P$ are codirectional, since the latter is simply the former scaled by the traveler's $E_0$. Can we make a similar argument for $\dd \vv R$ and $\vv B$, and say that the latter is simply the former ``scaled" by the infinitesimal $1/(c \, \dd t_0)$? We can, but we need to be careful---we're \emph{not} saying that $\vv B$ is codirectional with $\vv R$! We're ``scaling" $\dd \vv R$, but \emph{differentiating} $\vv R$.
 
-With that in mind, consider what happens when we take the $c t_0$-derivative of the four-velocity $\vv B$ to find the (``normalized") \textbf{four-acceleration}, $\vv Z$, analogous to the ``normalized" three-acceleration $\vvzeta=(\dd \vvbeta / \dd t)/c$:\footnote{Like $\vvzeta$, $\vv Z$ isn't \emph{really} normalized (it isn't dimensionless, and its magnitude $Z$ can exceed one). It inherits the label (with scare quotes) to clarify that it isn't the ``unnormalized" four-acceleration $\vv A = \dd \vv V / \dd t_0 = \vv Z c^2$, which we have no use for.}
+With that in mind, consider what happens when we take the $c t_0$-derivative of the four-velocity $\vv B$ to find the (``normalized") \textbf{four-acceleration}, $\vv Z$, analogous to the ``normalized" three-acceleration $\vvzeta=\dd \vvbeta / \dd (ct)$:\footnote{Like $\vvzeta$, $\vv Z$ isn't \emph{really} normalized (it isn't dimensionless, and its magnitude $Z$ can exceed one). It inherits the label (with scare quotes) to clarify that it isn't the ``unnormalized" four-acceleration $\vv A = \dd \vv V / \dd t_0 = \vv Z c^2$, which we have no use for.}
 \begin{equation}\label{eq:34}
 \boxed{
 \begin{aligned}
@@ -1195,9 +1195,9 @@ With that in mind, consider what happens when we take the $c t_0$-derivative of 
 and it's apparent that $\vv Z$ and $\vv B$ are \emph{not} codirectional. In fact, they're orthogonal! It must be so: $\vv B$ is always a unit vector, so only its direction can change.\footnote{If you don't see why constant $B$ means that $\vv B$ and $\vv Z$ are orthogonal, then think of the velocity and acceleration three-vectors in the familiar case of uniform circular motion.} And we can easily confirm it, because if two vectors are orthogonal then their dot product is zero. To test that, let's start by evaluating the $ct$-derivative of $\gamma$ (remembering that $\beta^2$ is actually $\vvbeta \cdot \vvbeta$):
 \begin{equation}\label{eq:gd}
 \begin{split}
-\dot{\gamma} &= \dfrac{\dd}{\dd t} \left[ \left(1-\beta^2 \right)^{-1/2} \right] \dfrac{1}{c} \\[5pt]
-&= \dfrac{\dd}{\dd ( \beta^2 )} \left[ \left( 1 - \beta^2 \right)^{-1/2} \right] \dfrac{\dd (\beta^2)}{\dd t} \, \dfrac{1}{c}  \\[5pt]
-&= \frac{1}{2} \left( 1 - \beta ^2 \right)^{-3/2} \, \dfrac{\dd}{\dd t} \bigl( \vvbeta \cdot \vvbeta \bigr) \dfrac{1}{c} \\[5pt]
+\dot{\gamma} &= \dfrac{\dd}{\dd (ct)} \left[ \left(1-\beta^2 \right)^{-1/2} \right] \\[4pt]
+&= \dfrac{\dd}{\dd ( \beta^2 )} \left[ \left( 1 - \beta^2 \right)^{-1/2} \right] \dfrac{\dd (\beta^2)}{\dd (ct)} \\[5pt]
+&= \frac{1}{2} \left( 1 - \beta ^2 \right)^{-3/2} \, \dfrac{\dd}{\dd (ct)} \bigl( \vvbeta \cdot \vvbeta \bigr) \\[4pt]
 &= \frac{\gamma^3}{2} \left[ ( \vvbeta \cdot \dot{\vvbeta} ) + ( \dot{\vvbeta} \cdot \vvbeta ) \right] \\[5pt]
 \dot{\gamma} &= \gamma^3 (\vvbeta \cdot \vvzeta).
 \end{split}
@@ -1211,7 +1211,7 @@ And now we note that in a traveler's instantaneous rest frame, the three-velocit
 Confession: we could have demonstrated that orthogonality more quickly in a manifestly covariant way:
 \begin{equation*}
 \begin{split}
-\dfrac{1}{c} \, \dfrac{\dd}{\dd t_0} \left( \vv B \cdot \vv B \right) &= \dfrac{1}{c} \, \dfrac{\dd}{\dd t_0} \, B^2 \\[2pt]
+\dfrac{\dd}{\dd (ct_0)} \left( \vv B \cdot \vv B \right) &= \dfrac{\dd}{\dd (c t_0)} \, B^2 \\[2pt]
 2 \, \big( \mathring{\vv B} \cdot \vv B \big) &= \mathring{1} \\[3pt]
 \vv Z \cdot \vv B &= 0 .
 \end{split}
@@ -1304,7 +1304,7 @@ What about the four-force (Equation \ref{eq:33})? Spacelike, timelike, or lightl
 \begin{equation}\label{eq:38}
 \begin{split}
 \vv F &= \mathring{\vv P}\\
-&= \frac{\dd}{\dd t_0} \left( E_0 \mkern.5mu \vv B \right) \frac{1}{c}\\[5pt]
+&= \frac{\dd}{\dd (c t_0)} \left( E_0 \mkern.5mu \vv B \right) \\[4pt]
 \vv F &= \mathring E_0 \mkern.5mu \vv B \quad \textrm{\footnotesize{ (for $\vv Z = \textrm{\mbox{\boldmath $\emptyset$}}$)}}.
 \end{split}
 \end{equation}
@@ -1712,7 +1712,7 @@ and
 \gamma^\prime f_z^\prime\\[.1 em]
 \end{bmatrix}
 \end{equation*}
-(remember that we've defined the relativistic power like $\mathcal{P} = \dot{E} = (\dd E / \dd t)/c$, so that it has force-units). That's:
+(remember that we've defined the relativistic power like $\mathcal{P} = \dot{E} = \dd E / \dd (ct)$, so that it has force-units). That's:
 \begin{equation*}
 \begin{aligned}
 \gamma^\prime \mathcal{P}^\prime &= \gamma_{\textrm{rel}} \mkern1mu \gamma \left( \mathcal{P} - \beta_{\textrm{rel}} \mkern1mu f_x \right) \qquad & \gamma \mathcal{P} &= \gamma_{\textrm{rel}} \mkern1mu \gamma^\prime \left( \mathcal{P}^\prime + \beta_{\textrm{rel}} \mkern1mu f^\prime_x \right) \\[1pt]
@@ -1868,7 +1868,7 @@ four-momentum (for $E_0 \neq 0$):
 \end{equation*}
 four-acceleration (``normalized"):\footnote{\label{fn:ph}By $\mathring{\phi}$ we mean the $ct_0$-derivative of the rapidity $\phi$, \emph{not} the magnitude of the vector $\mathring{\vvphi}$. They're equal only in the case of rectilinear motion (or when there's no acceleration):
 \begin{equation*}
-\left \Vert \mathring{\vvphi} \right \Vert = \left \Vert \dfrac{1}{c} \, \dfrac{\dd}{\dd t_0} \, ( \phi \hatphi ) \right \Vert = \left \Vert \mathring{\phi} \hatphi + \phi \mathring{\hatphi} \right \Vert,
+\left \Vert \mathring{\vvphi} \right \Vert = \left \Vert \dfrac{\dd}{\dd (c t_0)} \, ( \phi \hatphi ) \right \Vert = \left \Vert \mathring{\phi} \hatphi + \phi \mathring{\hatphi} \right \Vert,
 \end{equation*}
 which is just $\mathring{\phi}$ for rectilinear motion ($\mathring{\vvphi} \parallel \vvphi$), because then $\mathring{\hatphi} = \vv 0$.}
 \begin{equation*}
@@ -1948,11 +1948,11 @@ f_x & = \dfrac{E_0}{\gamma} \, \mathring{\omega}_x = \dfrac{E_0}{\cosh{\phi}} \,
 The $x$-axis will be our boost axis, so longitudinal rapidity is $\varphi = \tanh^{-1}{\beta_x}$, and $\omega_x = \gamma \beta_x = \cosh{\phi} \mkern1mu \tanh{\varphi}$. Now impose the condition that the three-velocity is in the positive or negative $x$-direction. This gives $\varphi = \phi_x = \pm \, \phi$ and puts Equations \ref{eq:rx} into play, such that $\omega_x = \cosh{\varphi} \mkern1mu \tanh{\varphi} = \sinh{\varphi}$:
 \begin{equation*}
 \begin{split}
-f_x &= \dfrac{E_0}{\cosh{\varphi}} \, \dfrac{\dd}{\dd t_0} \left( \sinh{\varphi} \right) \dfrac{1}{c}  \\[3pt]
+f_x &= \dfrac{E_0}{\cosh{\varphi}} \, \dfrac{\dd}{\dd (c t_0)} \left( \sinh{\varphi} \right)  \\[3pt]
 f_x &= E_0 \mkern1.5mu \mathring{\varphi} .
 \end{split}
 \end{equation*}
-Since $E_0$ and $c \, \dd t_0$ are Lorentz-invariant, and since $\dd \varphi$ (infinitesimal change in longitudinal rapidity) is invariant under a boost along the $x$-axis, the component $f_x = E_0 (\dd \varphi / \dd t_0) / c$ must also be invariant under a boost along the $x$-axis---that is, under a boost in the $\pm \, \hatbeta$ direction.
+Since $E_0$ and $c \, \dd t_0$ are Lorentz-invariant, and since $\dd \varphi$ (infinitesimal change in longitudinal rapidity) is invariant under a boost along the $x$-axis, the component $f_x = E_0 \, \dd \varphi / \dd (c t_0)$ must also be invariant under a boost along the $x$-axis---that is, under a boost in the $\pm \, \hatbeta$ direction.
 
 
 \subsubsection{Pseudorapidity and the Ultrarelativistic Limit}
@@ -2055,14 +2055,14 @@ Because $\eta$ is such a good approximation for $y$ in the ultrarelativistic lim
 With an important caveat, the Newtonian kinematic equations for constant acceleration are still applicable in special relativity, provided that only \emph{coordinate} quantities appear in them. This is merely a matter of defining velocity and acceleration as the first and second time-derivatives of position. In our notation, for example, and using the subscript i for \emph{initial} values ($ct = 0$):\footnote{It's common to use the naught subscript for initial values, but we're already using that for \emph{proper} quantities.}
 \begin{equation*}
 \begin{aligned}
-\int_0^{ct} \dfrac{1}{c} \, \dfrac{\dd \vvbeta}{\dd t} \, c \, \dd t &= \int_0^{ct} \vvzeta \, c \, \dd t \\[5pt]
+\int_0^{ct} \dfrac{\dd \vvbeta}{\dd (ct)} \, c \, \dd t &= \int_0^{ct} \vvzeta \, c \, \dd t \\[5pt]
 \vvbeta -  \vvbeta_{\textrm{i}} &= \vvzeta \mkern2mu ct,
 \end{aligned}
 \end{equation*}
 and then also:
 \begin{equation*}
 \begin{aligned}
-\int_0^{ct} \dfrac{1}{c} \, \dfrac{\dd \vv r}{\dd t} \, c \, \dd t &= \int_0^{ct} \vvbeta \, c \, \dd t \\[5pt]
+\int_0^{ct} \dfrac{\dd \vv r}{\dd (ct)} \, c \, \dd t &= \int_0^{ct} \vvbeta \, c \, \dd t \\[5pt]
 \vv r - \vv r_{\textrm{i}} &= \int_0^{ct} \left( \vvbeta_{\textrm{i}} + \vvzeta \, ct \right) c \, \dd t \\[3pt]
 \vv r &= \vv r_{\textrm{i}} + \vvbeta_{\textrm{i}} \mkern2mu ct + \dfrac{1}{2} \mkern2mu \vvzeta \, ( ct )^2 \\[4pt]
 & \left[ = \vv r_{\textrm{i}} + \vv v_{\textrm{i}} \mkern2mu t + \dfrac{1}{2} \mkern2mu \vv a t^2 \right] ,
@@ -2121,7 +2121,7 @@ and we can use $\beta_x = \omega_x / \gamma$ or the identity $\tanh{(\sinh^{-1} 
 \end{equation*}
 As for position, $\vv r (ct) = \langle x (ct) , y_{\mkern1mu \mathrm{i}}, z_{\mkern1mu \mathrm{i}} \rangle$, and we integrate the above equation for $\beta_x = \dot{x}$ to find $x$:
 \begin{equation*}
-\int_0^{ct} \dfrac{1}{c} \, \dfrac{\dd x}{\dd t} \, c \, \dd t = \int_0^{ct} \dfrac{\omega_x}{\sqrt{1 + \omega^2_x}} \, c \, \dd t .
+\int_0^{ct} \dfrac{\dd x}{\dd (ct)} \, c \, \dd t = \int_0^{ct} \dfrac{\omega_x}{\sqrt{1 + \omega^2_x}} \, c \, \dd t .
 \end{equation*}
 Use substitution, with $u = 1 + \omega^2_x$ and $\dd u = 2 \mkern1mu \omega_x \mkern2mu \zeta_{0 \mkern2mu x} \, c \, \dd t$ (by Equation \ref{eq:ce}):
 \begin{equation*}
@@ -2138,7 +2138,7 @@ x (ct) = x_{\mathrm{i}} + \dfrac{ \gamma - \gamma_{\mkern1mu \mathrm{i}} }{ \zet
 We can also express the accelerating traveler's \emph{proper time} as a function of the inertial observer's coordinate time. By time dilation and $\gamma = \sqrt{1 + \omega^2_x}$:
 \begin{equation*}
 \begin{aligned}
-\int^{ct}_0 \dfrac{\dd t_0}{\dd t}  \, c \, \dd t &= \int^{ct}_0 \dfrac{1}{\gamma} \, c \, \dd t \\[5pt]
+\int^{ct}_0 \dfrac{\dd (c t_0)}{\dd (ct)}  \, c \, \dd t &= \int^{ct}_0 \dfrac{1}{\gamma} \, c \, \dd t \\[5pt]
 \int^{ct_0}_{ct_{0 \mkern1mu \mathrm{i}}} c \, \dd t_0 &= \int^{ct}_0 \dfrac{c \, \dd t}{\sqrt{1 + \omega^2_x}}
 \end{aligned}
 \end{equation*}
@@ -2216,7 +2216,7 @@ Now apply Equations \ref{eq:rx} to Equation \ref{eq:ra}:
 Because $\mathring{x} = \omega_x$, we integrate the above equation for $\omega_x$ to find $x(ct_0)$:
 \begin{equation*}
 \begin{split}
-\int^{ct_0}_0 \dfrac{1}{c} \, \dfrac{\dd x}{\dd t_0} \, c \, \dd t_0 &= \int^{ct_0}_0 \sinh{\phi_x} \, c \, \dd t_0 \\[6pt]
+\int^{ct_0}_0 \dfrac{\dd x}{\dd (c t_0)} \, c \, \dd t_0 &= \int^{ct_0}_0 \sinh{\phi_x} \, c \, \dd t_0 \\[6pt]
 x(ct_0) - x_{\mathrm{i}} &= \dfrac{1}{\zeta_{0 \mkern2mu x}} \int^{\phi_x}_{\phi_{x \mkern1mu \textrm{i} }} \sinh{\phi_x} \, \dd \phi_x
 \end{split}
 \end{equation*}
@@ -2227,7 +2227,7 @@ x(ct_0) = x_{\mathrm{i}} + \dfrac{\gamma - \gamma_{\mkern1mu \mathrm{i}}}{ \zeta
 ($\gamma = \cosh{\phi_x}$). Last, we can express our inertial observer's coordinate time as a function of our accelerating traveler's proper time. By time dilation and Equation \ref{eq:ra}:
 \begin{equation*}
 \begin{split}
-\int^{ct_0}_0 \dfrac{\dd t}{\dd t_0} \, c \, \dd t_0 &= \int^{ct_0}_0 \gamma \, c \, \dd t_0 \\[6pt]
+\int^{ct_0}_0 \dfrac{\dd (ct)}{\dd (c t_0)} \, c \, \dd t_0 &= \int^{ct_0}_0 \gamma \, c \, \dd t_0 \\[6pt]
 \int^{ct}_{ct_{\mathrm{i}}} c \, \dd t &= \dfrac{1}{ \zeta_{0 \mkern2mu x}} \int^{\phi_x}_{\phi_{x \mkern1mu \textrm{i} }} \cosh{\phi_x} \, \dd \phi_x
 \end{split}
 \end{equation*}
@@ -2381,7 +2381,7 @@ We'll need a four-vector equivalent of the ``del" (``nabla") symbol:
 \end{equation*}
 Let's notate it $\partialup$ (``vectorized" $\partial$ symbol). A natural guess is:
 \begin{equation*}
-\partialup \stackrel{?}{=} \left \langle \dfrac{1}{c} \, \dfrac{\partial}{\partial t} , \, \dfrac{\partial}{\partial x}, \, \dfrac{\partial}{\partial y}, \, \dfrac{\partial}{\partial z} \right \rangle = \left \langle \dfrac{1}{c} \, \dfrac{\partial}{\partial t} , \, \del \right \rangle ,
+\partialup \stackrel{?}{=} \left \langle \dfrac{\partial}{\partial (ct)} , \, \dfrac{\partial}{\partial x}, \, \dfrac{\partial}{\partial y}, \, \dfrac{\partial}{\partial z} \right \rangle = \left \langle \dfrac{\partial}{\partial (ct)} , \, \del \right \rangle ,
 \end{equation*}
 but do these components transform Lorentzianly under a boost? If not, then $\partialup$ isn't a four-vector, and using it to operate on a spacetime scalar field (whose value at each event is invariant) won't have the intended effect of producing a four-vector field. To find out, use the multivariable chain rule and Equations \ref{eq:lt} (standard configuration, so $ct^\prime$ and $x^\prime$ are functions of $ct$ and $x$, and vice versa). In detail for the $ct^\prime$-partial, and then similarly for the $x^\prime$-partial:
 \begin{equation*}
@@ -2403,8 +2403,8 @@ There we go. Our \textbf{four-del} symbol is:
 \begin{equation}\label{eq:fn}
 \boxed{
 \begin{aligned}
-\partialup &\equiv \left \langle \dfrac{1}{c} \, \dfrac{\partial}{\partial t} , \, - \del \right \rangle \\[3pt]
-&= \left \langle \dfrac{1}{c} \, \dfrac{\partial}{\partial t} , \, - \dfrac{\partial}{\partial x}, \, - \dfrac{\partial}{\partial y}, \, - \dfrac{\partial}{\partial z} \right \rangle \\[3pt]
+\partialup &\equiv \left \langle \dfrac{\partial}{\partial (ct)} , \, - \del \right \rangle \\[3pt]
+&= \left \langle \dfrac{\partial}{\partial (ct)} , \, - \dfrac{\partial}{\partial x}, \, - \dfrac{\partial}{\partial y}, \, - \dfrac{\partial}{\partial z} \right \rangle \\[3pt]
 &=  \left \langle \partial^{ct}, \, \partial^x , \, \partial^y , \, \partial^z \right \rangle
 \end{aligned}
 }
@@ -2436,9 +2436,9 @@ whose value at every event is Lorentz-invariant.
 When $\partialup$ is dotted with \emph{itself}, the resulting function is called the \textbf{wave operator}, the \textbf{four-Laplacian}, or the \textbf{d'Alembertian}, labeled $\Box$:\footnote{Another convention---preferable, perhaps, but less common these days---uses $\Box$ as the four-del symbol and $\Box^2$ as the d'Alembertian, mirroring the use of $\del$ for the three-del and $\nabla ^2 = \del \cdot \del$ for the three-Laplacian. The symbol $\Box$ is sometimes called \emph{quabla}.}
 \begin{equation*}
 \begin{split}
-\Box &\equiv \partialup \cdot \partialup = \dfrac{1}{c^2} \, \dfrac{\partial^2}{\partial t^2} - \left[ \left( - \del \right) \cdot \left( - \del \right) \right] \\
-&= \dfrac{1}{c^2} \, \dfrac{\partial^2}{\partial t^2} - \nabla ^2 \\[4pt]
-&= \dfrac{1}{c^2} \, \dfrac{\partial^2}{\partial t^2} - \dfrac{\partial^2}{\partial x^2} - \dfrac{\partial^2}{\partial y^2} - \dfrac{\partial^2}{\partial z^2} .
+\Box &\equiv \partialup \cdot \partialup = \partial^{ct} \partial^{ct} - \left[ \left( - \del \right) \cdot \left( - \del \right) \right] \\[3pt]
+&= \partial^{ct} \partial^{ct} - \nabla ^2 \\[2pt]
+&= \dfrac{\partial^2}{\partial (ct)^2} - \dfrac{\partial^2}{\partial x^2} - \dfrac{\partial^2}{\partial y^2} - \dfrac{\partial^2}{\partial z^2} .\\
 \end{split}
 \end{equation*}
 }
@@ -2629,7 +2629,7 @@ or $\partial^{ct} \rho = - \del \cdot \vv j$. This \textbf{continuity equation} 
 \end{equation*}
 and use the divergence theorem:
 \begin{equation}\label{eq:con2}
-- \dfrac{1}{c} \, \dfrac{\dd}{\dd t} \int_V \rho \, \dd V = \int_S \left( \vv j \cdot \vv{\hat{n}} \right) \dd S
+- \dfrac{\dd}{\dd (ct)} \int_V \rho \, \dd V = \int_S \left( \vv j \cdot \vv{\hat{n}} \right) \dd S
 \end{equation}
 (on the right side, $S$ is the bounding surface of $V$, and $\vv{\hat{n}}$ is an outward-pointing unit vector normal to the surface element $\dd S$; on the left side, the volume's time-independence allowed us to move the time-derivative outside of the integral). Since $\rho$ is the charge density, its volume-integral is just the total charge in the region, and the left side of the equation is then the rate at which the region's total charge is decreasing. The right side has the form of a \textbf{flux}, where $\vv j$ gives the per-unit-area rate of charge-transport (the \emph{flow} or \emph{flux density} of charge), and where the whole surface integral represents the rate at which charge is flowing \emph{out} of the region's bounds.\footnote{\label{fn:flux}Some semantics: is this the ``flux of charge" (the transported scalar) or the ``flux of $\vv j$" (the integrated vector)? Both conventions are common, but we'll prefer the ``flux of (the transported scalar)" convention. Note, though, that the surface integral of \emph{any} vector field is often called a flux, even when there's nothing transported (in which case only ``flux of [the integrated vector]" makes sense). Further, some people use the word \emph{flux} for the vector itself (our \emph{flow} or \emph{flux density}) or for its dot product with the unit normal ($\vv j \cdot \vv{\hat{n}}$).}
 
@@ -2664,7 +2664,7 @@ Something beautiful happens when we impose the Lorenz gauge:
 \end{equation}
 (again, see Section \ref{sssec:tp}). Equation \ref{eq:fp} is \emph{the} electromagnetic field equation. It's an inhomogeneous wave equation, and it says that a non-zero value of the $\vv J$ field at an event in spacetime generates a commensurate disturbance in the (Lorenz-gauge) $\vv A$ field that propagates outward in space at $\beta = 1$:
 \begin{equation*}
-\dfrac{1}{c^2} \, \dfrac{\partial^2 \vv A}{\partial t^2} - \nabla ^2 \vv A = \vv J .
+\partial^{ct} \partial^{ct} \vv A - \nabla ^2 \vv A = \vv J .
 \end{equation*}
 The disturbance propagates forever, though it can undergo interference with other disturbances. This is how information about $\vv J$ spreads. The sum of all such disturbances passing through a point in space at a given time determines the ``value" of $\vv A$ at that event (scare quotes because the value isn't uniquely defined---we have ``gauge freedom" even within the Lorenz gauge, remember). A disturbance passing through a region where $\vv J = \textrm{\mbox{\boldmath $\emptyset$}}$ (\textbf{free space}) is called an \textbf{electromagnetic wave}.
 
@@ -2675,7 +2675,7 @@ We've introduced the four-potential $\vv A = \vv A (\vv R)$ as any vector field 
 \begin{equation}\label{eq:ff}
 \boxed{\vv F_{\textrm{L}} = q \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A)} \, .
 \end{equation}
-This $\vv F_{\textrm{L}}$ is called the \textbf{Lorentz four-force}.\footnote{Since $\vv F$ has dimensions of $E / L$ (where $E$ and $L$ are energy- and length-units), you should now be able to show that $q$ has dimensions of $\sqrt{EL}$. (Not so in the SI, by the way.)} It's the physical effect that information about the four-current density's value elsewhere has on a test charge upon reaching it.\footnote{\label{fn:recoil}By ``test charge" we mean that we neglect the influence of the particle's charge on the four-potential, which, in turn, affects the particle! Accounting for it is beyond our scope and not entirely possible in classical electrodynamics anyway. (Remember: the theory is really about \emph{continua}, not \emph{particles}. In fact, instead of starting with $\vv F_{\textrm{L}}$, it's better to regard the field energy, momentum, and stress as fundamental, derive from them and Maxwell's equations the Lorentz four-force \emph{density}, and use a limiting procedure to obtain $\vv F_{\textrm{L}}$ by neglecting higher-order terms. We'll cover all those quantities, but we start with force because it's easier.) We do note that accelerating charges are what generate electromagnetic waves, and that the ``recoil" four-force that a radiating particle is subject to (``beyond" $\vv F_{\textrm{L}}$) is, \emph{to first approximation}, $\vv F = (q^2 / (6 \pi))[\mathring{\vv Z} + (\vv Z \cdot \vv Z) \vv B]$, where $q$ is the particle's charge, $\vv B$ its normalized four-velocity, $\vv Z$ its ``normalized" four-acceleration, and $\mathring{\vv Z}$ its ``normalized" four-jerk. In most practical applications, this additional \textbf{Abraham--Lorentz--Dirac four-force} is negligible.} The quantities on the right side are the particle's charge $q$, the particle's normalized four-velocity $\vv B$, and the ``value" of the four-potential $\vv A$ at the particle's spacetime position (we're differentiating the four-potential, so its non-uniqueness doesn't matter). As we learned in Section \ref{sssec:tp}, this differential four-vector triple product is gauge-invariant and can also be written:
+This $\vv F_{\textrm{L}}$ is called the \textbf{Lorentz four-force}.\footnote{Since $\vv J$ has dimensions of $Q / L^3$ (Equation \ref{eq:fc}), $\vv A$ must have $Q / L$ (Equation \ref{eq:gfp}). And since $\vv F$ has $E / L$, we now see that $q$ has $Q = \sqrt{EL}$. (Not so in the SI, by the way.)} It's the physical effect that information about the four-current density's value elsewhere has on a test charge upon reaching it.\footnote{\label{fn:recoil}By ``test charge" we mean that we neglect the influence of the particle's charge on the four-potential, which, in turn, affects the particle! Accounting for it is beyond our scope and not entirely possible in classical electrodynamics anyway. (Remember: the theory is really about \emph{continua}, not \emph{particles}. In fact, instead of starting with $\vv F_{\textrm{L}}$, it's better to regard the field energy, momentum, and stress as fundamental, derive from them and Maxwell's equations the Lorentz four-force \emph{density}, and use a limiting procedure to obtain $\vv F_{\textrm{L}}$ by neglecting higher-order terms. We'll cover all those quantities, but we start with force because it's easier.) We do note that accelerating charges are what generate electromagnetic waves, and that the ``recoil" four-force that a radiating particle is subject to (``beyond" $\vv F_{\textrm{L}}$) is, \emph{to first approximation}, $\vv F = (q^2 / (6 \pi))[\mathring{\vv Z} + (\vv Z \cdot \vv Z) \vv B]$, where $q$ is the particle's charge, $\vv B$ its normalized four-velocity, $\vv Z$ its ``normalized" four-acceleration, and $\mathring{\vv Z}$ its ``normalized" four-jerk. In most practical applications, this additional \textbf{Abraham--Lorentz--Dirac four-force} is negligible.} The quantities on the right side are the particle's charge $q$, the particle's normalized four-velocity $\vv B$, and the ``value" of the four-potential $\vv A$ at the particle's spacetime position (we're differentiating the four-potential, so its non-uniqueness doesn't matter). As we learned in Section \ref{sssec:tp}, this differential four-vector triple product is gauge-invariant and can also be written:
 \begin{equation}\label{eq:lff}
 \vv F_{\textrm{L}} = q \, \bigl[ \partialup_{\vv A} (\vv B \cdot \vv A) - (\vv B \cdot \partialup) \vv A \bigr] .\end{equation}
 By Equations \ref{eq:dt} and \ref{eq:31}, the component form of Equation \ref{eq:ff} is:
@@ -2813,11 +2813,11 @@ To obtain the ``homogeneous" pair, we've used Equations \ref{eq:eb} and two vect
 
 Earlier we called the Lorentz four-force (Equation \ref{eq:ff}) an ``empirical result." Alternatively, we can start with a suitable Lorentz-invariant Lagrangian and use the four-vector version of the Euler--Lagrange equation to \emph{derive} the Lorentz four-force. This is typically done with covectors and index notation, which we haven't covered, but our present toolkit will suffice if we define a new vector operator whose component-partials are with respect to the \emph{four-velocity} components. With some notational poetic license:
 \begin{equation*}
-\mathring{\partialup} \equiv \left \langle \dfrac{1}{c} \, \dfrac{\partial}{\partial \mathring{t}} , \,  - \dfrac{\partial}{\partial \mathring{x}} , \, - \dfrac{\partial}{\partial \mathring{y}} , \, - \dfrac{\partial}{\partial \mathring{z}} \right \rangle = \left \langle \dfrac{\partial}{\partial B^{ct}} , \,  - \dfrac{\partial}{\partial B^x} , \, - \dfrac{\partial}{\partial B^y} , \, - \dfrac{\partial}{\partial B^z} \right \rangle
+\mathring{\partialup} \equiv \left \langle \dfrac{\partial}{\partial (c \mathring{t})} , \,  - \dfrac{\partial}{\partial \mathring{x}} , \, - \dfrac{\partial}{\partial \mathring{y}} , \, - \dfrac{\partial}{\partial \mathring{z}} \right \rangle = \left \langle \dfrac{\partial}{\partial B^{ct}} , \,  - \dfrac{\partial}{\partial B^x} , \, - \dfrac{\partial}{\partial B^y} , \, - \dfrac{\partial}{\partial B^z} \right \rangle
 \end{equation*}
 (the minus signs make it a four-vector, as was the case with $\partialup$---otherwise the components would transform \emph{inverse}-Lorentzianly, recall). With $L$ as the Lagrangian, the four-vector version of the Euler--Lagrange equation is:
 \begin{equation}\label{eq:ele}
-\dfrac{1}{c} \, \dfrac{\dd}{\dd t_0} \, ( \mathring{\partialup} L ) = \partialup L .
+\dfrac{\dd}{\dd (c t_0)} \, ( \mathring{\partialup} L ) = \partialup L .
 \end{equation}
 
 Our Lagrangian for a particle in an electromagnetic field should have two manifestly covariant terms: one for the particle as if it were inertial (absent the field and any other forces) and one for its coupling with the field. Now, we haven't yet dealt with the principle of stationary action directly, but here and there we've had occasion to discuss the elapsed proper time along a particle's trajectory, and we even mentioned in passing that the \emph{inertial} journey between a pair of timelike-separated events is the one that maximizes the proper time elapsed en route (see Footnote \ref{fn:pma}). We haven't \emph{demonstrated} this principle of maximal aging, however, so let's quickly do that. From our discussion in Section \ref{sssec:ds}, we know that the elapsed proper time (for any timelike journey) is $c \mkern.5mu \Delta t_0 = \int c \, \dd t_0$, evaluated along the world line. By $c\mathring{t} = \gamma$, that's equivalently $c \mkern.5mu \Delta t_0 = \int \gamma^{-1} c \, \dd t = \int (1 - \beta^2)^{1/2} c \, \dd t $, which gives the elapsed proper time in terms of the \emph{coordinate} time for some inertial frame. It's clear that $c \mkern.5mu \Delta t_0$ will be maximized if in this frame the traveler's velocity is zero throughout the journey, and this can only be so if the traveler's route is inertial.\footnote{Of course, since the elapsed proper time is invariant, a maximal $c \mkern.5mu \Delta t_0$ doesn't \emph{require} the traveler's velocity to be always zero---just constant.}
@@ -2971,11 +2971,11 @@ Equation \ref{eq:py} is \textbf{Poynting's theorem}. That it's the energy-conser
 \end{equation*}
 and again use the divergence theorem:
 \begin{equation*}
-- \dfrac{1}{c} \, \dfrac{\dd}{\dd t} \int_V u \, \dd V = \int_S \left( \vv s \cdot \vv{\hat{n}} \right) \dd S + \int_V \dfrac{\dd \mathcal{P}_{\textrm{L}}}{\dd V} \, \dd V
+- \, \dfrac{\dd}{\dd (ct)} \int_V u \, \dd V = \int_S \left( \vv s \cdot \vv{\hat{n}} \right) \dd S + \int_V \dfrac{\dd \mathcal{P}_{\textrm{L}}}{\dd V} \, \dd V
 \end{equation*}
 ($S$ is the bounding surface of $V$, and $\vv{\hat{n}}$ is an outward-pointing unit vector normal to the surface element $\dd S$). Remembering that $\mathcal{P}_{\textrm{L}}$ is the ``Lorentz power" ($q \vvbeta \cdot \vv e$), let's write the last term explicitly as the total rate of energy-transfer from the fields (just $\vv e$, actually) to charged matter in the volume:
 \begin{equation*}
-- \dfrac{1}{c} \, \dfrac{\dd}{\dd t} \int_V u \, \dd V = \int_S \left( \vv s \cdot \vv{\hat{n}} \right) \dd S + \dot{E}_{\mkern1mu \textrm{matter (via fields)}} .
+- \, \dfrac{\dd}{\dd (ct)} \int_V u \, \dd V = \int_S \left( \vv s \cdot \vv{\hat{n}} \right) \dd S + \dot{E}_{\mkern1mu \textrm{matter (via fields)}} .
 \end{equation*}
 Evidently, $u$ is the volume-density of something, and the surface integral is the flux of that something (that is, the rate at which that something flows out of the volume's bounds). The last term clues us in as to what that something is: the energy stored in the fields. Poynting's theorem says that the rate at which a volume's electromagnetic energy decreases equals the rate at which electromagnetic energy is flowing out of the region through its surface plus the rate at which the fields are doing work on charged matter within the region (via the Lorentz four-force). Naturally, we call $u = (e^2 + b^2)/2$ the \textbf{electromagnetic energy density}. The \textbf{Poynting vector} $\vv s = \vv e \times \vv b$ gives the flow of electromagnetic energy (its per-unit-area rate of transport).
 
@@ -2986,7 +2986,7 @@ We have what we need from the Lorentz four-force density to take care of our unf
 
 Light is an electromagnetic wave---a disturbance in the (Lorenz-gauge!) four-potential $\vv A = \vv A (\vv R)$ that propagates through free space (where the four-current density field $\vv J = \vv J (\vv R)$ is zero).\footnote{Our ``potential-first" approach in this section is \emph{only} valid in the Lorenz gauge. The results it generates for the $\vv e$ and $\vv b$ fields, however, are gauge-invariant.} To discuss it mathematically, then, means working with solutions to the homogeneous wave equation
 \begin{equation*}
-\Box \vv A =  \left( \dfrac{1}{c^2} \, \dfrac{\partial^2}{\partial t^2} - \nabla ^2 \right) \vv A = \textrm{\mbox{\boldmath $\emptyset$}}
+\Box \vv A =  \left(\dfrac{\partial^2}{\partial (ct)^2} - \nabla ^2 \right) \vv A = \textrm{\mbox{\boldmath $\emptyset$}}
 \end{equation*}
 (Equation \ref{eq:fp} with $\vv J = \textrm{\mbox{\boldmath$\emptyset$}}$). We won't go over \emph{how to solve} this second-order linear partial differential equation. Rather, we'll take for granted the result from Fourier analysis that any of its solutions can be expressed as a superposition of monochromatic plane waves, and that its general monochromatic solution is:
 \begin{equation}\label{eq:pw}
@@ -3008,7 +3008,7 @@ Now, surely $\vv K$ is lightlike (null), yes? As a sanity check, let's set the d
 which requires that $\Box f = 0$ and $\partialup f \cdot \partialup f = 0$. But $\partialup f = \partialup (\vv K \cdot \vv R) = \vv K$:
 \begin{equation*}
 \begin{aligned}
-\partialup (\vv K \cdot \vv R) &= \left \langle \dfrac{1}{c} \, \dfrac{\partial}{\partial t}, \, - \dfrac{\partial}{\partial x}, \, - \dfrac{\partial}{\partial y}, \, - \dfrac{\partial}{\partial z} \right \rangle \left( K^{ct} ct - K^x x - K^y y - K^z z \right) \\[3pt]
+\partialup (\vv K \cdot \vv R) &= \left \langle \dfrac{\partial}{\partial (ct)}, \, - \dfrac{\partial}{\partial x}, \, - \dfrac{\partial}{\partial y}, \, - \dfrac{\partial}{\partial z} \right \rangle \left( K^{ct} ct - K^x x - K^y y - K^z z \right) \\[3pt]
 &= \left \langle K^{ct} \dfrac{\partial (ct)}{\partial (ct)}, \, K^x \dfrac{\partial x}{\partial x}, \, K^y \dfrac{\partial y}{\partial y} , \, K^z \dfrac{\partial z}{\partial z} \right \rangle = \vv K ,
 \end{aligned}
 \end{equation*}
@@ -4411,14 +4411,14 @@ with $\vv n \equiv E \vv r - (ct)(\vv p c)$, a conserved three-vector.
 The three-vector $\vv n$ isn't of much practical use, but its conservation gives us a mathematical expression of something important that we already know: for a closed system, the vanishing time-derivative of $\sum \vv n$ (summed over all system constituents) means that the center-of-momentum frame has a constant velocity. It also establishes a relationship between the center-of-momentum frame and the system's \textbf{center of energy}, a time-dependent position given by $(\sum E \vv r)/(\sum E)$. It all works like this:
 \begin{equation*}
 \begin{split}
-\dfrac{1}{c} \dfrac{\dd}{\dd t} \sum E \vv r &= \dfrac{1}{c} \dfrac{\dd}{\dd t} \sum \left( ct \right) \left( \vv p c \right) \\[1ex]
-&=  \sum \dfrac{1}{c} \dfrac{\dd}{\dd t} \left[ \left( ct \right) \left( \vv p c \right) \right] \\[1ex]
+\dfrac{\dd}{\dd (ct)} \sum E \vv r &= \dfrac{\dd}{\dd (ct)} \sum \left( ct \right) \left( \vv p c \right) \\[1ex]
+&=  \sum \dfrac{\dd}{\dd (ct)} \left[ \left( ct \right) \left( \vv p c \right) \right] \\[1ex]
 &=  \sum \vv p c
 \end{split}
 \end{equation*}
 (by momentum-conservation), and dividing through by $\sum E$ (which on the left side can go inside the derivative by energy-conservation):
 \begin{equation*}
-\dfrac{1}{c} \dfrac{\dd}{\dd t} \, \dfrac{ \sum E \vv r }{\sum E} =  \dfrac{\sum \vv p c}{\sum E}.
+\dfrac{\dd}{\dd (ct)} \, \dfrac{ \sum E \vv r }{\sum E} =  \dfrac{\sum \vv p c}{\sum E}.
 \end{equation*}
 On the right, we have the total system momentum over the total system energy, by conservation a \emph{constant} vector for a closed system, equal to the system's $\vvbeta$ (Equation \ref{eq:19})---i.e., the normalized velocity of the system's center-of-momentum frame (relative to whatever inertial frame we're working in). On the left side, we have the time-derivative of the system's \emph{center of energy}. A closed system's center of energy therefore has a \emph{constant} time-derivative and moves inertially ``with" the center-of-momentum frame. The rest frame of a closed system is the rest frame of its center of energy.\footnote{In the Newtonian limit, where rest energy (mass) can be treated as additive, the center of energy indeed reduces to the center of mass. Generally in relativistic dynamics, however, ``center of mass" is \emph{meaningless}.}
 
