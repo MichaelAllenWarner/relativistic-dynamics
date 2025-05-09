@@ -73,7 +73,7 @@
 
 \renewcommand{\nomname}{List of Symbols}
 
-\renewcommand{\nompreamble}{This list isn't comprehensive. The symbols are presented in a kind of ``logical" order, corresponding loosely with their order of appearance in the text.}
+\renewcommand{\nompreamble}{This isn't comprehensive. The symbols are presented in a kind of ``logical" order, corresponding \emph{very loosely} with their order of appearance in the text.}
 
 \begin{document}
 
@@ -103,17 +103,21 @@
 \nomenclature[010]{\( ct_0 \)}{Proper time. The naught subscript almost always means the ``proper" version of a quantity---i.e., the quantity as measured in the relevant rest frame.}
 \nomenclature[020]{\( \dot{ \text{\underline{\hspace{.6em}}} } \)}{Overdot means derivative with respect to $ct$ (coordinate time).}
 \nomenclature[030]{\( \mathring{ \text{\underline{\hspace{.6em}}} } \)}{Over-circle means derivative with respect to $ct_0$ (proper time).}
+\nomenclature[033]{\( \vv 0 \)}{Zero vector.}
+\nomenclature[039]{\( \textrm{\mbox{\boldmath$\emptyset$}} \)}{Zero four-vector.}
 \nomenclature[040]{\( \vv r \)}{Position vector $\langle x, y, z \rangle$.}
 \nomenclature[050]{\( \vv R \)}{Position four-vector $\langle ct, \vv r \rangle$ (four-position).}
 \nomenclature[053]{\( \Delta \vv r \)}{Displacement or separation vector (\emph{displacement} for something in motion, \emph{separation} for an abstract vector ``connecting" two points).}
 \nomenclature[055]{\( \Delta \vv R \)}{Four-displacement or four-separation.}
 \nomenclature[057]{\( \Delta s \)}{Spacetime interval $\sqrt{ (c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2 }$ (magnitude of $\Delta \vv R$).}
-\nomenclature[060]{\( \vvbeta, \beta \)}{Normalized velocity $\dot{\vv r}$ and its magnitude.}
-\nomenclature[070]{\( \vv B, B \)}{Normalized four-velocity $\mathring{\vv R}$ and its magnitude.}
+\nomenclature[060]{\( \vvbeta, \beta \)}{Normalized velocity $\dot{\vv r}$ and its magnitude. Dimensionless; $0 \leq \beta < 1$.}
+\nomenclature[070]{\( \vv B, B \)}{Normalized four-velocity $\mathring{\vv R}$ and its magnitude. Dimensionless; $B = 1$.}
 \nomenclature[080]{\( \vvzeta, \zeta \)}{``Normalized" acceleration $\dot{\vvbeta}$ and its magnitude.}
 \nomenclature[090]{\( \vv Z, Z \)}{``Normalized" four-acceleration $\mathring{\vv B}$ and its magnitude.}
-\nomenclature[095]{\( \gamma \)}{Lorentz factor $1 / \sqrt{1 - \beta^2} = \frac{\dd (ct)}{\dd (c t_0)}$ (time-dilation factor).}
-\nomenclature[097]{\( \vvomega, \omega \)}{``Normalized" celerity $\mathring{\vv r} = \gamma \dot{\vv r} = \gamma \vvbeta$ and its magnitude.}
+\nomenclature[092]{\( \gamma \)}{Lorentz factor $1 / \sqrt{1 - \beta^2} = \frac{\dd (ct)}{\dd (c t_0)}$ (time-dilation factor).}
+\nomenclature[094]{\( \vvomega, \omega \)}{``Normalized" celerity $\mathring{\vv r} = \gamma \dot{\vv r} = \gamma \vvbeta$ and its magnitude.}
+\nomenclature[096]{\( \nu \)}{Frequency.}
+\nomenclature[098]{\( \lambda \)}{Wavelength.}
 \nomenclature[100]{\( E_0 \)}{Rest energy (proper energy). Equals zero when $\beta = 1$ (e.g., for light).}
 \nomenclature[110]{\( E \)}{Total energy. Equals $\gamma E_0$ when $E_0 > 0$.}
 \nomenclature[120]{\( E_{\mkern.5mu \textrm{k}} \)}{Kinetic energy $E - E_0$. Equals $E_0 (\gamma - 1)$ when $E_0 > 0$.}
@@ -122,8 +126,6 @@
 \nomenclature[150]{\( \vv P \)}{Four-momentum $\langle E, \mkern.5mu  \vv pc \rangle$. Equals $E_0 \vv B$ when $E_0 > 0$.}
 \nomenclature[160]{\( \vv f \)}{Force $\dot{\vv p}c$.}
 \nomenclature[170]{\( \vv F \)}{Four-force $\mathring{\vv P} = \gamma \langle \mathcal{P}, \mkern.5mu \vv f \rangle$.}
-\nomenclature[173]{\( \vv 0 \)}{Zero vector.}
-\nomenclature[179]{\( \textrm{\mbox{\boldmath$\emptyset$}} \)}{Zero four-vector.}
 \nomenclature[180]{\( \phi \)}{Rapidity $\tanh^{-1} \beta$.}
 \nomenclature[190]{\( \vvphi \)}{Rapidity vector $\phi \hatbeta$ (where $\hatbeta = \vvbeta / \beta$).}
 \nomenclature[200]{\( \varphi \)}{Longitudinal rapidity (signed rapidity along the axis of a Lorentz boost; e.g., a particle's $\tanh^{-1} \beta_x$ if the boost is along the $x$-axis).}
@@ -137,7 +139,7 @@
 \nomenclature[250]{\( \rho \)}{Charge density.}
 \nomenclature[260]{\( \vv j \)}{``Normalized" current density (the flux density of charge).}
 \nomenclature[270]{\( \vv J \)}{``Normalized" four-current density $\langle \rho, \, \vv j \rangle$, with $\partialup \cdot \vv J =  0$.}
-\nomenclature[280]{\( \vv A \)}{Four-potential $\langle A^{ct}, \, \vv a \rangle$. Any vector satisfying $\vv J = - \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A )$.}
+\nomenclature[280]{\( \vv A \)}{Four-potential $\langle A^{ct}, \, \vv a \rangle$. Any vector satisfying $- \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A ) = \vv J$.}
 \nomenclature[283]{\( \vv e \)}{Electric field $- \del A^{ct} - \partial^{ct} \vv a$.}
 \nomenclature[286]{\( \vv b \)}{Magnetic field $\del \times \vv a$.}
 \nomenclature[290]{\( \vv F_{\textbf{L}} \)}{Lorentz four-force $q \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) = \gamma q \mkern.5mu \langle \vv \vvbeta \cdot \vv e , \, \vv e + \vvbeta \times \vv b \rangle$.}
@@ -145,15 +147,13 @@
 \nomenclature[310]{\( u \)}{Electromagnetic energy density $(e^2 + b^2)/2$.}
 \nomenclature[320]{\( \vv s \)}{Poynting vector $\vv e \times \vv b$ (the flux density of electromagnetic energy, and also the electromagnetic momentum density).}
 \nomenclature[330]{\( \otimes \)}{Symbol for the dyadic product (and the tensor product generally).}
-\nomenclature[335]{\( I_n \)}{$n$-by-$n$ identity matrix (e.g., $I_3 = \diag(1, 1, 1)$).}
+\nomenclature[335]{\( I_n \)}{$n$-by-$n$ identity matrix; e.g., $I_3 = \diag(1, 1, 1)$.}
 \nomenclature[340]{\( \inlinedy{\upiota} \)}{Euclidean unit dyadic, with Cartesian matrix-representation $I_3$.}
 \nomenclature[350]{\( \inlinedy{\upsigma} \)}{Maxwell stress tensor $u \mkern-4.5mu \inlinedy{\upiota} - \, \vv e \otimes \vv e - \vv b \otimes \vv b$ (the flux density of electromagnetic momentum).}
 \nomenclature[360]{\( \vv K \)}{Four-wavevector.}
-\nomenclature[370]{\( \nu \)}{Frequency.}
-\nomenclature[380]{\( \lambda \)}{Wavelength.}
-\nomenclature[390]{\( \wedge \)}{Wedge product for vectors: $\vv Q \wedge \vv W = \vv Q \otimes \vv W - \vv W \otimes \vv Q$.}
 \nomenclature[400]{\( \inlinedy{\upeta} \)}{Minkowski metric dyadic (inverse/contravariant metric tensor).}
 \nomenclature[410]{\( \eta \)}{Matrix representation of Minkowski metric, $\diag(1, -1, -1, -1)$.}
+\nomenclature[415]{\( \wedge \)}{Wedge product for vectors: $\vv Q \wedge \vv W = \vv Q \otimes \vv W - \vv W \otimes \vv Q$.}
 \nomenclature[420]{\( \inlinedy{\mathsf{F}} \)}{Faraday tensor $\partialup \wedge \vv A$.}
 \nomenclature[430]{\( \inlinedy{\mathsf{G}} \)}{Maxwell tensor $\star \inlinedy{\mathsf{F}}$ (Hodge dual of Faraday).}
 \nomenclature[440]{\( {\inlinedy{\mathsf{T}}}_{\textrm{em}} \)}{Electromagnetic stress--energy tensor $( \inlinedy{\mathsf{F}} \cdot \inlinedy{\mathsf{F}} + \inlinedy{\mathsf{G}} \cdot \inlinedy{\mathsf{G}} )/2$.}
