@@ -36,7 +36,7 @@
 \nomenclatureentry{240\( q \)@[{\( q \)}]\begingroup Electric charge.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{250\( \rho \)@[{\( \rho \)}]\begingroup Charge density.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{260\( \vv j \)@[{\( \vv j \)}]\begingroup ``Normalized" current density (the flux density of charge).\nomeqref {0}|nompageref}{7}
-\nomenclatureentry{270\( \vv J \)@[{\( \vv J \)}]\begingroup ``Normalized" four-current density $\langle \rho, \, \vv j \rangle$, with $\partialup \cdot \vv J =  0$.\nomeqref {0}|nompageref}{7}
+\nomenclatureentry{270\( \vv J \)@[{\( \vv J \)}]\begingroup ``Normalized" four-current density $\langle \rho, \mkern2mu \vv j \rangle$, with $\partialup  \mkern2mu \cdot  \mkern2mu \vv J =  0$ ($q$-conservation).\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{280\( \vv A \)@[{\( \vv A \)}]\begingroup Four-potential $\langle A^{ct}, \, \vv a \rangle$. Any vector satisfying $- \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A ) = \vv J$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{283\( \vv e \)@[{\( \vv e \)}]\begingroup Electric field $- \del A^{ct} - \partial^{ct} \vv a$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{286\( \vv b \)@[{\( \vv b \)}]\begingroup Magnetic field $\del \times \vv a$.\nomeqref {0}|nompageref}{7}
@@ -48,7 +48,7 @@
 \nomenclatureentry{335\( I_n \)@[{\( I_n \)}]\begingroup $n$-by-$n$ identity matrix; e.g., $I_3 = \diag(1, 1, 1)$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{340\( \inlinedy{\upiota} \)@[{\( \inlinedy{\upiota} \)}]\begingroup Euclidean unit dyadic, with Cartesian matrix-representation $I_3$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{350\( \inlinedy{\upsigma} \)@[{\( \inlinedy{\upsigma} \)}]\begingroup Maxwell stress tensor $u \mkern-4.5mu \inlinedy{\upiota} - \, \vv e \otimes \vv e - \vv b \otimes \vv b$ (the flux density of electromagnetic momentum).\nomeqref {0}|nompageref}{7}
-\nomenclatureentry{360\( \vv K \)@[{\( \vv K \)}]\begingroup Four-wavevector.\nomeqref {0}|nompageref}{7}
+\nomenclatureentry{360\( \vv K \)@[{\( \vv K \)}]\begingroup Four-wavevector $\langle K^{ct}, \mkern2mu \vv k \rangle = \langle 2 \pi \nu / c, \mkern2mu 2 \pi \nu \vv{\hat{k}} / c \rangle$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{400\( \inlinedy{\upeta} \)@[{\( \inlinedy{\upeta} \)}]\begingroup Minkowski metric dyadic (inverse/contravariant metric tensor).\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{410\( \eta \)@[{\( \eta \)}]\begingroup Matrix representation of Minkowski metric, $\diag(1, -1, -1, -1)$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{415\( \wedge \)@[{\( \wedge \)}]\begingroup Wedge product for vectors: $\vv Q \wedge \vv W = \vv Q \otimes \vv W - \vv W \otimes \vv Q$.\nomeqref {0}|nompageref}{7}
