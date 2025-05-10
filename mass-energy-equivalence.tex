@@ -154,10 +154,10 @@
 \nomenclature[400]{\( \inlinedy{\upeta} \)}{Minkowski metric dyadic (inverse/contravariant metric tensor).}
 \nomenclature[410]{\( \eta \)}{Matrix representation of Minkowski metric, $\diag(1, -1, -1, -1)$.}
 \nomenclature[415]{\( \wedge \)}{Wedge product for vectors: $\vv Q \wedge \vv W = \vv Q \otimes \vv W - \vv W \otimes \vv Q$.}
-\nomenclature[420]{\( \inlinedy{\mathsf{F}} \)}{Faraday tensor $\partialup \wedge \vv A$.}
-\nomenclature[430]{\( \inlinedy{\mathsf{G}} \)}{Maxwell tensor $\star \inlinedy{\mathsf{F}}$ (Hodge dual of Faraday).}
-\nomenclature[440]{\( {\inlinedy{\mathsf{T}}}_{\textrm{em}} \)}{Electromagnetic stress--energy tensor $( \inlinedy{\mathsf{F}} \cdot \inlinedy{\mathsf{F}} + \inlinedy{\mathsf{G}} \cdot \inlinedy{\mathsf{G}} )/2$.}
-\nomenclature[450]{\( \inlinedy{\mathsf{T}} \)}{Total stress--energy tensor.}
+\nomenclature[420]{\( \inlinedy{\mathsf{F}} \)}{Faraday tensor $\partialup \wedge \vv A$, with $\partialup \cdot \inlinedy{\mathsf{F}} = \vv J$ and $\mkern2mu \bm{\mathfrak{F}} = \inlinedy{\mathsf{F}} \cdot \mkern2.5mu \vv J$.}
+\nomenclature[430]{\( \inlinedy{\mathsf{G}} \)}{Maxwell tensor $\star \inlinedy{\mathsf{F}}$ (Hodge dual of Faraday), with $\partialup \cdot \inlinedy{\mathsf{G}} = \textrm{\mbox{\boldmath$\emptyset$}}$.}
+\nomenclature[440]{\( \inlinedy{\mathsf{T}} \)}{Total stress--energy tensor, with $\partialup \cdot \inlinedy{\mathsf{T}} = \textrm{\mbox{\boldmath $\emptyset$}}$ (conservation of $\vv P$).}
+\nomenclature[450]{\( {\inlinedy{\mathsf{T}}}_{\textrm{em}} \)}{Electromagnetic stress--energy $( \inlinedy{\mathsf{F}} \cdot \inlinedy{\mathsf{F}} + \inlinedy{\mathsf{G}} \cdot \inlinedy{\mathsf{G}} )/2$, with $\partialup \cdot  {\inlinedy{\mathsf{T}}}_{\textrm{em}} =$ $- \bm{\mathfrak{F}}$.}
 \nomenclature[460]{\( \vv l \)}{Angular momentum $\vv r \times \vv pc$.}
 \nomenclature[470]{\( \inlinedy{\mathsf{L}} \)}{Angular-momentum four-dyadic $\vv R \wedge \vv P$.}
 \nomenclature[480]{\( \inlinedy{\mathsf{0}} \)}{Zero four-dyadic.}
@@ -3430,7 +3430,7 @@ The matrix is antisymmetric, and we call the dyadic itself antisymmetric. (Likew
 \boxed{ \vphantom{A_{A_A}} \capdy{\mathsf{F}} \equiv \partialup \wedge \vv A } \, . 
 \end{equation}
 
-\subsubsection{Dotting Four-Dyadics with Four-Vectors; Metric Tensor}
+\subsubsection{Dotting Four-Dyadics with Four-Vectors; Metric Dyadic}
 
 To see why the Faraday tensor is useful, we'll define the Minkowski dot product(s) between a four-dyadic $\inlinedy{\mathsf{D}}$ and a four-vector $\vv S$. We can let the matrix notation guide us again, but this time there are negative signs to account for---i.e., the matrix representation of $\vv Q \cdot \vv W$ (dot product of two four-vectors) isn't $[\vv Q]^{\textrm{T}} [\vv W]$ but is rather $[\vv Q]^{\textrm{T}} \eta [\vv W]$, with
 \begin{equation}\label{eq:mmt}
@@ -3443,11 +3443,16 @@ To see why the Faraday tensor is useful, we'll define the Minkowski dot product(
 0 & 0 & 0 & -1
 \end{bmatrix} .
 \end{equation}
-Using the matrix $\eta$, we define $\vv S \cdot (\vv Q \otimes \vv W)$ as the four-vector $(\vv S \cdot \vv Q) \vv W$ whose row-matrix representation is $[\vv S]^\mathrm{T} \eta [\vv Q] [\vv W]^\mathrm{T}$, and we define $(\vv Q \otimes \vv W) \cdot \vv S$ as the four-vector $(\vv W \cdot \vv S) \vv Q$ whose column-matrix representation is $[\vv Q] [\vv W]^\mathrm{T} \eta [\vv S]$. By the same logic we used with Euclidean dyadics (the matrix product is distributive over addition, and a dyadic that isn't a dyad can be expressed as the sum of dyads), we extend these operations for four-dyads to four-\emph{dyadics} by replacing $[\vv Q][\vv W]^{\textrm{T}}$ with the square-matrix representation of the dyadic in question. Then $\vv S \cdot \inlinedy{\mathsf{D}}$ is the four-vector whose row-matrix representation is $[\vv S]^{\mathrm{T}} \eta [\inlinedy{\mathsf{D}}]$, and the ``reverse" operation $\inlinedy{\mathsf{D}} \cdot \, \vv S$ gives the four-vector whose column-matrix representation is $[\inlinedy{\mathsf{D}}] \eta [\vv S]$. Note that $\inlinedy{\mathsf{D}} \cdot \, \vv S = \vv S \cdot \inlinedy{\mathsf{D}} {}^\mathrm{T}$; if $\inlinedy{\mathsf{D}}$ happens to be antisymmetric, then also $\inlinedy{\mathsf{D}} \cdot \, \vv S = - \vv S \cdot \inlinedy{\mathsf{D}}$. The four-\emph{divergence} of the dyadic $\inlinedy{\mathsf{D}}$ we notate $\partialup \cdot \inlinedy{\mathsf{D}}$, and so we define it as the four-vector whose row-matrix representation is $[\partialup]^{\mathrm{T}} \eta [\inlinedy{\mathsf{D}}]$. When we have the combination $[\partialup]^\mathrm{T} \eta$ in our matrix equations, it's understood that $\partialup$ operates on what's to the \emph{right} of $\eta$, after we matrix-multiply $\eta$ with one of its neighbors to give everything the right sign. As a quick example:\footnote{Notice that the product $[\partialup]^\mathrm{T} \eta$ is a row matrix whose entries are our \emph{positive} partial derivatives ($\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$, recall, by Equation \ref{eq:fn}). In Section \ref{sssec:fd}, we found that these four positive operators together transform \emph{inverse}-Lorentzianly, and we mentioned in Footnote \ref{fn:cv} that an object whose components transform this way is a four-covector (or covariant four-vector). We won't make direct use of the covector concept, but we remark in passing that for \emph{any} four-vector $\vv Q$, the products $[\vv Q]^\mathrm{T} \eta$ and $\eta [\vv Q]$ give matrix representations of the covector whose components are $\langle Q_{ct}, \, Q_x, \, Q_y, \, Q_z \rangle = \langle Q^{ct}, \, -Q^x, \, -Q^y, \, -Q^z \rangle$.}
+Using the matrix $\eta$, we define $\vv S \cdot (\vv Q \otimes \vv W)$ as the four-vector $(\vv S \cdot \vv Q) \vv W$ whose row-matrix representation is $[\vv S]^\mathrm{T} \eta [\vv Q] [\vv W]^\mathrm{T}$, and we define $(\vv Q \otimes \vv W) \cdot \vv S$ as the four-vector $(\vv W \cdot \vv S) \vv Q$ whose column-matrix representation is $[\vv Q] [\vv W]^\mathrm{T} \eta [\vv S]$. By the same logic we used with Euclidean dyadics (the matrix product is distributive over addition, and a dyadic that isn't a dyad can be expressed as the sum of dyads), we extend these operations for four-dyads to four-\emph{dyadics} by replacing $[\vv Q][\vv W]^{\textrm{T}}$ with the square-matrix representation of the dyadic in question. Then $\vv S \cdot \inlinedy{\mathsf{D}}$ is the four-vector whose row-matrix representation is $[\vv S]^{\mathrm{T}} \eta [\inlinedy{\mathsf{D}}]$, and the ``reverse" operation $\inlinedy{\mathsf{D}} \cdot \, \vv S$ gives the four-vector whose column-matrix representation is $[\inlinedy{\mathsf{D}}] \eta [\vv S]$.
+
+Note that $\inlinedy{\mathsf{D}} \cdot \, \vv S = \vv S \cdot \inlinedy{\mathsf{D}} {}^\mathrm{T}$ (always). If $\inlinedy{\mathsf{D}}$ happens to be antisymmetric, then also $\inlinedy{\mathsf{D}} \cdot \, \vv S = - \vv S \cdot \inlinedy{\mathsf{D}}$.
+
+The four-\emph{divergence} of the dyadic $\inlinedy{\mathsf{D}}$ we notate $\partialup \cdot \inlinedy{\mathsf{D}}$, and so we define it as the four-vector whose row-matrix representation is $[\partialup]^{\mathrm{T}} \eta [\inlinedy{\mathsf{D}}]$. Well, we have $\inlinedy{\mathsf{D}} \cdot \mkern2mu \partialup_{\inlinedy{\mathsf{D}}} = \partialup \cdot \inlinedy{\mathsf{D}} {}^\mathrm{T}$, too, so really there are \emph{two} ways to take the divergence of a dyadic. If the dyadic is symmetric or antisymmetric (as will often be the case for us), then its divergences aren't independent. Regardless, by default we'll mean $\partialup \cdot \inlinedy{\mathsf{D}}$.
+
+When we have the combination $[\partialup]^\mathrm{T} \eta$ in our matrix equations, it's understood that $\partialup$ operates on what's to the \emph{right} of $\eta$, after we matrix-multiply $\eta$ with one of its neighbors to give everything the right sign. As a quick example, the matrix product
 \begin{equation*}
-\begin{aligned}
 \mkern0mu [\partialup]^{\mathrm{T}} \eta [\capdy{\mathsf{D}}]
-&=
+=
 \begin{bmatrix}
 \partial^{ct} & \partial^x & \partial^y & \partial^z
 \end{bmatrix}
@@ -3463,8 +3468,9 @@ Using the matrix $\eta$, we define $\vv S \cdot (\vv Q \otimes \vv W)$ as the fo
 \mathsfit D^{y \mkern1.5mu ct} & \mathsfit D^{y x} & \mathsfit D^{y y} & \mathsfit D^{y z}  \\
 \mathsfit D^{z \mkern1.5mu ct} & \mathsfit D^{z x} & \mathsfit D^{z y} & \mathsfit D^{z z} 
 \end{bmatrix}
-\\[3pt]
-&=
+\end{equation*}
+is to be interpreted as:\footnote{Notice that the product $[\partialup]^\mathrm{T} \eta$ is a row matrix whose entries are our \emph{positive} partial derivatives ($\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$, recall, by Equation \ref{eq:fn}). In Section \ref{sssec:fd}, we found that these four positive operators together transform \emph{inverse}-Lorentzianly, and we mentioned in Footnote \ref{fn:cv} that an object whose components transform this way is a four-covector (or covariant four-vector). We won't make direct use of the covector concept, but we remark in passing that for \emph{any} four-vector $\vv Q$, the products $[\vv Q]^\mathrm{T} \eta$ and $\eta [\vv Q]$ give matrix representations of the covector whose components are $\langle Q_{ct}, \, Q_x, \, Q_y, \, Q_z \rangle = \langle Q^{ct}, \, -Q^x, \, -Q^y, \, -Q^z \rangle$.}
+\begin{equation*}
 \begin{bmatrix}
 \partial^{ct} & - \partial^x & - \partial^y & -\partial^z
 \end{bmatrix}
@@ -3473,9 +3479,10 @@ Using the matrix $\eta$, we define $\vv S \cdot (\vv Q \otimes \vv W)$ as the fo
 \mathsfit D^{x \mkern1.5mu ct} & \mathsfit D^{x x} & \mathsfit D^{x y} & \mathsfit D^{x z}  \\
 \mathsfit D^{y \mkern1.5mu ct} & \mathsfit D^{y x} & \mathsfit D^{y y} & \mathsfit D^{y z}  \\
 \mathsfit D^{z \mkern1.5mu ct} & \mathsfit D^{z x} & \mathsfit D^{z y} & \mathsfit D^{z z} 
-\end{bmatrix}
-\\[3pt]
-&=
+\end{bmatrix},
+\end{equation*}
+or equivalently:
+\begin{equation*}
 \begin{bmatrix}
 \partial^{ct} & \partial^x & \partial^y & \partial^z
 \end{bmatrix}
@@ -3485,10 +3492,9 @@ Using the matrix $\eta$, we define $\vv S \cdot (\vv Q \otimes \vv W)$ as the fo
 - \mathsfit D^{y \mkern1.5mu ct} & - \mathsfit D^{y x} & - \mathsfit D^{y y} & - \mathsfit D^{y z}  \\
 - \mathsfit D^{z \mkern1.5mu ct} & - \mathsfit D^{z x} & - \mathsfit D^{z y} & - \mathsfit D^{z z} 
 \end{bmatrix}.
-\end{aligned}
 \end{equation*}
 
-Really, Equation \ref{eq:mmt} is the matrix representation of a four-dyadic, since it satisfies the four-dyadic transformation rule Equation \ref{eq:ltd} (try it!---under a Lorentz boost, the $1$ transforms to $1$, the $-1$'s transform to $-1$'s, and the $0$'s transform to $0$'s). This dyadic is called the \textbf{Minkowski metric tensor}, and we use it implicitly every time we take a Minkowski dot product.\footnote{\label{fn:cov}To be precise, what we use implicitly when we take Minkowski dot products is the \emph{covariant} Minkowski metric tensor, whereas the dyadic we're introducing now is the \emph{contravariant} Minkowski metric tensor (see Footnote \ref{fn:dy}). They're closely related and happen to have the same matrix representation, but they \emph{are} different objects. To convince yourself of this, Lorentz-transform the dot product of four-vectors in matrix notation: $[ \vv Q ] ^\mathrm{T} \eta [ \vv W ] = [ \vv Q {}^\prime ] ^\mathrm{T} \eta ^\prime [ \vv W {}^\prime ] =  ( \Lambda [ \vv Q ] ) ^\mathrm{T} \eta ^\prime ( \Lambda [ \vv W ] ) = [ \vv Q ] ^\mathrm{T} ( \Lambda ^\mathrm{T} \eta^ \prime \Lambda ) [ \vv W ] $, yielding $ \eta = \Lambda ^\mathrm{T} \eta^ \prime \Lambda $, or equivalently $\eta ^\prime = ( \Lambda ^{-1} ) ^\mathrm{T} \eta \Lambda ^{-1} $. Compare this with Equation \ref{eq:ltd}---that's \emph{not} how a four-dyadic's components transform! In fact, it's the transformation rule for \emph{covariant} rank-2 tensors, aka codyadics. Naturally, the covector and codyadic concepts are linked.} It's functionally analogous to the Euclidean unit dyadic we encountered in Section \ref{ssec:emm}. When we want to notate it explicitly \emph{as} a four-dyadic, we'll write $\inlinedy{\upeta}$ (a conventional exception to our preference for uppercase).
+Importantly, $\eta$ (Equation \ref{eq:mmt}) is itself the matrix representation of a four-dyadic, since it satisfies the four-dyadic transformation rule Equation \ref{eq:ltd} (try it!---under a Lorentz boost, the $1$ transforms to $1$, the $-1$'s transform to $-1$'s, and the $0$'s transform to $0$'s). This tensor is called the \textbf{Minkowski metric dyadic}, or the \textbf{(inverse) Minkowski metric tensor}, and we use it implicitly every time we take a Minkowski dot product.\footnote{\label{fn:cov}To be precise, what we use implicitly when we take dot products is the metric tensor itself (the \emph{covariant} metric), whereas the dyadic we're introducing now is the \emph{inverse} (or \emph{contravariant}) Minkowski metric (see Footnote \ref{fn:dy}). They're closely related and happen to have the same matrix representation, but they \emph{are} different objects. To convince yourself of this, Lorentz-transform the dot product of four-vectors in matrix notation: ${[ \vv Q ] ^\mathrm{T} \eta [ \vv W ] = [ \vv Q {}^\prime ] ^\mathrm{T} \eta ^\prime [ \vv W {}^\prime ] =  ( \Lambda [ \vv Q ] ) ^\mathrm{T} \eta ^\prime ( \Lambda [ \vv W ] ) = [ \vv Q ] ^\mathrm{T} ( \Lambda ^\mathrm{T} \eta^ \prime \Lambda ) [ \vv W ]} $, yielding $ \eta = \Lambda ^\mathrm{T} \eta^ \prime \Lambda $, or $\eta ^\prime = ( \Lambda ^{-1} ) ^\mathrm{T} \eta \Lambda ^{-1} $. Compare this with Equation \ref{eq:ltd}---that's \emph{not} how a four-dyadic's components transform! In fact, it's the transformation rule for \emph{covariant} rank-2 tensors, aka codyadics. Naturally, the covector and codyadic concepts are linked.} It's functionally analogous to the Euclidean unit dyadic we encountered in Section \ref{ssec:emm}. When we want to notate it explicitly \emph{as} a four-dyadic, we'll write $\inlinedy{\upeta}$ (a conventional exception to our preference for uppercase).
 
 \subsubsection{Lorentz Force and Maxwell Equations with Dyadics}
 
@@ -3532,7 +3538,12 @@ q
 [ \gamma \vv e + \gamma \vvbeta \times \vv b ]
 \end{bmatrix}
 \end{equation*}
-(cf. Equation \ref{eq:lfc}). And remember when we noted that Maxwell's equations (Equations \ref{eq:me}) constitute two four-vectors, and that their forms suggest expressions involving $\partialup$ as the \emph{first} derivative of something? Well, now we get the first of them (for the inhomogeneous $\del \cdot \, \vv e = \rho$ and ${ \del \times \vv b - \partial^{ct} \vv e = \vv j }$) from Equations \ref{eq:gfp} and \ref{eq:vtpi}:
+(cf. Equation \ref{eq:lfc}). The same procedure for the Lorentz four-force \emph{density} ${\bm{\mathfrak{F}} = \vv J \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A)}$ (Equation \ref{eq:lffd})---arguably the more fundamental quantity in the classical theory---gives:
+\begin{equation}\label{eq:lffdfd}
+\boxed{ \vphantom{A_{A_A}} \bm{\mathfrak{F}} = \capdy{\mathsf{F}} \cdot \vv J } \, .
+\end{equation}
+
+Next, the field equations. When we initially obtained Maxwell's equations (Equations \ref{eq:me}), we noted that they constitute two four-vectors, and that their forms suggest expressions involving $\partialup$ as the \emph{first} derivative of something. At the time, we didn't have the tools to proceed. Now we do, and we start with the inhomogeneous pair, $\del \cdot \, \vv e = \rho$ and ${ \del \times \vv b - \partial^{ct} \vv e = \vv j }$. From Equations \ref{eq:gfp} and \ref{eq:vtpi}:
 \begin{equation*}
 \vv J = - \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A ) = - ( \partialup \wedge \vv A ) \cdot \partialup_{\vv A} = - \partialup \cdot ( \partialup \wedge \vv A )^\mathrm{T} = \partialup \cdot (\partialup \wedge \vv A),
 \end{equation*}
@@ -3844,7 +3855,7 @@ where we've transposed the matrix product to show that commutativity still holds
 \begin{equation*}
 \capdy{\mathsf{D}} \mkern0mu ^\mathrm{T} : \capdy{\mathsf{K}} \mkern0mu ^\mathrm{T} = \mathrm{Tr} \left( \eta [\capdy{\mathsf{D}}]^{\mathrm{T}} \eta [ \capdy{\mathsf{K}} ] \right) = \capdy{\mathsf{D}} : \capdy{\mathsf{K}} .
 \end{equation*}
-A special case is when a dyadic is double-dotted with $\inlinedy{\upeta}$, the Minkowski metric tensor (whose matrix representation in every frame is $\eta$):
+A special case is when a dyadic is double-dotted with $\inlinedy{\upeta}$, the Minkowski metric dyadic (whose matrix representation in every frame is $\eta$):
 \begin{equation*}
 \begin{split}
 \capdy{\mathsf{D}} : \inlinedy{\upeta} &= \mathrm{Tr} \left( \eta [\capdy{\mathsf{D}}] \eta [ \mkern1mu \inlinedy{\upeta} \mkern.5mu ]^{\mathrm{T}} \right) \\
@@ -3963,7 +3974,7 @@ So the dot product between two four-dyads generates a new dyad, and the operatio
 \begin{equation*}
 [\capdy{\mathsf{D}} \cdot \capdy{\mathsf{K}}] = [\capdy{\mathsf{D}}] \eta [\capdy{\mathsf{K}}] .
 \end{equation*}
-We see that $\inlinedy{\mathsf{D}} \cdot \inlinedy{\upeta} = \inlinedy{\upeta} \cdot \inlinedy{\mathsf{D}} =  \inlinedy{\mathsf{D}}$, further ``justifying" the notion that the Minkowski metric tensor is like the unit dyadic of spacetime. We also have $(\inlinedy{\mathsf{D}} \cdot \inlinedy{\mathsf{K}}) : \inlinedy{\upeta} = \inlinedy{\mathsf{D}} \mkern1mu \cdot \cdot \inlinedy{\mathsf{K}}$, which equals $- \inlinedy{\mathsf{D}} : \inlinedy{\mathsf{K}}$ in the case that $\inlinedy{\mathsf{D}}$ or $\inlinedy{\mathsf{K}}$ is antisymmetric (relevant for the Faraday and Maxwell tensors). Along the same lines, $ \inlinedy{\mathsf{A}} \mkern-2mu ^\mathrm{T} \cdot \inlinedy{\mathsf{D}} = - \inlinedy{\mathsf{A}} \cdot \inlinedy{\mathsf{D}}$ and $\inlinedy{\mathsf{D}} \cdot \inlinedy{\mathsf{A}} \mkern-2mu ^\mathrm{T} = - \inlinedy{\mathsf{D}} \cdot \inlinedy{\mathsf{A}}$ for antisymmetric $\inlinedy{\mathsf{A}}$.
+We see that $\inlinedy{\mathsf{D}} \cdot \inlinedy{\upeta} = \inlinedy{\upeta} \cdot \inlinedy{\mathsf{D}} =  \inlinedy{\mathsf{D}}$, further ``justifying" the notion that the Minkowski metric dyadic is like the unit dyadic of spacetime. We also have $(\inlinedy{\mathsf{D}} \cdot \inlinedy{\mathsf{K}}) : \inlinedy{\upeta} = \inlinedy{\mathsf{D}} \mkern1mu \cdot \cdot \inlinedy{\mathsf{K}}$, which equals $- \inlinedy{\mathsf{D}} : \inlinedy{\mathsf{K}}$ in the case that $\inlinedy{\mathsf{D}}$ or $\inlinedy{\mathsf{K}}$ is antisymmetric (relevant for the Faraday and Maxwell tensors). Along the same lines, $ \inlinedy{\mathsf{A}} \mkern-2mu ^\mathrm{T} \cdot \inlinedy{\mathsf{D}} = - \inlinedy{\mathsf{A}} \cdot \inlinedy{\mathsf{D}}$ and $\inlinedy{\mathsf{D}} \cdot \inlinedy{\mathsf{A}} \mkern-2mu ^\mathrm{T} = - \inlinedy{\mathsf{D}} \cdot \inlinedy{\mathsf{A}}$ for antisymmetric $\inlinedy{\mathsf{A}}$.
 
 Let's test out the operation on the Faraday and Maxwell tensors (Equations \ref{eq:emt} and \ref{eq:mt}). First $\inlinedy{\mathsf{F}} \cdot \inlinedy{\mathsf{G}}$:
 \begin{equation*}
@@ -4118,9 +4129,9 @@ u & [\vv s]^{\mathrm{T}} \\[1ex]
 - \dfrac{\dd \mathcal{P}_{\textrm{L}}}{\dd V} & \left[ - \dfrac{\dd \vv f_{\mathrm{L}}}{\dd V} \right] ^{\mkern-2mu \mathrm{T} \; }
 \end{bmatrix}
 \end{equation}
-(see Equation \ref{eq:lffdc}). Equation \ref{eq:fmc} is a statement of the conservation of \emph{four-momentum} that explicitly accounts for the electromagnetic field. It's equivalent to Equation \ref{eq:lffd}, but our dyadic notation here is more transparent. The four-divergence of ${\inlinedy{\mathsf{T}}}_{\textrm{em}}$ vanishes when the fields are transferring no four-momentum to charged particles. We can express the right side of Equation \ref{eq:fmc} in terms of the fields and charges (differentiate Equation \ref{eq:lfffd} with respect to proper volume, and sub in $\vv J$ for $\rho_0 \vv B$):\footnote{Well, technically that only works for the individual fluid-like ``sub-distributions" (see Section \ref{sssec:fcd}), but then you add them all up and the result is exactly as written.}
+(see Equation \ref{eq:lffdc}). Equation \ref{eq:fmc} is a statement of the conservation of \emph{four-momentum} that explicitly accounts for the electromagnetic field. It's equivalent to Equation \ref{eq:lffd}, but our dyadic notation here is more transparent. The four-divergence of ${\inlinedy{\mathsf{T}}}_{\textrm{em}}$ vanishes when the fields are transferring no four-momentum to charged particles. We can express the right side of Equation \ref{eq:fmc} in terms of the fields and charges using $\bm{\mathfrak{F}} = \inlinedy{\mathsf{F}} \cdot \mkern2mu \vv J$ (Equation \ref{eq:lffdfd}):
 \begin{equation*}
-\partialup \cdot \capdy{\mathsf{T}}_{\textrm{em}} = \vv J \cdot \capdy{\mathsf{F}} ,
+\partialup \cdot \capdy{\mathsf{T}}_{\textrm{em}} = \vv J \cdot \capdy{\mathsf{F}}
 \end{equation*}
 (by antisymmetry), or in terms of the fields alone (Equation \ref{eq:ime}):
 \begin{equation*}
@@ -4300,7 +4311,7 @@ That said, let's try it this way:
 \begin{equation*}
 \capdy{\mathsf{H}} \, \stackrel{?}{=} \, \left( \partialup \otimes \vv A \right) \cdot \capdy{\mathsf{F}} - \mathcal{L} \inlinedy{\upeta} ,
 \end{equation*}
-where the Minkowski metric tensor enters as the ``unit dyadic" of spacetime. By the definition of the Faraday tensor (Equation \ref{eq:emta}), that's:
+where the Minkowski metric dyadic enters as the ``unit dyadic" of spacetime. By the definition of the Faraday tensor (Equation \ref{eq:emta}), that's:
 \begin{equation*}
 \begin{split}
 \left( \partialup \otimes \vv A \right) \cdot \capdy{\mathsf{F}} - \mathcal{L} \inlinedy{\upeta} &=  \left( \left( \partialup \otimes \vv A \right)^\mathrm{T} + \capdy{\mathsf{F}} \right) \cdot \capdy{\mathsf{F}} - \mathcal{L} \inlinedy{\upeta} \\
