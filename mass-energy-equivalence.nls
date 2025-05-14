@@ -26,9 +26,9 @@
   \item [{\( \vv pc \)}]\begingroup Momentum $E \vvbeta$. Equals $\gamma E_0 \vvbeta$ when $E_0 > 0$.\nomeqref {0}\nompageref{7}
   \item [{\( \vv P \)}]\begingroup Four-momentum $\langle E, \mkern.5mu  \vv pc \rangle$. Equals $E_0 \vv B$ when $E_0 > 0$.\nomeqref {0}\nompageref{7}
   \item [{\( \vv f \)}]\begingroup Force $\dot{\vv p}c$.\nomeqref {0}\nompageref{7}
-  \item [{\( \vv F \)}]\begingroup Four-force $\mathring{\vv P} = \gamma \langle \mathcal{P}, \mkern.5mu \vv f \rangle$.\nomeqref {0}\nompageref{7}
+  \item [{\( \vv F \)}]\begingroup Four-force $\mathring{\vv P} = \langle \mathring{E}, \mkern.5mu \mathring{\vv p}c \rangle = \gamma \langle \mathcal{P}, \mkern.5mu \vv f \rangle$.\nomeqref {0}\nompageref{7}
   \item [{\( \phi \)}]\begingroup Rapidity $\tanh^{-1} \beta$.\nomeqref {0}\nompageref{7}
-  \item [{\( \vvphi \)}]\begingroup Rapidity vector $\phi \hatbeta$ (where $\hatbeta = \vvbeta / \beta$).\nomeqref {0}\nompageref{7}
+  \item [{\( \vvphi \)}]\begingroup Rapidity vector $\phi \hatphi$ (where $\hatphi = \hatbeta = \vvbeta / \beta$).\nomeqref {0}\nompageref{7}
   \item [{\( \varphi \)}]\begingroup Longitudinal rapidity (signed rapidity along the axis of a Lorentz boost; e.g., a particle's $\tanh^{-1} \beta_x$ if the boost is along the $x$-axis).\nomeqref {0}\nompageref{7}
   \item [{\( \del \)}]\begingroup Del operator $\big \langle \frac{\partial}{\partial x}, \, \frac{\partial}{\partial y}, \, \frac{\partial}{\partial z}  \big \rangle$.\nomeqref {0}\nompageref{7}
   \item [{\( \del_{\vv q} \)}]\begingroup Feynman subscript. Example: $\del_{\vv q} ( \vv w \cdot \vv q ) = w_x \del q_x + w_y \del q_y + w_z \del q_z$.\nomeqref {0}\nompageref{7}
@@ -46,13 +46,14 @@
   \item [{\( \vv F_{\textbf{L}} \)}]\begingroup Lorentz four-force $q \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) = \gamma q \mkern.5mu \langle \vv \vvbeta \cdot \vv e , \, \vv e + \vvbeta \times \vv b \rangle$.\nomeqref {0}\nompageref{7}
   \item [{\( \bm{\mathfrak{F}} \)}]\begingroup Lorentz four-force density $\vv J \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) = \langle \, \vv j \cdot \vv e, \, \rho \mkern1mu \vv e + \vv j \times \vv b \rangle$.\nomeqref {0}\nompageref{7}
   \item [{\( u \)}]\begingroup Electromagnetic energy density $(e^2 + b^2)/2$.\nomeqref {0}\nompageref{7}
-  \item [{\( \vv s \)}]\begingroup Poynting vector $\vv e \times \vv b$ (the flux density of electromagnetic energy, and also the electromagnetic momentum density).\nomeqref {0}\nompageref{7}
+  \item [{\( \vv s \)}]\begingroup Poynting vector $\vv e \times \vv b$ (electromagnetic momentum density; flux density of electromagnetic energy).\nomeqref {0}\nompageref{7}
   \item [{\( \otimes \)}]\begingroup Symbol for the dyadic product (and the tensor product generally).\nomeqref {0}\nompageref{7}
   \item [{\( I_n \)}]\begingroup $n$-by-$n$ identity matrix; e.g., $I_3 = \diag(1, 1, 1)$.\nomeqref {0}\nompageref{7}
   \item [{\( \inlinedy{\upiota} \)}]\begingroup Euclidean unit dyadic, with Cartesian matrix-representation $I_3$.\nomeqref {0}\nompageref{7}
   \item [{\( \inlinedy{\upsigma} \)}]\begingroup Maxwell stress tensor $u \mkern-4.5mu \inlinedy{\upiota} - \, \vv e \otimes \vv e - \vv b \otimes \vv b$ (the flux density of electromagnetic momentum).\nomeqref {0}\nompageref{7}
   \item [{\( \vv K \)}]\begingroup Four-wavevector $\langle K^{ct}, \mkern2mu \vv k \rangle = \langle 2 \pi \nu / c, \mkern2mu 2 \pi \nu \vv{\hat{k}} / c \rangle$.\nomeqref {0}\nompageref{7}
-  \item [{\( \inlinedy{\upeta} \)}]\begingroup Minkowski metric dyadic (inverse/contravariant metric tensor).\nomeqref {0}\nompageref{7}
+  \item [{\( \inlinedy{\mathsf{0}} \)}]\begingroup Zero four-dyadic.\nomeqref {0}\nompageref{7}
+  \item [{\( \inlinedy{\upeta} \)}]\begingroup Minkowski metric four-dyadic (inverse/contravariant metric tensor).\nomeqref {0}\nompageref{7}
   \item [{\( \eta \)}]\begingroup Matrix representation of Minkowski metric, $\diag(1, -1, -1, -1)$.\nomeqref {0}\nompageref{7}
   \item [{\( \wedge \)}]\begingroup Wedge product for vectors: $\vv Q \wedge \vv W = \vv Q \otimes \vv W - \vv W \otimes \vv Q$.\nomeqref {0}\nompageref{7}
   \item [{\( \inlinedy{\mathsf{F}} \)}]\begingroup Faraday tensor $\partialup \wedge \vv A$, with $\partialup \cdot \inlinedy{\mathsf{F}} = \vv J$ and $\mkern2mu \bm{\mathfrak{F}} = \inlinedy{\mathsf{F}} \cdot \mkern2.5mu \vv J$.\nomeqref {0}\nompageref{7}
@@ -61,6 +62,5 @@
   \item [{\( {\inlinedy{\mathsf{T}}}_{\textrm{em}} \)}]\begingroup Electromagnetic stress--energy $( \inlinedy{\mathsf{F}} \cdot \inlinedy{\mathsf{F}} + \inlinedy{\mathsf{G}} \cdot \inlinedy{\mathsf{G}} )/2$, with $\partialup \cdot  {\inlinedy{\mathsf{T}}}_{\textrm{em}} =$ $- \bm{\mathfrak{F}}$.\nomeqref {0}\nompageref{7}
   \item [{\( \vv l \)}]\begingroup Angular momentum $\vv r \times \vv pc$.\nomeqref {0}\nompageref{7}
   \item [{\( \inlinedy{\mathsf{L}} \)}]\begingroup Angular-momentum four-dyadic $\vv R \wedge \vv P$.\nomeqref {0}\nompageref{7}
-  \item [{\( \inlinedy{\mathsf{0}} \)}]\begingroup Zero four-dyadic.\nomeqref {0}\nompageref{7}
 
 \end{thenomenclature}
