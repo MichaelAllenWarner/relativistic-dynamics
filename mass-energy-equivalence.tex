@@ -3298,31 +3298,31 @@ The electric and magnetic fields---defined in terms of $\vv A$ (Equations \ref{e
 
 If now $\vv j = \vv 0$ everywhere, then we have \textbf{electrostatics}. If instead $\rho = 0$ everywhere, then we have \textbf{magnetostatics}. In electrostatics, $\vv a = \vv 0$ in our gauge (Equation \ref{eq:retvp}), and $\vv b = \del \times \vv a$ consequently vanishes (in all gauges). The ``effective" Maxwell equations (Equations \ref{eq:me}) are then $\del \cdot \vv e = \rho$ and $\del \times \vv e = \vv 0$. In magnetostatics, it's $A^{ct}$ that vanishes in our gauge (Equation \ref{eq:retsp}), with $\vv e = - \del A^{ct} = \vv 0$ and effective Maxwell equations $\del \times \vv b = \vv j$ and $\del \cdot \vv b = 0$.
 
-Solving for electrostatic $\vv e$ (negative gradient of Equation \ref{eq:retsp}), we get:
+For time-independent sources (not necessarily electrostatics!), $\vv e$ is the negative gradient of Equation \ref{eq:retsp}:
 \begin{equation}\label{eq:electrostatice}
-\vv e (\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\rho ( \vv r _{s}) \, (\vv r - \vv r_{s})}{\Vert \vv r - \vv r_{s} \Vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(in electrostatics)}},
+\vv e (\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\rho ( \vv r _{s}) \, (\vv r - \vv r_{s})}{\Vert \vv r - \vv r_{s} \Vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}},
 \end{equation}
-where the gradient went inside the integrand because it operates only on functions of $\vv r$, and where we've used:
+where the del went inside the integrand because it operates only on functions of $\vv r$, and where we've used:
 \begin{equation}\label{eq:gradoverr}
-\del \left( \dfrac{1}{\Vert \vv r - \vv r_{s} \Vert} \right) = - \dfrac{\vv r - \vv r_{s}}{\Vert \vv r - \vv r_{s} \Vert ^3}.
+\del \left( \dfrac{1}{\Vert \vv r - \vv r_{s} \Vert} \right) = - \dfrac{\vv r - \vv r_{s}}{\Vert \vv r - \vv r_{s} \Vert ^3}
 \end{equation}
-Since $\vv b = \vv 0$, the Lorentz three-force (Equation \ref{eq:ltf}) is just $q \vv e$. With Equation \ref{eq:electrostatice}, this gives:
+(if that troubles you, calculate it component-wise in Cartesian coordinates). In electrostatics specifically, $\vv b = \vv 0$, and the Lorentz three-force (Equation \ref{eq:ltf}) is just $q \vv e$. With Equation \ref{eq:electrostatice}, this gives:
 \begin{equation}\label{eq:coulomb}
 \vv f_{\textrm{L}} (\vv r) = \dfrac{q}{4 \pi} \int \dfrac{\rho ( \vv r _{s}) \, (\vv r - \vv r_{s})}{\Vert \vv r - \vv r_{s} \Vert ^3} \, \dd V_{s}  \quad \text{\footnotesize{(in electrostatics)}}.
 \end{equation}
-That's \textbf{Coulomb's law}, the electrostatic force acting on a test particle with charge $q$ at position $\vv r$. Strictly speaking the particle must be at rest for the law to hold, but electrostatics is still a good approximation in many almost-electrostatic situations.
+That's \textbf{Coulomb's law}, the electrostatic force acting on a test particle with charge $q$ at position $\vv r$. Strictly speaking the particle must be at rest for the law to hold, but Equation \ref{eq:coulomb} is still a good approximation in many almost-electrostatic situations.
 
-Solving for magnetostatic $\vv b$ (curl of Equation \ref{eq:retvp}):
+Now we'll find $\vv b$ (curl of Equation \ref{eq:retvp}):
 \begin{equation}\label{eq:biot}
-\vv b (\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv j ( \vv r _{s}) \times (\vv r - \vv r_{s})}{\Vert \vv r - \vv r_{s} \Vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(in magnetostatics)}},
+\vv b (\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv j ( \vv r _{s}) \times (\vv r - \vv r_{s})}{\Vert \vv r - \vv r_{s} \Vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}},
 \end{equation}
-where we've used ${\del \times [ \mkern1mu f(\vv r) \, \vv j(\vv r_{s})] = \del f(\vv r) \times \vv j(\vv r_{s}) }$ (because $\del$ operates only on functions of $\vv r$), and also Equation \ref{eq:gradoverr} again (whose negative sign switches the order of the cross product). Equation \ref{eq:biot} is the \textbf{Biot--Savart Law}. In magnetostatics, the Lorentz force reduces to $q \vvbeta \times \vv b$, and:
+where we've used ${\del \times [ \mkern1mu f(\vv r) \, \vv j(\vv r_{s})] = \del f(\vv r) \times \vv j(\vv r_{s}) }$ (because $\del$ operates only on functions of $\vv r$) and also Equation \ref{eq:gradoverr} again (whose negative sign switches the order of the cross product). Equation \ref{eq:biot} is the \textbf{Biot--Savart law}. If $\vv e = \vv 0$ (magnetostatics), then the Lorentz force reduces to $q \vvbeta \times \vv b$, and:
 \begin{equation}\label{eq:magnetostaticf}
 \vv f_{\textrm{L}} (\vv r) = \dfrac{q \vvbeta}{4 \pi} \times \int \dfrac{\vv j ( \vv r _{s}) \times (\vv r - \vv r_{s})}{\Vert \vv r - \vv r_{s} \Vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(in magnetostatics)}},
 \end{equation}
-for the magnetostatic force acting on a test particle with charge $q$ and velocity $\vvbeta$ at position $\vv r$. (Its extension to the force acting between current-carrying wires is more useful. In fact, if the test particle isn't part of an electrically neutral stationary current, then the magnetostatic conditions aren't even satisfied.). Both Equations \ref{eq:coulomb} and \ref{eq:magnetostaticf} are inverse-square force laws.
+for the magnetostatic force acting on a test particle with charge $q$ and velocity $\vvbeta$ at position $\vv r$. (Its extension to the force acting on a current-carrying wire is more useful. In fact, if the test particle isn't part of an electrically neutral stationary current, then the magnetostatic conditions aren't even satisfied.). Both Equations \ref{eq:coulomb} and \ref{eq:magnetostaticf} are inverse-square force laws.
 
-There's an awful lot more to electrostatics and magnetostatics than this. We've merely shown how to obtain the conditions and key equations from our covariant formulation.
+There's an awful lot more to electrostatics and magnetostatics than this. We've merely shown how to obtain the conditions and some key equations from our covariant formulation.
 
 \clearpage
 
