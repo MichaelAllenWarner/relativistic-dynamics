@@ -3240,6 +3240,89 @@ Before we move away from the subject of light, let's quickly re-derive the relat
 
 This ``derivation" is little more than an acknowledgment that the components of $\vv H$, like those of any four-vector, transform Lorentzianly. We have ${\vv H = \langle H^{ct}, \, h_x, \, h_y, \, h_z \rangle = \langle \nu , \, h \cos \theta, \, h_y, \, h_z \rangle = \langle \nu , \, \nu \cos \theta, \, h_y, \, h_z \rangle}$, where $\theta$ is the angle that the light's direction of propagation makes with the positive unprimed $x$-axis. Then under a standard-configuration boost, where the primed frame moves in the positive $x$-direction (so that $\theta$ is also the angle that the light's direction of propagation makes with the primed frame's velocity), the time component transforms like $\nu ^{\prime} = \gamma (\nu - \beta h_x ) = \gamma \mkern1mu \nu (1 - \beta \cos \theta)$, and we're done! Much easier this way, eh? As an aside, it's now obvious that the unprimed frame in Equation \ref{eq:rdf} doesn't \emph{have} to be the light-source's rest frame. Finally, let's use the ``trick" from Section \ref{sssec:mc} to express the relationship between $\nu ^{\prime}$ and $\nu$ in a manifestly covariant form: $\nu ^{\prime} / \nu = (\vv B^{\textrm{p}} \cdot \vv H) / (\vv B^{\textrm{u}} \cdot \vv H)$, where $\vv B^{\textrm{p}}$ and $\vv B^{\textrm{u}}$ are respectively the normalized four-velocities of the primed and unprimed frames. (I avoid the symbols $\vv B ^{\prime}$ and $\vv B$ here because that notation might wrongly suggest a single underlying quantity; $\vv B^{\textrm{p}}$ and $\vv B^{\textrm{u}}$ are two \emph{different} four-vectors.)
 
+\subsection{Retarded Potential, Electrostatics, Magnetostatics}
+
+\subsubsection{The Lorenz-Gauge Retarded Potential}
+
+The Lorenz-gauge field equation $\Box \vv A = \vv J$ (Equation \ref{eq:fp}) can be solved for $\vv A$ using the method of Green's functions. The details are beyond our scope, but the manifestly covariant solution looks like this:
+\begin{equation}\label{eq:retfp}
+\vv A(\vv R) = \int G_{\textrm{ret}} ( \vv R - \vv R_{s} ) \, \vv J (\vv R _{s}) \, \dd \Omega_{s} ,
+\end{equation}
+where we have some symbols to explain.
+
+First, this is an integral taken over \emph{all of spacetime}, and $\dd \Omega_{s}$ refers to the \textbf{four-volume} element ($\dd x_{s} \, \dd y_{s} \, \dd z_{s} \, c \mkern2mu \dd t_{s}$) centered at the ``source event" $\vv R _{s}$, where $\vv J$ is sampled. (To be clear, \emph{every event in spacetime} is accounted for as a source event in this integral.) The undecorated $\vv R$ is the ``field event" at which we're ``evaluating" $\vv A$. Now, ``all of spacetime" should strike you as odd: if $\vv J$ generates disturbances in the Lorenz-gauge four-potential that travel outward through space at the speed of light, then shouldn't we only be ``sampling" $\vv J$ at events that are lightlike-separated from $\vv R$ and which precede $\vv R$ chronologically (i.e., events on the ``past light cone" of $\vv R$)? There are some subtleties when it comes to ``causality" and the potential (as opposed to the $\vv e$ and $\vv b$ fields), but the answer here is yes, and that's where $G_{\textrm{ret}}$ comes in. It's the \textbf{manifestly covariant retarded Green's function}, and in effect it \emph{filters out} all events $\vv R_{s}$ that aren't on the past light cone of $\vv R$.\footnote{\label{fn:retg}If you're curious, it does this with the Dirac delta function and the Heaviside step function: $G_{\textrm{ret}} (\vv R - \vv R_{s}) = \delta[ (\vv R - \vv R_{s})^2 ] \, \theta (ct - ct_{s}) / (2 \pi)$, with $\theta (n) = 1$ if $n > 0$ and $\theta (n) = 0$ otherwise.} It has dimensions of $1/L^2$.
+
+Equation \ref{eq:retfp} is known as the \textbf{retarded four-potential} because in a given inertial frame, a contributing source event $\vv R_{s}$ on the past light cone of $\vv R$ has a time coordinate $ct_{s} = ct - \Vert \vv r - \vv r_{s} \Vert \equiv ct_{\textrm{ret}}$, called the \textbf{retarded time} (the time coordinate of $\vv R$ \emph{minus} the time it takes light to travel from the source event's position $\vv r_{s}$ to the field event's position $\vv r$). An unphysical solution involving the \textbf{advanced time} $ct_{\textrm{adv}} \equiv ct + \Vert \vv r - \vv r_{s} \Vert$ is called the \textbf{advanced four-potential}.
+
+A caveat: Equation \ref{eq:retfp} only works if $\vv J$ vanishes at infinity. In real life that's fine, but idealized problems involving infinite wires and the like require other approaches. Additionally, it gives the unique solution where $\vv A$ itself vanishes at infinity, though naturally we still have a solution after a gauge transformation within the Lorenz family.
+
+The retarded potential is usually written in another form, which isn't manifestly covariant but is more useful in practice:
+\begin{equation}\label{eq:retfp2}
+\vv A(ct, \vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv J (ct_{\textrm{ret}}, \vv r _{s})}{\Vert \vv r - \vv r_{s} \Vert} \, \dd V_{s} .
+\end{equation}
+Here, the integration is over \emph{all of space} for the chosen inertial frame, but not at a single moment. Rather, for each source-position $\vv r_{s}$, the four-current density $\vv J$ is sampled at the retarded time $ct_{\textrm{ret}}$ (a function of $ct$, $\vv r$, and $\vv r_{s}$), and $\dd V_{s}$ is the volume element ($\dd x_{s} \, \dd y_{s} \, \dd z_{s}$) centered on $\vv r_{s}$ at that time.\footnote{To get to Equation \ref{eq:retfp2} from Equation \ref{eq:retfp} and Footnote \ref{fn:retg}, start with:
+\begin{equation*}
+\begin{aligned}
+\delta \left[ (\vv R - \vv R_{s})^2 \right] &= \delta \left[ (ct - ct_{s})^2 - \Vert \vv r - \vv r_{s} \Vert^2 \right]\\[2pt]
+&= \dfrac{\delta \big( ct_{s} - ct - \Vert \vv r - \vv r_{s} \Vert \big) + \delta \big( ct_{s} - ct + \Vert\vv r - \vv r_{s} \Vert \big)}{2 \Vert \vv r - \vv r_{s} \Vert} ,
+\end{aligned}
+\end{equation*}
+where the last step follows from the Dirac delta's function-composition identity (treating $\vv R - \vv R_{s}$ as a function of $ct_{s}$, since that's the variable we'll be integrating over momentarily). That gives:
+\begin{equation*}
+\begin{aligned}
+G_{\textrm{ret}} (\vv R - \vv R_{s}) &= \dfrac{\delta \left( ct_{s} - ct_{\textrm{adv}} \right) + \delta \left( ct_{s} - ct_{\textrm{ret}} \right)}{4 \pi \Vert \vv r - \vv r_{s} \Vert} \; \theta ( ct - ct_{s} ) \\[2pt]
+& \Rightarrow \, \dfrac{\delta \left( ct_{s} - ct_{\textrm{ret}} \right)}{4 \pi \Vert \vv r - \vv r_{s} \Vert}
+\end{aligned}
+\end{equation*}
+(the Heaviside function \emph{will} eliminate the first term when we integrate, because ${ct - ct_{\textrm{adv}} < 0}$, but that last step isn't technically an equality outside of the integral---hence the arrow). Then express Equation \ref{eq:retfp} in the form:
+\begin{equation*}
+\vv A(ct, \vv r) = \dfrac{1}{4 \pi} \iint \dfrac{\vv J(ct_{s}, \vv r _{s})}{\Vert \vv r - \vv r_{s} \Vert}  \; \delta ( ct_{s} - ct_{\textrm{ret}} )  \; c \, \dd t_{s} \, \dd V_{s},
+\end{equation*}
+and carry out the $ct_{s}$-integral to obtain Equation \ref{eq:retfp2}.}
+
+\subsubsection{Time-Independent Sources}
+
+In the special case of \emph{time-independent} sources, $\vv J(ct_{\textrm{ret}}, \vv r _{s})$ reduces to $\vv J(\vv r _{s})$, leaving the potential $\vv A$ time-independent in turn (since there's no other time-dependence on the right side of Equation \ref{eq:retfp2}):
+\begin{equation}\label{eq:retfp3}
+\vv A(\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv J ( \vv r _{s})}{\Vert \vv r - \vv r_{s} \Vert} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}} .
+\end{equation}
+In terms of the four-potential's components, we have from Equation \ref{eq:retfp3} the scalar potential:
+\begin{equation}\label{eq:retsp}
+A^{ct}(\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\rho ( \vv r _{s})}{\Vert \vv r - \vv r_{s} \Vert} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}}
+\end{equation}
+and the vector three-potential:
+\begin{equation}\label{eq:retvp}
+\vv a(\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv j ( \vv r _{s})}{\Vert \vv r - \vv r_{s} \Vert} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}} .
+\end{equation}
+The electric and magnetic fields---defined in terms of $\vv A$ (Equations \ref{eq:eb})---become time-independent, too, and $\vv e = - \del A^{ct} - \partial^{ct} \vv a = - \del A^{ct}$.
+
+If now $\vv j = \vv 0$ everywhere, then we have \textbf{electrostatics}. If instead $\rho = 0$ everywhere, then we have \textbf{magnetostatics}. In electrostatics, $\vv a = \vv 0$ in our gauge (Equation \ref{eq:retvp}), and $\vv b = \del \times \vv a$ consequently vanishes (in all gauges). The ``effective" Maxwell equations (Equations \ref{eq:me}) are then $\del \cdot \vv e = \rho$ and $\del \times \vv e = \vv 0$. In magnetostatics, it's $A^{ct}$ that vanishes in our gauge (Equation \ref{eq:retsp}), with $\vv e = - \del A^{ct} = \vv 0$ and effective Maxwell equations $\del \times \vv b = \vv j$ and $\del \cdot \vv b = 0$.
+
+Solving for electrostatic $\vv e$ (negative gradient of Equation \ref{eq:retsp}), we get:
+\begin{equation}\label{eq:electrostatice}
+\vv e (\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\rho ( \vv r _{s}) \, (\vv r - \vv r_{s})}{\Vert \vv r - \vv r_{s} \Vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(in electrostatics)}},
+\end{equation}
+where the gradient went inside the integrand because it operates only on functions of $\vv r$, and where we've used:
+\begin{equation}\label{eq:gradoverr}
+\del \left( \dfrac{1}{\Vert \vv r - \vv r_{s} \Vert} \right) = - \dfrac{\vv r - \vv r_{s}}{\Vert \vv r - \vv r_{s} \Vert ^3}.
+\end{equation}
+Since $\vv b = \vv 0$, the Lorentz three-force (Equation \ref{eq:ltf}) is just $q \vv e$. With Equation \ref{eq:electrostatice}, this gives:
+\begin{equation}\label{eq:coulomb}
+\vv f_{\textrm{L}} (\vv r) = \dfrac{q}{4 \pi} \int \dfrac{\rho ( \vv r _{s}) \, (\vv r - \vv r_{s})}{\Vert \vv r - \vv r_{s} \Vert ^3} \, \dd V_{s}  \quad \text{\footnotesize{(in electrostatics)}}.
+\end{equation}
+That's \textbf{Coulomb's law}, the electrostatic force acting on a test particle with charge $q$ at position $\vv r$. Strictly speaking the particle must be at rest for the law to hold, but electrostatics is still a good approximation in many almost-electrostatic situations.
+
+Solving for magnetostatic $\vv b$ (curl of Equation \ref{eq:retvp}):
+\begin{equation}\label{eq:biot}
+\vv b (\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv j ( \vv r _{s}) \times (\vv r - \vv r_{s})}{\Vert \vv r - \vv r_{s} \Vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(in magnetostatics)}},
+\end{equation}
+where we've used ${\del \times [ \mkern1mu f(\vv r) \, \vv j(\vv r_{s})] = \del f(\vv r) \times \vv j(\vv r_{s}) }$ (because $\del$ operates only on functions of $\vv r$), and also Equation \ref{eq:gradoverr} again (whose negative sign switches the order of the cross product). Equation \ref{eq:biot} is the \textbf{Biot--Savart Law}. In magnetostatics, the Lorentz force reduces to $q \vvbeta \times \vv b$, and:
+\begin{equation}\label{eq:magnetostaticf}
+\vv f_{\textrm{L}} (\vv r) = \dfrac{q \vvbeta}{4 \pi} \times \int \dfrac{\vv j ( \vv r _{s}) \times (\vv r - \vv r_{s})}{\Vert \vv r - \vv r_{s} \Vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(in magnetostatics)}},
+\end{equation}
+for the magnetostatic force acting on a test particle with charge $q$ and velocity $\vvbeta$ at position $\vv r$. (Its extension to the force acting between current-carrying wires is more useful. In fact, if the test particle isn't part of an electrically neutral stationary current, then the magnetostatic conditions aren't even satisfied.). Both Equations \ref{eq:coulomb} and \ref{eq:magnetostaticf} are inverse-square force laws.
+
+There's an awful lot more to electrostatics and magnetostatics than this. We've merely shown how to obtain the conditions and key equations from our covariant formulation.
 
 \clearpage
 
@@ -4187,7 +4270,7 @@ The first, which we've demonstrated, is almost trivial but also a little subtle.
 
 It's important to understand that the spacetime region just considered \emph{is} three-dimensional, even though it has extent along all four primed coordinate axes. If that confuses you, think of a plane in three-dimensional Euclidean space that doesn't happen to be parallel to any of the axes in a particular Cartesian coordinate system. That it has extent along all three axes is irrelevant to the geometric fact that it's two-dimensional. A bit of terminology: an $(n - 1)$-dimensional surface in an $n$-dimensional space is called a \textbf{hypersurface}. A plane in three-dimensional Euclidean space is a hypersurface, and $V$ in our integral is a hypersurface in Minkowski spacetime. Specifically, it's a \emph{spacelike} hypersurface, since there exists an inertial frame for which it's purely spatial (its temporal extent can be Lorentz-transformed away).
 
-The other thing one might mean by the Lorentz-covariance of our integral ${\int_V ({\inlinedy{\mathsf{T}}} \cdot \vv B) \dd V}$ is more interesting, but we haven't justified it yet, and it will take some explaining. Instead of Lorentz-transforming all the quantities in the integral, we'll integrate corresponding quantities over a \emph{completely different} spacelike hypersurface that encloses the same \emph{matter} as $V$, where ``matter" is meant in the most general possible sense (anything with energy, including electromagnetic energy, for example). But it will be the \emph{primed} frame for which this new hypersurface is purely spatial. We write: $\int_{V^\textrm{p}} ({\inlinedy{\mathsf{T}}} ^{\textrm{p}} \cdot \vv B^{\textrm{p}}) \dd V^\textrm{p}$, where we avoid the prime symbol to make clear that the underlying quantities are new. So, $\vv B^{\textrm{p}}$ is the \emph{primed} observer's four-velocity, and $V^\textrm{p}$ is a purely spatial region in the \emph{primed} frame, related to $V$ only in that they contain the same ``stuff." Let's stipulate that the spacelike hypersurfaces $V$ and $V^\textrm{p}$ don't intersect (they have no events in common). Then they constitute ``opposite ends" of the hypersurface-boundary of a greater \emph{four-dimensional} spacetime region. To ensure that they enclose the same matter, we'll further stipulate that nothing enters or exits that greater \textbf{four-volume} \emph{except} through $V$ and $V^\textrm{p}$, or equivalently that the stress--energy tensor vanishes at all other parts of the boundary. This is all a fancy way of saying that ${\inlinedy{\mathsf{T}}}$ and ${\inlinedy{\mathsf{T}}} ^{\textrm{p}}$ pertain to the same isolated system sampled at an entirely different set of events, one set corresponding to a spatial volume at one moment for the first frame, the other corresponding to a spatial volume at one moment for the second frame.
+The other thing one might mean by the Lorentz-covariance of our integral ${\int_V ({\inlinedy{\mathsf{T}}} \cdot \vv B) \dd V}$ is more interesting, but we haven't justified it yet, and it will take some explaining. Instead of Lorentz-transforming all the quantities in the integral, we'll integrate corresponding quantities over a \emph{completely different} spacelike hypersurface that encloses the same \emph{matter} as $V$, where ``matter" is meant in the most general possible sense (anything with energy, including electromagnetic energy, for example). But it will be the \emph{primed} frame for which this new hypersurface is purely spatial. We write: $\int_{V^\textrm{p}} ({\inlinedy{\mathsf{T}}} ^{\textrm{p}} \cdot \vv B^{\textrm{p}}) \dd V^\textrm{p}$, where we avoid the prime symbol to make clear that the underlying quantities are new. So, $\vv B^{\textrm{p}}$ is the \emph{primed} observer's four-velocity, and $V^\textrm{p}$ is a purely spatial region in the \emph{primed} frame, related to $V$ only in that they contain the same ``stuff." Let's stipulate that the spacelike hypersurfaces $V$ and $V^\textrm{p}$ don't intersect (they have no events in common). Then they constitute ``opposite ends" of the hypersurface-boundary of a greater \emph{four-dimensional} spacetime region. To ensure that they enclose the same matter, we'll further stipulate that nothing enters or exits that greater four-volume \emph{except} through $V$ and $V^\textrm{p}$, or equivalently that the stress--energy tensor vanishes at all other parts of the boundary. This is all a fancy way of saying that ${\inlinedy{\mathsf{T}}}$ and ${\inlinedy{\mathsf{T}}} ^{\textrm{p}}$ pertain to the same isolated system sampled at an entirely different set of events, one set corresponding to a spatial volume at one moment for the first frame, the other corresponding to a spatial volume at one moment for the second frame.
 
 Does ${\int_V ({\inlinedy{\mathsf{T}}} \cdot \vv B) \dd V} = \int_{V^\textrm{p}} ({\inlinedy{\mathsf{T}}} ^{\textrm{p}} \cdot \vv B^{\textrm{p}} ) \dd V^\textrm{p}$? That's the question of Lorentz-covariance here. We've already established that each integral will be the total four-momentum in its corresponding volume, and that the volumes will contain the same matter, so we're really asking whether that matter will have the same total four-momentum after it ``evolves" internally ``between" $V$ and $V^{\textrm{p}}$. Obviously the answer is yes---the total four-momentum of an isolated system is conserved!
 
