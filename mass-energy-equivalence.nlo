@@ -37,8 +37,8 @@
 \nomenclatureentry{250\( \rho \)@[{\( \rho \)}]\begingroup Charge density.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{260\( \vv j \)@[{\( \vv j \)}]\begingroup ``Normalized" current density (the flux density of charge).\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{270\( \vv J \)@[{\( \vv J \)}]\begingroup ``Normalized" four-current density $\langle \rho, \mkern2mu \vv j \rangle$, with $\partialup  \mkern2mu \cdot  \mkern2mu \vv J =  0$ ($q$-conservation).\nomeqref {0}|nompageref}{7}
-\nomenclatureentry{280\( \vv A \)@[{\( \vv A \)}]\begingroup Four-potential $\langle A^{ct}, \, \vv a \rangle$. Any vector satisfying $- \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A ) = \vv J$.\nomeqref {0}|nompageref}{7}
-\nomenclatureentry{283\( \vv e \)@[{\( \vv e \)}]\begingroup Electric field $- \del A^{ct} - \partial^{ct} \vv a$.\nomeqref {0}|nompageref}{7}
+\nomenclatureentry{280\( \vv A \)@[{\( \vv A \)}]\begingroup Four-potential $\langle \Phi, \, \vv a \rangle$. Any vector satisfying $- \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A ) = \vv J$.\nomeqref {0}|nompageref}{7}
+\nomenclatureentry{283\( \vv e \)@[{\( \vv e \)}]\begingroup Electric field $- \del \Phi - \partial^{ct} \vv a$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{286\( \vv b \)@[{\( \vv b \)}]\begingroup Magnetic field $\del \times \vv a$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{290\( \vv F_{\textbf{L}} \)@[{\( \vv F_{\textbf{L}} \)}]\begingroup Lorentz four-force $q \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) = \gamma q \mkern.5mu \langle \vv \vvbeta \cdot \vv e , \, \vv e + \vvbeta \times \vv b \rangle$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{300\( \bm{\mathfrak{F}} \)@[{\( \bm{\mathfrak{F}} \)}]\begingroup Lorentz four-force density $\vv J \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) = \langle \, \vv j \cdot \vv e, \, \rho \mkern1mu \vv e + \vv j \times \vv b \rangle$.\nomeqref {0}|nompageref}{7}
