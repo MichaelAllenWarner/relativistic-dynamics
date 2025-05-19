@@ -2588,7 +2588,7 @@ So here is what we'll do. While formulating the theory, we'll usually pretend th
 
 \subsubsection[(“Normalized”) Four-Current Density]{(``Normalized") Four-Current Density}\label{sssec:fcd}
 
-Experiment shows that electric charge $q$ is Lorentz-invariant. This allows for the construction of new four-vectors by scaling existing ones by $q$, but that turns out not to be so useful. What we need is a \emph{related} invariant called the \textbf{proper charge density}, defined only for a special class of charge distributions.
+Experiment shows that electric charge $q$ is Lorentz-invariant. This allows for the construction of new four-vectors by scaling existing ones by $q$. That's sometimes useful, but on the theoretical side it turns out to be more useful to scale by a \emph{related} invariant called the \textbf{proper charge density}, defined only for a special class of charge distributions.
 
 First, we define the \textbf{charge density} $\rho$, which is a property of \emph{any} charge distribution. It's just the charge per unit volume $V$. In our \emph{continuous} model,\footnote{To account for charge discreteness, the charge density can be written with the Dirac delta function (we won't bother).} the charge density of an infinitesimal piece of the distribution is:
 \begin{equation*}
@@ -2708,26 +2708,26 @@ The magnetic field $\vv b$ plays no role in Equation \ref{eq:lp} because the \te
 As four-vectors, $\vv J$, $\vv A$, and $\vv F_{\mathrm{L}}$ have components that obey the Lorentz transformation. As three-vectors, $\vv e$ and $\vv b$ do not, and equations involving them may be covariant but not manifestly so. Their components are \emph{built} from the components of four-vectors, however ($\partialup$ and $\vv A$), and transform accordingly. Here are the Cartesian components of $\vv e$ and $\vv b$ in terms of those four-vector components (using Equations \ref{eq:fn} and \ref{eq:eb}):
 \begin{equation}\label{eq:ebc}
 \begin{aligned}
-e_x = \partial^x \Phi - \partial^{ct} A^x \qquad \qquad b_x = \partial^z A^y - \partial^y A^z \\
-e_y = \partial^y \Phi - \partial^{ct} A^y \qquad \qquad b_y = \partial^x A^z - \partial^z A^x \\
-e_z = \partial^z \Phi - \partial^{ct} A^z \qquad \qquad b_z = \partial^y A^x - \partial^x A^y 
+e_x = \partial^x A^{ct} - \partial^{ct} A^x \qquad \qquad b_x = \partial^z A^y - \partial^y A^z \\
+e_y = \partial^y A^{ct} - \partial^{ct} A^y \qquad \qquad b_y = \partial^x A^z - \partial^z A^x \\
+e_z = \partial^z A^{ct} - \partial^{ct} A^z \qquad \qquad b_z = \partial^y A^x - \partial^x A^y 
 \end{aligned}
 \end{equation}
 (remember, $\partial^{ct}$ is the positive $ct$-partial, but the other components of $\partialup$ are \emph{negative} partials). Under a standard-configuration boost with relative rapidity $\phi$ between the frames, $e^\prime_x$ is:
 \begin{equation*}
 \begin{split}
-e^\prime_x &= \partial^{\mkern.5mu \prime \mkern1mu x} \Phi^{\prime} - \partial^{\mkern.5mu \prime \mkern1mu ct} A^{\prime \mkern1mu x} \\[2pt]
-&= (\cosh{\phi} \; \partial^x  - \sinh{\phi} \; \partial^{ct} )(\Phi \cosh{\phi}  - A^x \sinh{\phi} ) \\
-& \quad - (\cosh{\phi} \; \partial^{ct} -  \sinh{\phi} \; \partial^x )(A^x \cosh{\phi} - \Phi \sinh{\phi} ) \\[2pt]
-&= \partial^x \Phi - \partial^{ct} A^x = e_x
+e^\prime_x &= \partial^{\mkern.5mu \prime \mkern1mu x} A^{\prime \mkern1mu ct} - \partial^{\mkern.5mu \prime \mkern1mu ct} A^{\prime \mkern1mu x} \\[2pt]
+&= (\cosh{\phi} \; \partial^x  - \sinh{\phi} \; \partial^{ct} )(A^{ct} \cosh{\phi}  - A^x \sinh{\phi} ) \\
+& \quad - (\cosh{\phi} \; \partial^{ct} -  \sinh{\phi} \; \partial^x )(A^x \cosh{\phi} - A^{ct} \sinh{\phi} ) \\[2pt]
+&= \partial^x A^{ct} - \partial^{ct} A^x = e_x
 \end{split}
 \end{equation*}
 (by Equation \ref{eq:50}). Let's do one more component:
 \begin{equation*}
 \begin{split}
 b^\prime_y &= \partial^{\mkern.5mu \prime \mkern1mu x} A^{\prime \mkern1mu z} - \partial^{\mkern.5mu \prime \mkern1mu z} A^{\prime \mkern1mu x} \\[2pt]
-&= (\cosh{\phi} \; \partial^x  - \sinh{\phi} \; \partial^{ct} ) A^z - \partial^z (A^x \cosh{\phi} - \Phi \sinh{\phi} ) \\[2pt]
-&= \cosh{\phi} \, (\partial^x A^z - \partial^z A^x) + \sinh{\phi} \, (\partial^z \Phi - \partial^{ct} A^z) \\[2pt]
+&= (\cosh{\phi} \; \partial^x  - \sinh{\phi} \; \partial^{ct} ) A^z - \partial^z (A^x \cosh{\phi} - A^{ct} \sinh{\phi} ) \\[2pt]
+&= \cosh{\phi} \, (\partial^x A^z - \partial^z A^x) + \sinh{\phi} \, (\partial^z A^{ct} - \partial^{ct} A^z) \\[2pt]
 &= b_y \cosh{\phi} + e_z \sinh{\phi} .
 \end{split}
 \end{equation*}
@@ -2846,8 +2846,8 @@ We can express $\mathring{\partialup} (\vv B \cdot \vv B)$ and $\mathring{\parti
 \begin{equation*}
 \begin{split}
 &\mathring{\partialup} (\vv B \cdot \vv A) \\[2pt]
-&= \left \langle \dfrac{\partial}{\partial B^{ct}} , \,  - \dfrac{\partial}{\partial B^x} , \, - \dfrac{\partial}{\partial B^y} , \, - \dfrac{\partial}{\partial B^z} \right \rangle \left( B^{ct} \Phi - B^x A^x - B^y A^y - B^z A^z \right) \\[3pt]
-&= \left \langle \Phi \, \dfrac{\partial B^{ct}}{\partial B^{ct}} , \,  (- A^x) \left( - \dfrac{\partial B^x}{\partial B^x} \right) , \, (-A^y) \left( - \dfrac{\partial B^y}{\partial B^y} \right) , \, (-A^z) \left( - \dfrac{\partial B^z}{\partial B^z} \right) \right \rangle \\[2pt]
+&= \left \langle \dfrac{\partial}{\partial B^{ct}} , \,  - \dfrac{\partial}{\partial B^x} , \, - \dfrac{\partial}{\partial B^y} , \, - \dfrac{\partial}{\partial B^z} \right \rangle \left( B^{ct} A^{ct} - B^x A^x - B^y A^y - B^z A^z \right) \\[3pt]
+&= \left \langle A^{ct} \, \dfrac{\partial B^{ct}}{\partial B^{ct}} , \,  (- A^x) \left( - \dfrac{\partial B^x}{\partial B^x} \right) , \, (-A^y) \left( - \dfrac{\partial B^y}{\partial B^y} \right) , \, (-A^z) \left( - \dfrac{\partial B^z}{\partial B^z} \right) \right \rangle \\[2pt]
 &= \vv A 
 \end{split}
 \end{equation*}
@@ -3476,11 +3476,11 @@ In the context of electromagnetism, a particularly useful four-dyadic (field) is
 \partial^z
 \end{bmatrix}
 \begin{bmatrix}
-\Phi & A^x & A^y & A^z
+A^{ct} & A^x & A^y & A^z
 \end{bmatrix}
 -
 \begin{bmatrix}
-\Phi \\
+A^{ct} \\
 A^x \\
 A^y \\
 A^z
@@ -3492,10 +3492,10 @@ A^z
 which comes to
 \begin{equation*}
 \begin{bmatrix}
-0 & ( \partial^{ct} A^x - \partial^x \Phi ) & ( \partial^{ct} A^y - \partial^y \Phi ) & ( \partial^{ct} A^z - \partial^z \Phi ) \\[1.5ex]
-( \partial^x \Phi - \partial^{ct} A^x ) & 0 & ( \partial^x A^y - \partial^y A^x ) & ( \partial^x A^z - \partial^z A^x ) \\[1.5ex]
-( \partial^y \Phi - \partial^{ct} A^y ) & ( \partial^y A^x - \partial^x A^y ) & 0 & ( \partial^y A^z - \partial^z A^y ) \\[1.5ex]
-( \partial^z \Phi - \partial^{ct} A^z ) & ( \partial^z A^x - \partial^x A^z ) & ( \partial^z A^y - \partial^y A^z ) & 0
+0 & ( \partial^{ct} A^x - \partial^x A^{ct} ) & ( \partial^{ct} A^y - \partial^y A^{ct} ) & ( \partial^{ct} A^z - \partial^z A^{ct} ) \\[1.5ex]
+( \partial^x A^{ct} - \partial^{ct} A^x ) & 0 & ( \partial^x A^y - \partial^y A^x ) & ( \partial^x A^z - \partial^z A^x ) \\[1.5ex]
+( \partial^y A^{ct} - \partial^{ct} A^y ) & ( \partial^y A^x - \partial^x A^y ) & 0 & ( \partial^y A^z - \partial^z A^y ) \\[1.5ex]
+( \partial^z A^{ct} - \partial^{ct} A^z ) & ( \partial^z A^x - \partial^x A^z ) & ( \partial^z A^y - \partial^y A^z ) & 0
 \end{bmatrix} .
 \end{equation*}
 We call this dyadic the \textbf{Faraday tensor}, or the \textbf{electromagnetic field tensor}.\footnote{\label{fn:dy}Specifically, dyadics are \emph{contravariant} rank-2 tensors, a detail that matters in more advanced treatments of Minkowski spacetime (doesn't matter in practice for Euclidean space if one is using Cartesian coordinates).} Labeling it $\inlinedy{\mathsf{F}} = \inlinedy{\mathsf{F}} (\vv R)$, and invoking Equations \ref{eq:ebc}, we have:
@@ -3682,9 +3682,9 @@ giving the expected $\partialup \cdot \inlinedy{\mathsf{G}} = \langle \del \cdot
 \begin{equation*}
 \begin{bmatrix}
 0 & ( \partial^y A^z - \partial^z A^y ) & ( \partial^z A^x - \partial^x A^z ) & ( \partial^x A^y - \partial^y A^x ) \\[1.5ex]
-( \partial^z A^y - \partial^y A^z ) & 0 & ( \partial^z \Phi - \partial^{ct} A^z ) & ( \partial^{ct} A^y - \partial^y \Phi ) \\[1.5ex]
-( \partial^x A^z - \partial^z A^x ) & ( \partial^{ct} A^z - \partial^z \Phi ) & 0 & ( \partial^x \Phi - \partial^{ct} A^x ) \\[1.5ex]
-( \partial^y A^x - \partial^x A^y ) & ( \partial^y \Phi - \partial^{ct} A^y ) & ( \partial^{ct} A^x - \partial^x \Phi ) & 0
+( \partial^z A^y - \partial^y A^z ) & 0 & ( \partial^z A^{ct} - \partial^{ct} A^z ) & ( \partial^{ct} A^y - \partial^y A^{ct} ) \\[1.5ex]
+( \partial^x A^z - \partial^z A^x ) & ( \partial^{ct} A^z - \partial^z A^{ct} ) & 0 & ( \partial^x A^{ct} - \partial^{ct} A^x ) \\[1.5ex]
+( \partial^y A^x - \partial^x A^y ) & ( \partial^y A^{ct} - \partial^{ct} A^y ) & ( \partial^{ct} A^x - \partial^x A^{ct} ) & 0
 \end{bmatrix} .
 \end{equation*}
 Using \emph{that} matrix to carry out $[\partialup]^{\mathrm{T}} \eta [\inlinedy{\mathsf{G}}]$, we can confirm that all components of $\partialup \cdot \inlinedy{\mathsf{G}}$ indeed vanish. For example, the time component is:
@@ -4291,7 +4291,7 @@ In Section \ref{sssec:ele}, we fed a well-chosen Lagrangian $L$ into the four-ve
 
 This requires some explanation! Essentially, the four-potential field ${\vv A (\vv R)}$ is playing the role here that the particle's four-position $\vv R (ct_0)$ played in Equation \ref{eq:ele} (the role of ``coordinate"), and the gradient of the four-potential ($\partialup \otimes \vv A$) is playing the role that the particle's four-velocity $\vv B (ct_0) = \mathring{\vv R}$ played (the role of ``velocity").\footnote{As is always the case with a Lagrangian approach, the ``coordinate" and ``velocity" must be understood as \emph{independent} parameters, in the sense that differentiating with respect to $\vv A$ will mean treating $\partialup \otimes \vv A$ as a constant (and vice versa).} So on the right side, instead of the four-gradient $\partialup = \partialup^{\vv R}$, we have a new four-vector operator:
 \begin{equation*}
-\partialup^{\vv A} \equiv \left \langle \dfrac{\partial}{\partial \Phi} , \,  - \dfrac{\partial}{\partial A^x} , \, - \dfrac{\partial}{\partial A^y} , \, - \dfrac{\partial}{\partial A^z} \right \rangle ,
+\partialup^{\vv A} \equiv \left \langle \dfrac{\partial}{\partial A^{ct}} , \,  - \dfrac{\partial}{\partial A^x} , \, - \dfrac{\partial}{\partial A^y} , \, - \dfrac{\partial}{\partial A^z} \right \rangle ,
 \end{equation*}
 and on the left side we've got some sort of \emph{dyadic} operator $\inlinedy{\partialrm} {}^{\partialup \mkern2mu \otimes \vv A}$ that's taking the place of Equation \ref{eq:ele}'s $\mathring{\partialup} = \partialup^{\vv B} = \partialup^{\mathring{\vv R}}$. We've yet to define this dyadic operator, but we know that it must output a four-dyadic when it acts on the scalar $\mathcal{L}$---a four-dyadic playing the role of ``canonical momentum"---and the left side of Equation \ref{eq:elef} is the divergence of that four-dyadic (whereas the left side of Equation \ref{eq:ele} was the $ct_0$-derivative of the \emph{vector} resulting from the operation $\mathring{\partialup} L$).
 
@@ -4418,10 +4418,10 @@ e_y & b_z & 0 & -b_x \\
 e_z & -b_y & b_x & 0
 \end{bmatrix}
 \begin{bmatrix}
-\partial^{ct} \Phi & \partial^{ct} A^x & \partial^{ct} A^y & \partial^{ct} A^z \\
-- \partial^x \Phi & - \partial^x A^x & - \partial^x A^y & - \partial^x A^z  \\
-- \partial^y \Phi & - \partial^y A^x & - \partial^y A^y & - \partial^y A^z \\
-- \partial^z \Phi & - \partial^z A^x & - \partial^z A^y & - \partial^z A^z
+\partial^{ct} A^{ct} & \partial^{ct} A^x & \partial^{ct} A^y & \partial^{ct} A^z \\
+- \partial^x A^{ct} & - \partial^x A^x & - \partial^x A^y & - \partial^x A^z  \\
+- \partial^y A^{ct} & - \partial^y A^x & - \partial^y A^y & - \partial^y A^z \\
+- \partial^z A^{ct} & - \partial^z A^x & - \partial^z A^y & - \partial^z A^z
 \end{bmatrix} .
 \end{equation*}
 Taking the four-divergence $\partialup \cdot (\inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ))$ means putting $[\partialup]^\mathrm{T}\eta$ in front:
@@ -4437,10 +4437,10 @@ e_y & b_z & 0 & -b_x \\
 e_z & -b_y & b_x & 0
 \end{bmatrix}
 \begin{bmatrix}
-\partial^{ct} \Phi & \partial^{ct} A^x & \partial^{ct} A^y & \partial^{ct} A^z \\
-- \partial^x \Phi & - \partial^x A^x & - \partial^x A^y & - \partial^x A^z  \\
-- \partial^y \Phi & - \partial^y A^x & - \partial^y A^y & - \partial^y A^z \\
-- \partial^z \Phi & - \partial^z A^x & - \partial^z A^y & - \partial^z A^z
+\partial^{ct} A^{ct} & \partial^{ct} A^x & \partial^{ct} A^y & \partial^{ct} A^z \\
+- \partial^x A^{ct} & - \partial^x A^x & - \partial^x A^y & - \partial^x A^z  \\
+- \partial^y A^{ct} & - \partial^y A^x & - \partial^y A^y & - \partial^y A^z \\
+- \partial^z A^{ct} & - \partial^z A^x & - \partial^z A^y & - \partial^z A^z
 \end{bmatrix}
 \right)
 \end{equation*}
@@ -4451,9 +4451,9 @@ e_z & -b_y & b_x & 0
 & \; - \partial^x \left( e_x \partial^{ct} A^{\mu} + b_z \partial^y A^{\mu} - b_y \partial^z A^{\mu} \right) \\
 & \; - \partial^y \left( e_y \partial^{ct} A^{\mu} - b_z \partial^x A^{\mu} + b_x \partial^z A^{\mu} \right) \\
 & \; - \partial^z \left( e_z \partial^{ct} A^{\mu} + b_y \partial^x A^{\mu} - b_x \partial^y A^{\mu} \right)
-\end{split}
+\end{split},
 \end{equation*}
-($A^{ct} = \Phi$), or:
+or:
 \begin{equation*}
 \Big( \partialup \cdot \big( \capdy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ) \big) \Big)^{\mu} = - \partial^{ct} ( \vv e \cdot \del A^{\mu} ) \, + \, \del \cdot \left( (\partial^{ct} A^{\mu}) \vv e \, + \, \vv b \times \del A^{\mu} \right) ,
 \end{equation*}
