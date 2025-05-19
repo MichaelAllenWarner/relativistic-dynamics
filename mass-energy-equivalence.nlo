@@ -8,7 +8,7 @@
 \nomenclatureentry{053\( \Delta \vv r \)@[{\( \Delta \vv r \)}]\begingroup Displacement or separation vector (\emph{displacement} for something in motion, \emph{separation} for an abstract vector ``connecting" two points).\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{055\( \Delta \vv R \)@[{\( \Delta \vv R \)}]\begingroup Four-displacement or four-separation.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{057\( \Delta s \)@[{\( \Delta s \)}]\begingroup Spacetime interval $\sqrt{ (c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2 }$ (magnitude of $\Delta \vv R$).\nomeqref {0}|nompageref}{7}
-\nomenclatureentry{060\( \vvbeta, \beta \)@[{\( \vvbeta, \beta \)}]\begingroup Normalized velocity $\dot{\vv r}$ and its magnitude. Dimensionless; $0 \leq \beta < 1$.\nomeqref {0}|nompageref}{7}
+\nomenclatureentry{060\( \vvbeta, \beta \)@[{\( \vvbeta, \beta \)}]\begingroup Normalized velocity $\dot{\vv r}$ and its magnitude. Dimensionless; $0 \leq \beta \leq 1$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{070\( \vv B, B \)@[{\( \vv B, B \)}]\begingroup Normalized four-velocity $\mathring{\vv R}$ and its magnitude. Dimensionless; $B = 1$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{080\( \vvzeta, \zeta \)@[{\( \vvzeta, \zeta \)}]\begingroup ``Normalized" acceleration $\dot{\vvbeta}$ and its magnitude.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{090\( \vv Z, Z \)@[{\( \vv Z, Z \)}]\begingroup ``Normalized" four-acceleration $\mathring{\vv B}$ and its magnitude.\nomeqref {0}|nompageref}{7}

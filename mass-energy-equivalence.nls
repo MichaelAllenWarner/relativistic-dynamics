@@ -11,7 +11,7 @@
   \item [{\( \Delta \vv r \)}]\begingroup Displacement or separation vector (\emph{displacement} for something in motion, \emph{separation} for an abstract vector ``connecting" two points).\nomeqref {0}\nompageref{7}
   \item [{\( \Delta \vv R \)}]\begingroup Four-displacement or four-separation.\nomeqref {0}\nompageref{7}
   \item [{\( \Delta s \)}]\begingroup Spacetime interval $\sqrt{ (c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2 }$ (magnitude of $\Delta \vv R$).\nomeqref {0}\nompageref{7}
-  \item [{\( \vvbeta, \beta \)}]\begingroup Normalized velocity $\dot{\vv r}$ and its magnitude. Dimensionless; $0 \leq \beta < 1$.\nomeqref {0}\nompageref{7}
+  \item [{\( \vvbeta, \beta \)}]\begingroup Normalized velocity $\dot{\vv r}$ and its magnitude. Dimensionless; $0 \leq \beta \leq 1$.\nomeqref {0}\nompageref{7}
   \item [{\( \vv B, B \)}]\begingroup Normalized four-velocity $\mathring{\vv R}$ and its magnitude. Dimensionless; $B = 1$.\nomeqref {0}\nompageref{7}
   \item [{\( \vvzeta, \zeta \)}]\begingroup ``Normalized" acceleration $\dot{\vvbeta}$ and its magnitude.\nomeqref {0}\nompageref{7}
   \item [{\( \vv Z, Z \)}]\begingroup ``Normalized" four-acceleration $\mathring{\vv B}$ and its magnitude.\nomeqref {0}\nompageref{7}
