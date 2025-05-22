@@ -16,7 +16,7 @@
 \nomenclatureentry{094\( \vvomega, \omega \)@[{\( \vvomega, \omega \)}]\begingroup ``Normalized" celerity $\mathring{\vv r} = \gamma \dot{\vv r} = \gamma \vvbeta$ and its magnitude.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{096\( \nu \)@[{\( \nu \)}]\begingroup Frequency.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{098\( \lambda \)@[{\( \lambda \)}]\begingroup Wavelength.\nomeqref {0}|nompageref}{7}
-\nomenclatureentry{100\( E_0 \)@[{\( E_0 \)}]\begingroup Rest energy (proper energy). Equals zero when $\beta = 1$ (e.g., for light).\nomeqref {0}|nompageref}{7}
+\nomenclatureentry{100\( E_0 \)@[{\( E_0 \)}]\begingroup Rest/proper energy ($mc^2$). Equals zero when $\beta = 1$ (e.g., for light).\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{110\( E \)@[{\( E \)}]\begingroup Total energy. Equals $\gamma E_0$ when $E_0 > 0$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{120\( E_{\mkern.5mu \textrm{k}} \)@[{\( E_{\mkern.5mu \textrm{k}} \)}]\begingroup Kinetic energy $E - E_0$. Equals $E_0 (\gamma - 1)$ when $E_0 > 0$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{130\( \mathcal{P} \)@[{\( \mathcal{P} \)}]\begingroup ``Normalized" power $\dot{E}$.\nomeqref {0}|nompageref}{7}
@@ -37,7 +37,7 @@
 \nomenclatureentry{250\( \rho \)@[{\( \rho \)}]\begingroup Charge density.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{260\( \vv j \)@[{\( \vv j \)}]\begingroup ``Normalized" current density (the flux density of charge).\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{270\( \vv J \)@[{\( \vv J \)}]\begingroup ``Normalized" four-current density $\langle \rho, \mkern2mu \vv j \rangle$, with $\partialup  \mkern2mu \cdot  \mkern2mu \vv J =  0$ ($q$-conservation).\nomeqref {0}|nompageref}{7}
-\nomenclatureentry{280\( \vv A \)@[{\( \vv A \)}]\begingroup Four-potential $\langle \Phi, \, \vv a \rangle$. Any vector satisfying $- \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A ) = \vv J$.\nomeqref {0}|nompageref}{7}
+\nomenclatureentry{280\( \vv A \)@[{\( \vv A \)}]\begingroup Four-potential $\langle \Phi, \mkern1mu \vv a \rangle$. Any vector satisfying $- \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A ) = \vv J$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{283\( \vv e \)@[{\( \vv e \)}]\begingroup Electric field $- \del \Phi - \partial^{ct} \vv a$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{286\( \vv b \)@[{\( \vv b \)}]\begingroup Magnetic field $\del \times \vv a$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{290\( \vv F_{\textbf{L}} \)@[{\( \vv F_{\textbf{L}} \)}]\begingroup Lorentz four-force $q \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) = \gamma q \mkern.5mu \langle \vv \vvbeta \cdot \vv e , \, \vv e + \vvbeta \times \vv b \rangle$.\nomeqref {0}|nompageref}{7}
@@ -48,7 +48,7 @@
 \nomenclatureentry{335\( I_n \)@[{\( I_n \)}]\begingroup $n$-by-$n$ identity matrix; e.g., $I_3 = \diag(1, 1, 1)$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{340\( \inlinedy{\upiota} \)@[{\( \inlinedy{\upiota} \)}]\begingroup Euclidean unit dyadic, with Cartesian matrix-representation $I_3$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{350\( \inlinedy{\upsigma} \)@[{\( \inlinedy{\upsigma} \)}]\begingroup Maxwell stress tensor $u \mkern-4.5mu \inlinedy{\upiota} - \, \vv e \otimes \vv e - \vv b \otimes \vv b$ (the flux density of electromagnetic momentum).\nomeqref {0}|nompageref}{7}
-\nomenclatureentry{360\( \vv K \)@[{\( \vv K \)}]\begingroup Four-wavevector $\langle K^{ct}, \mkern2mu \vv k \rangle = \langle 2 \pi \nu / c, \mkern2mu 2 \pi \nu \vv{\hat{k}} / c \rangle$.\nomeqref {0}|nompageref}{7}
+\nomenclatureentry{360\( \vv K \)@[{\( \vv K \)}]\begingroup Four-wavevector $\langle K^{ct}, \mkern1mu \vv k \rangle = \langle 2 \pi \nu / c, \mkern2mu 2 \pi \nu \vv{\hat{k}} / c \rangle$.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{370\( \inlinedy{\mathsf{0}} \)@[{\( \inlinedy{\mathsf{0}} \)}]\begingroup Zero four-dyadic.\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{400\( \inlinedy{\upeta} \)@[{\( \inlinedy{\upeta} \)}]\begingroup Minkowski metric four-dyadic (inverse/contravariant metric tensor).\nomeqref {0}|nompageref}{7}
 \nomenclatureentry{410\( \eta \)@[{\( \eta \)}]\begingroup Matrix representation of Minkowski metric, $\diag(1, -1, -1, -1)$.\nomeqref {0}|nompageref}{7}

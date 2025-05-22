@@ -19,7 +19,7 @@
   \item [{\( \vvomega, \omega \)}]\begingroup ``Normalized" celerity $\mathring{\vv r} = \gamma \dot{\vv r} = \gamma \vvbeta$ and its magnitude.\nomeqref {0}\nompageref{7}
   \item [{\( \nu \)}]\begingroup Frequency.\nomeqref {0}\nompageref{7}
   \item [{\( \lambda \)}]\begingroup Wavelength.\nomeqref {0}\nompageref{7}
-  \item [{\( E_0 \)}]\begingroup Rest energy (proper energy). Equals zero when $\beta = 1$ (e.g., for light).\nomeqref {0}\nompageref{7}
+  \item [{\( E_0 \)}]\begingroup Rest/proper energy ($mc^2$). Equals zero when $\beta = 1$ (e.g., for light).\nomeqref {0}\nompageref{7}
   \item [{\( E \)}]\begingroup Total energy. Equals $\gamma E_0$ when $E_0 > 0$.\nomeqref {0}\nompageref{7}
   \item [{\( E_{\mkern.5mu \textrm{k}} \)}]\begingroup Kinetic energy $E - E_0$. Equals $E_0 (\gamma - 1)$ when $E_0 > 0$.\nomeqref {0}\nompageref{7}
   \item [{\( \mathcal{P} \)}]\begingroup ``Normalized" power $\dot{E}$.\nomeqref {0}\nompageref{7}
@@ -40,7 +40,7 @@
   \item [{\( \rho \)}]\begingroup Charge density.\nomeqref {0}\nompageref{7}
   \item [{\( \vv j \)}]\begingroup ``Normalized" current density (the flux density of charge).\nomeqref {0}\nompageref{7}
   \item [{\( \vv J \)}]\begingroup ``Normalized" four-current density $\langle \rho, \mkern2mu \vv j \rangle$, with $\partialup  \mkern2mu \cdot  \mkern2mu \vv J =  0$ ($q$-conservation).\nomeqref {0}\nompageref{7}
-  \item [{\( \vv A \)}]\begingroup Four-potential $\langle \Phi, \, \vv a \rangle$. Any vector satisfying $- \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A ) = \vv J$.\nomeqref {0}\nompageref{7}
+  \item [{\( \vv A \)}]\begingroup Four-potential $\langle \Phi, \mkern1mu \vv a \rangle$. Any vector satisfying $- \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A ) = \vv J$.\nomeqref {0}\nompageref{7}
   \item [{\( \vv e \)}]\begingroup Electric field $- \del \Phi - \partial^{ct} \vv a$.\nomeqref {0}\nompageref{7}
   \item [{\( \vv b \)}]\begingroup Magnetic field $\del \times \vv a$.\nomeqref {0}\nompageref{7}
   \item [{\( \vv F_{\textbf{L}} \)}]\begingroup Lorentz four-force $q \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) = \gamma q \mkern.5mu \langle \vv \vvbeta \cdot \vv e , \, \vv e + \vvbeta \times \vv b \rangle$.\nomeqref {0}\nompageref{7}
@@ -51,7 +51,7 @@
   \item [{\( I_n \)}]\begingroup $n$-by-$n$ identity matrix; e.g., $I_3 = \diag(1, 1, 1)$.\nomeqref {0}\nompageref{7}
   \item [{\( \inlinedy{\upiota} \)}]\begingroup Euclidean unit dyadic, with Cartesian matrix-representation $I_3$.\nomeqref {0}\nompageref{7}
   \item [{\( \inlinedy{\upsigma} \)}]\begingroup Maxwell stress tensor $u \mkern-4.5mu \inlinedy{\upiota} - \, \vv e \otimes \vv e - \vv b \otimes \vv b$ (the flux density of electromagnetic momentum).\nomeqref {0}\nompageref{7}
-  \item [{\( \vv K \)}]\begingroup Four-wavevector $\langle K^{ct}, \mkern2mu \vv k \rangle = \langle 2 \pi \nu / c, \mkern2mu 2 \pi \nu \vv{\hat{k}} / c \rangle$.\nomeqref {0}\nompageref{7}
+  \item [{\( \vv K \)}]\begingroup Four-wavevector $\langle K^{ct}, \mkern1mu \vv k \rangle = \langle 2 \pi \nu / c, \mkern2mu 2 \pi \nu \vv{\hat{k}} / c \rangle$.\nomeqref {0}\nompageref{7}
   \item [{\( \inlinedy{\mathsf{0}} \)}]\begingroup Zero four-dyadic.\nomeqref {0}\nompageref{7}
   \item [{\( \inlinedy{\upeta} \)}]\begingroup Minkowski metric four-dyadic (inverse/contravariant metric tensor).\nomeqref {0}\nompageref{7}
   \item [{\( \eta \)}]\begingroup Matrix representation of Minkowski metric, $\diag(1, -1, -1, -1)$.\nomeqref {0}\nompageref{7}
