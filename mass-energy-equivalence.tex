@@ -35,6 +35,18 @@
   \mathop{#2}\limits^{\vbox to -.5ex{\kern-0.95ex\hbox{$#1$}\vss}}}
 \newcommand{\superdy}[1]{\superoverset{\text{\tiny$\bm\leftrightarrow$}}{#1}}
 \newcommand{\capdy}[1]{ \overset{ \text{\tiny$\bm\leftrightarrow$} }{\vphantom{\text{\small{A}}}\smash{#1}} }
+
+\makeatletter
+\DeclareRobustCommand*\vvell{\mathpalette\@vvell\relax}
+\newcommand*\@vvell[2]{
+  % We need to adjust the width of \vvell to be the same as bm \ell
+  \setbox0=\hbox{$#1\bm{\ell}$}
+  \setbox1=\hbox{\rotatebox{14}{$#1\bm{\ell}$}}
+  \dimen0=\wd0 \advance\dimen0 by -\wd1 \divide\dimen0 by 2
+  \mathord{\lower 0.1ex \hbox{\kern\dimen0\unhbox1\kern\dimen0}}
+}
+\makeatother
+
 \usepackage{tkz-euclide}
 \usepackage{tikz}
 \usepackage{tkz-tab}
@@ -159,7 +171,7 @@
 \nomenclature[430]{\( \inlinedy{\mathsf{G}} \)}{Maxwell tensor $\star \inlinedy{\mathsf{F}}$ (Hodge dual of Faraday), with $\partialup \cdot \inlinedy{\mathsf{G}} = \textrm{\mbox{\boldmath$\emptyset$}}$.}
 \nomenclature[440]{\( \inlinedy{\mathsf{T}} \)}{Total stress--energy tensor, with $\partialup \cdot \inlinedy{\mathsf{T}} = \textrm{\mbox{\boldmath $\emptyset$}}$ (conservation of $\vv P$).}
 \nomenclature[450]{\( {\inlinedy{\mathsf{T}}}_{\textrm{em}} \)}{Electromagnetic stress--energy $( \inlinedy{\mathsf{F}} \cdot \inlinedy{\mathsf{F}} + \inlinedy{\mathsf{G}} \cdot \inlinedy{\mathsf{G}} )/2$, with $\partialup \cdot  {\inlinedy{\mathsf{T}}}_{\textrm{em}} =$ $- \bm{\mathfrak{F}}$.}
-\nomenclature[460]{\( \vv l \)}{Angular momentum $\vv r \times \vv pc$.}
+\nomenclature[460]{\( \vvell \)}{Angular momentum $\vv r \times \vv pc$.}
 \nomenclature[470]{\( \inlinedy{\mathsf{L}} \)}{Angular-momentum four-dyadic $\vv R \wedge \vv P$.}
 
 
@@ -4528,19 +4540,19 @@ In practice, there's little use for $\inlinedy{\mathsf{H}}$, other than as a ste
 
 \subsection{Angular Momentum (Finally); Rank-3 Tensors}\label{ssec:angular}
 
-We haven't yet discussed \emph{angular} momentum. Let's fix that. In Newtonian mechanics, it's defined as $\vv l_{\mathrm{classical}} = \vv r \times \vv p_{\mathrm{classical}}$, where $\vv r$ is the three-position (relative to some origin) and $\vv p_{\mathrm{classical}}$ is the classical three-momentum. We care about angular momentum because it's additive and conserved, and it turns out that it remains so in special relativity if we just replace the classical momentum with its relativistic counterpart:
+We haven't yet discussed \emph{angular} momentum. Let's fix that. In Newtonian mechanics, it's defined as $\vv l_{\mathrm{classical}} = \vv r \times \vv p_{\mathrm{classical}}$ (that's a small el), where $\vv r$ is the three-position (relative to some origin) and $\vv p_{\mathrm{classical}}$ is the classical three-momentum. We care about angular momentum because it's additive and conserved, and it turns out that it remains so in special relativity if we just replace the classical momentum with its relativistic counterpart:
 \begin{equation*}
-\vv l \equiv \vv r \times \vv p c
+\vvell \equiv \vv l c \equiv \vv r \times \vv p c
 \end{equation*}
-(we could drop the $c$ to give $\vv l$ its conventional units, but we won't).
+(we'll use $\vvell$ because it's a more readable character and it ``absorbs" the $c$).
 
 Having established that Equation \ref{eq:set} is a continuity equation, where the vanishing divergence of the stress--energy dyadic $\inlinedy{\mathsf{T}}$ expresses the conservation of four-momentum, we might ask whether it's possible to likewise express the conservation of \emph{angular} momentum as the vanishing four-divergence of some sort of ``angular stress--energy tensor." The answer is yes, but first we must get our bearings by expressing angular momentum in a manifestly covariant form. 
 
 \subsubsection{Angular Momentum Four-Dyadic}
 
-We do this by noting that $\vv l$ is a pseudovector whose information is actually more ``naturally" conveyed in the guise of its Hodge dual, a (conserved) three-dyadic that isn't a pseudotensor:
+We do this by noting that $\vvell$ is a pseudovector whose information is actually more ``naturally" conveyed in the guise of its Hodge dual, a (conserved) three-dyadic that isn't a pseudotensor:
 \begin{equation*}
-\star \vv l =  \star ( \vv r \times \vv p c ) = \vv r \wedge \vv p c .
+\star \vvell =  \star ( \vv r \times \vv p c ) = \vv r \wedge \vv p c .
 \end{equation*}
 From here, the covariant formulation practically writes itself:
 \begin{equation*}
@@ -4552,7 +4564,7 @@ From here, the covariant formulation practically writes itself:
 =
 \begin{bmatrix}
 0 & [ - \vv n ]^\mathrm{T} \\[1ex]
-[ \vv n ] & [ \star \vv l ]
+[ \vv n ] & [ \star \vvell ]
 \end{bmatrix} ,
 \end{equation*}
 with $\vv n \equiv E \vv r - (ct)(\vv p c)$, a conserved three-vector.
@@ -4577,11 +4589,11 @@ The antisymmetric $\inlinedy{\mathsf{L}}$ is clearly close in form to the Farada
 [ \star \capdy{\mathsf{L}} ]
 =
 \begin{bmatrix}
-0 & [ \vv l ]^\mathrm{T} \\[1ex]
-[ - \vv l ] & [ \star \vv n ]
+0 & [ \vvell ]^\mathrm{T} \\[1ex]
+[ - \vvell ] & [ \star \vv n ]
 \end{bmatrix}
 \end{equation*}
-(cf. Equation \ref{eq:gtc}). Continuing in the same vein, we can extract from our dyadics a pair of Lorentz invariants: $\inlinedy{\mathsf{L}} : \star \inlinedy{\mathsf{L}} =  4 ( \vv n \cdot \vv l )$ (cf. Equation \ref{eq:fddg}), which \emph{for a particle} is trivially $0$ (because it involves dotting a cross product with its constituent vectors), and $\inlinedy{\mathsf{L}} : \inlinedy{\mathsf{L}} = - \star \inlinedy{\mathsf{L}} : \star \inlinedy{\mathsf{L}} = 2 ( l^2 - n^2 )$ (cf. Equations \ref{eq:fddf} and \ref{eq:gddg}), which doesn't vanish but which we must remember is \emph{not} Poincar\'e-invariant (its invariance depends on a fixed spacetime origin).
+(cf. Equation \ref{eq:gtc}). Continuing in the same vein, we can extract from our dyadics a pair of Lorentz invariants: $\inlinedy{\mathsf{L}} : \star \inlinedy{\mathsf{L}} =  4 ( \vv n \cdot \vvell )$ (cf. Equation \ref{eq:fddg}), which \emph{for a particle} is trivially $0$ (because it involves dotting a cross product with its constituent vectors), and $\inlinedy{\mathsf{L}} : \inlinedy{\mathsf{L}} = - \star \inlinedy{\mathsf{L}} : \star \inlinedy{\mathsf{L}} = 2 ( \ell^2 - n^2 )$ (cf. Equations \ref{eq:fddf} and \ref{eq:gddg}), which doesn't vanish but which we must remember is \emph{not} Poincar\'e-invariant (its invariance depends on a fixed spacetime origin).
 
 \emph{For a system}, the situation with the invariants is more complicated, because then they're $( \sum \inlinedy{\mathsf{L}} ) : ( \sum \star \inlinedy{\mathsf{L}} )$ and $( \sum \inlinedy{\mathsf{L}} ) : ( \sum \inlinedy{\mathsf{L}} )$, and the first of them does \emph{not} necessarily vanish. This is analogous to how a system's rest energy (mass) isn't the sum of the rest energies of its constituents, but is rather given by the square root of $(\sum \vv P) \cdot (\sum \vv P)$. The angular-momentum invariants aren't additive.\footnote{As far as I'm aware, these invariants aren't often \emph{used} for anything. They're rarely mentioned in the literature, and I won't attempt to interpret their physical significance.}
 
@@ -4620,16 +4632,16 @@ Remembering that we have:
 =
 \begin{bmatrix}
 0 & [ - \vv n ]^\mathrm{T} \\[1ex]
-[ \vv n ] & [ \star \vv l ]
+[ \vv n ] & [ \star \vvell ]
 \end{bmatrix} ,
 \end{equation*}
-with ${\vv n = E \vv r - (ct)(\vv p c)}$ and $\vv l = \vv r \times \vv pc$ (the angular-momentum pseudovector), we obtain (for the frame in question):
+with ${\vv n = E \vv r - (ct)(\vv p c)}$ and $\vvell = \vv r \times \vv pc$ (the angular-momentum pseudovector), we obtain (for the frame in question):
 \begin{equation*}
 \vv n_{\textrm{total em}} = \int_V \left( u \vv r - ct \mkern1mu \vv s \right) \dd V
 \end{equation*}
 and
 \begin{equation*}
-\vv l_{\textrm{total em}} = \int_V \left( \vv r \times \vv s \right) \dd V .
+\vvell_{\mkern2mu \textrm{total em}} = \int_V \left( \vv r \times \vv s \right) \dd V .
 \end{equation*}
 In free space, these field quantities are conserved.
 
