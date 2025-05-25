@@ -4348,9 +4348,9 @@ So that's how it's done in classical field theory. Use Lagrangian methods to get
 
 \subsection{Covariant Electrostatics and Magnetostatics}
 
-The title of this section is something of an oxymoron. As we know from Section \ref{ssec:retpot}, the conditions for electrostatics and magnetostatics are, first, the time-independence of the sources and the fields (the four-current density $\vv J$ and the Faraday tensor $\inlinedy{\mathsf{F}}$),\footnote{\emph{Under appropriate boundary conditions} (``no incoming radiation"---see Section \ref{ssec:retpot}), the time-independence of the sources guarantees the time-independence of the fields.} and second, the vanishing of the magnetic field $\vv b$ (for electrostatics) or electric field $\vv e$ (for magnetostatics). But these conditions aren't Lorentz-covariant! Time-independence of $\vv J$ is written like $\partial^{ct} \vv J = \textrm{\mbox{\boldmath $\emptyset$}}$ (similarly for $\inlinedy{\mathsf{F}}$), and that's \emph{not} a tensor equation, despite the appearance of the right-hand side. Indeed, under a standard-configuration boost, that becomes ${(\gamma \partial^{\mkern.5mu \prime \mkern1mu ct} + \gamma \beta \partial^{\mkern.5mu \prime \mkern1mu x}) \vv J = \textrm{\mbox{\boldmath $\emptyset$}}}$ (where $\partial^{\mkern.5mu \prime \mkern1mu x}$ is a \emph{negative} partial). Likewise, a vanishing $\vv b$ (or $\vv e$) in one frame generally transforms to a vanishing \emph{mix} of $\vv e$ and $\vv b$ in another. So ``covariant electrostatics and magnetostatics" should raise an eyebrow.
+The title of this section is something of an oxymoron. As we know from Section \ref{ssec:retpot}, the conditions for electrostatics and magnetostatics are, first, the time-independence of the sources and the fields (the four-current density $\vv J$ and the Faraday tensor $\inlinedy{\mathsf{F}}$), and second, the vanishing of either the three-current density $\vv j$ and magnetic field $\vv b$ (for electrostatics) or the charge density $\rho$ and electric field $\vv e$ (for magnetostatics).\footnote{\emph{Under appropriate boundary conditions} (``no incoming radiation"---see Section \ref{ssec:retpot}), the time-independence of the sources guarantees the time-independence of the fields, and then the vanishing of $\vv j$ (or $\rho$) guarantees the vanishing of $\vv b$ (or $\vv e$).} But these conditions aren't Lorentz-covariant! Time-independence of $\vv J$ is written like $\partial^{ct} \vv J = \textrm{\mbox{\boldmath $\emptyset$}}$ (similarly for $\inlinedy{\mathsf{F}}$), and that's \emph{not} a tensor equation, despite the appearance of the right-hand side. Indeed, under a standard-configuration boost, that becomes ${(\gamma \partial^{\mkern.5mu \prime \mkern1mu ct} + \gamma \beta \partial^{\mkern.5mu \prime \mkern1mu x}) \vv J = \textrm{\mbox{\boldmath $\emptyset$}}}$ (where $\partial^{\mkern.5mu \prime \mkern1mu x}$ is a \emph{negative} partial). Likewise, a vanishing $\vv j$ (or $\rho$) in one frame generally transforms to a vanishing \emph{mix} of $\vv j$ and $\rho$ in another. Same for the fields. So ``covariant electrostatics and magnetostatics" should raise an eyebrow.
 
-What I mean by it is: if the conditions of electrostatics or magnetostatics do hold in some frame, then we should be able to \emph{express} that fact in a manifestly covariant fashion. This isn't particularly useful, but it's interesting.
+What I mean by it is: if the conditions of electrostatics or magnetostatics do hold in some frame, then we should be able to \emph{express} that fact in a manifestly covariant fashion. This isn't particularly useful, but it's interesting, and it's a good excuse to develop some handy techniques.
 
 The key is to get creative with the special frame's four-velocity. In Section \ref{sssec:ele}, we established that for a particle with normalized four-velocity $\vv B (ct_0)$, the directional derivative $\vv B \cdot \partialup$ is equivalent to the $ct_0$-derivative. For an \emph{inertial} particle, however, the proper time is precisely the coordinate time of the corresponding rest frame, and it stands to reason that we can take the particle out of the picture entirely and just use $\partial^{ct} = \vv B \cdot \partialup$ for ``frame quantities." A quick check bears this out: $\vv B \cdot \partialup = \langle 1, \vv 0 \rangle \cdot \langle \partial^{ct}, \, - \del \rangle = \partial^{ct}$ (where we calculated \emph{in the relevant frame}). Hence, the manifestly covariant way to say that a tensor field is time-independent in a given frame is that the field's directional derivative with respect to the frame's four-velocity vanishes:
 \begin{equation}\label{eq:timeindj}
@@ -4360,7 +4360,7 @@ The key is to get creative with the special frame's four-velocity. In Section \r
 ( \vv B \cdot \partialup ) \capdy{\mathsf{F}} =  \capdy{\mathsf{0}}  \quad \text{\footnotesize{(for time-independent $\footnotedy{\mathsf{F}}$ in relevant frame)}}.
 \end{equation}
 
-Next, we need to express the vanishing of $\vv b$ or $\vv e$ covariantly. We again exploit the frame's four-velocity. Really, the relationship $\partial^{ct} = \vv B \cdot \partialup$ is an instance of the ``trick" we covered in Section \ref{sssec:mc}, where dotting an inertial frame's four-velocity with any four-vector yields the time-component of that four-vector as evaluated in that frame. In Section \ref{sssec:tset}, we extended this technique to dyadics, when we found that $\vv B \cdot {\inlinedy{\mathsf{T}}}$ yields the four-vector whose components are the first \emph{row} of $[{\inlinedy{\mathsf{T}}}]$ as reckoned in the relevant frame. A glance at Equations \ref{eq:emt} and \ref{eq:mt} reveals that dotting $\vv B$ with the Faraday and Maxwell dyadics will give us four-vectors whose components in this frame are, respectively, $\langle 0, - \vv e \rangle$ and $\langle 0, - \vv b \rangle$ (or their negatives if we reverse the order of the dot product, by antisymmetry).\footnote{An object like $\langle 0, \vv e \rangle$ is related to the ``quasi-four-vectors" we used in Section \ref{sssec:hd}. The difference is that here we treat it as a \emph{true} four-vector whose components take that form \emph{only} in this frame (because the fields transform as components of a \emph{dyadic}), whereas with ``quasi-four-vectors" we were interested in the $\langle 0, \vv e \rangle$ formulation \emph{for each frame}. See Footnote \ref{fn:qfv}.} So:
+Next, we need to express the frame-dependent vanishing of $\vv j$ and $\vv b$ or of $\rho$ and $\vv e$ covariantly. We'll start with the fields, which are a little more straightforward. We again exploit the frame's four-velocity. Really, the relationship $\partial^{ct} = \vv B \cdot \partialup$ is an instance of the ``trick" we covered in Section \ref{sssec:mc}, where dotting an inertial frame's four-velocity with any four-vector yields the time-component of that four-vector as evaluated in that frame. In Section \ref{sssec:tset}, we extended this technique to dyadics, when we found that $\vv B \cdot {\inlinedy{\mathsf{T}}}$ yields the four-vector whose components are the first \emph{row} of $[{\inlinedy{\mathsf{T}}}]$ as reckoned in the relevant frame. A glance at Equations \ref{eq:emt} and \ref{eq:mt} reveals that dotting $\vv B$ with the Faraday and Maxwell dyadics will give us four-vectors whose components in this frame are, respectively, $\langle 0, - \vv e \rangle$ and $\langle 0, - \vv b \rangle$ (or their negatives if we reverse the order of the dot product, by antisymmetry).\footnote{An object like $\langle 0, \vv e \rangle$ is related to the ``quasi-four-vectors" we used in Section \ref{sssec:hd}. The difference is that here we treat it as a \emph{true} four-vector whose components take that form \emph{only} in this frame (because the fields transform as components of a \emph{dyadic}), whereas with ``quasi-four-vectors" we were interested in the $\langle 0, \vv e \rangle$ formulation \emph{for each frame}. See Footnote \ref{fn:qfv}.} So:
 \begin{equation}\label{eq:nob}
 \capdy{\mathsf{G}} \cdot \vv B = \textrm{\mbox{\boldmath $\emptyset$}}  \quad \text{\footnotesize{(for vanishing $\vv b$ in relevant frame)}},
 \end{equation}
@@ -4368,7 +4368,72 @@ Next, we need to express the vanishing of $\vv b$ or $\vv e$ covariantly. We aga
 \capdy{\mathsf{F}} \cdot \vv B = \textrm{\mbox{\boldmath $\emptyset$}}  \quad \text{\footnotesize{(for vanishing $\vv e$ in relevant frame)}}.
 \end{equation}
 
-The manifestly covariant condition for electrostatics-in-some-frame, then, is the existence of a timelike unit vector $\vv B$---the normalized four-velocity of that inertial frame---that satisfies Equations \ref{eq:timeindj}, \ref{eq:timeindf}, and \ref{eq:nob} at every event in spacetime. For magnetostatics, it's the same but with Equation \ref{eq:noe} instead of Equation \ref{eq:nob}. Of course, these strict ``at every event in spacetime" conditions don't describe the real universe. Electrostatics and magnetostatics are always approximations that can hold only for part of spacetime. But we can describe the idealized conditions covariantly now.
+Finally, the vanishing of the three-current density $\vv j$ and the charge density $\rho$. The latter is easy:
+\begin{equation}\label{eq:noj}
+\vv J \cdot \vv B = 0  \quad \text{\footnotesize{(for vanishing $\rho$ in relevant frame)}}
+\end{equation}
+(it's just the aforementioned ``trick," since $\vv J \cdot \vv B = \langle \rho, \mkern2mu \vv j \rangle \cdot \langle 1, \vv 0 \rangle = \rho$). The vanishing of $\vv j$ requires that we first define the \textbf{projection tensor}:
+\begin{equation}\label{eq:projtens}
+\capdy{\mathsf{P}} ( \vv B ) \equiv \inlinedy{\upeta} - \, \vv B \otimes \vv B ,
+\end{equation}
+where the parameter $\vv B$ is the normalized four-velocity of the inertial frame of interest, and where $\inlinedy{\upeta}$ is the Minkowski metric dyadic. Dotting a vector with the projection dyadic is like the ``opposite" of dotting it with $\vv B$. Instead of isolating the vector's time-component, it isolates the vector's spatial components. The matrix representation of $\inlinedy{\mathsf{P}}$ in the relevant frame is $\eta - [\langle 1, \vv 0 \rangle] [\langle 1, \vv 0 \rangle]^{\mathrm{T}}$:
+\begin{equation*}
+[\capdy{\mathsf{P}}]
+=
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1
+\end{bmatrix}
+-
+\begin{bmatrix}
+1 \\
+0 \\
+0 \\
+0
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 & 0 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1
+\end{bmatrix} .
+\end{equation*}
+So the matrix representation of $\inlinedy{\mathsf{P}} \cdot \, \vv J$ in that frame is:
+\begin{equation*}
+[\capdy{\mathsf{P}}] \eta [\vv J]
+=
+\begin{bmatrix}
+0 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1
+\end{bmatrix}
+\begin{bmatrix}
+\rho \\
+- j_x \\
+- j_y \\
+- j_z
+\end{bmatrix}
+= 
+\begin{bmatrix}
+0 \\
+j_x \\
+j_y \\
+j_z
+\end{bmatrix},
+\end{equation*}
+and:
+\begin{equation}\label{eq:norho}
+\capdy{\mathsf{P}} ( \vv B ) \cdot \vv J = \textrm{\mbox{\boldmath $\emptyset$}}  \quad \text{\footnotesize{(for vanishing $\vv j$ in relevant frame)}} .
+\end{equation}
+
+The manifestly covariant condition for electrostatics-in-some-frame, then, is the existence of a timelike unit vector $\vv B$---the normalized four-velocity of that inertial frame---that satisfies Equations \ref{eq:timeindj}, \ref{eq:timeindf}, \ref{eq:nob}, and \ref{eq:norho} at every event in spacetime. For magnetostatics, it's the same but with Equations \ref{eq:noe} and \ref{eq:noj} instead of Equations \ref{eq:nob} and \ref{eq:norho}. Of course, these strict ``at every event in spacetime" conditions don't describe the real universe. Electrostatics and magnetostatics are always approximations that can hold only for part of spacetime. But we can describe the idealized conditions covariantly now.
 
 \subsection{Lagrangian Electrodyadics}
 
