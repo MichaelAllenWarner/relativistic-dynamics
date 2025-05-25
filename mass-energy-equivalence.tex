@@ -4433,7 +4433,50 @@ and:
 \capdy{\mathsf{P}} ( \vv B ) \cdot \vv J = \textrm{\mbox{\boldmath $\emptyset$}}  \quad \text{\footnotesize{(for vanishing $\vv j$ in relevant frame)}} .
 \end{equation}
 
-The manifestly covariant condition for electrostatics-in-some-frame, then, is the existence of a timelike unit vector $\vv B$---the normalized four-velocity of that inertial frame---that satisfies Equations \ref{eq:timeindj}, \ref{eq:timeindf}, \ref{eq:nob}, and \ref{eq:norho} at every event in spacetime. For magnetostatics, it's the same but with Equations \ref{eq:noe} and \ref{eq:noj} instead of Equations \ref{eq:nob} and \ref{eq:norho}. Of course, these strict ``at every event in spacetime" conditions don't describe the real universe. Electrostatics and magnetostatics are always approximations that can hold only for part of spacetime. But we can describe the idealized conditions covariantly now.
+The manifestly covariant condition for electrostatics-in-some-frame, then, is the existence of a future-pointing timelike unit vector $\vv B$---the normalized four-velocity of that inertial frame---that satisfies Equations \ref{eq:timeindj}, \ref{eq:timeindf}, \ref{eq:nob}, and \ref{eq:norho} at every event in spacetime. For magnetostatics, it's the same but with Equations \ref{eq:noe} and \ref{eq:noj} instead of Equations \ref{eq:nob} and \ref{eq:norho}. Of course, these strict ``at every event in spacetime" conditions don't describe the real universe. In practice, electrostatics and magnetostatics are always approximations that can hold only for part of spacetime. But we can describe the idealized conditions covariantly now.
+
+One last note on the projection dyadic. It works on higher-rank tensors as well, though it needs to be ``applied" once per rank. Using it on the Faraday dyadic, for example, means $\inlinedy{\mathsf{P}} \cdot \inlinedy{\mathsf{F}} \cdot \inlinedy{\mathsf{P}}$, and the result is a dyadic whose matrix representation in the relevant frame is just like $[\inlinedy{\mathsf{F}}]$ but with the first row and column ``zeroed out" (no electric-field components):
+\begin{equation*}
+\begin{aligned}
+[\capdy{\mathsf{P}}] \eta [\capdy{\mathsf{F}}] \eta [\capdy{\mathsf{P}}]
+&=
+\begin{bmatrix}
+0 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1
+\end{bmatrix}
+\begin{bmatrix}
+0 & -e_x & -e_y & -e_z \\
+-e_x & 0 & b_z & -b_y \\
+-e_y & -b_z & 0 & b_x \\
+-e_z & b_y & -b_x & 0
+\end{bmatrix}
+\begin{bmatrix}
+0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\\[1ex]
+&=
+\begin{bmatrix}
+0 & 0 & 0 & 0 \\[.125ex]
+0 & 0 & -b_z & b_y \\[.125ex]
+0 & b_z & 0 & -b_x \\[.125ex]
+0 & -b_y & b_x & 0
+\end{bmatrix} .
+\end{aligned}
+\end{equation*}
+Equations \ref{eq:nob} and \ref{eq:noe} are therefore equivalent (information-wise) to:
+\begin{equation*}
+\capdy{\mathsf{P}} (\vv B) \cdot \capdy{\mathsf{F}} \cdot \capdy{\mathsf{P}} (\vv B) = \capdy{\mathsf{0}}  \quad \text{\footnotesize{(for vanishing $\vv b$ in relevant frame)}}
+\end{equation*}
+and
+\begin{equation*}
+\capdy{\mathsf{P}} (\vv B) \cdot \capdy{\mathsf{G}} \cdot \capdy{\mathsf{P}} (\vv B) = \capdy{\mathsf{0}} \quad \text{\footnotesize{(for vanishing $\vv e$ in relevant frame)}}.
+\end{equation*}
+
 
 \subsection{Lagrangian Electrodyadics}
 
