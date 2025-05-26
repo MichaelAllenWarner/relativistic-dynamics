@@ -1149,9 +1149,9 @@ Now, we've seen what happens when we take the dot product of a four-vector with 
 \end{equation*}
 Is \emph{that} invariant? Well, how do things look in another frame?
 \begin{equation*}
-\vv P^\prime \cdot \dd \vv R^\prime = (E^\prime)(c \, \dd t^\prime) - (\vv p c ^\prime \cdot \dd \vv r ^\prime) .
+\left( \vv P \cdot \dd \vv R \right)^\prime = (E^\prime)(c \, \dd t^\prime) - \left( (\vv p c) ^\prime \cdot \dd \vv r ^\prime \right) .
 \end{equation*}
-We want to know whether $\vv P \cdot \dd \vv R = \vv P^\prime \cdot \dd \vv R^\prime$. We can put the frames in standard configuration without losing generality, and then the question becomes: does $(E^\prime)(c \, \dd t^\prime) - (cp_x^\prime)(\dd x^\prime)$ equal the unprimed $(E)(c \, \dd t) - (cp_x)(\dd x)$? To find out, we'll use the Lorentz transformation. For the components of four-momentum, that's Equations \ref{eq:fm}; for the components of four-displacement, it's Equations \ref{eq:lt2} (with $\dd$'s instead of $\Delta$'s). We'll also use Equation \ref{eq:20}:
+We want to know whether $\vv P \cdot \dd \vv R = (\vv P \cdot \dd \vv R)^\prime$. We can put the frames in standard configuration without losing generality, and then the question becomes: does $(E^\prime)(c \, \dd t^\prime) - (cp_x^\prime)(\dd x^\prime)$ equal the unprimed $(E)(c \, \dd t) - (cp_x)(\dd x)$? To find out, we'll use the Lorentz transformation. For the components of four-momentum, that's Equations \ref{eq:fm}; for the components of four-displacement, it's Equations \ref{eq:lt2} (with $\dd$'s instead of $\Delta$'s). We'll also use Equation \ref{eq:20}:
 \begin{equation*}
 \begin{split}
 (E^\prime)(c \, \dd t^\prime) - (cp_x^\prime)(\dd x^\prime)&=\Bigl[ \gamma(E-\beta cp_x) \Bigr] \Bigl[ \gamma(c \, \dd t - \beta \, \dd x) \Bigr]\\
@@ -1529,11 +1529,11 @@ The other 4-by-4 is its inverse (Equation \ref{eq:20} is helpful for verifying t
 \end{equation}
 We can now write the Lorentz transformation of the components of a four-displacement $\dd \vv R$ (and its inverse) in a single line:
 \begin{equation*}
-[\dd \vv R^\prime] = \Lambda \, [\dd \vv R] \qquad \qquad [\dd \vv R] = \Lambda^{-1} \, [\dd \vv R^\prime] .
+[\dd \vv R]^\prime = \Lambda \, [\dd \vv R] \qquad \qquad [\dd \vv R] = \Lambda^{-1} \, [\dd \vv R]^\prime .
 \end{equation*}
 Indeed, we can do the same for an arbitrary four-vector $\vv Q$:
 \begin{equation*}
-[\vv Q^\prime] = \Lambda \mkern1mu [\vv Q] \qquad \qquad [\vv Q] = \Lambda^{-1} \mkern1mu [\vv Q^\prime] .
+[\vv Q]^\prime = \Lambda \mkern1mu [\vv Q] \qquad \qquad [\vv Q] = \Lambda^{-1} \mkern1mu [\vv Q]^\prime .
 \end{equation*}
 As we'll see, the details of a transformation can be an eyesore, so these one-line matrix equations are a fine thing.
 
@@ -1543,7 +1543,7 @@ Care is required when the four-vector's components contain speeds or Lorentz fac
 
 We've already explicitly written out the Lorentz transformation for the components of four-displacement (Equations \ref{eq:lt2} and \ref{eq:fd}), four-velocity (Equations \ref{eq:fv}), and four-momentum (Equations \ref{eq:fm}). Let's go ahead and do the same for the components of four-acceleration (Equation \ref{eq:34}).
 \begin{equation*}
-[\vv Z^\prime] = \Lambda \mkern1mu [\vv Z] \qquad \qquad [\vv Z] = \Lambda^{-1} \mkern1mu [\vv Z^\prime] ,
+[\vv Z]^\prime = \Lambda \mkern1mu [\vv Z] \qquad \qquad [\vv Z] = \Lambda^{-1} \mkern1mu [\vv Z]^\prime ,
 \end{equation*}
 i.e.,
 \begin{equation*}
@@ -1589,7 +1589,7 @@ Z^{\prime \mkern1.5mu y} \\[.15 em]
 Z^{\prime \mkern1.5mu z}
 \end{bmatrix}
 \end{equation*}
-(we use superscript for four-vector components, recall). Equivalently:
+(we use superscript for four-vector components, recall).\footnote{Arguably it would be better to affix the prime symbol to the superscript than to the ``kernel" (like $Z^{\mkern1.5mu ct ^\prime}$), since $\vv Z$ itself doesn't transform. Both conventions are common.} Equivalently:
 \begin{equation*}
 \begin{bmatrix}
 \gamma^\prime \dot{\gamma}^\prime \\[.25 em]
@@ -1681,7 +1681,7 @@ This accords with our results from Section \ref{sssec:pa}: if $\vvbeta \parallel
 
 That wasn't pleasant. Transforming the components of four-force won't be pleasant either, but it won't be quite as bad. First:
 \begin{equation*}
-[\vv F^\prime] = \Lambda \mkern1mu [\vv F] \qquad \qquad [\vv F] = \Lambda^{-1} \mkern1mu [\vv F^\prime] ,
+[\vv F]^\prime = \Lambda \mkern1mu [\vv F] \qquad \qquad [\vv F] = \Lambda^{-1} \mkern1mu [\vv F]^\prime ,
 \end{equation*}
 which is (Equation \ref{eq:33}):
 \begin{equation*}
@@ -3445,11 +3445,11 @@ c_z
 \end{equation*}
 and likewise for $\vv d$. If we label that 3-by-3 rotation matrix $R$, it follows that the nine ``doubled up" Cartesian components of the dyad $\vv c \otimes \vv d$ transform by two ``applications" of the rotation matrix like this:
 \begin{equation*}
-[\vv c^\prime \mkern1mu ] [\vv d^\prime \mkern1mu ]^{\mathrm{T}} = ( R [\vv c] ) ( R [\vv d] )^\mathrm{T} = R \, [\vv c] [\vv d]^{\mathrm{T}} R^{\mathrm{T}} ,
+[\vv c ]^\prime \mkern2mu [\vv d ]^{\prime \, \mathrm{T}} = ( R [\vv c] ) ( R [\vv d] )^\mathrm{T} = R \, [\vv c] [\vv d]^{\mathrm{T}} R^{\mathrm{T}} ,
 \end{equation*}
 where $R^{\mathrm{T}}$ is the matrix transpose of $R$ (swap the signs of the sines). Indeed, the Cartesian components of \emph{every} Euclidean dyadic (dyad or sum of dyads) transform this way under the specified rotation, with the matrix representation of the dyadic flanked on the left by $R$ and on the right by $R^{\mathrm{T}}$. The Maxwell stress tensor from the previous section, for example:
 \begin{equation*}
-[ \mkern2mu {\inlinedy{\upsigma}} ^{\mkern1mu \prime} \mkern1mu ] = R \mkern1mu [\mkern1.5mu \inlinedy{\upsigma} \mkern1.5mu] R^{\mathrm{T}}
+[ \mkern1.5mu {\inlinedy{\upsigma}} \mkern1.5mu ]^{\prime} = R \mkern1mu [\mkern1.5mu \inlinedy{\upsigma} \mkern1.5mu] R^{\mathrm{T}}
 \end{equation*}
 (we've extended our bracket notation to signify a \emph{dyadic's} square-matrix representation). Euclidean dyadics can be \emph{defined} as geometric objects whose Cartesian components transform like this under a rotation of axes.
 
@@ -3459,11 +3459,11 @@ where $R^{\mathrm{T}}$ is the matrix transpose of $R$ (swap the signs of the sin
 
 In a similar way, a dyad in Minkowski spacetime (a \textbf{Minkowski dyad} or a \textbf{four-dyad}) is the dyadic product of \emph{four}-vectors---e.g., $\vv Q \otimes \vv W$---and its \emph{sixteen} ``doubled up" ($ct$ + Cartesian) components consequently transform like so under a \emph{Lorentz} transformation:
 \begin{equation*}
-[\vv Q^\prime \mkern1mu ] [\vv W^\prime \mkern1mu ]^{\mathrm{T}} = ( \Lambda [\vv Q] ) ( \Lambda [\vv W] )^\mathrm{T} = \Lambda [\vv Q] [\vv W]^{\mathrm{T}} \Lambda^{\mathrm{T}} ,
+[\vv Q ]^\prime \mkern2mu [\vv W]^{\prime \, \mathrm{T}} = ( \Lambda [\vv Q] ) ( \Lambda [\vv W] )^\mathrm{T} = \Lambda [\vv Q] [\vv W]^{\mathrm{T}} \Lambda^{\mathrm{T}} ,
 \end{equation*}
 where $\Lambda$ is the Lorentz-transformation matrix and $\Lambda^{\mathrm{T}}$ is its transpose (they're both Equation \ref{eq:bm} if the transformation is a standard-configuration boost along the $x$-axis). \emph{Dyadics} in Minkowski spacetime (\textbf{Minkowski dyadics} or \textbf{four-dyadics}) are four-dyads and their sums. They can be \emph{defined} as geometric objects whose sixteen ``doubled up" ($ct$ + Cartesian) components transform like those of four-dyads under a Lorentz transformation:
 \begin{equation}\label{eq:ltd}
-\boxed{ [ \mkern1mu {\capdy{\mathsf{D}} {\vphantom{D}}^\prime} \mkern1mu ] = \Lambda [ \capdy{\mathsf{D}} ] \Lambda^{\mathrm{T}}}
+\boxed{ [ \mkern1mu {\capdy{\mathsf{D}}} \mkern1mu ]^\prime = \Lambda [ \capdy{\mathsf{D}} ] \Lambda^{\mathrm{T}}}
 \end{equation}
 (we're keeping our double-sided arrow notation, though instead of the lowercase roman type that we use for Euclidean three-dyadics we'll prefer \emph{uppercase} roman for four-dyadics, mirroring our use of lowercase for three-vectors and uppercase for four-vectors).
 
@@ -3625,7 +3625,7 @@ or equivalently:
 \end{bmatrix}.
 \end{equation*}
 
-Importantly, $\eta$ (Equation \ref{eq:mmt}) is itself the matrix representation of a four-dyadic, since it satisfies the four-dyadic transformation rule Equation \ref{eq:ltd} (try it!---under a Lorentz boost, the $1$ transforms to $1$, the $-1$'s transform to $-1$'s, and the $0$'s transform to $0$'s). This tensor is called the \textbf{Minkowski metric dyadic}, or the \textbf{(inverse) Minkowski metric tensor}, and we use it implicitly every time we take a Minkowski dot product.\footnote{\label{fn:cov}To be precise, what we use implicitly when we take dot products is the metric tensor itself (the \emph{covariant} metric), whereas the dyadic we're introducing now is the \emph{inverse} (or \emph{contravariant}) Minkowski metric (see Footnote \ref{fn:dy}). They're closely related and happen to have the same matrix representation, but they \emph{are} different objects. To convince yourself of this, Lorentz-transform the dot product of four-vectors in matrix notation: ${[ \vv Q ] ^\mathrm{T} \eta [ \vv W ] = [ \vv Q {}^\prime ] ^\mathrm{T} \eta ^\prime [ \vv W {}^\prime ] =  ( \Lambda [ \vv Q ] ) ^\mathrm{T} \eta ^\prime ( \Lambda [ \vv W ] ) = [ \vv Q ] ^\mathrm{T} ( \Lambda ^\mathrm{T} \eta^ \prime \Lambda ) [ \vv W ]} $, yielding $ \eta = \Lambda ^\mathrm{T} \eta^ \prime \Lambda $, or $\eta ^\prime = ( \Lambda ^{-1} ) ^\mathrm{T} \eta \Lambda ^{-1} $. Compare this with Equation \ref{eq:ltd}---that's \emph{not} how a four-dyadic's components transform! In fact, it's the transformation rule for \emph{covariant} rank-2 tensors, aka codyadics. Naturally, the covector and codyadic concepts are linked.} It's functionally analogous to the Euclidean unit dyadic we encountered in Section \ref{ssec:emm}. When we want to notate it explicitly \emph{as} a four-dyadic, we'll write $\inlinedy{\upeta}$ (a conventional exception to our preference for uppercase).
+Importantly, $\eta$ (Equation \ref{eq:mmt}) is itself the matrix representation of a four-dyadic, since it satisfies the four-dyadic transformation rule Equation \ref{eq:ltd} (try it!---under a Lorentz boost, the $1$ transforms to $1$, the $-1$'s transform to $-1$'s, and the $0$'s transform to $0$'s). This tensor is called the \textbf{Minkowski metric dyadic}, or the \textbf{(inverse) Minkowski metric tensor}, and we use it implicitly every time we take a Minkowski dot product.\footnote{\label{fn:cov}To be precise, what we use implicitly when we take dot products is the metric tensor itself (the \emph{covariant} metric), whereas the dyadic we're introducing now is the \emph{inverse} (or \emph{contravariant}) Minkowski metric (see Footnote \ref{fn:dy}). They're closely related and happen to have the same matrix representation, but they \emph{are} different objects. To convince yourself of this, Lorentz-transform the dot product of four-vectors in matrix notation: ${[ \vv Q ] ^\mathrm{T} \eta [ \vv W ] = [ \vv Q ] ^{\prime \, \mathrm{T}} \eta ^\prime [ \vv W ]^\prime =  ( \Lambda [ \vv Q ] ) ^\mathrm{T} \eta ^\prime ( \Lambda [ \vv W ] ) = [ \vv Q ] ^\mathrm{T} ( \Lambda ^\mathrm{T} \eta^ \prime \Lambda ) [ \vv W ]} $, yielding $ \eta = \Lambda ^\mathrm{T} \eta^ \prime \Lambda $, or $\eta ^\prime = ( \Lambda ^{-1} ) ^\mathrm{T} \eta \Lambda ^{-1} $. Compare this with Equation \ref{eq:ltd}---that's \emph{not} how a four-dyadic's components transform! In fact, it's the transformation rule for \emph{covariant} rank-2 tensors, aka codyadics. Naturally, the covector and codyadic concepts are linked.} It's functionally analogous to the Euclidean unit dyadic we encountered in Section \ref{ssec:emm}. When we want to notate it explicitly \emph{as} a four-dyadic, we'll write $\inlinedy{\upeta}$ (a conventional exception to our preference for uppercase).
 
 \subsubsection{Lorentz Force and Maxwell Equations with Dyadics}
 
