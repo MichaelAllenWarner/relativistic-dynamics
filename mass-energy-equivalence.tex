@@ -3750,7 +3750,9 @@ Equations \ref{eq:ime} and \ref{eq:hme} are Maxwell's equations in a manifestly 
 
 \subsubsection{Hodge Duality for Four-Dyadics}\label{sssec:hd}
 
-The Maxwell tensor $\inlinedy{\mathsf{G}}$ is the \textbf{Hodge dual} of the Faraday tensor $\inlinedy{\mathsf{F}}$. To explain what this means ``geometrically," we first introduce a method of creating four-vectors from three-vectors: \emph{for a given inertial frame}, ``append" a zero temporal component to a three-vector (that isn't already the spatial component of a four-vector), and the result is a spacelike four-vector orthogonal to the frame's (normalized) four-velocity $\vv B = \langle 1, \vv 0 \rangle$. We'll notate such a four-vector like $\tilde{\vv w} = \langle 0, \vv w \rangle$, with a tilde over the symbol for the corresponding three-vector. To be clear, $\tilde{\vv w}$ really is a four-vector. But its components are $\langle 0, \vv w \rangle$ \emph{only} in the frame in question. Regardless of how $\vv w$ transforms under a boost \emph{as a three-vector} (we haven't said!), the components of $\tilde{\vv w}$ must together transform Lorentzianly, and in the ``primed" frame we won't generally have something like $\langle 0, \vv w ^\prime \rangle$ (at the very least, the time-component won't be zero, unless $\vv w$ happens to be orthogonal to the boost velocity).
+The Maxwell tensor $\inlinedy{\mathsf{G}}$ is the \textbf{Hodge dual} of the Faraday tensor $\inlinedy{\mathsf{F}}$. To explain what this means ``geometrically," we first introduce a method of generating four-vectors from three-vectors: \emph{for a given inertial frame}, ``append" a zero temporal component to a three-vector (that isn't already the spatial component of a four-vector), and the result is a spacelike four-vector orthogonal to the frame's (normalized) four-velocity $\vv B = \langle 1, \vv 0 \rangle$. We'll notate such a four-vector like $\tilde{\vv w} = \langle 0, \vv w \rangle$, with a tilde over the symbol for the corresponding three-vector.
+
+To be clear, $\tilde{\vv w}$ \emph{really is} a four-vector. But it's crucial to understand that its components have the form $\langle 0, \vv w \rangle$ \emph{only} in the frame in question. Why? Because regardless of how $\vv w$ transforms under a boost \emph{as a three-vector} (we haven't said!), the components of $\tilde{\vv w}$ must together transform \emph{Lorentzianly}. When the temporal and spatial components ``mix," we won't have $\langle 0, \vv w ^\prime \rangle$ in the ``primed" frame.
 
 Since any three-vector $\vv w$ can be expressed as a cross product ${ \vv m \times \vv n }$ (or curl, with $\del$ instead of $\vv m$), we can always construct a unique four-\emph{dyadic} from a four-vector $\tilde{\vv w} = \langle 0, \vv w \rangle$ by taking the wedge product $\tilde{\vv m} \wedge \tilde{\vv n}$ for some $\tilde{\vv m} = \langle 0, \vv m \rangle$ and $\tilde{\vv n} = \langle 0, \vv n \rangle$ that satisfy ${ \vv m \times \vv n = \vv w }$. In matrix form, that's:
 \begin{equation*}
@@ -3783,7 +3785,7 @@ n_z
 \end{equation*}
 Let's label this four-dyadic $\{ \tilde{\vv w} \}$.
 
-We'll now demonstrate that for some inertial frame's four-velocity $\vv B$, we can form an antisymmetric Minkowski dyadic $\inlinedy{\mathsf{A}}$ in terms of two four-vectors $\tilde{\vv q} = \langle 0, \vv q \rangle$ and $\tilde{\vv w} = \langle 0, \vv w \rangle$ like this:
+We'll now demonstrate that for an arbitrary inertial frame's four-velocity $\vv B$, we can form an antisymmetric Minkowski dyadic $\inlinedy{\mathsf{A}}$ in terms of two four-vectors $\tilde{\vv q} = \langle 0, \vv q \rangle$ and $\tilde{\vv w} = \langle 0, \vv w \rangle$ like this:
 \begin{equation*}
 \capdy{\mathsf{A}} = \tilde{\vv q} \wedge \vv B - \{ \tilde{\vv w} \}.
 \end{equation*}
