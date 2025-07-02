@@ -3314,7 +3314,7 @@ and the vector three-potential:
 \end{equation}
 The electric and magnetic fields---defined in terms of $\vv A$ (Equations \ref{eq:eb})---become time-independent, too, and $\vv e = - \del \Phi - \partial^{ct} \vv a = - \del \Phi$.
 
-If now $\vv j = \vv 0$ everywhere, then we have \textbf{electrostatics}. If instead $\rho = 0$ everywhere, then we have \textbf{magnetostatics}. In electrostatics, $\vv a = \vv 0$ in our gauge (Equation \ref{eq:retvp}), and $\vv b = \del \times \vv a$ consequently vanishes (in all gauges). The ``effective" Maxwell equations (Equations \ref{eq:me}) are then $\del \cdot \vv e = \rho$ and $\del \times \vv e = \vv 0$. In magnetostatics, it's $\Phi$ that vanishes in our gauge (Equation \ref{eq:retsp}), with $\vv e = - \del \Phi = \vv 0$ and effective Maxwell equations $\del \times \vv b = \vv j$ and $\del \cdot \vv b = 0$.
+If now $\vv j = \vv 0$ everywhere, then we have \textbf{electrostatics}; if instead $\rho = 0$ everywhere, then we have \textbf{magnetostatics}.\footnote{\label{fn:statics}Most treatments don't impose these additional ``vanishing" conditions. Rather, they impose only the time-independence of $\vv J$ (which suffices to ``decouple" $\vv e$ and $\vv b$ in Maxwell's equations) and refer to the study of the individual fields within this regime as electrostatics and magnetostatics. Our stricter definitions have the virtue of isolating the electric and magnetic \emph{forces} from each other, as we'll soon see.} In electrostatics, $\vv a = \vv 0$ in our gauge (Equation \ref{eq:retvp}), and $\vv b = \del \times \vv a$ consequently vanishes (in all gauges). The ``effective" Maxwell equations (Equations \ref{eq:me}) are then $\del \cdot \vv e = \rho$ and $\del \times \vv e = \vv 0$. In magnetostatics, it's $\Phi$ that vanishes in our gauge (Equation \ref{eq:retsp}), with $\vv e = - \del \Phi = \vv 0$ and effective Maxwell equations $\del \times \vv b = \vv j$ and $\del \cdot \vv b = 0$.
 
 For time-independent sources (not necessarily electrostatics!), $\vv e$ is the negative gradient of Equation \ref{eq:retsp}:
 \begin{equation}\label{eq:electrostatice}
@@ -4353,7 +4353,7 @@ So that's how it's done in classical field theory. Use Lagrangian methods to get
 
 \subsection{Covariant Electrostatics and Magnetostatics}
 
-The title of this section is something of an oxymoron. As we know from Section \ref{ssec:retpot}, the conditions for electrostatics and magnetostatics are, first, the time-independence of the sources and the fields (the four-current density $\vv J$ and the Faraday tensor $\inlinedy{\mathsf{F}}$), and second, the vanishing of either the three-current density $\vv j$ and magnetic field $\vv b$ (for electrostatics) or the charge density $\rho$ and electric field $\vv e$ (for magnetostatics).\footnote{\emph{Under appropriate boundary conditions} (``no incoming radiation"---see Section \ref{ssec:retpot}), the time-independence of the sources guarantees the time-independence of the fields, and then the vanishing of $\vv j$ (or $\rho$) guarantees the vanishing of $\vv b$ (or $\vv e$).} But these conditions aren't Lorentz-covariant! Time-independence of $\vv J$ is written like $\partial^{ct} \vv J = \textrm{\mbox{\boldmath $\emptyset$}}$ (similarly for $\inlinedy{\mathsf{F}}$), and that's \emph{not} a tensor equation, despite the appearance of the right-hand side. Indeed, under a standard-configuration boost, that becomes ${(\gamma \partial^{\mkern.5mu \prime \mkern1mu ct} + \gamma \beta \partial^{\mkern.5mu \prime \mkern1mu x}) \vv J = \textrm{\mbox{\boldmath $\emptyset$}}}$ (where $\partial^{\mkern.5mu \prime \mkern1mu x}$ is a \emph{negative} partial). Likewise, a vanishing $\vv j$ (or $\rho$) in one frame generally transforms to a vanishing \emph{mix} of $\vv j$ and $\rho$ in another. Same for the fields. So ``covariant electrostatics and magnetostatics" should raise an eyebrow.
+The title of this section is something of an oxymoron. As we know from Section \ref{ssec:retpot}, the conditions for electrostatics and magnetostatics are, first, the time-independence of the sources and the fields (the four-current density $\vv J$ and the Faraday tensor $\inlinedy{\mathsf{F}}$), and second, the vanishing of either the three-current density $\vv j$ and magnetic field $\vv b$ (for electrostatics) or the charge density $\rho$ and electric field $\vv e$ (for magnetostatics).\footnote{\emph{Under appropriate boundary conditions} (``no incoming radiation"---see Section \ref{ssec:retpot}), the time-independence of the sources guarantees the time-independence of the fields, and then the vanishing of $\vv j$ (or $\rho$) guarantees the vanishing of $\vv b$ (or $\vv e$). Also see Footnote \ref{fn:statics} about our relatively strict conditions for electrostatics and magnetostatics.} But these conditions aren't Lorentz-covariant! Time-independence of $\vv J$ is written like $\partial^{ct} \vv J = \textrm{\mbox{\boldmath $\emptyset$}}$ (similarly for $\inlinedy{\mathsf{F}}$), and that's \emph{not} a tensor equation, despite the appearance of the right-hand side. Indeed, under a standard-configuration boost, that becomes ${(\gamma \partial^{\mkern.5mu \prime \mkern1mu ct} + \gamma \beta \partial^{\mkern.5mu \prime \mkern1mu x}) \vv J = \textrm{\mbox{\boldmath $\emptyset$}}}$ (where $\partial^{\mkern.5mu \prime \mkern1mu x}$ is a \emph{negative} partial). Likewise, a vanishing $\vv j$ (or $\rho$) in one frame generally transforms to a vanishing \emph{mix} of $\vv j$ and $\rho$ in another. Same for the fields. So ``covariant electrostatics and magnetostatics" should raise an eyebrow.
 
 What I mean by it is: if the conditions of electrostatics or magnetostatics do hold in some frame, then we should be able to \emph{express} that fact in a manifestly covariant fashion. This isn't particularly useful, but it's interesting, and it's a good excuse to develop some handy techniques.
 
@@ -4435,7 +4435,7 @@ j_z
 \end{equation*}
 and:
 \begin{equation}\label{eq:norho}
-\capdy{\mathsf{P}} ( \vv B ) \cdot \vv J = \textrm{\mbox{\boldmath $\emptyset$}}  \quad \text{\footnotesize{(for vanishing $\vv j$ in relevant frame)}} .
+\capdy{\mathsf{P}} \cdot \vv J = \textrm{\mbox{\boldmath $\emptyset$}}  \quad \text{\footnotesize{(for vanishing $\vv j$ in relevant frame)}} .
 \end{equation}
 
 The manifestly covariant condition for electrostatics-in-some-frame, then, is the existence of a future-pointing timelike unit vector $\vv B$---the normalized four-velocity of that inertial frame---that satisfies Equations \ref{eq:timeindj}, \ref{eq:timeindf}, \ref{eq:nob}, and \ref{eq:norho} at every event in spacetime. For magnetostatics, it's the same but with Equations \ref{eq:noe} and \ref{eq:noj} instead of Equations \ref{eq:nob} and \ref{eq:norho}. Of course, these strict ``at every event in spacetime" conditions don't describe the real universe. In practice, electrostatics and magnetostatics are always approximations that can hold only for part of spacetime. But we can describe the idealized conditions covariantly now.
@@ -4475,11 +4475,11 @@ One last note on the projection dyadic. It works on higher-rank tensors as well,
 \end{equation*}
 Equations \ref{eq:nob} and \ref{eq:noe} are therefore equivalent (information-wise) to:
 \begin{equation*}
-\capdy{\mathsf{P}} (\vv B) \cdot \capdy{\mathsf{F}} \cdot \capdy{\mathsf{P}} (\vv B) = \capdy{\mathsf{0}}  \quad \text{\footnotesize{(for vanishing $\vv b$ in relevant frame)}}
+\capdy{\mathsf{P}} \cdot \capdy{\mathsf{F}} \cdot \capdy{\mathsf{P}} = \capdy{\mathsf{0}}  \quad \text{\footnotesize{(for vanishing $\vv b$ in relevant frame)}}
 \end{equation*}
 and
 \begin{equation*}
-\capdy{\mathsf{P}} (\vv B) \cdot \capdy{\mathsf{G}} \cdot \capdy{\mathsf{P}} (\vv B) = \capdy{\mathsf{0}} \quad \text{\footnotesize{(for vanishing $\vv e$ in relevant frame)}}.
+\capdy{\mathsf{P}} \cdot \capdy{\mathsf{G}} \cdot \capdy{\mathsf{P}} = \capdy{\mathsf{0}} \quad \text{\footnotesize{(for vanishing $\vv e$ in relevant frame)}}.
 \end{equation*}
 
 
