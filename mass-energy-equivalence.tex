@@ -212,10 +212,10 @@ I'll remind you of this dot and circle business along the way. It's part of my s
 
 On vector notation: vectors are boldface, their magnitudes are italic (like any scalar quantity, but see below), a vector in component form is enclosed by angle brackets (not parentheses), and squaring a vector means taking its dot product with itself, which is equivalent to squaring its magnitude. So velocity is $\vv v = \langle v_x, v_y, v_z \rangle$, speed is $v$, and $\vv v^2 = \vv v \cdot \vv v = v_x^2 + v_y^2 + v_z^2 = v^2$.
 
-Sometimes italics aren't suitable for notating a vector's magnitude. A good example is the vector $\Delta \vv r$, because $\Delta r$ already signifies the change in $r$ (magnitude of position $\vv r$). In such cases we'll indicate the vector's magnitude with double bars instead (e.g., $\Vert \Delta \vv r \Vert$). Moreover, notating a vector's magnitude with plain italic type is convenient but somewhat dangerous, as doing so makes it easy to forget to treat magnitude as a \emph{function} when necessary, as when differentiating:
+Sometimes italics aren't suitable for notating a vector's magnitude. In such cases we'll use vertical bars instead: $\vert \vv v \vert = v$. This is necessary for a vector sum, since $\vert \vv q + \vv w \vert \neq q + w$, and also for vectors like $\Delta \vv q$ and $\dot{\vv q}$, since $\Delta q$ means the change in $q$ and $\dot{q}$ means $q$'s $ct$-derivative. Moreover, notating a vector's magnitude with plain italic type is convenient but somewhat dangerous, as doing so makes it easy to forget to treat magnitude as a \emph{function} when one must, as when differentiating:
 \begin{equation*}
 \begin{aligned}
-\frac{\dd \Vert \vv q \Vert}{\dd (ct)} &= \frac{\dd}{\dd (ct)} \sqrt{ \vv q \cdot \vv q } \\[2pt]
+\dot{q} \overset{!}{=} \frac{\dd \vert \vv q \vert}{\dd (ct)} &= \frac{\dd}{\dd (ct)} \sqrt{ \vv q \cdot \vv q } \\[2pt]
 &= \frac{\dd}{\dd (\vv q \cdot \vv q)} \left( \vv q \cdot \vv q \right) ^{1/2} \, \frac{\dd (\vv q \cdot \vv q)}{\dd (ct)} \\[2pt]
 &= \frac{1}{2 \sqrt{\vv q \cdot \vv q}} \, \left( \dot{\vv q} \cdot \vv q  \, + \, \vv q \cdot \dot{\vv q} \right) \\[4pt]
 &= \frac{\vv q \cdot \dot{\vv q}}{q} \\[4pt]
@@ -797,7 +797,7 @@ It's important to understand that proper time $ct_0$ isn't restricted to inertia
 \end{equation}
 Corresponding to each instantaneous journey is an inertial frame of reference for which the traveler is momentarily at rest. We call this an \textbf{instantaneous rest frame}.\footnote{This is sometimes called a \textbf{momentarily comoving frame}. Note that the concept is just as applicable to classical mechanics as it is to special relativity!} In every such frame, $\dd \vv r = \vv 0$, so that $\dd s = c \,\dd t = c \, \dd t_0$, where we've introduced the infinitesimal proper time interval $c \, \dd t_0$. To find $c \mkern.5mu \Delta t_0$, then, we'd just add up all the $c \, \dd t_0$'s using integration: $c \mkern.5mu \Delta t_0 = \int c \, \dd t_0$.
 
-But we don't need $c \mkern.5mu \Delta t_0$ right now. It's the infinitesimals we're interested in. This $\dd s$, the infinitesimal spacetime interval, is analogous to an infinitesimal distance in space $\Vert \dd \vv r \Vert$. Like a spatial distance, $\dd s$ doesn't have direction. It's an infinitesimal scalar quantity. Unlike $\Vert \dd \vv r \Vert$, however, $\dd s$ is invariant with respect to observer velocity (i.e., under a Lorentz boost). Different inertial observers will disagree on the traveler's $c \, \dd t$ and $\dd \vv r$, but they'll agree on the traveler's $(c \, \dd t)^2 - (\dd \vv r)^2$.
+But we don't need $c \mkern.5mu \Delta t_0$ right now. It's the infinitesimals we're interested in. This $\dd s$, the infinitesimal spacetime interval, is analogous to an infinitesimal distance in space $\vert \dd \vv r \vert$. Like a spatial distance, $\dd s$ doesn't have direction. It's an infinitesimal scalar quantity. Unlike $\vert \dd \vv r \vert$, however, $\dd s$ is invariant with respect to observer velocity (i.e., under a Lorentz boost). Different inertial observers will disagree on the traveler's $c \, \dd t$ and $\dd \vv r$, but they'll agree on the traveler's $(c \, \dd t)^2 - (\dd \vv r)^2$.
 
 \subsubsection{The (Normalized) Spacetime Speed-Analogue}\label{sssec:b}
 
@@ -870,97 +870,6 @@ Anyway, we've uncovered a definite pattern: we started with the equation for the
 \clearpage
 
 \section{Four-Vectors: The Elephant in the Room}
-%
-%\subsection{A Pythagorean Diversion}
-%
-%Our mission is to discover what Equations \ref{eq:24}, \ref{eq:25}, and \ref{eq:26} \emph{really} have in common. We've already put our finger on some of it, but there's more.
-%
-%We begin by noting that the Pythagorean relationship we previously identified with the energy--momentum relation holds for our $\Vert \dd \vv r \Vert$- and $\beta$-analogues, as well. This is illustrated in Figure \ref{f:2}. For a given angle $\theta$, we have $\sin \theta = (\Vert \dd \vv r \Vert / \dd t)/c = \beta = p c / E$, which bears a passing resemblance to Equation \ref{eq:19}. So $\theta = \sin^{-1} {\beta}$, a function of relative velocity. And if you've taken calculus recently, you'll know that the derivative of $\sin^{-1} {\beta}$ is $(1-\beta^2)^{-1/2}$. In other words, the rate of change of $\theta$ with respect to $\beta$ is $\gamma$.
-%
-%\begin{figure}[h]
-%\caption{Equations \ref{eq:24}, \ref{eq:25}, and \ref{eq:26} as right triangles}
-%\label{f:2}
-%\vspace{10pt}
-%\begin{subfigure}[b]{0.32\textwidth}
-%\centering
-%\resizebox{\linewidth}{!}{
-%\begin{tikzpicture}[thick]
-%\coordinate (O) at (0,0);
-%\coordinate (A) at (4,0);
-%\coordinate (B) at (0,2);
-%\coordinate (K) at (.25, 1.9);
-%\draw (O)--(B)--(A);
-%\draw[thick,->] (.5,2.1) -- (.3,1.9);
-%%\draw[help lines] (0,0) grid (4,3);
-%\tkzMarkRightAngle[size=0.5,opacity=.4](A,O,B)% square angle here
-%% Draw the arc which center is (2,1)
-%\draw[thick,red] ([shift=(180:4cm)]4,0) arc (180:150:3.5cm);
-%\tkzLabelSegment[below,color=red](O,A){\textit{$\dd s = c \, \dd t_0$}}
-%\tkzLabelSegment[left](O,B){\textit{$\Vert \dd \vv r \Vert$}}
-%\tkzLabelSegment[xshift =.2cm, yshift=0cm](A,B){\textit{$c \, \dd t$}}
-%\tkzLabelPoint[xshift=.15cm, yshift=.62cm, color=black](K){\textit{\footnotesize $c \, \dd t_0(\gamma -1)$}}
-%\draw[thick,red] (O)--(A);
-%\tkzLabelAngle[pos = 1](B,A,O){$\theta$}
-%\end{tikzpicture}
-%}
-%\subcaption{Equation \ref{eq:24}}
-%\end{subfigure}
-%\begin{subfigure}[b]{0.32\textwidth}
-%\centering
-%\resizebox{\linewidth}{!}{
-%\begin{tikzpicture}[thick]
-%\coordinate (O) at (0,0);
-%\coordinate (A) at (4,0);
-%\coordinate (B) at (0,2);
-%\coordinate (K) at (.25, 1.9);
-%\draw (O)--(B)--(A);
-%\draw[thick,->] (.5,2.1) -- (.3,1.9);
-%%\draw[help lines] (0,0) grid (4,3);
-%\tkzMarkRightAngle[size=0.5,opacity=.4](A,O,B)% square angle here
-%% Draw the arc which center is (2,1)
-%\draw[thick,red] ([shift=(180:4cm)]4,0) arc (180:150:3.5cm);
-%\tkzLabelSegment[below,color=red](O,A){\textit{$1_{\phantom{0}}$}}
-%\tkzLabelSegment[left](O,B){\textit{$\gamma \beta$}}
-%\tkzLabelSegment[xshift =.2cm, yshift=0cm](A,B){\textit{$\gamma$}}
-%\tkzLabelPoint[xshift=.15cm, yshift=.62cm, color=black](K){\textit{\footnotesize $\gamma -1 \phantom{(E_0)}$}}
-%\draw[thick,red] (O)--(A);
-%\tkzLabelAngle[pos = 1](B,A,O){$\theta$}
-%\end{tikzpicture}
-%}
-%\subcaption{Equation \ref{eq:25}}
-%\end{subfigure}
-%\begin{subfigure}[b]{0.32\textwidth}
-%\centering
-%\resizebox{\linewidth}{!}{
-%\begin{tikzpicture}[thick]
-%\coordinate (O) at (0,0);
-%\coordinate (A) at (4,0);
-%\coordinate (B) at (0,2);
-%\coordinate (K) at (.25, 1.9);
-%\draw (O)--(B)--(A);
-%\draw[thick,->] (.5,2.1) -- (.3,1.9);
-%%\draw[help lines] (0,0) grid (4,3);
-%\tkzMarkRightAngle[size=0.5,opacity=.4](A,O,B)% square angle here
-%% Draw the arc which center is (2,1)
-%\draw[thick,red] ([shift=(180:4cm)]4,0) arc (180:150:3.5cm);
-%\tkzLabelSegment[below,color=red](O,A){\textit{$E_0$}}
-%\tkzLabelSegment[left](O,B){\textit{$p c$}}
-%\tkzLabelSegment[xshift =.2cm, yshift=0cm](A,B){\textit{$E$}}
-%\tkzLabelPoint[xshift=.15cm, yshift=.62cm, color=black](K){\text{\footnotesize $E_{\mkern.5mu \textrm{k}}=E_0(\gamma -1)$}}
-%\draw[thick,red] (O)--(A);
-%\tkzLabelAngle[pos = 1](B,A,O){$\theta$}
-%\end{tikzpicture}
-%}
-%\subcaption{Equation \ref{eq:26}}
-%\end{subfigure}
-%\end{figure}
-%
-%The red legs are our invariants, and their length relative to the $\theta$-dependent hypotenuses is shown by the red circular arcs. The $(\gamma - 1)$ segments indicated by the arrows are the length of the hypotenuses minus the length of the invariant legs. In Figure \ref{f:2}(a), the $(\gamma - 1)$ segment has length $c \, \dd t_0(\gamma -1)$ and represents time dilation. In (c), its length is $E_0(\gamma-1)$ and it represents kinetic energy. In (b), it's the increase in the ``time contribution" of our spacetime $\beta$-analogue that comes with a greater ``space contribution" $\gamma \beta$ (remember that they both blow up to infinity as $\beta$ approaches one).
-%
-%When $\beta \ll 1$, $\theta$ approaches zero, the red arcs approximate straight lines, and the hypotenuses are about the same length as the invariant legs. In this ``non-relativistic" zone, the $(\gamma - 1)$ segments contribute negligibly to the length of the hypotenuses. As $\beta$ starts to get bigger, those segments remain negligible for a while. Eventually, though, the red arcs start to look arc-ish, and then the segments get appreciably larger. And if you imagine the triangles getting taller and taller and the arcs approaching (but never reaching) a quarter-circle, you'll see that $\gamma$ increases without bound and approximates $(\gamma - 1)$.
-%
-%All of this is fine, but in a sense we're barking up the wrong tree: the Pythagorean theorem treats the \emph{hypotenuse} as the special quantity---the Euclidean distance---whereas the quantities of most interest to us are represented by the red catheti in Figure \ref{f:2}. Next we'll bring these invariants to the center of our attention. Instead of studying how, say, $E_0$ and $\vv p c$ combine to make $E$ (informative in its own right), we'll focus on how $E$ and $\vv p c$ combine to make $E_0$.
-
 
 \subsection{The Basics}
 
@@ -968,11 +877,11 @@ Anyway, we've uncovered a definite pattern: we started with the equation for the
 
 What do Equations \ref{eq:24}, \ref{eq:25}, and \ref{eq:26} \emph{really} have in common? We've already put our finger on some of it, but there's more.
 
-Our instinct might be to note that the Pythagorean relationship we previously identified with the energy--momentum relation holds for our $\Vert \dd \vv r \Vert$- and $\beta$-analogues, as well. We wouldn't be wrong, but in a sense we'd be barking up the wrong tree. The Pythagorean theorem treats the \emph{hypotenuse} as the special quantity. Given a unit circle centered on the origin, the hypotenuse of a right triangle is associated with the distance between the origin and a point on the circle, whereas the other legs (the catheti) are associated with the Cartesian coordinates of the point. Under a rotation of the coordinate axes, it's the \emph{hypotenuse}---the Euclidean distance---that remains unchanged. That's why it's special. But in the context of a Lorentz transformation, the quantities that \emph{look like} ``hypotenuses" in Equations \ref{eq:24}, \ref{eq:25}, and \ref{eq:26} ($c \, \dd t$, $\gamma$, and $E$) are not the ones that remain unchanged! If we embrace a geometric mindset, which we'll soon justify (later we'll even learn to regard a Lorentz boost as a ``rotation" of sorts), then our special quantities are invariants like spacetime intervals and rest energy. Let's bring these invariants to the center of our attention. Instead of studying how, say, $E_0$ and $\vv p c$ combine to make $E$, we'll focus on how $E$ and $\vv p c$ combine to make $E_0$. The payoff will be enormous.
+Our instinct might be to note that the Pythagorean relationship we previously identified with the energy--momentum relation holds for our $\vert \dd \vv r \vert$- and $\beta$-analogues, as well. We wouldn't be wrong, but in a sense we'd be barking up the wrong tree. The Pythagorean theorem treats the \emph{hypotenuse} as the special quantity. Given a unit circle centered on the origin, the hypotenuse of a right triangle is associated with the distance between the origin and a point on the circle, whereas the other legs (the catheti) are associated with the Cartesian coordinates of the point. Under a rotation of the coordinate axes, it's the \emph{hypotenuse}---the Euclidean distance---that remains unchanged. That's why it's special. But in the context of a Lorentz transformation, the quantities that \emph{look like} ``hypotenuses" in Equations \ref{eq:24}, \ref{eq:25}, and \ref{eq:26} ($c \, \dd t$, $\gamma$, and $E$) are not the ones that remain unchanged! If we embrace a geometric mindset, which we'll soon justify (later we'll even learn to regard a Lorentz boost as a ``rotation" of sorts), then our special quantities are invariants like spacetime intervals and rest energy. Let's bring these invariants to the center of our attention. Instead of studying how, say, $E_0$ and $\vv p c$ combine to make $E$, we'll focus on how $E$ and $\vv p c$ combine to make $E_0$. The payoff will be enormous.
 
 So here again are our Equations \ref{eq:24}, \ref{eq:25}, and \ref{eq:26}, unsquared this time and with the vectors broken down into their Cartesian components:
 \begin{align*}
-\dd s&=\sqrt{(c \, \dd t)^2 - \Bigl[ (\dd x)^2 + (\dd y)^2 + (\dd z)^2 \Bigr]} \tag{$\Vert \dd \vv r \Vert$-analogue} \\[10pt]
+\dd s&=\sqrt{(c \, \dd t)^2 - \Bigl[ (\dd x)^2 + (\dd y)^2 + (\dd z)^2 \Bigr]} \tag{$\vert \dd \vv r \vert$-analogue} \\[10pt]
 \mathring{s} = \dfrac{\dd s}{\dd (c t_0)} =1&=\sqrt{\gamma^2 - \Bigl[ (\gamma \beta_x)^2 + (\gamma \beta_y)^2 + (\gamma \beta_z)^2 \Bigr]} \tag{$\beta$-analogue} \\[10pt]
 E_0 \mkern1mu \mathring{s} = E_0 &=\sqrt{E^2 - \Bigl[ (cp_x)^2 + (cp_y)^2 + (cp_z)^2 \Bigr] } \tag{$p c$-analogue}
 \end{align*}
@@ -1017,7 +926,7 @@ We're finally ready to put it all together. Our spacetime analogues really are j
 
 We're missing one ingredient---direction! This is easily remedied. In what direction does a traveler journey through spacetime? The question answers itself: in the direction the traveler happens to be going. Direction is ``absolute" in a geometric sense, but \emph{describing} it requires specifying it in relation to something. Strictly speaking, a whole coordinate system isn't necessary; it's enough to have two events (two points in spacetime) to specify the direction from one to the other, from ``here-and-now" to ``there-and-then." Coordinate systems have their advantages, though. Once an inertial observer has adopted one, ``now" and ``then" can be expressed as coordinate times, and ``here" and ``there" can be expressed as spatial coordinates in reference to the observer's chosen spatial origin $(x,y,z)=(0,0,0)$. But the observer can also put ``from now to then" on an equal footing with ``from here$_{x, y, z}$ to there$_{x, y, z}$," and catalog all events a traveler reaches in reference to a chosen \emph{spacetime} origin, $(ct,x,y,z)=(0,0,0,0)$. That way, the \emph{spacetime} direction from one event on the traveler's world line to the ``next" (infinitesimally close to the first) can be thought of as an arrow pointing from the temporally earlier event $(ct, x, y, z)$ to the temporally later event ${(ct + c \, \dd t, \, x + \dd x, \, y + \dd y, \, z + \dd z)}$. In the traveler's instantaneous rest frame, $\dd \vv r = \vv 0$, and the spacetime direction is entirely temporal. In all other frames, however, observers say that the traveler's spacetime direction is both temporal and spatial. And they're all correct! Different inertial observers have different ideas of how far apart ``here" and ``there" are, and how much time passes between ``now" and ``then," but they agree on the spacetime interval between events, and they agree on the \emph{chronological order} of timelike- (and lightlike-) separated events.
 
-One more step. We take this notion of a traveler's spacetime direction, and we pair it with the magnitude $\dd s$, the infinitesimal spacetime interval between ``adjacent" events on the traveler's world line. The resulting object is an infinitesimal displacement vector, analogous to our old friend $\dd \vv r$ that dwells in three-dimensional Euclidean space. Since this new vector dwells in four-dimensional spacetime, we say that it's a \textbf{four-vector}, and now we'll use the term \textbf{three-vector} to refer to $\dd \vv r$ and its associates. The \emph{components} of our new (infinitesimal) \textbf{four-displacement} are what we've hitherto called the time and space ``contributions" to $\dd s$: $c \, \dd t$, $\dd x$, $\dd y$, and $\dd z$. It bears repeating that they obey the Lorentz transformation, and (equivalently) that the vector's magnitude is Lorentz-invariant. These two properties are so important that we make them sine qua nons for any future four-vectors we define. \emph{By definition, four-vectors have Lorentz-invariant magnitudes and Lorentz-transformable components.} Fortunately, these conditions are satisfied automatically if we use the same procedure for generating new four-vectors that we used earlier to generate our spacetime analogues: take an existing four-vector, and either multiply it by or differentiate it with respect to an invariant.\footnote{More generally, \emph{any} four quantities that transform together Lorentzianly are the components of a four-vector.} In the case of our spacetime $\beta$- and $p c$-analogues, we've already done the work, and we'll see that they are the magnitudes of four-vectors, just as our spacetime $\Vert \dd \vv r \Vert$-analogue ($\dd s$) is the magnitude of four-displacement.
+One more step. We take this notion of a traveler's spacetime direction, and we pair it with the magnitude $\dd s$, the infinitesimal spacetime interval between ``adjacent" events on the traveler's world line. The resulting object is an infinitesimal displacement vector, analogous to our old friend $\dd \vv r$ that dwells in three-dimensional Euclidean space. Since this new vector dwells in four-dimensional spacetime, we say that it's a \textbf{four-vector}, and now we'll use the term \textbf{three-vector} to refer to $\dd \vv r$ and its associates. The \emph{components} of our new (infinitesimal) \textbf{four-displacement} are what we've hitherto called the time and space ``contributions" to $\dd s$: $c \, \dd t$, $\dd x$, $\dd y$, and $\dd z$. It bears repeating that they obey the Lorentz transformation, and (equivalently) that the vector's magnitude is Lorentz-invariant. These two properties are so important that we make them sine qua nons for any future four-vectors we define. \emph{By definition, four-vectors have Lorentz-invariant magnitudes and Lorentz-transformable components.} Fortunately, these conditions are satisfied automatically if we use the same procedure for generating new four-vectors that we used earlier to generate our spacetime analogues: take an existing four-vector, and either multiply it by or differentiate it with respect to an invariant.\footnote{More generally, \emph{any} four quantities that transform together Lorentzianly are the components of a four-vector.} In the case of our spacetime $\beta$- and $p c$-analogues, we've already done the work, and we'll see that they are the magnitudes of four-vectors, just as our spacetime $\vert \dd \vv r \vert$-analogue ($\dd s$) is the magnitude of four-displacement.
 
 We'll need some notation. To distinguish the four-displacement from the three-displacement $\dd \vv r$, let's use uppercase for the former:
 \begin{equation}\label{eq:30}
@@ -1026,7 +935,7 @@ We'll need some notation. To distinguish the four-displacement from the three-di
 And defining a dot-product for four-vectors, we have $\dd \vv R$'s magnitude:
 \begin{equation*}
 \begin{split}
-\Vert \dd \vv R \Vert &= \sqrt{\dd \vv R \cdot \dd \vv R}\\
+\vert \dd \vv R \vert &= \sqrt{\dd \vv R \cdot \dd \vv R}\\
 &= \sqrt{(c \, \dd t)(c \, \dd t) - (\dd \vv r \cdot \dd \vv r)}\\
 &= \sqrt{(c \, \dd t)^2 - (\dd x)^2 - (\dd y)^2 - (\dd z)^2}\\
 &= \dd s,
@@ -1044,7 +953,7 @@ We could have started with a \emph{position} four-vector, but the \textbf{four-p
 
 \subsubsection{(Normalized) Four-Velocity}
 
-Next, we define the normalized \textbf{four-velocity} by replicating our steps for obtaining the spacetime $\beta$-analogue from the $\Vert \dd \vv r \Vert$-analogue (cf.\ Section \ref{sssec:b}). Again, we use uppercase (we'll always use uppercase for four-vectors and lowercase for three-vectors):
+Next, we define the normalized \textbf{four-velocity} by replicating our steps for obtaining the spacetime $\beta$-analogue from the $\vert \dd \vv r \vert$-analogue (cf.\ Section \ref{sssec:b}). Again, we use uppercase (we'll always use uppercase for four-vectors and lowercase for three-vectors):
 \begin{equation}\label{eq:31}
 \boxed{
 \begin{aligned}
@@ -1123,7 +1032,7 @@ On to force. In Newtonian mechanics, force is $\vv f_{\mathrm{classical}} \equiv
 \end{aligned}
 } \, ,
 \end{equation}
-where $\mathcal{P} \equiv \dot{E} = \dd E / \dd (ct)$ is the ``normalized" \textbf{relativistic power}, and where ${\vv f \equiv \dot{\vv p} c = \dd (\vv p c) / \dd (ct)}$ is the \textbf{relativistic three-force}. If we wanted to be dimensionally consistent with classical physics we could instead write ${\vv F = \gamma \langle P/c, \mkern.5mu \vv f \rangle}$ (where $P = \mathcal{P}c$ is power in traditional units, not $\Vert \vv P \Vert$), but I'm allergic to unnecessary $c^{-1}$'s.\footnote{Setting $c = 1$ renders all of this moot, but we're not doing that. My strategy is: make symbols for ``normalized" quantities to hide $c^{-1}$ ($\mathcal P$, $\vvbeta$, $\vvzeta$), admit $c$ sometimes by ``attaching" it to certain quantities ($\vv p c$, $ct$), and always take $ct$-derivatives (never $t$-derivatives).} Like the four-velocity, the four-force is defined as a $ct_0$-derivative and is therefore inapplicable when $E_0 = 0$.
+where $\mathcal{P} \equiv \dot{E} = \dd E / \dd (ct)$ is the ``normalized" \textbf{relativistic power}, and where ${\vv f \equiv \dot{\vv p} c = \dd (\vv p c) / \dd (ct)}$ is the \textbf{relativistic three-force}. If we wanted to be dimensionally consistent with classical physics we could instead write ${\vv F = \gamma \langle P/c, \mkern.5mu \vv f \rangle}$ (where $P = \mathcal{P}c$ is power in traditional units, not $\vert \vv P \vert$), but I'm allergic to unnecessary $c^{-1}$'s.\footnote{Setting $c = 1$ renders all of this moot, but we're not doing that. My strategy is: make symbols for ``normalized" quantities to hide $c^{-1}$ ($\mathcal P$, $\vvbeta$, $\vvzeta$), admit $c$ sometimes by ``attaching" it to certain quantities ($\vv p c$, $ct$), and always take $ct$-derivatives (never $t$-derivatives).} Like the four-velocity, the four-force is defined as a $ct_0$-derivative and is therefore inapplicable when $E_0 = 0$.
 
 So the greater a system's rest energy $E_0$, the greater its resistance to change in (direction of) four-velocity $\vv B$ under the influence of an acceleration-causing four-force $\vv F$. We specify ``acceleration-causing" because a system whose $E_0$ changes while its $\vvbeta$ (and hence $\vv B$) doesn't---like the light-emitting body in Einstein's thought experiment---is under the influence of a four-force, too.\footnote{\label{fn:fo}Unlike the classical force, whose magnitude isn't Galilean-invariant in a variable-mass scenario because of the frame-dependent $(\dd m / \dd t) \vv v$ term mentioned in Footnote \ref{fn:cf}, the four-force has a magnitude that's \emph{always} Lorentz-invariant (provided we model the system in question as a point particle). The chain rule does produce an analogous $\mathring{E}_0 \vv B$ term ($\vv F = \mathring{\vv P} = \mathring{E}_0 \vv B + E_0 \mathring{\vv B}$), but $\vv B$ is itself a four-vector with a Lorentz-invariant magnitude, whereas $\vv v$'s magnitude varies under a Galilean boost. \emph{The four-velocity is \emph{not} to the Lorentz transformation as the three-velocity is to the Galilean transformation.}}
 
@@ -1886,7 +1795,7 @@ four-momentum (for $E_0 \neq 0$):
 \end{equation*}
 four-acceleration (``normalized"):\footnote{\label{fn:ph}By $\mathring{\phi}$ we mean the $ct_0$-derivative of the rapidity $\phi$, \emph{not} the magnitude of the vector $\mathring{\vvphi}$. They're equal only in the case of rectilinear motion (or when there's no acceleration):
 \begin{equation*}
-\left \Vert \mathring{\vvphi} \right \Vert = \left \Vert \dfrac{\dd}{\dd (c t_0)} \, ( \phi \hatphi ) \right \Vert = \left \Vert \mathring{\phi} \hatphi + \phi \mathring{\hatphi} \right \Vert,
+\big \vert \mathring{\vvphi} \big \vert = \left \vert \dfrac{\dd}{\dd (c t_0)} \, ( \phi \hatphi ) \right \vert = \left \vert \mathring{\phi} \hatphi + \phi \mathring{\hatphi} \right \vert,
 \end{equation*}
 which is just $\mathring{\phi}$ for rectilinear motion ($\mathring{\vvphi} \parallel \vvphi$), because then $\mathring{\hatphi} = \vv 0$.}
 \begin{equation*}
@@ -1909,7 +1818,7 @@ Admittedly, the components of four-acceleration and four-force are somewhat unwi
 \end{equation}
 because $\hatphi \cdot \mathring{\hatphi} = 0$ (unit vector is orthogonal to its time-derivative), $\hatphi \cdot \hatphi = 1$, and $\cosh^{2}{\phi} - \sinh^{2}{\phi} = 1$. It requires some algebra to show that the right side of Equation \ref{eq:pa3} is equivalent to the negative square of the right sides of Equations \ref{eq:pa2} and \ref{eq:37}, but it is, and it was child's play to derive. So in addition to its conceptual elegance, the rapidity offers much \emph{mathematical} elegance.
 
-Equation \ref{eq:pa3} also gives us the appealing relation $\zeta_0 = | \mathring{\phi} |$ for $\mathring{\vvphi} \parallel \vvphi$.\footnote{In this case, $\mathring{\phi} = \Vert \mathring{\vvphi} \Vert$ (see Footnote \ref{fn:ph}), and $\vvzeta_{\mkern1mu 0} = \mathring{\vvphi}$.} When the traveler's motion is rectilinear, then, $| \mathring{\phi} |$ is the magnitude of the proper acceleration and therefore invariant under a Lorentz boost in the $\pm \, \hatphi$ direction. Same goes for $\dd \phi = \mathring{\phi} \, c \, \dd t_0$: incremental \emph{changes} in the traveler's rapidity are invariant among observers for whom the traveler's $\mathring{\vvphi} \parallel \vvphi$. Now we're getting somewhere! Note that because we've defined rapidity as a magnitude, we cannot extend this argument to say that \emph{differences} in the rapidities of two rectilinear travelers with parallel velocities are necessarily invariant among the would-be qualifying observers. If one traveler is moving to your left at the same speed that the other is moving to your right, then you'll say the difference in their rapidities is zero, but you'd give a different answer after a boost to your left or right (imagine boosting all the way to one of the travelers' rest frames---is the other traveler now at rest? no). Partly to remedy this ``shortcoming," we'll introduce a \emph{signed} rapidity-like parameter in the next section. Naively we might guess that this signed parameter will be the component of $\vvphi$ corresponding to the boost axis ($\phi_x$ if the boost is along the $x$-axis), but we'll see that that's not generally so.
+Equation \ref{eq:pa3} also gives us the appealing relation $\zeta_0 = | \mathring{\phi} |$ for $\mathring{\vvphi} \parallel \vvphi$.\footnote{In this case, $\mathring{\phi} = \vert \mathring{\vvphi} \vert$ (see Footnote \ref{fn:ph}), and $\vvzeta_{\mkern1mu 0} = \mathring{\vvphi}$.} When the traveler's motion is rectilinear, then, $| \mathring{\phi} |$ is the magnitude of the proper acceleration and therefore invariant under a Lorentz boost in the $\pm \, \hatphi$ direction. Same goes for $\dd \phi = \mathring{\phi} \, c \, \dd t_0$: incremental \emph{changes} in the traveler's rapidity are invariant among observers for whom the traveler's $\mathring{\vvphi} \parallel \vvphi$. Now we're getting somewhere! Note that because we've defined rapidity as a magnitude, we cannot extend this argument to say that \emph{differences} in the rapidities of two rectilinear travelers with parallel velocities are necessarily invariant among the would-be qualifying observers. If one traveler is moving to your left at the same speed that the other is moving to your right, then you'll say the difference in their rapidities is zero, but you'd give a different answer after a boost to your left or right (imagine boosting all the way to one of the travelers' rest frames---is the other traveler now at rest? no). Partly to remedy this ``shortcoming," we'll introduce a \emph{signed} rapidity-like parameter in the next section. Naively we might guess that this signed parameter will be the component of $\vvphi$ corresponding to the boost axis ($\phi_x$ if the boost is along the $x$-axis), but we'll see that that's not generally so.
 
 
 \subsubsection{Longitudinal Rapidity}
@@ -2065,7 +1974,7 @@ where $\theta$ is the ``polar" angle between $\vvbeta$ (velocity of emitted part
 \end{equation*}
 where we've used the ``half-angle" trig identities $\cos^2{(\theta / 2)} = (1 + \cos{\theta})/2$ and $\sin^2{(\theta / 2)} = (1 - \cos{\theta})/2$.
 
-Because $\eta$ is such a good approximation for $y$ in the ultrarelativistic limit, particle physicists sometimes loosely refer to the pseudorapidity as just \emph{rapidity}. All this inconsistent usage can be confusing, so let's recap. In our lingo, rapidity is $\phi = \Vert \bm{\upphi} \Vert = \tanh^{-1}{\beta}$, and the longitudinal rapidity $\varphi$ is the inverse hyperbolic tangent of the velocity component corresponding to the axis of a given Lorentz boost ($\tanh^{-1}{\beta_x}$ if $x$ is the boost axis). In particle physics, longitudinal rapidity gets the symbol $y$ and is often called the ``particle rapidity" or even just the ``rapidity" for short, although the pseudorapidity $\eta$ is also sometimes called the rapidity.
+Because $\eta$ is such a good approximation for $y$ in the ultrarelativistic limit, particle physicists sometimes loosely refer to the pseudorapidity as just \emph{rapidity}. All this inconsistent usage can be confusing, so let's recap. In our lingo, rapidity is $\phi = \vert \bm{\upphi} \vert = \tanh^{-1}{\beta}$, and the longitudinal rapidity $\varphi$ is the inverse hyperbolic tangent of the velocity component corresponding to the axis of a given Lorentz boost ($\tanh^{-1}{\beta_x}$ if $x$ is the boost axis). In particle physics, longitudinal rapidity gets the symbol $y$ and is often called the ``particle rapidity" or even just the ``rapidity" for short, although the pseudorapidity $\eta$ is also sometimes called the rapidity.
 
 
 \subsection[Advanced Rectilinear Kinematics: Constant Proper Acceleration]{Advanced Rectilinear Kinematics:\\ Constant Proper Acceleration}\label{ssec:ak}
@@ -3139,7 +3048,7 @@ where $R$ is the sphere's radius and the point $(x_0, y_0, z_0)$ is the sphere's
 \begin{equation*}
 x^2 + y^2 + z^2 = R^2.
 \end{equation*}
-When time is ``unpaused," the sphere and its center move at the speed of light in the direction of the light's three-wavevector $\vv k$. At some later time $ct = ct$, then, the $x$-coordinate of the sphere's center is its initial $x$-coordinate ($0$) plus the $x$-component of the light's ``displacement" since $ct = 0$, which is the $x$-component of the light's (normalized) velocity vector $\vv{\hat{k}}$ times $ct$.\footnote{The three-wavevector $\vv k$ isn't dimensionless, but the unit vector $\vv{\hat{k}} = \vv k / k$ is, so $\vv{\hat{k}}$ is indeed the light's normalized velocity. Same goes for $\vv{\hat s} = \vv s / s$.} If $\theta$ is the angle between the positive $x$-direction and $\vv{\hat{k}}$, then the $x$-component of $\vv{\hat{k}}$ is $\Vert \vv{\hat{k}} \Vert \cos{\theta} = \cos{\theta}$. The $x$-coordinate of the sphere's center as a function of time is therefore $x_0 = \cos{\theta} \, ct$. Likewise, $y_0 = \cos{\alpha} \, \mkern.5mu ct$ and $z_0 = \cos{\kappa} \, \mkern.5mu ct$ for the corresponding angles $\alpha$ and $\kappa$, and the sphere's equation is:
+When time is ``unpaused," the sphere and its center move at the speed of light in the direction of the light's three-wavevector $\vv k$. At some later time $ct = ct$, then, the $x$-coordinate of the sphere's center is its initial $x$-coordinate ($0$) plus the $x$-component of the light's ``displacement" since $ct = 0$, which is the $x$-component of the light's (normalized) velocity vector $\vv{\hat{k}}$ times $ct$.\footnote{The three-wavevector $\vv k$ isn't dimensionless, but the unit vector $\vv{\hat{k}} = \vv k / k$ is, so $\vv{\hat{k}}$ is indeed the light's normalized velocity. Same goes for $\vv{\hat s} = \vv s / s$.} If $\theta$ is the angle between $\vv{\hat{k}}$ and the positive $x$-direction, then the $x$-component of $\vv{\hat{k}}$ is $\vert \vv{\hat{k}} \vert \cos{\theta} = \cos{\theta}$. The $x$-coordinate of the sphere's center as a function of time is therefore $x_0 = \cos{\theta} \, ct$. Likewise, $y_0 = \cos{\alpha} \, \mkern.5mu ct$ and $z_0 = \cos{\kappa} \, \mkern.5mu ct$ for the corresponding angles $\alpha$ and $\kappa$, and the sphere's equation is:
 \begin{equation*}
 (x - \cos{\theta} \, ct)^2 + (y - \cos{\alpha} \, \mkern.5mu ct)^2 + (z - \cos{\kappa} \, \mkern.5mu ct)^2 = R^2 .
 \end{equation*}
@@ -3284,31 +3193,31 @@ where we have some symbols to explain.
 
 First, this is an integral taken over \emph{all of spacetime}, and $\dd \Omega_{s}$ refers to the \textbf{four-volume} element ($\dd x_{s} \, \dd y_{s} \, \dd z_{s} \, c \mkern2mu \dd t_{s}$) centered at the ``source event" $\vv R _{s}$, where the four-current density $\vv J$ is sampled. (To be clear, \emph{every event in spacetime} is accounted for as a source event in this integral.) The undecorated $\vv R$ is the ``field event" at which we're evaluating $\vv A$. Now, ``all of spacetime" should strike you as odd: if $\vv J$ generates disturbances in the Lorenz-gauge four-potential that travel outward through space at the speed of light, then shouldn't we only be ``sampling" $\vv J$ at events that are lightlike-separated from $\vv R$ and which precede $\vv R$ chronologically (i.e., events on the past light cone of $\vv R$)? The answer is yes, and that's where $G_{\textrm{ret}}$ comes in. It's the \textbf{manifestly covariant retarded Green's function}, and in effect it \emph{filters out} all events $\vv R_{s}$ that aren't on the past light cone of $\vv R$.\footnote{\label{fn:retg}If you're curious, it does this with the Dirac delta and the Heaviside step function: $G_{\textrm{ret}} (\vv R - \vv R_{s}) = \delta[ (\vv R - \vv R_{s})^2 ] \, \theta (ct - ct_{s}) / (2 \pi)$. Under integration, the delta function contributes only when its argument vanishes, so that only lightlike-separated source events ``survive." For such an $\vv R_{s}$, the sign of $ct - ct_{s}$ is Lorentz-invariant. Then $\theta (n) = 1$ if $n > 0$ and $\theta (n) = 0$ otherwise, completing the \emph{past}-light-cone requirement by ``forcing" $ct - ct_{s} > 0$. The retarded Green's function arises as a solution to $\Box G = \delta ( \vv R - \vv R_{s} )$.}
 
-Equation \ref{eq:retfp} is known as the \textbf{retarded four-potential} because in a given inertial frame, a contributing source event $\vv R_{s}$ on the past light cone of $\vv R$ has a time coordinate $ct_{s} = ct - \Vert \vv r - \vv r_{s} \Vert \equiv ct_{\textrm{ret}}$, called the \textbf{retarded time} (the time coordinate of $\vv R$ \emph{minus} the time it takes light to travel from the source event's position $\vv r_{s}$ to the field event's position $\vv r$). An unphysical solution involving the \textbf{advanced time} $ct_{\textrm{adv}} \equiv ct + \Vert \vv r - \vv r_{s} \Vert$ is called the \textbf{advanced four-potential}.
+Equation \ref{eq:retfp} is known as the \textbf{retarded four-potential} because in a given inertial frame, a contributing source event $\vv R_{s}$ on the past light cone of $\vv R$ has a time coordinate $ct_{s} = ct - \vert \vv r - \vv r_{s} \vert \equiv ct_{\textrm{ret}}$, called the \textbf{retarded time} (the time coordinate of $\vv R$ \emph{minus} the time it takes light to travel from the source event's position $\vv r_{s}$ to the field event's position $\vv r$). An unphysical solution involving the \textbf{advanced time} $ct_{\textrm{adv}} \equiv ct + \vert \vv r - \vv r_{s} \vert$ is called the \textbf{advanced four-potential}.
 
 A caveat: Equation \ref{eq:retfp} only works if $\vv J$ vanishes sufficiently rapidly at spatial infinity. In real life that's fine, but idealized problems involving infinite charged plates and the like require other approaches. Additionally, Equation \ref{eq:retfp} is the unique causal solution to $\Box \vv A = \vv J$ \emph{given appropriate boundary conditions} (namely, no incoming radiation from ``past null infinity"; all disturbances in the four-potential are generated by the sources alone).
 
 The retarded potential is usually written in another form, which isn't manifestly covariant but is more useful in practice:
 \begin{equation}\label{eq:retfp2}
-\vv A(ct, \vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv J (ct_{\textrm{ret}}, \vv r _{s})}{\Vert \vv r - \vv r_{s} \Vert} \, \dd V_{s} .
+\vv A(ct, \vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv J (ct_{\textrm{ret}}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s} .
 \end{equation}
 Here, the integration is over \emph{all of space} for the chosen inertial frame, but not at a single moment. Rather, for each source-position $\vv r_{s}$, the four-current density $\vv J$ is sampled at the retarded time $ct_{\textrm{ret}}$ (a function of $ct$, $\vv r$, and $\vv r_{s}$), and $\dd V_{s}$ is the volume element ($\dd x_{s} \, \dd y_{s} \, \dd z_{s}$) centered on $\vv r_{s}$ at that time.\footnote{To get to Equation \ref{eq:retfp2} from Equation \ref{eq:retfp} and Footnote \ref{fn:retg}, start with:
 \begin{equation*}
 \begin{aligned}
 \delta \big[ (\vv R - \vv R_{s})^2 \big] &= \delta \big[ (ct - ct_{s})^2 - (\vv r - \vv r_{s})^2 \big]\\[2pt]
-&= \dfrac{\delta ( ct_{s} - ct - \Vert \vv r - \vv r_{s} \Vert ) + \delta ( ct_{s} - ct + \Vert\vv r - \vv r_{s} \Vert )}{2 \Vert \vv r - \vv r_{s} \Vert} ,
+&= \dfrac{\delta ( ct_{s} - ct - \vert \vv r - \vv r_{s} \vert ) + \delta ( ct_{s} - ct + \vert \vv r - \vv r_{s} \vert )}{2 \vert \vv r - \vv r_{s} \vert} ,
 \end{aligned}
 \end{equation*}
-where the last step follows from $\delta$'s \href{https://en.wikipedia.org/wiki/Dirac_delta_function\#Composition_with_a_function}{function-composition identity} (Wikipedia), treating $(\vv R - \vv R_{s})^2$ as a function of $ct_{s}$ (the variable we'll be integrating over momentarily). Explicitly, the roots of $(\vv R - \vv R_{s})^2$ are $ct_s = ct \pm \Vert \vv r - \vv r_{s} \Vert$, the derivative is $-2 (ct - ct_{s})$, and the derivative \emph{at} the roots evaluates to $\pm 2 \Vert \vv r - \vv r_{s} \Vert$ (which share an absolute value). That gives:
+where the last step follows from $\delta$'s \href{https://en.wikipedia.org/wiki/Dirac_delta_function\#Composition_with_a_function}{function-composition identity} (Wikipedia), treating $(\vv R - \vv R_{s})^2$ as a function of $ct_{s}$ (the variable we'll be integrating over momentarily). Explicitly, the roots of $(\vv R - \vv R_{s})^2$ are $ct_s = ct \pm \vert \vv r - \vv r_{s} \vert$, the derivative is $-2 (ct - ct_{s})$, and the derivative \emph{at} the roots evaluates to $\pm 2 \vert \vv r - \vv r_{s} \vert$ (which share an absolute value). That gives:
 \begin{equation*}
 \begin{aligned}
-G_{\textrm{ret}} (\vv R - \vv R_{s}) &= \dfrac{\delta ( ct_{s} - ct_{\textrm{adv}} ) + \delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi \Vert \vv r - \vv r_{s} \Vert} \; \theta ( ct - ct_{s} ) \\[2pt]
-&= \dfrac{\delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi \Vert \vv r - \vv r_{s} \Vert}
+G_{\textrm{ret}} (\vv R - \vv R_{s}) &= \dfrac{\delta ( ct_{s} - ct_{\textrm{adv}} ) + \delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi \vert \vv r - \vv r_{s} \vert} \; \theta ( ct - ct_{s} ) \\[2pt]
+&= \dfrac{\delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi \vert \vv r - \vv r_{s} \vert}
 \end{aligned}
 \end{equation*}
 (the Heaviside function kills the ``advanced" term, because ${ct - ct_{\textrm{adv}} < 0}$). Then express Equation \ref{eq:retfp} in the form:
 \begin{equation*}
-\vv A(ct, \vv r) = \dfrac{1}{4 \pi} \iint \dfrac{\vv J(ct_{s}, \vv r _{s})}{\Vert \vv r - \vv r_{s} \Vert}  \; \delta ( ct_{s} - ct_{\textrm{ret}} )  \; c \, \dd t_{s} \, \dd V_{s},
+\vv A(ct, \vv r) = \dfrac{1}{4 \pi} \iint \dfrac{\vv J(ct_{s}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert}  \; \delta ( ct_{s} - ct_{\textrm{ret}} )  \; c \, \dd t_{s} \, \dd V_{s},
 \end{equation*}
 and carry out the $ct_{s}$-integral to obtain Equation \ref{eq:retfp2}.}
 
@@ -3316,15 +3225,15 @@ and carry out the $ct_{s}$-integral to obtain Equation \ref{eq:retfp2}.}
 
 In the special case of \emph{time-independent} sources, $\vv J(ct_{\textrm{ret}}, \vv r _{s})$ reduces to $\vv J(\vv r _{s})$, leaving the potential $\vv A$ time-independent in turn (since there's no other time-dependence on the right side of Equation \ref{eq:retfp2}):
 \begin{equation}\label{eq:retfp3}
-\vv A(\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv J ( \vv r _{s})}{\Vert \vv r - \vv r_{s} \Vert} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}} .
+\vv A(\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv J ( \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}} .
 \end{equation}
 In terms of the four-potential's components, we have from Equation \ref{eq:retfp3} the scalar potential:
 \begin{equation}\label{eq:retsp}
-\Phi(\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\rho ( \vv r _{s})}{\Vert \vv r - \vv r_{s} \Vert} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}}
+\Phi(\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\rho ( \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}}
 \end{equation}
 and the vector three-potential:
 \begin{equation}\label{eq:retvp}
-\vv a(\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv j ( \vv r _{s})}{\Vert \vv r - \vv r_{s} \Vert} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}} .
+\vv a(\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv j ( \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}} .
 \end{equation}
 The electric and magnetic fields---defined in terms of $\vv A$ (Equations \ref{eq:eb})---become time-independent, too, and $\vv e = - \del \Phi - \partial^{ct} \vv a = - \del \Phi$.
 
@@ -3332,25 +3241,25 @@ If now $\vv j = \vv 0$ everywhere, then we have \textbf{electrostatics}; if inst
 
 For time-independent sources (not necessarily electrostatics!), $\vv e$ is the negative gradient of Equation \ref{eq:retsp}:
 \begin{equation}\label{eq:electrostatice}
-\vv e (\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\rho ( \vv r _{s}) \, (\vv r - \vv r_{s})}{\Vert \vv r - \vv r_{s} \Vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}},
+\vv e (\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\rho ( \vv r _{s}) \, (\vv r - \vv r_{s})}{\vert \vv r - \vv r_{s} \vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}},
 \end{equation}
 where the del went inside the integrand because it operates only on functions of $\vv r$, and where we've used:
 \begin{equation}\label{eq:gradoverr}
-\del \left( \dfrac{1}{\Vert \vv r - \vv r_{s} \Vert} \right) = - \dfrac{\vv r - \vv r_{s}}{\Vert \vv r - \vv r_{s} \Vert ^3}
+\del \left( \dfrac{1}{\vert \vv r - \vv r_{s} \vert} \right) = - \dfrac{\vv r - \vv r_{s}}{\vert \vv r - \vv r_{s} \vert ^3}
 \end{equation}
 (if that troubles you, calculate it component-wise in Cartesian coordinates). In electrostatics specifically, $\vv b = \vv 0$, and the Lorentz three-force (Equation \ref{eq:ltf}) is just $q \vv e$. With Equation \ref{eq:electrostatice}, this gives:
 \begin{equation}\label{eq:coulomb}
-\vv f_{\textrm{L}} (\vv r) = \dfrac{q}{4 \pi} \int \dfrac{\rho ( \vv r _{s}) \, (\vv r - \vv r_{s})}{\Vert \vv r - \vv r_{s} \Vert ^3} \, \dd V_{s}  \quad \text{\footnotesize{(in electrostatics)}}.
+\vv f_{\textrm{L}} (\vv r) = \dfrac{q}{4 \pi} \int \dfrac{\rho ( \vv r _{s}) \, (\vv r - \vv r_{s})}{\vert \vv r - \vv r_{s} \vert ^3} \, \dd V_{s}  \quad \text{\footnotesize{(in electrostatics)}}.
 \end{equation}
 That's \textbf{Coulomb's law}, the electrostatic force acting on a test particle with charge $q$ at position $\vv r$. Strictly speaking the particle must be at rest for the law to hold, but Equation \ref{eq:coulomb} is still a good approximation in many almost-electrostatic situations.
 
 Now we'll find $\vv b$ (curl of Equation \ref{eq:retvp}):
 \begin{equation}\label{eq:biot}
-\vv b (\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv j ( \vv r _{s}) \times (\vv r - \vv r_{s})}{\Vert \vv r - \vv r_{s} \Vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}},
+\vv b (\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv j ( \vv r _{s}) \times (\vv r - \vv r_{s})}{\vert \vv r - \vv r_{s} \vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}},
 \end{equation}
 where we've used ${\del \times [ \mkern1mu f(\vv r) \, \vv j(\vv r_{s})] = \del f(\vv r) \times \vv j(\vv r_{s}) }$ (because $\del$ operates only on functions of $\vv r$) and also Equation \ref{eq:gradoverr} again (whose negative sign switches the order of the cross product). Equation \ref{eq:biot} is the \textbf{Biot--Savart law}. If $\vv e = \vv 0$ (magnetostatics), then the Lorentz force reduces to $q \vvbeta \times \vv b$, and:
 \begin{equation}\label{eq:magnetostaticf}
-\vv f_{\textrm{L}} (\vv r) = \dfrac{q \vvbeta}{4 \pi} \times \int \dfrac{\vv j ( \vv r _{s}) \times (\vv r - \vv r_{s})}{\Vert \vv r - \vv r_{s} \Vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(in magnetostatics)}},
+\vv f_{\textrm{L}} (\vv r) = \dfrac{q \vvbeta}{4 \pi} \times \int \dfrac{\vv j ( \vv r _{s}) \times (\vv r - \vv r_{s})}{\vert \vv r - \vv r_{s} \vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(in magnetostatics)}},
 \end{equation}
 for the magnetostatic force acting on a test particle with charge $q$ and velocity $\vvbeta$ at position $\vv r$. (Its extension to the force acting on a current-carrying wire is more useful. In fact, if the test particle isn't part of an electrically neutral stationary current, then the magnetostatic conditions aren't even satisfied.) Both Equations \ref{eq:coulomb} and \ref{eq:magnetostaticf} are inverse-square force laws.
 
