@@ -2566,18 +2566,18 @@ Without motivation, we define the \textbf{four-potential} as any four-vector fie
 \end{equation}
 We say ``any" because, as we discussed in Section \ref{sssec:tp}, gauge transformations taking $\vv A$ to $(\vv A + \partialup \psi)$ for any spacetime scalar field $\psi$ leave the ``double curl" of $\vv A$ unchanged. This non-uniqueness of the four-potential doesn't bother us; we'll see that it's not $\vv A$ itself but rather \emph{derivatives} of $\vv A$ that matter physically, and they're uniquely defined and measurable.\footnote{Better put: \emph{physically observable electromagnetic phenomena} must be gauge-invariant, and in classical electrodynamics gauge-invariance is always ``achieved" by differentiating $\vv A$. In \emph{quantum} electrodynamics, however, gauge-invariance is sometimes ``achieved" by other means, and $\vv A$ may appear \emph{undifferentiated} in the mathematical description of observable phenomena (e.g., the \textbf{Aharonov--Bohm effect}); the potential is fundamental!} Note that Equation \ref{eq:gfp} would be impossible without the continuity equation (Equation \ref{eq:con}) because the four-divergence of a ``double curl" is identically zero: ${\partialup \cdot (\Box \vv A) - \partialup \cdot \partialup (\partialup \cdot \vv A) = \Box (\partialup \cdot \vv A) - \Box (\partialup \cdot \vv A)}$. This hints at a connection between gauge-invariance and charge-conservation.
 
-Something beautiful happens when we impose the Lorenz gauge:
+Equation \ref{eq:gfp} is the electromagnetic field equation. Something beautiful happens when we impose the Lorenz gauge:
 \begin{equation}\label{eq:fp}
 \boxed{ \Box \vv A = \vv J } \quad \textrm{\footnotesize{ (in the Lorenz gauge)}} ,
 \end{equation}
 \begin{equation}\label{eq:lg}
 \boxed{ \partialup \cdot \vv A = 0 } \quad \textrm{\footnotesize{ (Lorenz gauge condition)}}
 \end{equation}
-(again, see Section \ref{sssec:tp}). Equation \ref{eq:fp} is \emph{the} electromagnetic field equation. It's an inhomogeneous wave equation, and it says that a non-zero value of the $\vv J$ field at an event in spacetime generates a commensurate disturbance in the (Lorenz-gauge) $\vv A$ field that propagates outward in space at $\beta = 1$:
+(again, see Section \ref{sssec:tp}). Equation \ref{eq:fp} is an inhomogeneous wave equation. We'll discuss its solutions in Section \ref{ssec:retpot}. It says simply that a non-zero value of the $\vv J$ field at an event in spacetime generates a commensurate disturbance in the (Lorenz-gauge) $\vv A$ field that propagates outward in space at $\beta = 1$:
 \begin{equation*}
 \partial^{ct} \partial^{ct} \vv A - \nabla ^2 \vv A = \vv J .
 \end{equation*}
-The disturbance propagates forever, though it can undergo interference with other disturbances. This is how information about $\vv J$ spreads. The sum of all such disturbances passing through a point in space at a given time determines the ``value" of $\vv A$ at that event (scare quotes because the value isn't uniquely defined---we have ``gauge freedom" even within the Lorenz gauge, remember). A disturbance passing through a region where $\vv J = \textrm{\mbox{\boldmath $\emptyset$}}$ (\textbf{free space}) is called an \textbf{electromagnetic wave}.
+The disturbance propagates forever, and this is how information about $\vv J$ spreads. The sum of all such disturbances passing through a point in space at a given time determines the ``value" of $\vv A$ at that event (scare quotes because the value isn't uniquely defined---we have ``gauge freedom" even within the Lorenz gauge, remember). In regions where $\vv J$ vanishes \emph{everywhere} (\textbf{free space}), the disturbances are called \textbf{electromagnetic waves}.
 
 
 \subsubsection{Lorentz Four-Force; e and b Fields; Maxwell's Equations}\label{sssec:lff}
@@ -2895,11 +2895,11 @@ We have what we need from the Lorentz four-force density to take care of our unf
 
 \subsubsection{Light}\label{sssec:li}
 
-Light is an electromagnetic wave---a disturbance in the (Lorenz-gauge!) four-potential $\vv A = \vv A (\vv R)$ that propagates through free space (where the four-current density field $\vv J = \vv J (\vv R)$ is zero).\footnote{Our ``potential-first" approach in this section is \emph{only} valid in the Lorenz gauge. The results it generates for the $\vv e$ and $\vv b$ fields, however, are gauge-invariant.} To discuss it mathematically, then, means working with solutions to the homogeneous wave equation
+Light is an electromagnetic wave---a disturbance in the (Lorenz-gauge!) four-potential $\vv A = \vv A (\vv R)$ that propagates at $\beta = 1$ through free space (where the four-current density field $\vv J = \vv J (\vv R)$ is zero).\footnote{Our ``potential-first" approach in this section is \emph{only} valid in the Lorenz gauge. The results it generates for the $\vv e$ and $\vv b$ fields, however, are gauge-invariant.} To discuss it mathematically, then, means working with solutions to the \emph{homogeneous} wave equation
 \begin{equation*}
-\Box \vv A =  \left(\dfrac{\partial^2}{\partial (ct)^2} - \nabla ^2 \right) \vv A = \textrm{\mbox{\boldmath $\emptyset$}}
+\Box \vv A = \partial^{ct} \partial^{ct} \vv A - \nabla ^2 \vv A = \textrm{\mbox{\boldmath $\emptyset$}}
 \end{equation*}
-(Equation \ref{eq:fp} with $\vv J = \textrm{\mbox{\boldmath$\emptyset$}}$). We won't go over \emph{how to solve} this second-order linear partial differential equation. Rather, we'll take for granted the result from Fourier analysis that any of its solutions can be expressed as a superposition of monochromatic plane waves, and that its general monochromatic solution is:
+(Equation \ref{eq:fp} with $\vv J = \textrm{\mbox{\boldmath$\emptyset$}}$).\footnote{In Section \ref{ssec:retpot} we'll discuss solutions for the inhomogeneous case ($\vv J \neq \textrm{\mbox{\boldmath$\emptyset$}}$).} We won't go over \emph{how to solve} this second-order linear partial differential equation. Rather, we'll take for granted the result from Fourier analysis that any of its solutions can be expressed as a superposition of monochromatic plane waves, and that its general monochromatic solution is:
 \begin{equation}\label{eq:pw}
 \vv A (\vv R) = \Re \left \lbrace \bar{\vv A} \mathrm{e}^{\mathrm{i} \mkern.5mu \vv K \cdot \vv R} \right \rbrace ,
 \end{equation}
