@@ -3213,15 +3213,15 @@ For time-independent sources (not necessarily electrostatics!), $\vv e$ is the n
 \begin{equation}\label{eq:electrostatice}
 \vv e (\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\rho ( \vv r _{s}) \, (\vv r - \vv r_{s})}{\vert \vv r - \vv r_{s} \vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}},
 \end{equation}
-where the del went inside the integrand because it operates only on functions of $\vv r$, and where we've used:
+where the del went inside the integral because it operates only on functions of $\vv r$ (which is independent of the integration variable), and where we've used:
 \begin{equation}\label{eq:gradoverr}
 \del \left( \dfrac{1}{\vert \vv r - \vv r_{s} \vert} \right) = - \dfrac{\vv r - \vv r_{s}}{\vert \vv r - \vv r_{s} \vert ^3}
 \end{equation}
-(if that troubles you, calculate it component-wise in Cartesian coordinates). In electrostatics specifically, $\vv b = \vv 0$, and the Lorentz three-force (Equation \ref{eq:ltf}) is just $q \vv e$. With Equation \ref{eq:electrostatice}, this gives:
+(if that's new to you, calculate it component-wise in Cartesian coordinates). In electrostatics specifically, $\vv b = \vv 0$, and the Lorentz three-force (Equation \ref{eq:ltf}) is just $q \vv e$. With Equation \ref{eq:electrostatice}, this gives:
 \begin{equation}\label{eq:coulomb}
 \vv f_{\textrm{L}} (\vv r) = \dfrac{q}{4 \pi} \int \dfrac{\rho ( \vv r _{s}) \, (\vv r - \vv r_{s})}{\vert \vv r - \vv r_{s} \vert ^3} \, \dd V_{s}  \quad \text{\footnotesize{(in electrostatics)}}.
 \end{equation}
-That's \textbf{Coulomb's law}, the electrostatic force acting on a test particle with charge $q$ at position $\vv r$. Strictly speaking the particle must be at rest for the law to hold, but Equation \ref{eq:coulomb} is still a good approximation in many almost-electrostatic situations.
+That's \textbf{Coulomb's law}, the electrostatic force acting on a test particle with charge $q$ at position $\vv r$.
 
 Now we'll find $\vv b$ (curl of Equation \ref{eq:retvp}):
 \begin{equation}\label{eq:biot}
@@ -3231,7 +3231,7 @@ where we've used ${\del \times [ \mkern1mu f(\vv r) \, \vv j(\vv r_{s})] = \del 
 \begin{equation}\label{eq:magnetostaticf}
 \vv f_{\textrm{L}} (\vv r) = \dfrac{q \vvbeta}{4 \pi} \times \int \dfrac{\vv j ( \vv r _{s}) \times (\vv r - \vv r_{s})}{\vert \vv r - \vv r_{s} \vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(in magnetostatics)}},
 \end{equation}
-for the magnetostatic force acting on a test particle with charge $q$ and velocity $\vvbeta$ at position $\vv r$. (Its extension to the force acting on a current-carrying wire is more useful. In fact, if the test particle isn't part of an electrically neutral stationary current, then the magnetostatic conditions aren't even satisfied.) Both Equations \ref{eq:coulomb} and \ref{eq:magnetostaticf} are inverse-square force laws.
+for the magnetostatic force acting on a test particle with charge $q$ and velocity $\vvbeta$ at position $\vv r$. Both Equations \ref{eq:coulomb} and \ref{eq:magnetostaticf} are inverse-square force laws.
 
 There's an awful lot more to electrostatics and magnetostatics than this. We've merely shown how to obtain the conditions and some key equations from our covariant formulation.
 
