@@ -89,7 +89,7 @@
 
 \begin{document}
 
-\title{Covariant ``Electrodyadics":\\A Gentle, ``Massless" Introduction to\\Relativistic Dynamics and Maxwell's Theory}
+\title{Covariant Electrodyadics:\\A Gentle, ``Massless" Introduction to\\Relativistic Dynamics and Maxwell's Theory}
 \author{Michael Allen Warner}
 \date{Last updated: \today}
 
@@ -239,7 +239,7 @@ In Einstein's original ``$E=mc^2$" paper,\footnote{Einstein, A.: Ist die Tr\"agh
 The paper is concise---almost perfunctory---but it's also rather subtle. We're going to walk through the thought experiment twice. The first time we'll feign ignorance of special relativity, putting ourselves in the shoes of a physicist in mid-1905. We'll fail, but our failure will be instructive. On the second pass, we'll retrace Einstein's steps (more or less).
 
 
-\subsection{Einstein's Thought Experiment without Einstein}
+\subsection[Einstein’s Thought Experiment without Einstein]{Einstein's Thought Experiment without Einstein}
  
 \subsubsection{Newton and Maxwell; Additivity and Conservation}
 
@@ -550,7 +550,7 @@ If you're wondering how the observers in Einstein's thought experiment can possi
 So when we apply Equation \ref{eq:8} to our thought experiment, we can arrange for the moving observer to personally detect one of the light waves with a spectrometer, but then the other wave must be detected by a \emph{second} spectrometer elsewhere in the frame, along the wave's path. Or we can disregard the observer altogether and simply speak of two spectrometers. It doesn't matter. The important thing is that the spectrometers move with the same velocity $\vvbeta$ relative to the light-emitting body. And since the light waves propagate in opposite directions from the body's perspective, the angles they form with $\vvbeta$ must differ by $\pi$. How convenient! The cosines of such angles sum to zero (i.e., $\cos \mkern1.5mu (\theta+\pi)=-\cos\theta$), and that's just what we'll need for all the $\theta$'s to disappear when we use Equation \ref{eq:8} to add the $E^{\prime}$ of one light wave to the $E^{\prime}$ of the other. Apparently this Einstein fellow knew what he was doing. But we're getting ahead of ourselves.
 
 
-\subsection[Einstein's Thought Experiment \emph{with} Einstein: Relativistic Energy and $m=E_0/c^2$]{Einstein's Thought Experiment \emph{with} Einstein:\\Relativistic Energy and $\bm{m=E_0/c^2}$}\label{ssec:re}
+\subsection[Einstein’s Thought Experiment \emph{with} Einstein: Relativistic Energy and $m=E_0/c^2$]{Einstein's Thought Experiment \emph{with} Einstein:\\Relativistic Energy and $\bm{m=E_0/c^2}$}\label{ssec:re}
 
 Let's take stock. When we analyzed the thought experiment without special relativity, we hit a roadblock: on the one hand, the additivity of mass implies that the observers should agree that the light waves have equal-and-opposite momenta and carry away a combined energy equal to $-\Delta E_0$ (the rest energy lost by the body); on the other hand, Maxwell and Doppler say that \emph{only} our rest observer can find that to be the case. Now we have a path forward---abandon the assumption that mass is additive, prioritize Maxwell and Doppler, and retrace Einstein's steps (more or less) in deriving a new \emph{relativistic} equation for kinetic energy. Then we'll tackle momentum.
 
@@ -2580,7 +2580,7 @@ Equation \ref{eq:gfp} is the electromagnetic field equation. Something beautiful
 The disturbance propagates forever, and this is how information about $\vv J$ spreads. The sum of all such disturbances passing through a point in space at a given time determines the ``value" of $\vv A$ at that event (scare quotes because the value isn't uniquely defined---we have ``gauge freedom" even within the Lorenz gauge, remember). In regions where $\vv J$ vanishes \emph{everywhere} (\textbf{free space}), the disturbances are called \textbf{electromagnetic waves}.
 
 
-\subsubsection{Lorentz Four-Force; e and b Fields; Maxwell's Equations}\label{sssec:lff}
+\subsubsection[Lorentz Four-Force; e and b Fields; Maxwell’s Equations]{Lorentz Four-Force; e and b Fields; Maxwell's Equations}\label{sssec:lff}
 
 We've introduced the four-potential $\vv A = \vv A (\vv R)$ as any vector field whose negative ``double curl" equals the four-current density $\vv J$, but we haven't yet established why we should care about it. We care about it because of the following empirical result:\footnote{In the next section, we'll actually ``derive" it with the Euler--Lagrange equation.}
 \begin{equation}\label{eq:ff}
@@ -2818,7 +2818,7 @@ H = \dfrac{\left( \vv P_\mathrm{c} - q \vv A \right) ^2}{2 E_0} .
 
 ``All" of classical electromagnetism is contained in Equations \ref{eq:fp} and \ref{eq:ff}. Now let's apply it. Remember, our goal is to obtain Equation \ref{eq:8} without using the Planck--Einstein relation. To do this, we'll first coax some general information about electromagnetic energy (and momentum) from the Lorentz four-force. Then we'll briefly discuss light---i.e., solutions to Equation \ref{eq:fp} when $\vv J = \textrm{\mbox{\boldmath $\emptyset$}}$---and try to figure out how its energy transforms under a Lorentz boost.
 
-\subsubsection{The Lorentz Four-Force Density; Poynting's Theorem}\label{sssec:lffd}
+\subsubsection[The Lorentz Four-Force Density; Poynting’s Theorem]{The Lorentz Four-Force Density; Poynting's Theorem}\label{sssec:lffd}
 
 If we differentiate the Lorentz four-force (Equation \ref{eq:ff}) with respect to the proper volume ${V_0 = \gamma V}$ of a small piece of a continuous fluid-like charge distribution, we get a four-vector called the \textbf{Lorentz four-force density}:\footnote{A more sophisticated continuum-based approach would reverse this: start with the force \emph{density}, and obtain the Lorentz force from a limiting procedure.}
 \begin{equation*}
@@ -2963,7 +2963,7 @@ Now the electric field, using $K^{ct} = k = (\vv{\hat{k}} \cdot \vv k)$ and $\ba
 The takeaway here is that for a light wave, $\vv e$, $\vv b$, and $\vv k$ (in cyclic permutations of that order) constitute a right-handed set of mutually perpendicular three-vectors, with $\vv e$ and $\vv b$ having equal magnitudes (recall our discovery in Section \ref{sssec:lff} that $\vv e \perp \vv b$ and $e = b$ are Lorentz-invariant conditions).\footnote{This is actually too broad a statement, since a \emph{general} superposition of monochromatic plane-wave solutions doesn't retain these properties. A superposition of solutions that all share a $\vv{\hat{k}}$ does, however.} It follows that the electromagnetic energy density $u = (e^2 + b^2) / 2$ at any point reduces to $u = e^2 = b^2$, and that the Poynting vector $\vv s = \vv e \times \vv b$ reduces to ${\vv s = u \vv{\hat{k}} = e^2 \vv{\hat{k}} = b^2 \vv{\hat{k}}}$.\footnote{\label{fn:epc}In Section \ref{ssec:emm}, we'll learn that the Poynting vector is the electromagnetic momentum density (\emph{in addition} to representing the flux density or flow of electromagnetic energy). This means that the relation $s = u$ gives $E = pc$ for light (we'll have derived Equation \ref{eq:3}).} By Equations \ref{eq:bpw} and \ref{eq:epw}, the wave's \emph{average} energy density is $\langle u \rangle = \bar{e}^2 / 2 = \bar{b}^2 / 2$ (the average of a squared sinusoidal function over the course of a cycle is always $1/2$), and the wave's \emph{average} Poynting vector is $\langle \vv s \rangle = \langle u \rangle \vv{\hat{k}} = \vv{\hat{k}} \mkern1mu \bar{e}^2 / 2 = \vv{\hat{k}} \mkern1mu \bar{b}^2 / 2$.
 
 
-\subsubsection{Transforming Light's Energy}
+\subsubsection[Transforming Light’s Energy]{Transforming Light's Energy}
 
 Having established that a light wave's average energy density is $\langle u \rangle = \bar{e}^2 / 2$, we can learn how light's energy transforms under a Lorentz boost by transforming $\langle u \rangle V = \bar{e}^2 V / 2$, where $V$ is the volume containing the electromagnetic energy in the first frame. Of course, dividing by two has no effect on a transformation rule, and $\bar{\vv e}$ is just the maximum value of $\vv e$ during a cycle. So $\langle u \rangle$ and $u$ transform the same way, and our mission stated more simply is to transform $uV = e^2 V$.
 
@@ -3233,7 +3233,7 @@ where we've used ${\del \times [ \mkern1mu f(\vv r) \, \vv j(\vv r_{s})] = \del 
 \end{equation}
 for the magnetostatic force acting on a test particle with charge $q$ and velocity $\vvbeta$ at position $\vv r$. Both Equations \ref{eq:coulomb} and \ref{eq:magnetostaticf} are inverse-square force laws.
 
-There's an awful lot more to electrostatics and magnetostatics than this. We've merely shown how to obtain the conditions and some key equations from our covariant formulation.
+There's an awful lot more to electrostatics and magnetostatics than this. We've merely shown how to obtain the conditions and some key equations from our four-vector formulation. In Section \ref{ssec:covstatics} we'll express those conditions in a manifestly covariant way, but otherwise we won't explore these topics further.
 
 \clearpage
 
@@ -3567,7 +3567,7 @@ q
 \end{equation*}
 (cf. Equation \ref{eq:lfc}). The same procedure for the Lorentz four-force \emph{density} ${\bm{\mathfrak{F}} = \vv J \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A)}$ (Equation \ref{eq:lffd})---arguably the more fundamental quantity in the classical theory---gives:
 \begin{equation}\label{eq:lffdfd}
-\boxed{ \vphantom{A_{A_A}} \bm{\mathfrak{F}} = \capdy{\mathsf{F}} \cdot \vv J } \, .
+\boxed{ \vphantom{A_{A_{A_A}}} \bm{\mathfrak{F}} = \capdy{\mathsf{F}} \cdot \vv J } \, .
 \end{equation}
 
 Next, the field equations. When we initially obtained Maxwell's equations (Equations \ref{eq:me}), we noted that they constitute two four-vectors, and that their forms suggest expressions involving $\partialup$ as the \emph{first} derivative of something. At the time, we didn't have the tools to proceed. Now we do, and we start with the inhomogeneous pair, $\del \cdot \, \vv e = \rho$ and ${ \del \times \vv b - \partial^{ct} \vv e = \vv j }$. From Equations \ref{eq:gfp} and \ref{eq:vtpi}:
@@ -4156,7 +4156,7 @@ which vanishes by Equations \ref{eq:fddf} and \ref{eq:gddg}.\footnote{\label{fn:
 
 Our new dyadic ${\inlinedy{\mathsf{T}}} _{\textrm{em}}$ is the \textbf{electromagnetic stress--energy tensor}. Its significance is revealed when we closely examine Equation \ref{eq:py} (Poynting's theorem, a statement of energy conservation) and Equation \ref{eq:tmc} (the corresponding statement of three-momentum conservation). Together, these expressions convey exactly the same information as:
 \begin{equation}\label{eq:fmc}
-\boxed{ \partialup \cdot \capdy{\mathsf{T}}_{\textrm{em}} = - \bm{\mathfrak{F}} } \,
+\boxed{ \vphantom{A_{A_{A_A}}} \partialup \cdot \capdy{\mathsf{T}}_{\textrm{em}} = - \bm{\mathfrak{F}} } \,
 \end{equation}
 ($\bm{\mathfrak{F}}$ being the Lorentz four-force density), because in matrix notation that's:
 \begin{equation}\label{eq:fmcm}
@@ -4243,7 +4243,7 @@ But what if we didn't already know that? Come to think of it, the only reason we
 So that's how it's done in classical field theory. Use Lagrangian methods to get the necessarily divergenceless total stress--energy tensor, and extract from it (the volume-density of) a four-vector $\vv P$ whose local and global conservation is thereby established. With electrodynamics in particular, we'd start with ${\inlinedy{\mathsf{T}}}_{\textrm{em}} = ( \inlinedy{\mathsf{F}} \cdot \inlinedy{\mathsf{F}} + \inlinedy{\mathsf{G}} \cdot \inlinedy{\mathsf{G}} ) / 2$ and field equation $\partialup \cdot \inlinedy{\mathsf{F}} = \vv J$ (likewise obtained Lagrangianly), invoke conservation of four-momentum to write the \emph{form} of Equation \ref{eq:fmc} ($\partialup \cdot {\inlinedy{\mathsf{T}}}_{\textrm{em}}$ \emph{must} be the negative of the Lorentz four-force density $\bm{\mathfrak{F}}$), and use the field equation to express $\bm{\mathfrak{F}}$ in terms of $\inlinedy{\mathsf{F}}$ and $\vv J$ (i.e., to show that $\partialup \cdot ( \inlinedy{\mathsf{F}} \cdot \inlinedy{\mathsf{F}} + \inlinedy{\mathsf{G}} \cdot \inlinedy{\mathsf{G}} ) / 2 = \vv J \cdot \inlinedy{\mathsf{F}}$, a direct calculation for Equation \ref{eq:lffdfd} that involves rank-3 tensors but isn't so bad in index notation).\footnote{The Lorentz four-force $\vv F_{\mathrm{L}}$ can then be generated from the force density via a limiting procedure (see Footnote \ref{fn:recoil}).} This density-first approach is the sophisticated and mathematically precise way to handle the four-momentum of anything other than a point particle.\footnote{And even for a point particle, the density-first approach works (with the Dirac delta function), though again, classical field theory is really about continua, not particles.} It's the \emph{only} satisfactory way to handle the four-momentum of electromagnetic fields, though sometimes one can avoid working directly with the stress--energy tensor by arguing from conservation and appealing to ``$E = pc$" for light, as we did in the early sections of this paper.
 
 
-\subsection{Covariant Electrostatics and Magnetostatics}
+\subsection{Covariant Electrostatics and Magnetostatics}\label{ssec:covstatics}
 
 The title of this section is something of an oxymoron. As we know from Section \ref{ssec:retpot}, the conditions for electrostatics and magnetostatics are, first, the time-independence of the sources and the fields (the four-current density $\vv J$ and the Faraday tensor $\inlinedy{\mathsf{F}}$), and second, the vanishing (everywhere) of either the three-current density $\vv j$ and magnetic field $\vv b$ (for electrostatics) or the charge density $\rho$ and electric field $\vv e$ (for magnetostatics).\footnote{\emph{Under appropriate boundary conditions} (``no incoming radiation"---see Section \ref{ssec:retpot}), the time-independence of the sources guarantees the time-independence of the fields, and then the everywhere-vanishing of $\vv j$ (or $\rho$) guarantees the vanishing of $\vv b$ (or $\vv e$). Also see Footnote \ref{fn:statics} about our relatively strict conditions for electrostatics and magnetostatics.} But these conditions aren't Lorentz-covariant! Time-independence of $\vv J$ is written like $\partial^{ct} \vv J = \textrm{\mbox{\boldmath $\emptyset$}}$ (similarly for $\inlinedy{\mathsf{F}}$), and that's \emph{not} a tensor equation. Indeed, under a standard-configuration boost to a ``primed" frame, that becomes ${(\gamma \partial^{\mkern.5mu \prime \mkern1mu ct} + \gamma \beta \partial^{\mkern.5mu \prime \mkern1mu x}) \vv J = \textrm{\mbox{\boldmath $\emptyset$}}}$, since the operator $\partialup$ is a four-vector. Likewise, a vanishing $\vv j$ (or $\rho$) in one frame generally transforms to a vanishing \emph{mix} of $\vv j ^\prime$ and $\rho ^\prime$ in another, and of course the fields mix under a boost, too. So ``covariant electrostatics and magnetostatics" should raise an eyebrow.
 
