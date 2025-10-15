@@ -580,15 +580,15 @@ Now we have $E_{\ell \, 1}^{\prime} + E_{\ell \, 2}^{\prime}$ in terms of $\Delt
 \begin{equation}\label{eq:11}
 E_{\ell \, 1}^{\prime} + E_{\ell \, 2}^{\prime}=-\Delta E^{\prime}.
 \end{equation}
-Here comes the fun part. Substitute Equation \ref{eq:11} into Equation \ref{eq:10}:
+Here comes the key step. Substitute Equation \ref{eq:11} into Equation \ref{eq:10}:
 \begin{equation*}
 \Delta E^{\prime} = \gamma \Delta E_0,
 \end{equation*}
-and drop the deltas (kosher if we throw in a constant---call it $C$):
+and drop the deltas (kosher if we throw in a constant\footnote{\label{fn:gammacaveat}Kosher because $\gamma$ itself is a constant here (the body's velocity doesn't change).}---call it $C$):
 \begin{equation*}
 E^{\prime} = \gamma E_0 + C.
 \end{equation*}
-When $\beta = 0$ (i.e., when $\gamma = 1$), that's just $E^{\prime} = E_0 + C$, but by Equation \ref{eq:6} we know that $E^{\prime} = E_0$ in that case, so $C=0$:
+When $\beta = 0$ (i.e., when $\gamma = 1$), that's just $E^{\prime} = E_0 + C$, but by Equation \ref{eq:6} we know that $E^{\prime} = E_0$ in that case, so $C=0$:\footnote{Mathematically, $C$ could still depend on $\beta$ (see Footnote \ref{fn:gammacaveat}). Physically, however, an energy term depending \emph{only} on speed isn't even well-defined: the speed of \emph{what}? An ``object"? A ``system"? If a one-object system splits into two, does its $C$-contribution double? How can total energy remain additive, then? No, $C$ must vanish, period.}
 \begin{equation*}
 E^{\prime} = \gamma E_0.
 \end{equation*}
@@ -1072,7 +1072,7 @@ We want to know whether $\vv P \cdot \dd \vv R = (\vv P \cdot \dd \vv R)^\prime$
 &=(E)(c \, \dd t) - (cp_x) (\dd x).
 \end{split}
 \end{equation*}
-Wonderful! The dot product of \emph{any} two four-vectors is Lorentz-invariant\footnote{(Poincar\'e-invariant, even, as long as there are no position four-vectors involved)} as a direct consequence of the Lorentz-transformability of their components. Frankly, if that weren't the case, this four-vector business would be pointless.
+There! The dot product of \emph{any} two four-vectors is Lorentz-invariant\footnote{(Poincar\'e-invariant, even, as long as there are no position four-vectors involved)} as a direct consequence of the Lorentz-transformability of their components. Frankly, if that weren't the case, this four-vector business would be pointless.
 
 Here is a quick example of the utility---nay, necessity---of this result. Imagine a perfectly inelastic collision between particles $h$ and $j$ with known rest energies $E_{0 \mkern.5mu h}$ and $E_{0j}$. Say that particle $h$ travels with velocity $\vvbeta$ (and Lorentz factor $\gamma$) in particle $j$'s rest frame before the collision. Given that information, how could we find the rest energy of the resulting composite ``blob"? By the additivity and conservation of four-momentum, we have:
 \begin{equation*}
