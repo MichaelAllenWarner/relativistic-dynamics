@@ -418,7 +418,7 @@ with the inverse transformation on the right. Equations \ref{eq:lt2} have slight
 
 For the sake of completeness, let's derive the transformation for a boost in an arbitrary direction, $\hatbeta = \vvbeta / \beta$. Under standard configuration, Equations \ref{eq:lt} are in play, and we have (going from unprimed frame to primed) ${ \hatbeta = \langle 1, 0, 0 \rangle }$. With the position vector $\vv r = \langle x, y, z \rangle$, we've got ${ \vv r _\parallel = \langle x, 0, 0 \rangle }$ and ${\vv r _\perp = \langle 0, y, z \rangle}$ for the component-vectors of $\vv r$ that are parallel and perpendicular to the boost-direction (respectively the ``projection" of $\vv r$ onto $\hatbeta$ and the ``rejection" of $\vv r$ from $\hatbeta$). Since then $\vv r _\parallel \cdot \hatbeta = x$, substitution gives:
 \begin{equation*}
-c t^{\prime} = \gamma \big( c t - \beta (\vv r _\parallel \cdot \hatbeta ) \big),
+c t^{\prime} = \gamma \big[ c t - \beta (\vv r _\parallel \cdot \hatbeta ) \big],
 \end{equation*}
 which clearly works for \emph{arbitrary} $\hatbeta$. Likewise, we must have $\vv r^{\prime} _\perp = \vv r _\perp$ and (by $\vv r _\parallel = x \langle 1, 0, 0 \rangle = x \hatbeta$):
 \begin{equation*}
@@ -426,8 +426,8 @@ which clearly works for \emph{arbitrary} $\hatbeta$. Likewise, we must have $\vv
 \end{equation*}
 where again $\hatbeta$ can be arbitrary. Finally, we use $\vv r = \vv r _\parallel + \vv r _\perp$, the vector-projection formula $\vv r _\parallel = (\vv r \cdot \hatbeta) \hatbeta$, and a bit of algebra to condense our new arbitrary-boost relations to two equations without $\vv r _\parallel$ or $\vv r _\perp$:
 \begin{equation}\label{eq:lt3}
-c t^{\prime} = \gamma \big( c t - \beta ( \vv r \cdot \hatbeta ) \big) \qquad \quad
-\vv r^{\prime} = \vv r + \big( (\gamma - 1)(\vv r \cdot \hatbeta) - \gamma \beta c t \big) \hatbeta .
+c t^{\prime} = \gamma \big[ c t - \beta ( \vv r \cdot \hatbeta ) \big] \qquad \quad
+\vv r^{\prime} = \vv r + \big[ (\gamma - 1)(\vv r \cdot \hatbeta) - \gamma \beta c t \big] \hatbeta .
 \end{equation}
 For the arbitrary-direction version of Equations \ref{eq:lt2}, insert $\Delta$'s.
 
@@ -860,7 +860,7 @@ or introducing the symbol $\vvomega \equiv \mathring{\vv r} = \gamma \dot{\vv r}
 \begin{equation}\label{eq:29}
 \boxed{\vv p c = E_0 \vvomega} \quad \textrm{\footnotesize{ (for $E_0 \neq 0$)}}.
 \end{equation}
-Looks identical to our low-$\beta$ approximation for momentum but with a \emph{proper}-time derivative instead of a coordinate-time derivative (cf.\ Equation \ref{eq:16}). It goes without saying that Equation \ref{eq:29} is another way of writing Equation \ref{eq:17}; it's only a matter of where we put the Lorentz factor.
+Looks identical to our low-$\beta$ approximation for momentum but with a \emph{proper}-time derivative instead of a coordinate-time derivative (cf.\ Equation \ref{eq:16}). And Equation \ref{eq:29} is plainly equivalent to Equation \ref{eq:17}; the difference is purely notational.
 
 We'll call the vector $\vvomega = \gamma \vvbeta$ the (``normalized") \textbf{celerity}.\footnote{The ``unnormalized" celerity $\gamma \vv v$ is usually notated $\vv w$, so $\vvomega = \vv w / c$.} The scare quotes around \emph{normalized} are there because although $\vvomega$ is indeed dimensionless like $\vvbeta$, it has no upper limit (its magnitude $\omega = \gamma \beta$ can exceed one). Celerity often goes by the name ``proper velocity," but that's a confusing misnomer. We'll reserve the word \emph{proper} for rest-frame ``versions" of frame-dependent quantities.\footnote{\label{fn:pr}A competing convention prepends \emph{proper} to $t_0$-derivatives (hence ``proper velocity").} For instance, proper energy $E_0$ is a traveler's total energy $E$ as measured by an observer at rest relative to the traveler. Likewise, a proper time interval $c \mkern.5mu \Delta t_0$ (or $c \, \dd t_0$) is the coordinate time interval $c \mkern.5mu \Delta t$ (or $c \, \dd t$) in the traveler's (instantaneous) rest frame, where $\beta = 0$ and $\gamma = 1$. Proper energy and proper time intervals have \emph{invariant} values, as do all proper quantities; celerity does not. (For proper quantities that are vectors, it's the magnitude that's invariant.) Granted, proper velocity defined ``properly" would be a quantity of little interest---a zero vector---so the term is arguably up for grabs. Still, for the sake of consistency, we won't use it. Further, all our proper quantities will get the naught subscript, like $E_0$ and $c \mkern.5mu \Delta t_0$. The next one we'll encounter is the (``normalized") proper acceleration $\vvzeta_{\mkern1mu 0}$ (Section \ref{sssec:pa}).
 
@@ -1292,7 +1292,7 @@ We see in Equation \ref{eq:41} that $\vv f \neq E_0 \vvzeta$ $( = m \vv a)$, eve
 To gain a bit more insight into the relationship between force and acceleration, let's isolate $\vvzeta$ on one side of the equation so that we can compare the result with the Newtonian $\vvzeta = \vv f_{\mathrm{classical}} / E_0$. First we'll need to factor out that $(\vvbeta \cdot \vvzeta)$ on the right side, which we accomplish by taking the dot product of Equation \ref{eq:43} with the normalized three-velocity:
 \begin{equation*}
 \begin{split}
-\vv f \cdot \vvbeta &= \left( \gamma^2 E \mkern1mu (\vvbeta \cdot \vvzeta) \vvbeta + E \vvzeta \right) \cdot \vvbeta \\
+\vv f \cdot \vvbeta &= \left[ \gamma^2 E \mkern1mu (\vvbeta \cdot \vvzeta) \vvbeta + E \vvzeta \right] \cdot \vvbeta \\
 &= \gamma^2 E \mkern1mu (\vvbeta \cdot \vvzeta)(\beta^2 + \gamma^{-2}) \\
 &= \gamma^2 E \mkern1mu (\vvbeta \cdot \vvzeta)
 \end{split}
@@ -1944,8 +1944,8 @@ and if we introduce the hyperbolic secant ($\text{sech} \, \phi = 1 / \cosh{\phi
 Not bad! A better-known approximation (virtually identical to Equation \ref{eq:ur} in the ultrarelativistic limit) comes from Equation \ref{eq:20}:
 \begin{equation*}
 \begin{split}
-\gamma^{-2} &= 1 - \bigl( 1 - \left( 1 - \beta \right) \bigr)^2 \\
-& = 1 - \left( 1 - 2 \left( 1 - \beta \right) + \left( 1 - \beta \right)^2 \right),
+\gamma^{-2} &= 1 - \bigl[ 1 - \left( 1 - \beta \right) \bigr]^2 \\
+& = 1 - \left[ 1 - 2 \left( 1 - \beta \right) + \left( 1 - \beta \right)^2 \right],
 \end{split}
 \end{equation*}
 where we set $(1 - \beta)^2 \approx 0$, leaving:
@@ -1957,7 +1957,7 @@ where we set $(1 - \beta)^2 \approx 0$, leaving:
 \end{equation}
 Equation \ref{eq:ug} is convenient if you know $\gamma$. Equation \ref{eq:ub} ($=$ Equation \ref{eq:ur}) is good if you know $E_0$ and $p c$. If you know the rapidity, take your pick.
 
-That was a productive digression, but we don't need any of it for the pseudorapidity. The pseudorapidity is what the longitudinal rapidity $\varphi$ becomes---er, what the particle physicist's ``rapidity" $y$ becomes---when we set $\beta \approx 1$:
+That was a productive digression, but we don't actually need any of it for the pseudorapidity (sorry!). The pseudorapidity is what the longitudinal rapidity $\varphi$ becomes---er, what the particle physicist's ``rapidity" $y$ becomes---when we set $\beta \approx 1$:
 \begin{equation*}
 \begin{aligned}
 y \equiv \varphi &= \tanh^{-1} \beta_z \\
@@ -2283,7 +2283,7 @@ Let's notate it $\partialup$ (``vectorized" $\partial$ symbol). A natural guess 
 but do these components transform Lorentzianly under a boost? If not, then $\partialup$ isn't a four-vector, and using it to operate on a spacetime scalar field (whose value at each event is invariant) won't have the intended effect of producing a four-vector field. To find out, use the multivariable chain rule and Equations \ref{eq:lt} (standard configuration, so $ct^\prime$ and $x^\prime$ are functions of $ct$ and $x$, and vice versa). In detail for the $ct^\prime$-partial, and then similarly for the $x^\prime$-partial:
 \begin{equation*}
 \begin{split}
-\dfrac{\partial}{\partial (ct^\prime)} &= \dfrac{\partial (ct)}{\partial (ct^\prime)} \, \dfrac{\partial}{\partial (ct)} \, + \, \dfrac{\partial x}{\partial (ct^\prime)} \, \dfrac{\partial}{\partial x} \\[3pt] &= \dfrac{\partial}{\partial (ct^\prime)} \big( \gamma \mkern1mu ct^\prime + \gamma \beta x^\prime \big) \dfrac{\partial}{\partial (ct)} \, + \, \dfrac{\partial}{\partial (ct^\prime)} \big( \gamma x^\prime + \gamma \beta \mkern1mu ct^\prime \big) \dfrac{\partial}{\partial x} \\[3pt] &= \gamma \left( \dfrac{\partial}{\partial (ct)} + \beta \, \dfrac{\partial}{\partial x} \right) \\[3pt]
+\dfrac{\partial}{\partial (ct^\prime)} &= \dfrac{\partial (ct)}{\partial (ct^\prime)} \, \dfrac{\partial}{\partial (ct)} \, + \, \dfrac{\partial x}{\partial (ct^\prime)} \, \dfrac{\partial}{\partial x} \\[3pt] &= \dfrac{\partial}{\partial (ct^\prime)} \big( \gamma \mkern1mu ct^\prime + \gamma \beta x^\prime \big) \dfrac{\partial}{\partial (ct)} \, + \, \dfrac{\partial}{\partial (ct^\prime)} \big( \gamma x^\prime + \gamma \beta \mkern1mu ct^\prime \big) \dfrac{\partial}{\partial x} \\[3pt] &= \gamma \left( \dfrac{\partial}{\partial (ct)} + \beta \, \dfrac{\partial}{\partial x} \right) ; \\[3pt]
 \dfrac{\partial}{\partial x^\prime} &= \dfrac{\partial x}{\partial x^\prime} \, \dfrac{\partial}{\partial x} \, + \, \dfrac{\partial (ct)}{\partial x^\prime} \, \dfrac{\partial}{\partial (ct)}  = \gamma \left( \dfrac{\partial}{\partial x} + \beta \, \dfrac{\partial}{\partial (ct)}  \right) .
 \end{split}
 \end{equation*}
@@ -2682,7 +2682,7 @@ Equivalently, though maybe less elegantly:\footnote{Equations \ref{eq:ebr} are r
 where $\gamma = \cosh{\phi}$ and $\beta = \tanh{\phi}$ are boost parameters ($\hatbeta = \vvbeta / \beta = \hatphi$).\footnote{Naturally, transformations of \emph{four-vector components} under a Lorentz boost in an arbitrary direction can likewise be expressed in terms of the boost-rapidity. From Equations \ref{eq:lt3} (for the components of the four-position $\vv R$), it's not difficult to show that for some four-vector $\vv Q = \langle Q^{ct}, \vv q \rangle$, that's:
 \begin{equation*}
 Q^{\prime  \mkern1.5mu ct} = \cosh \phi \; Q^{ct} - \sinh \phi \; ( \hatphi \cdot \vv q ) \qquad \quad
-\vv q^{\prime} = \vv q + \big( 2 \sinh^2 \frac{\phi}{2} \; ( \hatphi \cdot \vv q ) - \sinh \phi \; Q^{ct} \big) \hatphi .
+\vv q^{\prime} = \vv q + \big[ 2 \sinh^2 \frac{\phi}{2} \; ( \hatphi \cdot \vv q ) - \sinh \phi \; Q^{ct} \big] \hatphi .
 \end{equation*}}
 
 Finally, it's useful to find a relationship between $\vv J = \langle \rho, \, \vv j \rangle$ and the $\vv e$ and $\vv b$ fields. Let's work in the Lorenz gauge, with $\vv J= \Box \vv A = \langle \Box \Phi, \Box \vv a \rangle$. By the Lorenz condition ${\partialup \cdot \vv A = 0}$ (Equation \ref{eq:lg}), or $\partial^{ct} \Phi = - \del \cdot \vv a$:
@@ -2952,7 +2952,7 @@ Now the electric field, using $K^{ct} = k = (\vv{\hat{k}} \cdot \vv k)$ and $\ba
 - \del \Phi - \partial^{ct} \vv a &= - \del \left( \bar{\Phi} \mathrm{e}^{\mathrm{i} f} \right) - \partial^{ct} \left( \bar{\vv a} \mkern1mu \mathrm{e}^{\mathrm{i} f} \right) \\
 &= - \mathrm{i} \mathrm{e}^{\mathrm{i} f} \left( \bar{\Phi} \del f + \bar{\vv a} \, \partial^{ct} f \right) \\
 &= - \mathrm{i} \mathrm{e}^{\mathrm{i} f} \left( K^{ct} \bar{\vv a} - \bar{\Phi} \vv k \right) \\[1pt]
-&= - \mathrm{i} \mathrm{e}^{\mathrm{i} f} \left( \bar{\vv a} (\vv{\hat{k}} \cdot \vv k )  - \vv k (\vv{\hat{k}} \cdot \bar{\vv a} ) \right) \\[1pt]
+&= - \mathrm{i} \mathrm{e}^{\mathrm{i} f} \left[ \bar{\vv a} (\vv{\hat{k}} \cdot \vv k )  - \vv k (\vv{\hat{k}} \cdot \bar{\vv a} ) \right] \\[1pt]
 &= - \mathrm{i} \mathrm{e}^{\mathrm{i} f} \, \vv{\hat{k}} \times (\bar{\vv a} \times \vv k) = - \mathrm{i} \mathrm{e}^{\mathrm{i} f} \, \bar{\vv b} \times \vv{\hat{k}}
 \end{aligned}
 \end{equation*}
@@ -2970,7 +2970,7 @@ Having established that a light wave's average energy density is $\langle u \ran
 For $u = e^2 = \vv e \cdot \vv e$, let's use Equations \ref{eq:ebr}:
 \begin{equation*}
 \begin{aligned}
-u^\prime &= \left( \cosh{\phi} \; \vv e + \sinh{\phi} \; (\hatphi \times \vv b) - 2 \sinh^2 \frac{\phi}{2} \; (\hatphi \cdot \vv e) \hatphi \right)^2 \\
+u^\prime &= \left[ \cosh{\phi} \; \vv e + \sinh{\phi} \; (\hatphi \times \vv b) - 2 \sinh^2 \frac{\phi}{2} \; (\hatphi \cdot \vv e) \hatphi \right]^2 \\
 &= e^2 \cosh^2{\phi} + (\hatphi \times \vv b)^2 \sinh^2{\phi} + 4(\hatphi \cdot \vv e)^2 \sinh^4{\frac{\phi}{2}} \\
 & \qquad + 2 \vv e \cdot (\hatphi \times \vv b) \cosh{\phi} \, \sinh{\phi} - 4 (\hatphi \cdot \vv e)^2 \cosh{\phi} \,\sinh^2{\frac{\phi}{2}}
 \end{aligned}
@@ -2992,13 +2992,13 @@ where we've also used $\vv e \cdot (\hatphi \times \vv b) = \hatphi \cdot (\vv b
 \begin{equation*}
 \begin{aligned}
 (\hatphi \times \vv b)^2 - (\hatphi \cdot \vv e)^2 &= b^2 - (\hatphi \cdot \vv b)^2 - (\hatphi \cdot \vv e)^2 \\
-&= e^2 \left( 1 - (\hatphi \cdot \vv{\hat b})^2 - (\hatphi \cdot \vv{\hat e})^2 \right) \\
+&= e^2 \left[ 1 - (\hatphi \cdot \vv{\hat b})^2 - (\hatphi \cdot \vv{\hat e})^2 \right] \\
 &= e^2 ( \hatphi \cdot \vv{\hat s} )^2
 \end{aligned}
 \end{equation*}
 (because $\vv e$, $\vv b$, and $\vv s$ are mutually perpendicular for light).\footnote{This is merely the Euclidean distance formula in disguise: $(\hatphi \cdot \vv{\hat e})$, $(\hatphi \cdot \vv{\hat b})$, and $( \hatphi \cdot \vv{\hat s} )$ are the direction cosines for $\hatphi$ with respect to the ``Cartesian axes" $\vv e$, $\vv b$, and $\vv s$, so their squares must sum to $1$.} Suddenly our transformation for $u$ looks quite nice:
 \begin{equation*}
-u^\prime = e^2 \left( \cosh^2{\phi} - 2 ( \hatphi \cdot \vv{\hat s}) \cosh{\phi} \, \sinh{\phi} + ( \hatphi \cdot \vv{\hat s} )^2 \sinh^2{\phi} \right) ,
+u^\prime = e^2 \left[ \cosh^2{\phi} - 2 ( \hatphi \cdot \vv{\hat s}) \cosh{\phi} \, \sinh{\phi} + ( \hatphi \cdot \vv{\hat s} )^2 \sinh^2{\phi} \right] ,
 \end{equation*}
 or subbing in $u$ for $e^2$ and factoring:
 \begin{equation}\label{eq:edt}
@@ -3231,9 +3231,9 @@ where we've used ${\del \times [ \mkern1mu f(\vv r) \, \vv j(\vv r_{s})] = \del 
 \begin{equation}\label{eq:magnetostaticf}
 \vv f_{\textrm{L}} (\vv r) = \dfrac{q \vvbeta}{4 \pi} \times \int \dfrac{\vv j ( \vv r _{s}) \times (\vv r - \vv r_{s})}{\vert \vv r - \vv r_{s} \vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(in magnetostatics)}},
 \end{equation}
-for the magnetostatic force acting on a test particle with charge $q$ and velocity $\vvbeta$ at position $\vv r$.\footnote{Note that although Equation \ref{eq:magnetostaticf} \emph{looks like} an inverse-square force law, it isn't, really. Yes, there's an inverse-square dependence on distance for any given $\dd V_{s}$, but because the force isn't generally directed along the line of sight, that dependence isn't preserved under integration for an extended source (and a time-independent current is necessarily extended). By contrast, Coulomb's law (Equation \ref{eq:coulomb}) is genuinely inverse-square: a spherically symmetric charged body exerts an electrostatic force that falls off as the inverse square of the distance to its center.}
+for the magnetostatic force acting on a test particle with charge $q$ and velocity $\vvbeta$ at position $\vv r$.\footnote{Although Equation \ref{eq:magnetostaticf} may \emph{look like} an inverse-square force law, it isn't, really. Yes, there's an inverse-square dependence on distance for any given $\dd V_{s}$, but because the force isn't generally directed along the line of sight, that dependence isn't preserved under integration for an extended source (and a time-independent current is necessarily extended). Coulomb's law, by contrast, describes a \emph{central} force that's genuinely inverse-square: a spherically symmetric charged body exerts an electrostatic force on external charges that falls off as the inverse square of the distance to its center.}
 
-There's an awful lot more to electrostatics and magnetostatics than this. We've merely shown how to obtain the conditions and some key equations from our four-vector formulation. In Section \ref{ssec:covstatics} we'll express those conditions in a manifestly covariant way, but otherwise we won't explore these topics further.
+There's an awful lot more to electrostatics and magnetostatics than this! We've merely shown how to obtain the conditions and some key equations from our four-vector formalism. In Section \ref{ssec:covstatics} we'll express those conditions in a manifestly covariant way, but otherwise we won't explore these topics further.
 
 \clearpage
 
