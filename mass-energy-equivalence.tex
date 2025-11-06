@@ -3215,9 +3215,19 @@ For time-independent sources (not necessarily electrostatics!), $\vv e$ is the n
 \end{equation}
 where the del went inside the integral because it operates only on functions of $\vv r$ (which is independent of the integration variable), and where we've used:
 \begin{equation}\label{eq:gradoverr}
-\del \left( \dfrac{1}{\vert \vv r - \vv r_{s} \vert} \right) = - \dfrac{\vv r - \vv r_{s}}{\vert \vv r - \vv r_{s} \vert ^3}
+\del \left( \dfrac{1}{\vert \vv r - \vv r_{s} \vert} \right) = - \dfrac{\vv r - \vv r_{s}}{\vert \vv r - \vv r_{s} \vert ^3},
 \end{equation}
-(if that's new to you, calculate it component-wise in Cartesian coordinates). In electrostatics specifically, $\vv b = \vv 0$, and the Lorentz three-force (Equation \ref{eq:ltf}) is just $q \vv e$. With Equation \ref{eq:electrostatice}, this gives:
+which is readily derived component-wise:
+\begin{equation*}
+\begin{aligned}
+\left[ \del \left( \dfrac{1}{\vert \vv r - \vv r_{s} \vert} \right) \right]_x &= \dfrac{\partial}{\partial x} \, \vert \vv r - \vv r_{s} \vert ^{-1} \\[1pt]
+&= - \vert \vv r - \vv r_{s} \vert ^{-2} \, \dfrac{\partial}{\partial x} \bigl[ \left( \vv r - \vv r_{s} \right) \cdot \left( \vv r - \vv r_{s} \right) \bigr] ^{1/2} \\[4pt]
+&= - \dfrac{1}{\vert \vv r - \vv r_{s} \vert ^{2}} \; \dfrac{1}{2} \left( \vert \vv r - \vv r_{s} \vert ^{2} \right) ^{-1/2} \dfrac{\partial}{\partial x} \bigl[ \left( \vv r - \vv r_{s} \right) \cdot \left( \vv r - \vv r_{s} \right) \bigr] \\[4pt]
+&= - \dfrac{1}{2 \vert \vv r - \vv r_{s} \vert ^{3}}  \; \dfrac{\partial}{\partial x} \left[ (x - x_s)^2 + (y - y_s)^2 + (z - z_s)^2 \right] \\[5pt]
+&= -\dfrac{(\vv r - \vv r_{s})_x}{\vert \vv r - \vv r_{s} \vert ^{3}}
+\end{aligned}
+\end{equation*}
+(etc.). In electrostatics specifically, we have $\vv b = \vv 0$, and the Lorentz three-force (Equation \ref{eq:ltf}) is just $q \vv e$. With Equation \ref{eq:electrostatice}, this gives:
 \begin{equation}\label{eq:coulomb}
 \vv f_{\textrm{L}} (\vv r) = \dfrac{q}{4 \pi} \int \dfrac{\rho ( \vv r _{s}) \, (\vv r - \vv r_{s})}{\vert \vv r - \vv r_{s} \vert ^3} \, \dd V_{s}  \quad \text{\footnotesize{(in electrostatics)}}.
 \end{equation}
@@ -3231,7 +3241,9 @@ where we've used ${\del \times [ \mkern1mu f(\vv r) \, \vv j(\vv r_{s})] = \del 
 \begin{equation}\label{eq:magnetostaticf}
 \vv f_{\textrm{L}} (\vv r) = \dfrac{q \vvbeta}{4 \pi} \times \int \dfrac{\vv j ( \vv r _{s}) \times (\vv r - \vv r_{s})}{\vert \vv r - \vv r_{s} \vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(in magnetostatics)}},
 \end{equation}
-for the magnetostatic force acting on a test particle with charge $q$ and velocity $\vvbeta$ at position $\vv r$.\footnote{Although Equation \ref{eq:magnetostaticf} may \emph{look like} an inverse-square force law, it isn't, really. Yes, there's an inverse-square dependence on distance for any given $\dd V_{s}$, but because the force isn't generally directed along the line of sight, that dependence isn't preserved under integration for an extended source (and a time-independent current is necessarily extended). Coulomb's law, by contrast, describes a \emph{central} force that's genuinely inverse-square: a spherically symmetric charged body exerts an electrostatic force on external charges that falls off as the inverse square of the distance to its center.}
+for the magnetostatic force acting on a test particle with charge $q$ and velocity $\vvbeta$ at position $\vv r$. For time-independent $\vv J$ but non-vanishing $\vv e$ and $\vv b$, the Lorentz force is of course the sum of Equations \ref{eq:coulomb} and \ref{eq:magnetostaticf}.
+
+Although the magnetostatic Equation \ref{eq:magnetostaticf} resembles an inverse-square law, it isn't one, really---at least, not in the usual sense of the term. Yes, there's an inverse-square dependence on distance for any given $\dd V_{s}$, but because the force isn't generally directed along the line of sight, that dependence isn't preserved upon integration for an extended source (and a time-independent current is necessarily extended). Coulomb's law, by contrast, describes a \emph{central} force that's ``genuinely" inverse-square (Equation \ref{eq:coulomb}): a spherically symmetric charged body exerts an electrostatic force on external charges that falls off as the inverse square of the distance to its center.
 
 There's an awful lot more to electrostatics and magnetostatics than this! We've merely shown how to obtain the conditions and some key equations from our four-vector formalism. In Section \ref{ssec:covstatics} we'll express those conditions in a manifestly covariant way, but otherwise we won't explore these topics further.
 
