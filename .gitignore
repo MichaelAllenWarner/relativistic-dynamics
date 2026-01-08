@@ -30,6 +30,8 @@
 *.out
 *.synctex.gz
 *.pdf
+*.nlo
+*.nls
 
 # Mac IDE files
 *.swp
