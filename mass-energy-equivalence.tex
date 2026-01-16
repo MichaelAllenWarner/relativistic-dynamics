@@ -215,14 +215,14 @@ On vector notation: vectors are boldface, their magnitudes are italic (like any 
 Sometimes italics aren't suitable for notating a vector's magnitude. In such cases we'll use vertical bars instead: $\vert \vv v \vert = v$. This is necessary for a vector sum, since $\vert \vv q + \vv w \vert \neq q + w$, and also for vectors like $\Delta \vv q$ and $\dot{\vv q}$, since $\Delta q$ means the change in $q$ and $\dot{q}$ means $q$'s $ct$-derivative. Moreover, notating a vector's magnitude with plain italic type is convenient but somewhat dangerous, as doing so makes it easy to forget to treat magnitude as a \emph{function} when one must, as when differentiating:
 \begin{equation*}
 \begin{aligned}
-\dot{q} \overset{!}{=} \frac{\dd \vert \vv q \vert}{\dd (ct)} &= \frac{\dd}{\dd (ct)} \sqrt{ \vv q \cdot \vv q } \\[2pt]
-&= \frac{\dd}{\dd (\vv q \cdot \vv q)} \left( \vv q \cdot \vv q \right) ^{1/2} \, \frac{\dd (\vv q \cdot \vv q)}{\dd (ct)} \\[2pt]
-&= \frac{1}{2 \sqrt{\vv q \cdot \vv q}} \, \left( \dot{\vv q} \cdot \vv q  \, + \, \vv q \cdot \dot{\vv q} \right) \\[4pt]
-&= \frac{\vv q \cdot \dot{\vv q}}{q} \\[4pt]
+\dot{q} \overset{!}{=} \frac{\dd \vert \vv q \vert}{\dd (ct)} &= \frac{\dd}{\dd (ct)} \sqrt{ \vv q \cdot \vv q } \\[4pt]
+&=  \frac{\dd (\vv q \cdot \vv q)}{\dd (ct)} \, \frac{\dd}{\dd (\vv q \cdot \vv q)} \left( \vv q \cdot \vv q \right) ^{1/2} \\[2pt]
+&=\left( \dot{\vv q} \cdot \vv q  \, + \, \vv q \cdot \dot{\vv q} \right) \, \frac{1}{2 \sqrt{\vv q \cdot \vv q}} \\
+&= \frac{\vv q \cdot \dot{\vv q}}{q} \\[3pt]
 &= \vv{ \hat q } \cdot \dot{ \vv q }
 \end{aligned}
 \end{equation*}
-(where $\vv{ \hat q } = \vv q / q$ is the unit vector pointing in the direction of $\vv q$). That's just something to keep in mind.
+(where $\vv{ \hat q } = \vv q / q$ is the unit vector pointing in the direction of $\vv q$). By the way, if you can't follow that math, you'll need to brush up on your calculus!
 
 When we get to \emph{four-vectors} (don't worry if you don't know what they are yet), we'll use essentially the same notation, but with uppercase symbols like $\vv Q$. I'm pretty consistent with this lowercase vs. uppercase convention, going so far as to use $\vv e$ and $\vv b$ instead of $\vv E$ and $\vv B$ for the electric and magnetic fields. When a four-vector is ``analogous" to a normal Euclidean vector, I'll usually give it the uppercase counterpart to the lowercase symbol already in use; for instance, the four-vector analogue of $\vvbeta = \vv v / c$ will be $\vv B$ (the dimensionless ``four-velocity"), and the four-vector analogue of $\vvzeta = \vv a / c^2$ will be $\vv Z$ (a ``four-acceleration" with the same dimensions as $\vvzeta$).
 
@@ -1119,10 +1119,10 @@ With that in mind, consider what happens when we take the $c t_0$-derivative of 
 and it's apparent that $\vv Z$ and $\vv B$ are \emph{not} codirectional. In fact, they're orthogonal! It must be so: $\vv B$ is always a unit vector, so only its direction can change.\footnote{If you don't see why constant $B$ means that $\vv B$ and $\vv Z$ are orthogonal, then think of the velocity and acceleration three-vectors in the familiar case of uniform circular motion.} And we can easily confirm it, because if two vectors are orthogonal then their dot product is zero. To test that, let's start by evaluating the $ct$-derivative of $\gamma$ (remembering that $\beta^2$ is actually $\vvbeta \cdot \vvbeta$):
 \begin{equation}\label{eq:gd}
 \begin{split}
-\dot{\gamma} &= \dfrac{\dd}{\dd (ct)} \left[ \left(1-\beta^2 \right)^{-1/2} \right] \\[4pt]
-&= \dfrac{\dd}{\dd ( \beta^2 )} \left[ \left( 1 - \beta^2 \right)^{-1/2} \right] \dfrac{\dd (\beta^2)}{\dd (ct)} \\[5pt]
-&= \frac{1}{2} \left( 1 - \beta ^2 \right)^{-3/2} \, \dfrac{\dd}{\dd (ct)} \bigl( \vvbeta \cdot \vvbeta \bigr) \\[4pt]
-&= \frac{\gamma^3}{2} \left[ ( \vvbeta \cdot \dot{\vvbeta} ) + ( \dot{\vvbeta} \cdot \vvbeta ) \right] \\[5pt]
+\dot{\gamma} &= \dfrac{\dd}{\dd (ct)} \left(1-\beta^2 \right)^{-1/2} \\[3pt]
+&= \dfrac{\dd (\beta^2)}{\dd (ct)} \, \dfrac{\dd}{\dd ( \beta^2 )} \left( 1 - \beta^2 \right)^{-1/2} \\[3pt]
+&= \dfrac{\dd}{\dd (ct)} \bigl( \vvbeta \cdot \vvbeta \bigr) \left[ \frac{1}{2} \left( 1 - \beta ^2 \right)^{-3/2} \right] \\[2pt]
+&= \left( \dot{\vvbeta} \cdot \vvbeta + \vvbeta \cdot \dot{\vvbeta} \right) \frac{\gamma^3}{2} \\[3pt]
 \dot{\gamma} &= \gamma^3 (\vvbeta \cdot \vvzeta).
 \end{split}
 \end{equation}
@@ -1132,7 +1132,7 @@ Then we sub that result into Equation \ref{eq:34}:
 \end{equation}
 And now we note that in a traveler's instantaneous rest frame, the three-velocity $\vvbeta = \vv 0$, which means that the spatial components of $\vv B$ are zero (Equation \ref{eq:31}) and the time component of $\vv Z$ is zero (Equation \ref{eq:35}). So the (invariant!) dot product $\vv B \cdot \vv Z$ is $(B^{ct})(0) - (0)(Z^x) - (0)(Z^y) - (0)(Z^z) = 0$. QED.\footnote{It's standard practice to use superscript for the components of a four-vector.}
 
-Confession: we could have demonstrated that orthogonality more quickly in a manifestly covariant way:
+Confession: we could have demonstrated that orthogonality more quickly and elegantly in a manifestly covariant way:
 \begin{equation*}
 \begin{split}
 \dfrac{\dd}{\dd (ct_0)} \left( \vv B \cdot \vv B \right) &= \dfrac{\dd}{\dd (c t_0)} \, B^2 \\[2pt]
@@ -2287,7 +2287,7 @@ but do these components transform Lorentzianly under a boost? If not, then $\par
 \dfrac{\partial}{\partial x^\prime} &= \dfrac{\partial x}{\partial x^\prime} \, \dfrac{\partial}{\partial x} \, + \, \dfrac{\partial (ct)}{\partial x^\prime} \, \dfrac{\partial}{\partial (ct)}  = \gamma \left( \dfrac{\partial}{\partial x} + \beta \, \dfrac{\partial}{\partial (ct)}  \right) .
 \end{split}
 \end{equation*}
-That's not the Lorentz transformation; it's the \emph{inverse} Lorentz transformation! The \emph{Lorentz} transformation would then get us the unprimed components from the primed ones. This is precisely the opposite of how a four-vector's components transform.\footnote{\label{fn:cv}An object in Minkowski spacetime whose components transform in this ``backward" way is called a \textbf{four-\emph{co}vector}. Covectors are also called one-forms, dual vectors, or covariant vectors (if the latter, then vectors are called ``contravariant vectors"); the word \emph{covariant} here has a different meaning than it does in the term \emph{manifestly covariant}.} If we simply change the sign of $\del$, then the components \emph{do} transform like those of a four-vector:
+That's not the Lorentz transformation; it's the \emph{inverse} Lorentz transformation! The \emph{Lorentz} transformation would then get us the unprimed components from the primed ones. This is precisely the opposite of how a four-vector's components transform.\footnote{\label{fn:cv}An object in Minkowski spacetime whose components transform in this ``backward" way is called a \textbf{four-\emph{co}vector}. Covectors are also called one-forms, dual vectors, or covariant vectors (if the latter, then vectors are called ``contravariant vectors"); the word \emph{covariant} here has a different meaning than it does in the term \emph{manifestly covariant}.} We can ``correct" for this by simply changing the sign of $\del$ (or of the $ct$-partial, but we choose $\del$):
 \begin{equation*}
 \begin{split}
 \dfrac{\partial}{\partial (ct^\prime)} &= \gamma \left[ \dfrac{\partial}{\partial (ct)} - \beta \left(- \dfrac{\partial}{\partial x} \right) \right] \\[3pt]
@@ -2296,7 +2296,7 @@ That's not the Lorentz transformation; it's the \emph{inverse} Lorentz transform
 - \dfrac{\partial}{\partial z^\prime} &= - \dfrac{\partial}{\partial z} .
 \end{split}
 \end{equation*}
-There we go. Our \textbf{four-del} symbol is:
+\emph{That's} how four-vector components transform. So our \textbf{four-del} symbol is:
 \begin{equation}\label{eq:fn}
 \boxed{
 \begin{aligned}
