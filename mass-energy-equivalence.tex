@@ -607,31 +607,35 @@ Note that kinetic energy now depends on velocity and \emph{rest energy}. That so
 
 Equation \ref{eq:12} should remind you of $c \mkern.5mu \Delta t=\gamma c \mkern.5mu \Delta t_0$, the equation for time dilation (where $ct_0$ is proper time). In fact, kinetic energy is a ``relativistic effect" in precisely the way that time dilation is. You can tell from Equations \ref{eq:12} and \ref{eq:13} that when $\beta \ll 1$, $E \approx E_0$ and $E_{\mkern.5mu \textrm{k}} \rightarrow 0$, just as $c \mkern.5mu \Delta t \approx c \mkern.5mu \Delta t_0$ and $c \mkern.5mu \Delta t - c \mkern.5mu \Delta t_0 \rightarrow 0$. Even at speeds we'd consider extremely fast by everyday standards, a body's rest energy dwarfs its kinetic energy. Only when $\beta \centernot{\ll} 1$ does kinetic energy contribute appreciably to total energy, and it doesn't exceed rest energy until $\beta > \sqrt{3}/2 \approx .866$, which you can verify by setting $E_{\mkern.5mu \textrm{k}}=E_0$ in Equation \ref{eq:13}. By the same token, only when $\beta > \sqrt{3}/2$ is $c \mkern.5mu \Delta t - c \mkern.5mu \Delta t_0 > c \mkern.5mu \Delta t_0$.
 
-But there's an important practical difference between time dilation and kinetic energy: although each becomes negligible in the classical limit \emph{as a proportion of its corresponding ``total" quantity} ($c \mkern.5mu \Delta t$ and $E$, respectively), we have no difficulty detecting kinetic energy when $\beta \ll 1$, as Equation \ref{eq:2} makes clear.\footnote{It's actually the gargantuan \emph{rest energy} that escaped the notice of physicists before Einstein! But it was hiding in plain sight, going by another name \dots} So once Einstein derived Equation \ref{eq:13}, his final step was to compare its (non-zero!) low-$\beta$ approximate value to Equation \ref{eq:2}. He did this by using the binomial theorem to expand the Lorentz factor $\gamma = (1-\beta^2)^{-1/2}$. Fittingly, it was Newton who developed the procedure for arbitrary exponent:
+But there's an important practical difference between time dilation and kinetic energy: although each becomes negligible in the classical limit \emph{as a proportion of its corresponding ``total" quantity} ($c \mkern.5mu \Delta t$ and $E$, respectively), we have no difficulty detecting kinetic energy when $\beta \ll 1$, as Equation \ref{eq:2} makes clear.\footnote{It's actually the gargantuan \emph{rest energy} that escaped the notice of physicists before Einstein! But it was hiding in plain sight, going by another name \dots} So once Einstein derived Equation \ref{eq:13}, his final step was to compare its (non-zero!) low-$\beta$ approximate value to Equation \ref{eq:2}. He did this by using the binomial theorem to expand the Lorentz factor. We'll do that in a moment, but first I'll show you a cute shortcut with the usual classical approximation $\gamma \approx 1$. The trick is to ``extract" a $\beta^2$ from $\gamma$:
+\begin{equation}\label{eq:gammaidentity}
+\gamma - 1 = \frac{(\gamma - 1)(\gamma + 1)}{\gamma + 1} = \frac{\gamma^2 - 1}{\gamma + 1} = \frac{\gamma^2 (1 - \gamma^{-2})}{\gamma + 1} = \frac{\gamma^2 \beta^2}{\gamma + 1}
+\end{equation}
+(we've used Equation \ref{eq:20}). With Equation \ref{eq:gammaidentity}, we can write the relativistic kinetic energy like $E_0 (\gamma^2 \beta^2)/(\gamma + 1)$ (cf. Equation \ref{eq:13}), and then $\gamma \approx 1$ gives $.5 E_0 \beta^2$, which is what we want. Before comparing this approximation with the classical Equation \ref{eq:2}, however, let's obtain it again with the aforementioned binomial expansion. Fittingly, it was Newton who developed the procedure for arbitrary exponent:
 \begin{equation*}
 (a+x)^n = a^n + na^{n-1}x + \frac{n(n-1)}{2!} \, a^{n-2}x^2 + \frac{n(n-1)(n-2)}{3!} \, a^{n-3}x^3 + \dots ,
 \end{equation*}
-convergent if $|x/a| < 1$. In our case, $a=1$, $x=-\beta^2$, and $n=-1/2$. Because our exponent isn't a positive integer, we end up with an infinite series:
+convergent if $|x/a| < 1$. For $\gamma = (1-\beta^2)^{-1/2}$, we have $a=1$, $x=-\beta^2$, and $n=-1/2$. Because our exponent isn't a positive integer, we end up with an infinite series:
 \begin{equation*}
 \left(1-\beta^2\right)^{-1/2}=1 + \dfrac{1}{2}\,\beta^2 +  \frac {3}{8} \, \beta^4 + \frac{5}{16} \, \beta^6 + \frac{35}{128} \, \beta^8 + \dots
 \end{equation*}
-Usually we'll use $\gamma \approx 1$ when speaking of the ``classical limit," but that would lead to $E_{\mkern.5mu \textrm{k}} \approx 0$ here, which won't do. Instead we include the second term, and we can stop there since $\beta^2 \gg \beta^4$ when $\beta \ll 1$:
+Here we can't use $\gamma \approx 1$, as that would lead to $E_{\mkern.5mu \textrm{k}} \approx 0$, which won't do. So we must include the second term, and we can stop there since $\beta^2 \gg \beta^4$ when $\beta \ll 1$:
 \begin{equation*}
 \gamma \approx 1 + \dfrac{1}{2}\,\beta^2.
 \end{equation*}
-Now we plug that into Equation \ref{eq:13}:
+Plug that into Equation \ref{eq:13}:
 \begin{equation}\label{eq:14}
 \begin{split}
 E_{\mkern.5mu \textrm{k}} &=E_0 (\gamma - 1)\\[5pt]
 &\approx E_0 \left[ \left( 1 + \dfrac{1}{2}\,\beta^2 \right) -1 \right] \\[5pt]
-E_{\mkern.5mu \textrm{k}} &\approx \frac{1}{2} \mkern2mu E_0 \mkern.5mu \beta^2 \quad \textrm{\footnotesize{ (for $\beta \ll 1$)}}.
+E_{\mkern.5mu \textrm{k}} &\approx \frac{1}{2} \mkern2mu E_0 \mkern.5mu \beta^2 \quad \textrm{\footnotesize{ (for $\beta \ll 1$)}},
 \end{split}
 \end{equation}
-Equating Equations \ref{eq:2} and \ref{eq:14} then gives us Einstein's famous result,
+and as promised we've reproduced our earlier approximation. \emph{Now} we equate Equations \ref{eq:2} and \ref{eq:14}, and we get Einstein's famous result,
 \begin{equation}\label{eq:15}
 \boxed{m = \frac{E_0}{c^2}} \, ,
 \end{equation}
-better known as ``$E = mc^2$" (mind the subscript).\footnote{Here's how Einstein originally put it: ``If a body gives off the energy $L$ in the form of radiation, its mass diminishes by $L / c^2$. \ldots The mass of a body is a measure of its energy-content."} Excellent!
+better known as ``$E = mc^2$" (but mind the subscript).\footnote{Here's how Einstein originally put it: ``If a body gives off the energy $L$ in the form of radiation, its mass diminishes by $L / c^2$. \ldots The mass of a body is a measure of its energy-content."} Excellent!
 
 Equation \ref{eq:15} does \emph{not} mean that mass and rest energy can be ``converted" into one another. It means that they're \emph{exactly the same thing} expressed in different units, like $\vvbeta$ and $\vv v$ are. Therefore anything we know about one of them applies to the other. Notably:
 \begin{itemize}
@@ -667,12 +671,14 @@ Along similar lines, whatever takes the place of $E_0$ in the generalization of 
 
 It follows, by the way, that a \emph{change} in momentum over time (``force") does \emph{not} imply a simple proportional change in velocity as it does when $\beta \ll 1$. We won't actually do that calculus for a while (see Sections \ref{sssec:pf} and \ref{ssec:in}), but already we see that special relativity complicates the relationship between force and acceleration. For now we'll withhold judgment on whether the mystery $E_0$-replacement we're looking for can reasonably be called the ``measure of inertia" for arbitrary $\vvbeta$.
 
-As for the matter at hand, we \emph{can} make an educated guess about our mystery quantity. After all, we've already encountered a (very important additive-and-conserved) monotonic function of speed that both reduces to $E_0$ in the classical limit and increases without bound as $\beta \rightarrow 1$: total energy $E$ (see Equation \ref{eq:12}). If our educated guess is correct, then relativistic momentum is $\vv p c = E \vvbeta = \gamma E_0 \vvbeta$. Are we on the right track? Well, $E \vvbeta$ certainly reduces to Equation \ref{eq:16} when $\beta \ll 1$, because then $\gamma \approx 1$. Explicitly:
-\begin{equation*}\begin{split}
-\vv p c &\stackrel{?}{=}\gamma E_0 \vvbeta \\
-&= E_0 \mkern.5mu \beta \hatbeta \left( 1 + \dfrac{1}{2} \, \beta ^2 +  \dfrac {3}{8} \, \beta ^4 + \dots  \right) \\[3pt]
-&= E_0 \hatbeta \left( \beta + \dfrac{1}{2} \, \beta^3 + \dots \right)
-\end{split}\end{equation*}
+As for the matter at hand, we \emph{can} make an educated guess about our mystery quantity. After all, we've already encountered a (very important additive-and-conserved) monotonic function of speed that both reduces to $E_0$ in the classical limit and increases without bound as $\beta \rightarrow 1$: total energy $E$ (see Equation \ref{eq:12}). If our educated guess is correct, then relativistic momentum is $\vv p c = E \vvbeta = \gamma E_0 \vvbeta$. Are we on the right track? Well, $E \vvbeta$ certainly reduces to Equation \ref{eq:16} when $\beta \ll 1$, because then $\gamma \approx 1$. Explicitly with the binomial theorem (in case you're confused about why we can use $\gamma \approx 1$ here but couldn't earlier when expanding $\gamma$ for the kinetic energy):
+\begin{equation*}
+\begin{split}
+\vv p c &\stackrel{?}{=} \vvbeta E_0 \gamma \\
+&=  \hatbeta \beta E_0 \mkern.5mu \left( 1 + \dfrac{1}{2} \, \beta ^2 +  \dfrac{3}{8} \, \beta ^4 + \dots \right) \\[3pt]
+&=  \hatbeta E_0 \left( \beta + \dfrac{1}{2} \, \beta^3 + \dots \right)
+\end{split}
+\end{equation*}
 (where $\hatbeta$ is the unit vector $\vvbeta / \beta$). Since $\beta \gg \beta^3$ when $\beta \ll 1$, we ignore everything but the first term and recover Equation \ref{eq:16}.
 
 Okay, but is the vector $E \vvbeta$ conserved? There's only one way to know for sure: put it to the test.\footnote{If it's \emph{assumed} that there exists an additive-and-conserved vector quantity that reduces to Equation \ref{eq:16} in the classical limit, then it's possible to show that that vector is $E \vvbeta$ (or, in ``momentum" units, $E \vvbeta/c = \gamma m \vv v$), and not some other vector that happens to behave correctly at the limiting values of $\beta$. Some textbooks do this via the ``Lewis and Tolman" thought experiment involving an elastic collision. But conservation laws are ultimately \emph{empirical} results. That goes for the conservation of total energy, too: we derived Equations \ref{eq:12} and \ref{eq:13} by \emph{assuming} that energy is conserved in special relativity. (Don't worry, it is.)} Easier said than done! Fortunately, we don't have to do it ourselves; particle accelerators run such experiments daily, with values of $\beta$ that approach one. The result? $E \vvbeta$ is conserved every time! So let's make it official:
@@ -815,7 +821,7 @@ and subbing in $1 = \dd s / \dd (c t_0)$, $\gamma = \dd (ct) / \dd (c t_0)$, and
 \boxed{1 = \gamma^2 - \left(\gamma \vvbeta \right)^2} \, .
 \end{equation}
 
-Now \emph{that's} rather interesting. Our spacetime $\beta$-analogue is, well, one! That's the invariant and \emph{constant} $c t_0$-rate of all ``motion" through spacetime. And from the perspective of any given inertial observer, the time and space ``contributions" to that rate are, respectively, $\dd (ct) / \dd (c t_0) =\gamma$ and $\dd \vv r / \dd (c t_0) = \gamma \vvbeta$. The difference of their squares equals the squared rate, $1^2 = 1$. When $\beta \ll 1$, inertial observers calculate a time contribution $\gamma$ of about one, and a space contribution $\gamma \vvbeta$ of about zero---exactly one and zero in the traveler's instantaneous rest frame. What happens as $\beta$ gets larger? Perhaps you've encountered the unfortunately common pop-sci factoid that the time contribution should then decrease, that ``speed through time" must diminish to accommodate a greater ``speed through space" so that they always sum to one (or to $c$ in different units). As Equation \ref{eq:25} shows, that's a white lie at best (and ``speed through time" is gibberish). Yes, the $ct_0$-rate of spacetime-traversal is always one, and yes, the magnitude of $\gamma \vvbeta$ obviously increases with $\beta$. But look at the time contribution. It doesn't decrease; it blows up to infinity as $\beta$ approaches one! The space contribution does, too, but it can never catch up to the time contribution, since $1>\beta$. So no, the contributions aren't inversely related, and they don't balance to one (or $c$ if unnormalized). The \emph{difference of their squares} balances to $1^2=1$.
+Now \emph{that's} rather interesting.\footnote{Not new, though. It's just Equation \ref{eq:20} times $\gamma^2$ (cf. the last step of Equation \ref{eq:gammaidentity}).} Our spacetime $\beta$-analogue is, well, one! That's the invariant and \emph{constant} $c t_0$-rate of all ``motion" through spacetime. And from the perspective of any given inertial observer, the time and space ``contributions" to that rate are, respectively, $\dd (ct) / \dd (c t_0) =\gamma$ and $\dd \vv r / \dd (c t_0) = \gamma \vvbeta$. The difference of their squares equals the squared rate, $1^2 = 1$. When $\beta \ll 1$, inertial observers calculate a time contribution $\gamma$ of about one, and a space contribution $\gamma \vvbeta$ of about zero---exactly one and zero in the traveler's instantaneous rest frame. What happens as $\beta$ gets larger? Perhaps you've encountered the unfortunately common pop-sci factoid that ``speed through time" must decrease to accommodate a greater ``speed through space," so that they always sum to one (or to $c$ in different units). ``Speed through time" is gibberish, but if it's supposed to refer to the time contribution to the invariant $ct_0$-rate of spacetime-traversal, then Equation \ref{eq:25} gives the lie to the factoid. Yes, that $ct_0$-rate is always one, and yes, the magnitude of $\gamma \vvbeta$ obviously increases with $\beta$. But look at the time contribution. It doesn't decrease; it blows up to infinity as $\beta$ approaches one! The space contribution does, too, but it can never catch up to the time contribution, since $1>\beta$. So no, the contributions aren't inversely related, and they don't balance to one. The \emph{difference of their squares} balances to $1^2=1$.
 
 Note that Equation \ref{eq:25} doesn't permit setting $\beta=1$ (leads to division by zero in the Lorentz factors), consistent with the fact that proper time is only defined for timelike journeys. No spacelike or lightlike intervals allowed here. To speak of ``restless" (massless) systems ``experiencing" time is meaningless.
 
@@ -1888,15 +1894,7 @@ Particle physicists are keen on longitudinal rapidity (they often call it ``part
 
 Unfortunately, longitudinal rapidities aren't always easy to measure directly in particle accelerators. But in the \textbf{ultrarelativistic limit} ($\beta \rightarrow 1$), there's another quantity called \textbf{pseudorapidity} that's an excellent approximation to longitudinal rapidity, and it's much easier to measure: all you need is the emitted particle's so-called polar angle $\theta$, defined as the angle between the beam axis (positive $z$-direction) and the particle's velocity vector.
 
-Before getting into the pseudorapidity, let's take a moment to mull over the ultrarelativistic limit. Above, we characterized it as $\beta \rightarrow 1$, rather than $\beta \approx 1$. The reason is that we might care how close to the speed of light something is moving (i.e., $1 - \beta$).\footnote{Why $1 - \beta$ instead of just $\beta$? Because in the ultrarelativistic limit, $\beta$ will have too many leading nines for practical use (round 0.999999999 to three significant digits---that's $1.00$, and the important information is lost!). Much better to deal with leading zeros.} If not, $\beta \approx 1$ may suffice, but if so, it plainly won't. This is similar to a situation we dealt with back in Section \ref{ssec:re}, when we couldn't use $\gamma \approx 1$ to derive Equation \ref{eq:14} (would have given us a value of zero for kinetic energy in the classical limit).\footnote{If one already has Equation \ref{eq:21} in hand (we didn't), then one \emph{can} derive Equation \ref{eq:14} using $\gamma \approx 1$ (and Equations \ref{eq:12} and \ref{eq:17}):
-\begin{equation*}
-\begin{split}
-(pc)^2 &= E^2 - E_0^2 = (E + E_0) (E - E_0) = (E + E_0) E_{\mkern.5mu \textrm{k}} \\[2pt]
-E_{\mkern.5mu \textrm{k}} &= \dfrac{(pc)^2}{E + E_0} = \dfrac{(\gamma E_0 \beta)^2}{\gamma E_0 + E_0} = E_0 \beta^2 \, \dfrac{\gamma^2}{\gamma + 1} \\[2pt]
-&\approx \dfrac{1}{2} \, E_0 \beta^2 .
-\end{split}
-\end{equation*}
-} Our solution here is similar, too: we'll use the binomial theorem to get extra terms as needed.
+Before getting into the pseudorapidity, let's take a moment to mull over the ultrarelativistic limit. Above, we characterized it as $\beta \rightarrow 1$, rather than $\beta \approx 1$. The reason is that we might care how close to the speed of light something is moving (i.e., $1 - \beta$).\footnote{Why $1 - \beta$ instead of just $\beta$? Because in the ultrarelativistic limit, $\beta$ will have too many leading nines for practical use (round 0.999999999 to three significant digits---that's $1.00$, and the important information is lost!). Much better to deal with leading zeros.} If not, $\beta \approx 1$ may suffice, but if so, it plainly won't. This is similar to a situation we dealt with back in Section \ref{ssec:re}, when we couldn't naively use $\gamma \approx 1$ to derive Equation \ref{eq:14} (would have given us a value of zero for kinetic energy in the classical limit).\footnote{Well, we \emph{did} succeed with $\gamma \approx 1$, but only after teasing out a factor of $\beta^2$ with Equation \ref{eq:gammaidentity}. The point is that $\gamma \approx 1$ doesn't work with $E_0 (\gamma - 1)$ ``out of the box."} Our solution here is similar, too: we'll use the binomial theorem to get extra terms as needed.
 
 Start with the energy--momentum relation (Equation \ref{eq:21}), and isolate $E$:
 \begin{equation*}
