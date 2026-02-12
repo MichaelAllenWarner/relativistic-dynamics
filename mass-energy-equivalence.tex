@@ -607,7 +607,7 @@ Note that kinetic energy now depends on velocity and \emph{rest energy}. That so
 
 Equation \ref{eq:12} should remind you of $c \mkern.5mu \Delta t=\gamma c \mkern.5mu \Delta t_0$, the equation for time dilation (where $ct_0$ is proper time). In fact, kinetic energy is a ``relativistic effect" in precisely the way that time dilation is. You can tell from Equations \ref{eq:12} and \ref{eq:13} that when $\beta \ll 1$, $E \approx E_0$ and $E_{\mkern.5mu \textrm{k}} \rightarrow 0$, just as $c \mkern.5mu \Delta t \approx c \mkern.5mu \Delta t_0$ and $c \mkern.5mu \Delta t - c \mkern.5mu \Delta t_0 \rightarrow 0$. Even at speeds we'd consider extremely fast by everyday standards, a body's rest energy dwarfs its kinetic energy. Only when $\beta \centernot{\ll} 1$ does kinetic energy contribute appreciably to total energy, and it doesn't exceed rest energy until $\beta > \sqrt{3}/2 \approx .866$, which you can verify by setting $E_{\mkern.5mu \textrm{k}}=E_0$ in Equation \ref{eq:13}. By the same token, only when $\beta > \sqrt{3}/2$ is $c \mkern.5mu \Delta t - c \mkern.5mu \Delta t_0 > c \mkern.5mu \Delta t_0$.
 
-But there's an important practical difference between time dilation and kinetic energy: although each becomes negligible in the classical limit \emph{as a proportion of its corresponding ``total" quantity} ($c \mkern.5mu \Delta t$ and $E$, respectively), we have no difficulty detecting kinetic energy when $\beta \ll 1$, as Equation \ref{eq:2} makes clear.\footnote{It's actually the gargantuan \emph{rest energy} that escaped the notice of physicists before Einstein! But it was hiding in plain sight, going by another name \dots} So once Einstein derived Equation \ref{eq:13}, his final step was to compare its (non-zero!) low-$\beta$ approximate value to Equation \ref{eq:2}. He did this by using the binomial theorem to expand the Lorentz factor. We'll do that in a moment, but first I'll show you a cute shortcut with the usual classical approximation $\gamma \approx 1$. The trick is to ``extract" a $\beta^2$ from $\gamma$:
+But there's an important practical difference between time dilation and kinetic energy: although each becomes negligible in the classical limit \emph{as a proportion of its corresponding ``total" quantity} ($c \mkern.5mu \Delta t$ and $E$, respectively), we have no difficulty detecting kinetic energy when $\beta \ll 1$, as Equation \ref{eq:2} makes clear.\footnote{It's actually the gargantuan \emph{rest energy} that escaped the notice of physicists before Einstein! But it was hiding in plain sight, going by another name \dots} So once Einstein derived Equation \ref{eq:13}, his final step was to compare its (non-zero!) low-$\beta$ approximate value to Equation \ref{eq:2}. He did this by expanding the Lorentz factor in powers of $\beta^2$ with the binomial theorem. We'll do that ourselves in a moment, but first I'll show you a method that doesn't require calculus. The trick is to ``extract" a $\beta^2$ from $\gamma$ right away:
 \begin{equation}\label{eq:gammaidentity}
 \gamma - 1 = \frac{(\gamma - 1)(\gamma + 1)}{\gamma + 1} = \frac{\gamma^2 - 1}{\gamma + 1} = \frac{\gamma^2 (1 - \gamma^{-2})}{\gamma + 1} = \frac{\gamma^2 \beta^2}{\gamma + 1}
 \end{equation}
@@ -2650,12 +2650,12 @@ Similar calculations give:
 For the inverse transformation, swap primed and unprimed components and switch the sign of each $\sinh{\phi}$. From Equations \ref{eq:ebt} and \ref{eq:50}, it follows (after some algebra) that  ${e^{\prime \, 2} - b^{\prime \, 2} = e^2 - b^2}$ and that $\vv e^\prime \cdot \vv b^\prime = \vv e \cdot \vv b$.\footnote{\label{fn:ps}As the curl of an ordinary vector, $\vv b$ is a \emph{pseudovector}, which means that it gains an extra sign-flip under ``orientation-reversing" coordinate transformations. The Lorentz-invariant $\vv e \cdot \vv b$ inherits this property (it's a \emph{pseudoscalar}).} These are the fundamental invariants we can construct from $\vv e$ and $\vv b$. An immediate consequence is the invariance of the special cases $\vv e \perp \vv b$ and $e = b$; i.e., if the electric and magnetic fields are perpendicular in one frame ($\vv e \cdot \vv b = 0$), then they're perpendicular in all frames, and if their magnitudes are equal in one frame ($e^2 - b^2 = 0$), then their magnitudes are equal in all frames.
 
 Another way of writing Equations \ref{eq:ebt} is in terms of component vectors parallel and perpendicular to the boost direction $\hatphi = \langle 1, 0, 0 \rangle$ (this will be similar to how we arrived at Equations \ref{eq:lt3}). Using ${\vv e_\perp = \langle 0, e_y, e_z \rangle}$ and $\hatphi \times \vv b = \langle 0, -b_z, b_y \rangle$, and also $\vv b_\perp = \langle 0, b_y, b_z \rangle$ and $\hatphi \times \vv e = \langle 0, -e_z, e_y \rangle$:
-\begin{equation*}
+\begin{equation}\label{eq:ebparperp}
 \begin{aligned}
-& \vv e^\prime_\parallel = \vv e_\parallel  \qquad \qquad& & \vv b^\prime_\parallel = \vv b_\parallel  \\
-& \vv e^\prime_\perp =  \cosh{\phi} \; \vv e_\perp  +  \sinh{\phi} \; ( \hatphi \times \vv b )   \qquad& & \vv b^\prime_\perp = \cosh{\phi} \; \vv b_\perp  - \sinh{\phi} \; ( \hatphi \times \vv e ) ,
+& \vv e^\prime_\parallel = \vv e_\parallel   & & \vv b^\prime_\parallel = \vv b_\parallel  \\
+& \vv e^\prime_\perp =  \cosh{\phi} \; \vv e_\perp  +  \sinh{\phi} \; ( \hatphi \times \vv b )   \; & & \vv b^\prime_\perp = \cosh{\phi} \; \vv b_\perp  - \sinh{\phi} \; ( \hatphi \times \vv e ) ,
 \end{aligned}
-\end{equation*}
+\end{equation}
 which holds for a boost in an \emph{arbitrary} direction (not just $\langle 1, 0, 0 \rangle$). With $\vv e_\parallel = (\hatphi \cdot \vv e) \hatphi$ (vector-projection formula) and $\vv e_\perp = \vv e - \vv e_\parallel$, we can condense the transformation of $\vv e$ to a single equation that doesn't mention component vectors at all:
 \begin{equation*}
 \begin{split}
@@ -2674,16 +2674,16 @@ Do the same for $\vv b$, and simplify both expressions. Using a ``half-angle" id
 } \, .
 \end{equation}
 Equivalently, though maybe less elegantly:\footnote{Equations \ref{eq:ebr} are rather analogous to the \href{https://en.wikipedia.org/wiki/Rodrigues\%27_rotation_formula}{Rodrigues rotation formula} (Wikipedia).}
-\begin{equation*}
-\vv e^\prime = \gamma \left( \vv e + \vvbeta \times \vv b \right) - \dfrac{\gamma^2 (\vvbeta \cdot \vv e) \vvbeta}{\gamma + 1} \qquad \quad \vv b^\prime = \gamma \left( \vv b - \vvbeta \times \vv e \right) - \dfrac{\gamma^2 (\vvbeta \cdot \vv b) \vvbeta}{\gamma + 1},
-\end{equation*}
+\begin{equation}\label{eq:ebvec}
+\vv e^\prime = \gamma \left( \vv e + \vvbeta \times \vv b \right) - \dfrac{\gamma^2 (\vvbeta \cdot \vv e) \vvbeta}{\gamma + 1} \qquad \vv b^\prime = \gamma \left( \vv b - \vvbeta \times \vv e \right) - \dfrac{\gamma^2 (\vvbeta \cdot \vv b) \vvbeta}{\gamma + 1},
+\end{equation}
 where $\gamma = \cosh{\phi}$ and $\beta = \tanh{\phi}$ are boost parameters ($\hatbeta = \vvbeta / \beta = \hatphi$).\footnote{Naturally, transformations of \emph{four-vector components} under a Lorentz boost in an arbitrary direction can likewise be expressed in terms of the boost-rapidity. From Equations \ref{eq:lt3} (for the components of the four-position $\vv R$), it's not difficult to show that for some four-vector $\vv Q = \langle Q^{ct}, \vv q \rangle$, that's:
 \begin{equation*}
 Q^{\prime  \mkern1.5mu ct} = \cosh \phi \; Q^{ct} - \sinh \phi \; ( \hatphi \cdot \vv q ) \qquad \quad
 \vv q^{\prime} = \vv q + \big[ 2 \sinh^2 \frac{\phi}{2} \; ( \hatphi \cdot \vv q ) - \sinh \phi \; Q^{ct} \big] \hatphi .
 \end{equation*}}
 
-Finally, it's useful to find a relationship between $\vv J = \langle \rho, \, \vv j \rangle$ and the $\vv e$ and $\vv b$ fields. Let's work in the Lorenz gauge, with $\vv J= \Box \vv A = \langle \Box \Phi, \Box \vv a \rangle$. By the Lorenz condition ${\partialup \cdot \vv A = 0}$ (Equation \ref{eq:lg}), or $\partial^{ct} \Phi = - \del \cdot \vv a$:
+It's useful(!) to find a relationship between $\vv J = \langle \rho, \, \vv j \rangle$ and the $\vv e$ and $\vv b$ fields. Let's work in the Lorenz gauge, with $\vv J= \Box \vv A = \langle \Box \Phi, \Box \vv a \rangle$. By the Lorenz condition ${\partialup \cdot \vv A = 0}$ (Equation \ref{eq:lg}), or $\partial^{ct} \Phi = - \del \cdot \vv a$:
 \begin{equation}\label{eq:ace}
 \begin{split}
 \rho &= \Box \Phi \\
@@ -2713,7 +2713,31 @@ where we've again invoked the Lorenz condition $\partial^{ct} \Phi = - \del \cdo
 \end{aligned}
 } \, .
 \end{equation}
-To obtain the ``homogeneous" pair, we've used Equations \ref{eq:eb} and two vector calculus identities: the divergence of a curl is $0$, and the curl of a gradient is $\vv 0$. Wondering about the negative signs in the last equation? Written this way, each pair of equations constitutes a four-vector, the first equivalent to $\Box \vv A - \partialup ( \partialup \cdot \vv A) = \vv J$ (or $\Box \vv A = \vv J$ in the Lorenz gauge), and the second equal to the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}} = \langle 0, \vv 0 \rangle$ (show this!). The left sides are suggestive; might each four-vector pair somehow be expressed with $\partialup$ appearing as a \emph{first} derivative of something? We'll come back to this in Section \ref{ssec:mfd}.
+To obtain the ``homogeneous" pair, we've used Equations \ref{eq:eb} and two vector calculus identities: the divergence of a curl is $0$, and the curl of a gradient is $\vv 0$.
+
+Wondering about the negative signs in the last of Maxwell's equations? Written this way, each pair of equations constitutes a four-vector. We've already demonstrated this for the \emph{inhomogeneous} pair, since our derivation was merely a component-wise breakdown of $\Box \vv A - \partialup ( \partialup \cdot \vv A) = \vv J$ (or rather of $\Box \vv A = \vv J$ in the Lorenz gauge). But we haven't yet shown that the \emph{homogeneous} pair is likewise a four-vector, $\langle \del \cdot \vv b , \, - \del \times \vv e - \partial^{ct} \vv b \rangle$ (equal to the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}} = \langle 0, \vv 0 \rangle$). How can we do so? Really, it suffices to compare the relationship between the inhomogeneous and homogeneous pairs (as we've written them) with the difference between how the electric and magnetic fields transform under a Lorentz boost (Equations \ref{eq:ebt}, \ref{eq:ebparperp}, \ref{eq:ebr}, or \ref{eq:ebvec}---take your pick). The magnetic field transforms just like the electric field, except that $\vv e$ goes to $\vv b$ and $\vv b$ goes to $- \vv e$, and that's precisely how one can ``go" from the inhomogeneous $\langle \del \cdot \vv e , \, \del \times \vv b - \partial^{ct} \vv e \rangle$ to the homogeneous $\langle \del \cdot \vv b , \, - \del \times \vv e - \partial^{ct} \vv b \rangle$. This is enough information to conclude that if the inhomogeneous pair makes a four-vector, then so does the homogeneous pair.
+
+But let's go ahead and brute-force a couple of components anyway. First we'll show that the time component $\del \cdot \vv b$ transforms correctly. We must have $\del^\prime \cdot \vv b^\prime = \gamma [\del \cdot \vv b - \beta (- \del \times \vv e - \partial^{ct} \vv b )_x]$ for a standard-configuration boost. Using Equations \ref{eq:ebt} and \ref{eq:fn} (${\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle}$, remember):
+\begin{equation*}
+\begin{aligned}
+\del^\prime \cdot \vv b^\prime &= - \partial^{\mkern.5mu \prime \mkern1mu x} b^\prime_x - \partial^{\mkern.5mu \prime \mkern1mu y} b^\prime_y - \partial^{\mkern.5mu \prime \mkern1mu z} b^\prime_z \\
+&= - \gamma ( \partial^x - \beta \partial^{ct} ) b_x - \partial^y ( \gamma b_y + \gamma \beta e_z ) - \partial^z (\gamma b_z - \gamma \beta e_y ) \\[1pt]
+&= \gamma ( - \partial^x b_x - \partial^y b_y - \partial^z b_z ) - \gamma \beta ( \partial^y e_z - \partial^z e_y - \partial^{ct} b_x ) \\[1pt]
+&= \gamma \big[ \del \cdot \vv b - \beta (- \del \times \vv e - \partial^{ct} \vv b )_x \big] .
+\end{aligned}
+\end{equation*}
+Next let's do the $x$-component. We need to show that $(- \del^\prime \times \vv e^\prime - \partial^{\mkern.5mu \prime \mkern1mu ct} \vv b^\prime )_x$ equals $\gamma [(- \del \times \vv e - \partial^{ct} \vv b )_x - \beta (\del \cdot \vv b)]$:
+\begin{equation*}
+\begin{aligned}
+(- \del^\prime \times \vv e^\prime - \partial^{\mkern.5mu \prime \mkern1mu ct} \vv b^\prime )_x &= \partial^{\mkern.5mu \prime \mkern1mu y} e^\prime_z - \partial^{\mkern.5mu \prime \mkern1mu z} e^\prime_y - \partial^{\mkern.5mu \prime \mkern1mu ct} b^\prime_x \\
+&= \partial^y (\gamma e_z + \gamma \beta b_y) - \partial^z (\gamma e_y - \gamma \beta b_z) - \gamma(\partial^{ct} - \gamma \beta \partial^x) b_x \\[1pt]
+&= \gamma (\partial^y e_z - \partial^z e_y - \partial^{ct} b_x) - \gamma \beta ( - \partial^x b_x - \partial^y b_y - \partial^z b_z ) \\[1pt]
+&= \gamma \big[ (- \del \times \vv e - \partial^{ct} \vv b )_x - \beta (\del \cdot \vv b) \big] .
+\end{aligned}
+\end{equation*}
+We'll stop there, but beware that even though the $y$- and $z$-components transform trivially as they must (e.g., $(- \del^\prime \times \vv e^\prime - \partial^{\mkern.5mu \prime \mkern1mu ct} \vv b^\prime )_y = (- \del \times \vv e - \partial^{ct} \vv b )_y$), \emph{showing} this isn't trivial.
+
+Finally, aren't all the partial derivatives on the left sides of Maxwell's equations suggestive? Doesn't it seem like each four-vector pair should be expressible with $\partialup$ appearing as the \emph{first} derivative of something? We'll come back to this in Section \ref{ssec:mfd}, once we've developed more mathematical tools.
 
 
 \subsubsection{Lorentz Four-Force via the Euler--Lagrange Equation}\label{sssec:ele}
@@ -3603,7 +3627,7 @@ e_y & b_z & 0 & -b_x \\
 e_z & -b_y & b_x & 0
 \end{bmatrix} ,
 \end{equation*}
-giving $\partialup \cdot \inlinedy{\mathsf{F}} = \langle \del \cdot \vv e , \, - \partial^{ct} \vv e + \del \times \vv b \rangle$, as expected (we must remember that ${\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle}$). As for the remaining Maxwell equations (the homogeneous $\del \cdot \vv b = 0$ and ${ - \del \times \vv e - \partial^{ct} \vv b = \vv 0 }$), we note that their left sides are just like the left sides of the first two, but with the roles of $\vv e$ and $\vv b$ reversed and a sign changed. Specifically, $\vv e$ goes to $\vv b$ and $\vv b$ goes to $- \vv e$. It should therefore be possible to form a new four-dyadic $\inlinedy{\mathsf{G}}$ from the Faraday tensor (Equation \ref{eq:emt}) by ``swapping" the $\vv e$ and $\vv b$ components and flipping the appropriate signs; the four-divergence of this new dyadic should equal the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}}$. Here:
+giving $\partialup \cdot \inlinedy{\mathsf{F}} = \langle \del \cdot \vv e , \, - \partial^{ct} \vv e + \del \times \vv b \rangle$, as expected (we must remember that ${\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle}$). As for the remaining Maxwell equations (the homogeneous $\del \cdot \vv b = 0$ and ${ - \del \times \vv e - \partial^{ct} \vv b = \vv 0 }$), we note again that their left sides are just like the left sides of the first two, but with the roles of $\vv e$ and $\vv b$ reversed and a sign changed. Specifically, $\vv e$ goes to $\vv b$ and $\vv b$ goes to $- \vv e$. It should therefore be possible to form a new four-dyadic $\inlinedy{\mathsf{G}}$ from the Faraday tensor (Equation \ref{eq:emt}) by ``swapping" the $\vv e$ and $\vv b$ components and flipping the appropriate signs; the four-divergence of this new dyadic should equal the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}}$. Here:
 \begin{equation}\label{eq:mt}
 [ \capdy{\mathsf{G}} ]
 =
