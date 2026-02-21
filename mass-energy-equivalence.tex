@@ -4,6 +4,7 @@
 \usepackage{bm, upgreek}
 \usepackage{amssymb}
 \usepackage[pdfusetitle]{hyperref}
+\usepackage[figure]{hypcap}
 \hypersetup{bookmarksnumbered,colorlinks=true, linkcolor=yaleblue, urlcolor=yaleblue}
 \usepackage{xcolor}
 \definecolor{dimgray}{rgb}{0.41, 0.41, 0.41}
@@ -50,7 +51,8 @@
 \usepackage{tkz-euclide}
 \usepackage{tikz}
 \usepackage{tkz-tab}
-\usepackage{caption}
+\usetikzlibrary{calc, arrows.meta}
+\usepackage[font=small,labelfont=bf]{caption}
 \usepackage{subcaption}
 \usepackage{hypcap}
 \usepackage{cancel}
@@ -512,7 +514,94 @@ Imagine two frames of reference in standard configuration once again. This time,
 
 For a brief moment, the source emits light directly toward the observer. To the observer, the velocity vector of the approaching light makes an angle $\theta^\prime$ with the positive $x^\prime$-direction (obtuse if the source is approaching, acute if the source is receding). To the source, the light's velocity vector makes an angle $\theta$ with the positive $x$-direction (which is also the direction of the observer's motion---remember this). Thus, the angles $\theta^\prime$ and $\theta$ are related by the aberration formulas, Equations $\ref{eq:7}$ (substitute $\beta$ for $\beta_{\textrm{rel}}$).
 
-In the source's frame, the light oscillates with a period $c \mkern.5mu \Delta t$ equal to its wavelength $\lambda$. By time dilation, the duration between peak-emissions in the \emph{observer's} frame is then $c \mkern.5mu \Delta t^\prime = \gamma \lambda$.\footnote{Don't confuse this with the light's \emph{period} in the primed frame (the time between peak-\emph{receptions} for an observer stationary in this frame).} During this time interval $\gamma \lambda$, the light travels toward the observer a distance $\gamma \lambda$, while the \emph{source} is displaced a distance $\gamma \lambda \, \beta$ in the negative $x^\prime$-direction. But we only care about the \emph{radial component} of the source's displacement (the component that's parallel to the light's path toward the observer at the primed origin, defined as negative if it's directed toward the origin and positive if it's directed away). A bit of trigonometry tells us that this radial displacement is $\gamma \lambda (\beta \cos \theta^\prime)$, regardless of whether the source is on the negative or positive $x^\prime$-side of the $y^\prime$/$z^\prime$-plane. To see why, realize that $\theta^\prime$ \emph{is} the angle between the source's displacement and the outward radial in either case. If the source is on the negative $x^\prime$-side (receding from the observer), our radial component is positive because $\cos \theta^\prime$ is positive; and if the source is on the positive $x^\prime$-side (approaching the observer), the radial component is negative. (If the source is \emph{on} the $y^\prime$/$z^\prime$-plane, then the radial component is zero because $\cos \theta^\prime = 0$.)
+In the source's frame, the light oscillates with a period $c \mkern.5mu \Delta t$ equal to its wavelength $\lambda$. By time dilation, the duration between peak-emissions in the \emph{observer's} frame is then $c \mkern.5mu \Delta t^\prime = \gamma \lambda$.\footnote{Don't confuse this with the light's \emph{period} in the primed frame (the time between peak-\emph{receptions} for an observer stationary in this frame).} During this time interval $\gamma \lambda$, the light travels toward the observer a distance $\gamma \lambda$, while the \emph{source} is displaced a distance $\gamma \lambda \, \beta$ in the negative $x^\prime$-direction. But we only care about the \emph{radial component} of the source's displacement (the component that's parallel to the light's path toward the observer at the primed origin, defined as negative if it's directed toward the origin and positive if it's directed away). A bit of trigonometry tells us that this radial displacement is $\gamma \lambda (\beta \cos \theta^\prime)$, regardless of whether the source is on the negative or positive $x^\prime$-side of the $y^\prime$/$z^\prime$-plane. To see why, realize that $\theta^\prime$ \emph{is} the angle between the source's displacement and the outward radial in either case (Figure \ref{f:doppler}). If the source is on the negative $x^\prime$-side (receding from the observer), our radial component is positive because $\cos \theta^\prime$ is positive; and if the source is on the positive $x^\prime$-side (approaching the observer), the radial component is negative. (If the source is \emph{on} the $y^\prime$/$z^\prime$-plane, then the radial component is zero because $\cos \theta^\prime = 0$.)
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[>={Stealth[length=10pt, width=7pt]}, thick, scale=1]
+
+% Parameters
+\def\objangle{28}        % angle of object from x-axis
+\def\objdist{8.5}        % distance of object from origin
+\def\displen{4}          % displacement length (gamma lambda beta)
+
+% Key coordinates
+\coordinate (O) at (0,0);
+\coordinate (P) at (\objangle:\objdist);        % object position
+\coordinate (D) at ($(P) + (-\displen, 0)$);    % displacement tip (leftward)
+
+% Radial component: projection of displacement onto radial direction (toward origin)
+\pgfmathsetmacro{\radproj}{\displen * cos(\objangle)}
+\coordinate (R) at ($(P) + ({-\radproj*cos(\objangle)}, {-\radproj*sin(\objangle)})$);
+
+% Ray extension points
+\coordinate (Rext) at ($(O)!-0.12!(P)$);  % extension past origin (just past the angle arc)
+\coordinate (Rfar) at ($(O)!1.2!(P)$);    % extension past object
+
+% Arrowhead landing point on ray, slightly away from origin toward object
+\coordinate (Oarrow) at ($(O)!0.01!(P)$);
+
+% --- Drawing ---
+
+% Axes
+\draw[->, thick] (O) -- (8, 0) node[right] {$x'$};
+\draw[->, thick] (O) -- (0, 5.5) node[above] {$y'$};
+
+% Ray: solid from object to near-origin with arrowhead, dotted extensions
+\coordinate (Oarrowback) at ($(Oarrow)!0.3!(P)$);
+\draw (P) -- (Oarrowback);                  % solid ray from object to just before arrowhead
+\draw[->] (Oarrowback) -- (Oarrow);         % arrowhead segment near origin
+% Small offsets so dotted lines don't bleed into the solid segment
+\coordinate (Ooff) at ($(O)!-0.005!(P)$);
+\coordinate (Poff) at ($(O)!1.02!(P)$);
+\draw[dotted] (Ooff) -- (Rext);            % dotted extension past origin
+\draw[dotted] (Poff) -- (Rfar);            % dotted extension past object
+
+% Object dot
+\fill (P) circle (3pt);
+
+% Displacement vector (total, pointing left)
+\draw[->, very thick] (P) -- (D) node[midway, above] {$\gamma\lambda\beta$};
+
+% Radial component vector (from object toward origin along the ray)
+\draw[->, very thick] (P) -- (R)
+  node[midway, below right] {$\gamma\lambda\beta\cos(\pi - \theta') = - \gamma\lambda\beta\cos\theta'$};
+
+% Dashed perpendicular connector from R to D (small gap at D end to avoid overlapping arrowhead)
+\coordinate (Ddash) at ($(D)!0.05!(R)$);
+\draw[dashed] (R) -- (Ddash);
+
+% Right angle symbol at R (square-shaped)
+\def\rasize{0.45}
+\pgfmathsetmacro{\urx}{cos(\objangle)}
+\pgfmathsetmacro{\ury}{sin(\objangle)}
+\pgfmathsetmacro{\RDx}{-\displen + \radproj*cos(\objangle)}
+\pgfmathsetmacro{\RDy}{\radproj*sin(\objangle)}
+\pgfmathsetmacro{\RDlen}{sqrt(\RDx*\RDx + \RDy*\RDy)}
+\pgfmathsetmacro{\udx}{\RDx / \RDlen}
+\pgfmathsetmacro{\udy}{\RDy / \RDlen}
+\coordinate (RA1) at ($(R) + ({\rasize*\urx}, {\rasize*\ury})$);
+\coordinate (RA2) at ($(R) + ({\rasize*\udx}, {\rasize*\udy})$);
+\coordinate (RA3) at ($(R) + ({\rasize*(\urx+\udx)}, {\rasize*(\ury+\udy)})$);
+\draw (RA1) -- (RA3) -- (RA2);
+
+% Angle theta' at origin (obtuse, smaller arc)
+\pgfmathsetmacro{\angstart}{180 + \objangle}
+\draw (O) +(\angstart:0.7) arc[start angle=\angstart, end angle=360, radius=0.7]
+  node[pos=0.45, below] {$\theta'$};
+
+% Angle theta' at object (obtuse, smaller arc)
+\pgfmathsetmacro{\angAstart}{\objangle}
+\pgfmathsetmacro{\angAend}{180}
+\draw (P) +(\angAstart:0.9) arc[start angle=\angAstart, end angle=\angAend, radius=0.9]
+  node[pos=0.5, above] {$\theta'$};
+
+\end{tikzpicture}
+
+\caption{The dot is the source of light, emitting a wave toward the primed origin. Between peak-emissions, the source is displaced in the negative $x^\prime$-direction a distance $\gamma \lambda \beta$, as explained in the text. Here it's clear that $\theta^\prime$, defined as the angle between the wave's velocity vector and the positive $x^\prime$-direction, is also the angle between the ``outward radial" and the source's displacement vector. This figure shows the source \emph{approaching} the observer, which means the radial component of the source's displacement has \emph{magnitude} $- \gamma \lambda \beta \cos \theta^\prime$ (would be $+\gamma \lambda \beta \cos \theta^\prime$ were the source receding). But the radial component itself is still $\gamma \lambda \beta \cos \theta^\prime$ (a negative value in this case). Note that we've suppressed the $z^\prime$ axis, and that the source needn't be traveling on the $x^\prime$/$y^\prime$ plane. Additionally, the displacement is exaggerated (really it's infinitesimal, so that we can neglect any change in $\theta^\prime$).}
+\label{f:doppler}
+
+\end{figure}
 
 So in the observer's frame, the source emits the light wave's second peak a time $\gamma \lambda$ after emitting the first, but the source has also moved toward or away from the observer a distance $| \gamma \lambda \, \beta \cos \theta^\prime |$ during that time. The second peak therefore trails the first by a distance equal to the sum of $\gamma \lambda$ (the distance light travels in the observer's frame between peak-emissions) and $\gamma \lambda \, \beta \cos \theta^\prime$ (the appropriately signed radial component of the source's concurrent displacement).\footnote{To keep things simple, we've neglected any change in $\theta^\prime$ during the time interval $\gamma \lambda$. This is no crime, but we should acknowledge that the angle in this scenario does in fact change continuously (unless it's $0$ or $\pi$)---\emph{even over the course of a single cycle}. Strictly speaking, we should be working with infinitesimals, not finite displacements.} Naturally, that trailing distance is just the wavelength $\lambda^\prime$ measured in the observer's frame:
 \begin{equation*}
@@ -732,13 +821,10 @@ Voil\`a:
 \boxed{E^2=E_0^2+(\vv p c)^2} \, .
 \end{equation}
 
-Mission accomplished! That's the \textbf{energy--momentum relation}, and it's one of the most important equations in physics. Perhaps you noticed that it evinces a Pythagorean relationship: as illustrated in Figure \ref{f:1}, a system's total energy can be represented as the hypotenuse of a right triangle whose shorter legs represent the system's rest energy and magnitude-of-momentum.\footnote{This Pythagorean interpretation has some elegance and it's okay for now, but don't get too attached to it. Later we'll view the energy--momentum relation from another perspective that will prove more fruitful yet!} For a system at rest, the momentum leg shrinks to zero and our triangle becomes a straight line, reducing Equation \ref{eq:21} to Equation \ref{eq:6} ($E=E_0$).
+Mission accomplished! That's the \textbf{energy--momentum relation}, and it's one of the most important equations in physics. Perhaps you noticed that it evinces a Pythagorean relationship: as illustrated in Figure \ref{f:emrelation}, a system's total energy can be represented as the hypotenuse of a right triangle whose shorter legs represent the system's rest energy and magnitude-of-momentum.\footnote{This Pythagorean interpretation has some elegance and it's okay for now, but don't get too attached to it. Later we'll view the energy--momentum relation from another perspective that will prove more fruitful yet!} For a system at rest, the momentum leg shrinks to zero and our triangle becomes a straight line, reducing Equation \ref{eq:21} to Equation \ref{eq:6} ($E=E_0$).
 
 \begin{figure}[h]
 \centering
-\caption{Equation \ref{eq:21} as a right triangle}
-\label{f:1}
-\vspace{10pt}
 \begin{tikzpicture}[thick]
 \coordinate (O) at (0,0);
 \coordinate (A) at (4,0);
@@ -751,6 +837,8 @@ Mission accomplished! That's the \textbf{energy--momentum relation}, and it's on
 \tkzLabelSegment[xshift =.1cm, yshift=.6cm](A,B){\textit{$E$}}
 \tkzMarkRightAngle[size=0.5,opacity=.4](A,O,B)% square angle here
 \end{tikzpicture}
+\caption{Equation \ref{eq:21} as a right triangle}
+\label{f:emrelation}
 \end{figure}
 
 What about when $E_0 = 0$? We haven't really addressed this head-on yet, but earlier we mentioned in passing that some systems are massless or ``restless" (Footnote \ref{fn:rl})---i.e., they have no rest energy because they have no rest frame. What does it mean for a system to have no rest frame? It means that no frame of reference exists for which the momenta of the system's constituents sum to zero. Put differently, all observers agree that the system's $E \vvbeta \neq \vv 0$ (Equation \ref{eq:18}). Assuming that $E > 0$ (wouldn't be much of a system, otherwise!), this implies that the system's $\beta > 0$ for \emph{everyone}. Nobody can catch up to it. And special relativity tells us that that can only be true if the system travels at the universal speed limit, $\beta = 1$. \emph{A ``restless" (massless) system travels at the speed of light}, and vice versa.\footnote{In Section \ref{sssec:sy}, we remarked that a system's velocity is the velocity of its rest frame relative to an observer. Obviously that's nonsense if the system is ``restless" (massless) and \emph{has} no rest frame. In this special case, \emph{every constituent of the system} travels at $\beta = 1$ in the same direction.} By Equation \ref{eq:18}, then, $\vv p c = E \hatbeta$ when $E_0 = 0$ (where the $\hatbeta$ is a unit vector).
