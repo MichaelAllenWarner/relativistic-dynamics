@@ -603,7 +603,23 @@ In the source's frame, the light oscillates with a period $c \mkern.5mu \Delta t
 
 \end{figure}
 
-We'll now assume that the duration between peak-emissions $c \mkern.5mu \Delta t^\prime = \gamma \lambda$, and hence the source's displacement as well, is infinitesimal. In this first-order limit, the angle $\theta^\prime$ is constant, and our scalar radial projection \emph{equals} the change in the source's distance from the observer at the primed origin.
+We'll now assume that the duration between peak-emissions $c \mkern.5mu \Delta t^\prime = \gamma \lambda$ is infinitesimal. The source's displacement is then infinitesimal too, and the scalar projection of the displacement onto the outward radial direction \emph{equals} the change in the source's distance to the primed origin. Geometrically this is intuitive enough (see Figure \ref{f:doppler}), but let's quickly demonstrate it. Notate the source's initial position $\vv r_{\mathrm{i}} = r_{\mathrm{i}} \vv{\hat{r}}$ and its infinitesimal displacement $\dd \vv r$. The change in distance to origin is:
+\begin{equation*}
+\begin{aligned}
+\vert \vv r_{\mathrm{i}} + \dd \vv r \vert - r_{\mathrm{i}} &= \sqrt{(\vv r_{\mathrm{i}} + \dd \vv r) \cdot (\vv r_{\mathrm{i}} + \dd \vv r)} - r_{\mathrm{i}} \\
+&= \sqrt{r_{\mathrm{i}}^2 + 2 (\vv r_{\mathrm{i}} \cdot \dd \vv r) + (\dd \vv r)^2} - r_{\mathrm{i}} \\
+&= \sqrt{r_{\mathrm{i}}^2 \left( 1 + 2 \frac{\vv r_{\mathrm{i}} \cdot \dd \vv r}{r_{\mathrm{i}}^2} \right) + 0 } - r_{\mathrm{i}} \\
+&= r_{\mathrm{i}} \left( \sqrt{1 + 2 \frac{\vv r_{\mathrm{i}} \cdot \dd \vv r}{r_{\mathrm{i}}^2}} - 1 \right) ,
+\end{aligned}
+\end{equation*}
+where we've let the squared infinitesimal vanish. Similarly, for infinitesimal $\epsilon$, we have the relation $(1 + .5 \epsilon)^2 = 1 + \epsilon + .25 \epsilon^2 = 1 + \epsilon$ (squared infinitesimals again), such that $\sqrt{1 + \epsilon} = 1 + .5 \epsilon$. Since our ${(\vv r_{\mathrm{i}} \cdot \dd \vv r)}$ term is to first order in infinitesimals, we can apply that approximation to it, and:
+\begin{equation*}
+\begin{aligned}
+\vert \vv r_{\mathrm{i}} + \dd \vv r \vert - r_{\mathrm{i}} &=  r_{\mathrm{i}} \left(1 + \frac{\vv r_{\mathrm{i}} \cdot \dd \vv r}{r_{\mathrm{i}}^2}  - 1\right) \\
+&= \vv{\hat{r}} \cdot \dd \vv r ,
+\end{aligned}
+\end{equation*}
+which is precisely the scalar projection of the displacement onto the outward radial.
 
 So in the observer's frame, the source emits the light wave's second peak a time $\gamma \lambda$ after emitting the first, but the source has also moved toward or away from the observer a distance $| \gamma \lambda \, \beta \cos \theta^\prime |$ during that time. The second peak therefore trails the first by a distance equal to the sum of $\gamma \lambda$ (the distance light travels in the observer's frame between peak-emissions) and $\gamma \lambda \, \beta \cos \theta^\prime$ (the appropriately signed scalar projection of the source's concurrent displacement onto the outward radial). Naturally, that trailing distance is just the wavelength $\lambda^\prime$ measured in the observer's frame:
 \begin{equation*}
