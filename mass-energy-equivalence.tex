@@ -514,7 +514,7 @@ Imagine two frames of reference in standard configuration once again. This time,
 
 For a brief moment, the source emits light directly toward the observer. To the observer, the velocity vector of the approaching light makes an angle $\theta^\prime$ with the positive $x^\prime$-direction (obtuse if the source is approaching, acute if the source is receding). To the source, the light's velocity vector makes an angle $\theta$ with the positive $x$-direction (which is also the direction of the observer's motion---remember this). Thus, the angles $\theta^\prime$ and $\theta$ are related by the aberration formulas, Equations $\ref{eq:7}$ (substitute $\beta$ for $\beta_{\textrm{rel}}$).
 
-In the source's frame, the light oscillates with a period $c \mkern.5mu \Delta t$ equal to its wavelength $\lambda$. By time dilation, the duration between peak-emissions in the \emph{observer's} frame is then $c \mkern.5mu \Delta t^\prime = \gamma \lambda$.\footnote{Don't confuse this with the light's \emph{period} in the primed frame (the time between peak-\emph{receptions} for an observer stationary in this frame).} During this time interval $\gamma \lambda$, the light travels toward the observer a distance $\gamma \lambda$, while the \emph{source} is displaced a distance $\gamma \lambda \, \beta$ in the negative $x^\prime$-direction. A bit of trigonometry shows that the (signed) \emph{scalar projection} of the source's displacement onto the initial outward radial direction $\vv{\hat{r}}$ (that's a unit vector) is $\gamma \lambda \beta \cos \theta^\prime$, regardless of whether the source is on the negative or positive $x^\prime$-side of the $y^\prime$/$z^\prime$-plane. To understand why, realize that $\theta^\prime$ \emph{is} the angle between the source's displacement and the initial outward radial in either case (see Figure \ref{f:doppler}). If the source is on the negative $x^\prime$-side (receding from the observer), our scalar radial projection is positive because $\cos \theta^\prime$ is positive; and if the source is on the positive $x^\prime$-side (approaching the observer), it's negative. (If the source is \emph{on} the $y^\prime$/$z^\prime$-plane, then the scalar radial projection is zero.)
+In the source's frame, the light oscillates with a period $c \mkern.5mu \Delta t$ equal to its wavelength $\lambda$. By time dilation, the duration between peak-emissions in the \emph{observer's} frame is then $c \mkern.5mu \Delta t^\prime = \gamma \lambda$.\footnote{Don't confuse this with the light's \emph{period} in the primed frame (the time between peak-\emph{receptions} for an observer stationary in this frame).} During this time interval $\gamma \lambda$, the light travels toward the observer a distance $\gamma \lambda$, while the \emph{source} is displaced a distance $\gamma \lambda \, \beta$ in the negative $x^\prime$-direction. A bit of trigonometry shows that the (signed) \emph{scalar projection} of the source's displacement $\Delta \vv r$ onto the initial outward radial direction $\vv{\hat{r}}$ (a unit vector) is $\Delta \vv r \cdot \vv{\hat{r}} = \gamma \lambda \beta \cos \theta^\prime$, regardless of whether the source is on the negative or positive $x^\prime$-side of the $y^\prime$/$z^\prime$-plane. To understand why, realize that $\theta^\prime$ \emph{is} the angle between the source's displacement and the initial outward radial in either case (see Figure \ref{f:doppler}). If the source is on the negative $x^\prime$-side (receding from the observer), our scalar radial projection is positive because $\cos \theta^\prime$ is positive; and if the source is on the positive $x^\prime$-side (approaching the observer), it's negative. (If the source is \emph{on} the $y^\prime$/$z^\prime$-plane, then the scalar radial projection is zero.)
 
 \begin{figure}[h]
 \centering
@@ -603,25 +603,25 @@ In the source's frame, the light oscillates with a period $c \mkern.5mu \Delta t
 
 \end{figure}
 
-We'll now assume that the duration between peak-emissions $c \mkern.5mu \Delta t^\prime = \gamma \lambda$ is infinitesimal. The source's displacement is then infinitesimal too, and the scalar projection of the displacement onto the initial outward radial $\vv{\hat{r}}$ \emph{equals} the change in the source's distance to the primed origin. Geometrically this is intuitive enough, but let's quickly demonstrate it. Notating the source's initial position $\vv r = r \vv{\hat{r}}$ and its infinitesimal displacement $\dd \vv r$, the change in the source's distance to origin is:
+We'll now assume that the duration between peak-emissions $\gamma \lambda$ is infinitesimal ($c \mkern.5mu \Delta t^\prime \rightarrow c \, \dd t^\prime$). The source's displacement is then infinitesimal too ($\Delta \vv r \rightarrow \dd \vv r$), and in this limit our radial projection $\dd \vv r \cdot \vv{\hat{r}} = \gamma \lambda \beta \cos \theta^\prime$ becomes equal to the change in the source's distance to the primed origin. Geometrically that's intuitive enough, but let's quickly demonstrate it. Notating the source's initial position $\vv r = r \vv{\hat{r}}$, the change in the source's distance to the origin is:
 \begin{equation*}
 \begin{aligned}
 \vert \vv r + \dd \vv r \vert - r &= \sqrt{(\vv r + \dd \vv r) \cdot (\vv r + \dd \vv r)} - r \\[2pt]
-&= \sqrt{r^2 + 2 (\vv r \cdot \dd \vv r) + (\dd \vv r)^2} - r\\[1pt]
-&= \sqrt{r^2 \left( 1 + 2 \, \frac{\vv r \cdot \dd \vv r}{r^2} \right) + 0 } - r \\[1pt]
-&= r \sqrt{1 + 2 \, \frac{\vv{\hat{r}} \cdot \dd \vv r}{r}} - r,
+&= \sqrt{r^2 + 2 (\dd \vv r \cdot \vv r) + (\dd \vv r)^2} - r\\[1pt]
+&= \sqrt{r^2 \left( 1 + 2 \, \frac{\dd \vv r \cdot \vv r}{r^2} \right) + 0 } - r \\[1pt]
+&= r \sqrt{1 + 2 \, \frac{\dd \vv r \cdot \vv{\hat{r}}}{r}} - r,
 \end{aligned}
 \end{equation*}
-where we've discarded the squared infinitesimal. Similarly, for infinitesimal $\epsilon$, we have $(1 + .5 \epsilon)^2 = 1 + \epsilon + .25 \epsilon^2 = 1 + \epsilon$ (squared infinitesimal again), such that $\sqrt{1 + \epsilon} = 1 + .5 \epsilon$. Since our ${(\vv{\hat{r}}\cdot \dd \vv r)}$ term is to first order in infinitesimals, we can apply this reduction:
+where we've discarded the squared infinitesimal. Similarly, for infinitesimal $\epsilon$, we have $(1 + .5 \epsilon)^2 = 1 + \epsilon + .25 \epsilon^2 = 1 + \epsilon$ (squared infinitesimal again), such that $\sqrt{1 + \epsilon} = 1 + .5 \epsilon$. Since our ${(\dd \vv r \cdot \vv{\hat{r}})}$ term is to first order in infinitesimals, we can apply this relation:
 \begin{equation*}
 \begin{aligned}
-\vert \vv r + \dd \vv r \vert - r &=  r \left(1 + \frac{\vv{\hat{r}} \cdot \dd \vv r}{r} \right) - r \\[1pt]
-&= \vv{\hat{r}} \cdot \dd \vv r ,
+\vert \vv r + \dd \vv r \vert - r &=  r \left(1 + \frac{\dd \vv r \cdot \vv{\hat{r}}}{r} \right) - r \\[1pt]
+&= \dd \vv r \cdot \vv{\hat{r}} ,
 \end{aligned}
 \end{equation*}
 which is precisely the scalar projection of the displacement onto $\vv{\hat{r}}$.
 
-So in the observer's frame, the source emits the light wave's second peak a time $\gamma \lambda$ after emitting the first, but the source has also moved toward or away from the observer a distance $| \gamma \lambda \, \beta \cos \theta^\prime |$ during that time. The second peak therefore trails the first by a distance equal to the sum of $\gamma \lambda$ (the distance light travels in the observer's frame between peak-emissions) and $\gamma \lambda \, \beta \cos \theta^\prime$ (the appropriately signed scalar projection of the source's concurrent displacement onto the outward radial). Naturally, that trailing distance is just the wavelength $\lambda^\prime$ measured in the observer's frame:
+So in the observer's frame, the source emits the light wave's second peak an infinitesimal time $\gamma \lambda$ after emitting the first, but the source has also moved toward or away from the observer a distance $| \gamma \lambda \, \beta \cos \theta^\prime |$ during that time. The second peak therefore trails the first by a distance equal to the sum of $\gamma \lambda$ (the distance light travels in the observer's frame between peak-emissions) and $\gamma \lambda \, \beta \cos \theta^\prime$ (the source's concurrent and appropriately signed change in distance to the observer). Naturally, that trailing distance is just the wavelength $\lambda^\prime$ measured in the observer's frame:
 \begin{equation*}
 \begin{aligned}
 \lambda^\prime &= \gamma \lambda + \gamma \lambda \, \beta \cos \theta^\prime \\
