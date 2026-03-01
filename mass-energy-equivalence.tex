@@ -662,7 +662,7 @@ If you're wondering how the observers in Einstein's thought experiment can possi
 So when we apply Equation \ref{eq:8} to our thought experiment, we can arrange for the moving observer to personally detect one of the light waves with a spectrometer, but then the other wave must be detected by a \emph{second} spectrometer elsewhere in the frame, along the wave's path. Or we can disregard the observer altogether and simply speak of two spectrometers. It doesn't matter. The important thing is that the spectrometers move with the same velocity $\vvbeta$ relative to the light-emitting body. And since the light waves propagate in opposite directions from the body's perspective, the angles they form with $\vvbeta$ must differ by $\pi$. How convenient! The cosines of such angles sum to zero (i.e., $\cos \mkern1.5mu (\theta+\pi)=-\cos\theta$), and that's just what we'll need for all the $\theta$'s to disappear when we use Equation \ref{eq:8} to add the $E^{\prime}$ of one light wave to the $E^{\prime}$ of the other. Apparently this Einstein fellow knew what he was doing. But we're getting ahead of ourselves.
 
 
-\subsection[Einstein’s Thought Experiment \emph{with} Einstein: Relativistic Energy and $m=E_0/c^2$]{Einstein's Thought Experiment \emph{with} Einstein:\\Relativistic Energy and $\bm{m=E_0/c^2}$}\label{ssec:re}
+\subsection[Einstein’s Thought Experiment \emph{with} Einstein: Relativistic Energy and \texorpdfstring{$m=E_0/c^2$}{m=E₀/c²}]{Einstein's Thought Experiment \emph{with} Einstein:\\Relativistic Energy and $\bm{m=E_0/c^2}$}\label{ssec:re}
 
 Let's take stock. When we analyzed the thought experiment without special relativity, we hit a roadblock: on the one hand, the additivity of mass implies that the observers should agree that the light waves have equal-and-opposite momenta and carry away a combined energy equal to $-\Delta E_0$ (the rest energy lost by the body); on the other hand, Maxwell and Doppler say that \emph{only} our rest observer can find that to be the case. Now we have a path forward---abandon the assumption that mass is additive, prioritize Maxwell and Doppler, and retrace Einstein's steps (more or less) in deriving a new \emph{relativistic} equation for kinetic energy. Then we'll tackle momentum.
 
@@ -2373,19 +2373,76 @@ Since information can travel no faster than $\beta = 1$, it also follows that in
 
 \section{Electrodynamics with Four-Vectors}\label{sec:rem}
 
-Near the beginning of this document, we took a quantum shortcut: instead of using classical electromagnetism to show that the energy of light transforms between frames in the same manner as its frequency, we used the Planck--Einstein relation. This wasn't quite ahistorical, but it wasn't entirely satisfactory, either, and we pledged that we'd come back and redo it the ``right" way, without invoking the photon model. The time has come to settle that unfinished business. We'll start by formulating the basics of classical electrodynamics from scratch using four-vectors---no explicit tensor analysis, no index notation, no differential forms.\footnote{Section \ref{sec:dy}, by contrast, is a foray into dyadics, which is kind of like ``tensors lite." Also, I want to stress that while we'll get pretty far with our vector and dyadic approaches---farther than most realize is feasible, I'd wager---one really \emph{must} learn index notation to go deeper with the material or to move on to more advanced topics like general relativity. Index notation has a learning curve, but it's extremely powerful, and it's even beautiful once you get the hang of it. You should learn it! See Section \ref{ssec:index}.} Then we'll derive the transformation law for the energy of a light wave the way that Einstein did it (more or less). But first we'll need to go over some spacetime vector calculus. Familiarity with Euclidean vector calculus is assumed, though we'll keep our steps transparent and point out the identities we use.
+Near the beginning of this document, we took a quantum shortcut: instead of using classical electromagnetism to show that the energy of light transforms between frames in the same manner as its frequency, we used the Planck--Einstein relation. This wasn't quite ahistorical, but it wasn't entirely satisfactory, either, and we pledged that we'd come back and redo it the ``right" way, without invoking the photon model. The time has come to settle that unfinished business. We'll start by formulating the basics of classical electrodynamics from scratch using four-vectors---no explicit tensor analysis, no index notation, no differential forms.\footnote{Section \ref{sec:dy}, by contrast, is a foray into dyadics, which is kind of like ``tensors lite." Also, I want to stress that while we'll get pretty far with our vector and dyadic approaches---farther than most realize is feasible, I'd wager---one really \emph{must} learn index notation to go deeper with the material or to move on to more advanced topics like general relativity. Index notation has a learning curve, but it's extremely powerful, and it's even beautiful once you get the hang of it. You should learn it! See Section \ref{ssec:index}.} Then we'll derive the transformation law for the energy of a light wave the way that Einstein did it (more or less). But first we'll need to go over some spacetime vector calculus. Familiarity with Euclidean vector calculus is assumed, though we'll do a quick review of some essentials.
 
 
 \subsection{The Math (Spacetime Vector Calculus)}
 
+\subsubsection{Lightning Review of Three-Vector Calculus}
 
-\subsubsection{The Four-Del}\label{sssec:fd}
+We've already used the Euclidean dot product plenty:
+\begin{equation*}
+\vv a \cdot \vv b = a b \cos \theta ,
+\end{equation*}
+$\theta$ being the angle between vectors $\vv a$ and $\vv b$. In practice we'll typically still use the component form in Cartesian coordinates:
+\begin{equation*}
+\vv a \cdot \vv b = a_x b_x + a_y b_y + a_z b_z.
+\end{equation*}
+We have \emph{not} yet used the \textbf{cross product} (aka \textbf{vector product}). That's:
+\begin{equation*}
+\vv a \times \vv b = a b \sin \theta \, \vv{\hat{n}} ,
+\end{equation*}
+where $\theta$ is the (lesser) angle between $\vv a$ and $\vv b$, and where $\vv{\hat{n}}$ is a unit vector orthogonal to both $\vv a$ and $\vv b$ that points in the direction specified by the right-hand rule (if the right thumb is $\vv a$ and the right index finger is $\vv b$, then $\vv{\hat{n}}$ is the right middle finger bent forward). In Cartesian coordinates:
+\begin{equation*}
+\vv a \times \vv b = \langle a_y b_z - a_z b_y, \, a_z b_x - a_x b_z, \, a_x b_y - a_y b_x \rangle .
+\end{equation*}
 
-We'll need a four-vector equivalent of the ``del" (``nabla") symbol:
+Central to vector calculus are the concepts of scalar and vector \emph{fields}. A scalar field $f = f(\vv r)$ is just a scalar that's defined at every point in space (or sometimes on a subset of points, like a line or surface). Likewise for a vector field $\vv c = \vv c (\vv r)$, but its value is a vector rather than a scalar (duh!). In either case, the function notation tells us that the value depends on position $\vv r$. Of course, a point in space doesn't have a \emph{unique} $\vv r$ until a spatial origin has been chosen. So the $(\vv r)$ notation means: ``the value of this function depends on the position vector $\vv r$ \emph{relative to whatever origin you choose}." Any choice will do; the field's value at a given point is a geometric fact that doesn't care about what coordinate system we're working with.
+
+The ``del" or ``nabla" symbol $\del$ is a ``vector-valued" operator that lets us differentiate fields with respect to position. It's defined like this:
+\begin{equation*}
+\del \, \text{\underline{\hspace{.6em}}} \equiv \lim\limits_{\substack{\\ V \to 0}} \dfrac{1}{V} \int_S \left(\vv{\hat{n}} \, \text{\underline{\hspace{.6em}}} \right) \dd S ,
+\end{equation*}
+where $\text{\underline{\hspace{.6em}}}$ is a placeholder operand (that might include a dot or a cross), $S$ is the bounding surface of a volume $V$ enclosing the evaluation point, and $\vv{\hat{n}}$ is an outward-pointing unit vector normal to the surface element $\dd S$. In Cartesian coordinates, del's ``components" are the spatial partial-derivative operators:
 \begin{equation*}
 \del = \left \langle \dfrac{\partial}{\partial x}, \, \dfrac{\partial}{\partial y}, \, \dfrac{\partial}{\partial z} \right \rangle .
 \end{equation*}
-Let's notate it $\partialup$ (``vectorized" $\partial$ symbol). A natural guess is:
+When del acts on a scalar field $f = f(\vv r)$, it produces a vector field called the \textbf{gradient} of $f$:
+\begin{equation*}
+\begin{aligned}
+\del f &= \lim\limits_{\substack{\\ V \to 0}} \dfrac{1}{V} \int_S \left( \vv{\hat{n}} f \right) \dd S  \\[4pt]
+&= \left \langle \dfrac{\partial f}{\partial x}, \, \dfrac{\partial f}{\partial y}, \, \dfrac{\partial f}{\partial z} \right \rangle .
+\end{aligned}
+\end{equation*}
+When it's ``dotted" with a vector field $\vv c = \vv c (\vv r)$, it produces a scalar field called the \textbf{divergence} of $\vv c$:
+\begin{equation*}
+\begin{aligned}
+\del \cdot \vv c &= \lim\limits_{\substack{\\ V \to 0}} \dfrac{1}{V} \int_S \left(\vv{\hat{n}}  \cdot \vv c \right) \dd S \\[4pt]
+&= \dfrac{\partial c_x}{\partial x} + \dfrac{\partial c_y}{\partial y} + \dfrac{\partial c_z}{\partial z} .
+\end{aligned}
+\end{equation*}
+When it's ``crossed" with a vector field $\vv c = \vv c (\vv r)$, it produces another vector field called the \textbf{curl} of $\vv c$:
+\begin{equation*}
+\begin{aligned}
+\del \times \vv c &= \lim\limits_{\substack{\\ V \to 0}} \dfrac{1}{V} \int_S \left(\vv{\hat{n}} \times \vv c \right) \dd S \\[4pt]
+&= \left \langle \dfrac{\partial c_z}{\partial y} - \dfrac{\partial c_y}{\partial z}, \, \dfrac{\partial c_x}{\partial z} - \dfrac{\partial c_z}{\partial x}, \, \dfrac{\partial c_y}{\partial x} - \dfrac{\partial c_x}{\partial y} \right \rangle .
+\end{aligned}
+\end{equation*}
+The divergence of the gradient is called the \textbf{Laplacian}:
+\begin{equation*}
+\begin{aligned}
+\nabla^2 f &\equiv \del \cdot \del f \\[2pt]
+&= \dfrac{\partial^2 f}{\partial x^2} + \dfrac{\partial^2 f}{\partial y^2} + \dfrac{\partial^2 f}{\partial z^2}.
+\end{aligned}
+\end{equation*}
+The Laplacian can act on vector fields, too.
+
+We'll use various vector calculus identities as we go, including the \textbf{divergence theorem} and the ``$bac - cab$" rule. I'll call them out, but I won't review them here, and we won't prove them. Consult a textbook or \href{https://en.wikipedia.org/wiki/Vector_calculus_identities}{Wikipedia} if you need to!
+
+
+\subsubsection{The Four-Del}\label{sssec:fd}
+
+We'll need a four-vector equivalent of the del operator $\del$. Let's notate it $\partialup$ (``vectorized" $\partial$ symbol). A natural guess is:
 \begin{equation*}
 \partialup \stackrel{?}{=} \left \langle \dfrac{\partial}{\partial (ct)} , \, \dfrac{\partial}{\partial x}, \, \dfrac{\partial}{\partial y}, \, \dfrac{\partial}{\partial z} \right \rangle = \left \langle \dfrac{\partial}{\partial (ct)} , \, \del \right \rangle ,
 \end{equation*}
@@ -2418,18 +2475,18 @@ That's not the Lorentz transformation; it's the \emph{inverse} Lorentz transform
 (recall that we use superscript for four-vector components).\footnote{The reason we use superscript for four-vector components is that subscripts are used for the components of \emph{co}vector components in more advanced treatments, and it's important to distinguish them (see Footnote \ref{fn:cv}). We won't use covectors explicitly, but we abide by this notational convention. In \emph{Euclidean} space, the Cartesian components of covectors are identical to those of vectors, so it doesn't really matter whether we use superscripts or subscripts for our three-vector components (we'll continue using subscripts).} We must be careful with signs when we use $\partial^x$, $\partial^y$, and $\partial^z$. These spatial components of $\partialup$ are \emph{negative} partial-derivative operators, but $\partial^{ct}$ is a \emph{positive} partial.
 
 
-\subsubsection{Four-Gradient, Four-Divergence, and the d'Alembertian}
+\subsubsection[Four-Gradient, Four-Divergence, and the d’Alembertian]{Four-Gradient, Four-Divergence, and the d'Alembertian}
 
 Like $\del$ in three-dimensional Euclidean space, the symbol $\partialup$ in Minkowski spacetime has several uses. Here are a few of them:
 \begin{itemize}
 \item{
-When it operates on a spacetime scalar field $\psi = \psi (\vv R)$, it's the \textbf{four-gradient} function, and it outputs a four-vector field:
+When it operates on a spacetime scalar field $\psi = \psi (\vv R)$, it produces a four-vector field called the \textbf{four-gradient} of $\psi$:
 \begin{equation*}
 \partialup \psi = \left \langle \partial^{ct} \psi, \, -\del \psi \right \rangle.
 \end{equation*}
 }
 \item{
-When it's dotted with a four-vector field $\vv Q = \vv Q (\vv R) = \langle Q^{ct}, \vv q \rangle$, we get the \textbf{four-divergence} function, and it outputs a spacetime scalar field:
+When it's dotted with a four-vector field $\vv Q = \vv Q (\vv R) = \langle Q^{ct}, \vv q \rangle$, it produces a spacetime scalar field called the \textbf{four-divergence} of $\vv Q$:
 \begin{equation*}
 \begin{split}
 \partialup \cdot \vv Q &= \partial^{ct} Q^{ct} - \left( - \del \cdot \vv q \right) \\
