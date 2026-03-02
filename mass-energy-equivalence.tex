@@ -2399,7 +2399,7 @@ where $\theta$ is the (lesser) angle between $\vv a$ and $\vv b$, and where $\vv
 
 Central to vector calculus are the concepts of scalar and vector \emph{fields}. A scalar field $f = f(\vv r)$ is just a scalar that's defined at every point in space (or sometimes on a subset of points, like a line or surface). Likewise for a vector field $\vv c = \vv c (\vv r)$, but its value is a vector rather than a scalar (duh!). In either case, the function notation tells us that the value depends on position $\vv r$. Of course, a point in space doesn't have a \emph{unique} $\vv r$ until a spatial origin has been chosen. So the $(\vv r)$ notation means: ``the value of this function depends on the position vector $\vv r$ \emph{relative to whatever origin you choose}." Any choice will do; the field's value at a given point is a geometric fact that doesn't care about what coordinate system we're working with.
 
-The ``del" or ``nabla" symbol $\del$ is a ``vector-valued" operator that lets us differentiate fields with respect to position. It's defined like this:
+The \textbf{del} or \textbf{nabla} symbol $\del$ is a ``vector operator" that lets us differentiate fields with respect to position. It's defined like this:
 \begin{equation*}
 \del \, \text{\underline{\hspace{.6em}}} \equiv \lim\limits_{\substack{\\ V \to 0}} \dfrac{1}{V} \int_S \left(\vv{\hat{n}} \, \text{\underline{\hspace{.6em}}} \right) \dd S ,
 \end{equation*}
@@ -2428,14 +2428,14 @@ When it's ``crossed" with a vector field $\vv c = \vv c (\vv r)$, it produces an
 &= \left \langle \dfrac{\partial c_z}{\partial y} - \dfrac{\partial c_y}{\partial z}, \, \dfrac{\partial c_x}{\partial z} - \dfrac{\partial c_z}{\partial x}, \, \dfrac{\partial c_y}{\partial x} - \dfrac{\partial c_x}{\partial y} \right \rangle .
 \end{aligned}
 \end{equation*}
-The divergence of the gradient is called the \textbf{Laplacian}:
+The divergence of the gradient is called the \textbf{Laplacian} (a scalar field):
 \begin{equation*}
 \begin{aligned}
 \nabla^2 f &\equiv \del \cdot \del f \\[2pt]
 &= \dfrac{\partial^2 f}{\partial x^2} + \dfrac{\partial^2 f}{\partial y^2} + \dfrac{\partial^2 f}{\partial z^2}.
 \end{aligned}
 \end{equation*}
-The Laplacian can act on vector fields, too.
+The Laplacian can act on vector fields, too (then outputting a \emph{vector} field).
 
 We'll use various vector calculus identities as we go, including the \textbf{divergence theorem} and the ``$bac - cab$" rule. I'll call them out, but I won't review them here, and we won't prove them. Consult a textbook or \href{https://en.wikipedia.org/wiki/Vector_calculus_identities}{Wikipedia} if you need to!
 
