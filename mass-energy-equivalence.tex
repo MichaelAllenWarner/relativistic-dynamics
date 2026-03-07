@@ -184,7 +184,7 @@
 \section*{Preface}\label{sec:p}
 \addcontentsline{toc}{section}{Preface}
 
-This is the gentlest introduction to relativistic dynamics you'll find. Ideally you're already familiar with basic relativistic kinematics, but we'll review what we need in Section \ref{ssec:sr}. Math prerequisites are minimal. Through Section \ref{ssec:ra}, the only calculus we'll use is simple single-variable differentiation. After that, there are integrals here and there, and Section \ref{sec:rem} on electromagnetism has partial derivatives and vector calculus. Section \ref{sec:dy} on ``electrodyadics" uses tensors but doesn't require prior experience with them.
+This is the gentlest introduction to relativistic dynamics you'll find. Ideally you're already familiar with basic relativistic kinematics, but we'll review what we need in Section \ref{ssec:sr}. Math prerequisites are minimal. Until Section \ref{ssec:ra}, the only calculus we'll use is simple single-variable differentiation. After that, there are integrals here and there, and Section \ref{sec:rem} on electromagnetism has partial derivatives and vector calculus. Section \ref{sec:dy} on ``electrodyadics" uses tensors but doesn't require prior experience with them.
 
 The ``massless" in the title is half tongue-in-cheek. The serious bit is that beyond Newtonian mechanics, I mostly avoid the word \emph{mass} and the symbol $m$. This does set my approach apart, but you'll see that it's just a linguistic and notational preference. There's nothing radical about it.
 
@@ -2085,6 +2085,53 @@ where we've used the ``half-angle" trig identities $\cos^2{(\theta / 2)} = (1 + 
 
 Because $\eta$ is such a good approximation for $y$ in the ultrarelativistic limit, particle physicists sometimes loosely refer to the pseudorapidity as just \emph{rapidity}. All this inconsistent usage can be confusing, so let's recap. In our lingo, rapidity is $\phi = \vert \bm{\upphi} \vert = \tanh^{-1}{\beta}$, and the longitudinal rapidity $\varphi$ is the inverse hyperbolic tangent of the velocity component corresponding to the axis of a given Lorentz boost ($\tanh^{-1}{\beta_x}$ if $x$ is the boost axis). In particle physics, longitudinal rapidity gets the symbol $y$ and is often called the ``particle rapidity" or even just the ``rapidity" for short, although the pseudorapidity $\eta$ is also sometimes called the rapidity.
 
+\subsubsection{Relativistic Energy from Momentum and Rapidity}
+
+In Section \ref{sssec:ff}, we showed that the work--kinetic energy principle holds in special relativity by differentiating $E^2 = E_0^2 + (\vv p c)^2$ (Equation \ref{eq:21}, the energy--momentum relation). Another approach is to integrate $\vv f \cdot \dd \vv r$, where $\vv f = \dot{\vv p}c$ is the three-force and $\vv r$ is the three-position. In fact, some treatments \emph{derive} the relativistic energy this way (having already obtained the relativistic momentum but not the energy--momentum relation), by \emph{assuming} that the work--kinetic energy principle holds. Let's now perform that integration, and witness again the power and elegance of the rapidity.
+
+With or without rapidity, we start like this (for constant rest energy $E_0$):
+\begin{equation*}
+\int_{\vv r_\textrm{i}}^{\vv r_{\textrm{f}}} \vv f \cdot \dd \vv r = \int_{\vv r_\textrm{i}}^{\vv r_{\textrm{f}}} \frac{\dd (\vv p c)}{\dd (ct)} \cdot \dd \vv r = \int_{\vv r_\textrm{i}}^{\vv r_{\textrm{f}}} \frac{\dd (\gamma E_0 \vvbeta)}{\dd (ct)} \cdot \dd \vv r = E_0 \int_{\vv r_\textrm{i}}^{\vv r_{\textrm{f}}} \frac{\dd (\gamma \vvbeta)}{\dd (ct)} \cdot \dd \vv r ,
+\end{equation*}
+where we've used $\vv p c = \gamma E_0 \vvbeta$ (Equation \ref{eq:17}), and where the subscripts $\textrm{f}$ and $\textrm{i}$ signify final and initial values. How to proceed from here? Let's first pretend we don't know about the rapidity. Change the integration variable with $\vvbeta = \dd \vv r / \dd (ct)$, and use the product rule on $\dd (\gamma \vvbeta)$:
+\begin{equation*}
+\int_{\vv r_\textrm{i}}^{\vv r_{\textrm{f}}} \vv f \cdot \dd \vv r = E_0 \int_{\vvbeta_\textrm{i}}^{\vvbeta_{\textrm{f}}} \vvbeta \cdot \left( \gamma \, \dd \vvbeta + \vvbeta \, \dd \gamma \right)
+\end{equation*}
+(treating $\gamma$ as a function of $\vvbeta$). Now we need to find $\dd \gamma$, which isn't difficult but does require a few applications of the chain rule. We already did the work, though, when we discovered $\dot{\gamma} = \gamma^3 (\vvbeta \cdot \dot{\vvbeta})$ (Equation \ref{eq:gd}). That means $\dd \gamma = \gamma^3 (\vvbeta \cdot \dd \vvbeta)$:
+\begin{equation*}
+\begin{aligned}
+\int_{\vv r_\textrm{i}}^{\vv r_{\textrm{f}}} \vv f \cdot \dd \vv r &= E_0 \int_{\vvbeta_\textrm{i}}^{\vvbeta_{\textrm{f}}} \vvbeta \cdot \bigl[ \gamma \, \dd \vvbeta + \vvbeta \, \gamma^3 ( \vvbeta \cdot \dd \vvbeta ) \bigr] \\[3pt]
+&= E_0 \int_{\vvbeta_\textrm{i}}^{\vvbeta_{\textrm{f}}} \bigl[ \gamma \, ( 1 + \gamma^2 \beta^2 ) \bigr] \left( \vvbeta \cdot \dd \vvbeta \right) .
+\end{aligned}
+\end{equation*}
+By Equation \ref{eq:25}, that's:
+\begin{equation*}
+\int_{\vv r_\textrm{i}}^{\vv r_{\textrm{f}}} \vv f \cdot \dd \vv r = E_0 \int_{\vvbeta_\textrm{i}}^{\vvbeta_{\textrm{f}}} \gamma^3 ( \vvbeta \cdot \dd \vvbeta ),
+\end{equation*}
+but we just showed that $\gamma^3 ( \vvbeta \cdot \dd \vvbeta ) = \dd \gamma$, so:
+\begin{equation*}
+\int_{\vv r_\textrm{i}}^{\vv r_{\textrm{f}}} \vv f \cdot \dd \vv r = E_0 \int_{\gamma_\textrm{i}}^{\gamma_{\textrm{f}}} \dd \gamma = E_0 \, \Delta \gamma = \Delta E = \Delta E_{\mkern.5mu \textrm{k}}
+\end{equation*}
+(by Equations \ref{eq:12} and \ref{eq:5} for constant $E_0$).
+
+That was fine---I'd even call it slick, compared to how I've seen it done elsewhere---but now let's pick back up at the $\dd (\gamma \vvbeta) / \dd (ct)$ step and bring in the rapidity (Equations \ref{eq:51}):
+\begin{equation*}
+\begin{aligned}
+\int_{\vv r_\textrm{i}}^{\vv r_{\textrm{f}}} \vv f \cdot \dd \vv r &= E_0 \int_{\vv r_\textrm{i}}^{\vv r_{\textrm{f}}} \frac{\dd (\gamma \vvbeta)}{\dd (ct)} \cdot \dd \vv r \\[4pt]
+&= E_0 \int_{\vv r_\textrm{i}}^{\vv r_{\textrm{f}}} \frac{\dd}{\dd (ct)} \left( \hatbeta \sinh{\phi} \right) \cdot \dd \vv r \\[4pt]
+&= E_0 \int_{\vv r_\textrm{i}}^{\vv r_{\textrm{f}}} \left( \hatbeta \mkern1.5mu \dot{\phi} \cosh{\phi} + \dot{\hatbeta} \sinh{\phi} \right) \cdot \dd \vv r  \\[4pt]
+&= E_0 \int_{\vv r_\textrm{i}}^{\vv r_{\textrm{f}}} \frac{\dd \phi}{\dd (ct)} \, \cosh{\phi} \left( \hatbeta \cdot \dd \vv r \right)
+\end{aligned}
+\end{equation*}
+(because $\dot{\hatbeta}$ and $\dd \vv r$ are orthogonal). Then use ${\dd \vv r / \dd (ct) = \vvbeta = \hatbeta \tanh{\phi}}$ to change variable:
+\begin{equation*}
+\begin{aligned}
+\int_{\vv r_\textrm{i}}^{\vv r_{\textrm{f}}} \vv f \cdot \dd \vv r &= E_0 \int_{\phi_\textrm{i}}^{\phi_{\textrm{f}}} \left( \hatbeta \cdot \hatbeta \right) \tanh{\phi} \, \cosh{\phi} \; \dd \phi \\[4pt]
+&= E_0 \int_{\phi_\textrm{i}}^{\phi_{\textrm{f}}} \sinh{\phi} \; \dd \phi \\[4pt]
+&= E_0 \, \Delta \cosh{\phi} = E_0 \, \Delta \gamma .
+\end{aligned}
+\end{equation*}
+Nicer, yes? Good things tend to happen when you recast your calculus in terms of hyperbolic functions!
 
 \subsection[Advanced Rectilinear Kinematics: Constant Proper Acceleration]{Advanced Rectilinear Kinematics:\\ Constant Proper Acceleration}\label{ssec:ak}
 
