@@ -358,35 +358,35 @@ z^{\prime} &= z& z&= z^\prime .
 \end{equation*}
 Here the frames are in \textbf{standard configuration} for a \textbf{boost} along the coincident $x$/$x^\prime$-axes. That means that the Cartesian axes of each frame are parallel to the corresponding axes of the other, the origins coincide at $t=t^\prime=0$, and the ``primed" frame moves with speed $v$ in the positive ``unprimed" $x$-direction (equivalently, the unprimed frame moves with speed $v$ in the negative $x^\prime$-direction, so that the \textbf{relative speed} $v$ is really the shared magnitude of two different velocity vectors, each the velocity of one frame relative to the other).\footnote{Having the primed frame move in the \emph{positive} $x$-direction is an arbitrary and unnecessary restriction that often isn't included as part of the ``standard configuration." We include it because it lets us speak unambiguously of relative \emph{speed} as the boost parameter. Allowing the frames to move in either direction relative to each other is of course just fine, but it requires using relative \emph{velocity} as the boost parameter, and one must then choose (arbitrarily!) which of the two velocity vectors to use (primed frame's velocity in unprimed frame? or unprimed frame's velocity in primed frame?). By making a slightly more restrictive arbitrary decision up front, we avoid ``polluting" our transformation equations with a boost parameter that ``privileges" one frame over the other.} How do things change in special relativity?
 
-An elegant way to answer that question starts with the observation that, \emph{under standard configuration}, the invariance of the interval implies the invariance of $(ct)^2 - x^2$, since $(ct)^2 - x^2 - y^2 - z^2$ is the squared interval between an arbitrary event and the event that constitutes the frames' shared spacetime origin (where $ct = ct^{\prime} = 0$ and $\vv r = \vv r ^{\prime} = \vv 0$), and since we (safely) assume that we'll still have $y^{\prime} = y$ and $z^{\prime} = z$. Defining $A \equiv ct + x$ and $B \equiv ct - x$, we can express that invariant \emph{difference} as an invariant \emph{product}, $A^{\prime} B^{\prime} = AB$. This is nice because, unlike $ct$ and $x$, $A$ and $B$ aren't ``coupled" to each other under a boost: in the language of $A$ and $B$, the linear transformation\footnote{``Linear" here means that we'll have $ct^{\prime} = \mu(v) ct + \nu(v) x$ and $x^{\prime} = \sigma(v) x + \rho(v) ct$, where $ct$ and $x$ appear \emph{only to first order}. (The factors $\mu$, $\nu$, $\sigma$, and $\rho$ are just functions of $v$, the frames' relative speed.) If this weren't so---if, say, the transformation involved $x^2$---then choice of spacetime-origin event would affect the \emph{physics}, which is absurd.} that takes $ct$ and $x$ to $ct^{\prime}$ and $x^{\prime}$ can \emph{only} entail multiplying $A$ by some function of the frames' relative speed $v$ and \emph{dividing $B$ by the same factor}. In other words, to satisfy $A^{\prime} B^{\prime} = AB$, we're restricted to ${A^{\prime} = hA}$ and ${B^{\prime} = B/h}$ for some $h = h(v)$.\footnote{$A$ and $B$ are known as \textbf{light-cone coordinates}.} Now the algebra will be a breeze!
+An elegant way to answer that question starts with the observation that, \emph{under standard configuration}, the invariance of the interval implies the invariance of $(ct)^2 - x^2$, since $(ct)^2 - x^2 - y^2 - z^2$ is the squared interval between an arbitrary event and the event that constitutes the frames' shared spacetime origin (where $ct = ct^{\prime} = 0$ and $\vv r = \vv r ^{\prime} = \vv 0$), and since we (safely) assume that we'll still have $y^{\prime} = y$ and $z^{\prime} = z$. Defining $\chi_+ \equiv ct + x$ and $\chi_- \equiv ct - x$, we can express that invariant \emph{difference} as an invariant \emph{product}, $\chi_+^{\prime} \mkern.5mu \chi_-^{\prime} = \chi_+ \mkern.5mu \chi_-$. This is nice because, unlike $ct$ and $x$, $\chi_+$ and $\chi_-$ aren't ``coupled" to each other under a boost: in the language of $\chi_+$ and $\chi_-$, the linear transformation that takes $ct$ and $x$ to $ct^{\prime}$ and $x^{\prime}$ can \emph{only} entail multiplying $\chi_-$ by some function of the frames' relative speed $v$ and \emph{dividing $\chi_+$ by the same factor}.\footnote{``Linear" here means that we'll have $ct^{\prime} = A(v) ct + B(v) x$ and $x^{\prime} = C(v) x + D(v) ct$, where $ct$ and $x$ appear \emph{only to first order}. (The factors $A$, $B$, $C$, and $D$ are just functions of $v$, the frames' relative speed.) If this weren't so---if, say, the transformation involved $x^2$---then choice of spacetime-origin event would affect the \emph{physics}, which is absurd.} In other words, to satisfy $\chi_+^{\prime} \mkern.5mu \chi_-^{\prime} = \chi_+ \mkern.5mu \chi_-$, we're restricted to ${\chi_-^{\prime} = k \mkern.5mu \chi_-}$ and ${\chi_+^{\prime} = k^{-1} \mkern.5mu \chi_+}$ for some $k = k(v)$.\footnote{\label{fn:lcc}$\chi_+$ and $\chi_-$ are called \textbf{light-cone coordinates}, and $k$ is the \textbf{Bondi $\bm{k} \mkern.5mu$-factor}. Our choice to define $k$ via ${\chi_-^{\prime} = k \mkern.5mu \chi_-}$ instead of ${\chi_+^{\prime} = k \mkern.5mu \chi_+}$ just matches convention.} Now the algebra will be a breeze!
 
-From the definitions of $A$ and $B$, we have $A^{\prime} + B^{\prime} = 2ct^{\prime}$. Then:
+From the definitions of $\chi_+$ and $\chi_-$, we have $\chi_+^{\prime} + \chi_-^{\prime} = 2ct^{\prime}$. Then:
 \begin{equation}\label{eq:ctp}
 \begin{split}
-2 ct^{\prime} &= A^{\prime} + B^{\prime} \\
-&= hA + h^{-1}B \\
-&= h(ct + x) + h^{-1}(ct - x) \\[1pt]
-ct^{\prime} &= \dfrac{h + h^{-1}}{2} \, ct \, + \, \dfrac{h - h^{-1}}{2} \, x.
+2 ct^{\prime} &= \chi_+^{\prime} + \chi_-^{\prime} \\[1pt]
+&= k^{-1} \mkern.5mu \chi_+ + k \mkern.5mu \chi_- \\[1pt]
+&= k^{-1} (ct + x) + k (ct - x) \\[1pt]
+ct^{\prime} &= \dfrac{k + k^{-1}}{2} \, ct \, - \, \dfrac{k - k^{-1}}{2} \, x.
 \end{split}
 \end{equation}
-With $A^{\prime} - B^{\prime} = 2x^{\prime}$, a similar calculation gives:
+With $\chi_+^{\prime} - \chi_-^{\prime} = 2x^{\prime}$, a similar calculation gives:
 \begin{equation}\label{eq:xp}
-x^{\prime} = \dfrac{h + h^{-1}}{2} \, x \, + \, \dfrac{h - h^{-1}}{2} \, ct .
+x^{\prime} = \dfrac{k + k^{-1}}{2} \, x \, - \, \dfrac{k - k^{-1}}{2} \, ct .
 \end{equation}
 This is a good time to remind ourselves of the definitions of the hyperbolic sine, hyperbolic cosine, and hyperbolic tangent functions and their inverses:
 \begin{equation}\label{eq:hf}
 \begin{aligned}
 \cosh{\phi} = \dfrac{\mathrm{e}^\phi + \mathrm{e}^{-\phi}}{2} \qquad \quad \sinh{\phi} &= \dfrac{\mathrm{e}^\phi - \mathrm{e}^{-\phi}}{2} \qquad \quad \tanh{\phi} = \dfrac{\mathrm{e}^\phi - \mathrm{e}^{-\phi}}{\mathrm{e}^\phi + \mathrm{e}^{-\phi}} \\[10pt]
 \cosh^{-1}{q} = \ln{ \left( q + \sqrt{q^2 - 1} \right)} &\qquad \quad \sinh^{-1}{q} = \ln{ \left( q + \sqrt{q^2 + 1} \right)} \\[5pt]
-\tanh^{-1}{q} &= \dfrac{1}{2} \mkern1mu \ln{ \left( \dfrac{1 + q}{1 - q} \right) } .
+\tanh^{-1}{q} = \dfrac{1}{2} \mkern1mu & \ln{ \left( \dfrac{1 + q}{1 - q} \right) } = \ln \sqrt{\frac{1 + q}{1 - q}} .
 \end{aligned}
 \end{equation}
-We immediately see an opportunity to rewrite Equations \ref{eq:ctp} and \ref{eq:xp} with the substitution $h = \mathrm{e}^{- \phi}$ for some function $\phi (v)$ (where we choose $- \phi$ instead of $+ \phi$ just because it will jibe better with our standard-configuration stipulation that the primed frame move in the \emph{positive} unprimed $x$-direction):
+We immediately see an opportunity to rewrite Equations \ref{eq:ctp} and \ref{eq:xp} with the substitution $k = \mathrm{e}^{\phi}$ for some function $\phi (v)$:
 \begin{equation*}
 ct^{\prime} = ( \cosh \phi ) \, ct - ( \sinh \phi ) \, x , \qquad x^{\prime} = ( \cosh \phi ) \, x - ( \sinh \phi ) \, ct .
 \end{equation*}
 
-Finally, we can determine the relationship between $\phi$ and $v$ (the relative speed of the frames) by noting first that for $x^{\prime} = 0$ (e.g., the primed origin), the above equation for $x^{\prime}$ gives $x / (ct) = \sinh \phi / \cosh \phi = \tanh \phi$, and second that, by standard configuration and the very definition of the frames' relative speed, the unprimed position $x = x(ct)$ of the primed origin must be ${x = vt}$, so that $x / (ct) = v / c$ (again, for $x^{\prime} = 0$). We therefore have $\tanh \phi = v / c$, or $\phi = \tanh^{-1}{(v / c)}$. Invoking the identities ${\cosh (\tanh^{-1}{q}) = (1 - q^2)^{-1/2}}$ and ${\sinh (\tanh^{-1}{q}) = q(1 - q^2)^{-1/2}}$, we obtain the \textbf{Lorentz transformation} and its inverse for \textbf{Minkowski coordinates} ($ct$, $x$, $y$, and $z$):
+Finally, we can determine the relationship between $\phi$ and $v$ (the relative speed of the frames) by noting first that for $x^{\prime} = 0$ (e.g., the primed origin), the above equation for $x^{\prime}$ gives $x / (ct) = \sinh \phi / \cosh \phi = \tanh \phi$, and second that, by standard configuration and the very definition of the frames' relative speed, the unprimed position $x = x(ct)$ of the primed origin must be ${x = vt}$, so that $x / (ct) = v / c$ (again, for $x^{\prime} = 0$). We therefore have $\tanh \phi = v / c$, or $\phi = \tanh^{-1}{(v / c)}$.\footnote{\label{fn:bkf}Now we have $k = \mathrm{e}^{\phi}$ for $\phi = \tanh^{-1}(v/c)$, the usual definition of the Bondi $k$-factor (see Footnote \ref{fn:lcc}). Had we chosen ${\chi_+^{\prime} = k \mkern.5mu \chi_+}$, our $k$ would be the conventional $k^{-1}$.} Invoking the identities ${\cosh (\tanh^{-1}{q}) = (1 - q^2)^{-1/2}}$ and ${\sinh (\tanh^{-1}{q}) = q(1 - q^2)^{-1/2}}$, we obtain the \textbf{Lorentz transformation} and its inverse for \textbf{Minkowski coordinates} ($ct$, $x$, $y$, and $z$):
 \begin{equation}\label{eq:lt}
 \begin{aligned}
 ct^{\prime} &= \dfrac{ct - \beta x}{\sqrt{1- \beta ^2}}& ct &= \dfrac{ct^\prime + \beta x^\prime}{\sqrt{1- \beta ^2}} \\[3pt]
@@ -395,7 +395,7 @@ y^{\prime} &= y& y&= y^\prime \\
 z^{\prime} &= z& z&= z^\prime,
 \end{aligned}
 \end{equation}
-valid for frames in standard configuration.\footnote{More general transformations drop certain stipulations about the axes and origins. We'll soon get a \emph{little} more general, but we'll mainly stick with rotation-free boosts, which have everything we need to study the ``new" physics of special relativity.} Here we've introduced the \textbf{normalized speed} $\beta$, which is the magnitude of the \textbf{normalized velocity} $\vvbeta=\vv v/c$. By \emph{normalized}, we mean that $\beta$ is a dimensionless number between 0 and 1.
+valid for frames in standard configuration.\footnote{More general transformations drop certain stipulations about the axes and origins. We'll soon get a \emph{little} more general, but we'll mainly stick with rotation-free boosts, which have everything we need to study the ``new" physics of special relativity.} Here we've introduced the \textbf{normalized speed} $\beta$ (lowercase Greek letter beta), which is the magnitude of the \textbf{normalized velocity} $\vvbeta=\vv v/c$. By \emph{normalized}, we mean that $\beta$ is a dimensionless number between 0 and 1.
 
 Don't think of $\vvbeta$ as shorthand! The universe has a speed limit, and all speeds \emph{really are} fractions of it. Plus, working with $\vvbeta$ reveals mathematical elegance that's masked when working with $\vv v$. A good example is the symmetry of the $ct^\prime$ and $x^\prime$ equations above; if we use $v$ instead of $\beta$ (or $t$ instead of $ct$, for that matter), the symmetry of the numerators is obscured:
 \begin{equation*}
@@ -407,7 +407,7 @@ t^\prime = \frac{t - \dfrac{vx}{\vphantom{V_v} c^2}}{\sqrt{1 - \dfrac{v^2}{c^2}}
 \end{equation*}
 From now on we spurn $\vv v$. We'll refer to the classical limit not as $v \ll c$, but as $\beta \ll 1$. We regard $\vvbeta$ as the ``natural" way to express velocity. It goes hand in hand with measuring distance and time in the same unit.
  
-Because the Lorentz transformation is linear (space and time coordinates are to first power only), it also works for \emph{differences} in the coordinates between two events: just replace the likes of $x$ and $ct$ with those of $\Delta x$ and $c \mkern.5mu \Delta t$ (or of $\dd x$ and $c \, \dd t$ if need be).\footnote{\label{fn:in}In physics it's normal to interpret the derivative as a ratio of infinitesimals. Some find this objectionable, but it's a great heuristic for well-behaved single-variable situations.} We now adopt the standard shorthand $\gamma \equiv (1 - \beta^2)^{-1/2}$ (called the \textbf{Lorentz factor}):
+Because the Lorentz transformation is linear (space and time coordinates are to first power only), it also works for \emph{differences} in the coordinates between two events: just replace the likes of $x$ and $ct$ with those of $\Delta x$ and $c \mkern.5mu \Delta t$ (or of $\dd x$ and $c \, \dd t$ if need be\footnote{\label{fn:in}In physics it's normal to interpret the derivative as a ratio of infinitesimals. Some find this objectionable, but it's a great heuristic for well-behaved single-variable situations.}). We now adopt the standard shorthand $\gamma \equiv (1 - \beta^2)^{-1/2}$ (lowercase Greek letter gamma), called the \textbf{Lorentz factor}:
 \begin{equation}\label{eq:lt2}
 \begin{aligned}
 c \mkern.5mu \Delta t^{\prime} &= \gamma \left( c \mkern.5mu \Delta t - \beta \Delta x \right) & c \mkern.5mu \Delta t &= \gamma \left( c \mkern.5mu \Delta t^\prime + \beta \Delta x^\prime \right) \\
@@ -416,7 +416,7 @@ c \mkern.5mu \Delta t^{\prime} &= \gamma \left( c \mkern.5mu \Delta t - \beta \D
 \Delta z^{\prime} &= \Delta z& \Delta z&= \Delta z^\prime ,
 \end{aligned}
 \end{equation}
-with the inverse transformation on the right. Equations \ref{eq:lt2} have slightly broader applicability than Equations \ref{eq:lt}, as they don't require the frames to share a spacetime origin. They're sometimes called the ``inhomogeneous" Lorentz transformation or the Poincar\'e transformation, but we'll usually just call them the Lorentz transformation. Later we'll identify other sets of four quantities that transform together under a Lorentz boost in the same way, and we'll say that they too transform Lorentzianly.
+with the inverse transformation on the right. Equations \ref{eq:lt2} have slightly broader applicability than Equations \ref{eq:lt}, as they don't require the frames to share a spacetime origin. Some jargon: a Lorentz transformation with a ``shift" of origin-event (a \emph{translation}) is a \textbf{Poincar\'e transformation} (or an ``inhomogeneous" Lorentz transformation). With Equations \ref{eq:lt2}, origin-shifts cancel out. Later we'll identify other sets of four quantities that transform together in the same way, and we'll say that they too transform Lorentzianly.
 
 For the sake of completeness, let's derive the transformation for a boost in an arbitrary direction, $\hatbeta = \vvbeta / \beta$. Under standard configuration, Equations \ref{eq:lt} are in play, and we have (going from unprimed frame to primed) ${ \hatbeta = \langle 1, 0, 0 \rangle }$. With the position vector $\vv r = \langle x, y, z \rangle$, we've got ${ \vv r _\parallel = \langle x, 0, 0 \rangle }$ and ${\vv r _\perp = \langle 0, y, z \rangle}$ for the component-vectors of $\vv r$ that are parallel and perpendicular to the boost-direction (respectively the ``projection" of $\vv r$ onto $\hatbeta$ and the ``rejection" of $\vv r$ from $\hatbeta$). Since then $\vv r _\parallel \cdot \hatbeta = x$, substitution gives:
 \begin{equation*}
@@ -618,28 +618,21 @@ We'll now assume that the duration between peak-emissions $\gamma \lambda$ is in
 \end{equation*}
 (where naturally the overdot means a derivative with respect to $ct^\prime$), or:
 \begin{equation*}
-\frac{\dd r}{\dd (ct ^\prime)} = \frac{\dd \vv r}{\dd (ct ^\prime)} \cdot \vv{ \hat r }.
+\begin{split}
+\frac{\dd r}{\dd (ct ^\prime)} &= \frac{\dd \vv r}{\dd (ct ^\prime)} \cdot \vv{ \hat r } \\[4pt]
+\dd r &= \dd \vv r \cdot \vv{\hat r},
+\end{split}
 \end{equation*}
-Multiplying both sides by the differential $c \, \dd t^\prime$ gives:
-\begin{equation*}
-\dd r = \dd \vv r \cdot \vv{\hat r},
-\end{equation*}
-which is precisely the scalar projection of the displacement onto $\vv{\hat{r}}$.
+which is indeed the scalar projection of the displacement onto $\vv{\hat{r}}$.
 
-So in the observer's frame, when the source emits the second peak a time $c \, \dd t^\prime = \gamma \lambda$ after emitting the first, the first peak has a distance $r - \gamma \lambda$ left to travel, while the second has a (longer) distance ${r + \dd \vv r \cdot \vv{\hat{r}} = r + \gamma \lambda \beta \cos \theta^\prime}$ remaining. The difference is ${(r + \gamma \lambda \beta \cos \theta^\prime) - (r - \gamma \lambda) = \gamma \lambda + \gamma \lambda \beta \cos \theta^\prime}$, and this is also the difference in \emph{arrival time} at the primed origin. But by definition, the difference in arrival time is just the primed period $cT^\prime$, or equivalently the primed wavelength $\lambda^\prime$, and finally:
+So in the observer's frame, when the source emits the second peak an infinitesimal time $c \, \dd t^\prime = \gamma \lambda$ after emitting the first, the first peak has a distance $r - \gamma \lambda$ left to travel ($r$ being the distance when the first peak was emitted), while the second has a (longer) distance ${r + \dd \vv r \cdot \vv{\hat{r}} = r + \gamma \lambda \beta \cos \theta^\prime}$ remaining. The difference is ${(r + \gamma \lambda \beta \cos \theta^\prime) - (r - \gamma \lambda) = \gamma \lambda + \gamma \lambda \beta \cos \theta^\prime}$, and this is also the difference in \emph{arrival time} at the primed origin. But by definition, the difference in arrival time is just the primed period $cT^\prime$, or equivalently the primed wavelength $\lambda^\prime$, and finally:
 \begin{equation*}
-\begin{aligned}
-\lambda^\prime &= \gamma \lambda + \gamma \lambda \beta \cos \theta^\prime \\
-&= \gamma \lambda \left( 1 + \beta \cos \theta^\prime \right).
-\end{aligned}
+\lambda^\prime = \gamma \lambda \left( 1 + \beta \cos \theta^\prime \right). \footnote{When $\theta^\prime = 0$, we have $\lambda^\prime / \lambda = \gamma (1 + \beta) = (1 + \beta)/\sqrt{1 - \beta^2} = \sqrt{(1 + \beta)/(1 - \beta)}$ (factor the radicand for the last step). Then by Equations \ref{eq:hf}, $\ln{(\lambda^\prime / \lambda)} = \tanh^{-1} \beta$, such that $\lambda^\prime / \lambda$ reduces to Bondi's $k = \exp{(\tanh^{-1} \beta)}$ in this longitudinal case (see Footnote \ref{fn:bkf}). For this reason, $k$ is sometimes called the ``Doppler factor."}
 \end{equation*}
 
 For our purposes, it will be more useful to express this \textbf{relativistic Doppler formula} in terms of the unprimed angle $\theta$ (measured in the \emph{source's} frame), and in terms of photon energy. By Equations \ref{eq:7} (aberration):
 \begin{equation*}
-\begin{split}
-\lambda^\prime &= \gamma \lambda \left( 1 + \beta \, \frac{\cos \theta - \beta}{1 - \beta \cos \theta} \right) \\[3pt]
-&= \gamma \lambda \left( \frac{ 1 - \beta \cos \theta + \beta \cos \theta - \beta^2 }{1 - \beta \cos \theta} \right) ,
-\end{split}
+\lambda^\prime = \gamma \lambda \left( 1 + \beta \, \frac{\cos \theta - \beta}{1 - \beta \cos \theta} \right) = \gamma \lambda \left( \frac{ 1 - \beta \cos \theta + \beta \cos \theta - \beta^2 }{1 - \beta \cos \theta} \right) ,
 \end{equation*}
 which by Equation \ref{eq:20} is:
 \begin{equation}\label{eq:rdw}
@@ -813,7 +806,7 @@ Finally, we can view Equation \ref{eq:18} as an expression for $\vvbeta$:
 \end{equation*}
 So velocity is momentum over total energy. That's the additive-and-conserved vector over the additive-and-conserved scalar. \emph{Constant} velocity being displacement $\Delta \vv r$ per time elapsed $c \mkern.5mu \Delta t$, we find a curious relationship among momentum, energy, space, and time:
 \begin{equation*}
-\dfrac {\vv p c}{E} = \dfrac{\Delta \vv r}{c \mkern.5mu \Delta t} \quad \textrm{\footnotesize{ (for $\vvzeta \equiv \dot{\vvbeta} = \vv 0$)}}.\footnote{Remember that we're using the dot to indicate $ct$-derivatives, in keeping with $\vvbeta = \dot{\vv r}$ for the normalized velocity. So $\vvzeta=\dd \vvbeta / \dd (ct) = \vv a / c^2$, and we'll call this the ``normalized" acceleration. Note, though, that it isn't dimensionless and its magnitude $\zeta$ can exceed one---hence the square quotes.}
+\dfrac {\vv p c}{E} = \dfrac{\Delta \vv r}{c \mkern.5mu \Delta t} \quad \textrm{\footnotesize{ (for $\vvzeta \equiv \dot{\vvbeta} = \vv 0$)}}.\footnote{Remember that we're using the dot to indicate $ct$-derivatives, in keeping with $\vvbeta = \dot{\vv r}$ for the normalized velocity. So $\vvzeta=\dd \vvbeta / \dd (ct) = \vv a / c^2$, and we'll call this the ``normalized" acceleration. Note, though, that it isn't dimensionless and its magnitude $\zeta$ can exceed one---hence the square quotes. Memory aid: $\zeta$ is lowercase Greek letter zeta, which rhymes with beta ($\beta$).}
 \end{equation*}
 To generalize for instantaneous velocity when the ``normalized" acceleration $\vvzeta \neq \vv 0$, we use infinitesimal changes in $\vv r$ and $ct$ (or take the limit as $c \mkern.5mu \Delta t \rightarrow 0$):
 \begin{equation}\label{eq:19}
@@ -979,7 +972,7 @@ or introducing the symbol $\vvomega \equiv \mathring{\vv r} = \gamma \dot{\vv r}
 \end{equation}
 Looks identical to our low-$\beta$ approximation for momentum but with a \emph{proper}-time derivative instead of a coordinate-time derivative (cf.\ Equation \ref{eq:16}). And Equation \ref{eq:29} is plainly equivalent to Equation \ref{eq:17}; the difference is purely notational.
 
-We'll call the vector $\vvomega = \gamma \vvbeta$ the (``normalized") \textbf{celerity}.\footnote{The ``unnormalized" celerity would be $\vv w = \gamma \vv v = \vvomega c$.} The scare quotes around \emph{normalized} are there because although $\vvomega$ is indeed dimensionless like $\vvbeta$, it has no upper limit (its magnitude $\omega = \gamma \beta$ can exceed one). Celerity often goes by the name ``proper velocity," but that's a confusing misnomer. We'll reserve the word \emph{proper} for rest-frame ``versions" of frame-dependent quantities.\footnote{\label{fn:pr}A competing convention prepends \emph{proper} to $t_0$-derivatives (hence ``proper velocity").} For instance, proper energy $E_0$ is a traveler's total energy $E$ as measured by an observer at rest relative to the traveler. Likewise, a proper time interval $c \mkern.5mu \Delta t_0$ (or $c \, \dd t_0$) is the coordinate time interval $c \mkern.5mu \Delta t$ (or $c \, \dd t$) in the traveler's (instantaneous) rest frame, where $\beta = 0$ and $\gamma = 1$. Proper energy and proper time intervals have \emph{invariant} values, as do all proper quantities; celerity does not. (For proper quantities that are vectors, it's the magnitude that's invariant.) Granted, proper velocity defined ``properly" would be a quantity of little interest---a zero vector---so the term is arguably up for grabs. Still, for the sake of consistency, we won't use it. Further, all our proper quantities will get the naught subscript, like $E_0$ and $c \mkern.5mu \Delta t_0$. Some we'll soon encounter are the (``normalized") proper acceleration $\vvzeta_{\mkern1mu 0}$ and the proper force $\vv f_{\mkern1mu 0}$.
+We'll call the vector $\vvomega = \gamma \vvbeta$ the (``normalized") \textbf{celerity}.\footnote{The ``unnormalized" celerity would be $\vv w = \gamma \vv v = \vvomega c$. I've chosen the symbol $\omega$ (omega) partly to match the lowercase Greek we're already using for $\gamma$ and $\beta$. That the three quantities $\gamma$, $\beta$, and $\omega = \gamma \beta$ deserve to be regarded as a ``group" will become apparent in Section \ref{ssec:ra}.} The scare quotes around \emph{normalized} are there because although $\vvomega$ is indeed dimensionless like $\vvbeta$, it has no upper limit (its magnitude $\omega = \gamma \beta$ can exceed one). Celerity often goes by the name ``proper velocity," but that's a confusing misnomer. We'll reserve the word \emph{proper} for rest-frame ``versions" of frame-dependent quantities.\footnote{\label{fn:pr}A competing convention prepends \emph{proper} to $t_0$-derivatives (hence ``proper velocity").} For instance, proper energy $E_0$ is a traveler's total energy $E$ as measured by an observer at rest relative to the traveler. Likewise, a proper time interval $c \mkern.5mu \Delta t_0$ (or $c \, \dd t_0$) is the coordinate time interval $c \mkern.5mu \Delta t$ (or $c \, \dd t$) in the traveler's (instantaneous) rest frame, where $\beta = 0$ and $\gamma = 1$. Proper energy and proper time intervals have \emph{invariant} values, as do all proper quantities; celerity does not. (For proper quantities that are vectors, it's the magnitude that's invariant.) Granted, proper velocity defined ``properly" would be a quantity of little interest---a zero vector---so the term is arguably up for grabs. Still, for the sake of consistency, we won't use it. Further, all our proper quantities will get the naught subscript, like $E_0$ and $c \mkern.5mu \Delta t_0$. Some we'll soon encounter are the (``normalized") proper acceleration $\vvzeta_{\mkern1mu 0}$ and the proper force $\vv f_{\mkern1mu 0}$.
 
 Anyway, we've uncovered a definite pattern: we started with the equation for the (squared) invariant infinitesimal interval, with its (squared) scalar ``time contribution" and its (squared) vector ``space contribution," and we've multiplied (or differentiated) it by (squared) invariants to create new invariants, all (squared) spacetime analogues of familiar vector magnitudes. In the following sections, we'll look more closely at our analogy and find a much more convenient way to express it.
 
@@ -1070,7 +1063,7 @@ We could have started with a \emph{position} four-vector, but the \textbf{four-p
 
 \subsubsection{(Normalized) Four-Velocity}
 
-Next, we define the normalized \textbf{four-velocity} by replicating our steps for obtaining the spacetime $\beta$-analogue from the $\vert \dd \vv r \vert$-analogue (cf.\ Section \ref{sssec:b}). Again, we use uppercase (we'll always use uppercase for four-vectors and lowercase for three-vectors):
+Next, we define the normalized \textbf{four-velocity} by replicating our steps for obtaining the spacetime $\beta$-analogue from the $\vert \dd \vv r \vert$-analogue (cf.\ Section \ref{sssec:b}). Again, we use uppercase ($B$ is uppercase Greek letter beta; we'll always use uppercase for four-vectors and lowercase for three-vectors):
 \begin{equation}\label{eq:31}
 \boxed{
 \begin{aligned}
@@ -1223,7 +1216,7 @@ Here's a ``trick": given an arbitrary inertial frame and an arbitrary four-vecto
 
 So we have the four-displacement $\dd \vv R$, the normalized four-velocity $\vv B$, the four-momentum $\vv P$, and the four-force $\vv F$. Question: in what direction do they point? We began by \emph{defining} $\dd \vv R$ as tangent to a traveler's world line, pointing in whatever spacetime direction the traveler happens to be going. Common sense says that the same is true of the traveler's $\vv B$ and $\vv P$, but let's take a moment to think about what that means mathematically. Two vectors are codirectional if one is obtained by scaling the other by a positive number. We know that $\vv B$ and $\vv P$ are codirectional, since the latter is simply the former scaled by the traveler's $E_0$. Can we make a similar argument for $\dd \vv R$ and $\vv B$, and say that the latter is simply the former ``scaled" by the infinitesimal $1/(c \, \dd t_0)$? We can, but we need to be careful---we're \emph{not} saying that $\vv B$ is codirectional with $\vv R$! We're ``scaling" $\dd \vv R$, but \emph{differentiating} $\vv R$.
 
-With that in mind, consider what happens when we take the $c t_0$-derivative of the four-velocity $\vv B$ to find the (``normalized") \textbf{four-acceleration}, $\vv Z$, analogous to the ``normalized" three-acceleration $\vvzeta=\dd \vvbeta / \dd (ct)$:\footnote{Like $\vvzeta$, $\vv Z$ isn't \emph{really} normalized (it isn't dimensionless, and its magnitude $Z$ can exceed one). It inherits the label (with scare quotes) to clarify that it isn't the ``unnormalized" four-acceleration $\vv A = \dd \vv V / \dd t_0 = \vv Z c^2$, which we have no use for.}
+With that in mind, consider what happens when we take the $c t_0$-derivative of the four-velocity $\vv B$ to find the (``normalized") \textbf{four-acceleration}, $\vv Z$ (uppercase Greek letter zeta), analogous to the ``normalized" three-acceleration $\vvzeta=\dd \vvbeta / \dd (ct)$:\footnote{Like $\vvzeta$, $\vv Z$ isn't \emph{really} normalized (it isn't dimensionless, and its magnitude $Z$ can exceed one). It inherits the label (with scare quotes) to clarify that it isn't the ``unnormalized" four-acceleration $\vv A = \dd \vv V / \dd t_0 = \vv Z c^2$, which we have no use for.}
 \begin{equation}\label{eq:34}
 \boxed{
 \begin{aligned}
@@ -1817,7 +1810,7 @@ That first result means that the component of three-force whose corresponding co
 
 \subsubsection{What and Why?}
 
-Back in Section \ref{sssec:fdi}, we made passing reference to a special case in which the Minkowski dot product \emph{can} be expressed in a way that's analogous to the Euclidean relation $\vv q \cdot \vv w = qw \cos \theta$. The expression is $\vv Q \cdot \vv W = QW \cosh \phi$, where $\phi$ is the hyperbolic angle between the qualifying four-vectors $\vv Q$ and $\vv W$, but we noted that this equation---and indeed the very notion of an angle between four-vectors---is conditional.
+Back in Section \ref{sssec:fdi}, we made passing reference to a special case in which the Minkowski dot product \emph{can} be expressed in a way that's analogous to the Euclidean relation $\vv q \cdot \vv w = qw \cos \theta$. The expression is $\vv Q \cdot \vv W = QW \cosh \phi$, where $\phi$ (lowercase Greek letter phi) is the hyperbolic angle between the qualifying four-vectors $\vv Q$ and $\vv W$, but we noted that this equation---and indeed the very notion of an angle between four-vectors---is conditional.
 
 Conditional on what? What's this special case?\footnote{Beyond the special case we'll discuss, there are actually a couple of others in which one might reasonably associate a hyperbolic argument with a pair of four-vectors. But they're unimportant for our purposes, and the particular relation $\vv Q \cdot \vv W = QW \cosh \phi$ doesn't hold for them.} What do hyperbolas have to do with anything, and where does that equation come from?
 
