@@ -228,7 +228,7 @@ Sometimes italics aren't suitable for notating a vector's magnitude. In such cas
 
 When we get to \emph{four-vectors} (don't worry if you don't know what they are yet), we'll use essentially the same notation, but with uppercase symbols like $\vv Q$. I'm pretty consistent with this lowercase vs. uppercase convention, going so far as to use $\vv e$ and $\vv b$ instead of $\vv E$ and $\vv B$ for the electric and magnetic fields. When a four-vector is ``analogous" to a normal Euclidean vector, I'll usually give it the uppercase counterpart to the lowercase symbol already in use; for instance, the four-vector analogue of $\vvbeta = \vv v / c$ will be $\vv B$ (the dimensionless ``four-velocity"), and the four-vector analogue of $\vvzeta = \vv a / c^2$ will be $\vv Z$ (a ``four-acceleration" with the same dimensions as $\vvzeta$).
 
-The footnotes are mainly for exposition, not citations. See the \hyperref[sec:r]{References} for my most important sources of influence.
+I don't cite many sources, but where I do (mostly in the \hyperref[sec:r]{Influences} section), I use Chicago ``humanities" style. I told you I'm not a physicist!
 
 \clearpage
 
@@ -236,7 +236,7 @@ The footnotes are mainly for exposition, not citations. See the \hyperref[sec:r]
 \section{Relativistic Dynamics, No Four-Vectors}\label{sec:rd}
 
 
-In Einstein's original ``$E=mc^2$" paper,\footnote{Einstein, A.: Ist die Tr\"agheit eines K\"orpers von seinem Energieinhalt abh\"angig? Ann.\ Phys.\ \textbf{18}, 639--641 (1905). English translation here: \url{https://www.fourmilab.ch/etexts/einstein/E_mc2/www/}.} he proposes a thought experiment in which a body at rest briefly emits two equally energetic light waves in opposite directions at the same time.\footnote{We treat them as idealized monochromatic plane waves, though we'll soon temporarily invoke the photon model as a shortcut (later we'll reproduce our results without it).} With the aid of his newly developed special theory of relativity, he considers the situation from the perspectives of two observers: one at rest relative to the body, the other moving with an arbitrary constant velocity.
+In Einstein's original ``$E=mc^2$" paper,\footnote{Albert Einstein, ``Ist die Tr\"agheit eines K\"orpers von seinem Energieinhalt abh\"angig?" \emph{Annalen der Physik} 18, no. 13 (1905): 639--41. An English translation can be read here: \url{https://www.fourmilab.ch/etexts/einstein/E_mc2/www/}.} he proposes a thought experiment in which a body at rest briefly emits two equally energetic light waves in opposite directions at the same time.\footnote{We treat them as idealized monochromatic plane waves, though we'll soon temporarily invoke the photon model as a shortcut (later we'll reproduce our results without it).} With the aid of his newly developed special theory of relativity, he considers the situation from the perspectives of two observers: one at rest relative to the body, the other moving with an arbitrary constant velocity.
  
 The paper is concise---almost perfunctory---but it's also rather subtle. We're going to walk through the thought experiment twice. The first time we'll feign ignorance of special relativity, putting ourselves in the shoes of a physicist in mid-1905. We'll fail, but our failure will be instructive. On the second pass, we'll retrace Einstein's steps (more or less).
 
@@ -287,9 +287,9 @@ where different observers disagree on the velocity-dependent $E_{\mkern.5mu \tex
 \begin{equation}\label{eq:6}
 E=E_0 \quad \textrm{\footnotesize{ (for $E_{\mkern.5mu \textrm{k}}=0$)}}.
 \end{equation}
-A quantity like rest energy whose value everyone agrees on is said to be \textbf{invariant}.\footnote{\label{fn:inv}Really, one must specify the \emph{context} in which a quantity is invariant. Take kinetic energy: it certainly isn't invariant with respect to a change in observer velocity (a \textbf{boost}), but it \emph{is} invariant under rotation of a chosen set of Cartesian axes. In this paper, when we say that a quantity is invariant, by default we mean with respect to observer velocity.} Mass is another invariant, and (spoiler alert) we'll soon discover a close connection between mass and rest energy.
+A quantity like rest energy whose value everyone agrees on is said to be \textbf{invariant}.\footnote{\label{fn:inv}Really, one must specify the \emph{context} in which a quantity is invariant. Take kinetic energy: it certainly isn't invariant with respect to a change in observer velocity (a ``boost"), but it \emph{is} invariant under rotation of a chosen set of Cartesian axes. In this paper, when we say that a quantity is invariant, by default we mean with respect to observer velocity.} Mass is another invariant, and (spoiler alert) we'll soon discover a close connection between mass and rest energy.
 
-If your instinct is to resist Equation \ref{eq:5} on the grounds that an open system may also have potential energy owing to its position relative to some outside body, remember that the potential energy in that case is a property not of the open system or the outside body, but rather of the greater system that encompasses both. It's accounted for in the greater system's \emph{rest energy}. Equation \ref{eq:5} works. Resistance is futile.\footnote{Okay, one caveat: we're assuming that the potential energy isn't associated with the kind of gravitational field that would require the \emph{general} theory of relativity to model. Actually, let's broaden that caveat---for this entire paper, \emph{assume the absence of gravity}!}
+If your instinct is to resist Equation \ref{eq:5} on the grounds that an open system may also have potential energy owing to its position relative to some outside body, remember that the potential energy in that case is a property not of the open system or the outside body, but rather of the greater system that encompasses both.\footnote{This ``potential energy" is actually the configuration-dependent portion of the system's \emph{field energy}. Though we'll continue to speak loosely of ``potential energy" for now, later we'll discuss field dynamics for electromagnetism (Sections \ref{sec:rem} and \ref{sec:dy}).} It's accounted for in the greater system's \emph{rest energy}. Equation \ref{eq:5} works. Resistance is futile.\footnote{Okay, one caveat: it doesn't work for the kinds of gravitational field that require the \emph{general} theory of relativity to model. No gravity in this paper!}
 
 Again, we've stipulated nothing about the ``inner workings" of rest energy. From the point of view of an outside observer trying to find a body's total energy $E$, all that matter are the values $E_{\mkern.5mu \textrm{k}}$ and $E_0$; the physical phenomena behind that $E_0$ are irrelevant. But suppose we're curious and peer inside. What do we see? Equation \ref{eq:6} and the additivity of energy tell us only that whatever we see, if we sum up all the ``inside" energy contributions to find $E$ in the body's rest frame, then we'll get exactly the same value that anyone ``outside" gets for $E_0$. Those energy contributions could be anything. Maybe the body is full of gas molecules of various types, in which case the molecules have kinetic energy associated with their motion and some (negligible) potential energy associated with their relative positions, but each molecule \emph{also has its own rest energy}, further itemizable as the kinetic, potential, and rest energies associated with its constituent atoms and their relative positions. Regardless of the details, we must add up \emph{all} the ``inside" energy contributions---kinetic energies, potential energies, rest energies---to calculate the body's total energy $E$ in its rest frame. If we're thorough, then Equation \ref{eq:6} guarantees that our sum will match the number that outside observers assign $E_0$.
 
@@ -309,8 +309,6 @@ It's systems and rest energy all the way down!
 
 Let's zoom back out, lest we forget that the beauty of the rest-energy concept is that it permits us to \emph{ignore} the energy contributions at the ``zoomed-in" levels. If we're concerned with a macroscopic system, there's no need to add up all the kinetic, potential, and rest energies associated with the elementary particles. Thanks to our new equations and the additivity of total energy, those contributions are automatically included in the system's invariant $E_0$. We just need a way to measure it---and we'll have one soon (I promise!). Once we know $E_0$, it's a cinch to find the system's total energy $E$ in any frame: merely add its velocity-dependent $E_{\mkern.5mu \textrm{k}}$, as per Equation \ref{eq:5}.
 
-Equations \ref{eq:5} and \ref{eq:6} are simple but profound. Get to know them.
-
 \subsubsection{The Catch}\label{sssec:tc}
 
 Now let's return to Einstein's thought experiment and ponder how things are for the observer moving at some constant velocity relative to the body.
@@ -327,18 +325,18 @@ Second, we've neglected Maxwell. Light is an electromagnetic wave, and the Doppl
 
 Where was the flaw in our ``lovely but wrong" analysis? We've unsubtly hinted at it several times now, so let's just say it outright: the culprit is mass! Specifically, it's our Newtonian assumption that mass is additive. Recall our unease when we introduced Equation \ref{eq:3}---we were justifiably suspicious that light could carry energy and momentum but be exempt from Equations \ref{eq:1} and \ref{eq:2}. Something had to give, didn't it? Our attempt to work out Einstein's thought experiment without special relativity has led us to the crux of the matter. If something massless like light can carry momentum (verified experimentally in 1901), and if momentum is indeed additive and conserved, then, in general, the mass of a system is \emph{not} the sum of the masses of its constituents. The body's mass must change when it emits the massless light waves.
 
-But how is that possible? Isn't mass just the ``amount of matter"? Maybe not! Stay tuned.
+But how is that possible? Isn't mass just the ``amount of matter"? Evidently not! Keep reading.
 
 
 
 \subsection{New Ground Rules: Special Relativity Review}\label{ssec:sr}
 
-When Einstein wrote about this thought experiment, he'd already published his first paper on special relativity.\footnote{\label{fn:ep}Einstein, A.: Zur Elektrodynamik bewegter K\"orper. Ann.\ Phys.\ \textbf{17}, 891--921 (1905). English translation here: \url{https://www.fourmilab.ch/etexts/einstein/specrel/www/}.} In that earlier work, he posited a cosmic speed limit---i.e., that the speed of light in vacuum $c$ is invariant---and derived many of its consequences. Let's review some of them. Once we have the relativistic Doppler formula in hand, we'll come back to the thought experiment.
+When Einstein wrote about this thought experiment, he'd already published his first paper on special relativity.\footnote{\label{fn:ep}Albert Einstein, ``Zur Elektrodynamik bewegter K\"orper" \emph{Annalen der Physik} 17, no. 10 (1905): 891--921. English translation here: \url{https://www.fourmilab.ch/etexts/einstein/specrel/www/}.} In that earlier work, he posited a cosmic speed limit---i.e., that the speed of light in vacuum $c$ is invariant---and derived many of its consequences. Let's review some of them. Once we have the relativistic Doppler formula in hand, we'll come back to the thought experiment.
 
 
-\subsubsection{Spacetime Interval}
+\subsubsection{The Invariant Spacetime Interval}
 
-An \textbf{event}, you may already know, is a location in space at a moment in time, or a point in \textbf{spacetime}. We begin our review of special relativity by taking for granted the invariance of the \textbf{spacetime interval} between two events:\footnote{The invariance of the spacetime interval can be derived from the invariance of $c$, but we won't bother.}
+An \textbf{event} is a location in space at a moment in time, or a point in \textbf{spacetime}. We begin our review of special relativity by taking for granted the invariance of the \textbf{spacetime interval} between two events:\footnote{The invariance of the spacetime interval can be derived from the invariance of $c$. We won't bother, but one source that does it well is Anthony Zee, \emph{Einstein Gravity in a Nutshell} (Princeton: Princeton, 2013), 166--7. Unlike some other derivations, Zee's is not restricted to the special case that the interval vanishes.}
 \begin{equation}\label{eq:sti}
 \Delta s \equiv \sqrt{ (c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2 } ,
 \end{equation}
@@ -463,7 +461,7 @@ So $(\Delta s)^2 = (c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2$ remains invar
 \begin{itemize}
 \item When $(\Delta s)^2<0$, the interval is \textbf{spacelike}, and $\lvert (\Delta s)^2 \rvert ^{1/2} = \Delta s / \mathrm{i}$ represents the \textbf{proper distance} between two events, which is their spatial separation in an inertial frame for which they occur simultaneously (there are infinitely many such frames, since motion perpendicular to the line connecting the locations of simultaneous events doesn't ``break" their simultaneity). Nothing---not even a light signal---can travel from one event to the other. The events cannot have a causal relationship, and their chronological order depends on one's frame of reference.
 \item When $(\Delta s)^2>0$, the interval is \textbf{timelike}, and $\lvert(\Delta s)^2\rvert ^{1/2} = \Delta s $ represents the \textbf{inertial proper time interval} between the events, which is the proper time $c \mkern.5mu \Delta t_0$ that elapses for an inertial traveler who journeys from one event to the other.\footnote{\label{fn:pma}The qualifier \emph{inertial} is crucial because non-inertial journeys between timelike-separated events are possible, too. But among all travelers who make the journey, it's the inertial one who ages the most en route (we won't show this until Section \ref{sssec:ele}). This maximal aging---the inertial traveler's elapsed proper time---is the spacetime interval between the events.} Equivalently, it's the coordinate time that elapses between the events in the unique inertial frame for which they occur at the same location. The events may be causally related, and their chronological order is fixed.
-\item When $(\Delta s)^2=0$, the interval is \textbf{lightlike}, meaning that there's no inertial frame in which the events occur simultaneously or at the same location. Only a signal moving at the speed of light can travel from one event to the other. The events may be causally related (by such a signal), and their chronological order is fixed.
+\item When $(\Delta s)^2=0$, the interval is \textbf{lightlike} or \textbf{null}, meaning that there's no inertial frame in which the events occur simultaneously or at the same location. Only a signal moving at the speed of light can travel from one event to the other. The events may be causally related (by such a signal), and their chronological order is fixed.
 \end{itemize}
 
 
@@ -1053,7 +1051,7 @@ And defining a dot-product for four-vectors, we have $\dd \vv R$'s magnitude:
 \end{equation*}
 the invariant interval (timelike or lightlike for something in motion). We already knew that, but now we see explicitly that the dot product of two four-vectors differs from the dot product of two three-vectors by the signs of the products of the components: instead of ($+$$+$$+$), we have ($+$$-$$-$$-$), with the product of the time components in first position.\footnote{\label{fn:sc}It works just as well to use the convention ($-$$+$$+$$+$), or even to multiply the time component by the imaginary unit $\mathrm{i}$ and use ($+$$+$$+$$+$).} Why? Because of the equation for the spacetime interval (Equation \ref{eq:24}). That's just how it is in \textbf{Minkowski spacetime}.\footnote{The mathematician Hermann Minkowski developed the geometric approach to special relativity we're exploring. He used the ($+$$+$$+$$+$) convention mentioned in the previous footnote, by the way, but it's fallen out of favor (it causes problems in \emph{general} relativity).} For constant velocity, we can of course use a finite four-displacement $\Delta \vv R = \langle c \mkern.5mu \Delta t, \Delta \vv r \rangle$.\footnote{\label{fn:sp}We can speak more abstractly of a \textbf{four-separation} $\Delta \vv R = \langle c \mkern.5mu \Delta t, \Delta \vv r \rangle$ that ``points" from one event to another. They needn't be on a traveler's world line, and the ``from" event needn't be chronologically earlier than the ``to" event. Indeed, the events may be spacelike-separated, in which case they don't even \emph{have} a fixed chronological order, and the vector's magnitude is then a \emph{spacelike} interval (an imaginary number---see Section \ref{sssec:sti2}).}
 
-You may be wondering if our new \textbf{Minkowski dot product} has a ``geometric" definition like the Euclidean dot product does ($\vv q \cdot \vv w = qw \cos \theta$). The answer is a qualified yes: for \emph{qualifying} four-vectors $\vv Q$ and $\vv W$, the analogous relation is $\vv Q \cdot \vv W = QW \cosh \phi$. Here we have the hyperbolic cosine function and its argument $\phi$, which in this context can be thought of as the \emph{hyperbolic angle} between $\vv Q$ and $\vv W$ (itself a concept that needs qualifying). We'll forgo the details until Section \ref{ssec:ra}. For now, it's enough to know that in Minkowski spacetime, \textbf{orthogonal vectors} remain those whose dot product with each other is zero, and \textbf{parallel vectors} remain those that are scalar multiples of each other (\textbf{codirectional} if the scalar is positive, \textbf{contradirectional} if it's negative).\footnote{The words \emph{parallel} and \emph{antiparallel} are often used instead of \emph{codirectional} and \emph{contradirectional}, but then there's no word left to mean ``codirectional or contradirectional." For us, \emph{parallel} means ``codirectional or contradirectional" and gets the symbol $\parallel$. So if $\vv Q \parallel \vv W$, then $\vv Q$ and $\vv W$ are either codirectional or contradirectional. (Same for three-vectors.)}
+You may be wondering if our new \textbf{Minkowski dot product} has a ``geometric" definition like the Euclidean dot product does ($\vv q \cdot \vv w = qw \cos \theta$). The answer is a qualified yes: for \emph{qualifying} four-vectors $\vv Q$ and $\vv W$, the analogous relation is $\vv Q \cdot \vv W = QW \cosh \phi$. Here we have the hyperbolic cosine function and its argument $\phi$, which in this context can be thought of as the \emph{hyperbolic angle} between $\vv Q$ and $\vv W$ (itself a concept that needs qualifying). We'll forgo the details until Section \ref{ssec:ra}. For now, it's enough to know that in Minkowski spacetime, \textbf{orthogonal vectors} remain those whose dot product with each other is zero, and \textbf{parallel vectors} remain those that are scalar multiples of each other (\textbf{codirectional} if the scalar is positive, \textbf{contradirectional} if it's negative).\footnote{The words \emph{parallel} and \emph{antiparallel} are often used instead of \emph{codirectional} and \emph{contradirectional}, but then you can't use \emph{parallel} to mean ``codirectional or contradirectional," which is both a useful concept and the natural connotation of that word. For us, \emph{parallel} means ``codirectional or contradirectional" and gets the symbol $\parallel$. So if $\vv Q \parallel \vv W$, then $\vv Q$ and $\vv W$ are either codirectional or contradirectional. (Same for three-vectors.)}
 
 
 \subsubsection{Four-Position?}
@@ -1284,18 +1282,18 @@ For \emph{arbitrary} angle $\theta$ between $\vvbeta$ and $\vvzeta$, computing $
 Z &= \sqrt{\vv Z \cdot \vv Z} = \sqrt{ \left[ \gamma^4 (\vvbeta \cdot \vvzeta) \right]^2 - \left[ \gamma^2 \vvzeta + \gamma^4 (\vvbeta \cdot \vvzeta) \vvbeta \right]^2}\\[2pt]
 &= \sqrt{\gamma^8(\vvbeta \cdot \vvzeta)^2 - \gamma^4 \zeta^2 - 2\gamma^6 (\vvbeta \cdot \vvzeta)^2 - \gamma^8 (\vvbeta \cdot \vvzeta)^2 \beta^2 }\\[2pt]
 &= \sqrt{(\vvbeta \cdot \vvzeta)^2 \Big[ \gamma^8 (1 - \beta^2) - 2\gamma^6 \Big] - \gamma^4 \zeta^2} \\[2pt]
-Z &= \mathrm{i} \, \sqrt{\gamma^6 (\vvbeta \cdot \vvzeta)^2 + \gamma^4 \zeta^2} .
+Z &= \mathrm{i} \, \sqrt{\gamma^4 \zeta^2 + \gamma^6 (\vvbeta \cdot \vvzeta)^2} .
 \end{split}
 \end{equation}
-That's one way to write it. Let's find a more intuitive way, starting like this:\footnote{The derivation that follows is a variation of an answer on Stack Exchange contributed by the user Pulsar: \url{https://physics.stackexchange.com/q/66853}.}
+That's one way to write it. Let's find a more intuitive way, starting like this:\footnote{What follows is a variation of an answer on Stack Exchange contributed by the user Pulsar: \url{https://physics.stackexchange.com/q/66853}.}
 \begin{equation*}
-Z = \gamma^3 \zeta \mkern1mu \mathrm{i} \, \sqrt{\frac{(\vvbeta \cdot \vvzeta)^2}{\zeta^2} + \frac{1}{\gamma^2}}.
+Z = \gamma^3 \zeta \mkern1mu \mathrm{i} \, \sqrt{\frac{1}{\gamma^2} + \frac{(\vvbeta \cdot \vvzeta)^2}{\zeta^2}}.
 \end{equation*}
 Looks awkward, but we can make good sense of that with a little trigonometry. By the geometric definition of the Euclidean dot product, we know that $\vvbeta \cdot \vvzeta = \beta \zeta \cos{\theta}$, so we can substitute $\beta^2 \cos^2{\theta}$ for $(\vvbeta \cdot \vvzeta)^2 / \zeta^2$, and we have:
 \begin{equation*}
 \begin{split}
-Z &= \gamma^3 \zeta \mkern1mu \mathrm{i} \, \sqrt{\beta^2 \cos^2{\theta} + 1 - \beta^2}\\
-&= \gamma^3 \zeta \mkern1mu \mathrm{i} \, \sqrt{\beta^2 (\cos^2{\theta} - 1) + 1}\\
+Z &= \gamma^3 \zeta \mkern1mu \mathrm{i} \, \sqrt{(1 - \beta^2) + \beta^2 \cos^2{\theta}}\\
+&= \gamma^3 \zeta \mkern1mu \mathrm{i} \, \sqrt{ 1 - \beta^2 (1 - \cos^2{\theta})}\\
 &= \gamma^3 \zeta \mkern1mu \mathrm{i} \, \sqrt{1 - (\beta \sin{\theta})^2}.
 \end{split}
 \end{equation*}
@@ -1311,7 +1309,7 @@ That's $\zeta \mkern1mu \mathrm{i}$ in the traveler's instantaneous rest frame, 
 \begin{equation}\label{eq:pa4}
 \vvzeta_{\mkern1mu 0} = \dfrac{Z}{\mathrm{i}} \, \hatzeta ,
 \end{equation}
-with invariant magnitude $\zeta_0 = \sqrt{ \gamma^6 (\vvbeta \cdot \vvzeta)^2 + \gamma^4 \zeta^2 } = \gamma^3 \zeta / \gamma_{\perp}$ (by Equations \ref{eq:pa2} and \ref{eq:37}). When $\vvbeta \parallel \vvzeta$, Equation \ref{eq:37} reduces to Equation \ref{eq:36} (because then $\gamma_{\perp} = 1$). Another important special case is when $\vvbeta \perp \vvzeta$, as in uniform circular motion. Then $\gamma_{\perp} = \gamma$, and we get $\vvzeta_{\mkern1mu 0} = \gamma^2 \vvzeta$.
+with invariant magnitude $\zeta_0 = \sqrt{\gamma^4 \zeta^2 + \gamma^6 (\vvbeta \cdot \vvzeta)^2} = \gamma^3 \zeta / \gamma_{\perp}$ (by Equations \ref{eq:pa2} and \ref{eq:37}). When $\vvbeta \parallel \vvzeta$, Equation \ref{eq:37} reduces to Equation \ref{eq:36} (because then $\gamma_{\perp} = 1$). Another important special case is when $\vvbeta \perp \vvzeta$, as in uniform circular motion. Then $\gamma_{\perp} = \gamma$, and we get $\vvzeta_{\mkern1mu 0} = \gamma^2 \vvzeta$.
 
 
 \subsubsection{Classifying Four-Vectors}\label{sssec:classifying}
@@ -4991,8 +4989,8 @@ This section on ``electrodyadics" (patent pending) is partly an exercise in goin
 
 \clearpage
 
-\section*{References}\label{sec:r}
-\addcontentsline{toc}{section}{References}
+\section*{Influences}\label{sec:r}
+\addcontentsline{toc}{section}{Influences}
 
 Like anyone who writes something like this, I've been influenced by too many sources to remember. Here, I'll discuss some that left an imprint on this document in specific ways I can point to.
 
