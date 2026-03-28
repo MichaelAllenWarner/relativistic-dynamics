@@ -67,6 +67,8 @@
 \DeclareMathSymbol{\partialrm}{\mathord}{fourierNotBold}{130} % Upright partial derivative symbol, not bold
 \DeclareMathAlphabet{\mathsfit}{T1}{\sfdefault}{\mddefault}{\sldefault}
 \DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\sh}{sh}
 % center title
 \usepackage{titling}
 \renewcommand\maketitlehooka{\vfill}
@@ -1810,7 +1812,7 @@ That first result means that the component of three-force whose corresponding co
 
 Back in Section \ref{sssec:fdi}, we made passing reference to a special case in which the Minkowski dot product \emph{can} be expressed in a way that's analogous to the Euclidean relation $\vv q \cdot \vv w = qw \cos \theta$. The expression is $\vv Q \cdot \vv W = QW \cosh \phi$, where $\phi$ (lowercase Greek letter phi) is the hyperbolic angle between the qualifying four-vectors $\vv Q$ and $\vv W$, but we noted that this equation---and indeed the very notion of an angle between four-vectors---is conditional.
 
-Conditional on what? What's this special case?\footnote{Beyond the special case we'll discuss, there are actually a couple of others in which one might reasonably associate a hyperbolic argument with a pair of four-vectors. But they're unimportant for our purposes, and the particular relation $\vv Q \cdot \vv W = QW \cosh \phi$ doesn't hold for them.} What do hyperbolas have to do with anything, and where does that equation come from?
+Conditional on what? What's this special case? What do hyperbolas have to do with anything, and where does that equation come from?\footnote{Beyond the special case we'll discuss, there are actually a couple of others in which one might reasonably associate a hyperbolic angle with a pair of four-vectors. But they're unimportant for our purposes, and the \emph{particular} relation $\vv Q \cdot \vv W = QW \cosh \phi$ doesn't hold for them.}
 
 The special case is when the vectors $\vv Q$ and $\vv W$ are timelike and have time components with the same sign---either both positive (the vectors are future-pointing) or both negative (past-pointing).\footnote{\label{fn:nt}See Section \ref{sssec:classifying}. By the way, an example of a past-pointing vector is the four-force acting on the light-emitting body in Einstein's thought experiment. In the body's rest frame, the time component $\mathcal{P}_0$ is negative because the body loses rest energy, and the four-force is timelike because $\mathcal{P}_0^2 > f_0^2 = 0$.} We'll see why in a moment. As for hyperbolas, consider:
 \begin{equation}\label{eq:50}
@@ -1915,9 +1917,9 @@ which is just $\vert \mathring{\phi} \vert$ for rectilinear motion ($\mathring{\
 \end{equation*}
 ($\mathcal{P}_0 = \mathring{E}_0$ being the proper power in force-units), or
 \begin{equation*}
-\vv F = \langle \mathcal{P}_0 \cosh{\phi} + E_0 \mkern1.5mu \mathring{\phi} \sinh{\phi} , \, \hatphi ( \mathcal{P}_0 \sinh{\phi} + E_0 \mkern1.5mu \mathring{\phi} \cosh{\phi} ) + \mathring{\hatphi} E_0 \sinh{\phi} \rangle .
+\vv F = \langle \mathcal{P}_0 \mkern.5mu \ch{\phi} + E_0 \mkern1.5mu \mathring{\phi} \mkern1.5mu \sh{\phi} , \, \hatphi ( \mathcal{P}_0 \mkern.5mu \sh{\phi} + E_0 \mkern1.5mu \mathring{\phi} \mkern1mu \ch{\phi} ) + \mathring{\hatphi} E_0 \mkern1mu \sh{\phi} \rangle
 \end{equation*}
-Admittedly, the components of four-acceleration and four-force are somewhat unwieldy when written out like this, but they're arguably even worse in terms of $\vvbeta$, $\vvomega$, and $\gamma$, and the user-friendly nature of hyperbolic functions is a plus. Just look how easy it is to obtain an expression for the squared proper acceleration using the rapidity (and Equation \ref{eq:pa4}):
+($\ch = \cosh$ and $\sh = \sinh$). Admittedly, the components of four-acceleration and four-force are somewhat unwieldy when written out like this, but they're arguably even worse in terms of $\vvbeta$, $\vvomega$, and $\gamma$, and the user-friendly nature of hyperbolic functions is a plus. Just look how easy it is to obtain an expression for the squared proper acceleration using the rapidity (and Equation \ref{eq:pa4}):
 \begin{equation}\label{eq:pa3}
 \begin{split}
 - \, Z^2 &= - \, \vv Z \cdot \vv Z = \left( \hatphi \mkern1.5mu \mathring{\phi} \cosh{\phi} + \mathring{\hatphi} \sinh{\phi} \right)^2 - \left( \mathring{\phi} \sinh{\phi} \right)^2 \\
@@ -1926,7 +1928,7 @@ Admittedly, the components of four-acceleration and four-force are somewhat unwi
 \end{equation}
 because $\hatphi \cdot \mathring{\hatphi} = 0$ (unit vector is orthogonal to its time-derivative), $\hatphi \cdot \hatphi = 1$, and $\cosh^{2}{\phi} - \sinh^{2}{\phi} = 1$. It requires some algebra to show that the right side of Equation \ref{eq:pa3} is equivalent to the negative square of the right sides of Equations \ref{eq:pa2} and \ref{eq:37}, but it is, and it was child's play to derive. So in addition to its conceptual elegance, the rapidity offers much \emph{mathematical} elegance.
 
-Equation \ref{eq:pa3} also gives us the appealing relation $\zeta_0 = | \mathring{\phi} |$ for $\mathring{\vvphi} \parallel \vvphi$.\footnote{In this case, $\mathring{\phi} = \pm \vert \mathring{\vvphi} \vert$ (see Footnote \ref{fn:ph}), and $\vvzeta_{\mkern1mu 0} = \mathring{\vvphi}$.} When the traveler's motion is rectilinear, then, $| \mathring{\phi} |$ is the magnitude of the proper acceleration and therefore invariant under a Lorentz boost in the $\pm \, \hatphi$ direction. Same goes for $\dd \phi = \mathring{\phi} \, c \, \dd t_0$: incremental \emph{changes} in the traveler's rapidity are invariant among observers for whom the traveler's $\mathring{\vvphi} \parallel \vvphi$. Now we're getting somewhere! Note that because we've defined rapidity as a magnitude, we cannot extend this argument to say that \emph{differences} in the rapidities of two rectilinear travelers with parallel velocities are necessarily invariant among the would-be qualifying observers. If one traveler is moving to your left at the same speed that the other is moving to your right, then you'll say the difference in their rapidities is zero, but you'd give a different answer after a boost to your left or right (imagine boosting all the way to one of the travelers' rest frames---is the other traveler now at rest? no). Partly to remedy this ``shortcoming," we'll introduce a \emph{signed} rapidity-like parameter in the next section. Naively we might guess that this signed parameter will be the component of $\vvphi$ corresponding to the boost axis ($\phi_x$ if the boost is along the $x$-axis), but we'll see that that's not generally so.
+Equation \ref{eq:pa3} also gives us the appealing relation $\zeta_0 = | \mathring{\phi} |$ for $\mathring{\vvphi} \parallel \vvphi$.\footnote{In this case, $\mathring{\phi} = \pm \vert \mathring{\vvphi} \vert$ (see Footnote \ref{fn:ph}), and $\vvzeta_{\mkern1mu 0} = \mathring{\vvphi}$.} When the traveler's motion is rectilinear, then, $| \mathring{\phi} |$ is the magnitude of the proper acceleration and therefore invariant under a Lorentz boost in the $\pm \, \hatphi$ direction. Same goes for $\dd \phi = \mathring{\phi} \, c \, \dd t_0$: incremental \emph{changes} in the traveler's rapidity are invariant among observers for whom the traveler's $\mathring{\vvphi} \parallel \vvphi$. Now we're getting somewhere! Note that because we've defined rapidity as a magnitude, we cannot extend this argument to say that \emph{differences} in the rapidities of two rectilinear travelers with parallel velocities are necessarily invariant among the would-be qualifying observers. If one traveler is moving to your left at the same speed that the other is moving to your right, then you'll say the difference in their rapidities is zero, but you'd give a different answer after a boost to your left or right (imagine boosting all the way to one of the travelers' rest frames---is the other traveler now at rest? no). Partly to remedy this ``shortcoming," we'll introduce a \emph{signed} rapidity-like parameter in the next section. Naively (very naively) one might guess that this signed parameter will be the component of $\vvphi$ corresponding to the boost axis ($\phi_x$ if the boost is along the $x$-axis), but we'll see that that's not so.
 
 
 \subsubsection{Longitudinal Rapidity}
@@ -1935,11 +1937,11 @@ Since the inverse hyperbolic tangent is an odd function with a domain of $(-1, 1
 \begin{equation*}
 \beta_x^{\prime} = \frac{\beta_x - \beta_{\textrm{rel}}}{1 - \beta_{x} \mkern1mu \beta_{\textrm{rel}}} \qquad \qquad \beta_x = \frac{\beta_x^{\prime} + \beta_{\textrm{rel}}}{1 + \beta_x^{\prime} \mkern1mu \beta_{\textrm{rel}}}.
 \end{equation*}
-Now let's use Equations \ref{eq:51} to rewrite the relative speed of the frames $\beta_{\textrm{rel}}$ in terms of its rapidity equivalent $\phi_{\textrm{rel}}$, and let's also rewrite each velocity \emph{component} as the hyperbolic tangent of a rapidity-like parameter that we'll label $\varphi^{[\prime]}$ ($\varphi$ is the ``curly" version of the Greek letter phi [$\phi$]):
+Now let's use Equations \ref{eq:51} to rewrite the relative speed of the frames $\beta_{\textrm{rel}}$ in terms of its rapidity equivalent $\phi_{\textrm{rel}}$, and let's also rewrite each velocity \emph{component} as the hyperbolic tangent of a rapidity-like parameter that we'll label $\varphi^{[\prime]}$ ($\varphi$ is the ``curly" version of the lowercase Greek letter phi [$\phi$]):
 \begin{equation}\label{eq:th}
 \tanh{\varphi^{\prime}} = \frac{\tanh{\varphi} - \tanh{\phi_{\textrm{rel}}}}{1 - \tanh{\varphi} \,  \tanh{\phi_{\textrm{rel}}}} \qquad \quad \tanh{\varphi} = \frac{\tanh{\varphi^{\prime}} + \tanh{\phi_{\textrm{rel}}}}{1 + \tanh{\varphi^{\prime}} \, \tanh{\phi_{\textrm{rel}}}} .
 \end{equation}
-The pertinent characteristic of $\varphi$ is that it's the inverse hyperbolic tangent of the velocity component \emph{corresponding to the axis of the given Lorentz boost} (the $x$-axis here). This new quantity is the \textbf{longitudinal rapidity}. Particle physicists usually label it $y$ and sometimes call it the ``particle rapidity" or, much to the confusion of outsiders, just the ``rapidity."\footnote{They also prefer to express it in terms of energy and momentum rather than velocity: $\tanh^{-1}{\beta_x} = \tanh^{-1}{(cp_x / E)} = \frac{1}{2} \ln{[(E + cp_x) / (E - cp_x) ]}$ (by Equations \ref{eq:19} and \ref{eq:hf}). We choose not to label it $y$ because that symbol is already doing Cartesian duties for us. Anyway, $\varphi$ kind of looks like $y$, and as a variant of the letter $\phi$ it seems fitting.}
+The pertinent characteristic of $\varphi$ is that it's the inverse hyperbolic tangent of the velocity component \emph{corresponding to the axis of the given Lorentz boost} (the $x$-axis here). This new quantity is the \textbf{longitudinal rapidity}. Particle physicists usually label it $y$ and sometimes call it the ``particle rapidity" or, to the occasional confusion of outsiders, just the ``rapidity."\footnote{They also prefer to express it in terms of energy and momentum rather than velocity: $\tanh^{-1}{\beta_x} = \tanh^{-1}{(cp_x / E)} = \frac{1}{2} \ln{[(E + cp_x) / (E - cp_x) ]}$ (by Equations \ref{eq:19} and \ref{eq:hf}). We choose not to label it $y$ because that symbol is already doing Cartesian duties for us. Anyway, $\varphi$ \emph{kind of} looks like $y$, and as a variant of the letter $\phi$ it seems fitting.}
 
 So what does the longitudinal rapidity do for us? Quite a bit, if we happen to know the addition/subtraction rule for the hyperbolic tangent function:
 \begin{equation*}
@@ -2204,7 +2206,7 @@ x (\omega_x(ct)) - x_{\mathrm{i}} &= \dfrac{1}{2 \zeta_{0 \mkern2mu x}} \int_{ct
 &= \dfrac{1}{ \zeta_{0 \mkern2mu x}} \, \sqrt{1 + \omega^2_x } \, \Big \vert^{ct = ct}_{ct = 0}
 \end{split}
 \end{equation*}
-(division by a vector is illegal---this is why we switched to component notation). But $\gamma = \sqrt{1 + \omega^2_x}$, so that's:
+(the need to divide here is why we switched to component notation). But $\gamma = \sqrt{1 + \omega^2_x}$, so that's:
 \begin{equation}\label{eq:x}
 x (\gamma(ct)) = x_{\mathrm{i}} + \dfrac{ \gamma - \gamma_{\mkern1mu \mathrm{i}} }{ \zeta_{0 \mkern2mu x}} \qquad \textrm{\footnotesize{ (for constant $\vvzeta_{\mkern1mu 0} = \langle \zeta_{0 \mkern1mu x} , 0, 0 \rangle$ and $\vvzeta \parallel \vvbeta$)}}.
 \end{equation}
@@ -2246,7 +2248,7 @@ and the kinematic functions of $ct$ we built on it are:
 \begin{equation*}
 \begin{aligned}
 x (\gamma(ct)) &= x_{\mathrm{i}} + \dfrac{ \gamma - \gamma_{\mkern1mu \mathrm{i}} }{ \zeta_{0 \mkern2mu x}} \\[5pt]
-ct_0 (\omega_x(ct)) &= ct_{0 \mkern2mu \mathrm{i}} + \dfrac{ \phi_x - \phi_{x \mkern2mu \mathrm{i} }}{ \zeta_{0 \mkern2mu x}} .
+ct_0 (\phi_x(ct)) &= ct_{0 \mkern2mu \mathrm{i}} + \dfrac{ \phi_x - \phi_{x \mkern2mu \mathrm{i} }}{ \zeta_{0 \mkern2mu x}} .
 \end{aligned}
 \end{equation*}
 ``Ideal" initial conditions for Equations \ref{eq:x} and \ref{eq:pt} are of course $x_{\mathrm{i}} = \gamma_{\mkern1mu \mathrm{i}} / \zeta_{0 \mkern2mu x}$ and $ct_{0 \mkern2mu \mathrm{i}} = \phi_{x \mkern2mu \mathrm{i} } / \zeta_{0 \mkern2mu x}$, leaving $x = \gamma / \zeta_{0 \mkern2mu x}$ and $ct_0 = \phi_x / \zeta_{0 \mkern2mu x}$. For the whole set of equations, the ``ideal" initial condition is $\omega_{\mkern1mu \textrm{i}} = 0$, so that every $\omega_x = \omega_x (ct)$ can be replaced with $\zeta_{0 \mkern2mu x} \mkern2mu ct$.\footnote{Note that if all three conditions are met, then $ct_{0 \mkern2mu \mathrm{i}} = 0$ but $x_{\mathrm{i}} = 1 / \zeta_{0 \mkern1mu x}$ [$\neq 0$].} Also, if our $x$-components are all non-negative, then we can replace them with their corresponding vector magnitudes (drop the $x$ subscripts). The exception is $x(ct)$ itself---we can't replace it with $r(ct)$ because $\vv r$ has its tail at the origin, and we haven't required that the (constant) $y$- and $z$-coordinates be zero. Putting that all together, ``ideally":
