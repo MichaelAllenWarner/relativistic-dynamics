@@ -1396,7 +1396,7 @@ We see in Equation \ref{eq:41} that $\vv f \neq E_0 \vvzeta$ $( = m \vv a)$, eve
 \vv f = \gamma^2 E \mkern1mu (\vvbeta \cdot \vvzeta) \vvbeta + E \vvzeta \quad \textrm{\footnotesize{ (for $\dot{E}_0 = 0$)}}.
 \end{equation}
 
-To gain a bit more insight into the relationship between force and acceleration, let's isolate $\vvzeta$ on one side of the equation so that we can compare the result with the Newtonian $\vvzeta = \vv f_{\mathrm{classical}} / E_0$. First we'll need to factor out that $(\vvbeta \cdot \vvzeta)$ on the right side, which we accomplish by taking the dot product of Equation \ref{eq:43} with the normalized three-velocity:
+To gain a bit more insight into the relationship between force and acceleration, let's isolate $\vvzeta$ on one side of the equation so that we can compare the result with the Newtonian $\vvzeta = \vv f_{\mathrm{classical}} / E_0$. This will be easy if we can express the first term on the right side without $\vvzeta$. To that end, first take the dot product of Equation \ref{eq:43} with $\vvbeta$:
 \begin{equation*}
 \begin{split}
 \vv f \cdot \vvbeta &= \left[ \gamma^2 E \mkern1mu (\vvbeta \cdot \vvzeta) \vvbeta + E \vvzeta \right] \cdot \vvbeta \\
@@ -1404,7 +1404,7 @@ To gain a bit more insight into the relationship between force and acceleration,
 &= \gamma^2 E \mkern1mu (\vvbeta \cdot \vvzeta)
 \end{split}
 \end{equation*}
-(by Equation \ref{eq:20}). Subbing that back into Equation \ref{eq:43}, we find:
+(by Equation \ref{eq:20}). Then sub that back into Equation \ref{eq:43}, and find:
 \begin{equation}\label{eq:44}
 \begin{split}
 \vv f &= (\vv f \cdot \vvbeta) \vvbeta + E \vvzeta \\[5pt]
@@ -1433,10 +1433,10 @@ If $\vv f \parallel \vvbeta$, then $\vv f \cdot \vvbeta = \pm \, f \beta$, and $
 \begin{split}
 \vv f - (\vv f \cdot \vvbeta) \vvbeta &= f \mkern1mu \vv{\hat{f}} - (\pm \, f \beta) (\pm \, \beta \mkern1mu \vv{\hat{f}}) \\[2pt]
 &= \vv f \mkern1mu (1 - \beta^2) \\[2pt]
-&= \frac{\vv f}{\gamma^2},
+&= \frac{\vv f}{\gamma^2}
 \end{split}
 \end{equation*}
-such that
+(Equation \ref{eq:20}), such that
 \begin{equation}\label{eq:46}
 \vvzeta = \frac{\vv f}{\gamma^2 E} \quad \textrm{\footnotesize{ (for $\dot{E}_0 = 0$ and $\vv f \parallel \vvbeta$)}}.
 \end{equation}
@@ -1554,7 +1554,7 @@ Indeed, we can do the same for an arbitrary four-vector $\vv Q$:
 \begin{equation*}
 [\vv Q]^\prime = \Lambda \mkern1mu [\vv Q] \qquad \qquad [\vv Q] = \Lambda^{-1} \mkern1mu [\vv Q]^\prime .
 \end{equation*}
-As we'll see, the details of a transformation can be an eyesore, so these one-line matrix equations are a fine thing.
+As we'll see, the details of a transformation can be an eyesore, so these one-line matrix equations are a fine thing.\footnote{Actually, the rest of this section merely works out those gory details for acceleration and force. Useful as a reference, but hardly essential stuff. Feel free to skim or skip.}
 
 Care is required when the four-vector's components contain speeds or Lorentz factors (e.g., four-velocity and four-acceleration). We mustn't confuse these $\beta$'s and $\gamma$'s with the $\beta$'s and $\gamma$'s in the boost matrices. Our solution, remember, is to add a ``rel" subscript to the $\beta$'s and $\gamma$'s that correspond to the relative motion of the primed and unprimed frames---that is, we notate the boost parameters $\beta_{\mathrm{rel}}$ and $\gamma_{\mathrm{rel}}$.
 
