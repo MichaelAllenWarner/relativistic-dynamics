@@ -14,6 +14,9 @@
 \usepackage{textcomp}
 \usepackage{centernot}
 \usepackage{ragged2e}
+\usepackage[single]{accents}
+\let\oldmathring\mathring
+\renewcommand{\mathring}[1]{\accentset{\circ}{#1}}
 \usepackage{esvect}
 \renewcommand{\vv}[1]{\mathbf{#1}}
 \newcommand{\dd}[1]{\mathrm{d}#1}
@@ -22,6 +25,7 @@
 \newcommand{\vvomega}{\bm{\upomega}}
 \newcommand{\vvphi}{\bm{\upphi}}
 \newcommand{\hatphi}{\bm{\hat{\upphi}}}
+\newcommand{\ringhatphi}{\bm{{\accentset{\circ}{\hat{\upphi}}}}}
 \newcommand{\vvzeta}{\bm{\upzeta}}
 \newcommand{\hatzeta}{\bm{\hat{\upzeta}}}
 \newcommand{\vvsigma}{\bm{\upsigma}}
@@ -118,7 +122,7 @@
 
 \nomenclature[010]{\( ct_0 \)}{Proper time. The naught subscript almost always means the ``proper" version of a quantity---i.e., the quantity as measured in the relevant rest frame.}
 \nomenclature[020]{\( \dot{ \text{\underline{\hspace{.6em}}} } \)}{Overdot means derivative with respect to $ct$ (coordinate time).}
-\nomenclature[030]{\( \mathring{ \text{\underline{\hspace{.6em}}} } \)}{Over-circle means derivative with respect to $ct_0$ (proper time).}
+\nomenclature[030]{\( \mathring{ \text{\underline{\hspace{.6em}}\vphantom{a}} } \)}{Over-circle means derivative with respect to $ct_0$ (proper time).}
 \nomenclature[033]{\( \vv 0 \)}{Zero vector.}
 \nomenclature[039]{\( \textrm{\mbox{\boldmath$\emptyset$}} \)}{Zero four-vector.}
 \nomenclature[040]{\( \vv r \)}{Position vector $\langle x, y, z \rangle$.}
@@ -1165,7 +1169,7 @@ Now, we've seen what happens when we take the dot product of a four-vector with 
 \end{equation*}
 Is \emph{that} invariant? Well, how do things look in another frame?
 \begin{equation*}
-\left( \vv P \cdot \dd \vv R \right)^\prime = (E^\prime)(c \, \dd t^\prime) - \left( (\vv p c) ^\prime \cdot \dd \vv r ^\prime \right) .
+\left( \vv P \cdot \dd \vv R \right)^\prime = (E^\prime)(c \, \dd t^\prime) - \big( (\vv p c) ^\prime \cdot \dd \vv r ^\prime \big) .
 \end{equation*}
 We want to know whether $\vv P \cdot \dd \vv R = (\vv P \cdot \dd \vv R)^\prime$. We can put the frames in standard configuration without losing generality, and then the question becomes: does $(E^\prime)(c \, \dd t^\prime) - (cp_x^\prime)(\dd x^\prime)$ equal the unprimed $(E)(c \, \dd t) - (cp_x)(\dd x)$? To find out, we'll use the Lorentz transformation. For the components of four-momentum, that's Equations \ref{eq:fm}; for the components of four-displacement, it's Equations \ref{eq:lt2} (with $\dd$'s instead of $\Delta$'s). We'll also use Equation \ref{eq:20}:
 \begin{equation*}
@@ -1339,7 +1343,7 @@ What about the four-force (Equation \ref{eq:33})? Spacelike, timelike, or lightl
 \begin{split}
 \vv F &= \mathring{\vv P}\\
 &= \frac{\dd}{\dd (c t_0)} \left( E_0 \mkern.5mu \vv B \right) \\[4pt]
-\vv F &= \mathring E_0 \mkern.5mu \vv B \quad \textrm{\footnotesize{ (for $\vv Z = \textrm{\mbox{\boldmath $\emptyset$}}$)}}.
+\vv F &= \mathring{E}_0 \mkern.5mu \vv B \quad \textrm{\footnotesize{ (for $\vv Z = \textrm{\mbox{\boldmath $\emptyset$}}$)}}.
 \end{split}
 \end{equation}
 But in most applications it's $E_0$ that remains constant while $\vv B$ changes. In that case $\vv F$ is spacelike (codirectional with $\mathring{\vv B} = \vv Z$, orthogonal to $\vv B$):
@@ -1348,7 +1352,7 @@ But in most applications it's $E_0$ that remains constant while $\vv B$ changes.
 \end{equation}
 This says symbolically what we've already put into words: rest energy is the measure of ``spacetime inertia," the resistance to change in (direction of) four-velocity $\vv B$.\footnote{Equivalently, $\vv F = m \vv A$ when $\mathring{m} = 0$ (since $E_0 = mc^2$ and $\vv Z = \vv A / c^2$).}
 
-If \emph{both} $E_0$ and $\vv B$ change (the general case), then the product rule gives us $\vv F = \mathring E_0 \mkern.5mu \vv B + E_0 \mkern.5mu \vv Z$. Such a four-force might be spacelike, timelike, or even lightlike, depending on whether the magnitude of the spatial component (three-force) is greater than, less than, or equal to the absolute value of the time component (power).
+If \emph{both} $E_0$ and $\vv B$ change (the general case), then the product rule gives us $\vv F = \mathring{E}_0 \mkern.5mu \vv B + E_0 \mkern.5mu \vv Z$. Such a four-force might be spacelike, timelike, or even lightlike, depending on whether the magnitude of the spatial component (three-force) is greater than, less than, or equal to the absolute value of the time component (power).
 
 \subsubsection{Proper Power, Proper Force}\label{sssec:pf}
 
@@ -1902,11 +1906,11 @@ four-momentum (for $E_0 \neq 0$):
 \end{equation*}
 four-acceleration (``normalized"):\footnote{\label{fn:ph}By $\mathring{\phi}$ we mean the $ct_0$-derivative of the rapidity $\phi$, \emph{not} the magnitude of the vector $\mathring{\vvphi}$. They're equal \emph{up to a sign} for rectilinear motion (or when there's no acceleration):
 \begin{equation*}
-\big \vert \mathring{\vvphi} \big \vert = \left \vert \dfrac{\dd}{\dd (c t_0)} \, ( \phi \hatphi ) \right \vert = \left \vert \mathring{\phi} \hatphi + \phi \mathring{\hatphi} \right \vert,
+\big \vert \mathring{\vvphi} \big \vert = \left \vert \dfrac{\dd}{\dd (c t_0)} \, ( \phi \hatphi ) \right \vert = \left \vert \mathring{\phi} \hatphi + \phi \ringhatphi \right \vert,
 \end{equation*}
-which is just $\vert \mathring{\phi} \vert$ for rectilinear motion ($\mathring{\vvphi} \parallel \vvphi$), because then $\mathring{\hatphi} = \vv 0$.}
+which is just $\vert \mathring{\phi} \vert$ for rectilinear motion ($\mathring{\vvphi} \parallel \vvphi$), because then $\ringhatphi = \vv 0$.}
 \begin{equation*}
-\vv Z = \mathring{\vv B} = \langle  \mathring{\phi} \sinh{\phi} , \, \hatphi \mkern1.5mu \mathring{\phi} \cosh{\phi} + \mathring{\hatphi} \sinh{\phi} \rangle
+\vv Z = \mathring{\vv B} = \langle  \mathring{\phi} \sinh{\phi} , \, \hatphi \mkern1.5mu \mathring{\phi} \cosh{\phi} + \ringhatphi \sinh{\phi} \rangle
 \end{equation*}
 (because the hyperbolic sine and hyperbolic cosine functions are derivatives of each other); and four-force:
 \begin{equation*}
@@ -1914,16 +1918,16 @@ which is just $\vert \mathring{\phi} \vert$ for rectilinear motion ($\mathring{\
 \end{equation*}
 ($\mathcal{P}_0 = \mathring{E}_0$ being the proper power in force-units), or
 \begin{equation*}
-\vv F = \langle \mathcal{P}_0 \mkern.5mu \ch{\phi} + E_0 \mkern1.5mu \mathring{\phi} \mkern1.5mu \sh{\phi} , \, \hatphi ( \mathcal{P}_0 \mkern.5mu \sh{\phi} + E_0 \mkern1.5mu \mathring{\phi} \mkern1mu \ch{\phi} ) + \mathring{\hatphi} E_0 \mkern1mu \sh{\phi} \rangle
+\vv F = \langle \mathcal{P}_0 \mkern.5mu \ch{\phi} + E_0 \mkern1.5mu \mathring{\phi} \mkern1.5mu \sh{\phi} , \, \hatphi ( \mathcal{P}_0 \mkern.5mu \sh{\phi} + E_0 \mkern1.5mu \mathring{\phi} \mkern1mu \ch{\phi} ) + \ringhatphi E_0 \mkern1mu \sh{\phi} \rangle
 \end{equation*}
 ($\ch = \cosh$ and $\sh = \sinh$). Admittedly, the components of four-acceleration and four-force are somewhat unwieldy when written out like this, but they're arguably even worse in terms of $\vvbeta$, $\vvomega$, and $\gamma$, and the user-friendly nature of hyperbolic functions is a plus. Just look how easy it is to obtain an expression for the squared proper acceleration using the rapidity (and Equation \ref{eq:pa4}):
 \begin{equation}\label{eq:pa3}
 \begin{split}
-- \, Z^2 &= - \, \vv Z \cdot \vv Z = \left( \hatphi \mkern1.5mu \mathring{\phi} \cosh{\phi} + \mathring{\hatphi} \sinh{\phi} \right)^2 - \left( \mathring{\phi} \sinh{\phi} \right)^2 \\
-\zeta_0^2 &= \mathring{\phi}^2 + (\mathring{\hatphi} \sinh{\phi})^2 
+- \, Z^2 &= - \, \vv Z \cdot \vv Z = \left( \hatphi \mkern1.5mu \mathring{\phi} \cosh{\phi} + \ringhatphi \sinh{\phi} \right)^2 - \left( \mathring{\phi} \sinh{\phi} \right)^2 \\
+\zeta_0^2 &= \mathring{\phi}^2 + (\ringhatphi \sinh{\phi})^2 
 \end{split}
 \end{equation}
-because $\hatphi \cdot \mathring{\hatphi} = 0$ (unit vector is orthogonal to its time-derivative), $\hatphi \cdot \hatphi = 1$, and $\cosh^{2}{\phi} - \sinh^{2}{\phi} = 1$. It requires some algebra to show that the right side of Equation \ref{eq:pa3} is equivalent to the negative square of the right sides of Equations \ref{eq:pa2} and \ref{eq:37}, but it is, and it was child's play to derive. So in addition to its conceptual elegance, the rapidity offers much \emph{mathematical} elegance.
+because $\hatphi \cdot \ringhatphi = 0$ (unit vector is orthogonal to its time-derivative), $\hatphi \cdot \hatphi = 1$, and $\cosh^{2}{\phi} - \sinh^{2}{\phi} = 1$. It requires some algebra to show that the right side of Equation \ref{eq:pa3} is equivalent to the negative square of the right sides of Equations \ref{eq:pa2} and \ref{eq:37}, but it is, and it was child's play to derive. So in addition to its conceptual elegance, the rapidity offers \emph{mathematical} elegance.
 
 Equation \ref{eq:pa3} also gives us the appealing relation $\zeta_0 = | \mathring{\phi} |$ for $\mathring{\vvphi} \parallel \vvphi$.\footnote{In this case, $\mathring{\phi} = \pm \vert \mathring{\vvphi} \vert$ (see Footnote \ref{fn:ph}), and $\vvzeta_{\mkern1mu 0} = \mathring{\vvphi}$.} When the traveler's motion is rectilinear, then, $| \mathring{\phi} |$ is the magnitude of the proper acceleration and therefore invariant under a Lorentz boost in the $\pm \, \hatphi$ direction. Same goes for $\dd \phi = \mathring{\phi} \, c \, \dd t_0$: incremental \emph{changes} in the traveler's rapidity are invariant among observers for whom the traveler's $\mathring{\vvphi} \parallel \vvphi$. Now we're getting somewhere! Note that because we've defined rapidity as a magnitude, we cannot extend this argument to say that \emph{differences} in the rapidities of two rectilinear travelers with parallel velocities are necessarily invariant among the would-be qualifying observers. If one traveler is moving to your left at the same speed that the other is moving to your right, then you'll say the difference in their rapidities is zero, but you'd give a different answer after a boost to your left or right (imagine boosting all the way to one of the travelers' rest frames---is the other traveler now at rest? no). Partly to remedy this ``shortcoming," we'll introduce a \emph{signed} rapidity-like parameter in the next section. Naively (very naively) one might guess that this signed parameter will be the component of $\vvphi$ corresponding to the boost axis ($\phi_x$ if the boost is along the $x$-axis), but we'll see that that's not so.
 
@@ -2982,14 +2986,14 @@ Finally, aren't all the partial derivatives on the left sides of Maxwell's equat
 
 Earlier we called the Lorentz four-force (Equation \ref{eq:ff}) an ``empirical result." Alternatively, we can start with a suitable Lorentz-invariant Lagrangian and use the four-vector version of the Euler--Lagrange equation to \emph{derive} the Lorentz four-force. This is typically done with covectors and index notation, which we haven't covered, but our present toolkit will suffice if we define a new vector operator whose component-partials are with respect to the \emph{four-velocity} components. With some notational poetic license:
 \begin{equation*}
-\mathring{\partialup} \equiv \left \langle \dfrac{\partial}{\partial (c \mathring{t})} , \,  - \dfrac{\partial}{\partial \mathring{x}} , \, - \dfrac{\partial}{\partial \mathring{y}} , \, - \dfrac{\partial}{\partial \mathring{z}} \right \rangle = \left \langle \dfrac{\partial}{\partial B^{ct}} , \,  - \dfrac{\partial}{\partial B^x} , \, - \dfrac{\partial}{\partial B^y} , \, - \dfrac{\partial}{\partial B^z} \right \rangle
+\mathring{\partialup} \equiv \left \langle \dfrac{\partial}{\partial (c \mathring{t} \mkern1mu )} , \,  - \dfrac{\partial}{\partial \mathring{x}} , \, - \dfrac{\partial}{\partial \mathring{y}} , \, - \dfrac{\partial}{\partial \mathring{z}} \right \rangle = \left \langle \dfrac{\partial}{\partial B^{ct}} , \,  - \dfrac{\partial}{\partial B^x} , \, - \dfrac{\partial}{\partial B^y} , \, - \dfrac{\partial}{\partial B^z} \right \rangle
 \end{equation*}
 (the minus signs make it a four-vector, as was the case with $\partialup$---otherwise the components would transform \emph{inverse}-Lorentzianly, recall). With $L$ as the Lagrangian, the four-vector version of the Euler--Lagrange equation is:
 \begin{equation}\label{eq:ele}
 \dfrac{\dd}{\dd (c t_0)} \, ( \mathring{\partialup} L ) = \partialup L .
 \end{equation}
 
-Our Lagrangian for a particle in an electromagnetic field should have two manifestly covariant terms: one for the particle as if it were inertial (absent the field and any other forces) and one for its coupling with the field. Now, we haven't yet dealt with the principle of stationary action directly, but here and there we've had occasion to discuss the elapsed proper time along a particle's trajectory, and we even mentioned in passing that the \emph{inertial} journey between a pair of timelike-separated events is the one that maximizes the proper time elapsed en route (see Footnote \ref{fn:pma}). We haven't \emph{demonstrated} this principle of maximal aging, however, so let's quickly do that. From our discussion in Section \ref{sssec:ds}, we know that the elapsed proper time (for any timelike journey) is $c \mkern.5mu \Delta t_0 = \int c \, \dd t_0$, evaluated along the world line. By $c\mathring{t} = \gamma$, that's equivalently $c \mkern.5mu \Delta t_0 = \int \gamma^{-1} c \, \dd t = \int (1 - \beta^2)^{1/2} c \, \dd t $, which gives the elapsed proper time in terms of the \emph{coordinate} time for some inertial frame. It's clear that $c \mkern.5mu \Delta t_0$ will be maximized if in this frame the traveler's velocity is zero throughout the journey, and this can only be so if the traveler's route is inertial.\footnote{Of course, since the elapsed proper time is invariant, a maximal $c \mkern.5mu \Delta t_0$ doesn't \emph{require} the traveler's velocity to be always zero---just constant.}
+Our Lagrangian for a particle in an electromagnetic field should have two manifestly covariant terms: one for the particle as if it were inertial (absent the field and any other forces) and one for its coupling with the field. Now, we haven't yet dealt with the principle of stationary action directly, but we've occasionally discussed the elapsed proper time along a particle's trajectory, and we even mentioned in passing that the \emph{inertial} journey between a pair of timelike-separated events is the one that maximizes the proper time elapsed en route (see Footnote \ref{fn:pma}). We haven't \emph{demonstrated} this principle of maximal aging, however, so let's quickly do that. From our discussion in Section \ref{sssec:ds}, we know that the elapsed proper time (for any timelike journey) is $c \mkern.5mu \Delta t_0 = \int c \, \dd t_0$, evaluated along the world line. By $c\mathring{t} = \gamma$, that's equivalently $c \mkern.5mu \Delta t_0 = \int \gamma^{-1} c \, \dd t = \int (1 - \beta^2)^{1/2} c \, \dd t $, which gives the elapsed proper time in terms of the \emph{coordinate} time for some inertial frame. It's clear that $c \mkern.5mu \Delta t_0$ will be maximized if in this frame the traveler's velocity is zero throughout the journey, and this can only be so if the traveler's route is inertial.\footnote{Of course, since the elapsed proper time is invariant, a maximal $c \mkern.5mu \Delta t_0$ doesn't \emph{require} the traveler's velocity to be always zero---just constant.}
 
 Because of the principle of maximal aging, the Lagrangian term for the inertial particle ($L_{\textrm{inertial}}$) should be a \emph{constant} along the path taken, so that its action integral $\int \mkern-4mu L_{\textrm{inertial}} \, c \, \dd t_0$ for that path is proportional to the particle's elapsed proper time.\footnote{\label{fn:covpt}If we were actually using the calculus of variations to \emph{find} the path of stationary action, we'd have to integrate over some other variable whose values at the integration limits are \emph{fixed}, regardless of the path taken between them (i.e., not the path-dependent proper time). After finding the path of stationary action, it's fine to equate the integration variable with the particle's proper time \emph{for that path}, and that's all we've done.} Something like $L_{\textrm{inertial}} = E_0 (\vv B \cdot \vv B)$ should do the trick (we don't want to reduce $\vv B \cdot \vv B$ to $B^2 = 1$ at this stage---if we do, we won't get a four-acceleration when we differentiate, and then how will we recover the Lorentz four-force?\footnote{\label{fn:bb1}More to the point, we \emph{can't} reduce it to $B^2 = 1$ at this stage. Really, $\vv B = \mathring{\vv R}$ here is the derivative of the \emph{any-path particle's} four-position with respect to the \emph{actual-path particle's} proper time (see Footnote \ref{fn:covpt}). So only for the true path does $\vv B \cdot \vv B = 1$.}). For the coupling term, perhaps the simplest sensible invariant we can make from the field and the particle is $q (\vv B \cdot \vv A)$. Let's try it. Our candidate Lagrangian is then:
 \begin{equation*}
@@ -3038,7 +3042,7 @@ since $\vv B = \vv B(ct_0)$ doesn't depend on $\vv R$.\footnote{For a \emph{phys
 \begin{equation}\label{eq:emeom}
 \begin{split}
 \mathring{\vv P}_\textrm{c} &= \partialup L \\[2pt]
-E_0 \mathring{\vv B} + q \mathring{\vv A} &= q \, \partialup_{\vv A} (\vv B \cdot \vv A) \\[3pt]
+E_0 \mathring{\vv B} + q \mathring{\vv A} &= q \, \partialup_{\vv A} (\vv B \cdot \vv A) \\[2pt]
 \vv F &= q \, \partialup_{\vv A} (\vv B \cdot \vv A) - q \mathring{\vv A} ,
 \end{split}
 \end{equation}
@@ -3047,7 +3051,7 @@ where we've used $\vv F = E_0 \mathring{\vv B}$.
 One more step. Consider the following operator, a directional derivative that appears in the Lorentz four-force (Equation \ref{eq:lff}):
 \begin{equation*}
 \begin{split}
-\vv B \cdot \partialup &= \left \langle c \mathring{t}, \mathring{\vv r} \right \rangle \cdot \left \langle \partial^{ct}, - \del \right \rangle \\[4pt]
+\vv B \cdot \partialup &= \big \langle c \mathring{t}, \mathring{\vv r} \big \rangle \cdot \left \langle \partial^{ct}, - \del \right \rangle \\[4pt]
 &= \dfrac{\dd (ct)}{\dd (ct_0)} \, \dfrac{\partial}{\partial (ct)} + \dfrac{\dd x}{\dd (ct_0)} \, \dfrac{\partial}{\partial x} +  \dfrac{\dd y}{\dd (ct_0)} \, \dfrac{\partial}{\partial y} + \dfrac{\dd z}{\dd (ct_0)} \, \dfrac{\partial}{\partial z} .
 \end{split}
 \end{equation*}
@@ -4695,7 +4699,7 @@ This requires some explanation! Essentially, the four-potential field ${\vv A (\
 \begin{equation*}
 \partialup^{\vv A} \equiv \left \langle \dfrac{\partial}{\partial A^{ct}} , \,  - \dfrac{\partial}{\partial A^x} , \, - \dfrac{\partial}{\partial A^y} , \, - \dfrac{\partial}{\partial A^z} \right \rangle ,
 \end{equation*}
-and on the left side we've got some sort of \emph{dyadic} operator $\inlinedy{\partialrm} {}^{\partialup \mkern2mu \otimes \vv A}$ that's taking the place of Equation \ref{eq:ele}'s $\mathring{\partialup} = \partialup^{\vv B} = \partialup^{\mathring{\vv R}}$. We've yet to define this dyadic operator, but we know that it must output a four-dyadic when it acts on the scalar $\mathcal{L}$---a four-dyadic playing the role of ``canonical momentum"---and the left side of Equation \ref{eq:elef} is the divergence of that four-dyadic (whereas the left side of Equation \ref{eq:ele} was the $ct_0$-derivative of the \emph{vector} resulting from the operation $\mathring{\partialup} L$).
+and on the left side we've got some sort of \emph{dyadic} operator $\inlinedy{\partialrm} {}^{\partialup \mkern2mu \otimes \vv A}$ that's taking the place of Equation \ref{eq:ele}'s $\mathring{\partialup} = \partialup^{\vv B} = \partialup^{\oldmathring{\vv R}}$. We've yet to define this dyadic operator, but we know that it must output a four-dyadic when it acts on the scalar $\mathcal{L}$---a four-dyadic playing the role of ``canonical momentum"---and the left side of Equation \ref{eq:elef} is the divergence of that four-dyadic (whereas the left side of Equation \ref{eq:ele} was the $ct_0$-derivative of the \emph{vector} resulting from the operation $\mathring{\partialup} L$).
 
 (Yes, we're proceeding by analogy here. We'll get the right results, and I like to think there's something ``intuitive" about this way of doing things, but please understand that we're doing a lot of hand-waving. You should consult a real textbook that introduces the appropriate mathematical tools if you're interested in learning this material the right way. In any case, before reading on, you might want to look over the previous paragraph again and make sure the analogy between Equations \ref{eq:elef} and \ref{eq:ele} has sunk in.)
 
