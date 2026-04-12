@@ -2788,25 +2788,24 @@ So Equation \ref{eq:con2} makes the meaning of the continuity equation explicit:
 
 As seasoned special-relativists, it doesn't escape our notice that a ``non-local" conservation law couldn't be a law of nature anyway. The relativity of simultaneity prevents the disappearance of charge ``here" and the appearance of equal charge ``there" from occurring simultaneously for all inertial frames.
 
-We've now taken several important properties of electric charge as experimental givens: its Lorentz-invariance, its additivity (tacitly), and its (local) conservation.\footnote{\label{fn:chargeinv}Conservation can instead be derived from the field equations. And invariance (more generally, Lorentz-covariance) can be derived from local conservation, using the spacetime divergence theorem (we'll do something like this for four-momentum in Section \ref{sssec:tset}).} No other quantity we've studied ticks all three of these boxes. Total energy, for instance, is additive and conserved, but not invariant. And rest energy (mass) is invariant (and trivially ``conserved" by the conservation of total energy), but not additive. So charge is rather special. Another of our experimental givens is that electric charge can be either positive or negative. That's of course a crucial one in practice, but it won't figure much in our treatment.
+We've now taken several important properties of electric charge as experimental givens: its Lorentz-invariance, its additivity (tacitly), and its (local) conservation.\footnote{\label{fn:chargeinv}Conservation can instead be derived from the field equation (see the next section). And invariance can be derived from local conservation, using the spacetime divergence theorem (we'll do something like this in Section \ref{sssec:tset} to show the Lorentz-covariance of system four-momentum from a field-theory perspective).} No other quantity we've studied ticks all three of these boxes. Total energy, for instance, is additive and conserved, but not invariant. And rest energy (mass) is invariant (and trivially ``conserved" by the conservation of total energy), but not additive. So charge is rather special. Another of our experimental givens is that electric charge can be either positive or negative. That's of course a crucial one in practice, but it won't figure much in our treatment.
 
-The four-current density is the electromagnetic \emph{source} field. We know that it's divergence-free, but to complete the picture we need to know how ``information" about $\vv J$ spreads and what physical effects this information has.
+The four-current density is the electromagnetic \emph{source} field. We know that it's divergence-free, but to complete the picture we need to know how ``information" about $\vv J$ spreads (the field equation) and what physical effects this information has (the force law).
 
 
-\subsubsection{Four-Potential}\label{sssec:fp}
+\subsubsection{Four-Potential and the Electromagnetic Field Equation}\label{sssec:fp}
 
-Without motivation, we define the \textbf{four-potential} as any four-vector field ${\vv A = \vv A (\vv R) = \langle \Phi, \, \vv a \rangle}$ whose negative ``double curl" is the $\vv J$ field:
+Whatever the electromagnetic field equation is, it certainly must \emph{permit} charge-conservation. But Nature does better: the simplest candidate that \emph{enforces} it turns out to be correct! It's a ``double curl" (see Section \ref{sssec:tp}):
 \begin{equation}\label{eq:gfp}
 \boxed{
-\begin{split}
-\vv J &= - \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A ) \\
-&= \Box \vv A - \partialup ( \partialup \cdot \vv A)
-\end{split}
+\vv J = - \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A) = \Box \vv A - \partialup ( \partialup \cdot \vv A)
 } \, .
 \end{equation}
-We say ``any" because, as we discussed in Section \ref{sssec:tp}, gauge transformations taking $\vv A$ to $(\vv A + \partialup \psi)$ for any spacetime scalar field $\psi$ leave the ``double curl" of $\vv A$ unchanged. This non-uniqueness of the four-potential doesn't bother us; we'll see that it's not $\vv A$ itself but rather \emph{derivatives} of $\vv A$ that matter physically, and they're uniquely defined and measurable.\footnote{Better put: \emph{physically observable electromagnetic phenomena} must be gauge-invariant, and in classical electrodynamics gauge-invariance is always ``achieved" by differentiating $\vv A$. In \emph{quantum} electrodynamics, however, gauge-invariance is sometimes ``achieved" by other means, and $\vv A$ may appear \emph{undifferentiated} in the mathematical description of observable phenomena (e.g., the \textbf{Aharonov--Bohm effect}); the potential is fundamental!} Note that Equation \ref{eq:gfp} would be impossible without the continuity equation (Equation \ref{eq:con}) because the four-divergence of a ``double curl" is identically zero: ${\partialup \cdot (\Box \vv A) - \partialup \cdot \partialup (\partialup \cdot \vv A) = \Box (\partialup \cdot \vv A) - \Box (\partialup \cdot \vv A)}$. This hints at a connection between gauge-invariance and charge-conservation.
+How does it enforce charge-conservation? By having a four-divergence that vanishes identically: ${\partialup \cdot (\Box \vv A) - \partialup \cdot \partialup (\partialup \cdot \vv A) = \Box (\partialup \cdot \vv A) - \Box (\partialup \cdot \vv A)}$. So the continuity equation $\partialup \cdot \vv J = 0$ is automatic (Equation \ref{eq:con}).
 
-Equation \ref{eq:gfp} is the electromagnetic field equation. Something beautiful happens when we impose the Lorenz gauge:
+The four-vector field ${\vv A = \vv A (\vv R) = \langle \Phi, \, \vv a \rangle}$ is the \textbf{four-potential}. As we discussed in Section \ref{sssec:tp}, gauge transformations taking $\vv A$ to $(\vv A + \partialup \psi)$ for any spacetime scalar field $\psi$ leave the ``double curl" unchanged. (Evidently there's a connection between gauge-invariance and charge-conservation!) This non-uniqueness of the four-potential doesn't bother us; we'll see that it's not $\vv A$ itself but rather \emph{derivatives} of $\vv A$ that matter physically, and they're uniquely defined and measurable.\footnote{Better put: \emph{physically observable electromagnetic phenomena} must be gauge-invariant, and in classical electrodynamics gauge-invariance is always ``achieved" by differentiating $\vv A$. In \emph{quantum} electrodynamics, however, gauge-invariance is sometimes ``achieved" by other means, and $\vv A$ may appear \emph{undifferentiated} in the mathematical description of observable phenomena (e.g., the \textbf{Aharonov--Bohm effect}); the potential is fundamental!}
+
+Something beautiful happens when we impose the Lorenz gauge:
 \begin{equation}\label{eq:fp}
 \boxed{ \Box \vv A = \vv J } \quad \textrm{\footnotesize{ (in the Lorenz gauge)}} ,
 \end{equation}
@@ -2822,7 +2821,7 @@ The disturbance propagates forever, and this is how information about $\vv J$ sp
 
 \subsubsection[Lorentz Four-Force; e and b Fields; Maxwell’s Equations]{Lorentz Four-Force; e and b Fields; Maxwell's Equations}\label{sssec:lff}
 
-We've introduced the four-potential $\vv A = \vv A (\vv R)$ as any vector field whose negative ``double curl" equals the four-current density $\vv J$, but we haven't yet established why we should care about it. We care about it because of the following empirical result:\footnote{In the next section, we'll actually ``derive" it with the Euler--Lagrange equation.}
+We've claimed that Equation \ref{eq:gfp} is the electromagnetic field equation, but how do we know? Indeed, how do we know anything about electric charge in the first place? We know because of the following empirical result:\footnote{In the next section, we'll actually ``derive" it with the Euler--Lagrange equation.}
 \begin{equation}\label{eq:ff}
 \boxed{\vv F_{\textrm{L}} = q \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A)} \, .
 \end{equation}
