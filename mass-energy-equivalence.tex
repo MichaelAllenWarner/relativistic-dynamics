@@ -2795,15 +2795,15 @@ The four-current density is the electromagnetic \emph{source} field. We know tha
 
 \subsubsection{Four-Potential and the Electromagnetic Field Equation}\label{sssec:fp}
 
-Whatever the electromagnetic field equation is, it certainly must \emph{permit} charge-conservation. But Nature does better: the simplest candidate that \emph{enforces} it turns out to be correct! It's a ``double curl" (see Section \ref{sssec:tp}):
+Whatever the electromagnetic field equation is, it certainly must \emph{permit} charge-conservation. But Nature does better! The simplest candidate that \emph{enforces} it---a ``double curl" (see Section \ref{sssec:tp})---turns out to be correct:
 \begin{equation}\label{eq:gfp}
 \boxed{
 \vv J = - \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A) = \Box \vv A - \partialup ( \partialup \cdot \vv A)
-} \, .
+}
 \end{equation}
-How does it enforce charge-conservation? By having a four-divergence that vanishes identically: ${\partialup \cdot (\Box \vv A) - \partialup \cdot \partialup (\partialup \cdot \vv A) = \Box (\partialup \cdot \vv A) - \Box (\partialup \cdot \vv A)}$. So the continuity equation $\partialup \cdot \vv J = 0$ is automatic (Equation \ref{eq:con}).
+(for some $\vv A$). How is charge-conservation enforced here? The four-divergence vanishes identically: ${\partialup \cdot (\Box \vv A) - \partialup \cdot \partialup (\partialup \cdot \vv A) = \Box (\partialup \cdot \vv A) - \Box (\partialup \cdot \vv A)}$. So the continuity equation $\partialup \cdot \vv J = 0$ is automatic (Equation \ref{eq:con}).
 
-The four-vector field ${\vv A = \vv A (\vv R) = \langle \Phi, \, \vv a \rangle}$ is the \textbf{four-potential}. As we discussed in Section \ref{sssec:tp}, gauge transformations taking $\vv A$ to $(\vv A + \partialup \psi)$ for any spacetime scalar field $\psi$ leave the ``double curl" unchanged. (Evidently there's a connection between gauge-invariance and charge-conservation!) This non-uniqueness of the four-potential doesn't bother us; we'll see that it's not $\vv A$ itself but rather \emph{derivatives} of $\vv A$ that matter physically, and they're uniquely defined and measurable.\footnote{Better put: \emph{physically observable electromagnetic phenomena} must be gauge-invariant, and in classical electrodynamics gauge-invariance is always ``achieved" by differentiating $\vv A$. In \emph{quantum} electrodynamics, however, gauge-invariance is sometimes ``achieved" by other means, and $\vv A$ may appear \emph{undifferentiated} in the mathematical description of observable phenomena (e.g., the \textbf{Aharonov--Bohm effect}); the potential is fundamental!}
+The four-vector field ${\vv A = \vv A (\vv R) = \langle \Phi, \mkern1mu \vv a \rangle}$ introduced in Equation \ref{eq:gfp} is called the \textbf{four-potential}. As discussed in Section \ref{sssec:tp}, it isn't unique; gauge transformations taking $\vv A$ to $(\vv A + \partialup \psi)$ for any spacetime scalar field $\psi$ leave the ``double curl" unchanged. (Evidently there's a connection between gauge-invariance and charge-conservation!) This non-uniqueness of the four-potential doesn't bother us; we'll see that it's not $\vv A$ itself but rather \emph{derivatives} of $\vv A$ that matter physically, and they're uniquely defined and measurable.\footnote{Better put: \emph{physically observable electromagnetic phenomena} must be gauge-invariant, and in classical electrodynamics gauge-invariance is always ``achieved" by differentiating $\vv A$. In \emph{quantum} electrodynamics, however, gauge-invariance is sometimes ``achieved" by other means, and $\vv A$ may appear \emph{undifferentiated} in the mathematical description of observable phenomena (e.g., the \textbf{Aharonov--Bohm effect}); the potential is fundamental!}
 
 Something beautiful happens when we impose the Lorenz gauge:
 \begin{equation}\label{eq:fp}
