@@ -1084,7 +1084,7 @@ Usually one speaks of the four-velocity of a \emph{particle} or \emph{traveler},
 Because proper time is undefined for lightlike intervals (or, if you prefer, because $\gamma$ is undefined for $\beta = 1$), $\vv B$ is undefined for light and anything else without a rest frame. This doesn't mean that we can't parameterize a light wave's world line. We certainly can! We just have to choose a different parameter. Conceptually this is tricky, since the parameter would be purely ``mathematical" (whereas proper time has a clear physical meaning), but it's a crucial technique in the theory of \emph{general} relativity. We won't have need for it, though.
 
 
-\subsubsection[Four-Momentum: One Conservation Law to Rule Them All]{Four-Momentum:\\ One Conservation Law to Rule Them All}
+\subsubsection{Four-Momentum: One Conservation Law to Rule Them All}
 
 By the same logic, we can construct a \textbf{four-momentum} in terms of the normalized four-velocity, replicating our steps for obtaining the spacetime $p c$-analogue from the $\beta$-analogue (cf.\ Section \ref{sssec:pc}). We'll define it so that it has the dimensions of energy:\footnote{Most treatments do $\vv P \equiv \langle E/c , \, \vv p \rangle = m \vv V$ instead (dimensions of momentum).}
 \begin{equation}\label{eq:32}
@@ -1129,40 +1129,7 @@ which works even if the decay products are ``restless" (massless) particles, as 
 Because the conservation of four-momentum holds for any inertial observer, many problems in relativistic dynamics are best solved by considering the rest frame of either the system or one of its constituents. There, the only non-zero component of $\vv P_{\mathrm{system}}$ (or of $\vv P_{\mathrm{constituent}}$) is the time component, $E_{\mathrm{system}}$ ($E_{\mathrm{constituent}}$), which equals the system's (constituent's) rest energy. Since rest energy is invariant, one can then use that result in conjunction with the conservation of four-momentum to find unknowns in other frames.
 
 
-\subsubsection{Four-Force, Three-Force, Power, Work--Energy Principle}\label{sssec:ff}
-
-In Section \ref{sssec:pc}, we puzzled over the notion that rest energy is the measure of ``spacetime inertia." Now with Equation \ref{eq:32} we can understand what that means. Although $\vv B$'s magnitude is invariant and fixed at one, its \emph{direction} is certainly changeable. A system's rest energy must be its resistance to change in its direction of ``motion" through \emph{spacetime}.
-
-With all this talk about resistance to change in velocity, it's about time we introduced a relativistic concept of force. But before we do, let's reiterate the stipulation we made in Footnote \ref{fn:tr}: for now, we model any accelerating system (or ``traveler") as a point particle. Otherwise we'd need to account for the fact that the whole system doesn't accelerate ``as one" under the influence of a (non-gravitational) force, and we'd have to allow for different parts of the system to have different rest frames. Let's also remind ourselves of a related issue we encountered back in Section \ref{ssec:re}: if the transfer of rest energy into or out of a composite system occurs at more than one location on the system's bounds, then the relativity of simultaneity makes it difficult if not impossible to consider the rest energy ``invariant." If the energy-transfer occurs at a single location on the system's bounds, or if the system is modeled as a point particle, then the relativity of simultaneity presents no such issue.
-
-On to force. In Newtonian mechanics, force is $\vv f_{\mathrm{classical}} \equiv \dd \vv p_{\mathrm{classical}} / \dd t$.\footnote{\label{fn:cf}We regard $\vv f_{\mathrm{classical}} = m \vv a$ as incidental, valid only in the ``special case" that $\dot{m} = 0$. It's probably more common to \emph{define} classical force as $m \vv a$, so that its magnitude is \emph{always} invariant under a Galilean boost (even in a variable-mass situation). The definition we're using falls short in that regard (the chain rule produces a frame-dependent $(\dd m / \dd t) \vv v$ term), but it has two advantages for us: first, it emphasizes a conserved quantity (momentum); and second, it makes the transition to force in special relativity rather straightforward.} Let's take this as our cue and define a \textbf{four-force}---sometimes called the \textbf{Minkowski force}---in terms of the four-momentum (we'll use the chain rule with $\dd (ct) / \dd (c t_0) = \gamma$):
-\begin{equation}\label{eq:33}
-\boxed{
-\begin{aligned}
-\vv F &\equiv \mathring{\vv P} \\[2pt]
-&= \langle \mathring{E}, \mkern.5mu \mathring{\vv p} c \rangle \\[3pt]
-&= \gamma \mkern1.5mu \big \langle \dot{E}, \mkern.5mu \dot{\vv p} c \big \rangle \\[3pt]
-&=\gamma \mkern1.5mu \big \langle \mathcal{P}, \mkern.5mu \vv f \big \rangle
-\end{aligned}
-} \, ,
-\end{equation}
-where $\mathcal{P} \equiv \dot{E} = \dd E / \dd (ct)$ is the normalized \textbf{relativistic power}, and where ${\vv f \equiv \dot{\vv p} c = \dd (\vv p c) / \dd (ct)}$ is the \textbf{relativistic three-force}. If we wanted to be dimensionally consistent with classical physics we could instead write ${\vv F = \gamma \langle P/c, \mkern.5mu \vv f \rangle}$ (where $P = \mathcal{P}c$ is power in traditional units, not $\vert \vv P \vert$), but I'm allergic to unnecessary $c^{-1}$'s.\footnote{Setting $c = 1$ renders all of this moot, but we're not doing that. My strategy is: make symbols for ``normalized" quantities to hide $c^{-1}$ ($\mathcal P$, $\vvbeta$, $\vvzeta$), admit $c$ sometimes by ``attaching" it to certain quantities ($\vv p c$, $ct$), and always take $ct$-derivatives (never $t$-derivatives).} Like the four-velocity, the four-force is defined as a $ct_0$-derivative and is therefore inapplicable when $E_0 = 0$.
-
-So the greater a system's rest energy $E_0$, the greater its resistance to change in (direction of) four-velocity $\vv B$ under the influence of an acceleration-causing four-force $\vv F$. We specify ``acceleration-causing" because a system whose $E_0$ changes while its $\vvbeta$ (and hence $\vv B$) doesn't---like the light-emitting body in Einstein's thought experiment---is under the influence of a four-force, too.\footnote{\label{fn:fo}Unlike the classical force, whose magnitude isn't Galilean-invariant in a variable-mass scenario because of the frame-dependent $(\dd m / \dd t) \vv v$ term mentioned in Footnote \ref{fn:cf}, the four-force has a magnitude that's \emph{always} Lorentz-invariant (provided we model the system in question as a point particle). The chain rule does produce an analogous $\mathring{E}_0 \vv B$ term ($\vv F = \mathring{\vv P} = \mathring{E}_0 \vv B + E_0 \mathring{\vv B}$), but $\vv B$ is itself a four-vector with a Lorentz-invariant magnitude, whereas $\vv v$'s magnitude varies under a Galilean boost. \emph{The four-velocity is \emph{not} to the Lorentz transformation as the three-velocity is to the Galilean transformation.}}
-
-In the common scenario that a system's $E_0$ doesn't change, the relativistic power $\mathcal{P} = \dot{E} = \dot{E}_{\mkern.5mu \textrm{k}}$, and we're inclined to ask ourselves whether the \textbf{work--kinetic energy principle} from Newtonian mechanics holds in special relativity: does $\dd E_{\mkern.5mu \textrm{k}} = \vv f \cdot \dd \vv r$ in this case? Or equivalently, does $\dot{E}_{\mkern.5mu \textrm{k}} = \vv f \cdot \vvbeta$? It does, as we discover if we take the $ct$-derivative of Equation \ref{eq:21}:
-\begin{equation}\label{eq:rp}
-\begin{split}
-\frac{\dd}{\dd (ct)} \Big[ E^2 \Big] &= \frac{\dd}{\dd (ct)} \Big[ E_0^2 + (\vv p c)^2 \Big] \\[5pt]
-2E \dot{E} &= 2 E_0 \dot{E}_0 + 2 \vv p c \cdot \dot{\vv p} c\\[5pt]
-\dot{E} &= \dfrac{E_0}{E} \, \dot{E}_0 + \dot{\vv p} c \mkern1mu \cdot \dfrac{\vv p c}{E} \\[5pt]
-\mathcal{P} &= \dfrac{\mathring{E}_0}{\gamma^2} + \vv f \cdot \vvbeta
-\end{split}
-\end{equation}
-(by Equations \ref{eq:12} and \ref{eq:19}), which becomes $\mathcal{P} = \dot{E}_{\mkern.5mu \textrm{k}} = \vv f \cdot \vvbeta$ when $\dot{E}_0 = 0$.\footnote{The quantity $\mathring{E}_0 = \gamma \dot{E}_0$ that we introduced in Footnote \ref{fn:fo} and Equation \ref{eq:rp} is invariant (the proper-time derivative of the proper energy)---provided, of course, that no relativity-of-simultaneity issues throw a wrench in the works. Later we'll dub it the proper power.} Equation \ref{eq:33} then takes the sometimes useful form:
-\begin{equation}\label{eq:fb}
-\vv F = \gamma \mkern1.5mu \big \langle \vv f \cdot \vvbeta, \, \vv f \big \rangle \quad \textrm{\footnotesize{ (for $\mathring{E}_0 = 0$)}}.
-\end{equation}
+\subsection{Lorentz Covariance}
 
 \subsubsection{Invariance of the Minkowski Dot Product}
 
@@ -1216,9 +1183,47 @@ Having established that the Minkowski dot product is invariant, we see that an e
 
 Here's a ``trick": given an arbitrary inertial frame and an arbitrary four-vector, it's always possible to write a manifestly covariant expression for the value that any one of the vector's components takes in that frame. Say we're interested in the time component of a particle's four-momentum $\vv P$ (i.e., the particle's total energy $E$). The method is to define a four-vector $\vv E _{ct}$ whose components \emph{in the frame in question} are $\langle 1, 0, 0, 0 \rangle$ (where the $ct$-component gets the $1$ because it's the $ct$-component of $\vv P$ that we care about), and then just take the Minkowski dot product of the two vectors: ${\vv P \cdot \vv E_{ct} = (E)(1) - (cp_x)(0) - (cp_y)(0) - (cp_z)(0) = E}$. Note that $\vv E_{ct}$ is nothing but the frame's normalized four-velocity $\vv B$, since $\vv B = \langle \gamma, \gamma \vvbeta \rangle$ reduces to $\langle 1, \vv 0 \rangle$ in one's own rest frame. If it were one of $\vv P$'s \emph{spatial} components that we wanted---the $z$-component, say---then we'd define a vector $\vv E_z$ whose components are $\langle 0, 0, 0, 1 \rangle$ in the relevant frame, and we'd again take the dot product, though this time with a negative sign: $- \vv P \cdot \vv E_z = c p_z$.\footnote{Perhaps you've already pieced together that $\vv E_{ct}$, $\vv E_{x}$, $\vv E_{y}$, and $\vv E_z$ are \textbf{basis vectors}.}
 
-\subsubsection{Four-Acceleration}
 
-So we have the four-displacement $\dd \vv R$, the normalized four-velocity $\vv B$, the four-momentum $\vv P$, and the four-force $\vv F$. Question: in what direction do they point? We began by \emph{defining} $\dd \vv R$ as tangent to a traveler's world line, pointing in whatever spacetime direction the traveler happens to be going. Common sense says that the same is true of the traveler's $\vv B$ and $\vv P$, but let's take a moment to think about what that means mathematically. Two vectors are codirectional if one is obtained by scaling the other by a positive number. We know that $\vv B$ and $\vv P$ are codirectional, since the latter is simply the former scaled by the traveler's $E_0$. Can we make a similar argument for $\dd \vv R$ and $\vv B$, and say that the latter is simply the former ``scaled" by the infinitesimal $1/(c \, \dd t_0)$? We can, but we need to be careful---we're \emph{not} saying that $\vv B$ is codirectional with $\vv R$! We're ``scaling" $\dd \vv R$, but \emph{differentiating} $\vv R$.
+\subsection{Four-Force and Four-Acceleration}
+
+\subsubsection{Four-Force, Three-Force, Power, Work--Energy Principle}\label{sssec:ff}
+
+In Section \ref{sssec:pc}, we puzzled over the notion that rest energy is the measure of ``spacetime inertia." Now with Equation \ref{eq:32} ($\vv P = E_0 \vv B$) we can understand what that means. Although $\vv B$'s magnitude is invariant and fixed at one, its \emph{direction} is certainly changeable. A system's rest energy must be its resistance to change in its direction of ``motion" through \emph{spacetime}.
+
+With all this talk about resistance to change in velocity, it's about time we introduced a relativistic concept of force. But before we do, let's reiterate the stipulation we made in Footnote \ref{fn:tr}: for now, we model any accelerating system (or ``traveler") as a point particle. Otherwise we'd need to account for the fact that the whole system doesn't accelerate ``as one" under the influence of a (non-gravitational) force, and we'd have to allow for different parts of the system to have different rest frames. Let's also remind ourselves of a related issue we encountered back in Section \ref{ssec:re}: if the transfer of rest energy into or out of a composite system occurs at more than one location on the system's bounds, then the relativity of simultaneity makes it difficult if not impossible to consider the rest energy ``invariant." If the energy-transfer occurs at a single location on the system's bounds, or if the system is modeled as a point particle, then the relativity of simultaneity presents no such issue.
+
+On to force. In Newtonian mechanics, force is $\vv f_{\mathrm{classical}} \equiv \dd \vv p_{\mathrm{classical}} / \dd t$.\footnote{\label{fn:cf}We regard $\vv f_{\mathrm{classical}} = m \vv a$ as incidental, valid only in the ``special case" that $\dot{m} = 0$. It's probably more common to \emph{define} classical force as $m \vv a$, so that its magnitude is \emph{always} invariant under a Galilean boost (even in a variable-mass situation). The definition we're using falls short in that regard (the chain rule produces a frame-dependent $(\dd m / \dd t) \vv v$ term), but it has two advantages for us: first, it emphasizes a conserved quantity (momentum); and second, it makes the transition to force in special relativity rather straightforward.} Let's take this as our cue and define a \textbf{four-force}---sometimes called the \textbf{Minkowski force}---in terms of the four-momentum (we'll use the chain rule with $\dd (ct) / \dd (c t_0) = \gamma$):
+\begin{equation}\label{eq:33}
+\boxed{
+\begin{aligned}
+\vv F &\equiv \mathring{\vv P} \\[2pt]
+&= \langle \mathring{E}, \mkern.5mu \mathring{\vv p} c \rangle \\[3pt]
+&= \gamma \mkern1.5mu \big \langle \dot{E}, \mkern.5mu \dot{\vv p} c \big \rangle \\[3pt]
+&=\gamma \mkern1.5mu \big \langle \mathcal{P}, \mkern.5mu \vv f \big \rangle
+\end{aligned}
+} \, ,
+\end{equation}
+where $\mathcal{P} \equiv \dot{E} = \dd E / \dd (ct)$ is the normalized \textbf{relativistic power}, and where ${\vv f \equiv \dot{\vv p} c = \dd (\vv p c) / \dd (ct)}$ is the \textbf{relativistic three-force}. If we wanted to be dimensionally consistent with classical physics we could instead write ${\vv F = \gamma \langle P/c, \mkern.5mu \vv f \rangle}$ (where $P = \mathcal{P}c$ is power in traditional units, not $\vert \vv P \vert$), but I'm allergic to unnecessary $c^{-1}$'s.\footnote{Setting $c = 1$ renders all of this moot, but we're not doing that. My strategy is: make symbols for ``normalized" quantities to hide $c^{-1}$ ($\mathcal P$, $\vvbeta$, $\vvzeta$), admit $c$ sometimes by ``attaching" it to certain quantities ($\vv p c$, $ct$), and always take $ct$-derivatives (never $t$-derivatives).} Like the four-velocity, the four-force is defined as a $ct_0$-derivative and is therefore inapplicable when $E_0 = 0$.
+
+So the greater a system's rest energy $E_0$, the greater its resistance to change in (direction of) four-velocity $\vv B$ under the influence of an acceleration-causing four-force $\vv F$. We specify ``acceleration-causing" because a system whose $E_0$ changes while its $\vvbeta$ (and hence $\vv B$) doesn't---like the light-emitting body in Einstein's thought experiment---is under the influence of a four-force, too.\footnote{\label{fn:fo}Unlike the classical force, whose magnitude isn't Galilean-invariant in a variable-mass scenario because of the frame-dependent $(\dd m / \dd t) \vv v$ term mentioned in Footnote \ref{fn:cf}, the four-force has a magnitude that's \emph{always} Lorentz-invariant (provided we model the system in question as a point particle). The chain rule does produce an analogous $\mathring{E}_0 \vv B$ term ($\vv F = \mathring{\vv P} = \mathring{E}_0 \vv B + E_0 \mathring{\vv B}$), but $\vv B$ is itself a four-vector with a Lorentz-invariant magnitude, whereas $\vv v$'s magnitude varies under a Galilean boost. \emph{The four-velocity is \emph{not} to the Lorentz transformation as the three-velocity is to the Galilean transformation.}}
+
+In the common scenario that a system's $E_0$ doesn't change, the relativistic power $\mathcal{P} = \dot{E} = \dot{E}_{\mkern.5mu \textrm{k}}$, and we're inclined to ask ourselves whether the \textbf{work--kinetic energy principle} from Newtonian mechanics holds in special relativity: does $\dd E_{\mkern.5mu \textrm{k}} = \vv f \cdot \dd \vv r$ in this case? Or equivalently, does $\dot{E}_{\mkern.5mu \textrm{k}} = \vv f \cdot \vvbeta$? It does, as we discover if we take the $ct$-derivative of Equation \ref{eq:21}:
+\begin{equation}\label{eq:rp}
+\begin{split}
+\frac{\dd}{\dd (ct)} \Big[ E^2 \Big] &= \frac{\dd}{\dd (ct)} \Big[ E_0^2 + (\vv p c)^2 \Big] \\[5pt]
+2E \dot{E} &= 2 E_0 \dot{E}_0 + 2 \vv p c \cdot \dot{\vv p} c\\[5pt]
+\dot{E} &= \dfrac{E_0}{E} \, \dot{E}_0 + \dot{\vv p} c \mkern1mu \cdot \dfrac{\vv p c}{E} \\[5pt]
+\mathcal{P} &= \dfrac{\mathring{E}_0}{\gamma^2} + \vv f \cdot \vvbeta
+\end{split}
+\end{equation}
+(by Equations \ref{eq:12} and \ref{eq:19}), which becomes $\mathcal{P} = \dot{E}_{\mkern.5mu \textrm{k}} = \vv f \cdot \vvbeta$ when $\dot{E}_0 = 0$.\footnote{The quantity $\mathring{E}_0 = \gamma \dot{E}_0$ that we introduced in Footnote \ref{fn:fo} and Equation \ref{eq:rp} is invariant (the proper-time derivative of the proper energy)---provided, of course, that no relativity-of-simultaneity issues throw a wrench in the works. Later we'll dub it the proper power.} Equation \ref{eq:33} then takes the sometimes useful form:
+\begin{equation}\label{eq:fb}
+\vv F = \gamma \mkern1.5mu \big \langle \vv f \cdot \vvbeta, \, \vv f \big \rangle \quad \textrm{\footnotesize{ (for $\mathring{E}_0 = 0$)}}.
+\end{equation}
+
+\subsubsection{Four-Acceleration}\label{sssec:fa}
+
+We have the four-displacement $\dd \vv R$, the normalized four-velocity $\vv B$, the four-momentum $\vv P$, and the four-force $\vv F$. Question: in what direction do they point? We began by \emph{defining} $\dd \vv R$ as tangent to a traveler's world line, pointing in whatever spacetime direction the traveler happens to be going. Common sense says that the same is true of the traveler's $\vv B$ and $\vv P$, but let's take a moment to think about what that means mathematically. Two vectors are codirectional if one is obtained by scaling the other by a positive number. We know that $\vv B$ and $\vv P$ are codirectional, since the latter is simply the former scaled by the traveler's $E_0$. Can we make a similar argument for $\dd \vv R$ and $\vv B$, and say that the latter is simply the former ``scaled" by the infinitesimal $1/(c \, \dd t_0)$? We can, but we need to be careful---we're \emph{not} saying that $\vv B$ is codirectional with $\vv R$! We're ``scaling" $\dd \vv R$, but \emph{differentiating} $\vv R$. (As for the direction of four-force, we'll hold off until Section \ref{sssec:cff}.)
 
 With ``spacetime direction" in mind, we'll now take the $c t_0$-derivative of the four-velocity $\vv B$ to find the normalized \textbf{four-acceleration}, $\vv Z$ (uppercase Greek letter zeta), analogous to the normalized three-acceleration ${\vvzeta=\dd \vvbeta / \dd (ct)}$:\footnote{Like $\vvzeta$, $\vv Z$ isn't \emph{really} normalized (it isn't dimensionless, and its magnitude $Z$ can exceed one). It inherits the label to clarify that it isn't the ``unnormalized" four-acceleration $\vv A = \dd \vv V / \dd t_0 = \vv Z c^2$, which we have no use for.}
 \begin{equation}\label{eq:34}
@@ -1318,7 +1323,7 @@ That's $\zeta \mkern1mu \mathrm{i}$ in the traveler's instantaneous rest frame, 
 with invariant magnitude $\zeta_0 = \sqrt{\gamma^4 \zeta^2 + \gamma^6 (\vvbeta \cdot \vvzeta)^2} = \gamma^3 \zeta / \gamma_{\perp}$ (by Equations \ref{eq:pa2} and \ref{eq:37}). When $\vvbeta \parallel \vvzeta$, Equation \ref{eq:37} reduces to Equation \ref{eq:36} (because then $\gamma_{\perp} = 1$). Another important special case is when $\vvbeta \perp \vvzeta$, as in uniform circular motion. Then $\gamma_{\perp} = \gamma$, and we get $\vvzeta_{\mkern1mu 0} = \gamma^2 \vvzeta$.
 
 
-\subsubsection{Four-Vectors Classified; Light Cones; Orthogonality Rules}\label{sssec:classifying}
+\subsection{Classifying Four-Vectors}\label{sssec:classifying}
 
 We see now that the magnitude $Z$ of the four-acceleration \emph{must} contain the imaginary unit. Why $\mathrm{i}$? Because four-acceleration is orthogonal to four-velocity, and $\mathrm{i}$ \emph{never} appears in the magnitude of four-velocity.
 
@@ -1341,9 +1346,11 @@ Here are some rules about four-vector orthogonality:
 \item A non-zero four-vector that's orthogonal to a non-zero lightlike vector must be either spacelike (see above) or lightlike (e.g., $\langle 1, 0, 0, 1 \rangle$ and $\langle 2, 0, 0, 2 \rangle$).
 \end{itemize}
 
-\subsubsection{Four-Force Again; Proper Power and Proper Force}\label{sssec:pf}
+\subsection{More on Force and Acceleration}\label{ssec:fa2}
 
-What about the four-force (Equation \ref{eq:33})? Spacelike, timelike, or lightlike? In the special case that $E_0$ changes but $\vv B$ doesn't (as with the light-emitting body in Einstein's thought experiment), $\vv F$ is timelike because it's parallel to the timelike $\vv B$:
+\subsubsection{Classifying Four-Force}\label{sssec:cff}
+
+In Section \ref{sssec:fa}, we punted on the direction of the four-force, $\vv F = \mathring{\vv P}$ (Equation \ref{eq:33}). Let's address that now. Is the four-force spacelike, timelike, or lightlike? In the special case that $E_0$ changes but $\vv B$ doesn't (as with the light-emitting body in Einstein's thought experiment), $\vv F$ is timelike because it's parallel to the timelike $\vv B$:
 \begin{equation}\label{eq:38}
 \begin{split}
 \vv F &= \mathring{\vv P}\\
@@ -1356,6 +1363,8 @@ But in most applications it's $E_0$ that remains constant while $\vv B$ changes.
 \vv F = E_0 \mkern.5mu \vv Z \quad \textrm{\footnotesize{ (for $\mathring{E}_0 = 0$)}}.
 \end{equation}
 This says symbolically what we've already put into words: rest energy is the measure of ``spacetime inertia," the resistance to change in (direction of) four-velocity $\vv B$.\footnote{Equivalently, $\vv F = m \vv A$ when $\mathring{m} = 0$ (since $E_0 = mc^2$ and $\vv Z = \vv A / c^2$).} If \emph{both} $E_0$ and $\vv B$ change (the general case), then the product rule gives us $\vv F = \mathring{E}_0 \mkern.5mu \vv B + E_0 \mkern.5mu \vv Z$. Such a four-force might be spacelike, timelike, or even lightlike, depending on whether the magnitude of the spatial component ($\gamma$ times three-force $\vv f$) is greater than, less than, or equal to the absolute value of the time component ($\gamma$ times normalized power $\mathcal{P}$).
+
+\subsubsection{Proper Power and Proper Force}\label{sssec:pf}
 
 When we first discussed the four-force in Section \ref{sssec:ff}, we didn't bother finding its magnitude $F$. We could have ``plug-and-chugged" with the temporal and spatial components (like we later did to calculate the magnitude of the four-acceleration), but that would have been a chore. Now that we've covered the four-acceleration $\vv Z$ and the proper acceleration $\vvzeta_{\mkern1mu 0}$ (with invariant magnitude $Z/\mathrm{i}$), we have a better option, manifestly covariant:
 \begin{equation}\label{eq:40}
@@ -1391,10 +1400,10 @@ So inertial observers can use their own coordinate measurements of the traveler'
 F = \sqrt{\mathcal{P}_0^2 - (\vv f_0 \cdot \vv f_0)} .
 \end{equation}
 
-Now, about this proper force: we've got $\vv f_0 = E_0 \vvzeta_{\mkern1mu 0}$, which in the traveler's instantaneous rest frame is simply $\vv f = E_0 \vvzeta$ ($= m \vv a$). Is the point of all this merely to restate the mundane fact that the relativistic three-force reduces to the Newtonian three-force in the classical limit? No! The point is that the magnitude $f_0 = E_0 \mkern.5mu \zeta_0$ ($= m a_0$) is an invariant whose value is calculable by all inertial observers. In $\vv f_0 = E_0 \vvzeta_{\mkern1mu 0}$ $(= m \vv a_0)$, then, we have something like a relativistic version of Newton's $\vv f_{\mathrm{classical}} = m \vv a$, but valid even when $\dot{E}_0 \neq 0$ ($\dot{m} \neq 0$).\footnote{In principle, the concept of proper force is applicable to Newtonian mechanics, too, provided one has defined classical force as the time-derivative of momentum (rather than as $m \vv a$---see Footnote \ref{fn:cf}). But it could only be relevant in a variable-mass situation. That's because acceleration-magnitude is invariant in the classical limit. Proper acceleration differs appreciably from ordinary coordinate acceleration only when $\beta \centernot{\ll} 1$.}
+Now, about this proper force: we've got $\vv f_0 = E_0 \vvzeta_{\mkern1mu 0}$, which in the traveler's instantaneous rest frame is simply $\vv f = E_0 \vvzeta$ ($= m \vv a$). Is the point of all this merely to restate the mundane fact that the relativistic three-force reduces to the Newtonian three-force in the classical limit? No! The point is that the magnitude $f_0 = E_0 \mkern.5mu \zeta_0$ ($= m a_0$) is an invariant whose value is calculable by all inertial observers. In $\vv f_0 = E_0 \vvzeta_{\mkern1mu 0}$ $(= m \vv a_0)$, then, we have something like a relativistic version of $\vv f_{\mathrm{classical}} = m \vv a$, but valid even when $\dot{E}_0 \neq 0$ ($\dot{m} \neq 0$).\footnote{In principle, the concept of proper force is applicable to Newtonian mechanics, too, provided one has defined classical force as the time-derivative of momentum (rather than as $m \vv a$---see Footnote \ref{fn:cf}). But it could only be relevant in a variable-mass situation. That's because acceleration-magnitude is invariant in Newtonian physics. Proper acceleration differs appreciably from ordinary coordinate acceleration only when $\beta \centernot{\ll} 1$.}
 
 
-\subsection[“Measure of Inertia” Revisited]{``Measure of Inertia" Revisited}\label{ssec:in}
+\subsubsection[“Measure of Inertia” Revisited]{``Measure of Inertia" Revisited}\label{ssec:in}
 
 We see in Equation \ref{eq:41} that $\vv f \neq E_0 \vvzeta$ $( = m \vv a)$, even when $\dot{E}_0 = 0$ ($\dot{m} = 0$ being the condition under which $\vv f_\textrm{classical} = m \vv a$ is true). That's not surprising; back in Section \ref{ssec:rm} we ruled out the possibility that $E_0$ is the resistance to change in three-velocity for arbitrary $\vvbeta$. More interesting is that our \emph{candidate} for the relativistic measure of inertia, total energy $E$, likewise cannot be unambiguously described as the resistance to change in velocity under the influence of a three-force. Yes, the last term in Equation \ref{eq:41} is $E \vvzeta$, and the middle term disappears when $\dot{E}_0 = 0$, but there's still that pesky first term that doesn't vanish unless $\vvbeta = \vv 0$:
 \begin{equation}\label{eq:43}
@@ -1486,7 +1495,7 @@ Equations \ref{eq:48} and \ref{eq:49} are nice! Perhaps the matrices $\mathcal{E
 
 
 
-\subsection{Lorentz Transformation Revisited}
+\subsection{Lorentz Transformation with Matrices}
 
 We've spent a lot of time on invariant ``proper" quantities that allow observers to figure out what's happening in a traveler's (instantaneous) rest frame. That was time well spent, but what if an observer is less interested in a traveler's rest frame than in some other observer's measurements of the traveler's observables? Or what if there isn't a traveler at all, and an observer just wants to know what the components of some four-vector are in someone else's rest frame?\footnote{Most of the four-vectors we've considered pertain directly to something that's moving, but that's not a requirement. For instance, we're free to construct a four-separation that ``connects" a pair of spacelike-separated events and whose magnitude is the spacetime interval between them (an imaginary number in this case)---see Footnote \ref{fn:sp}.}
 
@@ -1675,7 +1684,7 @@ and
 \gamma \left( \gamma \zeta_z +  \dot{\gamma} \beta_z \right) &= \gamma^\prime \left( \gamma^{\prime} \zeta^{\prime}_z + \dot{\gamma}^\prime \beta_z^\prime \right) .
 \end{aligned}
 \end{equation*}
-Not pretty! Some torturous algebra (using Equations \ref{eq:fv} for substitutions as necessary) leads to the transformation of the Lorentz factor's time-derivative and of the three-acceleration, which we could also obtain by taking the $ct$- ($ct^\prime$-) derivatives of Equations \ref{eq:vt}:
+Not pretty! Some torturous algebra (using Equations \ref{eq:fv} for substitutions as necessary) leads to the transformation of the Lorentz factor's time-derivative and of the three-acceleration, which we could also obtain by taking the appropriate $ct$- and $ct^\prime$-derivatives of Equations \ref{eq:vt}:
 \begin{equation}\label{eq:at}
 \begin{aligned}
 \dot{\gamma}^\prime &= \dfrac{\dot{\gamma} - \dot{\omega}_x \mkern1mu \beta_{\textrm{rel}} }{1 - \beta_x \mkern1mu \beta_{\textrm{rel}}} \\[3pt]
