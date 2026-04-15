@@ -1221,9 +1221,9 @@ In the common scenario that a system's $E_0$ doesn't change, the relativistic po
 \vv F = \gamma \mkern1.5mu \big \langle \vv f \cdot \vvbeta, \, \vv f \big \rangle \quad \textrm{\footnotesize{ (for $\mathring{E}_0 = 0$)}}.
 \end{equation}
 
-\subsubsection{Four-Acceleration}
+\subsubsection{Four-Acceleration}\label{sssec:fa}
 
-We have the four-displacement $\dd \vv R$, the normalized four-velocity $\vv B$, the four-momentum $\vv P$, and the four-force $\vv F$. Question: in what direction do they point? We began by \emph{defining} $\dd \vv R$ as tangent to a traveler's world line, pointing in whatever spacetime direction the traveler happens to be going. Common sense says that the same is true of the traveler's $\vv B$ and $\vv P$, but let's take a moment to think about what that means mathematically. Two vectors are codirectional if one is obtained by scaling the other by a positive number. We know that $\vv B$ and $\vv P$ are codirectional, since the latter is simply the former scaled by the traveler's $E_0$. Can we make a similar argument for $\dd \vv R$ and $\vv B$, and say that the latter is simply the former ``scaled" by the infinitesimal $1/(c \, \dd t_0)$? We can, but we need to be careful---we're \emph{not} saying that $\vv B$ is codirectional with $\vv R$! We're ``scaling" $\dd \vv R$, but \emph{differentiating} $\vv R$. (As for the direction of four-force, we'll discuss that later.)
+We have the four-displacement $\dd \vv R$, the normalized four-velocity $\vv B$, the four-momentum $\vv P$, and the four-force $\vv F$. Question: in what direction do they point? We began by \emph{defining} $\dd \vv R$ as tangent to a traveler's world line, pointing in whatever spacetime direction the traveler happens to be going. Common sense says that the same is true of the traveler's $\vv B$ and $\vv P$, but let's take a moment to think about what that means mathematically. Two vectors are codirectional if one is obtained by scaling the other by a positive number. We know that $\vv B$ and $\vv P$ are codirectional, since the latter is simply the former scaled by the traveler's $E_0$. Can we make a similar argument for $\dd \vv R$ and $\vv B$, and say that the latter is simply the former ``scaled" by the infinitesimal $1/(c \, \dd t_0)$? We can, but we need to be careful---we're \emph{not} saying that $\vv B$ is codirectional with $\vv R$! We're ``scaling" $\dd \vv R$, but \emph{differentiating} $\vv R$. (As for the direction of four-force, we'll hold off until Section \ref{sssec:cff}.)
 
 With ``spacetime direction" in mind, we'll now take the $c t_0$-derivative of the four-velocity $\vv B$ to find the normalized \textbf{four-acceleration}, $\vv Z$ (uppercase Greek letter zeta), analogous to the normalized three-acceleration ${\vvzeta=\dd \vvbeta / \dd (ct)}$:\footnote{Like $\vvzeta$, $\vv Z$ isn't \emph{really} normalized (it isn't dimensionless, and its magnitude $Z$ can exceed one). It inherits the label to clarify that it isn't the ``unnormalized" four-acceleration $\vv A = \dd \vv V / \dd t_0 = \vv Z c^2$, which we have no use for.}
 \begin{equation}\label{eq:34}
@@ -1346,11 +1346,11 @@ Here are some rules about four-vector orthogonality:
 \item A non-zero four-vector that's orthogonal to a non-zero lightlike vector must be either spacelike (see above) or lightlike (e.g., $\langle 1, 0, 0, 1 \rangle$ and $\langle 2, 0, 0, 2 \rangle$).
 \end{itemize}
 
-\subsection{More on Force and Acceleration}
+\subsection{More on Force and Acceleration}\label{ssec:fa2}
 
-\subsubsection{Proper Power and Proper Force}\label{sssec:pf}
+\subsubsection{Classifying Four-Force}\label{sssec:cff}
 
-What about the four-force (Equation \ref{eq:33})? Spacelike, timelike, or lightlike? In the special case that $E_0$ changes but $\vv B$ doesn't (as with the light-emitting body in Einstein's thought experiment), $\vv F$ is timelike because it's parallel to the timelike $\vv B$:
+In Section \ref{sssec:fa}, we punted on the direction of the four-force, $\vv F = \mathring{\vv P}$ (Equation \ref{eq:33}). Let's address that now. Is the four-force spacelike, timelike, or lightlike? In the special case that $E_0$ changes but $\vv B$ doesn't (as with the light-emitting body in Einstein's thought experiment), $\vv F$ is timelike because it's parallel to the timelike $\vv B$:
 \begin{equation}\label{eq:38}
 \begin{split}
 \vv F &= \mathring{\vv P}\\
@@ -1363,6 +1363,8 @@ But in most applications it's $E_0$ that remains constant while $\vv B$ changes.
 \vv F = E_0 \mkern.5mu \vv Z \quad \textrm{\footnotesize{ (for $\mathring{E}_0 = 0$)}}.
 \end{equation}
 This says symbolically what we've already put into words: rest energy is the measure of ``spacetime inertia," the resistance to change in (direction of) four-velocity $\vv B$.\footnote{Equivalently, $\vv F = m \vv A$ when $\mathring{m} = 0$ (since $E_0 = mc^2$ and $\vv Z = \vv A / c^2$).} If \emph{both} $E_0$ and $\vv B$ change (the general case), then the product rule gives us $\vv F = \mathring{E}_0 \mkern.5mu \vv B + E_0 \mkern.5mu \vv Z$. Such a four-force might be spacelike, timelike, or even lightlike, depending on whether the magnitude of the spatial component ($\gamma$ times three-force $\vv f$) is greater than, less than, or equal to the absolute value of the time component ($\gamma$ times normalized power $\mathcal{P}$).
+
+\subsubsection{Proper Power and Proper Force}\label{sssec:pf}
 
 When we first discussed the four-force in Section \ref{sssec:ff}, we didn't bother finding its magnitude $F$. We could have ``plug-and-chugged" with the temporal and spatial components (like we later did to calculate the magnitude of the four-acceleration), but that would have been a chore. Now that we've covered the four-acceleration $\vv Z$ and the proper acceleration $\vvzeta_{\mkern1mu 0}$ (with invariant magnitude $Z/\mathrm{i}$), we have a better option, manifestly covariant:
 \begin{equation}\label{eq:40}
@@ -1398,7 +1400,7 @@ So inertial observers can use their own coordinate measurements of the traveler'
 F = \sqrt{\mathcal{P}_0^2 - (\vv f_0 \cdot \vv f_0)} .
 \end{equation}
 
-Now, about this proper force: we've got $\vv f_0 = E_0 \vvzeta_{\mkern1mu 0}$, which in the traveler's instantaneous rest frame is simply $\vv f = E_0 \vvzeta$ ($= m \vv a$). Is the point of all this merely to restate the mundane fact that the relativistic three-force reduces to the Newtonian three-force in the classical limit? No! The point is that the magnitude $f_0 = E_0 \mkern.5mu \zeta_0$ ($= m a_0$) is an invariant whose value is calculable by all inertial observers. In $\vv f_0 = E_0 \vvzeta_{\mkern1mu 0}$ $(= m \vv a_0)$, then, we have something like a relativistic version of Newton's $\vv f_{\mathrm{classical}} = m \vv a$, but valid even when $\dot{E}_0 \neq 0$ ($\dot{m} \neq 0$).\footnote{In principle, the concept of proper force is applicable to Newtonian mechanics, too, provided one has defined classical force as the time-derivative of momentum (rather than as $m \vv a$---see Footnote \ref{fn:cf}). But it could only be relevant in a variable-mass situation. That's because acceleration-magnitude is invariant in the classical limit. Proper acceleration differs appreciably from ordinary coordinate acceleration only when $\beta \centernot{\ll} 1$.}
+Now, about this proper force: we've got $\vv f_0 = E_0 \vvzeta_{\mkern1mu 0}$, which in the traveler's instantaneous rest frame is simply $\vv f = E_0 \vvzeta$ ($= m \vv a$). Is the point of all this merely to restate the mundane fact that the relativistic three-force reduces to the Newtonian three-force in the classical limit? No! The point is that the magnitude $f_0 = E_0 \mkern.5mu \zeta_0$ ($= m a_0$) is an invariant whose value is calculable by all inertial observers. In $\vv f_0 = E_0 \vvzeta_{\mkern1mu 0}$ $(= m \vv a_0)$, then, we have something like a relativistic version of $\vv f_{\mathrm{classical}} = m \vv a$, but valid even when $\dot{E}_0 \neq 0$ ($\dot{m} \neq 0$).\footnote{In principle, the concept of proper force is applicable to Newtonian mechanics, too, provided one has defined classical force as the time-derivative of momentum (rather than as $m \vv a$---see Footnote \ref{fn:cf}). But it could only be relevant in a variable-mass situation. That's because acceleration-magnitude is invariant in Newtonian physics. Proper acceleration differs appreciably from ordinary coordinate acceleration only when $\beta \centernot{\ll} 1$.}
 
 
 \subsubsection[“Measure of Inertia” Revisited]{``Measure of Inertia" Revisited}\label{ssec:in}
@@ -1682,7 +1684,7 @@ and
 \gamma \left( \gamma \zeta_z +  \dot{\gamma} \beta_z \right) &= \gamma^\prime \left( \gamma^{\prime} \zeta^{\prime}_z + \dot{\gamma}^\prime \beta_z^\prime \right) .
 \end{aligned}
 \end{equation*}
-Not pretty! Some torturous algebra (using Equations \ref{eq:fv} for substitutions as necessary) leads to the transformation of the Lorentz factor's time-derivative and of the three-acceleration, which we could also obtain by taking the $ct$- ($ct^\prime$-) derivatives of Equations \ref{eq:vt}:
+Not pretty! Some torturous algebra (using Equations \ref{eq:fv} for substitutions as necessary) leads to the transformation of the Lorentz factor's time-derivative and of the three-acceleration, which we could also obtain by taking the appropriate $ct$- and $ct^\prime$-derivatives of Equations \ref{eq:vt}:
 \begin{equation}\label{eq:at}
 \begin{aligned}
 \dot{\gamma}^\prime &= \dfrac{\dot{\gamma} - \dot{\omega}_x \mkern1mu \beta_{\textrm{rel}} }{1 - \beta_x \mkern1mu \beta_{\textrm{rel}}} \\[3pt]
