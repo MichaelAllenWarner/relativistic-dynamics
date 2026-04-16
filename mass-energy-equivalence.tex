@@ -91,7 +91,7 @@
 \usepackage{nomencl}
 \makenomenclature
 
-\renewcommand{\nomname}{List of Symbols}
+\renewcommand{\nomname}{Annotated List of Symbols}
 
 \renewcommand{\nompreamble}{This isn't comprehensive. The symbols are presented in a kind of ``logical" order, corresponding \emph{very loosely} with their order of appearance in the text.}
 
@@ -117,8 +117,61 @@
 
 \clearpage
 
+\section*{Preface}\label{sec:p}
+\addcontentsline{toc}{section}{Preface}
+
+This is the gentlest introduction to relativistic dynamics you'll find. Ideally you're already familiar with basic relativistic kinematics, but we'll review what we need in Section \ref{ssec:sr}. Math prerequisites are minimal. Until Section \ref{ssec:ra}, the only calculus we'll use is simple single-variable differentiation. After that, there are integrals here and there, and Section \ref{sec:rem} on electromagnetism has partial derivatives and vector calculus. Section \ref{sec:dy} on ``electrodyadics" uses tensors but doesn't require prior experience with them.
+
+The ``massless" in the title is half tongue-in-cheek. The serious bit is that beyond Newtonian mechanics, I mostly avoid the word \emph{mass} and the symbol $m$. This does set my approach apart, but you'll see that it's just a linguistic and notational preference. There's nothing radical about it.
+
+You should know that I'm not a physicist. I'm a motivated amateur, and this document amounts to glorified notes I've made for myself as a self-study aid. I have no professional aspirations, and my focus is resolutely \emph{not} on developing problem-solving techniques. \emph{This isn't a textbook}; I'm not nearly qualified to write one! What you'll find here is a unique path through the material that worked for me. When I started, I was competent in algebra, rusty at calculus, and somewhat familiar with Newtonian mechanics, classical electromagnetism, and rudimentary special relativity. To be honest, I'm still only competent in algebra and mediocre at calculus, but I do now understand a lot of physics for a layman.
+
+If you're still here, I'll tell you more about my unusual approach and why I took it. Several years ago, I wanted to better grasp the concepts of mass, energy, and momentum in special relativity (i.e., relativistic dynamics). This---and an interest in history---led me to Einstein's original ``$E = mc^2$" paper, which involves a clever thought experiment concerning a body that emits two light waves in opposite directions. It occurred to me that considering the thought experiment from a \emph{pre}-relativistic perspective might prove educational. I was right! It admits no non-relativistic ``resolution," but naively attempting to find one lays bare the incompatibility between Newtonian mechanics and Maxwell's electromagnetic theory, entirely in terms of the dynamics of a very simple system. So I adopted an outlook that views resolution of the thought experiment as \emph{motivation} for special relativity. The thought experiment became my anchor, and my goal was to dissect it as fully as I could. This guided my path of self-study and became a running theme of this paper. It even motivates the development of covariant electrodynamics in Sections \ref{sec:rem} and \ref{sec:dy}.
+
+Since this document roughly follows my own winding journey through the material, it's ``personal" and unapologetically quirky. The breadth and depth of topics covered, the order and style of presentation---it all reflects my evolving interests and increasing proficiency as I learned. For instance, gaining intuition for the geometric four-vector formalism was challenging for me, and so I'm sure I spend many more pages easing the reader into it than some will deem necessary or palatable. By contrast, I was comfortable with four-vectors by the time I began digging into electrodynamics, and as a result the coverage of that topic is rather sophisticated from the get-go. It is my hope that readers with a background similar to mine will find the pace about right overall.
+
+More notable things about this paper:
+\begin{itemize}
+\item I emphasize the concept of \emph{rest energy} almost immediately, and it remains central throughout the text. (This is connected to the ``massless" in the title.)
+\item Though the review of relativistic kinematics (Section \ref{ssec:sr}) is far from comprehensive, its treatment of velocities, angles, aberration, and the Doppler effect is (I think) clearer than most. I took great care here because the relativistic Doppler effect is at the heart of resolving Einstein's thought experiment, and in my framing obtaining it was the \emph{purpose} of the whole section.
+\item Some ``tangential" topics are covered fairly thoroughly (for an introductory text): transformation formulas for acceleration and force; rapidity and related concepts; the ultrarelativistic limit; angular momentum (eventually).
+\item I avoid index notation. This is good for the ``lazy" reader but probably bad for the ambitious one (who really \emph{must} learn index notation). Still, even the ambitious reader may gain insight from the abstract notation found here, especially in later sections.
+\item I use rectangular coordinates nearly exclusively: Cartesian for Euclidean space, and Minkowski ($ct$ + Cartesian) for spacetime.
+\item Section \ref{sec:rem} gives a ``complete" treatment of electrodynamics that uses four-vectors but no explicit rank-2 tensors.\footnote{By ``complete" I only mean that the treatment covers both the Maxwell equations and the Lorentz force. Its scope is actually quite limited.} Section \ref{sec:dy} expands on that material by introducing tensors, but only in the guise of \emph{dyadics}. All this is done without index notation, covectors, or differential forms. My intent is to make covariant electrodynamics accessible to as wide an audience as possible. The treatment even touches on Lagrangian methods---not at all rigorously or adequately, but in a novel way meant to offer some ``feeling" for the subject while ultimately pointing to the need for a more robust mathematical toolkit.
+\item For electromagnetism, I use Heaviside--Lorentz units (aka rationalized Gaussian units).\footnote{Technically I use a variant of these units, where current density is given the same dimensions as charge density. See John David Jackson, \emph{Classical Electrodynamics}, 3rd ed. (New York: Wiley, 1999), 777.} You're welcome!
+\end{itemize}
+
+I've made a few unconventional choices in notation. Most aren't particularly consequential, but here are two worth mentioning straight away:
+\begin{itemize}
+\item Newton's overdot notation signals a derivative taken with respect to $ct$, not $t$. For example, where $\vv r$ is position and $\vv v$ velocity, ${\dot{\vv r} \neq \dd \vv r / \dd t = \vv v}$. Instead, $\dot{\vv r} = \dd \vv r / \dd (ct) \equiv \vvbeta$. Likewise, where $\vv a = \dd \vv v / \dd t$ is acceleration, $\ddot{\vv r} = \dot{\vvbeta} = \dd \vvbeta / \dd (ct) = \vv a / c^2 \equiv \vvzeta$. Once I introduce $\vvbeta$ and $\vvzeta$, I treat them not as shorthand but as the natural way to express velocity and acceleration. I have no use for $\vv v$ or $\vv a$. We'll call $\vvbeta$ the \emph{normalized} velocity, since it's dimensionless and has a magnitude between $0$ and $1$. And we'll call $\vvzeta$ the normalized acceleration to distinguish it from the conventional $\vv a$, even though it's neither dimensionless nor restricted in magnitude. We'll extend this usage to some other quantities, too.
+\item For $c t_0$-derivatives (where $ct_0$ is \emph{proper} time), I use a little over-circle instead of an overdot: $\mathring{\vv r} = \dd \vv r / \dd (c t_0)$.
+\end{itemize}
+I'll remind you of this dot and circle business along the way. It's part of my strategy for ``handling" $c$ in relativity, which can be summed up like this: always use $ct$, $ct_0$, and $\vv p c$ (momentum); use $E_0$ (rest energy) instead of $m$; and occasionally define ``normalized" versions of quantities to suppress factors of $c^{-1}$. For finite time-intervals, I write $c \mkern.5mu \Delta t$. For infinitesimal ones, $c \, \dd t$. When actually differentiating, however, I write $\dd (ct)$ or $\partial(ct)$.
+
+On vector notation: vectors are boldface, their magnitudes are italic (like any scalar quantity, but see below), a vector in component form is enclosed by angle brackets (not parentheses), and squaring a vector means taking its dot product with itself, which is equivalent to squaring its magnitude. So velocity is $\vv v = \langle v_x, v_y, v_z \rangle$, speed is $v$, and $\vv v^2 = \vv v \cdot \vv v = v_x^2 + v_y^2 + v_z^2 = v^2$.
+
+Sometimes italics aren't suitable for notating a vector's magnitude. In such cases we'll use vertical bars instead: $\vert \vv v \vert = v$. This is necessary for a vector sum, since $\vert \vv q + \vv w \vert \neq q + w$, and also for vectors like $\Delta \vv q$ and $\dot{\vv q}$, since $\Delta q$ means the change in $q$ and $\dot{q}$ means $q$'s $ct$-derivative. Moreover, notating a vector's magnitude with plain italic type is convenient but somewhat dangerous, as doing so makes it easy to forget to treat magnitude as a \emph{function} when one must, as when differentiating:
+\begin{equation*}
+\begin{aligned}
+\dot{q} \overset{!}{=} \frac{\dd \vert \vv q \vert}{\dd (ct)} &= \frac{\dd}{\dd (ct)} \sqrt{ \vv q \cdot \vv q } \\[4pt]
+&=  \frac{\dd (\vv q \cdot \vv q)}{\dd (ct)} \, \frac{\dd}{\dd (\vv q \cdot \vv q)} \left( \vv q \cdot \vv q \right) ^{1/2} \\[2pt]
+&=\left( \dot{\vv q} \cdot \vv q  \, + \, \vv q \cdot \dot{\vv q} \right) \, \frac{1}{2 \sqrt{\vv q \cdot \vv q}} \\
+&= \frac{\vv q \cdot \dot{\vv q}}{q} \\[3pt]
+&= \vv{ \hat q } \cdot \dot{ \vv q }
+\end{aligned}
+\end{equation*}
+(where $\vv{ \hat q } = \vv q / q$ is the unit vector pointing in the direction of $\vv q$). By the way, if you can't follow that math, you'll need to brush up on your calculus!
+
+When we get to \emph{four-vectors} (don't worry if you don't know what they are yet), we'll use essentially the same notation, but with uppercase symbols like $\vv Q$. I'm pretty consistent with this lowercase vs. uppercase convention, going so far as to use $\vv e$ and $\vv b$ instead of $\vv E$ and $\vv B$ for the electric and magnetic fields. When a four-vector is ``analogous" to a normal Euclidean vector, I'll usually give it the uppercase counterpart to the lowercase symbol already in use; for instance, the four-vector analogue of $\vvbeta = \vv v / c$ will be $\vv B$ (the dimensionless ``four-velocity"), and the four-vector analogue of $\vvzeta = \vv a / c^2$ will be $\vv Z$ (a ``four-acceleration" with the same dimensions as $\vvzeta$).
+
+I don't cite many sources, but where I do (mostly in the \hyperref[sec:r]{Influences} section), I use Chicago ``humanities" style. I told you I'm not a physicist!
+
+Don't overlook the \hyperref[symbols]{Annotated List of Symbols}. It tells much of the story.
+
+\clearpage
+
 \phantomsection
-\addcontentsline{toc}{section}{List of Symbols}
+\addcontentsline{toc}{section}{Annotated List of Symbols}\label{symbols}
 
 \nomenclature[010]{\( ct_0 \)}{Proper time. The naught subscript almost always means the ``proper" version of a quantity---i.e., the quantity as measured in the relevant rest frame.}
 \nomenclature[020]{\( \dot{ \text{\underline{\hspace{.6em}}} } \)}{Overdot means derivative with respect to $ct$ (coordinate time).}
@@ -184,57 +237,6 @@
 
 
 \printnomenclature
-
-\clearpage
-
-\section*{Preface}\label{sec:p}
-\addcontentsline{toc}{section}{Preface}
-
-This is the gentlest introduction to relativistic dynamics you'll find. Ideally you're already familiar with basic relativistic kinematics, but we'll review what we need in Section \ref{ssec:sr}. Math prerequisites are minimal. Until Section \ref{ssec:ra}, the only calculus we'll use is simple single-variable differentiation. After that, there are integrals here and there, and Section \ref{sec:rem} on electromagnetism has partial derivatives and vector calculus. Section \ref{sec:dy} on ``electrodyadics" uses tensors but doesn't require prior experience with them.
-
-The ``massless" in the title is half tongue-in-cheek. The serious bit is that beyond Newtonian mechanics, I mostly avoid the word \emph{mass} and the symbol $m$. This does set my approach apart, but you'll see that it's just a linguistic and notational preference. There's nothing radical about it.
-
-You should know that I'm not a physicist. I'm a motivated amateur, and this document amounts to glorified notes I've made for myself as a self-study aid. I have no professional aspirations, and my focus is resolutely \emph{not} on developing problem-solving techniques. \emph{This isn't a textbook}; I'm not nearly qualified to write one! What you'll find here is a unique path through the material that worked for me. When I started, I was competent in algebra, rusty at calculus, and somewhat familiar with Newtonian mechanics, classical electromagnetism, and rudimentary special relativity. To be honest, I'm still only competent in algebra and mediocre at calculus, but I do now understand a lot of physics for a layman.
-
-If you're still here, I'll tell you more about my unusual approach and why I took it. Several years ago, I wanted to better grasp the concepts of mass, energy, and momentum in special relativity (i.e., relativistic dynamics). This---and an interest in history---led me to Einstein's original ``$E = mc^2$" paper, which involves a clever thought experiment concerning a body that emits two light waves in opposite directions. It occurred to me that considering the thought experiment from a \emph{pre}-relativistic perspective might prove educational. I was right! It admits no non-relativistic ``resolution," but naively attempting to find one lays bare the incompatibility between Newtonian mechanics and Maxwell's electromagnetic theory, entirely in terms of the dynamics of a very simple system. So I adopted an outlook that views resolution of the thought experiment as \emph{motivation} for special relativity. The thought experiment became my anchor, and my goal was to dissect it as fully as I could. This guided my path of self-study and became a running theme of this paper. It even motivates the development of covariant electrodynamics in Sections \ref{sec:rem} and \ref{sec:dy}.
-
-Since this document roughly follows my own winding journey through the material, it's ``personal" and unapologetically quirky. The breadth and depth of topics covered, the order and style of presentation---it all reflects my evolving interests and increasing proficiency as I learned. For instance, gaining intuition for the geometric four-vector formalism was challenging for me, and so I'm sure I spend many more pages easing the reader into it than some will deem necessary or palatable. By contrast, I was comfortable with four-vectors by the time I began digging into electrodynamics, and as a result the coverage of that topic is rather sophisticated from the get-go. It is my hope that readers with a background similar to mine will find the pace about right overall.
-
-More notable things about this paper:
-\begin{itemize}
-\item I emphasize the concept of \emph{rest energy} almost immediately, and it remains central throughout the text. (This is connected to the ``massless" in the title.)
-\item Though the review of relativistic kinematics (Section \ref{ssec:sr}) is far from comprehensive, its treatment of velocities, angles, aberration, and the Doppler effect is (I think) clearer than most. I took great care here because the relativistic Doppler effect is at the heart of resolving Einstein's thought experiment, and in my framing obtaining it was the \emph{purpose} of the whole section.
-\item Some ``tangential" topics are covered fairly thoroughly (for an introductory text): transformation formulas for acceleration and force; rapidity and related concepts; the ultrarelativistic limit; angular momentum (eventually).
-\item I avoid index notation. This is good for the ``lazy" reader but probably bad for the ambitious one (who really \emph{must} learn index notation). Still, even the ambitious reader may gain insight from the abstract notation found here, especially in later sections.
-\item I use rectangular coordinates nearly exclusively: Cartesian for Euclidean space, and Minkowski ($ct$ + Cartesian) for spacetime.
-\item Section \ref{sec:rem} gives a ``complete" treatment of electrodynamics that uses four-vectors but no explicit rank-2 tensors.\footnote{By ``complete" I only mean that the treatment covers both the Maxwell equations and the Lorentz force. Its scope is actually quite limited.} Section \ref{sec:dy} expands on that material by introducing tensors, but only in the guise of \emph{dyadics}. All this is done without index notation, covectors, or differential forms. My intent is to make covariant electrodynamics accessible to as wide an audience as possible. The treatment even touches on Lagrangian methods---not at all rigorously or adequately, but in a novel way meant to offer some ``feeling" for the subject while ultimately pointing to the need for a more robust mathematical toolkit.
-\item For electromagnetism, I use Heaviside--Lorentz units (aka rationalized Gaussian units).\footnote{Technically I use a variant of these units, where current density is given the same dimensions as charge density. See John David Jackson, \emph{Classical Electrodynamics}, 3rd ed. (New York: Wiley, 1999), 777.} You're welcome!
-\end{itemize}
-
-I've made a few unconventional choices in notation. Most aren't particularly consequential, but here are two worth mentioning straight away:
-\begin{itemize}
-\item Newton's overdot notation signals a derivative taken with respect to $ct$, not $t$. For example, where $\vv r$ is position and $\vv v$ velocity, ${\dot{\vv r} \neq \dd \vv r / \dd t = \vv v}$. Instead, $\dot{\vv r} = \dd \vv r / \dd (ct) \equiv \vvbeta$. Likewise, where $\vv a = \dd \vv v / \dd t$ is acceleration, $\ddot{\vv r} = \dot{\vvbeta} = \dd \vvbeta / \dd (ct) = \vv a / c^2 \equiv \vvzeta$. Once I introduce $\vvbeta$ and $\vvzeta$, I treat them not as shorthand but as the natural way to express velocity and acceleration. I have no use for $\vv v$ or $\vv a$. We'll call $\vvbeta$ the \emph{normalized} velocity, since it's dimensionless and has a magnitude between $0$ and $1$. And we'll call $\vvzeta$ the normalized acceleration to distinguish it from the conventional $\vv a$, even though it's neither dimensionless nor restricted in magnitude. We'll extend this usage to some other quantities, too.
-\item For $c t_0$-derivatives (where $ct_0$ is \emph{proper} time), I use a little over-circle instead of an overdot: $\mathring{\vv r} = \dd \vv r / \dd (c t_0)$.
-\end{itemize}
-I'll remind you of this dot and circle business along the way. It's part of my strategy for ``handling" $c$ in relativity, which can be summed up like this: always use $ct$, $ct_0$, and $\vv p c$ (momentum); use $E_0$ (rest energy) instead of $m$; and occasionally define ``normalized" versions of quantities to suppress factors of $c^{-1}$. For finite time-intervals, I write $c \mkern.5mu \Delta t$. For infinitesimal ones, $c \, \dd t$. When actually differentiating, however, I write $\dd (ct)$ or $\partial(ct)$.
-
-On vector notation: vectors are boldface, their magnitudes are italic (like any scalar quantity, but see below), a vector in component form is enclosed by angle brackets (not parentheses), and squaring a vector means taking its dot product with itself, which is equivalent to squaring its magnitude. So velocity is $\vv v = \langle v_x, v_y, v_z \rangle$, speed is $v$, and $\vv v^2 = \vv v \cdot \vv v = v_x^2 + v_y^2 + v_z^2 = v^2$.
-
-Sometimes italics aren't suitable for notating a vector's magnitude. In such cases we'll use vertical bars instead: $\vert \vv v \vert = v$. This is necessary for a vector sum, since $\vert \vv q + \vv w \vert \neq q + w$, and also for vectors like $\Delta \vv q$ and $\dot{\vv q}$, since $\Delta q$ means the change in $q$ and $\dot{q}$ means $q$'s $ct$-derivative. Moreover, notating a vector's magnitude with plain italic type is convenient but somewhat dangerous, as doing so makes it easy to forget to treat magnitude as a \emph{function} when one must, as when differentiating:
-\begin{equation*}
-\begin{aligned}
-\dot{q} \overset{!}{=} \frac{\dd \vert \vv q \vert}{\dd (ct)} &= \frac{\dd}{\dd (ct)} \sqrt{ \vv q \cdot \vv q } \\[4pt]
-&=  \frac{\dd (\vv q \cdot \vv q)}{\dd (ct)} \, \frac{\dd}{\dd (\vv q \cdot \vv q)} \left( \vv q \cdot \vv q \right) ^{1/2} \\[2pt]
-&=\left( \dot{\vv q} \cdot \vv q  \, + \, \vv q \cdot \dot{\vv q} \right) \, \frac{1}{2 \sqrt{\vv q \cdot \vv q}} \\
-&= \frac{\vv q \cdot \dot{\vv q}}{q} \\[3pt]
-&= \vv{ \hat q } \cdot \dot{ \vv q }
-\end{aligned}
-\end{equation*}
-(where $\vv{ \hat q } = \vv q / q$ is the unit vector pointing in the direction of $\vv q$). By the way, if you can't follow that math, you'll need to brush up on your calculus!
-
-When we get to \emph{four-vectors} (don't worry if you don't know what they are yet), we'll use essentially the same notation, but with uppercase symbols like $\vv Q$. I'm pretty consistent with this lowercase vs. uppercase convention, going so far as to use $\vv e$ and $\vv b$ instead of $\vv E$ and $\vv B$ for the electric and magnetic fields. When a four-vector is ``analogous" to a normal Euclidean vector, I'll usually give it the uppercase counterpart to the lowercase symbol already in use; for instance, the four-vector analogue of $\vvbeta = \vv v / c$ will be $\vv B$ (the dimensionless ``four-velocity"), and the four-vector analogue of $\vvzeta = \vv a / c^2$ will be $\vv Z$ (a ``four-acceleration" with the same dimensions as $\vvzeta$).
-
-I don't cite many sources, but where I do (mostly in the \hyperref[sec:r]{Influences} section), I use Chicago ``humanities" style. I told you I'm not a physicist!
 
 \clearpage
 
@@ -1216,7 +1218,7 @@ In the common scenario that a system's $E_0$ doesn't change, the relativistic po
 \mathcal{P} &= \dfrac{\mathring{E}_0}{\gamma^2} + \vv f \cdot \vvbeta
 \end{split}
 \end{equation}
-(by Equations \ref{eq:12} and \ref{eq:19}), which becomes $\mathcal{P} = \dot{E}_{\mkern.5mu \textrm{k}} = \vv f \cdot \vvbeta$ when $\dot{E}_0 = 0$.\footnote{The quantity $\mathring{E}_0 = \gamma \dot{E}_0$ that we introduced in Footnote \ref{fn:fo} and Equation \ref{eq:rp} is invariant (the proper-time derivative of the proper energy)---provided, of course, that no relativity-of-simultaneity issues throw a wrench in the works. Later we'll dub it the proper power.} Equation \ref{eq:33} then takes the sometimes useful form:
+(by Equations \ref{eq:12} and \ref{eq:19}), which becomes $\mathcal{P} = \dot{E}_{\mkern.5mu \textrm{k}} = \vv f \cdot \vvbeta$ when $\dot{E}_0 = 0$.\footnote{The quantity $\mathring{E}_0 = \gamma \dot{E}_0$ that we introduced in Footnote \ref{fn:fo} and Equation \ref{eq:rp} is invariant (the proper-time derivative of the proper energy)---provided, of course, that no relativity-of-simultaneity issues throw a wrench in the works. Later we'll dub it the proper power.} Equation \ref{eq:33} then takes the useful form:
 \begin{equation}\label{eq:fb}
 \vv F = \gamma \mkern1.5mu \big \langle \vv f \cdot \vvbeta, \, \vv f \big \rangle \quad \textrm{\footnotesize{ (for $\mathring{E}_0 = 0$)}}.
 \end{equation}
@@ -1323,7 +1325,7 @@ That's $\zeta \mkern1mu \mathrm{i}$ in the traveler's instantaneous rest frame, 
 with invariant magnitude $\zeta_0 = \sqrt{\gamma^4 \zeta^2 + \gamma^6 (\vvbeta \cdot \vvzeta)^2} = \gamma^3 \zeta / \gamma_{\perp}$ (by Equations \ref{eq:pa2} and \ref{eq:37}). When $\vvbeta \parallel \vvzeta$, Equation \ref{eq:37} reduces to Equation \ref{eq:36} (because then $\gamma_{\perp} = 1$). Another important special case is when $\vvbeta \perp \vvzeta$, as in uniform circular motion. Then $\gamma_{\perp} = \gamma$, and we get $\vvzeta_{\mkern1mu 0} = \gamma^2 \vvzeta$.
 
 
-\subsection{Classifying Four-Vectors}\label{sssec:classifying}
+\subsection{Why i? Classifying Four-Vectors}\label{sssec:classifying}
 
 We see now that the magnitude $Z$ of the four-acceleration \emph{must} contain the imaginary unit. Why $\mathrm{i}$? Because four-acceleration is orthogonal to four-velocity, and $\mathrm{i}$ \emph{never} appears in the magnitude of four-velocity.
 
@@ -1375,7 +1377,7 @@ F &= \sqrt{\vv F \cdot \vv F} = \sqrt{\mathring{\vv P} \cdot \mathring{\vv P}} \
 F &= \sqrt{ \mathring{E}_0^2 - \left( E_0 \vvzeta_{\mkern1mu 0} \right)^2 }
 \end{split}
 \end{equation}
-because $\vv B$ and $\vv Z$ are orthogonal, $\vv B \cdot \vv B = B^2 = 1$, and $Z^2 = - (\vvzeta_{\mkern1mu 0} \cdot \vvzeta_{\mkern1mu 0})$.\footnote{Because the four-force concept is inapplicable to ``restless" (massless) systems (see Section \ref{sssec:ff}), we don't lose generality by working with the rest energy. Whether the concepts of power and three-force are likewise inapplicable to such systems is a thornier question. The simple answer is yes, they're inapplicable. A more complete answer would wrestle with optical phenomena like reflection and refraction. For instance, should we regard a reflected light wave as the same system before and after reflection? (Probably not.) And does it even make sense to label an electromagnetic wave ``massless" when it's traveling at $\beta < 1$ through a medium? (Probably not, and such a wave is better described as a \emph{polarization} wave.) There's also gravitational redshift/blueshift and gravitational lensing, but these are topics for general relativity, and it would be misleading to naively use the words \emph{power} and \emph{force} here.}
+because $\vv B$ and $\vv Z$ are orthogonal, $\vv B \cdot \vv B = B^2 = 1$, and $Z^2 = - (\vvzeta_{\mkern1mu 0} \cdot \vvzeta_{\mkern1mu 0})$.\footnote{Because the four-force concept is inapplicable to ``restless" (massless) systems (see Section \ref{sssec:ff}), we don't lose generality by working with the rest energy. Whether the concepts of power and three-force are likewise inapplicable to such systems is a thornier question. The simple answer is yes, they're inapplicable. A more complete answer might start by considering optical phenomena like reflection and refraction. For instance, when a light wave is reflected, does it make sense to say that it's had a force applied to it? And what of an electromagnetic wave that's ``traveling" at $\beta < 1$ through a medium and ``changes velocity" when it crosses a material boundary---does ``force" make sense now? The answer to both questions is no. It's sometimes convenient to pretend that light is a ``thing," but really it's an emergent behavior of the underlying electromagnetic field. So then, what of the field? Although the field and charged particles do exchange energy and momentum (see Sections \ref{sec:rem} and \ref{sec:dy}), the words \emph{force} and \emph{power} in this context are generally reserved for what the field does to the charges, and not the other way around.}
 
 All right, but that four-vector magnitude is less straightforward than the others we've seen. What does it tell us? First, note that it accords with Equations \ref{eq:38} and \ref{eq:39}: when $\vv B$ is constant ($\vvzeta_{\mkern1mu 0} = \vv 0$), $\vv F = \mathring{E}_0 \vv B$ and $F = \mathring{E}_0 B = \mathring{E}_0$; when $E_0$ is constant, $\vv F = E_0 \vv Z$ and $F = E_0 Z = E_0 \mkern.5mu \zeta_0 \mkern1mu \mathrm{i}$. And what \emph{are} these quantities $\mathring{E}_0$ and $E_0 \mkern.5mu \zeta_0$? They're certainly both invariant---the first is the derivative of the invariant rest energy with respect to the invariant $c t_0$, and the second is the invariant rest energy times the invariant magnitude of the proper acceleration.\footnote{This is a good time to remind ourselves of the caveats we mentioned at the beginning of Section \ref{sssec:ff}. First, we're still modeling any accelerating system as a point particle. Second, the relativity of simultaneity means that for an open composite system, it's not always possible to speak of the rest energy (or its proper-time derivative!) as ``invariant."} But they also represent the power and three-force (magnitude) that the traveler ``feels," or that an observer in any of the traveler's successive instantaneous rest frames measures. Why? For power:
 \begin{equation}\label{eq:po}
@@ -1906,7 +1908,7 @@ As a palpably geometric quantity---the hyperbolic angle between a traveler's and
 \begin{equation*}
 \vv B = \langle \cosh{\phi}, \, \hatphi \sinh{\phi} \rangle
 \end{equation*}
-($\hatphi = \hatbeta$); infinitesimal four-displacement:
+($\hatphi = \hatbeta$); infinitesimal timelike four-displacement:
 \begin{equation*}
 \dd \vv R = \vv B \, c \, \dd t_0 = c \, \dd t_0 \, \langle \cosh{\phi}, \, \hatphi \sinh{\phi} \rangle ;
 \end{equation*}
@@ -1920,26 +1922,26 @@ normalized four-acceleration:\footnote{\label{fn:ph}By $\mathring{\phi}$ we mean
 \end{equation*}
 which is just $\vert \mathring{\phi} \vert$ for rectilinear motion ($\mathring{\vvphi} \parallel \vvphi$), because then $\ringhatphi = \vv 0$.}
 \begin{equation*}
-\vv Z = \mathring{\vv B} = \langle  \mathring{\phi} \sinh{\phi} , \, \hatphi \mkern1.5mu \mathring{\phi} \cosh{\phi} + \ringhatphi \sinh{\phi} \rangle
+\vv Z = \mathring{\vv B} = \Big \langle  \mathring{\phi} \sinh{\phi} , \; \hatphi \mkern1.5mu \mathring{\phi} \cosh{\phi} + \ringhatphi \sinh{\phi} \Big \rangle
 \end{equation*}
 (because the hyperbolic sine and hyperbolic cosine functions are derivatives of each other); and four-force:
 \begin{equation*}
 \vv F = \mathring{\vv P} = \mathcal{P}_0 \vv B + E_0 \vv Z
 \end{equation*}
-($\mathcal{P}_0 = \mathring{E}_0$ being the proper power in force-units), or
+($\mathcal{P}_0 = \mathring{E}_0$ being the proper power in force-units, recall), or
 \begin{equation*}
-\vv F = \langle \mathcal{P}_0 \mkern.5mu \ch{\phi} + E_0 \mkern1.5mu \mathring{\phi} \mkern1.5mu \sh{\phi} , \, \hatphi ( \mathcal{P}_0 \mkern.5mu \sh{\phi} + E_0 \mkern1.5mu \mathring{\phi} \mkern1mu \ch{\phi} ) + \ringhatphi E_0 \mkern1mu \sh{\phi} \rangle
+\vv F = \Big \langle \mathcal{P}_0 \mkern.5mu \ch{\phi} + E_0 \mkern1.5mu \mathring{\phi} \mkern1.5mu \sh{\phi} , \; \hatphi ( \mathcal{P}_0 \mkern.5mu \sh{\phi} + E_0 \mkern1.5mu \mathring{\phi} \mkern1mu \ch{\phi} ) + \ringhatphi E_0 \mkern1mu \sh{\phi} \Big \rangle
 \end{equation*}
-($\ch = \cosh$ and $\sh = \sinh$). Admittedly, the components of four-acceleration and four-force are somewhat unwieldy when written out like this, but they're arguably even worse in terms of $\vvbeta$, $\vvomega$, and $\gamma$, and the user-friendly nature of hyperbolic functions is a plus. Just look how easy it is to obtain an expression for the squared proper acceleration using the rapidity (and Equation \ref{eq:pa4}):
+($\ch = \cosh$ and $\sh = \sinh$ for short). Admittedly, the components of four-acceleration and four-force are somewhat unwieldy when written out like this, but they're arguably even worse in terms of $\vvbeta$, $\vvomega$, and $\gamma$ (whose geometric significance as hyperbolic functions of $\phi$ is obscured), and the user-friendly nature of the $\sinh$ and $\cosh$ functions is a plus. Just look how easy it is to obtain an expression for the squared proper acceleration using the rapidity (and Equation \ref{eq:pa4}):
 \begin{equation}\label{eq:pa3}
 \begin{split}
-- \, Z^2 &= - \, \vv Z \cdot \vv Z = \left( \hatphi \mkern1.5mu \mathring{\phi} \cosh{\phi} + \ringhatphi \sinh{\phi} \right)^2 - \left( \mathring{\phi} \sinh{\phi} \right)^2 \\
-\zeta_0^2 &= \mathring{\phi}^2 + (\ringhatphi \sinh{\phi})^2 
+- \, Z^2 &= - \, \vv Z \cdot \vv Z = \left( \hatphi \mkern1.5mu \mathring{\phi} \cosh{\phi} + \ringhatphi \sinh{\phi} \right)^2 - \left( \mathring{\phi} \sinh{\phi} \right)^2 \\[2pt]
+\zeta_0^2 &= \mathring{\phi}^2 + \left( \ringhatphi \sinh{\phi} \right)^2 
 \end{split}
 \end{equation}
-because $\hatphi \cdot \ringhatphi = 0$ (unit vector is orthogonal to its time-derivative), $\hatphi \cdot \hatphi = 1$, and $\cosh^{2}{\phi} - \sinh^{2}{\phi} = 1$. It requires some algebra to show that the right side of Equation \ref{eq:pa3} is equivalent to the negative square of the right sides of Equations \ref{eq:pa2} and \ref{eq:37}, but it is, and it was child's play to derive. So in addition to its conceptual elegance, the rapidity offers \emph{mathematical} elegance.
+because $\hatphi \cdot \ringhatphi = 0$ (unit vector is orthogonal to its time-derivative), $\hatphi \cdot \hatphi = 1$, and $\cosh^{2}{\phi} - \sinh^{2}{\phi} = 1$. It requires some algebra to show that the right side of Equation \ref{eq:pa3} is equivalent to the negative square of the right sides of Equations \ref{eq:pa2} and \ref{eq:37}, but it is, and it was child's play to derive. So in addition to its conceptual elegance, the rapidity offers much \emph{mathematical} elegance.
 
-Equation \ref{eq:pa3} also gives us the appealing relation $\zeta_0 = | \mathring{\phi} |$ for $\mathring{\vvphi} \parallel \vvphi$.\footnote{In this case, $\mathring{\phi} = \pm \vert \mathring{\vvphi} \vert$ (see Footnote \ref{fn:ph}), and $\vvzeta_{\mkern1mu 0} = \mathring{\vvphi}$.} When the traveler's motion is rectilinear, then, $| \mathring{\phi} |$ is the magnitude of the proper acceleration and therefore invariant under a Lorentz boost in the $\pm \, \hatphi$ direction. Same goes for $\dd \phi = \mathring{\phi} \, c \, \dd t_0$: incremental \emph{changes} in the traveler's rapidity are invariant among observers for whom the traveler's $\mathring{\vvphi} \parallel \vvphi$. Now we're getting somewhere! Note that because we've defined rapidity as a magnitude, we cannot extend this argument to say that \emph{differences} in the rapidities of two rectilinear travelers with parallel velocities are necessarily invariant among the would-be qualifying observers. If one traveler is moving to your left at the same speed that the other is moving to your right, then you'll say the difference in their rapidities is zero, but you'd give a different answer after a boost to your left or right (imagine boosting all the way to one of the travelers' rest frames---is the other traveler now at rest? no). Partly to remedy this ``shortcoming," we'll introduce a \emph{signed} rapidity-like parameter in the next section. Naively (very naively) one might guess that this signed parameter will be the component of $\vvphi$ corresponding to the boost axis ($\phi_x$ if the boost is along the $x$-axis), but we'll see that that's not so.
+Equation \ref{eq:pa3} also gives us the appealing relation $\zeta_0 = | \mathring{\phi} |$ for $\mathring{\vvphi} \parallel \vvphi$.\footnote{In this case, $\mathring{\phi} = \pm \vert \mathring{\vvphi} \vert$ (see Footnote \ref{fn:ph}), and $\vvzeta_{\mkern1mu 0} = \mathring{\vvphi}$.} When the traveler's motion is rectilinear, then, $| \mathring{\phi} |$ is the magnitude of the proper acceleration and therefore invariant under a Lorentz boost in the $\pm \, \hatphi$ direction. Same goes for $\dd \phi = \mathring{\phi} \, c \, \dd t_0$: incremental \emph{changes} in the traveler's rapidity are invariant among observers for whom the traveler's $\mathring{\vvphi} \parallel \vvphi$. Now we're getting somewhere! Note that because we've defined rapidity as a magnitude, we cannot extend this argument to say that \emph{differences} in the rapidities of two rectilinear travelers with parallel velocities are necessarily invariant among the would-be qualifying observers. If one traveler is moving to your left at the same speed that the other is moving to your right, then you'll say the difference in their rapidities is zero, but you'd give a different answer after a boost to your left or right (imagine boosting all the way to one of the travelers' rest frames---is the other traveler now at rest? no). Partly to remedy this ``shortcoming," we'll introduce a \emph{signed} rapidity-like parameter in the next section. Naively (very naively) one might guess that this signed parameter will be the component of $\vvphi$ corresponding to the boost axis ($\phi_x$ if the boost is along the $x$-axis), but we'll see that that's not generally so.
 
 
 \subsubsection{Longitudinal Rapidity}
