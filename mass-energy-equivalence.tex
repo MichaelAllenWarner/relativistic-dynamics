@@ -2385,13 +2385,83 @@ With $\zeta_{0 \mkern1mu x} \approx \zeta_{x}$ and $ct_0 \approx ct$ (set $ct_{\
 \begin{equation*}
 x(ct_0) \approx x_{\mathrm{i}} \, + \, \beta_{x \mkern1mu \mathrm{i} } \mkern2mu ct \, + \, \dfrac{1}{2} \mkern1mu \zeta_{x} (ct)^2 \left[ = x_{\mathrm{i}} \, + \, v_{x \mkern1mu \mathrm{i} } \mkern2mu t \, + \, \dfrac{1}{2} \mkern1mu a_{x} t^2 \right] .
 \end{equation*}
-}
+} Figure \ref{f:equilateralhyperbola} illustrates a special case of the positive-$x$ branch. Refer to it while reading the next few paragraphs.
 
 Equation \ref{eq:hm} is an \emph{equilateral} (or \emph{rectangular}) hyperbola, meaning that its asymptotes have slopes $c \mkern.5mu \Delta t / \Delta x = \pm \, 1$ and intersect at right angles at the hyperbola's center. Specifically, the asymptotes are the lines
 \begin{equation*}
 ct = \left( ct_{\mathrm{i}} - \dfrac{\omega_{x \mkern2mu \textrm{i} }}{ \zeta_{0 \mkern2mu x}} \right) \pm \left[  x - \left( x_{\mathrm{i}} - \dfrac{\gamma_{\mkern1mu \mathrm{i}}}{ \zeta_{0 \mkern2mu x}} \right) \right],
 \end{equation*}
-and the hyperbola's center is the event in spacetime whose coordinates in this frame are $ct = ct_{\mathrm{i}} - \omega_{x \mkern2mu \textrm{i} } / \zeta_{0 \mkern2mu x}$ and $x = x_{\mathrm{i}} - \gamma_{\mkern1mu \mathrm{i}} / \zeta_{0 \mkern2mu x}$ (and whatever the accelerating traveler's $y$ and $z$ coordinates are---they're constant, remember). 
+and the hyperbola's center is the event in spacetime whose coordinates in this frame are $ct = ct_{\mathrm{i}} - \omega_{x \mkern2mu \textrm{i} } / \zeta_{0 \mkern2mu x}$ and $x = x_{\mathrm{i}} - \gamma_{\mkern1mu \mathrm{i}} / \zeta_{0 \mkern2mu x}$ (and whatever the accelerating traveler's $y$ and $z$ coordinates are---they're constant, remember).
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[>={Stealth[length=8pt, width=5pt]}, scale=1.0]
+
+\def\r{1.5}   % semi-axis = 1/zeta_{0x} (visual units)
+\def\ext{3.5} % asymptote/axis extent
+
+% --- Asymptotes ---
+\draw[dashed, thin] (0,0) -- (\ext,\ext);
+\draw[dashed, thin] (0,0) -- (-\ext,-\ext);
+\draw[dashed, thin] (0,0) -- (-\ext,\ext);
+\draw[dashed, thin] (0,0) -- (\ext,-\ext);
+
+% --- Major axis (horizontal line through center and vertex) ---
+\draw[densely dotted] (-0.5, 0) -- ({\r+1.2}, 0);
+\node[right, font=\footnotesize] at ({\r+1.2}, -0.38) {(major axis)};
+
+% --- World line: right branch of x^2 - (ct)^2 = r^2 ---
+\begin{scope}
+\clip (-\ext-0.1,-\ext) rectangle (\ext+0.5,\ext);
+\draw[very thick, domain=-2.6:2.6, smooth, samples=120]
+  plot ({\r*cosh(\x)}, {\r*sinh(\x)});
+\end{scope}
+
+% Direction arrows
+\draw[->, very thick]
+  ({\r*cosh(0.50)}, {\r*sinh(0.50)}) -- ({\r*cosh(0.80)}, {\r*sinh(0.80)});
+\draw[->, very thick]
+  ({\r*cosh(-0.80)}, {\r*sinh(-0.80)}) -- ({\r*cosh(-0.50)}, {\r*sinh(-0.50)});
+
+% --- Axes ---
+\draw[->, thin] ({-\ext-0.1},0) -- ({\ext+0.6},0) node[right] {$x$};
+\draw[->, thin] (0,{-\ext-0.1}) -- (0,{\ext+0.4}) node[above] {$ct$};
+
+% --- Spacelike lines from center to worldline (proper distance = 1/zeta_{0x}) ---
+% To vertex
+\draw[thick] (0,0) -- (\r, 0);
+% To an arbitrary point P at parameter t = 1.1
+\pgfmathsetmacro{\px}{\r*cosh(1.1)}
+\pgfmathsetmacro{\pct}{\r*sinh(1.1)}
+\draw[thick] (0,0) -- (\px, \pct);
+
+% --- Single label for both spacelike lines ---
+\node[font=\small] (dslabel) at (1.3, -2.8) {$\Delta s / \mathrm{i} = 1/\zeta_{0 \mkern1mu x}$};
+\draw[->] (dslabel.north) -- (0.45, -0.06);
+\draw[->] (dslabel.north) -- (1.28, 0.90);
+
+% --- Point P ---
+\fill (\px, \pct) circle (2pt);
+\node[right, font=\small] at (\px+0.07, \pct) {$\mathcal{Q}$};
+
+% --- Center event ---
+\fill (0,0) circle (2.5pt);
+\node[font=\small, anchor=east] at (-1.2, 0.47) {center event};
+\draw[->] (-1.22, 0.39) -- (-0.13, 0.06);
+
+% --- Turnaround / vertex ---
+\fill (\r, 0) circle (2pt);
+\node[font=\small, anchor=west] at ({\r+0.8}, 0.72) {turnaround event};
+\draw[->] ({\r+0.82}, 0.64) -- ({\r+0.08}, 0.05);
+
+% --- Asymptote slope labels ---
+\node[font=\scriptsize, rotate=43] at (-2.3, -1.9) {slope $= +1$};
+\node[font=\scriptsize, rotate=-43] at (-2.3, 1.9) {slope $= -1$};
+
+\end{tikzpicture}
+\caption{The equilateral-hyperbola geometry of Equation~\ref{eq:hm}, for $\zeta_{0 \mkern1mu x} > 0$ and with the center event conveniently placed at this frame's spacetime origin (i.e., $ct_{\mathrm{i}} = \omega_{x\,\mathrm{i}} / \zeta_{0 \mkern1mu x}$ and $x_{\mathrm{i}} = \gamma_{\mathrm{i}} / \zeta_{0 \mkern1mu x}$). The hyperbola branch is the accelerating traveler's world line, arrows indicating the direction of increasing proper time $ct_0$. The asymptotes (dashed lines) have slopes $c\mkern.5mu\Delta t / \Delta x = \pm\,1$ and meet at right angles at the center event. The vertex is this frame's ``turnaround event"---the event at which the traveler is momentarily at rest---and simultaneous with the center event. The proper distance $\Delta s / \mathrm{i}$ between center event and \emph{any} event on the world line (e.g., $\mathcal{Q}$) is the constant $1/\zeta_{0 \mkern1mu x}$. A standard-configuration Lorentz boost leaves the hyperbola ``intact"; one such boost makes event $\mathcal{Q}$ the turnaround event.}
+\label{f:equilateralhyperbola}
+\end{figure}
 
 There are some intriguing consequences to all this. First, notice that Equation \ref{eq:hm} tells us the spacetime interval $\Delta s$ between a given event on the accelerating traveler's world line and the event that is the hyperbola's center (henceforth the ``center event"):
 \begin{equation*}
@@ -2399,7 +2469,7 @@ There are some intriguing consequences to all this. First, notice that Equation 
 \end{equation*}
 where $c \mkern.5mu \Delta t = ct - (ct_{\mathrm{i}} - \omega_{x \mkern2mu \textrm{i} } / \zeta_{0 \mkern2mu x})$ and $\Delta x = x - (x_{\mathrm{i}} - \gamma_{\mkern1mu \mathrm{i}} / \zeta_{0 \mkern2mu x})$ are the differences in the time and space coordinates of the events (again, as measured in any of the infinitely many inertial frames for which the traveler's $y$ and $z$ coordinates don't change). This interval is spacelike, since its square is negative, and it's also constant. The invariant $\Delta s / \mathrm{i} = |1 / \zeta_{0 \mkern2mu x}|$ is therefore the proper distance between the center event and \emph{every event on the traveler's world line}! What's more, $ct = ct_{\mathrm{i}} - \omega_{x \mkern2mu \textrm{i} } / \zeta_{0 \mkern2mu x}$ when the traveler is momentarily at rest in any of these frames (Equation \ref{eq:ct} with $\omega_x = 0$), giving $c \mkern.5mu \Delta t = 0$ and $(\Delta s)^2 = - (\Delta x)^2$ at that instant. This means that the center event is simultaneous with the traveler's ``turnaround event" (graphically this is obvious: the turnaround event is one of the hyperbola's vertices, and the vertices and the center lie on the major axis $ct = ct_{\mathrm{i}} - \omega_{x \mkern2mu \textrm{i} } / \zeta_{0 \mkern2mu x}$). But there's an instantaneous rest frame corresponding to \emph{every} event on the traveler's world line; they \emph{all} get their ``turn" as the turnaround event. So what we're really saying is that for each of the traveler's successive instantaneous rest frames, the center event is simultaneous with the traveler's coming to momentary rest. As far as the traveler is concerned, the center event is always happening ``right now" at a distance $|1 / \zeta_{0 \mkern2mu x}|$ in the direction opposite to the acceleration.\footnote{When we speak of \emph{right now} and \emph{at a distance} here, we're assuming that the accelerating traveler always adopts the $(ct, x, y, z)$ coordinates of the current instantaneous rest frame. But it's important to understand that although these are the only kinds of coordinates we've worked with in this paper, \emph{they are just coordinates}, and there are other options. For a traveler with constant proper acceleration, a better choice is arguably \textbf{Rindler coordinates}, which are like the spacetime analogue of polar coordinates, and in which the center event is \emph{not} ``eternal" and a fixed distance away (actually, the center event \emph{has no representation} in Rindler coordinates, much as the pole has no representation in polar coordinates). This ``eternal" and ``fixed-distance" business is just an artifact of choosing particular coordinate systems. There's nothing truly physical about it!}
 
-If the center event's perpetual ``now-and-there-ness" for the accelerating traveler is difficult to take in, it may help to confirm it with a Lorentz transformation of $c \mkern.5mu \Delta t $ and $\Delta x$ from the preceding paragraph (i.e., the differences in the $ct$ and $x$ coordinates of the center event and an arbitrary event on the traveler's world line, as reckoned in one of our qualifying frames). First, by Equations \ref{eq:ct} and \ref{eq:x2}:
+If the center event's perpetual ``now-and-there-ness" for the accelerating traveler is difficult to take in, it may help to confirm it with a Lorentz transformation of $c \mkern.5mu \Delta t $ and $\Delta x$ from the preceding paragraph (i.e., the differences in the $ct$ and $x$ coordinates of the center event and an arbitrary event $\mathcal{Q}$ on the traveler's world line, as reckoned in one of our qualifying frames). First, by Equations \ref{eq:ct} and \ref{eq:x2}:
 \begin{equation*}
 c \mkern.5mu \Delta t = ct - \left( ct_{\mathrm{i}} - \dfrac{\omega_{x \mkern2mu \textrm{i} }}{ \zeta_{0 \mkern2mu x}} \right) = \dfrac{\omega_x}{ \zeta_{0 \mkern2mu x}}
 \end{equation*}
@@ -2419,7 +2489,53 @@ and
 
 Next, consider the asymptotes. With their slopes of $\pm \, 1$, they correspond to \emph{lightlike} world lines. In fact, let's go ahead and imagine that they \emph{are} the world lines of two pulses of light that were emitted infinitely long ago---one from far off in the negative $x$-direction and aimed in the positive $x$-direction, the other vice versa, and both with constant $y$ and $z$ coordinates identical to the accelerating traveler's. The pulses then intersect at the center event $(ct_{\mathrm{i}} - \omega_{x \mkern2mu \textrm{i} } / \zeta_{0 \mkern2mu x}, \, x_{\mathrm{i}} - \gamma_{\mkern1mu \mathrm{i}} / \zeta_{0 \mkern2mu x}, \, y_{\mathrm{i}}, \, z_{\mathrm{i}})$. Asymptotes being lines that the hyperbola approaches but never reaches, our qualifying inertial observers would say that one pulse approaches but never reaches the traveler, while the other was arbitrarily \emph{close} to the traveler in the distant past but always a smidge ahead. And as far as the accelerating traveler is concerned, the ``eternal" center event a fixed distance $|1 / \zeta_{0 \mkern2mu x}|$ away constitutes the pulses' entire existence!\footnote{Again, we're assuming that the traveler is using the time and space coordinates of the current instantaneous rest frame. There are other options.} They always were and always will be intersecting. We arrive at the inescapable conclusion that \emph{a traveler with constant proper acceleration will ``outrun" a pulse of light that's approaching from the direction opposite to the acceleration}, provided that the light is at least a proper distance $|1 / \zeta_{0 \mkern2mu x}|$ away.
 
-Since information can travel no faster than $\beta = 1$, it also follows that information about any event \emph{beyond} the ``approaching" asymptote (the one that comes arbitrarily close to the relevant hyperbola branch in the \emph{future}) will never reach the ever-accelerating traveler. That asymptote then represents an unphysical but nonetheless meaningful ``boundary" in spacetime---called the \textbf{future Rindler horizon}---that ``splits" the $ct$/$x$-plane into two regions: a ``knowable" region populated by events whose existence the traveler may learn of, and an ``unknowable" region populated by events whose existence the traveler must remain forever ignorant of.\footnote{The future Rindler horizon (named after Wolfgang Rindler) is quite like the \textbf{event horizon} of a \textbf{black hole}, though the former's existence depends on the traveler's ``choice" to continue accelerating, whereas the latter is a gravitational phenomenon.} The other asymptote (the one that was arbitrarily close to the accelerating traveler in the \emph{past}) is the \textbf{past Rindler horizon}, and it splits the $ct$/$x$-plane into two regions as well: a ``pingable" region that can receive light signals from the traveler, and an ``unpingable" region that cannot.\footnote{Don't mistake this for a statement that \emph{observers} in the unpingable region can never receive signals from the traveler. On the contrary, an inertial observer in the unpingable region will eventually ``cross" the past horizon and enter the pingable region. Our accelerating traveler, on the other hand, will never cross the future horizon and enter the unknowable region.} Altogether the asymptotes quarter the $ct$/$x$-plane into four \textbf{Rindler wedges}: one contains the traveler's world line and is both knowable and pingable; a second is knowable but unpingable (it's behind the past horizon but not the future horizon); a third is pingable but unknowable (behind the future horizon but not the past horizon); and the last is both unknowable and unpingable (behind both Rindler horizons).
+Since information can travel no faster than $\beta = 1$, it also follows that information about any event \emph{beyond} the ``approaching" asymptote (the one that comes arbitrarily close to the relevant hyperbola branch in the \emph{future}) will never reach the ever-accelerating traveler. That asymptote then represents an unphysical but nonetheless meaningful ``boundary" in spacetime---called the \textbf{future Rindler horizon}---that ``splits" the $ct$/$x$-plane into two regions: a ``knowable" region populated by events whose existence the traveler may learn of, and an ``unknowable" region populated by events whose existence the traveler must remain forever ignorant of.\footnote{The future Rindler horizon (named after Wolfgang Rindler) is quite like the \textbf{event horizon} of a \textbf{black hole}, though the former's existence depends on the traveler's ``choice" to continue accelerating, whereas the latter is a gravitational phenomenon.} The other asymptote (the one that was arbitrarily close to the accelerating traveler in the \emph{past}) is the \textbf{past Rindler horizon}, and it splits the $ct$/$x$-plane into two regions as well: a ``pingable" region that can receive light signals from the traveler, and an ``unpingable" region that cannot.\footnote{Don't mistake this for a statement that \emph{observers} in the unpingable region can never receive signals from the traveler. On the contrary, an inertial observer in the unpingable region will eventually ``cross" the past horizon and enter the pingable region. Our accelerating traveler, on the other hand, will never cross the future horizon and enter the unknowable region.} Altogether the asymptotes quarter the $ct$/$x$-plane into four \textbf{Rindler wedges}: one contains the traveler's world line and is both knowable and pingable; a second is knowable but unpingable (it's behind the past horizon but not the future horizon); a third is pingable but unknowable (behind the future horizon but not the past horizon); and the last is both unknowable and unpingable (behind both Rindler horizons). This is all illustrated in Figure \ref{f:hypmotion}.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[>={Stealth[length=8pt, width=5pt]}, scale=1.0]
+
+\def\r{1.5}  % semi-axis = 1/zeta_{0x} (visual units)
+
+% --- Rindler horizons (asymptotes) ---
+\begin{scope}
+\clip (-4.0,-3.8) rectangle (4.6,3.8);
+\draw[dashed] (0,0) -- (4.1,4.1);
+\draw[dashed] (0,0) -- (-4.1,-4.1);
+\draw[dashed] (0,0) -- (-4.1,4.1);
+\draw[dashed] (0,0) -- (4.1,-4.1);
+
+% World line: right branch of x^2 - (ct)^2 = r^2
+\draw[very thick, domain=-2.6:2.6, smooth, samples=120]
+  plot ({\r*cosh(\x)}, {\r*sinh(\x)});
+
+% Direction arrows on world line (upward = increasing proper time)
+\draw[->, very thick]
+  ({\r*cosh(0.50)}, {\r*sinh(0.50)}) -- ({\r*cosh(0.80)}, {\r*sinh(0.80)});
+\draw[->, very thick]
+  ({\r*cosh(-0.80)}, {\r*sinh(-0.80)}) -- ({\r*cosh(-0.50)}, {\r*sinh(-0.50)});
+\end{scope}
+
+% --- Axes ---
+\draw[->, thin] (-4.0,0) -- (4.8,0) node[right] {$x$};
+\draw[->, thin] (0,-3.8) -- (0,4.0) node[above] {$ct$};
+
+
+
+% --- Horizon labels ---
+\node[font=\small, rotate=43, inner sep=1.5pt] at (1.7, 2.25) {future Rindler horizon};
+\node[font=\small, rotate=-43, inner sep=1.5pt] at (1.7, -2.25) {past Rindler horizon};
+
+% --- Wedge labels ---
+\node[font=\footnotesize] at (3.8, 0.35) {(knowable and pingable)};
+\node[font=\footnotesize] at (0.08, 3.15) {(unknowable but pingable)};
+\node[font=\footnotesize] at (-3.0, 0.35) {(unknowable and unpingable)};
+\node[font=\footnotesize] at (-0.20, -3.0) {(knowable but unpingable)};
+
+\end{tikzpicture}
+\caption{The same ``hyperbolic motion" from Figure \ref{f:equilateralhyperbola}, but now demonstrating how the asymptotes function as ``Rindler horizons" that divide the $ct$/$x$ plane into four ``Rindler wedges."}
+\label{f:hypmotion}
+\end{figure}
 
 \subsubsection{Hyperbolic Motion with Four-Vectors}
 
