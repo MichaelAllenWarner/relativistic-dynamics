@@ -55,6 +55,7 @@
 \usepackage{tkz-euclide}
 \usepackage{tikz}
 \usepackage{tkz-tab}
+\usepackage{tikz-3dplot}
 \usetikzlibrary{calc, arrows.meta, decorations.pathmorphing}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{subcaption}
@@ -1861,7 +1862,7 @@ That's an invariant result: the dot product of the four-velocities of a pair of 
 \end{equation}
 For any timelike $\vv Q$ and $\vv W$ that are both future-pointing or both past-pointing, then, Equation \ref{eq:52} holds, and $\phi$ can be interpreted as the hyperbolic angle between them. Further, $\cosh{\phi}$ is the relative Lorentz factor of a pair of travelers whose four-velocities are parallel to $\vv Q$ and $\vv W$.
 
-\subsubsection{Rapidity}
+\subsubsection{Rapidity}\label{sssec:rapidity}
 
 Of course, the four-velocities that are parallel to $\vv Q$ and $\vv W$ in Equation \ref{eq:52} need not correspond with \emph{actual} travelers in a given scenario. For instance, we can define a timelike four-separation vector between a pair of (timelike-separated) events, and we can define a second one for another such pair, and then we're free to note that each is parallel to a ``four-velocity" and that dotting those four-velocities gives $\cosh{\phi}$ for the hyperbolic angle $\phi$ between them. But if these are merely ``abstract" separation vectors that don't correspond to physical trajectories, then we'd have little interest in the associated relative $\gamma$ or the rest of Equations \ref{eq:51}, because, well, $\gamma$ and $\beta$ of \emph{what}?
 
@@ -2946,7 +2947,7 @@ The disturbance propagates forever, and this is how information about $\vv J$ sp
 
 \subsubsection[Lorentz Four-Force; e and b Fields; Maxwell’s Equations]{Lorentz Four-Force; e and b Fields; Maxwell's Equations}\label{sssec:lff}
 
-We've claimed that Equation \ref{eq:gfp} is the electromagnetic field equation, but how do we know? Indeed, how do we know anything about electric charge in the first place? We know because of the following empirical result:\footnote{In the next section, we'll actually ``derive" it with the Euler--Lagrange equation.}
+We've claimed that Equation \ref{eq:gfp} is the electromagnetic field equation, but how do we know? Indeed, how do we know anything about electric charge in the first place? We know because of the following empirical result:\footnote{In Section \ref{sssec:ele}, we'll actually ``derive" it with the Euler--Lagrange equation.}
 \begin{equation}\label{eq:ff}
 \boxed{\vv F_{\textrm{L}} = q \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A)} \, .
 \end{equation}
@@ -2987,7 +2988,7 @@ e_y = \partial^y A^{ct} - \partial^{ct} A^y \qquad \qquad b_y = \partial^x A^z -
 e_z = \partial^z A^{ct} - \partial^{ct} A^z \qquad \qquad b_z = \partial^y A^x - \partial^x A^y 
 \end{aligned}
 \end{equation}
-(remember, $\partial^{ct}$ is the positive $ct$-partial, but the other components of $\partialup$ are \emph{negative} partials). Under a standard-configuration boost with relative rapidity $\phi$ between the frames, $e^\prime_x$ is:
+(remember, $\partial^{ct}$ is the positive $ct$-partial, but the other components of $\partialup$ are \emph{negative} partials). Under a standard-configuration boost with relative rapidity $\phi$ between the frames (see Section \ref{sssec:rapidity}), $e^\prime_x$ is:
 \begin{equation*}
 \begin{split}
 e^\prime_x &= \partial^{\mkern.5mu \prime \mkern1mu x} A^{\prime \mkern1mu ct} - \partial^{\mkern.5mu \prime \mkern1mu ct} A^{\prime \mkern1mu x} \\[2pt]
@@ -3039,7 +3040,7 @@ Do the same for $\vv b$, and simplify both expressions. Using a ``half-angle" id
 \end{aligned}
 } \, .
 \end{equation}
-Equivalently, though maybe less elegantly:\footnote{Equations \ref{eq:ebr} are rather analogous to the \href{https://en.wikipedia.org/wiki/Rodrigues\%27_rotation_formula}{Rodrigues rotation formula} (Wikipedia).}
+Equivalently, though maybe less elegantly:\footnote{We'll have more to say about the form of Equations \ref{eq:ebr} in Section \ref{sssec:rsv}.}
 \begin{equation}\label{eq:ebvec}
 \vv e^\prime = \gamma \left( \vv e + \vvbeta \times \vv b \right) - \dfrac{\gamma^2 (\vvbeta \cdot \vv e) \vvbeta}{\gamma + 1} \qquad \vv b^\prime = \gamma \left( \vv b - \vvbeta \times \vv e \right) - \dfrac{\gamma^2 (\vvbeta \cdot \vv b) \vvbeta}{\gamma + 1},
 \end{equation}
@@ -3104,6 +3105,80 @@ Next let's do the $x$-component. We need to show that $(- \del^\prime \times \vv
 We'll stop there, but beware that even though the $y$- and $z$-components transform trivially as they must (e.g., $(- \del^\prime \times \vv e^\prime - \partial^{\mkern.5mu \prime \mkern1mu ct} \vv b^\prime )_y = (- \del \times \vv e - \partial^{ct} \vv b )_y$), \emph{showing} this isn't trivial.
 
 Finally, aren't all the partial derivatives on the left sides of Maxwell's equations suggestive? Doesn't it seem like each four-vector pair should be expressible with $\partialup$ appearing as the \emph{first} derivative of something? We'll come back to this in Section \ref{ssec:mfd}, once we've developed more mathematical tools.
+
+
+\subsubsection{Rodrigues Rotation and the Riemann--Silberstein Vector}\label{sssec:rsv}
+
+Equations \ref{eq:ebr}---the arbitrary-direction Lorentz-boost formulas for $\vv e$ and $\vv b$ in terms of rapidity---deserve to be better known. Here they are again, in a slightly tweaked form (multiplying the $\vv b$ transformation by the imaginary unit $\textrm{i}$, and multiplying the middle term of the $\vv e$ transformation by $- \textrm{i}^2 = 1$):
+\begin{equation}\label{eq:tebr}
+\begin{aligned}
+\vv e^\prime &= \cosh{\phi} \; \vv e - \textrm{i} \sinh{\phi} \; \big[ \hatphi \times (\textrm i \vv b) \big] - 2 \sinh^2 \frac{\phi}{2} \; (\hatphi \cdot \vv e) \hatphi \\[4pt]
+\textrm{i} \vv b^\prime &= \cosh{\phi} \; (\textrm{i} \vv b) - \textrm{i} \sinh{\phi} \; (\hatphi \times \vv e) - 2 \sinh^2 \frac{\phi}{2} \; \big[ \hatphi \cdot (\textrm{i} \vv b) \big] \hatphi .
+\end{aligned}
+\end{equation}
+I'll explain the tweaks in a moment, but for now just note how similar our transformation equations are to the \textbf{Rodrigues rotation formula}, illustrated in Figure \ref{f:rodrigues}:
+\begin{equation}\label{eq:rodrigues}
+\vv v^\prime = \cos \theta \; \vv v + \sin \theta \; ( \vv{\hat{n}} \times \vv v ) + 2 \sin^2 \frac{\theta}{2} \; (\vv{\hat{n}} \cdot \vv v) \vv{\hat{n}} .
+\end{equation}
+Here, $\vv v^\prime$ is the result of rotating the three-vector $\vv v$ through an angle $\theta$ around the axis indicated by the unit vector $\vv{\hat{n}}$ (where $\vv{\hat{n}}$ intersects the tail of $\vv v$, and where the right-hand rule determines which way to rotate $\vv v$).\footnote{Wikipedia: \url{https://en.wikipedia.org/wiki/Rodrigues\%27_rotation_formula}}
+
+\begin{figure}[h]
+\centering
+\tdplotsetmaincoords{68}{105}
+\begin{tikzpicture}[tdplot_main_coords, scale=2.2,
+    >={Stealth[length=5pt, width=3.5pt]}]
+  % rotation axis
+  \draw[->] (0,0,0) -- (0,0,2.0) node[above] {$\vv{\hat{n}}$};
+  % v vector (in xz plane)
+  \draw[->, thick, shorten >=1pt] (0,0,0) -- (1.0, 0, 1.4) node[left, yshift=-8pt] {$\vv{v}$};
+  % v' vector (rotated 70 degrees around n-hat)
+  \draw[->, thick, shorten >=3pt] (0,0,0) -- ({cos(70)}, {sin(70)}, 1.4) node[right, yshift=-8pt, xshift=-4pt] {$\vv{v}^\prime$};
+  % dashed circle showing the cone of rotation
+  \tdplotdrawarc[dashed, thin]{(0,0,1.4)}{1.0}{0}{360}{}{};
+  % dashed radial lines from tips to axis
+  \draw[dashed, thin] (1.0, 0, 1.4) -- (0, 0, 1.4);
+  \draw[dashed, thin] ({cos(70)}, {sin(70)}, 1.4) -- (0, 0, 1.4);
+  % theta arc
+  \tdplotdrawarc[->, thin]{(0,0,1.4)}{0.45}{5}{65}{below, yshift=2pt, xshift=1pt}{$\theta$};
+\end{tikzpicture}
+\caption{The Rodrigues rotation formula gives $\vv v^\prime$, the result of rotating $\vv v$ by angle $\theta$ around the axis $\vv{\hat{n}}$. The dashed circle lies in the plane perpendicular to $\vv{\hat{n}}$ through the tip of $\vv v$; both tips lie on it.}\label{f:rodrigues}
+\end{figure}
+
+The tweaks in Equations \ref{eq:tebr} will allow us to show that this similarity is even deeper than it looks. Right now the major ``difference" is that the $\vv e$ transformation includes $\vv b$ and vice versa, whereas the Rodrigues rotation pertains only to a single vector. To ``fix" this, we define $\vv g = \vv e - \textrm{i} \vv b$ and use Equations \ref{eq:tebr} to obtain $\vv g ^\prime$ under the same Lorentz boost:
+\begin{equation*}
+\begin{split}
+\vv g ^\prime &= \vv e ^\prime - \textrm{i} \vv b ^\prime \\
+&= \left( \cosh{\phi} \; \vv e - \textrm{i} \sinh{\phi} \; \big[ \hatphi \times (\textrm i \vv b) \big] - 2 \sinh^2 \frac{\phi}{2} \; (\hatphi \cdot \vv e) \hatphi \right) \\
+& \quad - \left( \cosh{\phi} \; (\textrm{i} \vv b) - \textrm{i} \sinh{\phi} \; (\hatphi \times \vv e) - 2 \sinh^2 \frac{\phi}{2} \; \big[ \hatphi \cdot (\textrm{i} \vv b) \big] \hatphi \right) \\
+&= \cosh{\phi} \left( \vv e - \textrm{i} \vv b \right) + \textrm{i} \sinh{\phi} \big[ \hatphi \times (\vv e - \textrm i \vv b)  \big] - 2 \sinh^2 \frac{\phi}{2} \; \big[ \hatphi \cdot (\vv e - \textrm{i} \vv b) \big] \hatphi ,
+\end{split}
+\end{equation*}
+or
+\begin{equation}\label{eq:silbersteinboost}
+\vv g^\prime = \cosh{\phi} \; \vv g + \textrm{i} \sinh{\phi} \; ( \hatphi \times \vv g ) - 2 \sinh^2 \frac{\phi}{2} \; ( \hatphi \cdot \vv g ) \hatphi ,
+\end{equation}
+where the $\vv e$ and $\vv b$ transformations are embedded as the real and imaginary parts. The resemblance of Equation \ref{eq:silbersteinboost} to Equation \ref{eq:rodrigues} is very close now. In fact, Equation \ref{eq:silbersteinboost} has the \emph{same} form as the Rodrigues rotation formula for an imaginary angle!\footnote{You may have noticed that we've presented the Rodrigues rotation formula as an ``active" transformation (the vector itself is rotated), whereas our $\vv g$ transformation is ``passive" (we change \emph{coordinate systems}). This distinction doesn't matter for the algebraic comparison.} To see this, take Equation \ref{eq:rodrigues} and make the substitutions $\theta = \textrm{i} \phi$ and $\vv{\hat{n}} = \hatphi$:
+\begin{equation*}
+\vv v^\prime = \cos{(\textrm{i} \phi)} \; \vv v + \sin{(\textrm{i} \phi)} \; ( \hatphi \times \vv v ) + 2 \sin^2 \frac{\textrm{i} \phi}{2} \; (\hatphi \cdot \vv v) \hatphi .
+\end{equation*}
+Now invoke the identities $\cos{(\textrm{i} \phi)} = \cosh \phi$ and $\sin{(\textrm{i} \phi)} = \textrm{i} \sinh{\phi}$ (and thus $\sin^2 (\textrm{i} \phi) = \textrm{i}^2 \sinh^2 \phi = - \sinh^2 \phi$), and the result is Equation \ref{eq:silbersteinboost}.
+
+What should we make of all this? In Section \ref{sssec:rapidity}, we learned to interpret a Lorentz boost as a ``hyperbolic rotation" of space and time axes through the boost-rapidity $\phi$, analogous to an ordinary rotation of spatial axes in Euclidean space. Now we've learned that, under such a boost, the electric and magnetic fields transform in a way that can be written just like rotations of three-vectors in Euclidean space, provided we use $\vv e - \textrm{i} \vv b$ as the ``input vector" and $\textrm{i} \phi$ as the rotation ``angle." We should be careful not to over-interpret the connection to Euclidean rotation, but it certainly isn't coincidental.\footnote{A full understanding of this connection requires group theory.}
+
+One way to think about it is in terms of what's left invariant by the transformations. The Euclidean rotation described by the Rodrigues formula leaves the ``self--dot product" of the input-vector unchanged. When we insert $\vv g = \vv e - \textrm{i} \vv b$ and use $\textrm{i} \phi$, then, we should find that $\vv g \cdot \vv g$ is invariant under a Lorentz boost:\footnote{We avoid the word \emph{magnitude} here, since for a complex vector that would be $\vv g \cdot \vv g^*$, where $\vv g^*$ is the complex conjugate $\vv e + \textrm{i} \vv b$.}
+\begin{equation*}
+\vv g \cdot \vv g = (\vv e - \textrm{i} \vv b) \cdot (\vv e - \textrm{i} \vv b) = (e^2 - b^2) - 2 \mkern1mu \textrm{i} (\vv e \cdot \vv b).
+\end{equation*}
+We could go through the transformation to confirm it (using Equation \ref{eq:silbersteinboost}), but we already showed in Section \ref{sssec:lff} that the quantities $e^2 - b^2$ and $\vv e \cdot \vv b$ are invariant, so we don't have to. From this perspective, the appearance of the Rodrigues formula isn't mysterious: the fields can be packaged into a (complex) three-vector whose self--dot product is preserved under a Lorentz boost (a hyperbolic rotation), just as ordinary rotations preserve the self--dot product of (real) three-vectors; given this shared invariance, the common algebraic structure is no surprise.
+
+The complex conjugate of $\vv g$ is called the \textbf{Riemann--Silberstein vector}, $\vv g ^* = \vv e + \textrm{i} \vv b$. (We could have used $\vv g^*$ instead of $\vv g =  \vv e - \textrm{i} \vv b$ in everything we did above, but $\vv g$ made our algebra a little cleaner.) In quantum electrodynamics, these vectors $\vv e + \textrm{i} \vv b$ and $\vv e - \textrm{i} \vv b$ take on a more prominent role, but in classical electromagnetism they're mainly tools of mathematical convenience. We've just seen that they simplify the transformation of the fields under a Lorentz boost (in a way that reveals some insight), and also that they give the electromagnetic invariants with a single dot-product operation. Another bit of mathematical elegance can be found in how they're used to express the Maxwell equations (we'll stick with $\vv g = \vv e - \textrm{i} \vv b$):
+\begin{equation*}
+\begin{split}
+\del \cdot \vv g &= \rho \\[2pt]
+\textrm{i} \mkern1mu \del \times \vv g - \partial^{ct} \vv g &= \vv j .
+\end{split}
+\end{equation*}
+As an exercise, show that these two equations encode the four Equations \ref{eq:me} (hint: add $0 \mkern1mu \textrm{i}$ to the right sides). Later we'll meet some other important quantities built from the fields. They too have elegant formulations in terms of $\vv g$ and $\vv g^*$. For example, we'll meet $\vv e \times \vv b$, which is equivalently ${\vv g \times \vv g^* / (2 \textrm{i})}$, and $.5( e^2 + b^2 ) = .5 ( \vv g \cdot \vv g^* )$. But we won't comment further on the Riemann--Silberstein vectors. Bigger and better things await us in Section \ref{sec:dy} (``electrodyadics")!
 
 
 \subsubsection{A Variational Postlude: Lorentz Force via Euler--Lagrange}\label{sssec:ele}
