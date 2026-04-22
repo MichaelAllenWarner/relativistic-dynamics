@@ -2938,11 +2938,7 @@ Something beautiful happens when we impose the Lorenz gauge:
 \begin{equation}\label{eq:lg}
 \boxed{ \partialup \cdot \vv A = 0 } \quad \textrm{\footnotesize{ (Lorenz gauge condition)}}
 \end{equation}
-(again, see Section \ref{sssec:tp}). Equation \ref{eq:fp} is an inhomogeneous wave equation. We'll discuss its solutions in Section \ref{ssec:retpot}. It says simply that a non-zero value of the $\vv J$ field at an event in spacetime generates a commensurate disturbance in the (Lorenz-gauge) $\vv A$ field that propagates outward in space at $\beta = 1$:
-\begin{equation*}
-\partial^{ct} \partial^{ct} \vv A - \nabla ^2 \vv A = \vv J .
-\end{equation*}
-The disturbance propagates forever, and this is how information about $\vv J$ spreads. The sum of all such disturbances passing through a point in space at a given time determines the ``value" of $\vv A$ at that event (scare quotes because the value isn't uniquely defined---we have some ``gauge freedom" even within the Lorenz gauge, remember). Disturbances in regions where $\vv J$ vanishes \emph{everywhere} (\textbf{free space}) are called \textbf{electromagnetic waves}.
+(again, see Section \ref{sssec:tp}). Equation \ref{eq:fp} is an inhomogeneous wave equation. We'll discuss its solutions in Section \ref{ssec:retpot}. It says simply that a non-zero value of the $\vv J$ field at an event $\mathcal{Q}$ generates a commensurate disturbance in the (Lorenz-gauge) $\vv A$ field that propagates outward in all spatial directions at $\beta = 1$, reaching all events on $\mathcal{Q}$'s future light cone. (We ignore the backward-in-time past-light-cone possibility.) This is how information about $\vv J$ spreads. The sum of all such disturbances passing through a point in space at a given time determines the ``value" of $\vv A$ at that event (scare quotes because the value isn't uniquely defined---we have some ``gauge freedom" even within the Lorenz gauge, remember). Disturbances in regions where $\vv J$ vanishes (\textbf{free space}, with Lorenz-gauge $\Box \vv A = \textrm{\mbox{\boldmath$\emptyset$}}$) are called \textbf{electromagnetic waves}.
 
 
 \subsubsection[Lorentz Four-Force; e and b Fields; Maxwell’s Equations]{Lorentz Four-Force; e and b Fields; Maxwell's Equations}\label{sssec:lff}
@@ -3165,7 +3161,7 @@ Now invoke the identities $\cos{(\textrm{i} \phi)} = \cosh \phi$ and $\sin{(\tex
 
 What should we make of all this? In Section \ref{sssec:rapidity}, we learned to interpret a Lorentz boost as a ``hyperbolic rotation" of space and time axes through the boost-rapidity $\phi$, analogous to an ordinary rotation of spatial axes in Euclidean space. Now we've learned that, under such a boost, the electric and magnetic fields transform in a way that can be written just like rotations of three-vectors in Euclidean space, provided we use $\vv e - \textrm{i} \vv b$ as the ``input vector" and $\textrm{i} \phi$ as the rotation ``angle." We should be careful not to over-interpret the connection to Euclidean rotation, but it certainly isn't coincidental.\footnote{A full understanding of this connection requires group theory.}
 
-One way to think about it is in terms of what's left invariant by the transformations. The Euclidean rotation described by the Rodrigues formula leaves the ``self--dot product" of the input-vector unchanged. When we insert $\vv g^{*} = \vv e - \textrm{i} \vv b$ and use $\textrm{i} \phi$, then, we should find that $\vv g^{*} \cdot \vv g^{*}$ is invariant under a Lorentz boost:\footnote{We avoid the word \emph{magnitude} (or \emph{norm}) here, since for a complex vector that would be its dot product with its \emph{complex conjugate}, not its dot product with itself.}
+One way to think about it is in terms of what's left invariant by the transformations. The Euclidean rotation described by the Rodrigues formula leaves the ``self--dot product" of the input-vector unchanged. When we insert $\vv g^{*} = \vv e - \textrm{i} \vv b$ and use $\textrm{i} \phi$, then, we should find that $\vv g^{*} \cdot \vv g^{*}$ is invariant under a Lorentz boost:\footnote{We avoid the word \emph{magnitude} (or \emph{norm}) here, since for a complex vector that would involve its dot product with its \emph{complex conjugate}, not its dot product with itself.}
 \begin{equation*}
 \vv g^{*} \cdot \vv g^{*} = (\vv e - \textrm{i} \vv b) \cdot (\vv e - \textrm{i} \vv b) = (e^2 - b^2) - 2 \mkern1mu \textrm{i} (\vv e \cdot \vv b).
 \end{equation*}
@@ -3175,7 +3171,7 @@ Our $\vv g^{*} = \vv e - \textrm{i} \vv b$ is the complex conjugate of $\vv g = 
 \begin{equation*}
 \langle \del \cdot \vv g, \, - \textrm{i} \mkern2mu \del \times \vv g - \partial^{ct} \vv g \rangle = \langle \rho, \mkern2mu \vv j \rangle .
 \end{equation*}
-Exercise: show that this encodes the four Equations \ref{eq:me} and therefore is indeed a four-vector (see the four-vector discussion at the close of Section \ref{sssec:lff}). Later we'll meet some other important quantities built from the fields. They too have elegant formulations in terms of $\vv g$ and $\vv g^*$. For example, we'll meet $\vv e \times \vv b$, which is equivalently ${\vv g^* \times \vv g / (2 \textrm{i})}$, and ${.5( e^2 + b^2 ) = .5 ( \vv g^*  \cdot \vv g)}$. But we won't comment further on the Riemann--Silberstein vectors. Bigger and better things await us in Section \ref{sec:dy} (``electrodyadics")!
+Exercise: show that this encodes the four Maxwell equations and therefore is indeed a four-vector (see Equations \ref{eq:me}  et seq.). Later we'll meet some other important quantities built from the fields. They too have elegant formulations in terms of $\vv g$ and $\vv g^*$. For example, we'll meet $\vv e \times \vv b$, which is equivalently ${\vv g^* \times \vv g / (2 \textrm{i})}$, and ${.5( e^2 + b^2 ) = .5 ( \vv g^*  \cdot \vv g)}$. But we won't comment further on the Riemann--Silberstein vectors. Bigger and better things await us in Section \ref{sec:dy} (``electrodyadics")!
 
 
 \subsubsection{A Variational Postlude: Lorentz Force via Euler--Lagrange}\label{sssec:ele}
