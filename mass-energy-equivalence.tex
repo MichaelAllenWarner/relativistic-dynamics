@@ -3458,11 +3458,11 @@ u^\prime = e^2 \left[ \cosh^2{\phi} - 2 ( \hatphi \cdot \vv{\hat s}) \cosh{\phi}
 \end{equation*}
 or subbing in $u$ for $e^2$ and factoring:
 \begin{equation}\label{eq:edt}
-u^\prime = u \left( \cosh{\phi} - \sinh{\phi} \, \cos{\theta} \right)^2 ,
+u^\prime = u \left[ \cosh{\phi} - \sinh{\phi} \, ( \hatphi \cdot \vv{\hat s}) \right]^2 = u  \big[ \gamma ( 1 - \beta \cos{\theta} ) \big]^2,
 \end{equation}
-$\theta$ being the angle between the boost direction $\hatphi$ and the light wave's direction of propagation $\vv{\hat s}$.
+$\theta$ being the angle between the boost direction $\hatphi$ and the light wave's direction of propagation $\vv{\hat s}$ (we've switched to $\gamma$ and $\beta$ with Equations \ref{eq:51}).
 
-Comparing Equation \ref{eq:edt} to our ``target" energy transformation (Equation \ref{eq:8}), and knowing that we'll have to multiply $u^\prime$ by the transformed volume $V^\prime$ to get the transformed energy, we see that the volume transformation \emph{must} have the form $V^\prime = V / ( \cosh{\phi} - \sinh{\phi} \, \cos{\theta} )$. But what volume are we talking about here? The energy in question doesn't ``belong" to anything that has a rest frame; rather, it's being transported at the speed of light for all inertial observers ($\vv s = u \vv{\hat{k}}$). There's no proper volume in this context, and our ``volume contraction" formula will do us no good.\footnote{This is similar to how length contraction played no role in our derivation of the relativistic Doppler effect for wavelength back in Section \ref{sssec:rdf} (Equation \ref{eq:rdw}). In fact, it will turn out that wavelength and the volume we're seeking transform in the same way.}
+Comparing Equation \ref{eq:edt} to ${E^\prime = \gamma E (1 - \beta \cos{\theta})}$ (our ``target" transformation for light's energy, Equation \ref{eq:8}), and knowing that we'll have to multiply $u^\prime$ by the transformed volume $V^\prime$ to get the transformed energy, we see that the volume transformation \emph{must} have the form $V^\prime = V / [\gamma( 1 - \beta \cos{\theta} )]$. But what volume are we talking about here? The energy in question doesn't ``belong" to anything that has a rest frame; rather, it's being transported at the speed of light for all inertial observers ($\vv s = u \vv{\hat{k}}$). There's no proper volume in this context, and our ``volume contraction" formula will do us no good.\footnote{This is similar to how length contraction played no role in our derivation of the relativistic Doppler effect for wavelength back in Section \ref{sssec:rdf} (Equation \ref{eq:rdw}). In fact, it will turn out that wavelength and the volume we're seeking transform in the same way.}
 
 Here's one way to think about the volume we're interested in (more or less how Einstein did it). An omnipotent inertial observer ``pauses" time and places a make-believe sphere around a patch of space through which a monochromatic plane wave is propagating (or was, anyway, before time was paused). The sphere must be unphysical because when the observer ``unpauses" time, it travels \emph{with} the wave at the speed of light, always enclosing the same ``part" of the wave and thus the same amount of electromagnetic energy---equal to the wave's (average) energy density times the sphere's volume. What we want to do is write an equation for the sphere's surface in terms of position and time in the omnipotent observer's ``unprimed" frame, use the Lorentz transformation to sub in the ``primed" coordinates (without expecting the primed observer to regard the shape as a sphere), and calculate the shape's unprimed and primed volumes accordingly.
 
@@ -3522,8 +3522,8 @@ which is precisely the transformation we were expecting. Perhaps unsurprisingly,
 \begin{equation}\label{eq:len}
 \begin{split}
 E^\prime &= u^\prime V^\prime \\
-&= \left[ u \gamma^2 ( 1 - \beta \cos{\theta} )^2  \right] \left[ \dfrac{V}{\gamma ( 1 - \beta \cos{\theta} )} \right] \\[4pt]
-&= uV \, \dfrac{\gamma^2 ( 1 - \beta \cos{\theta} )^2}{\gamma ( 1 - \beta \cos{\theta} )} \\[5pt]
+&= \bigg( u \big[ \gamma ( 1 - \beta \cos{\theta} ) \big]^2  \bigg) \left( \dfrac{V}{\gamma ( 1 - \beta \cos{\theta} )} \right) \\[2pt]
+&= uV \, \dfrac{ \mathstrut_{\mathstrut_{\mathstrut}} \mkern-1mu \bigl[ \gamma ( 1 - \beta \cos{\theta} ) \bigr]^2}{\gamma ( 1 - \beta \cos{\theta} )} \\[4pt]
 E^\prime &= \gamma E \left( 1 - \beta \cos{\theta} \right) .
 \end{split}
 \end{equation}
