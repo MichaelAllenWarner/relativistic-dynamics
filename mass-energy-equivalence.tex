@@ -2928,7 +2928,7 @@ Whatever the electromagnetic field equation is, it certainly must \emph{permit} 
 \end{equation}
 (for some $\vv A$). How is charge-conservation enforced here? The four-divergence vanishes identically: ${\partialup \cdot (\Box \vv A) - \partialup \cdot \partialup (\partialup \cdot \vv A) = \Box (\partialup \cdot \vv A) - \Box (\partialup \cdot \vv A)}$. So the continuity equation $\partialup \cdot \vv J = 0$ is automatic (Equation \ref{eq:con}).
 
-The four-vector field ${\vv A = \vv A (\vv R) = \langle \Phi, \mkern1mu \vv a \rangle}$ introduced in Equation \ref{eq:gfp} is called the \textbf{four-potential}. As discussed in Section \ref{sssec:tp}, it isn't unique; gauge transformations taking $\vv A$ to $(\vv A + \partialup \psi)$ for any spacetime scalar field $\psi$ leave the ``double curl" unchanged. (Evidently there's a connection between gauge-invariance and charge-conservation!) This non-uniqueness of the four-potential doesn't bother us. We'll see that it's not $\vv A$ itself but rather \emph{derivatives} of $\vv A$ that matter physically, and they're uniquely defined and measurable.\footnote{Better put: \emph{physically observable electromagnetic phenomena} must be gauge-invariant, and in classical electrodynamics gauge-invariance is always ``achieved" by differentiating $\vv A$. In \emph{quantum} electrodynamics, however, gauge-invariance is sometimes ``achieved" by other means, and $\vv A$ may appear \emph{undifferentiated} in the mathematical description of observable phenomena (e.g., the \textbf{Aharonov--Bohm effect}); the potential is fundamental!}
+The four-vector field ${\vv A = \vv A (\vv R) = \langle \Phi, \mkern1mu \vv a \rangle}$ introduced in Equation \ref{eq:gfp} is called the \textbf{four-potential}. As discussed in Section \ref{sssec:tp}, it isn't unique; gauge transformations taking $\vv A$ to $(\vv A + \partialup \psi)$ for any spacetime scalar field $\psi$ leave the ``double curl" unchanged. (Evidently there's a connection between gauge-invariance and charge-conservation!) This non-uniqueness of the four-potential doesn't bother us. We'll see that it's not $\vv A$ itself but rather \emph{derivatives} of $\vv A$ that matter physically, and they're uniquely defined.\footnote{Better put: \emph{physically observable electromagnetic phenomena} must be gauge-invariant, and in classical electrodynamics gauge-invariance is always ``achieved" by differentiating $\vv A$. In \emph{quantum} electrodynamics, however, gauge-invariance is sometimes ``achieved" by other means, and $\vv A$ may appear \emph{undifferentiated} in the mathematical description of observable phenomena (e.g., the \textbf{Aharonov--Bohm effect}); the potential is fundamental!}
 
 Something beautiful happens when we impose the Lorenz gauge:
 \begin{equation}\label{eq:fp}
@@ -2937,7 +2937,7 @@ Something beautiful happens when we impose the Lorenz gauge:
 \begin{equation}\label{eq:lg}
 \boxed{ \partialup \cdot \vv A = 0 } \quad \textrm{\footnotesize{ (Lorenz gauge condition)}}
 \end{equation}
-(again, see Section \ref{sssec:tp}). Equation \ref{eq:fp} is an inhomogeneous wave equation. We'll discuss its solutions in Section \ref{ssec:retpot}. It says simply that a non-zero value of the $\vv J$ field at an event $\mathcal{Q}$ generates a commensurate disturbance in the (Lorenz-gauge) $\vv A$ field that propagates outward in all spatial directions at $\beta = 1$, reaching all events on $\mathcal{Q}$'s future light cone. (We ignore the backward-in-time past-light-cone possibility.) This is how information about $\vv J$ spreads. The sum of all such disturbances passing through a point in space at a given time determines the ``value" of $\vv A$ at that event (scare quotes because the value isn't uniquely defined---we have some ``gauge freedom" even within the Lorenz gauge, remember). Disturbances in regions where $\vv J$ vanishes (\textbf{free space}, with Lorenz-gauge $\Box \vv A = \textrm{\mbox{\boldmath$\emptyset$}}$) are called \textbf{electromagnetic waves}.
+(again, see Section \ref{sssec:tp}). Equation \ref{eq:fp} is an inhomogeneous wave equation. We'll discuss its solutions in Section \ref{ssec:retpot}. It says simply that a non-zero value of the $\vv J$ field at an event $\mathcal{Q}$ generates a commensurate disturbance in the (Lorenz-gauge) $\vv A$ field that propagates outward in all spatial directions at $\beta = 1$, reaching all events on $\mathcal{Q}$'s future light cone. (We ignore the backward-in-time past-light-cone possibility.) This is how information about $\vv J$ spreads. The sum of all such disturbances passing through a point in space at a given time determines the ``value" of $\vv A$ at that event (scare quotes because the value isn't uniquely defined---we have some ``gauge freedom" even within the Lorenz gauge, remember). The disturbances are called \textbf{electromagnetic waves}, though that term is sometimes reserved for disturbances in regions where $\vv J$ vanishes (\textbf{free space}).
 
 
 \subsubsection[Lorentz Four-Force; e and b Fields; Maxwell’s Equations]{Lorentz Four-Force; e and b Fields; Maxwell's Equations}\label{sssec:lff}
@@ -3068,16 +3068,16 @@ where we've again invoked the Lorenz condition $\partial^{ct} \Phi = - \del \cdo
 \begin{equation}\label{eq:me}
 \boxed{
 \begin{aligned}
-\del \cdot \vv e &= \rho \; \; && \textrm{(\textbf{Gauss's Law})} \\
-\del \times \vv b - \partial^{ct} \vv e &= \vv j \; \; && \textrm{(\textbf{Amp\`ere--Maxwell Law})} \\
+\del \cdot \vv e &= \rho \; \; && \textrm{(\textbf{Gauss's law})} \\
+\del \times \vv b - \partial^{ct} \vv e &= \vv j \; \; && \textrm{(\textbf{Amp\`ere--Maxwell law})} \\
 \del \cdot \vv b &= 0 \; \; && \textrm{(no name / no magnetic charge)} \\
-- \del \times \vv e - \partial^{ct} \vv b &= \vv 0 \; \; && \textrm{(\textbf{Faraday's Law} / no magnetic current)}
+- \del \times \vv e - \partial^{ct} \vv b &= \vv 0 \; \; && \textrm{(\textbf{Faraday's law} / no magnetic current)}
 \end{aligned}
 } \; .
 \end{equation}
 To obtain the ``homogeneous" pair, we've used Equations \ref{eq:eb} and two vector identities: the divergence of a curl is $0$, and the curl of a gradient is $\vv 0$.
 
-Wondering about the negative signs in Faraday's Law? Written this way, each pair of equations constitutes a four-vector. We've already demonstrated this for the \emph{inhomogeneous} pair, since our derivation was merely a component-wise breakdown of $\Box \vv A - \partialup ( \partialup \cdot \vv A) = \vv J$ (or rather of $\Box \vv A = \vv J$ in the Lorenz gauge). But we haven't yet shown that the \emph{homogeneous} pair is likewise a four-vector, $\langle \del \cdot \vv b , \, - \del \times \vv e - \partial^{ct} \vv b \rangle$ (equal to the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}} = \langle 0, \vv 0 \rangle$). How can we do so? Really, it suffices to compare the relationship between the inhomogeneous and homogeneous pairs (as we've written them) with the difference between how the electric and magnetic fields transform under a Lorentz boost (Equations \ref{eq:ebt}, \ref{eq:ebparperp}, \ref{eq:ebr}, or \ref{eq:ebvec}---take your pick). The magnetic field transforms just like the electric field, except that $\vv e$ goes to $\vv b$ and $\vv b$ goes to $- \vv e$, and that's precisely how one can ``go" from the inhomogeneous $\langle \del \cdot \vv e , \, \del \times \vv b - \partial^{ct} \vv e \rangle$ to the homogeneous $\langle \del \cdot \vv b , \, - \del \times \vv e - \partial^{ct} \vv b \rangle$ (with our negative signs). This is enough information to conclude that if the inhomogeneous pair makes a four-vector, then so does the homogeneous pair.
+Wondering about the negative signs in Faraday's law? Written this way, each pair of equations constitutes a four-vector. We've already demonstrated this for the \emph{inhomogeneous} pair, since our derivation was merely a component-wise breakdown of $\Box \vv A - \partialup ( \partialup \cdot \vv A) = \vv J$ (or rather of $\Box \vv A = \vv J$ in the Lorenz gauge). But we haven't yet shown that the \emph{homogeneous} pair is likewise a four-vector, $\langle \del \cdot \vv b , \, - \del \times \vv e - \partial^{ct} \vv b \rangle$ (equal to the zero four-vector $\textrm{\mbox{\boldmath $\emptyset$}} = \langle 0, \vv 0 \rangle$). How can we do so? Really, it suffices to compare the relationship between the inhomogeneous and homogeneous pairs (as we've written them) with the difference between how the electric and magnetic fields transform under a Lorentz boost (Equations \ref{eq:ebt}, \ref{eq:ebparperp}, \ref{eq:ebr}, or \ref{eq:ebvec}---take your pick). The magnetic field transforms just like the electric field, except that $\vv e$ goes to $\vv b$ and $\vv b$ goes to $- \vv e$, and that's precisely how one can ``go" from the inhomogeneous $\langle \del \cdot \vv e , \, \del \times \vv b - \partial^{ct} \vv e \rangle$ to the homogeneous $\langle \del \cdot \vv b , \, - \del \times \vv e - \partial^{ct} \vv b \rangle$ (with our negative signs). This is enough information to conclude that if the inhomogeneous pair makes a four-vector, then so does the homogeneous pair.
 
 But let's go ahead and brute-force a couple of components anyway. First we'll show that the time component $\del \cdot \vv b$ transforms correctly. We must have $\del^\prime \cdot \vv b^\prime = \gamma [\del \cdot \vv b - \beta (- \del \times \vv e - \partial^{ct} \vv b )_x]$ for a standard-configuration boost. Using Equations \ref{eq:ebt} and \ref{eq:fn} (${\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle}$, remember):
 \begin{equation*}
@@ -3350,11 +3350,11 @@ We have what we need from the Lorentz four-force density to take care of our unf
 
 \subsubsection{Light}\label{sssec:li}
 
-Light is an electromagnetic wave---a disturbance in the (Lorenz-gauge!) four-potential $\vv A = \vv A (\vv R)$ that propagates at $\beta = 1$ through free space (where the four-current density field $\vv J = \vv J (\vv R)$ is zero).\footnote{Our ``potential-first" approach in this section is \emph{only} valid in the Lorenz gauge. The results it generates for the $\vv e$ and $\vv b$ fields, however, are gauge-invariant.} To discuss it mathematically, then, means working with solutions to the \emph{homogeneous} wave equation
+Light is an electromagnetic wave in free space---a disturbance in the (Lorenz-gauge!) four-potential $\vv A = \vv A (\vv R)$ in regions where the four-current density field ${\vv J = \vv J (\vv R)}$ vanishes.\footnote{Our ``potential-first" approach in this section is \emph{only} valid in the Lorenz gauge. The results it generates for the $\vv e$ and $\vv b$ fields, however, are gauge-invariant.} To discuss it mathematically, then, means working with solutions to the \emph{homogeneous} wave equation
 \begin{equation*}
 \Box \vv A = \partial^{ct} \partial^{ct} \vv A - \nabla ^2 \vv A = \textrm{\mbox{\boldmath $\emptyset$}}
 \end{equation*}
-(Equation \ref{eq:fp} with $\vv J = \textrm{\mbox{\boldmath$\emptyset$}}$).\footnote{In Section \ref{ssec:retpot} we'll discuss solutions for the inhomogeneous case ($\vv J \neq \textrm{\mbox{\boldmath$\emptyset$}}$).} We won't go over \emph{how to solve} this second-order linear partial differential equation. Rather, we'll take for granted the result from Fourier analysis that any of its solutions can be expressed as a superposition of monochromatic plane waves, and that its general monochromatic solution is:
+(Equation \ref{eq:fp} with $\vv J = \textrm{\mbox{\boldmath$\emptyset$}}$).\footnote{Solutions to $\Box \vv A = \textrm{\mbox{\boldmath$\emptyset$}}$ idealize $\vv J = \textrm{\mbox{\boldmath$\emptyset$}}$ as a \emph{global} condition. In reality, of course, light waves \emph{aren't} sourceless. We'll discuss the general solutions to $\Box \vv A = \vv J$ in Section \ref{ssec:retpot}.} We won't go over \emph{how to solve} this second-order linear partial differential equation. Rather, we'll take for granted the result from Fourier analysis that any of its solutions can be expressed as a superposition of monochromatic plane waves, and that its general monochromatic solution is:
 \begin{equation}\label{eq:pw}
 \vv A (\vv R) = \Re \left \lbrace \bar{\vv A} \mathrm{e}^{\mathrm{i} \mkern.5mu \vv K \cdot \vv R} \right \rbrace ,
 \end{equation}
@@ -3606,7 +3606,7 @@ Before we move away from the subject of light, let's quickly re-derive the relat
 
 This ``derivation" is little more than an acknowledgment that the components of $\vv H$, like those of any four-vector, transform Lorentzianly. We have ${\vv H = \langle H^{ct}, \, h_x, \, h_y, \, h_z \rangle = \langle \nu , \, h \cos \theta, \, h_y, \, h_z \rangle = \langle \nu , \, \nu \cos \theta, \, h_y, \, h_z \rangle}$, where $\theta$ is the angle that the light's direction of propagation makes with the positive unprimed $x$-axis. Then under a standard-configuration boost, where the primed frame moves in the positive $x$-direction (so that $\theta$ is also the angle that the light's direction of propagation makes with the primed frame's velocity), the time component transforms like $\nu^{\mkern.75mu \prime} = \gamma (\nu - \beta h_x ) = \gamma \mkern1mu \nu (1 - \beta \cos \theta)$, and we're done! Much easier this way, eh? As an aside, it's now obvious that the unprimed frame in Equation \ref{eq:rdf} doesn't \emph{have} to be the light-source's rest frame. Finally, let's use the ``trick" from Section \ref{sssec:mc} to express the relationship between $\nu ^{\prime}$ and $\nu$ in a manifestly covariant form: $\nu ^{\prime} / \nu = (\vv B^{\textrm{p}} \cdot \vv H) / (\vv B^{\textrm{u}} \cdot \vv H)$, where $\vv B^{\textrm{p}}$ and $\vv B^{\textrm{u}}$ are respectively the normalized four-velocities of the primed and unprimed frames. (I avoid the symbols $\vv B ^{\prime}$ and $\vv B$ here because that notation might wrongly suggest a single underlying quantity; $\vv B^{\textrm{p}}$ and $\vv B^{\textrm{u}}$ are two \emph{different} four-vectors.)
 
-\subsection{Retarded Potential, Electrostatics, Magnetostatics}\label{ssec:retpot}
+\subsection[Retarded Potential; Statics; Jefimenko’s Equations]{Retarded Potential; Statics; Jefimenko's Equations}\label{ssec:retpot}
 
 \subsubsection{The Lorenz-Gauge Retarded Potential}
 
@@ -3616,7 +3616,7 @@ The Lorenz-gauge field equation $\Box \vv A = \vv J$ (Equation \ref{eq:fp}) can 
 \end{equation}
 where we have some symbols to explain.
 
-First, this is an integral taken over \emph{all of spacetime}, and $\dd \Omega_{s}$ refers to the \textbf{four-volume} element ($\dd x_{s} \, \dd y_{s} \, \dd z_{s} \, c \mkern2mu \dd t_{s}$) centered at the ``source event" $\vv R _{s}$, where the four-current density $\vv J$ is sampled. (To be clear, \emph{every event in spacetime} is accounted for as a source event in this integral.) The undecorated $\vv R$ is the ``field event" at which we're evaluating $\vv A$. Now, ``all of spacetime" should strike you as odd: if $\vv J$ generates disturbances in the Lorenz-gauge four-potential that travel outward through space at the speed of light, then shouldn't we only be ``sampling" $\vv J$ at events that are lightlike-separated from $\vv R$ and which precede $\vv R$ chronologically (i.e., events on the past light cone of $\vv R$)? The answer is yes, and that's where $G_{\textrm{ret}}$ comes in. It's the \textbf{manifestly covariant retarded Green's function}, and in effect it \emph{filters out} all events $\vv R_{s}$ that aren't on the past light cone of $\vv R$.\footnote{\label{fn:retg}If you're curious, it does this with the Dirac delta and the Heaviside step function: $G_{\textrm{ret}} (\vv R - \vv R_{s}) = \delta[ (\vv R - \vv R_{s})^2 ] \, \theta (ct - ct_{s}) / (2 \pi)$. Under integration, the delta function contributes only when its argument vanishes, so that only lightlike-separated source events ``survive." For such an $\vv R_{s}$, the sign of $ct - ct_{s}$ is Lorentz-invariant. Then $\theta (n) = 1$ if $n > 0$ and $\theta (n) = 0$ otherwise, completing the \emph{past}-light-cone requirement by ``forcing" $ct - ct_{s} > 0$. The retarded Green's function arises as a solution to $\Box G = \delta ( \vv R - \vv R_{s} )$.}
+First, this is an integral taken over \emph{all of spacetime}, and $\dd \Omega_{s}$ refers to the \textbf{four-volume} element ($\dd x_{s} \, \dd y_{s} \, \dd z_{s} \, c \mkern2mu \dd t_{s}$) centered at the ``source event" $\vv R _{s}$, where the four-current density $\vv J$ is sampled. (To be clear, \emph{every event in spacetime} is accounted for as a source event in this integral.) The undecorated $\vv R$ is the ``field event" at which we're evaluating $\vv A$. Now, ``all of spacetime" should strike you as odd: if $\vv J$ generates disturbances in the Lorenz-gauge four-potential that travel outward through space at the speed of light, then shouldn't we only be ``sampling" $\vv J$ at events that are lightlike-separated from $\vv R$ and which precede $\vv R$ chronologically (i.e., events on the past light cone of $\vv R$)? The answer is yes, and that's where $G_{\textrm{ret}}$ comes in. It's the \textbf{manifestly covariant retarded Green's function}, and in effect it \emph{filters out} all events $\vv R_{s}$ that aren't on the past light cone of $\vv R$.\footnote{\label{fn:retg}If you're curious, it does this with the Dirac delta and Heaviside step functions: $G_{\textrm{ret}} (\vv R - \vv R_{s}) = \delta[ (\vv R - \vv R_{s})^2 ] \, \theta (ct - ct_{s}) / (2 \pi)$. Under integration, the delta function contributes only when its argument vanishes, so that only lightlike-separated source events ``survive." For such an $\vv R_{s}$, the sign of $ct - ct_{s}$ is Lorentz-invariant. Then $\theta (n) = 1$ if $n > 0$, and $\theta (n) = 0$ otherwise, completing the \emph{past}-light-cone requirement by ``forcing" $ct - ct_{s} > 0$. The $2 \pi$ makes $G_{\textrm{ret}}$ a solution to $\Box G = \delta ( \vv R - \vv R_{s} )$, so that the d'Alembertian of Equation \ref{eq:retfp} gives $\Box \vv A (\vv R) = \vv J(\vv R)$ (not $2 \pi \vv J$). Consult a real textbook for details.}
 
 Equation \ref{eq:retfp} is known as the \textbf{retarded four-potential} because in a given inertial frame, a contributing source event $\vv R_{s}$ on the past light cone of $\vv R$ has a time coordinate $ct_{s} = ct - \vert \vv r - \vv r_{s} \vert \equiv ct_{\textrm{ret}}$, called the \textbf{retarded time} (the time coordinate of $\vv R$ \emph{minus} the time it takes light to travel from the source event's position $\vv r_{s}$ to the field event's position $\vv r$). A presumably unphysical solution involving the \textbf{advanced time} $ct_{\textrm{adv}} \equiv ct + \vert \vv r - \vv r_{s} \vert$ is called the \textbf{advanced four-potential}.
 
@@ -3633,18 +3633,17 @@ Here, the integration is over \emph{all of space} for the chosen inertial frame,
 &= \dfrac{\delta ( ct_{s} - ct - \vert \vv r - \vv r_{s} \vert ) + \delta ( ct_{s} - ct + \vert \vv r - \vv r_{s} \vert )}{2 \vert \vv r - \vv r_{s} \vert} ,
 \end{aligned}
 \end{equation*}
-where the last step follows from $\delta$'s \href{https://en.wikipedia.org/wiki/Dirac_delta_function\#Composition_with_a_function}{function-composition identity} (Wikipedia), treating $(\vv R - \vv R_{s})^2$ as a function of $ct_{s}$ (the variable we'll be integrating over momentarily). Explicitly, the roots of $(\vv R - \vv R_{s})^2$ are $ct_s = ct \pm \vert \vv r - \vv r_{s} \vert$, the derivative is $-2 (ct - ct_{s})$, and the derivative \emph{at} the roots evaluates to $\pm 2 \vert \vv r - \vv r_{s} \vert$ (which share an absolute value). That gives:
+where the last step follows from $\delta$'s \href{https://en.wikipedia.org/wiki/Dirac_delta_function\#Composition_with_a_function}{function-composition identity} (Wikipedia), treating $(\vv R - \vv R_{s})^2$ as a function of $ct_{s}$ (the variable we'll be integrating over momentarily). Explicitly, the roots of $(\vv R - \vv R_{s})^2$ are $ct_s = ct \pm \vert \vv r - \vv r_{s} \vert$, the derivative is $-2 (ct - ct_{s})$, and the derivative \emph{at} the roots evaluates to $\pm 2 \vert \vv r - \vv r_{s} \vert$ (which share an absolute value). So:
 \begin{equation*}
-\begin{aligned}
-G_{\textrm{ret}} (\vv R - \vv R_{s}) &= \dfrac{\delta ( ct_{s} - ct_{\textrm{adv}} ) + \delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi \vert \vv r - \vv r_{s} \vert} \; \theta ( ct - ct_{s} ) \\[2pt]
-&= \dfrac{\delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi \vert \vv r - \vv r_{s} \vert}
-\end{aligned}
+G_{\textrm{ret}} (\vv R - \vv R_{s}) = \dfrac{\delta ( ct_{s} - ct_{\textrm{adv}} ) + \delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi \vert \vv r - \vv r_{s} \vert} \; \theta ( ct - ct_{s} ) = \dfrac{\delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi \vert \vv r - \vv r_{s} \vert}
 \end{equation*}
-(the Heaviside function kills the ``advanced" term, because ${ct - ct_{\textrm{adv}} < 0}$). Then express Equation \ref{eq:retfp} in the form:
+($\theta$ kills the ``advanced" term, because ${ct - ct_{\textrm{adv}} < 0}$). Now write Equation \ref{eq:retfp} like:
 \begin{equation*}
 \vv A(ct, \vv r) = \dfrac{1}{4 \pi} \iint \dfrac{\vv J(ct_{s}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert}  \; \delta ( ct_{s} - ct_{\textrm{ret}} )  \; c \, \dd t_{s} \, \dd V_{s},
 \end{equation*}
 and carry out the $ct_{s}$-integral to obtain Equation \ref{eq:retfp2}.}
+
+By the way, Equation \ref{eq:retfp} or \ref{eq:retfp2} for a \emph{single moving point-charge source} is called the \textbf{Li\'enard--Wiechert potential}. We won't cover it.
 
 \subsubsection{Time-Independent Sources}
 
@@ -3701,6 +3700,124 @@ for the magnetostatic force acting on a test particle with charge $q$ and veloci
 Although the magnetostatic Equation \ref{eq:magnetostaticf} resembles an inverse-square law, it isn't one, really---at least, not in the usual sense of the term. Yes, there's an inverse-square dependence on distance for any given $\dd V_{s}$, but because the force isn't generally directed along the line of sight, that dependence isn't preserved upon integration for an extended source (and a time-independent current is necessarily extended). Coulomb's law, by contrast, describes a \emph{central} force that's ``genuinely" inverse-square (Equation \ref{eq:coulomb}): a spherically symmetric charged body exerts an electrostatic force on external charges that falls off as the inverse square of the distance to its center.
 
 There's an awful lot more to electrostatics and magnetostatics than this! We've merely shown how to obtain the conditions and some key equations from our four-vector formalism. In Section \ref{ssec:covstatics} we'll express those conditions in a manifestly covariant way, but otherwise we won't explore these topics further.
+
+
+\subsubsection[Jefimenko’s Equations (The Retarded Fields)]{Jefimenko's Equations (The Retarded Fields)}
+
+You may have noticed that we moved directly from the retarded four-potential to statics, only bothering with the electric and magnetic fields in the time-independent domain. We did this just because obtaining the retarded fields from the retarded potential is cumbersome---a bit of a flow-interrupter! Now that we've covered statics, however, we should address this omission. The retarded fields aren't particularly useful in practice, but conceptually they're very important.
+
+First, in terms of components, the retarded four-potential Equation \ref{eq:retfp2} gives the scalar potential:
+\begin{equation}\label{eq:rtsp}
+\Phi(ct, \vv r) = \dfrac{1}{4 \pi} \int \dfrac{\rho (ct_{\textrm{ret}}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s}
+\end{equation}
+and the vector three-potential:
+\begin{equation}\label{eq:rtvp}
+\vv a(ct, \vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv j (ct_{\textrm{ret}}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s} .
+\end{equation}
+As a reminder, the potentials are evaluated at the field event ${\vv R = \langle ct, \vv r \rangle}$, the integrations are over all of space for the chosen inertial frame, $\rho$ and $\vv j$ are sampled at source events $\vv R_{s} = \langle ct_{\textrm{ret}}, \vv r_{s} \rangle $ with retarded time defined by $ct_{\textrm{ret}} = ct - \vert \vv r - \vv r_{s} \vert$, and the volume element $\dd V_{s} = \dd x_{s} \, \dd y_{s} \, \dd z_{s}$ is centered on $\vv r_{s}$ at that position's corresponding $ct_{\textrm{ret}}$. By the definitions of $\vv e$ and $\vv b$ (Equations \ref{eq:eb}), Equations \ref{eq:rtsp} and \ref{eq:rtvp} give:
+\begin{equation*}
+\vv e(ct, \vv r) = - \dfrac{1}{4 \pi} \left( \del \, \int \dfrac{\rho (ct_{\textrm{ret}}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s} \, + \, \partial^{ct} \int \dfrac{\vv j (ct_{\textrm{ret}}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s} \right) 
+\end{equation*}
+and:
+\begin{equation*}
+\vv b(ct, \vv r) = \dfrac{1}{4 \pi} \, \del \times \int \dfrac{\vv j (ct_{\textrm{ret}}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s} .
+\end{equation*}
+Once again, the differential operators can go inside the integrals (because they operate on functions of $ct$ or $\vv r$, and $\dd V_{s}$ is independent of these variables), so:
+\begin{equation*}
+\vv e(ct, \vv r) = - \dfrac{1}{4 \pi} \int \left( \del \, \dfrac{\rho (ct_{\textrm{ret}}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, + \, \partial^{ct} \, \dfrac{\vv j (ct_{\textrm{ret}}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \right) \, \dd V_{s}
+\end{equation*}
+and:
+\begin{equation*}
+\vv b(ct, \vv r) = \dfrac{1}{4 \pi} \int \del \times \, \dfrac{\vv j (ct_{\textrm{ret}}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s} .
+\end{equation*}
+For the manipulations we'll need to make, it will be convenient to introduce some shorthand. Let's now define $\vv d \equiv \vv r - \vv r_{s}$, with magnitude $d = \vert \vv r - \vv r_{s} \vert$ and unit vector $\vv{\hat{d}} = \vv d / d = (\vv r - \vv r_{s}) / \vert \vv r - \vv r_{s} \vert$. Let's also define $[ \rho ] \equiv \rho (ct_{\textrm{ret}}, \vv r _{s})$ and $[\mkern2mu \vv j \mkern1.5mu ] \equiv \vv j (ct_{\textrm{ret}}, \vv r _{s})$. Our retarded fields are then:
+\begin{equation*}
+\vv e(ct, \vv r) = - \dfrac{1}{4 \pi} \int \left( \dfrac{\del [ \rho ]}{d} \, + \, [\rho] \del d^{-1}  \, +  \, \dfrac{ \partial^{ct} [\mkern2mu \vv j \mkern1.5mu ]}{d} \right) \, \dd V_{s}
+\end{equation*}
+and:
+\begin{equation*}
+\vv b(ct, \vv r) = \dfrac{1}{4 \pi} \int \left( \dfrac{ \del \times [\mkern2mu \vv j \mkern1.5mu ] }{d} \, - \, [\mkern2mu \vv j \mkern1.5mu ] \times \del d^{-1} \right) \, \dd V_{s} ,
+\end{equation*}
+where we've used some product rules and the fact that $d$ is independent of $ct$. Next, by Equation \ref{eq:gradoverr}, we have $\del d^{-1} = - \vv d / d^3 = - \vv{\hat{d}} / d^2$:
+\begin{equation}\label{eq:ref1}
+\vv e(ct, \vv r) = - \dfrac{1}{4 \pi} \int \left( \dfrac{\del [ \rho ]}{d} \, - \, \dfrac{[\rho]}{d^2} \, \vv{\hat{d}}  \, +  \, \dfrac{ \partial^{ct} [\mkern2mu \vv j \mkern1.5mu ]}{d} \right) \, \dd V_{s}
+\end{equation}
+and:
+\begin{equation}\label{eq:rbf1}
+\vv b(ct, \vv r) = \dfrac{1}{4 \pi} \int \left( \dfrac{ \del \times [\mkern2mu \vv j \mkern1.5mu ] }{d} \, + \, \dfrac{[\mkern2mu \vv j \mkern1.5mu ] \times \vv{\hat{d}}}{d^2} \right) \, \dd V_{s} .
+\end{equation}
+
+We're getting close, but the only derivatives of the sources we want to see on the right are \emph{time}-derivatives (not gradients or curls), so we've still got two terms to simplify. Start with $\del [\rho]$. By the chain rule (think of $\del$ here as ``$\dd / \dd \vv r$"), and using $\partial(ct_{\mathrm{ret}})/\partial(ct) = 1$ (because $ct_{\mathrm{ret}} = ct - \vert \vv r - \vv r_{s} \vert$, and $\vert \vv r - \vv r_{s} \vert = d$ doesn't depend on $ct$):
+\begin{equation*}
+\begin{aligned}
+\del \rho (ct_{\textrm{ret}}, x_{s}, y_{s}, z_{s}) &= \dfrac{\partial [\rho]}{\partial (ct_{\mathrm{ret}})} \del ct_{\mathrm{ret}} + \dfrac{\partial [\rho]}{\partial x_{s}} \del x_{s} + \dfrac{\partial [\rho]}{\partial y_{s}} \del y_{s} + \dfrac{\partial [\rho]}{\partial z_{s}} \del z_{s} \\[3pt]
+&=  \dfrac{\partial [\rho] }{\partial (ct_{\mathrm{ret}})} \dfrac{\partial (ct_{\mathrm{ret}})}{\partial (ct)} \, \del (ct - \vert \vv r - \vv r_{s} \vert) \\[3pt]
+&= \dfrac{\partial [\rho]}{\partial (ct)} \, \del (ct - d) \\[3pt]
+\del [\rho] &= - \partial^{ct} [\rho] \, \del d ,
+\end{aligned}
+\end{equation*}
+where all three $\vv r_{s}$ terms in the first line vanished because $\del$ only hits functions of $\vv r$ (not $\vv r_{s}$). As for $\del d$, the component-wise approach we took to finding $\del d^{-1} = - \vv d / d^3 = - \vv{\hat{d}} / d^2$ (Equation \ref{eq:gradoverr}) is fine:
+\begin{equation*}
+\begin{aligned}
+(\del d)_x &= \dfrac{\partial}{\partial x} \, ( \vv d \cdot \vv d ) ^{1/2} \\[3pt]
+&= \dfrac{1}{2} \, (d^2)^{-1/2} \, \dfrac{\partial}{\partial x} (\vv d \cdot \vv d) \\[3pt]
+&= \dfrac{1}{2d} \, \dfrac{\partial}{\partial x} (d_x^2 + d_y^2 + d_z^2) \\[3pt]
+&= \dfrac{d_x}{d} ,
+\end{aligned}
+\end{equation*}
+and likewise for the other components, giving:
+\begin{equation}\label{eq:deld}
+\del d = \vv{\hat{d}} .
+\end{equation}
+So:
+\begin{equation}\label{eq:delrho}
+\del [\rho] = - \partial^{ct} [\rho] \, \vv{\hat{d}} .
+\end{equation}
+
+The last piece is $\del \times [\mkern2mu \vv j \mkern1.5mu ]$. Consider the $x$-component:
+\begin{equation*}
+(\del \times [\mkern2mu \vv j \mkern1.5mu ])_x = \dfrac{\partial [\mkern1.5mu j_z]}{\partial y} - \dfrac{\partial [\mkern1.5mu j_y]}{\partial z} .
+\end{equation*}
+Focus on the first term for now. Apply the chain rule, where again the $\vv r_{s}$ terms will vanish for the same reason as before, and where again we can bring in $\partial(ct_{\mathrm{ret}})/\partial(ct) = 1$ for free:
+\begin{equation*}
+\begin{aligned}
+\dfrac{\partial j_z (ct_{\mathrm{ret}}, x_{s}, y_{s}, z_{s})}{\partial y} &= \dfrac{\partial (ct_{\mathrm{ret}})}{\partial y} \dfrac{\partial  [\mkern1.5mu j_z]}{\partial (ct_{\mathrm{ret}})} + \dfrac{\partial x_{s}}{\partial y} \dfrac{\partial  [\mkern1.5mu j_z]}{\partial x_{s}} + \dfrac{\partial y_{s}}{\partial y} \dfrac{\partial  [\mkern1.5mu j_z]}{\partial y_{s}} + \dfrac{\partial z_{s}}{\partial y} \dfrac{\partial  [\mkern1.5mu j_z]}{\partial z_{s}} \\[3pt]
+&= \dfrac{\partial }{\partial y} \left( ct - d \right) \, \dfrac{\partial  [\mkern1.5mu j_z]}{\partial (ct_{\mathrm{ret}})} \dfrac{\partial (ct_{\mathrm{ret}})}{\partial (ct)} \\[3pt]
+\dfrac{\partial [\mkern1.5mu j_z]}{\partial y} &= - \partial^{ct}  [\mkern1.5mu j_z] \, \dfrac{\partial d}{\partial y} .
+\end{aligned}
+\end{equation*}
+The same procedure for the second term of the $x$-component gives:
+\begin{equation*}
+(\del \times [\mkern2mu \vv j \mkern1.5mu ])_x = \partial^{ct}  [\mkern1.5mu j_y] \, \dfrac{\partial d}{\partial z} - \partial^{ct}  [\mkern1.5mu j_z] \, \dfrac{\partial d}{\partial y} ,
+\end{equation*}
+which means:
+\begin{equation*}
+\del \times [\mkern2mu \vv j \mkern1.5mu ] = (\partial^{ct} [\mkern2mu \vv j \mkern1.5mu ]) \times \del d ,
+\end{equation*}
+or (by Equation \ref{eq:deld}):
+\begin{equation}\label{eq:curlj}
+\del \times [\mkern2mu \vv j \mkern1.5mu ] = (\partial^{ct} [\mkern2mu \vv j \mkern1.5mu ]) \times \vv{\hat{d}} .
+\end{equation}
+
+Now we plug Equations \ref{eq:delrho} and \ref{eq:curlj} into Equations \ref{eq:ref1} and \ref{eq:rbf1}, and after some minor simplifying and rearranging, we get:
+\begin{equation}\label{eq:ref2}
+\vv e(ct, \vv r) = \dfrac{1}{4 \pi} \int \left( \dfrac{[\rho]}{d^2} \, \vv{\hat{d}}  \, + \, \dfrac{\partial^{ct} [\rho] }{d} \, \vv{\hat{d}} \, -  \, \dfrac{ \partial^{ct} [\mkern2mu \vv j \mkern1.5mu ]}{d} \right) \, \dd V_{s}
+\end{equation}
+and:
+\begin{equation}\label{eq:rbf2}
+\vv b(ct, \vv r) = \dfrac{1}{4 \pi} \int \left( \dfrac{[\mkern2mu \vv j \mkern1.5mu ] }{d^2} \, + \, \dfrac{ \partial^{ct} [\mkern2mu \vv j \mkern1.5mu ] }{d} \right) \times \mkern2mu \vv{\hat{d}} \; \dd V_{s} .
+\end{equation}
+These equations give the electric and magnetic fields at a given ``field event" in terms of the sources and their time-derivatives everywhere else in space at the appropriate retarded times. ``Information" about the presence and rate-of-change of $\rho$ and $\vv j$ at each ``source event" propagates outward in all spatial directions at the speed of light, as a disturbance in the $\vv e$ and $\vv b$ fields. The sum of all such disturbances that reach the field event determines the values of $\vv e$ and $\vv b$ at that point in spacetime. This is effectively the story we told in Section \ref{sssec:fp} about the Lorenz-gauge field equation $\Box \vv A = \vv J$, but now we get it in a more explicit form in terms of the fields, with no caveats about gauge. For time-independent sources, of course, our new equations for the retarded fields reduce to Equations \ref{eq:electrostatice} and \ref{eq:biot}, since the time-derivatives vanish and the sources become $\rho (\vv r_{s})$ and $\vv j (\vv r_{s})$.
+
+Equations \ref{eq:ref2} and \ref{eq:rbf2} are usually called \textbf{Jefimenko's equations} after Oleg Jefimenko, though he was certainly not the first person to write down equations for the retarded fields. He did help \emph{popularize} them, however, and he correctly emphasized the following point that these equations lay bare, which may seem obvious but which is sometimes missed:
+
+The \emph{(retarded) sources alone} determine the values of $\vv e$ and $\vv b$.
+
+The reason this point is sometimes missed is that the phenomenon of \textbf{induction} is often interpreted as if a changing field of one type ``generates" or ``causes" a circulating field of the other. Along these lines, the Amp\'ere--Maxwell law and Faraday's law (Equations \ref{eq:me}) are commonly written like this:
+\begin{equation*}
+\del \times \vv b = \vv j + \partial^{ct} \vv e  \qquad \quad \del \times \vv e  = - \partial^{ct} \vv b ,
+\end{equation*}
+with the changing field appearing on the right side, as if it were a ``source" for the field on the left. The $\partial^{ct} \vv e$ term is even called the \textbf{displacement current}, reinforcing the ``source of $\vv b$" interpretation. This interpretation is a defensible heuristic in many practical contexts, but strictly speaking \emph{it is wrong!} The changing field is always \emph{accompanied by} a circulating field of the other kind, but the ``induced" field is \emph{at the same event} as the changing field (the same place at the same time). There's no ``causal" relationship here. Relatedly, it's often said that a light wave ``self-propagates" because the changing electric and magnetic fields ``generate" each other ad infinitum, but as we discussed in Section \ref{sssec:li}, the $\vv e$ and $\vv b$ fields in the wave are always mutually \emph{in phase}. Again, the differential Maxwell equations tell us how the fields are related to each other \emph{at the same event}, not that what one field is doing somehow influences the other. Yes, the $\rho$ and $\vv j$ in Maxwell's equations pertain to the same event as the fields, too, but there's no field/field equivalent to the source/field Jefimenko equations.
 
 \clearpage
 
