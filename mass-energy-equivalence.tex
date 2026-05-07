@@ -3754,7 +3754,7 @@ We're getting close, but the only derivatives of the sources we want to see on t
 \del [\rho] &= - \partial^{ct} [\rho] \, \del d ,
 \end{aligned}
 \end{equation*}
-where all three $\vv r_{s}$ terms in the first line vanished because $\del$ only hits functions of $\vv r$ (not $\vv r_{s}$). As for $\del d$, the component-wise approach we took to finding $\del d^{-1} = - \vv d / d^3 = - \vv{\hat{d}} / d^2$ (Equation \ref{eq:gradoverr}) is fine:
+where all three $\vv r_{s}$ terms in the first line vanished because $\del$ only hits functions of $\vv r$ (not $\vv r_{s}$), and where we used another chain rule at the end to get the $ct$-derivative. As for $\del d$, the component-wise approach we took to finding $\del d^{-1} = - \vv d / d^3 = - \vv{\hat{d}} / d^2$ (Equation \ref{eq:gradoverr}) is fine:
 \begin{equation*}
 \begin{aligned}
 (\del d)_x &= \dfrac{\partial}{\partial x} \, ( \vv d \cdot \vv d ) ^{1/2} \\[3pt]
@@ -3765,7 +3765,7 @@ where all three $\vv r_{s}$ terms in the first line vanished because $\del$ only
 \end{equation*}
 and likewise for the other components, giving:
 \begin{equation}\label{eq:deld}
-\del d = \vv{\hat{d}} .
+\del d = \vv d / d = \vv{\hat{d}} .
 \end{equation}
 So:
 \begin{equation}\label{eq:delrho}
@@ -3815,7 +3815,7 @@ The reason this point is sometimes missed is that the phenomenon of \textbf{indu
 \begin{equation*}
 \del \times \vv b = \vv j + \partial^{ct} \vv e  \qquad \quad \del \times \vv e  = - \partial^{ct} \vv b ,
 \end{equation*}
-with the changing field appearing on the right side, as if it were a ``source" for the field on the left. The $\partial^{ct} \vv e$ term is even called the \textbf{displacement current}, reinforcing the ``source of $\vv b$" interpretation. This interpretation is a defensible heuristic in many practical contexts, but strictly speaking \emph{it is wrong!} The changing field is always \emph{accompanied by} a circulating field of the other kind, but the ``induced" field is \emph{at the same event} as the changing field (the same place at the same time). There's no ``causal" relationship here. Relatedly, it's often said that a light wave ``self-propagates" because the changing electric and magnetic fields ``generate" each other ad infinitum, but as we discussed in Section \ref{sssec:li}, the $\vv e$ and $\vv b$ fields in the wave are always mutually \emph{in phase}. Again, the differential Maxwell equations tell us how the fields are related to each other \emph{at the same event}, not that what one field is doing somehow influences the other. Yes, the $\rho$ and $\vv j$ in Maxwell's equations pertain to the same event as the fields, too, but there's no field/field equivalent to the source/field Jefimenko equations.
+with the changing field appearing on the right side, as if it were a ``source" for the field on the left. The $\partial^{ct} \vv e$ term is even called the \textbf{displacement current}, reinforcing the ``source of $\vv b$" interpretation. This interpretation is a defensible heuristic in many practical contexts, but strictly speaking \emph{it is wrong!} The changing field is always \emph{accompanied by} a circulating field of the other kind, but the ``induced" field is \emph{at the same event} as the changing field (the same place at the same time). There's no ``causal" relationship here. Relatedly, it's often said that a light wave ``self-propagates" because the changing electric and magnetic fields ``generate" each other ad infinitum, but as we discussed in Section \ref{sssec:li}, the $\vv e$ and $\vv b$ fields in the wave are always mutually \emph{in phase}. Again, the differential Maxwell equations tell us how the fields are related to each other \emph{at the same event}, not that what one field is doing somehow influences the other. Yes, the $\rho$ and $\vv j$ in Maxwell's equations pertain to the same event as the fields, too, but there's no field/field equivalent to the source/field Jefimenko equations. The charge and current densities---\emph{not} time-derivatives of $\vv e$ and $\vv b$ themselves---are what generate the value-determining disturbances in the fields.
 
 \subsubsection{Li\'enard--Wiechert Potentials and Fields}
 
