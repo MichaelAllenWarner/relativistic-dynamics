@@ -2360,7 +2360,7 @@ ct(\omega(ct_0)) &= \dfrac{\omega}{ \zeta_0} = \dfrac{\sinh \big( \zeta_0 \mkern
 
 
 
-\subsubsection{Hyperbolic Motion}
+\subsubsection{Hyperbolic Motion}\label{sssec:hyperbolic}
 
 The rectilinear motion with constant proper acceleration we've been studying goes by another name: \textbf{hyperbolic motion} (through spacetime). To see why, let's use our lovely functions of proper time (though we could obtain similar results with Equations \ref{eq:ce} and \ref{eq:x}).
 
@@ -2868,7 +2868,7 @@ This (imaginary) universal fluid-like distribution further possesses a \emph{fou
 \begin{equation}\label{eq:fcc}
 \boxed{\vv J = \rho_0 \vv B = \rho_0 \langle \gamma , \gamma \vvbeta \rangle = \langle \rho, \, \vv j \rangle \quad \text{\footnotesize{ (for a continuous fluid-like distribution)}} } \, .
 \end{equation}
-This is the normalized \textbf{four-current density} field for a continuous, fluid-like charge distribution. The three-vector $\vv j$ that we seem to have defined as $\rho \vvbeta$ (but read on!) is the normalized \textbf{three-current density}.\footnote{We're working in \textbf{Heaviside--Lorentz units}, with a slight modification: our $\vv J$ and $\vv j$ correspond to $\vv J / c$ and $\vv j / c$ in the usual schema (we've ``normalized" them).} It's best understood as the \textbf{flux density} of charge, meaning the $ct$-rate of charge-transport per unit area. It characterizes the flow of charge through \emph{space}.
+This is the normalized \textbf{four-current density} field for a continuous, fluid-like charge distribution. The three-vector $\vv j$ that we seem to have defined as $\rho \vvbeta$ (but read on!) is the normalized \textbf{three-current density}.\footnote{We're working in \textbf{Heaviside--Lorentz units}, with a slight modification: our $\vv J$ and $\vv j$ correspond to $\vv J / c$ and $\vv j / c$ in the usual schema (we've ``normalized" them).} It's best understood as the \textbf{flux density} of charge, meaning the $ct$-rate of charge-transport \emph{per unit area}. It characterizes the flow of charge through \emph{space}. The rate of charge-transport \emph{through} an area is called \textbf{electric current}.
 
 That's all really beautiful, but we know there are a couple of problems: charge \emph{is} quantized, and it comes in two ``flavors"---positive and negative. As such, it \emph{cannot} be accurately modeled as fluid-like in aggregate. For example, a (too-)simple continuous model of an electrically neutral current-carrying wire involves \emph{two overlapping} charge-streams: a positive one with zero velocity (really the ``discrete" atomic nuclei at rest), and a negative one with non-zero velocity (really the ``discrete" moving electrons). Here, $\rho$ vanishes but $\vv j$ doesn't (we'll have to define $\vv j$ more carefully), and that would give the wire a \emph{spacelike} $\vv J$ (if indeed we can ``keep" $\vv J = \langle \rho, \, \vv j \rangle$), impossible if $\vv J$ is defined as $\rho_0 \vv B$.
 
@@ -2907,7 +2907,7 @@ and use the divergence theorem:
 \begin{equation}\label{eq:con2}
 - \dfrac{\dd}{\dd (ct)} \int_V \rho \, \dd V = \int_S \left( \vv j \cdot \vv{\hat{n}} \right) \dd S
 \end{equation}
-(on the right side, $S$ is the bounding surface of $V$, and $\vv{\hat{n}}$ is an outward-pointing unit vector normal to the surface element $\dd S$; on the left side, the volume's time-independence allowed us to move the time-derivative outside of the integral). Since $\rho$ is the charge density, its volume-integral is just the total charge in the region, and the left side of the equation is then the rate at which the region's total charge is decreasing. The right side is a \textbf{flux} integral, where $\vv j$ gives the per-unit-area rate of charge-transport (the \emph{flux density} of charge, recall), and where the whole surface integral represents the rate at which charge is flowing \emph{out} of the region's bounds.\footnote{\label{fn:flux}Some semantics: is this the ``flux of charge" (the transported scalar) or the ``flux of current density" (the integrated vector)? Both conventions are common, but we'll prefer the ``flux of (the transported scalar)" convention. Note, though, that the surface integral of \emph{any} vector field is often called a flux, even when there's nothing transported (in which case only ``flux of [the integrated vector]" makes sense). Further, some people use the word \emph{flux} for the vector itself (our \emph{flux density}).}
+(on the right side, $S$ is the bounding surface of $V$, and $\vv{\hat{n}}$ is an outward-pointing unit vector normal to the surface element $\dd S$; on the left side, the volume's time-independence allowed us to move the time-derivative outside of the integral). Since $\rho$ is the charge density, its volume-integral is just the total charge in the region, and the left side of the equation is then the rate at which the region's total charge is decreasing. The right side is a \textbf{flux} integral, where $\vv j$ gives the per-unit-area rate of charge-transport (the \emph{flux density} of charge, recall), and where the whole integral represents the rate at which charge is flowing \emph{out} of the region's bounds (the total outward current).\footnote{\label{fn:flux}Some semantics: is this the ``flux of charge" (the transported scalar) or the ``flux of current density" (the integrated vector)? Both conventions are common---sometimes in the same textbook!---but we'll prefer the ``flux of the transported scalar" convention. Note, though, that the surface integral of \emph{any} vector field is often called a flux, even when there's nothing transported (in which case only ``flux of the integrated vector" makes sense). Further, some people use the word \emph{flux} for the vector itself (our \emph{flux density}).}
 
 So Equation \ref{eq:con2} makes the meaning of the continuity equation explicit: the rate at which the total charge in a region decreases equals the rate at which charge is flowing out of it. The \emph{only} way for the total charge in a volume to change is for charge to be transported through its surface. Moreover, it turns out that \emph{any} local conservation law can be expressed as a continuity equation. The manifestly covariant form of such an equation is always the vanishing four-divergence of the ``spacetime flux density" of the locally conserved quantity. The ``spacetime flux density" of electric charge is $\vv J$, and $\partialup \cdot \vv J =  0$ (Equation \ref{eq:con}) expresses local charge conservation.
 
@@ -3345,7 +3345,7 @@ and again use the divergence theorem:
 \end{equation*}
 Evidently, $u$ is the volume-density of something, and the surface integral is the flux of that something (that is, the rate at which that something flows out of the volume's bounds). The last term clues us in as to what that something is: the energy stored in the fields. Poynting's theorem says that the rate at which a volume's electromagnetic energy decreases equals the rate at which electromagnetic energy is flowing out of the region through its surface plus the rate at which the fields are doing work on charged matter within the region (via the Lorentz four-force). Naturally, we call ${u = (e^2 + b^2)/2}$ the \textbf{electromagnetic energy density}. The \textbf{Poynting vector} ${\vv s = \vv e \times \vv b}$ is the flux density of electromagnetic energy (its per-unit-area rate of transport).
 
-We have what we need from the Lorentz four-force density to take care of our unfinished business. Later we'll return to Equation \ref{eq:lffdc2} and simplify its \emph{spatial} component into a succinct statement of three-momentum conservation.
+We have what we need from the Lorentz four-force density to take care of our unfinished business. In Section \ref{sec:dy} we'll return to Equation \ref{eq:lffdc2} and simplify its \emph{spatial} component into a succinct statement of three-momentum conservation. This will be our entry point to ``electrodyadics."
 
 
 \subsubsection{Light}\label{sssec:li}
@@ -3606,7 +3606,7 @@ Before we move away from the subject of light, let's quickly re-derive the relat
 
 This ``derivation" is little more than an acknowledgment that the components of $\vv H$, like those of any four-vector, transform Lorentzianly. We have ${\vv H = \langle H^{ct}, \, h_x, \, h_y, \, h_z \rangle = \langle \nu , \, h \cos \theta, \, h_y, \, h_z \rangle = \langle \nu , \, \nu \cos \theta, \, h_y, \, h_z \rangle}$, where $\theta$ is the angle that the light's direction of propagation makes with the positive unprimed $x$-axis. Then under a standard-configuration boost, where the primed frame moves in the positive $x$-direction (so that $\theta$ is also the angle that the light's direction of propagation makes with the primed frame's velocity), the time component transforms like $\nu^{\mkern.75mu \prime} = \gamma (\nu - \beta h_x ) = \gamma \mkern1mu \nu (1 - \beta \cos \theta)$, and we're done! Much easier this way, eh? As an aside, it's now obvious that the unprimed frame in Equation \ref{eq:rdf} doesn't \emph{have} to be the light-source's rest frame. Finally, let's use the ``trick" from Section \ref{sssec:mc} to express the relationship between $\nu ^{\prime}$ and $\nu$ in a manifestly covariant form: $\nu ^{\prime} / \nu = (\vv B^{\textrm{p}} \cdot \vv H) / (\vv B^{\textrm{u}} \cdot \vv H)$, where $\vv B^{\textrm{p}}$ and $\vv B^{\textrm{u}}$ are respectively the normalized four-velocities of the primed and unprimed frames. (I avoid the symbols $\vv B ^{\prime}$ and $\vv B$ here because that notation might wrongly suggest a single underlying quantity; $\vv B^{\textrm{p}}$ and $\vv B^{\textrm{u}}$ are two \emph{different} four-vectors.)
 
-\subsection[Retarded Potential; Statics; Jefimenko’s Equations]{Retarded Potential; Statics; Jefimenko's Equations}\label{ssec:retpot}
+\subsection{Retarded Potential; Statics; Jefimenko Equations}\label{ssec:retpot}
 
 \subsubsection{The Lorenz-Gauge Retarded Potential}
 
@@ -3618,46 +3618,45 @@ where we have some symbols to explain.
 
 First, this is an integral taken over \emph{all of spacetime}, and $\dd \Omega_{s}$ refers to the \textbf{four-volume} element ($\dd x_{s} \, \dd y_{s} \, \dd z_{s} \, c \mkern2mu \dd t_{s}$) centered at the ``source event" $\vv R _{s}$, where the four-current density $\vv J$ is sampled. (To be clear, \emph{every event in spacetime} is accounted for as a source event in this integral.) The undecorated $\vv R$ is the ``field event" at which we're evaluating $\vv A$. Now, ``all of spacetime" should strike you as odd: if $\vv J$ generates disturbances in the Lorenz-gauge four-potential that travel outward through space at the speed of light, then shouldn't we only be ``sampling" $\vv J$ at events that are lightlike-separated from $\vv R$ and which precede $\vv R$ chronologically (i.e., events on the past light cone of $\vv R$)? The answer is yes, and that's where $G_{\textrm{ret}}$ comes in. It's the \textbf{manifestly covariant retarded Green's function}, and in effect it \emph{filters out} all events $\vv R_{s}$ that aren't on the past light cone of $\vv R$.\footnote{\label{fn:retg}If you're curious, it does this with the Dirac delta and Heaviside step functions: $G_{\textrm{ret}} (\vv R - \vv R_{s}) = \delta[ (\vv R - \vv R_{s})^2 ] \, \theta (ct - ct_{s}) / (2 \pi)$. Under integration, the delta function contributes only when its argument vanishes, so that only lightlike-separated source events ``survive." For such an $\vv R_{s}$, the sign of $ct - ct_{s}$ is Lorentz-invariant. Then $\theta (n) = 1$ if $n > 0$, and $\theta (n) = 0$ otherwise, completing the \emph{past}-light-cone requirement by ``forcing" $ct - ct_{s} > 0$. The $2 \pi$ makes $G_{\textrm{ret}}$ a solution to $\Box G = \delta ( \vv R - \vv R_{s} )$, so that the d'Alembertian of Equation \ref{eq:retfp} gives $\Box \vv A (\vv R) = \vv J(\vv R)$ (not $2 \pi \vv J$). Consult a real textbook for details.}
 
-Equation \ref{eq:retfp} is known as the \textbf{retarded four-potential} because in a given inertial frame, a contributing source event $\vv R_{s}$ on the past light cone of $\vv R$ has a time coordinate $ct_{s} = ct - \vert \vv r - \vv r_{s} \vert \equiv ct_{\textrm{ret}}$, called the \textbf{retarded time} (the time coordinate of $\vv R$ \emph{minus} the time it takes light to travel from the source event's position $\vv r_{s}$ to the field event's position $\vv r$). A presumably unphysical solution involving the \textbf{advanced time} $ct_{\textrm{adv}} \equiv ct + \vert \vv r - \vv r_{s} \vert$ is called the \textbf{advanced four-potential}.
+Equation \ref{eq:retfp} is known as the \textbf{retarded four-potential} because in a given inertial frame, a contributing source event $\vv R_{s}$ on the past light cone of $\vv R$ has a time coordinate $ct_{s} = ct - \vert \vv r - \vv r_{s} \vert \equiv ct_{\textrm{ret}}$, called the \textbf{retarded time} (the time coordinate of $\vv R$ \emph{minus} the time it takes light to travel from the source event's position $\vv r_{s}$ to the field event's position $\vv r$). A presumably unphysical solution involving the \textbf{advanced time} $ct_{\textrm{adv}} \equiv ct + \vert \vv r - \vv r_{s} \vert$ is called the \textbf{advanced four-potential}. This is a good opportunity to define some shorthand: $\vv d \equiv \vv r - \vv r_{s}$, with magnitude $d = \vert \vv r - \vv r_{s} \vert$ and unit vector $\vv{\hat{d}} = \vv d / d = (\vv r - \vv r_{s}) / \vert \vv r - \vv r_{s} \vert$. Then $ct_{\textrm{ret}} = ct - d$ and $ct_{\textrm{adv}} = ct + d$.
 
 A caveat: Equation \ref{eq:retfp} only works if $\vv J$ vanishes sufficiently rapidly at spatial infinity. In real life that's fine, but idealized problems involving infinite charged plates and the like require other approaches. Additionally, Equation \ref{eq:retfp} is the unique causal solution to $\Box \vv A = \vv J$ \emph{given appropriate boundary conditions} (namely, no incoming radiation from ``past null infinity"; all disturbances in the four-potential are generated by the sources alone).
 
 The retarded potential is usually written in another form, which isn't manifestly covariant but is more useful in practice:
 \begin{equation}\label{eq:retfp2}
-\vv A(ct, \vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv J (ct_{\textrm{ret}}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s} .
+\vv A(ct, \vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv J (ct_{\textrm{ret}}, \vv r _{s})}{d} \, \dd V_{s} .
 \end{equation}
 Here, the integration is over \emph{all of space} for the chosen inertial frame, but not at a single moment. Rather, for each source-position $\vv r_{s}$, the four-current density $\vv J$ is sampled at the retarded time $ct_{\textrm{ret}}$ (a function of $ct$, $\vv r$, and $\vv r_{s}$), and $\dd V_{s}$ is the volume element ($\dd x_{s} \, \dd y_{s} \, \dd z_{s}$) centered on $\vv r_{s}$ at that time.\footnote{To get to Equation \ref{eq:retfp2} from Equation \ref{eq:retfp} and Footnote \ref{fn:retg}, start with:
 \begin{equation*}
 \begin{aligned}
-\delta \big[ (\vv R - \vv R_{s})^2 \big] &= \delta \big[ (ct - ct_{s})^2 - (\vv r - \vv r_{s})^2 \big]\\[2pt]
-&= \dfrac{\delta ( ct_{s} - ct - \vert \vv r - \vv r_{s} \vert ) + \delta ( ct_{s} - ct + \vert \vv r - \vv r_{s} \vert )}{2 \vert \vv r - \vv r_{s} \vert} ,
+\delta \big[ (\vv R - \vv R_{s})^2 \big] &= \delta \big[ (ct - ct_{s})^2 - d^2 \big]\\[2pt]
+&= \dfrac{\delta \big[ ct_{s} - (ct + d) \big] + \delta \big[ ct_{s} - (ct - d) \big]}{2 d} ,
 \end{aligned}
 \end{equation*}
-where the last step follows from $\delta$'s \href{https://en.wikipedia.org/wiki/Dirac_delta_function\#Composition_with_a_function}{function-composition identity} (Wikipedia), treating $(\vv R - \vv R_{s})^2$ as a function of $ct_{s}$ (the variable we'll be integrating over momentarily). Explicitly, the roots of $(\vv R - \vv R_{s})^2$ are $ct_s = ct \pm \vert \vv r - \vv r_{s} \vert$, the derivative is $-2 (ct - ct_{s})$, and the derivative \emph{at} the roots evaluates to $\pm 2 \vert \vv r - \vv r_{s} \vert$ (which share an absolute value). So:
+where the last step follows from $\delta$'s \href{https://en.wikipedia.org/wiki/Dirac_delta_function\#Composition_with_a_function}{function-composition identity} (Wikipedia), treating $(\vv R - \vv R_{s})^2$ as a function of $ct_{s}$ (the variable we'll be integrating over momentarily). Explicitly, the roots of $(\vv R - \vv R_{s})^2$ are $ct_s = ct \pm d$, the derivative is $-2 (ct - ct_{s})$, and the derivative \emph{at} the roots evaluates to $\pm 2 d$ (which share an absolute value). So:
 \begin{equation*}
-G_{\textrm{ret}} (\vv R - \vv R_{s}) = \dfrac{\delta ( ct_{s} - ct_{\textrm{adv}} ) + \delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi \vert \vv r - \vv r_{s} \vert} \; \theta ( ct - ct_{s} ) = \dfrac{\delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi \vert \vv r - \vv r_{s} \vert}
+G_{\textrm{ret}} (\vv R - \vv R_{s}) = \dfrac{\delta ( ct_{s} - ct_{\textrm{adv}} ) + \delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi d} \; \theta ( ct - ct_{s} ) = \dfrac{\delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi d}
 \end{equation*}
 ($\theta$ kills the ``advanced" term, because ${ct - ct_{\textrm{adv}} < 0}$). Now write Equation \ref{eq:retfp} like:
 \begin{equation*}
-\vv A(ct, \vv r) = \dfrac{1}{4 \pi} \iint \dfrac{\vv J(ct_{s}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert}  \; \delta ( ct_{s} - ct_{\textrm{ret}} )  \; c \, \dd t_{s} \, \dd V_{s},
+\vv A(ct, \vv r) = \dfrac{1}{4 \pi} \iint \dfrac{\vv J(ct_{s}, \vv r _{s})}{d}  \; \delta ( ct_{s} - ct_{\textrm{ret}} )  \; c \, \dd t_{s} \, \dd V_{s},
 \end{equation*}
 and carry out the $ct_{s}$-integral to obtain Equation \ref{eq:retfp2}.}
 
-By the way, Equation \ref{eq:retfp} or \ref{eq:retfp2} for a \emph{single moving point-charge source} is called the \textbf{Li\'enard--Wiechert potential}. We won't cover it.
 
 \subsubsection{Time-Independent Sources}
 
 In the special case of \emph{time-independent} sources, $\vv J(ct_{\textrm{ret}}, \vv r _{s})$ reduces to $\vv J(\vv r _{s})$, leaving the potential $\vv A$ time-independent in turn (since there's no other time-dependence on the right side of Equation \ref{eq:retfp2}):
 \begin{equation}\label{eq:retfp3}
-\vv A(\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv J ( \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}} .
+\vv A(\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv J ( \vv r _{s})}{d} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}} .
 \end{equation}
 In terms of the four-potential's components, we have from Equation \ref{eq:retfp3} the scalar potential:
 \begin{equation}\label{eq:retsp}
-\Phi(\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\rho ( \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}}
+\Phi(\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\rho ( \vv r _{s})}{d} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}}
 \end{equation}
 and the vector three-potential:
 \begin{equation}\label{eq:retvp}
-\vv a(\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv j ( \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}} .
+\vv a(\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv j ( \vv r _{s})}{d} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}} .
 \end{equation}
 The electric and magnetic fields---defined in terms of $\vv A$ (Equations \ref{eq:eb})---become time-independent, too, and $\vv e = - \del \Phi - \partial^{ct} \vv a = - \del \Phi$.
 
@@ -3665,35 +3664,35 @@ If now $\vv j = \vv 0$ everywhere, then we have \textbf{electrostatics}; if inst
 
 For time-independent sources (not necessarily electrostatics!), $\vv e$ is the negative gradient of Equation \ref{eq:retsp}:
 \begin{equation}\label{eq:electrostatice}
-\vv e (\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\rho ( \vv r _{s}) \, (\vv r - \vv r_{s})}{\vert \vv r - \vv r_{s} \vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}},
+\vv e (\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\rho ( \vv r _{s})}{d^2} \, \vv{\hat{d}} \; \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}},
 \end{equation}
-where the del went inside the integral because it operates only on functions of $\vv r$ (which is independent of the integration variable), and where we've used:
+where the del went inside the integral because it operates only on functions of $\vv r$ (which $\dd V_{s}$ is independent of), and where we've used:
 \begin{equation}\label{eq:gradoverr}
-\del \left( \dfrac{1}{\vert \vv r - \vv r_{s} \vert} \right) = - \dfrac{\vv r - \vv r_{s}}{\vert \vv r - \vv r_{s} \vert ^3},
+\del d^{-1} = - \dfrac{\vv d}{d^3} = - \dfrac{\vv{\hat{d}}}{d^2},
 \end{equation}
 which is readily derived component-wise:
 \begin{equation*}
 \begin{aligned}
-\left[ \del \left( \dfrac{1}{\vert \vv r - \vv r_{s} \vert} \right) \right]_x &= \dfrac{\partial}{\partial x} \, \vert \vv r - \vv r_{s} \vert ^{-1} \\[1pt]
-&= - \vert \vv r - \vv r_{s} \vert ^{-2} \, \dfrac{\partial}{\partial x} \bigl[ \left( \vv r - \vv r_{s} \right) \cdot \left( \vv r - \vv r_{s} \right) \bigr] ^{1/2} \\[4pt]
-&= - \dfrac{1}{\vert \vv r - \vv r_{s} \vert ^{2}} \; \dfrac{1}{2} \left( \vert \vv r - \vv r_{s} \vert ^{2} \right) ^{-1/2} \dfrac{\partial}{\partial x} \bigl[ \left( \vv r - \vv r_{s} \right) \cdot \left( \vv r - \vv r_{s} \right) \bigr] \\[4pt]
-&= - \dfrac{1}{2 \vert \vv r - \vv r_{s} \vert ^{3}}  \; \dfrac{\partial}{\partial x} \left[ (x - x_s)^2 + (y - y_s)^2 + (z - z_s)^2 \right] \\[5pt]
-&= -\dfrac{(\vv r - \vv r_{s})_x}{\vert \vv r - \vv r_{s} \vert ^{3}}
+( \del d^{-1} )_x &= \dfrac{\partial}{\partial x} \, d^{-1} \\[1pt]
+&= - d^{-2} \, \dfrac{\partial}{\partial x} \left( \vv d \cdot \vv d \right) ^{1/2} \\[4pt]
+&= - \dfrac{1}{d^{2}} \; \dfrac{1}{2} ( d^{2} ) ^{-1/2} \, \dfrac{\partial}{\partial x} \left( \vv d \cdot \vv d \right) \\[4pt]
+&= - \dfrac{1}{2 d^{3}}  \; \dfrac{\partial}{\partial x} \left( d_x^2 + d_y^2 + d_z^2 \right) \\[5pt]
+&= -\dfrac{d_x}{d ^{3}}
 \end{aligned}
 \end{equation*}
 (etc.). In electrostatics specifically, we have $\vv b = \vv 0$, and the Lorentz three-force (Equation \ref{eq:ltf}) is just $q \vv e$. With Equation \ref{eq:electrostatice}, this gives:
 \begin{equation}\label{eq:coulomb}
-\vv f_{\textrm{L}} (\vv r) = \dfrac{q}{4 \pi} \int \dfrac{\rho ( \vv r _{s}) \, (\vv r - \vv r_{s})}{\vert \vv r - \vv r_{s} \vert ^3} \, \dd V_{s}  \quad \text{\footnotesize{(in electrostatics)}}.
+\vv f_{\textrm{L}} (\vv r) = \dfrac{q}{4 \pi} \int \dfrac{\rho ( \vv r _{s})}{d^2} \, \vv{\hat{d}} \; \dd V_{s}  \quad \text{\footnotesize{(in electrostatics)}}.
 \end{equation}
 That's \textbf{Coulomb's law}, the electrostatic force acting on a test particle with charge $q$ at position $\vv r$.
 
 Now we'll find $\vv b$ (curl of Equation \ref{eq:retvp}):
 \begin{equation}\label{eq:biot}
-\vv b (\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv j ( \vv r _{s}) \times (\vv r - \vv r_{s})}{\vert \vv r - \vv r_{s} \vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}},
+\vv b (\vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv j ( \vv r _{s}) \times \vv{\hat{d}}}{d^2} \, \dd V_{s} \quad \text{\footnotesize{(for time-independent sources)}},
 \end{equation}
 where we've used ${\del \times [ \mkern1mu f(\vv r) \, \vv j(\vv r_{s})] = \del f(\vv r) \times \vv j(\vv r_{s}) }$ (because $\del$ operates only on functions of $\vv r$) and also Equation \ref{eq:gradoverr} again (whose negative sign switches the order of the cross product). Equation \ref{eq:biot} is the \textbf{Biot--Savart law}. If $\vv e = \vv 0$ (magnetostatics), then the Lorentz force reduces to $q \vvbeta \times \vv b$, and:
 \begin{equation}\label{eq:magnetostaticf}
-\vv f_{\textrm{L}} (\vv r) = \dfrac{q \vvbeta}{4 \pi} \times \int \dfrac{\vv j ( \vv r _{s}) \times (\vv r - \vv r_{s})}{\vert \vv r - \vv r_{s} \vert ^3} \, \dd V_{s} \quad \text{\footnotesize{(in magnetostatics)}},
+\vv f_{\textrm{L}} (\vv r) = \dfrac{q \vvbeta}{4 \pi} \times \int \dfrac{\vv j ( \vv r _{s}) \times \vv{\hat{d}}}{d^2} \, \dd V_{s} \quad \text{\footnotesize{(in magnetostatics)}},
 \end{equation}
 for the magnetostatic force acting on a test particle with charge $q$ and velocity $\vvbeta$ at position $\vv r$. For time-independent $\vv J$ but non-vanishing $\vv e$ and $\vv b$, the Lorentz force is of course the sum of Equations \ref{eq:coulomb} and \ref{eq:magnetostaticf}.
 
@@ -3708,29 +3707,29 @@ You may have noticed that we moved directly from the retarded four-potential to 
 
 First, in terms of components, the retarded four-potential Equation \ref{eq:retfp2} gives the scalar potential:
 \begin{equation}\label{eq:rtsp}
-\Phi(ct, \vv r) = \dfrac{1}{4 \pi} \int \dfrac{\rho (ct_{\textrm{ret}}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s}
+\Phi(ct, \vv r) = \dfrac{1}{4 \pi} \int \dfrac{\rho (ct_{\textrm{ret}}, \vv r _{s})}{d} \, \dd V_{s}
 \end{equation}
 and the vector three-potential:
 \begin{equation}\label{eq:rtvp}
-\vv a(ct, \vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv j (ct_{\textrm{ret}}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s} .
+\vv a(ct, \vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv j (ct_{\textrm{ret}}, \vv r _{s})}{d} \, \dd V_{s} .
 \end{equation}
-As a reminder, the potentials are evaluated at the field event ${\vv R = \langle ct, \vv r \rangle}$, the integrations are over all of space for the chosen inertial frame, $\rho$ and $\vv j$ are sampled at source events $\vv R_{s} = \langle ct_{\textrm{ret}}, \vv r_{s} \rangle $ with retarded time defined by $ct_{\textrm{ret}} = ct - \vert \vv r - \vv r_{s} \vert$, and the volume element $\dd V_{s} = \dd x_{s} \, \dd y_{s} \, \dd z_{s}$ is centered on $\vv r_{s}$ at that position's corresponding $ct_{\textrm{ret}}$. By the definitions of $\vv e$ and $\vv b$ (Equations \ref{eq:eb}), Equations \ref{eq:rtsp} and \ref{eq:rtvp} give:
+As a reminder, the potentials are evaluated at the field event ${\vv R = \langle ct, \vv r \rangle}$, the integrations are over all of space for the chosen inertial frame, $\rho$ and $\vv j$ are sampled at source events $\vv R_{s} = \langle ct_{\textrm{ret}}, \vv r_{s} \rangle $ with retarded time defined by $ct_{\textrm{ret}} = ct - d$ (where $d = \vert \vv r - \vv r_{s} \vert$ because $\vv d = \vv r - \vv r_{s}$), and the volume element $\dd V_{s} = \dd x_{s} \, \dd y_{s} \, \dd z_{s}$ is centered on $\vv r_{s}$ at that position's corresponding $ct_{\textrm{ret}}$. By the definitions of $\vv e$ and $\vv b$ (Equations \ref{eq:eb}), Equations \ref{eq:rtsp} and \ref{eq:rtvp} give:
 \begin{equation*}
-\vv e(ct, \vv r) = - \dfrac{1}{4 \pi} \left( \del \, \int \dfrac{\rho (ct_{\textrm{ret}}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s} \, + \, \partial^{ct} \int \dfrac{\vv j (ct_{\textrm{ret}}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s} \right) 
+\vv e(ct, \vv r) = - \dfrac{1}{4 \pi} \left( \del \, \int \dfrac{\rho (ct_{\textrm{ret}}, \vv r _{s})}{d} \, \dd V_{s} \, + \, \partial^{ct} \int \dfrac{\vv j (ct_{\textrm{ret}}, \vv r _{s})}{d} \, \dd V_{s} \right) 
 \end{equation*}
 and:
 \begin{equation*}
-\vv b(ct, \vv r) = \dfrac{1}{4 \pi} \, \del \times \int \dfrac{\vv j (ct_{\textrm{ret}}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s} .
+\vv b(ct, \vv r) = \dfrac{1}{4 \pi} \, \del \times \int \dfrac{\vv j (ct_{\textrm{ret}}, \vv r _{s})}{d} \, \dd V_{s} .
 \end{equation*}
-Once again, the differential operators can go inside the integrals (because they operate on functions of $ct$ or $\vv r$, and $\dd V_{s}$ is independent of these variables), so:
+As before, the differential operators can go inside the integrals (because they operate on functions of $ct$ or $\vv r$, and $\dd V_{s}$ is independent of these variables), so:
 \begin{equation*}
-\vv e(ct, \vv r) = - \dfrac{1}{4 \pi} \int \left( \del \, \dfrac{\rho (ct_{\textrm{ret}}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, + \, \partial^{ct} \, \dfrac{\vv j (ct_{\textrm{ret}}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \right) \, \dd V_{s}
+\vv e(ct, \vv r) = - \dfrac{1}{4 \pi} \int \left( \del \, \dfrac{\rho (ct_{\textrm{ret}}, \vv r _{s})}{d} \, + \, \partial^{ct} \, \dfrac{\vv j (ct_{\textrm{ret}}, \vv r _{s})}{d} \right) \, \dd V_{s}
 \end{equation*}
 and:
 \begin{equation*}
-\vv b(ct, \vv r) = \dfrac{1}{4 \pi} \int \del \times \, \dfrac{\vv j (ct_{\textrm{ret}}, \vv r _{s})}{\vert \vv r - \vv r_{s} \vert} \, \dd V_{s} .
+\vv b(ct, \vv r) = \dfrac{1}{4 \pi} \int \del \times \, \dfrac{\vv j (ct_{\textrm{ret}}, \vv r _{s})}{d} \, \dd V_{s} .
 \end{equation*}
-For the manipulations we'll need to make, it will be convenient to introduce some shorthand. Let's now define $\vv d \equiv \vv r - \vv r_{s}$, with magnitude $d = \vert \vv r - \vv r_{s} \vert$ and unit vector $\vv{\hat{d}} = \vv d / d = (\vv r - \vv r_{s}) / \vert \vv r - \vv r_{s} \vert$. Let's also define $[ \rho ] \equiv \rho (ct_{\textrm{ret}}, \vv r _{s})$ and $[\mkern2mu \vv j \mkern1.5mu ] \equiv \vv j (ct_{\textrm{ret}}, \vv r _{s})$. Our retarded fields are then:
+Define $[ \rho ] \equiv \rho (ct_{\textrm{ret}}, \vv r _{s})$ and $[\mkern2mu \vv j \mkern1.5mu ] \equiv \vv j (ct_{\textrm{ret}}, \vv r _{s})$ for convenience:
 \begin{equation*}
 \vv e(ct, \vv r) = - \dfrac{1}{4 \pi} \int \left( \dfrac{\del [ \rho ]}{d} \, + \, [\rho] \del d^{-1}  \, +  \, \dfrac{ \partial^{ct} [\mkern2mu \vv j \mkern1.5mu ]}{d} \right) \, \dd V_{s}
 \end{equation*}
@@ -3738,7 +3737,7 @@ and:
 \begin{equation*}
 \vv b(ct, \vv r) = \dfrac{1}{4 \pi} \int \left( \dfrac{ \del \times [\mkern2mu \vv j \mkern1.5mu ] }{d} \, - \, [\mkern2mu \vv j \mkern1.5mu ] \times \del d^{-1} \right) \, \dd V_{s} ,
 \end{equation*}
-where we've used some product rules and the fact that $d$ is independent of $ct$. Next, by Equation \ref{eq:gradoverr}, we have $\del d^{-1} = - \vv d / d^3 = - \vv{\hat{d}} / d^2$:
+where we've used some product rules and the fact that $d = \vert \vv r - \vv r_{s} \vert$ is independent of $ct$. Next, by Equation \ref{eq:gradoverr}, we have $\del d^{-1} = - \vv d / d^3 = - \vv{\hat{d}} / d^2$:
 \begin{equation}\label{eq:ref1}
 \vv e(ct, \vv r) = - \dfrac{1}{4 \pi} \int \left( \dfrac{\del [ \rho ]}{d} \, - \, \dfrac{[\rho]}{d^2} \, \vv{\hat{d}}  \, +  \, \dfrac{ \partial^{ct} [\mkern2mu \vv j \mkern1.5mu ]}{d} \right) \, \dd V_{s}
 \end{equation}
@@ -3747,12 +3746,11 @@ and:
 \vv b(ct, \vv r) = \dfrac{1}{4 \pi} \int \left( \dfrac{ \del \times [\mkern2mu \vv j \mkern1.5mu ] }{d} \, + \, \dfrac{[\mkern2mu \vv j \mkern1.5mu ] \times \vv{\hat{d}}}{d^2} \right) \, \dd V_{s} .
 \end{equation}
 
-We're getting close, but the only derivatives of the sources we want to see on the right are \emph{time}-derivatives (not gradients or curls), so we've still got two terms to simplify. Start with $\del [\rho]$. By the chain rule (think of $\del$ here as ``$\dd / \dd \vv r$"), and using $\partial(ct_{\mathrm{ret}})/\partial(ct) = 1$ (because $ct_{\mathrm{ret}} = ct - \vert \vv r - \vv r_{s} \vert$, and $\vert \vv r - \vv r_{s} \vert = d$ doesn't depend on $ct$):
+We're getting close, but the only derivatives of the sources we want to see on the right are \emph{time}-derivatives (not gradients or curls), so we've still got two terms to simplify. Start with $\del [\rho]$. By the chain rule (think of $\del$ here as ``$\dd / \dd \vv r$"), and inserting $\partial(ct_{\mathrm{ret}})/\partial(ct) = 1$ at will (because $ct_{\mathrm{ret}} = ct - d$, and $d$ doesn't depend on $ct$):
 \begin{equation*}
 \begin{aligned}
-\del \rho (ct_{\textrm{ret}}, x_{s}, y_{s}, z_{s}) &= \dfrac{\partial [\rho]}{\partial (ct_{\mathrm{ret}})} \del ct_{\mathrm{ret}} + \dfrac{\partial [\rho]}{\partial x_{s}} \del x_{s} + \dfrac{\partial [\rho]}{\partial y_{s}} \del y_{s} + \dfrac{\partial [\rho]}{\partial z_{s}} \del z_{s} \\[3pt]
-&=  \dfrac{\partial [\rho] }{\partial (ct_{\mathrm{ret}})} \dfrac{\partial (ct_{\mathrm{ret}})}{\partial (ct)} \, \del (ct - \vert \vv r - \vv r_{s} \vert) \\[3pt]
-&= \dfrac{\partial [\rho]}{\partial (ct)} \, \del (ct - d) \\[3pt]
+\del \rho (ct_{\textrm{ret}}, x_{s}, y_{s}, z_{s}) &= \dfrac{\partial [\rho]}{\partial (ct_{\mathrm{ret}})} \del ct_{\mathrm{ret}} + \dfrac{\partial [\rho]}{\partial x_{s}} \del x_{s} + \dfrac{\partial [\rho]}{\partial y_{s}} \del y_{s} + \dfrac{\partial [\rho]}{\partial z_{s}} \del z_{s} \\[4pt]
+&=  \dfrac{\partial [\rho] }{\partial (ct_{\mathrm{ret}})} \dfrac{\partial (ct_{\mathrm{ret}})}{\partial (ct)} \, \del (ct - d) \\[4pt]
 \del [\rho] &= - \partial^{ct} [\rho] \, \del d ,
 \end{aligned}
 \end{equation*}
@@ -3778,7 +3776,7 @@ The last piece is $\del \times [\mkern2mu \vv j \mkern1.5mu ]$. Consider the $x$
 \begin{equation*}
 (\del \times [\mkern2mu \vv j \mkern1.5mu ])_x = \dfrac{\partial [\mkern1.5mu j_z]}{\partial y} - \dfrac{\partial [\mkern1.5mu j_y]}{\partial z} .
 \end{equation*}
-Focus on the first term for now. Apply the chain rule, where again the $\vv r_{s}$ terms will vanish for the same reason as before, and where again we can bring in $\partial(ct_{\mathrm{ret}})/\partial(ct) = 1$ for free:
+Focus on the first term for now. Apply the chain rule, where again the $\vv r_{s}$ terms will vanish (because $x_s$, $y_s$, and $z_s$ don't depend on $y$), and where again we can bring in $\partial(ct_{\mathrm{ret}})/\partial(ct) = 1$ for free:
 \begin{equation*}
 \begin{aligned}
 \dfrac{\partial j_z (ct_{\mathrm{ret}}, x_{s}, y_{s}, z_{s})}{\partial y} &= \dfrac{\partial (ct_{\mathrm{ret}})}{\partial y} \dfrac{\partial  [\mkern1.5mu j_z]}{\partial (ct_{\mathrm{ret}})} + \dfrac{\partial x_{s}}{\partial y} \dfrac{\partial  [\mkern1.5mu j_z]}{\partial x_{s}} + \dfrac{\partial y_{s}}{\partial y} \dfrac{\partial  [\mkern1.5mu j_z]}{\partial y_{s}} + \dfrac{\partial z_{s}}{\partial y} \dfrac{\partial  [\mkern1.5mu j_z]}{\partial z_{s}} \\[3pt]
@@ -3819,11 +3817,39 @@ The reason this point is sometimes missed is that the phenomenon of \textbf{indu
 \end{equation*}
 with the changing field appearing on the right side, as if it were a ``source" for the field on the left. The $\partial^{ct} \vv e$ term is even called the \textbf{displacement current}, reinforcing the ``source of $\vv b$" interpretation. This interpretation is a defensible heuristic in many practical contexts, but strictly speaking \emph{it is wrong!} The changing field is always \emph{accompanied by} a circulating field of the other kind, but the ``induced" field is \emph{at the same event} as the changing field (the same place at the same time). There's no ``causal" relationship here. Relatedly, it's often said that a light wave ``self-propagates" because the changing electric and magnetic fields ``generate" each other ad infinitum, but as we discussed in Section \ref{sssec:li}, the $\vv e$ and $\vv b$ fields in the wave are always mutually \emph{in phase}. Again, the differential Maxwell equations tell us how the fields are related to each other \emph{at the same event}, not that what one field is doing somehow influences the other. Yes, the $\rho$ and $\vv j$ in Maxwell's equations pertain to the same event as the fields, too, but there's no field/field equivalent to the source/field Jefimenko equations.
 
+\subsubsection{Li\'enard--Wiechert Potentials and Fields}
+
+The retarded potential and Jefimenko equations can be specialized to the case of a single moving point-charge source. When they are, the potentials are called the \textbf{Li\'enard--Wiechert potentials}, and the corresponding $\vv e$ and $\vv b$ fields are sometimes called the \textbf{Li\'enard--Wiechert fields}.\footnote{The term \emph{Li\'enard--Wiechert fields} isn't as standardized. An alternative formulation that's mathematically equivalent to them is known as the \textbf{Heaviside--Feynman equations}, but we won't manipulate them into that form.} In this document, we take the view that, in the classical theory, charge should be modeled fundamentally as a \emph{continuous} property of matter (even though it's quantized in reality). From that perspective, the retarded potential and Jefimenko equations are more important. In fact, one way of summarizing ``all" of electrodynamics is to write the Lorentz force density $\rho \mkern1mu \vv e + \vv j \times \vv b$ (Equation \ref{eq:lorentzforcedensity}) using the Jefimenko equations for $\vv e$ and $\vv b$: the retarded source-densities determine the field values, and the fields in turn exert a force-per-volume on the charge distribution.
+
+But many people take the opposite view, and regard \emph{particles} as fundamental in classical electromagnetism (despite the fact that they inevitably lead to inconsistencies). And in any case, the particle model is still \emph{useful}. So let's at least write down the particle-specializations. We won't bother deriving them.\footnote{For derivations, see David J. Griffiths, \emph{Introduction to Electrodynamics}, 5th ed. (Cambridge: Cambridge, 2024), 456--64.} The Li\'enard--Wiechert potentials (i.e., the retarded potentials generated by a moving point charge, still in the Lorenz gauge) are:
+\begin{equation*}
+\Phi(ct, \vv r) = \dfrac{q}{4 \pi \left( d - \vv d \cdot [ \vvbeta ] \right)}
+\end{equation*}
+and:
+\begin{equation*}
+\vv a(ct, \vv r) = \Phi [ \vvbeta ] ,
+\end{equation*}
+where $q$ is the particle's charge, $\vv d$ is still $\vv r - \vv r_{s}$, and $[ \vvbeta ] = \vvbeta(ct_{\mathrm{ret}})$ is the particle's normalized retarded velocity. (Here, $\vv r_{s}$ and the retarded time ${ct_{\mathrm{ret}} = ct - \vert \vv r - \vv r_{s} \vert = ct - d}$ specify a single source-event on the particle's world line.) The retarded \emph{fields} generated by a moving point charge are:
+\begin{equation*}
+\vv e(ct, \vv r) = \dfrac{q d \mkern2mu \Bigl( \left( 1 - [\beta]^2 \right) \vv{\upkappa} \, + \, \vv d \times \left( \vv{\upkappa} \times [\vvzeta] \right) \Bigr)}{4 \pi \left( \vv d \cdot \vv{\upkappa} \right)^3}
+\end{equation*}
+and:
+\begin{equation*}
+\vv b(ct, \vv r) = \vv{\hat{d}} \times \vv e ,
+\end{equation*}
+where $\vv{\upkappa} = \vv{\hat{d}} - [\vvbeta]$ (and $[\vvzeta]$ is the particle's normalized retarded acceleration).
+
+Note that there's no integration here. For a given field event (where we sample the potentials or fields), there's at most \emph{one} point on the particle's world line that's a source event (could be \emph{zero} points if, say, the particle is in hyperbolic motion and the field event is beyond its past Rindler horizon; see Section \ref{sssec:hyperbolic}). This is just because electromagnetic news travels at the speed of light, and the subluminal particle can't go fast enough to catch up with signals it's already emitted (if it could, then it would emit more signals that reach the field event \emph{from another source event}). If there's more than one source-particle, each of them contributes according to these equations, and by superposition their contributions simply add up to the values of the potentials/fields. Write the Lorentz force $q ( \vv e + \vvbeta \times \vv b )$ (Equation \ref{eq:ltf}) using the Li\'enard--Wiechert fields for $\vv e$ and $\vv b$ (summing over all contributing particles), and you've summarized ``all" of the classical theory from the particle-first perspective.
+
+In the Li\'enard--Wiechert fields, the $(1 - [\beta]^2) \vv{\upkappa}$ term falls off as $1/d^2$, whereas the $\vv d \times ( \vv{\upkappa} \times [\vvzeta] )$ term falls off as $1/d$. The former is the \textbf{velocity field}, which dominates at low speeds and close range, and the latter is the acceleration-dependent \textbf{radiation field}, which dominates farther away and is most responsible for the character of electromagnetic waves. The acceleration-dependence was present in the Jefimenko equations, too (Equations \ref{eq:ref2} and \ref{eq:rbf2}), but somewhat obscured: it's the $\partial^{ct} [\mkern2mu \vv j \mkern1.5mu ]$ stuff (current density already ``includes" charge-velocities).
+
+One more observation. If the source-particle isn't accelerating at the retarded time, then only the velocity-field term in the Li\'enard--Wiechert equation for $\vv e$ remains, with $\vv e \parallel \vv{\upkappa}$. That's trivial. Here comes the interesting bit. If the particle \emph{maintains} its constant velocity until the current time $ct$, then the vector $\vv{\upkappa} = \vv{\hat{d}} - [\vvbeta]$ actually points from the particle's \emph{current} position to the position $\vv r$ of the field event. This is so because the inertial particle's current position (at time $ct$) is ${\vv r_{s} + (ct - ct_{\mathrm{ret}})[\vvbeta]}$ (the sum of its initial position $\vv r_{s}$ and its displacement $(ct - ct_{\mathrm{ret}})[\vvbeta]$ in the interim), or equivalently ${\vv r_{s} + (ct - (ct - d))[\vvbeta] =\vv r_{s} + d[\vvbeta]}$, meaning the separation from the particle's current position to the field-event position is ${\vv r - (\vv r_{s} + d[\vvbeta]) = \vv d - d[\vvbeta] = d(\vv{\hat{d}} - [\vvbeta]) = d \vv{\upkappa}}$. (And if the particle doesn't \emph{remain} inertial, $\vv{\upkappa}$ points to $\vv r$ from where the particle \emph{would} currently be \emph{had} it maintained its initial constant velocity.) The electric field $\vv e$ itself then likewise points from the inertial particle's current position to $\vv r$, as does the electric \emph{force} acting on a test particle at $\vv r$ with charge $q_t$ (that's $q_t \vv e$, recall).
+
 \clearpage
 
 \section[Covariant “Electrodyadics” (Tensors Lite)]{Covariant ``Electrodyadics" (Tensors Lite)}\label{sec:dy}
 
-In Section \ref{sssec:lffd}, we simplified the temporal component of the Lorentz four-force density into a succinct statement of energy conservation. Now that we've taken care of our unfinished business concerning light and energy, we return to the Lorentz four-force density and simplify its three-vector \emph{spatial} component into a succinct statement of \emph{three-momentum} conservation. As we might expect from what we saw with Poynting's theorem (Equation \ref{eq:py} et seq.), this statement will equate the rate of decrease of electromagnetic three-momentum in a region to the outward ``flux" of electromagnetic three-momentum plus the rate at which the fields transfer three-momentum to particles within the region. Why the scare quotes around the word \emph{flux}? Because flux is traditionally the rate of flow of a \emph{scalar} quantity through a surface,\footnote{(according to our definition, anyway; see Footnote \ref{fn:flux})} and three-momentum is a \emph{vector} quantity. The usual divergence theorem equates a \emph{scalar}-valued flux to the volume-integral of the divergence of a \emph{vector} field, whereas the corresponding volume-integrand for a \emph{vector}-valued ``flux" would have to be the ``divergence" of a \emph{rank-2 tensor} field (see Footnote \ref{fn:gd}). As we haven't dealt explicitly with tensor notation or the ``divergence" of anything but a vector field, this presents a challenge!\footnote{That said, we deal implicitly with rank-2 tensors every time we take a directional derivative or Laplacian/d'Alembertian of a vector field.}
+In Section \ref{sssec:lffd}, we simplified the temporal component of the Lorentz four-force density into a succinct statement of energy conservation. Now we'll develop the needed machinery to simplify its three-vector \emph{spatial} component into a succinct statement of \emph{three-momentum} conservation. As we might expect from what we saw with Poynting's theorem (Equation \ref{eq:py} et seq.), this statement will equate the rate of decrease of electromagnetic three-momentum in a region to the outward ``flux" of electromagnetic three-momentum plus the rate at which the fields transfer three-momentum to particles within the region. Why the scare quotes around the word \emph{flux}? Because flux is traditionally the rate of flow of a \emph{scalar} quantity through a surface,\footnote{(according to our definition, anyway; see Footnote \ref{fn:flux})} and three-momentum is a \emph{vector} quantity. The usual divergence theorem equates a \emph{scalar}-valued flux to the volume-integral of the divergence of a \emph{vector} field, whereas the corresponding volume-integrand for a \emph{vector}-valued ``flux" would have to be the ``divergence" of a \emph{rank-2 tensor} field (see Footnote \ref{fn:gd}). As we haven't dealt explicitly with tensor notation or the ``divergence" of anything but a vector field, this presents a challenge!\footnote{That said, we deal implicitly with rank-2 tensors every time we take a directional derivative or Laplacian/d'Alembertian of a vector field.}
 
 We take this opportunity to dip our toes into rank-2 tensors, without getting into their full machinery, and without getting bogged down in \emph{too} much new notation. Actually, we've already done so: at the end of Section \ref{ssec:in}, we represented one three-vector as a column matrix and another as a row matrix, we multiplied the matrices in that order (column times row), and we mentioned in passing that the resulting 3-by-3 was the matrix representation of the \emph{dyadic product} of the two vectors (we used the symbol $\otimes$ for this operation). What we didn't mention is that the dyadic product is a special case of the \textbf{tensor product}, and that the \textbf{dyad} it outputs is indeed a kind of rank-2 tensor.
 
