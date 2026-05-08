@@ -2834,7 +2834,7 @@ If we now choose a $\psi$ that satisfies ${\Box \psi = - \partialup \cdot \vv Q}
 \end{equation*}
 leaving just a wave equation for the divergenceless(!) $\vv Q^\prime = \vv Q + \partialup \psi$, a far more tractable expression than the full ``$bac - cab$" apparatus. Performing this particular transformation is called imposing the \textbf{Lorenz gauge} (named for Ludvig Lorenz, not Hendrik Lorentz); other gauges are convenient in their own ways. Note that we still have limited \textbf{gauge freedom} within the Lorenz gauge---for any spacetime scalar field $\chi$ whose d'Alembertian is zero (${\Box \chi = 0}$), we'd get $\Box ( \vv Q^\prime + \partialup \chi ) = \Box \vv Q^\prime + \partialup \Box \chi = \Box \vv Q^\prime$.
 
-That's all the math we'll need. Back to the physics.
+That's all the math we'll need for now. Back to the physics.
 
 
 
@@ -3610,39 +3610,74 @@ This ``derivation" is little more than an acknowledgment that the components of 
 
 \subsubsection{The Lorenz-Gauge Retarded Potential}
 
-The Lorenz-gauge field equation $\Box \vv A = \vv J$ (Equation \ref{eq:fp}) can be solved for the four-potential $\vv A$ using the method of Green's functions. The details are beyond our scope, but a manifestly covariant solution looks like this:
+The Lorenz-gauge field equation $\Box \vv A = \vv J$ (Equation \ref{eq:fp}) can be solved for the four-potential $\vv A$ using the method of Green's functions. Some of the details are beyond our scope, but a manifestly covariant solution looks like this:
 \begin{equation}\label{eq:retfp}
 \vv A(\vv R) = \int G_{\textrm{ret}} ( \vv R - \vv R_{s} ) \, \vv J (\vv R _{s}) \, \dd \Omega_{s} ,
 \end{equation}
 where we have some symbols to explain.
 
-First, this is an integral taken over \emph{all of spacetime}, and $\dd \Omega_{s}$ refers to the \textbf{four-volume} element ($\dd x_{s} \, \dd y_{s} \, \dd z_{s} \, c \mkern2mu \dd t_{s}$) centered at the ``source event" $\vv R _{s}$, where the four-current density $\vv J$ is sampled. (To be clear, \emph{every event in spacetime} is accounted for as a source event in this integral.) The undecorated $\vv R$ is the ``field event" at which we're evaluating $\vv A$. Now, ``all of spacetime" should strike you as odd: if $\vv J$ generates disturbances in the Lorenz-gauge four-potential that travel outward through space at the speed of light, then shouldn't we only be ``sampling" $\vv J$ at events that are lightlike-separated from $\vv R$ and which precede $\vv R$ chronologically (i.e., events on the past light cone of $\vv R$)? The answer is yes, and that's where $G_{\textrm{ret}}$ comes in. It's the \textbf{manifestly covariant retarded Green's function}, and in effect it \emph{filters out} all events $\vv R_{s}$ that aren't on the past light cone of $\vv R$.\footnote{\label{fn:retg}If you're curious, it does this with the Dirac delta and Heaviside step functions: $G_{\textrm{ret}} (\vv R - \vv R_{s}) = \delta[ (\vv R - \vv R_{s})^2 ] \, \theta (ct - ct_{s}) / (2 \pi)$. Under integration, the delta function contributes only when its argument vanishes, so that only lightlike-separated source events ``survive." For such an $\vv R_{s}$, the sign of $ct - ct_{s}$ is Lorentz-invariant. Then $\theta (n) = 1$ if $n > 0$, and $\theta (n) = 0$ otherwise, completing the \emph{past}-light-cone requirement by ``forcing" $ct - ct_{s} > 0$. The $2 \pi$ makes $G_{\textrm{ret}}$ a solution to $\Box G = \delta ( \vv R - \vv R_{s} )$, so that the d'Alembertian of Equation \ref{eq:retfp} gives $\Box \vv A (\vv R) = \vv J(\vv R)$ (not $2 \pi \vv J$). Consult a real textbook for details.}
+First, this is an integral taken over \emph{all of spacetime}, and $\dd \Omega_{s}$ refers to the \textbf{four-volume} element ($\dd x_{s} \, \dd y_{s} \, \dd z_{s} \, c \mkern2mu \dd t_{s}$) centered at the ``source event" $\vv R _{s}$, where the four-current density $\vv J$ is sampled. (To be clear, \emph{every event in spacetime} is accounted for as a source event in this integral.) The undecorated $\vv R$ is the ``field event" at which we're evaluating $\vv A$. Now, ``all of spacetime" should strike you as odd: if $\vv J$ generates disturbances in the Lorenz-gauge four-potential that travel outward through space at the speed of light, then shouldn't we only be ``sampling" $\vv J$ at events that are lightlike-separated from $\vv R$ and which precede $\vv R$ chronologically (i.e., events on the past light cone of $\vv R$)? The answer is yes, and that's where $G_{\textrm{ret}}$ comes in. It's the \textbf{manifestly covariant retarded Green's function}, and in effect it \emph{filters out} all events $\vv R_{s}$ that aren't on the past light cone of $\vv R$.
 
-Equation \ref{eq:retfp} is known as the \textbf{retarded four-potential} because in a given inertial frame, a contributing source event $\vv R_{s}$ on the past light cone of $\vv R$ has a time coordinate $ct_{s} = ct - \vert \vv r - \vv r_{s} \vert \equiv ct_{\textrm{ret}}$, called the \textbf{retarded time} (the time coordinate of $\vv R$ \emph{minus} the time it takes light to travel from the source event's position $\vv r_{s}$ to the field event's position $\vv r$). A presumably unphysical solution involving the \textbf{advanced time} $ct_{\textrm{adv}} \equiv ct + \vert \vv r - \vv r_{s} \vert$ is called the \textbf{advanced four-potential}. This is a good opportunity to define some shorthand: $\vv d \equiv \vv r - \vv r_{s}$, with magnitude $d = \vert \vv r - \vv r_{s} \vert$ and unit vector $\vv{\hat{d}} = \vv d / d = (\vv r - \vv r_{s}) / \vert \vv r - \vv r_{s} \vert$. Then $ct_{\textrm{ret}} = ct - d$ and $ct_{\textrm{adv}} = ct + d$.
+Let's see how this Green's function works. If Equation \ref{eq:retfp} is a solution to $\Box \vv A (\vv R) = \vv J (\vv R)$, then we must have:
+\begin{equation*}
+\begin{aligned}
+\vv J (\vv R) &= \Box \int G_{\textrm{ret}} ( \vv R - \vv R_{s} ) \, \vv J (\vv R _{s}) \, \dd \Omega_{s} \\[3pt]
+& = \int \Big[ \Box G_{\textrm{ret}} ( \vv R - \vv R_{s} ) \Big] \vv J (\vv R _{s}) \, \dd \Omega_{s} \\[3pt]
+&= \int \delta ( \vv R - \vv R_{s} ) \, \vv J (\vv R _{s}) \, \dd \Omega_{s} ,
+\end{aligned}
+\end{equation*}
+where $\Box$ went inside the integral because it only operates on functions of $\vv R$ (which $\dd \Omega_{s}$ is independent of), and where for the same reason $\Box$ did nothing to $\vv J(\vv R_{s})$. We've equated $\Box G_{\textrm{ret}}( \vv R - \vv R_{s} )$ to the Dirac delta function $\delta ( \vv R - \vv R_{s} )$ because the delta function is defined precisely by the property that $\int \delta (\vv R - \vv R_{s}) \mkern1mu \vv J (\vv R_{s}) \mkern1mu \dd \Omega_{s} = \vv J (\vv R)$ (provided the integration range includes $\vv R_{s}$, which of course it does in our all-of-spacetime integral). So $G_{\textrm{ret}}( \vv R - \vv R_{s} )$ itself must be a solution to $\Box G = \delta ( \vv R - \vv R_{s} )$.
 
-A caveat: Equation \ref{eq:retfp} only works if $\vv J$ vanishes sufficiently rapidly at spatial infinity. In real life that's fine, but idealized problems involving infinite charged plates and the like require other approaches. Additionally, Equation \ref{eq:retfp} is the unique causal solution to $\Box \vv A = \vv J$ \emph{given appropriate boundary conditions} (namely, no incoming radiation from ``past null infinity"; all disturbances in the four-potential are generated by the sources alone).
+Solving $\Box G = \delta ( \vv R - \vv R_{s} )$ requires techniques like contour integration and Fourier transforms. We won't go through that whole process here. Instead, I'll show you how $G_{\textrm{ret}}( \vv R - \vv R_{s} )$ is defined, explain how its form filters out candidate source events that aren't on the field event's past light cone, and demonstrate that its d'Alembertian is indeed $\delta ( \vv R - \vv R_{s} )$.
 
-The retarded potential is usually written in another form, which isn't manifestly covariant but is more useful in practice:
+The covariant retarded Green's function is:
+\begin{equation}\label{eq:green}
+G_{\textrm{ret}} (\vv R - \vv R_{s}) \equiv \dfrac{\delta[ (\vv R - \vv R_{s})^2 ]}{2 \pi} \, \theta (ct - ct_{s}).
+\end{equation}
+Under integration, the delta function contributes only when its argument vanishes, so that only lightlike-separated source events ``survive" in Equation \ref{eq:retfp}. For such an $\vv R_{s}$, the sign of $ct - ct_{s}$ is Lorentz-invariant (i.e., whether the lightlike $\vv R - \vv R_{s}$ is past-pointing or future-pointing isn't frame-dependent). Then $\theta$ is the Heaviside step function: $\theta (n) = 1$ if $n > 0$, and $\theta (n) = 0$ otherwise, completing the \emph{past}-light-cone requirement by ``forcing" ${ct - ct_{s} > 0}$. The $2 \pi$, we'll see, is needed to make $G_{\textrm{ret}}$ a solution to $\Box G = \delta ( \vv R - \vv R_{s} )$, so that the d'Alembertian of Equation \ref{eq:retfp} gives $\Box \vv A (\vv R) = \vv J(\vv R)$ (not $2 \pi \vv J$).
+
+Equation \ref{eq:retfp} is called the \textbf{retarded four-potential} because in a given inertial frame, a contributing source event $\vv R_{s}$ on the past light cone of $\vv R$ has a time coordinate $ct_{s} = ct - \vert \vv r - \vv r_{s} \vert \equiv ct_{\textrm{ret}}$, called the \textbf{retarded time} (the time coordinate of $\vv R$ \emph{minus} the time it takes light to travel from the source event's position $\vv r_{s}$ to the field event's position $\vv r$). A presumably unphysical solution involving the \textbf{advanced time} $ct_{\textrm{adv}} \equiv ct + \vert \vv r - \vv r_{s} \vert$ is called the \textbf{advanced four-potential}.
+
+This $\vv r - \vv r_{s}$ business is unwieldy. Some shorthand: $\vv d \equiv \vv r - \vv r_{s}$, with magnitude $d = \vert \vv r - \vv r_{s} \vert$ and unit vector $\vv{\hat{d}} = \vv d / d = (\vv r - \vv r_{s}) / \vert \vv r - \vv r_{s} \vert$. Then $ct_{\textrm{ret}} = ct - d$ and $ct_{\textrm{adv}} = ct + d$.
+
+A caveat about Equation \ref{eq:retfp}: it only works if $\vv J$ vanishes sufficiently rapidly at spatial infinity. In real life that's fine, but idealized problems involving infinite charged plates and the like require other approaches. Also, Equation \ref{eq:retfp} is the unique causal solution to $\Box \vv A = \vv J$ \emph{given appropriate boundary conditions}---namely, no incoming radiation from ``past null infinity" (all disturbances in the four-potential are generated by the sources alone). If we need to allow for sourceless disturbances, we can add a solution to the homogeneous wave equation $\Box \vv A = \textrm{\mbox{\boldmath$\emptyset$}}$ to the right side (see Section \ref{sssec:li}). With our all-of-spacetime integral, any sourceless disturbances would have to be present from the beginning of time!
+
+Now let's verify that $\Box G_{\textrm{ret}}( \vv R - \vv R_{s} ) = \delta ( \vv R - \vv R_{s} )$, to confirm that Equation \ref{eq:retfp} does in fact solve $\Box \vv A = \vv J$. This will be easier if we first massage $G_{\textrm{ret}}( \vv R - \vv R_{s} )$ into a form that isn't manifestly covariant (something we'll need to do for other reasons anyway). Start with the delta function from Equation \ref{eq:green}. Treating its argument $(\vv R - \vv R_{s})^2 = (ct - ct_{s})^2 - d^2$ as a function of $ct_{s}$, we'll invoke $\delta$'s function-composition identity, which is:
+\begin{equation*}
+\delta (f(x)) = \sum_{n} \dfrac{\delta(x - x_n)}{\vert f ^\prime (x_n) \vert} ,
+\end{equation*}
+where $n$ is the number of roots of the function $f(x)$, $x_n$ is a root (such that $f(x_n) = 0$), and the prime indicates a derivative. In our case, the roots are $ct_s = ct \pm d$, the derivative is $-2 (ct - ct_{s})$, and the derivative \emph{at} the roots evaluates to $\pm 2 d$ (which share an absolute value). So:
+\begin{equation*}
+\begin{aligned}
+\delta \big[ (\vv R - \vv R_{s})^2 \big] &= \delta \big[ (ct - ct_{s})^2 - d^2 \big] \\[4pt]
+&= \dfrac{\delta \big[ ct_{s} - (ct + d) \big] + \delta \big[ ct_{s} - (ct - d) \big]}{2 d} \\[4pt]
+&= \dfrac{\delta ( ct_{s} - ct_{\textrm{adv}} ) + \delta ( ct_{s} - ct_{\textrm{ret}} )}{2 d} ,
+\end{aligned}
+\end{equation*}
+and:
+\begin{equation*}
+G_{\textrm{ret}} (\vv R - \vv R_{s}) = \dfrac{\delta ( ct_{s} - ct_{\textrm{adv}} ) + \delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi d} \; \theta ( ct - ct_{s} ) .
+\end{equation*}
+But $\theta$ kills the first term (because ${ct - ct_{\textrm{adv}} < 0}$) and evaluates to $1$ in combination with the second term:
+\begin{equation}\label{eq:green2}
+G_{\textrm{ret}} (\vv R - \vv R_{s}) = \dfrac{\delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi d} .
+\end{equation}
+
+Equation \ref{eq:green2} is the form of the retarded Green's function that we'll use to show that $\Box G_{\textrm{ret}} (\vv R - \vv R_{s}) = \delta ( \vv R - \vv R_{s})$. Break up $\Box$ into ``components":
+\begin{equation*}
+\Box G_{\textrm{ret}} (\vv R - \vv R_{s}) = \Big( \partial^{ct} \partial^{ct} - \nabla^2 \Big) \dfrac{\delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi d}.
+\end{equation*}
+First the time-derivatives.
+
+Last, we'll use Equation \ref{eq:green2} to express the retarded potential in a more familiar way. Plug it into Equation \ref{eq:retfp}, write $\vv R$ and $\vv R_{s}$ in terms of their components, and ``separate" the single four-volume integral into a $ct_s$-integral and a three-volume integral ($\dd V_{s} = \dd x_{s} \, \dd y_{s} \, \dd z_{s}$):
+\begin{equation*}
+\vv A(ct, \vv r) = \dfrac{1}{4 \pi} \iint \dfrac{\vv J(ct_{s}, \vv r _{s})}{d}  \; \delta ( ct_{s} - ct_{\textrm{ret}} )  \; c \, \dd t_{s} \, \dd V_{s} .
+\end{equation*}
+Carry out the $ct_{s}$-integral, and obtain:
 \begin{equation}\label{eq:retfp2}
 \vv A(ct, \vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv J (ct_{\textrm{ret}}, \vv r _{s})}{d} \, \dd V_{s} .
 \end{equation}
-Here, the integration is over \emph{all of space} for the chosen inertial frame, but not at a single moment. Rather, for each source-position $\vv r_{s}$, the four-current density $\vv J$ is sampled at the retarded time $ct_{\textrm{ret}}$ (a function of $ct$, $\vv r$, and $\vv r_{s}$), and $\dd V_{s}$ is the volume element ($\dd x_{s} \, \dd y_{s} \, \dd z_{s}$) centered on $\vv r_{s}$ at that time.\footnote{To get to Equation \ref{eq:retfp2} from Equation \ref{eq:retfp} and Footnote \ref{fn:retg}, start with:
-\begin{equation*}
-\begin{aligned}
-\delta \big[ (\vv R - \vv R_{s})^2 \big] &= \delta \big[ (ct - ct_{s})^2 - d^2 \big]\\[2pt]
-&= \dfrac{\delta \big[ ct_{s} - (ct + d) \big] + \delta \big[ ct_{s} - (ct - d) \big]}{2 d} ,
-\end{aligned}
-\end{equation*}
-where the last step follows from $\delta$'s \href{https://en.wikipedia.org/wiki/Dirac_delta_function\#Composition_with_a_function}{function-composition identity} (Wikipedia), treating $(\vv R - \vv R_{s})^2$ as a function of $ct_{s}$ (the variable we'll be integrating over momentarily). Explicitly, the roots of $(\vv R - \vv R_{s})^2$ are $ct_s = ct \pm d$, the derivative is $-2 (ct - ct_{s})$, and the derivative \emph{at} the roots evaluates to $\pm 2 d$ (which share an absolute value). So:
-\begin{equation*}
-G_{\textrm{ret}} (\vv R - \vv R_{s}) = \dfrac{\delta ( ct_{s} - ct_{\textrm{adv}} ) + \delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi d} \; \theta ( ct - ct_{s} ) = \dfrac{\delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi d}
-\end{equation*}
-($\theta$ kills the ``advanced" term, because ${ct - ct_{\textrm{adv}} < 0}$). Now write Equation \ref{eq:retfp} like:
-\begin{equation*}
-\vv A(ct, \vv r) = \dfrac{1}{4 \pi} \iint \dfrac{\vv J(ct_{s}, \vv r _{s})}{d}  \; \delta ( ct_{s} - ct_{\textrm{ret}} )  \; c \, \dd t_{s} \, \dd V_{s},
-\end{equation*}
-and carry out the $ct_{s}$-integral to obtain Equation \ref{eq:retfp2}.}
-
+Here, the integration is over \emph{all of space} for the chosen inertial frame, but not at a single moment. Rather, for each source-position $\vv r_{s}$, the four-current density $\vv J$ is sampled at the retarded time $ct_{\textrm{ret}}$ (a function of $ct$, $\vv r$, and $\vv r_{s}$).
 
 \subsubsection{Time-Independent Sources}
 
