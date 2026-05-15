@@ -3630,9 +3630,11 @@ Let's see how this Green's function works. If Equation \ref{eq:retfp} is a solut
 &= \int \delta ( \vv R - \vv R_{s} ) \, \vv J (\vv R _{s}) \, \dd \Omega_{s} ,
 \end{aligned}
 \end{equation*}
-where $\Box$ went inside the integral because it only operates on functions of $\vv R$ (which $\dd \Omega_{s}$ is independent of), and where for the same reason $\Box$ did nothing to $\vv J(\vv R_{s})$. We've equated $\Box G_{\textrm{ret}}( \vv R - \vv R_{s} )$ to the Dirac delta function $\delta ( \vv R - \vv R_{s} )$ because the delta function is defined precisely by the property that $\int \delta (\vv R - \vv R_{s}) \mkern1mu \vv J (\vv R_{s}) \mkern1mu \dd \Omega_{s} = \vv J (\vv R)$ (provided the integration range includes $\vv R_{s}$, which of course it does in our all-of-spacetime integral). So $G_{\textrm{ret}}( \vv R - \vv R_{s} )$ itself must be a solution to $\Box G = \delta ( \vv R - \vv R_{s} )$.
+where $\Box$ went inside the integral because it only operates on functions of $\vv R$ (which $\dd \Omega_{s}$ is independent of), and where for the same reason $\Box$ did nothing to $\vv J(\vv R_{s})$. We've equated $\Box G_{\textrm{ret}}( \vv R - \vv R_{s} )$ to the \textbf{Dirac delta function} $\delta ( \vv R - \vv R_{s} )$ because the delta function is defined precisely by the property that $\int \delta (\vv R - \vv R_{s}) \mkern1mu \vv J (\vv R_{s}) \mkern1mu \dd \Omega_{s} = \vv J (\vv R)$ (provided the integration range includes $\vv R_{s}$, which of course it does in our all-of-spacetime integral). So $G_{\textrm{ret}}( \vv R - \vv R_{s} )$ itself must be a solution to $\Box G = \delta ( \vv R - \vv R_{s} )$.
 
-Solving $\Box G = \delta ( \vv R - \vv R_{s} )$ requires techniques like contour integration and Fourier transforms. We won't go through that whole process here. Instead, I'll show you how $G_{\textrm{ret}}( \vv R - \vv R_{s} )$ is defined, explain how its form filters out candidate source events that aren't on the field event's past light cone, and demonstrate that its d'Alembertian is indeed $\delta ( \vv R - \vv R_{s} )$.
+We won't do a deep dive into the Dirac delta function here. We'll just use it, and call out new properties or identities involving it as we need them. One I'll call out right now is that the delta function doesn't care about the ``order" of subtraction in its argument, at least when it comes to its ``sifting" property. So we wrote $\int \delta (\vv R - \vv R_{s}) \mkern1mu \vv J (\vv R_{s}) \mkern1mu \dd \Omega_{s} = \vv J (\vv R)$, but we could also write $\int \delta (\vv R_{s} - \vv R) \mkern1mu \vv J (\vv R_{s}) \mkern1mu \dd \Omega_{s} = \vv J (\vv R)$. We'll freely make use of this fact when integrating.
+
+\emph{Solving} $\Box G = \delta ( \vv R - \vv R_{s} )$ requires techniques like contour integration and Fourier transforms. We won't bother. Instead, I'll show you how $G_{\textrm{ret}}( \vv R - \vv R_{s} )$ is defined, explain how its form filters out candidate source events that aren't on the field event's past light cone, and demonstrate that its d'Alembertian is indeed $\delta ( \vv R - \vv R_{s} )$.
 
 The covariant retarded Green's function is:
 \begin{equation}\label{eq:green}
@@ -3668,7 +3670,7 @@ G_{\textrm{ret}} (\vv R - \vv R_{s}) = \dfrac{\delta ( ct_{s} - ct_{\textrm{ret}
 
 Equation \ref{eq:green2} is the form of the retarded Green's function that we'll use to show that $\Box G_{\textrm{ret}} (\vv R - \vv R_{s}) = \delta ( \vv R - \vv R_{s})$. We'll do so in the next section. Quickly, let's use Equation \ref{eq:green2} to express the retarded potential in its more familiar guise. Plug Equation \ref{eq:green2} into Equation \ref{eq:retfp}, write $\vv R$ and $\vv R_{s}$ in terms of their components, and ``separate" the single four-volume integral into a $ct_s$-integral and a three-volume integral ($\dd V_{s} = \dd x_{s} \, \dd y_{s} \, \dd z_{s}$):
 \begin{equation*}
-\vv A(ct, \vv r) = \dfrac{1}{4 \pi} \iint \dfrac{\vv J(ct_{s}, \vv r _{s})}{d}  \; \delta ( ct_{s} - ct_{\textrm{ret}} )  \; c \, \dd t_{s} \, \dd V_{s} .
+\vv A(ct, \vv r) = \dfrac{1}{4 \pi} \iint \dfrac{\vv J(ct_{s}, \vv r _{s})}{d}  \; \delta ( ct_{s} - ct_{\textrm{ret}} )  \; c \, \dd t_{s} \, \dd V_{s}.
 \end{equation*}
 Carry out the $ct_{s}$-integral, and obtain:
 \begin{equation}\label{eq:retfp2}
@@ -3800,12 +3802,11 @@ Now return to Equation \ref{eq:green3}, bringing in Equation \ref{gretlap3} (Lap
 Recall that $\delta = \delta(ct_{s} - ct_{\textrm{ret}})$ and $\bar{\delta} = \delta(\vv r - \vv r_{s})$. To complete the argument, we need to show that $\delta \bar{\delta} = \delta(ct_{s} - ct_{\textrm{ret}}) \, \delta(\vv r - \vv r_{s}) = \delta ( \vv R - \vv R_{s} )$. Can we ``reproduce" $\int \delta (\vv R - \vv R_{s}) \mkern1mu \vv J (\vv R_{s}) \mkern1mu \dd \Omega_{s} = \vv J (\vv R)$ with $\delta(ct_{s} - ct_{\textrm{ret}}) \, \delta(\vv r - \vv r_{s})$? Yes. We'll need $ct_{\textrm{ret}} = ct - \vert \vv r - \vv r_{s} \vert$, because taking the three-volume integral turns $\vv r_{s}$ into $\vv r$ in both $\vv J$ \emph{and} $\delta(ct_{s} - ct_{\textrm{ret}})$ (such that $ct_{\textrm{ret}} = ct$):
 \begin{equation*}
 \begin{aligned}
-\iint \vv J (ct_{s}, \vv r_{s}) \, \delta(ct_{s} - ct_{\textrm{ret}}) \, \delta(\vv r - \vv r_{s}) \; c \, \dd t_{s} \, \dd V_{s} &= \int \vv J (ct_{s}, \vv r) \, \delta(ct_{s} - ct) \; c \, \dd t_{s} \\[3pt]
-&= \int \vv J (ct_{s}, \vv r) \, \delta(ct - ct_{s}) \; c \, \dd t_{s} \\[4pt]
-&= \vv J(ct, \vv r) ,
+\iint \vv J (ct_{s}, \vv r_{s}) \, \delta(ct_{s} - ct_{\textrm{ret}}) \, \delta(\vv r - \vv r_{s}) \; c \, \dd t_{s} \, \dd V_{s} &= \int \vv J (ct_{s}, \vv r) \, \delta(ct_{s} - ct) \; c \, \dd t_{s} \\[4pt]
+&= \vv J(ct, \vv r) .
 \end{aligned}
 \end{equation*}
-where we've used the fact that the delta function doesn't care about the ``order" of subtraction in its argument. So $\Box G_{\textrm{ret}}( \vv R - \vv R_{s} ) = \delta ( \vv R - \vv R_{s} )$, and the retarded four-potential \emph{is} a solution to $\Box \vv A = \vv J$.
+So $\Box G_{\textrm{ret}}( \vv R - \vv R_{s} ) = \delta ( \vv R - \vv R_{s} )$, and the retarded four-potential \emph{is} a solution to $\Box \vv A = \vv J$.
 
 
 \subsubsection{Time-Independent Sources}\label{sssec:statics}
@@ -4003,10 +4004,10 @@ With Equation \ref{eq:jpart} in hand for $\vv J_{\mathrm{sub}} (\vv R)$, the nex
 \begin{equation*}
 \begin{aligned}
 \vv A(\vv R) &= \int G_{\textrm{ret}} ( \vv R - \vv R_{s} ) \, \left( q \int \vv B(ct_0) \, \delta \big[ \vv R_{s} - \vv R_q (ct_0) \big] \, c \, \dd t_0 \right)  \dd \Omega_{s} \\
-&= q \int \vv B(ct_0) \left( \int G_{\textrm{ret}} ( \vv R - \vv R_{s} ) \, \delta \big[ \vv R_q (ct_0) - \vv R_{s} \big] \, \dd \Omega_{s} \right)  c \, \dd t_0 ,
+&= q \int \vv B(ct_0) \left( \int G_{\textrm{ret}} ( \vv R - \vv R_{s} ) \, \delta \big[ \vv R_{s} - \vv R_q (ct_0) \big] \, \dd \Omega_{s} \right)  c \, \dd t_0 ,
 \end{aligned}
 \end{equation*}
-where we've used the fact that ``order" of subtraction in the delta function doesn't matter, and where the rearrangement of the integrals is okay because the moving pieces $G_{\mathrm{ret}}$ and $\vv B$ are independent of the variables for the integrals they pass through. Perform the inner integral:
+where the rearrangement of the integrals is okay because the moving pieces $G_{\mathrm{ret}}$ and $\vv B$ are independent of the variables for the integrals they pass through. Perform the inner integral:
 \begin{equation}\label{eq:covlien}
 \vv A(\vv R) = q \int \vv B(ct_0) \, G_{\textrm{ret}} \big[ \vv R - \vv R_q (ct_0) \big] \, c \, \dd t_0 .
 \end{equation}
@@ -4037,7 +4038,7 @@ The one root of our function is $ct_q = ct_{\textrm{ret}}$, where the value $ct_
 \begin{equation*}
 \vv A(ct, \vv r) = \dfrac{q}{4 \pi} \int \dfrac{\vv B(ct_q)}{\gamma (ct_q)} \, \dfrac{\delta ( ct_{q} - ct_{\textrm{ret}} )}{d (ct_q) \, \big[1 - \vv{\hat{d}} (ct_{\textrm{ret}}) \cdot \vvbeta (ct_{\textrm{ret}}) \big]} \, c \, \dd t_q .
 \end{equation*}
-Integrate, using $\delta ( ct_{q} - ct_{\textrm{ret}} ) = \delta ( ct_{\textrm{ret}} - ct_{q})$:
+Integrate:
 \begin{equation*}
 \vv A(ct, \vv r) = \dfrac{q}{4 \pi} \, \dfrac{\vv B(ct_{\textrm{ret}})}{\gamma (ct_{\textrm{ret}})} \, \dfrac{1}{d (ct_{\textrm{ret}}) \, \big[1 - \vv{\hat{d}} (ct_{\textrm{ret}}) \cdot \vvbeta (ct_{\textrm{ret}}) \big]} .
 \end{equation*}
@@ -4096,7 +4097,7 @@ the total Lorentz four-force acting on all charged matter in the universe at tha
 \begin{equation*}
 \begin{aligned}
 \vv F_{\mathrm{L}} (ct) &= \int \left( \dfrac{q \, \delta \big[ \vv r - \vv r_q (ct) \big]}{\gamma \big( ct, \vv r_q (ct) \big)} \, \vv B \big( ct, \vv r_q (ct) \big) \right) \mkern1mu `` \mkern-4mu \times \big[ \partialup \times \mkern-4mu " \mkern1mu \vv A(ct, \vv r) \big]  \, \gamma(ct, \vv r) \, \dd V \\[4pt]
-&= q \int \dfrac{\gamma(ct, \vv r)}{\gamma \big( ct, \vv r_q (ct) \big)} \, \vv B \big( ct, \vv r_q (ct) \big) \mkern1mu `` \mkern-4mu \times \big[ \partialup \times \mkern-4mu " \mkern1mu \vv A(ct, \vv r) \big] \, \delta \big[ \vv r_q (ct)  - \vv r \big] \, \dd V \\[4pt]
+&= q \int \dfrac{\gamma(ct, \vv r)}{\gamma \big( ct, \vv r_q (ct) \big)} \, \vv B \big( ct, \vv r_q (ct) \big) \mkern1mu `` \mkern-4mu \times \big[ \partialup \times \mkern-4mu " \mkern1mu \vv A(ct, \vv r) \big] \, \delta \big[ \vv r - \vv r_q (ct) \big] \, \dd V \\[4pt]
 &= q \vv B \big( ct, \vv r_q (ct) \big) `` \mkern-4mu \times \big[ \partialup \times \mkern-4mu " \mkern1mu \vv A \big( ct, \vv r_q (ct) \big) \big]
 \end{aligned}
 \end{equation*}
