@@ -4012,7 +4012,7 @@ where the rearrangement of the integrals is okay because the moving pieces $G_{\
 \vv A(\vv R) = q \int \vv B(ct_0) \, G_{\textrm{ret}} \big[ \vv R - \vv R_q (ct_0) \big] \, c \, \dd t_0 .
 \end{equation}
 
-Equation \ref{eq:covlien} is a manifestly covariant formulation of the Li\'enard--Wiechert potential. It will take some work to bring it to its more familiar frame-dependent form. Start by bringing in Equation \ref{eq:green2} for the Green's function:
+Equation \ref{eq:covlien} is the Li\'enard--Wiechert potential in manifestly covariant form. It will take some work to bring it to its classic frame-dependent guise. Start by incorporating Equation \ref{eq:green2} for the Green's function:
 \begin{equation*}
 \vv A(ct, \vv r) = q \int \vv B(ct_0) \, \dfrac{\delta \big[ ct_{q} (ct_0) - ct_{\textrm{ret}} (ct_0) \big]}{4 \pi d (ct_0)} \, c \, \dd t_0 ,
 \end{equation*}
@@ -4085,7 +4085,7 @@ Here is a quick recap of our approach in Section \ref{sssec:lffd}. We started by
 \end{equation*}
 where $V$ now signifies generic spatial volume, not the volume of a material element (we've summed over all sub-distributions, so generally there isn't even ``a" material element to speak of).
 
-In the above equation, $\mathcal{P}_{\mathrm{L}}$ and $\vv f_{\mathrm{L}}$ are the Lorentz power and Lorentz three-force. But we're trying to \emph{derive} the Lorentz force; are we ``cheating"? No: they're just power and three-force placeholders at this point, and the goal is to derive formulas for them. If we'd started with the Lorentz four-force density, that equation (as placeholder) would still be available to us because we know that four-force in general is $\vv F = \langle \gamma \mathcal{P}, \gamma \vv f  \rangle $ (Equation \ref{eq:33}) and that proper volume is $V_0 = \gamma V$. In other words, we'd know that making a $V$-integral of $\bm{\mathfrak{F}}$ Lorentz-covariant requires integrating with respect to $\gamma V$ (for each fluid-like sub-distribution), and also that throwing in the $\gamma$ is precisely what's needed to make the result the desired four-force. So for a given inertial frame, integrating over all of space at some moment, we have:
+In the above equation, $\mathcal{P}_{\mathrm{L}}$ and $\vv f_{\mathrm{L}}$ are the Lorentz power and Lorentz three-force. But we're trying to \emph{derive} the Lorentz force; are we ``cheating" if we use that equation? No: they're just power and three-force placeholders at this point, and the goal is to derive formulas for them. Starting with $\bm{\mathfrak{F}}$ doesn't mean we're ignorant of the \emph{relationship} between force and force density. We know that $\vv F = \langle \gamma \mathcal{P}, \gamma \vv f  \rangle $ for four-forces in general (Equation \ref{eq:33}), we know that $\bm{\mathfrak{F}} = \dd \vv F_{\mathrm{L}} / \dd V_0$ for fluid-like sub-distributions, and from ${V_0 = \gamma V}$ and linearity (summing over sub-distributions) we can obtain the above equation (as placeholder). It follows that integrating a sub-distribution's $\bm{\mathfrak{F}}$ with respect to $\gamma V$ (not $V$ alone!) yields a four-vector, that throwing in the $\gamma$ is precisely what's needed to make that four-vector a four-\emph{force}, and that adding up all the sub-distribution integrals gives you the \emph{total} Lorentz four-force. So for a given inertial frame, integrating over all of space at some moment, we have:
 \begin{equation*}
 \vv F_{\mathrm{L \, total}} (ct) = \int \sum \Big( \bm{\mathfrak{F}} (ct, \vv r) \, \gamma(ct, \vv r) \Big)_{\mathrm{sub}} \, \dd V ,
 \end{equation*}
@@ -4093,7 +4093,7 @@ the total Lorentz four-force acting on all charged matter in the universe at tha
 \begin{equation*}
 \vv F_{\mathrm{L \, total}} (ct) = \int \sum \Big( \vv J(ct, \vv r) \mkern1mu `` \mkern-4mu \times \big[ \partialup \times \mkern-4mu " \mkern1mu \vv A(ct, \vv r) \big]  \, \gamma(ct, \vv r) \Big)_{\mathrm{sub}} \, \dd V
 \end{equation*}
-(square brackets are just for grouping again). We're interested in the contribution from a single point-charge source. Plug in Equation \ref{eq:jpart0} for a particle's $\vv J_{\mathrm{sub}}$ field (but make explicit the $\vv r_q$-dependence for $\gamma$ and $\vv B$ that was previously implicit), and drop the sum-notation:
+(square brackets are just for grouping again). We're interested in the contribution from a single point-charge source. Plug in Equation \ref{eq:jpart0} for a particle's $\vv J_{\mathrm{sub}}$ field (but make explicit the $\vv r_q$-dependence for the particle's $\gamma$ and $\vv B$ that was previously implicit), and drop the sum-notation:
 \begin{equation*}
 \begin{aligned}
 \vv F_{\mathrm{L}} (ct) &= \int \left( \dfrac{q \, \delta \big[ \vv r - \vv r_q (ct) \big]}{\gamma \big( ct, \vv r_q (ct) \big)} \, \vv B \big( ct, \vv r_q (ct) \big) \right) \mkern1mu `` \mkern-4mu \times \big[ \partialup \times \mkern-4mu " \mkern1mu \vv A(ct, \vv r) \big]  \, \gamma(ct, \vv r) \, \dd V \\[4pt]
