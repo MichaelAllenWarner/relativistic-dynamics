@@ -3707,7 +3707,7 @@ There's a lot here. We'll go through it slowly and obtain useful results along t
 ( \del d^{-1} )_x &= \dfrac{\partial}{\partial x} \, d^{-1} \\[1pt]
 &= - d^{-2} \, \dfrac{\partial}{\partial x} \left( \vv d \cdot \vv d \right) ^{1/2} \\[4pt]
 &= - \dfrac{1}{d^{2}} \; \dfrac{1}{2} ( d^{2} ) ^{-1/2} \, \dfrac{\partial}{\partial x} \left( \vv d \cdot \vv d \right) \\[4pt]
-&= - \dfrac{1}{2 d^{3}}  \; \dfrac{\partial}{\partial x} \left( d_x^2 + d_y^2 + d_z^2 \right) \\[5pt]
+&= - \dfrac{1}{2 d^{3}}  \; \dfrac{\partial}{\partial x} \big[ (x - x_{s})^2 + (y - y_{s})^2 + (z - z_{s})^2 \big] \\[5pt]
 &= -\dfrac{d_x}{d ^{3}} ,
 \end{aligned}
 \end{equation*}
@@ -3727,7 +3727,7 @@ since $\del \cdot \vv d = 3$ (i.e, $\partial d_x / \partial x = \partial (x - x_
 \begin{aligned}
 (\del d)_x &= \dfrac{\partial}{\partial x} \, ( \vv d \cdot \vv d ) ^{1/2} \\[3pt]
 &= \dfrac{1}{2} \, (d^2)^{-1/2} \, \dfrac{\partial}{\partial x} (\vv d \cdot \vv d) \\[3pt]
-&= \dfrac{1}{2d} \, \dfrac{\partial}{\partial x} (d_x^2 + d_y^2 + d_z^2) \\[3pt]
+&= \dfrac{1}{2d} \, \dfrac{\partial}{\partial x} \big[ (x - x_{s})^2 + (y - y_{s})^2 + (z - z_{s})^2 \big] \\[3pt]
 &= \dfrac{d_x}{d} ,
 \end{aligned}
 \end{equation*}
