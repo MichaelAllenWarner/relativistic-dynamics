@@ -1303,7 +1303,7 @@ That's one way to write it. Let's find a more intuitive way, starting like this:
 \begin{equation*}
 Z = \gamma^3 \zeta \mkern1mu \mathrm{i} \, \sqrt{\frac{1}{\gamma^2} + \frac{(\vvbeta \cdot \vvzeta)^2}{\zeta^2}}.
 \end{equation*}
-Looks awkward, but we can make good sense of that with a little trigonometry. By the geometric definition of the Euclidean dot product, we know that $\vvbeta \cdot \vvzeta = \beta \zeta \cos{\theta}$, so we can substitute $\beta^2 \cos^2{\theta}$ for $(\vvbeta \cdot \vvzeta)^2 / \zeta^2$, and we have:
+Looks awkward, but we can make good sense of that with a little trigonometry. By the geometric definition of the Euclidean dot product, we know that $\vvbeta \cdot \vvzeta = \beta \zeta \cos{\theta}$, so we can substitute $\beta^2 \cos^2{\theta}$ for $(\vvbeta \cdot \vvzeta)^2 / \zeta^2$, and we have:\footnote{\label{fn:crossacc}We won't cover the cross product until Section \ref{sssec:vectorcalc}, but I can't resist pointing out that $(\beta \sin{\theta})^2 = (\vvbeta \times \hatzeta)^2$, and then $Z^2 = \gamma^6 [(\vvbeta \times \vvzeta)^2 - \zeta^2]$.}
 \begin{equation*}
 \begin{split}
 Z &= \gamma^3 \zeta \mkern1mu \mathrm{i} \, \sqrt{(1 - \beta^2) + \beta^2 \cos^2{\theta}}\\
@@ -2579,7 +2579,7 @@ Near the beginning of this document, we took a quantum shortcut: instead of usin
 
 \subsection{The Math (Spacetime Vector Calculus)}
 
-\subsubsection{Lightning Review of Three-Vector Calculus}
+\subsubsection{Lightning Review of Three-Vector Calculus}\label{sssec:vectorcalc}
 
 We've already used the Euclidean dot product plenty:
 \begin{equation*}
@@ -2589,7 +2589,7 @@ $\theta$ being the angle between vectors $\vv a$ and $\vv b$. In practice we'll 
 \begin{equation*}
 \vv a \cdot \vv b = a_x b_x + a_y b_y + a_z b_z.
 \end{equation*}
-We have \emph{not} yet used the \textbf{cross product} (aka \textbf{vector product}). That's:
+We have \emph{not} yet used the \textbf{cross product} (aka \textbf{vector product}).\footnote{Well, once in Footnote \ref{fn:crossacc}.} That's:
 \begin{equation*}
 \vv a \times \vv b = a b \sin \theta \, \vv{\hat{n}} ,
 \end{equation*}
