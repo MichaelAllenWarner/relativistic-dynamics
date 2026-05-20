@@ -3969,7 +3969,7 @@ So how do we make that happen mathematically? Clearly a Dirac delta function wil
 \end{equation}
 where $q$ is the particle's charge, $\vv R_q (ct_0)$ is the particle's world line parameterized by its proper time $ct_0$, and $\vv R$ is the event at which we're evaluating this particle's $\rho_{0 \, \mathrm{sub}}$. (To be clear, square brackets are just for grouping again, like parentheses. When they mean something else, I'll tell you.) That may seem like a strange definition! Think about it like this: for a given $\vv R$, we evaluate $\rho_{0 \, \mathrm{sub}}$ by considering every moment in time $ct_0$, and for each moment asking whether the event $\vv R$ is the particle's current spacetime location $\vv R_q (ct_0)$; the delta function makes it so that only moments for which the answer is \emph{yes} contribute to $\rho_{0 \, \mathrm{sub}}$. The answer will be \emph{no} for all moments if $\vv R$ isn't on the world line (giving $\rho_{0 \, \mathrm{sub}} = 0$), and it will be \emph{yes}  for exactly one moment if $\vv R$ \emph{is} on the world line.
 
-To see how this plays out, let's use $\gamma(ct_q) = \dd (ct_q) / \dd (ct_0)$ (time dilation) to express those moments in terms of the \emph{coordinate} time of the particle's world-line events $\vv R_q = \langle ct_q, \vv r_q \rangle$.\footnote{Note that $\gamma(ct_q) = \dd (ct) / \dd (ct_0)$, too, since $\dd (ct) / \dd (ct_q) = 1$ (they're different coordinate times but \emph{for the same frame}).} For some inertial frame, that change of integration variable gives:
+To see how this plays out, let's use $\gamma(ct_q) = \dd (ct_q) / \dd (ct_0)$ (time dilation) to express those moments in terms of the \emph{coordinate} time of the particle's world-line events $\vv R_q = \langle ct_q, \vv r_q \rangle$. For some inertial frame, that change of integration variable gives:
 \begin{equation*}
 \rho_{0 \, \mathrm{sub}} (ct, \vv r) = q \int \dfrac{\delta \big[ \vv r - \vv r_q (ct_q) \big]}{\gamma (ct_q)} \, \delta \big[ ct - ct_q \big] \, c \, \dd t_q
 \end{equation*}
@@ -4008,47 +4008,50 @@ With Equation \ref{eq:jpart} in hand for $\vv J_{\mathrm{sub}} (\vv R)$, the nex
 \end{aligned}
 \end{equation*}
 where the rearrangement of the integrals is okay because the moving pieces $G_{\mathrm{ret}}$ and $\vv B$ are independent of the variables for the integrals they pass through. Perform the inner integral:
-\begin{equation}\label{eq:covlien}
+\begin{equation*}
 \vv A(\vv R) = q \int \vv B(ct_0) \, G_{\textrm{ret}} \big[ \vv R - \vv R_q (ct_0) \big] \, c \, \dd t_0 .
+\end{equation*}
+Bring in Equation \ref{eq:green}:
+\begin{equation}\label{eq:covlien0}
+\vv A(\vv R) = \dfrac{q}{2 \pi} \int \vv B(ct_0) \, \delta \Big( \big[ \vv R - \vv R_q (ct_0) \big]^2 \Big) \, \theta \big[ ct - ct_{q} (ct_0) \big] \, c \, \dd t_0 .
 \end{equation}
-
-Equation \ref{eq:covlien} is the Li\'enard--Wiechert potential in manifestly covariant form. It will take some work to bring it to its classic frame-dependent guise. Start by incorporating Equation \ref{eq:green2} for the Green's function:
-\begin{equation*}
-\vv A(ct, \vv r) = q \int \vv B(ct_0) \, \dfrac{\delta \big[ ct_{q} (ct_0) - ct_{\textrm{ret}} (ct_0) \big]}{4 \pi d (ct_0)} \, c \, \dd t_0 ,
-\end{equation*}
-with $d(ct_0) = \vert \vv r - \vv r_q (ct_0) \vert$ (magnitude of vector $\vv d (ct_0) = \vv r - \vv r_q (ct_0)$) and $ct_{\textrm{ret}} (ct_0) = ct - d(ct_0)$. Also change variable to $ct_{q}$ again and reparameterize accordingly:
-\begin{equation*}
-\vv A(ct, \vv r) = \dfrac{q}{4 \pi} \int \dfrac{\vv B(ct_q)}{\gamma (ct_q)} \, \dfrac{\delta \big[ ct_{q} - ct_{\textrm{ret}} (ct_q) \big]}{d (ct_q)} \, c \, \dd t_q ,
-\end{equation*}
-where now $d(ct_q) = \vert \vv r - \vv r_q (ct_q) \vert$ and $ct_{\textrm{ret}} (ct_q) = ct - d(ct_q)$. Next we need the Dirac delta's function-composition identity (Equation \ref{eq:deltacomp}), which we repeat here for convenience ($x_n$ are roots of the function $f$, recall):
+Next we need the Dirac delta's function-composition identity (Equation \ref{eq:deltacomp}), which we repeat here for convenience ($x_n$ are roots of the function $f$, recall):
 \begin{equation*}
 \delta (f(x)) = \sum_{n} \dfrac{\delta(x - x_n)}{\vert f ^\prime (x_n) \vert} .
 \end{equation*}
-For us, $f (ct_q) = ct_{q} - ct_{\textrm{ret}} (ct_q) = ct_q - ct + d(ct_q) = ct_q - ct + \vert \vv r - \vv r_q (ct_q) \vert$. Its $ct_q$-derivative is (being careful to distinguish the vector $\vv d$ and its magnitude $d$ from the roman $\dd$ in our derivative notation---sorry!):
+For us, $f (ct_0) = [\vv R - \vv R_{q}(ct_0)]^2 = [\vv R - \vv R_{q}(ct_0)] \cdot [\vv R - \vv R_{q}(ct_0)]$. (This will be something like the manifestly covariant version of the function-composition move we made on our way to Equation \ref{eq:green2}, except that this time there's an additional chain-rule step.) Its derivative with respect to $ct_0$ is:
 \begin{equation*}
 \begin{aligned}
-f ^\prime (ct_q) &= 1 + \dfrac{\dd}{\dd (ct_q)} \, \big[ (\vv d (ct_q) \cdot \vv d (ct_q) \big]^{1/2} \\[2pt]
-&= 1 + \dfrac{1}{2d(ct_q)} \, \dfrac{\dd}{\dd (ct_q)} \, \big[ \vv d (ct_q) \cdot \vv d (ct_q) \big] \,  \\[2pt]
-&= 1 + \dfrac{1}{2d(ct_q)} \left( 2 \vv d (ct_q) \cdot \dfrac{\dd}{\dd (ct_q)} \, \big[ \vv r - \vv r_q (ct_q) \big] \right) \\[2pt]
-&= 1 - \vv{\hat{d}} (ct_q) \cdot \dfrac{\dd \vv r_q (ct_q)}{\dd (ct_q)} \\
-&= 1 - \vv{\hat{d}} (ct_q) \cdot \vvbeta (ct_q) .
+f ^\prime (ct_0) &= 2 \big[ \vv R - \vv R_{q} (ct_0) \big] \cdot \dfrac{\dd}{\dd (ct_0)}  \big[ \vv R - \vv R_q (ct_0) \big] \\[2pt]
+&= - 2 \big[ \vv R - \vv R_{q} (ct_0) \big] \cdot \mathring{\vv R}_{q} (ct_0) \\[3pt]
+&= - 2 \big[ \vv R - \vv R_{q} (ct_0) \big] \cdot \vv B (ct_0) .
 \end{aligned}
 \end{equation*}
-The one root of our function is $ct_q = ct_{\textrm{ret}}$, where the value $ct_{\textrm{ret}}$ is the solution to $ct_{\textrm{ret}} = ct - d(ct_{\textrm{ret}})$ (and technically isn't guaranteed to exist---more on this soon), and the derivative \emph{at} the root is $1 - \vv{\hat{d}} (ct_{\textrm{ret}}) \cdot \vvbeta (ct_{\textrm{ret}})$, which is already always positive since $0 \leq \beta < 1$ (so we won't need the absolute value in the denominator). Putting it all together:
+The roots of our function are given by $[\vv R - \vv R_{q}(ct_0)]^2 = 0$, meaning that the field event $\vv R$ and a world-line event $\vv R_{q}(ct_0)$ satisfying that condition are lightlike-separated. There can be at most two events on the particle's world line that are lightlike-separated from $\vv R$---one on $\vv R$'s past light cone and one on its future light cone. Naturally, we'll call the corresponding proper times the \emph{retarded} and \emph{advanced} proper times (respectively): $ct_{0 \mkern2mu \textrm{ret}}$ and $ct_{0 \mkern2mu \textrm{adv}}$. The derivative at the roots evaluates to $- 2 [ \vv R - \vv R_{q} (ct_{0 \mkern2mu \textrm{ret}})] \cdot \vv B (ct_{0 \mkern2mu \textrm{ret}})$ and $- 2 [ \vv R - \vv R_{q} (ct_{0 \mkern2mu \textrm{adv}})] \cdot \vv B (ct_{0 \mkern2mu \textrm{adv}})$. That these derivative-values don't share an absolute value might seem like a complication, but it isn't. The advanced term from the function-composition identity will have $\delta(ct_0 - ct_{0 \mkern2mu \textrm{adv}})$ in the numerator, and the Heaviside step function $\theta [ct - ct_{q} (ct_0)]$ in Equation \ref{eq:covlien0} kills it (because $ct - ct_q(ct_{0 \mkern2mu \textrm{adv}}) < 0$, since $ct_q(ct_{0 \mkern2mu \textrm{adv}})$ is on $\vv R$'s \emph{future} light cone). This leaves:
 \begin{equation*}
-\vv A(ct, \vv r) = \dfrac{q}{4 \pi} \int \dfrac{\vv B(ct_q)}{\gamma (ct_q)} \, \dfrac{\delta ( ct_{q} - ct_{\textrm{ret}} )}{d (ct_q) \, \big[1 - \vv{\hat{d}} (ct_{\textrm{ret}}) \cdot \vvbeta (ct_{\textrm{ret}}) \big]} \, c \, \dd t_q .
+\vv A(\vv R) = \dfrac{q}{2 \pi} \int \vv B(ct_0) \,\dfrac{\delta(ct_0 - ct_{0 \mkern2mu \textrm{ret}})}{2 \big[ \vv R - \vv R_{q} (ct_{0 \mkern2mu \textrm{ret}}) \big] \cdot \vv B (ct_{0 \mkern2mu \textrm{ret}})} \; c \, \dd t_0 .
 \end{equation*}
 Integrate:
+\begin{equation}\label{eq:covlien}
+\vv A(\vv R) = \dfrac{q \vv B(ct_{0 \mkern2mu \textrm{ret}})}{4 \pi \big[ \vv R - \vv R_{q} (ct_{0 \mkern2mu \textrm{ret}}) \big] \cdot \vv B (ct_{0 \mkern2mu \textrm{ret}})} .
+\end{equation}
+
+Equation \ref{eq:covlien} is the Li\'enard--Wiechert potential in manifestly covariant form. For a given inertial frame, $ct_{\mathrm{ret}} \equiv ct_{q} (ct_{0 \mkern2mu \textrm{ret}})$ is the coordinate time of the world-line event $\vv R_{q}(ct_{0 \mkern2mu \textrm{ret}})$. Evaluating the condition $[\vv R - \vv R_{q}(ct_{0 \mkern2mu \textrm{ret}})]^2 = 0$ in that frame gives $[ct - ct_{\mathrm{ret}}]^2 - [\vv r - \vv r_{q}(ct_{0 \mkern2mu \textrm{ret}})]^2 = [ct - ct_{\mathrm{ret}}]^2 - [\vv r - \vv r_{q}(ct_{\mathrm{ret}})]^2 = 0$ (we're free to reparameterize in terms of $ct_{\mathrm{ret}}$, and we're about to do that for everything). With $\vv d(ct_{\mathrm{ret}}) \equiv \vv r - \vv r_{q}(ct_{\mathrm{ret}})$, the retarded coordinate time here is defined \emph{implicitly} by the equation $ct_{\mathrm{ret}} = ct - d(ct_{\mathrm{ret}}) = ct - \vert \vv r - \vv r_{q}(ct_{\mathrm{ret}}) \vert$. In the frame, then:
 \begin{equation*}
-\vv A(ct, \vv r) = \dfrac{q}{4 \pi} \, \dfrac{\vv B(ct_{\textrm{ret}})}{\gamma (ct_{\textrm{ret}})} \, \dfrac{1}{d (ct_{\textrm{ret}}) \, \big[1 - \vv{\hat{d}} (ct_{\textrm{ret}}) \cdot \vvbeta (ct_{\textrm{ret}}) \big]} .
+\vv A(ct, \vv r) = \dfrac{q \vv B(ct_{\textrm{ret}})}{4 \pi \big[ \vv R - \vv R_{q} (ct_{\textrm{ret}}) \big] \cdot \vv B (ct_{\textrm{ret}})} .
 \end{equation*}
-Use $\vv B = \langle \gamma, \gamma \vvbeta \rangle$:
+Use $\vv B = \gamma \langle 1, \vvbeta \rangle$ (Equation \ref{eq:31}):
 \begin{equation*}
-\vv A(ct, \vv r) = \dfrac{q \langle 1, \vvbeta(ct_{\textrm{ret}}) \rangle}{4 \pi \, d (ct_{\textrm{ret}}) \, \big[1 - \vv{\hat{d}} (ct_{\textrm{ret}}) \cdot \vvbeta (ct_{\textrm{ret}}) \big]} .
+\begin{aligned}
+\vv A(ct, \vv r) &= \dfrac{q \, \gamma(ct_{\textrm{ret}}) \big \langle 1, \vvbeta(ct_{\textrm{ret}}) \big \rangle}{4 \pi \, \big \langle ct - ct_{\mathrm{ret}}, \, \vv d (ct_{\mathrm{ret}}) \big \rangle \cdot \gamma(ct_{\textrm{ret}}) \big \langle 1, \vvbeta(ct_{\textrm{ret}}) \big \rangle} \\[4pt]
+&= \dfrac{q \, \big \langle 1, \vvbeta(ct_{\textrm{ret}}) \big \rangle}{4 \pi \, \big[ (ct - ct_{\textrm{ret}}) - \vv d (ct_{\mathrm{ret}}) \cdot \vvbeta(ct_{\textrm{ret}}) \big] } \\[4pt]
+&= \dfrac{q \, \big \langle 1, \vvbeta(ct_{\textrm{ret}}) \big \rangle}{4 \pi \, \big[ d (ct_{\mathrm{ret}}) - \vv d (ct_{\mathrm{ret}}) \cdot \vvbeta(ct_{\textrm{ret}}) \big] } \\[4pt]
+&= \dfrac{q \, \big \langle 1, \vvbeta(ct_{\textrm{ret}}) \big \rangle}{4 \pi \, d (ct_{\textrm{ret}}) \, \big[1 - \vv{\hat{d}} (ct_{\textrm{ret}}) \cdot \vvbeta (ct_{\textrm{ret}}) \big]} .
+\end{aligned}
 \end{equation*}
-For brevity, let's reintroduce the notation that square brackets around a quantity mean that it's evaluated at $ct_{\textrm{ret}}$:
+For brevity, reintroduce the convention that square brackets around a quantity mean that it's evaluated at $ct_{\textrm{ret}}$ (keeping in mind the implicit definition of $ct_{\textrm{ret}}$ in this context):
 \begin{equation}\label{eq:lienard}
-\vv A(ct, \vv r) = \dfrac{q \langle 1, [\vvbeta] \rangle}{4 \pi [d] \, (1 - [\vv{\hat{d}}] \cdot [\vvbeta] )} .
+\vv A(ct, \vv r) = \dfrac{q \, \big \langle 1, [\vvbeta] \big \rangle}{4 \pi [d] \, (1 - [\vv{\hat{d}}] \cdot [\vvbeta] )} .
 \end{equation}
 
 Equation \ref{eq:lienard} is the usual form of the Li\'enard--Wiechert four-potential. In terms of components, with $\vv A = \langle \Phi, \vv a \rangle$, that's:
