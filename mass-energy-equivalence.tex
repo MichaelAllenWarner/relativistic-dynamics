@@ -3632,7 +3632,7 @@ Let's see how this Green's function works. If Equation \ref{eq:retfp} is a solut
 \end{equation*}
 where $\Box$ went inside the integral because it only operates on functions of $\vv R$ (which $\dd \Omega_{s}$ is independent of), and where for the same reason $\Box$ did nothing to $\vv J(\vv R_{s})$. We've equated $\Box G_{\textrm{ret}}( \vv R - \vv R_{s} )$ to the \textbf{Dirac delta function} $\delta ( \vv R - \vv R_{s} )$ because the delta function is defined precisely by the property that $\int \delta (\vv R - \vv R_{s}) \mkern1mu \vv J (\vv R_{s}) \mkern1mu \dd \Omega_{s} = \vv J (\vv R)$ (provided the integration range includes $\vv R_{s}$, which of course it does in our all-of-spacetime integral). So $G_{\textrm{ret}}( \vv R - \vv R_{s} )$ itself must be a solution to $\Box G = \delta ( \vv R - \vv R_{s} )$.
 
-We won't do a deep dive into the Dirac delta function here. We'll just use it, and call out new properties or identities involving it as we need them. One I'll call out right now is that the delta function doesn't care about the ``order" of subtraction in its argument, at least when it comes to its ``sifting" property. So we wrote $\int \delta (\vv R - \vv R_{s}) \mkern1mu \vv J (\vv R_{s}) \mkern1mu \dd \Omega_{s} = \vv J (\vv R)$, but we could also write $\int \delta (\vv R_{s} - \vv R) \mkern1mu \vv J (\vv R_{s}) \mkern1mu \dd \Omega_{s} = \vv J (\vv R)$. We'll freely make use of this fact when integrating.
+We won't do a deep dive into the Dirac delta function here. We'll just use it, and call out new properties or identities involving it as we need them. One I'll call out right now is that the delta function is \emph{even}: it doesn't care about the ``order" of subtraction in its argument, at least when it comes to its ``sifting" property. For example, we wrote $\int \delta (\vv R - \vv R_{s}) \mkern1mu \vv J (\vv R_{s}) \mkern1mu \dd \Omega_{s} = \vv J (\vv R)$, but it's equally true that $\int \delta (\vv R_{s} - \vv R) \mkern1mu \vv J (\vv R_{s}) \mkern1mu \dd \Omega_{s} = \vv J (\vv R)$. We'll freely make use of this fact when integrating.
 
 \emph{Solving} $\Box G = \delta ( \vv R - \vv R_{s} )$ requires techniques like contour integration and Fourier transforms. We won't bother. Instead, I'll show you how $G_{\textrm{ret}}( \vv R - \vv R_{s} )$ is defined, explain how its form filters out candidate source events that aren't on the field event's past light cone, and demonstrate that its d'Alembertian is indeed $\delta ( \vv R - \vv R_{s} )$.
 
@@ -3659,7 +3659,7 @@ where $f$ is a function of $x$ with $n$ roots, where $x_n$ is the $n$th root ($f
 &= \dfrac{\delta \big[ ct_{s} - (ct + d) \big] + \delta \big[ ct_{s} - (ct - d) \big]}{2 d} ,
 \end{aligned}
 \end{equation*}
-and:
+and plug into Equation \ref{eq:green}:
 \begin{equation*}
 G_{\textrm{ret}} (\vv R - \vv R_{s}) = \dfrac{\delta ( ct_{s} - ct_{\textrm{adv}} ) + \delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi d} \; \theta ( ct - ct_{s} ) .
 \end{equation*}
@@ -3682,7 +3682,7 @@ Here, the integration is over \emph{all of space} for the chosen inertial frame,
 
 \emph{Now} we'll verify that $\Box G_{\textrm{ret}}( \vv R - \vv R_{s} ) = \delta ( \vv R - \vv R_{s} )$, in order to confirm that Equation \ref{eq:retfp} (or equivalently Equation \ref{eq:retfp2}) solves the Lorenz-gauge field equation $\Box \vv A = \vv J$. This will be tedious, so if you want to just take my word for it, feel free to skip.
 
-Break up $\Box$ into ``components":
+Break up $\Box$ into ``components," and use Equation \ref{eq:green2}:
 \begin{equation}\label{eq:green3}
 \Box G_{\textrm{ret}} (\vv R - \vv R_{s}) = \Big( \partial^{ct} \partial^{ct} - \nabla^2 \Big) \dfrac{\delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi d}.
 \end{equation}
@@ -3735,7 +3735,7 @@ giving:
 \begin{equation}\label{eq:deld}
 \del d = \vv d / d = \vv{\hat{d}} .
 \end{equation}
-By $\vv d \cdot \vv{\hat{d}} = d$, we have $\nabla^2 d^{-1} = - \del \cdot ( \vv{\hat{d}}/d^2 ) = - (3 d^{-3} - 3 d^{-4} (d)) = 0$ for $\vv r \neq \vv r_{s}$. To account for $\vv r = \vv r_{s}$, we'll leverage the divergence theorem. Integrate over a sphere of radius $d = \vert \vv r - \vv r_{s} \vert$, centered on $\vv r_{s}$:
+Therefore $\nabla^2 d^{-1} = - \del \cdot ( \vv d / d^3 ) = - \del \cdot ( \vv{\hat{d}}/d^2 ) = - (3 d^{-3} - 3 d^{-4} (d)) = 0$ for $\vv r \neq \vv r_{s}$ (by $\vv d \cdot \vv{\hat{d}} = d$). To account for $\vv r = \vv r_{s}$, we'll leverage the divergence theorem. Integrate over a sphere of radius $d = \vert \vv r - \vv r_{s} \vert$, centered on $\vv r_{s}$:
 \begin{equation*}
 \int_V \nabla^2 d^{-1} \, \dd V = \int_V \left( - \del \cdot \dfrac{\vv{\hat{d}}}{d^2} \right) \dd V = \int_S \left( - \dfrac{\vv{\hat{d}}}{d^2} \cdot \vv{\hat{n}} \right) \dd S
 \end{equation*}
@@ -3791,7 +3791,7 @@ Plug Equations \ref{eq:graddelta} and \ref{eq:lapdelta} into Equation \ref{gretl
 &= \dfrac{\delta^{\prime \prime}}{4 \pi d} - \delta \bar{\delta} .
 \end{split}
 \end{equation}
-Now return to Equation \ref{eq:green3}, bringing in Equation \ref{gretlap3} (Laplacian) and Equation \ref{gretctct} (double $ct$-derivative):
+Now return to Equation \ref{eq:green3}, bringing in Equation \ref{gretlap3} (Laplacian) and Equation \ref{gretctct} (double $ct$-partial):
 \begin{equation*}
 \begin{aligned}
 \Box G_{\textrm{ret}} (\vv R - \vv R_{s}) &= \partial^{ct} \partial^{ct} \, \dfrac{\delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi d} \, - \, \nabla^2 \, \dfrac{\delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi d} \\[4pt]
@@ -3802,7 +3802,7 @@ Now return to Equation \ref{eq:green3}, bringing in Equation \ref{gretlap3} (Lap
 Recall that $\delta = \delta(ct_{s} - ct_{\textrm{ret}})$ and $\bar{\delta} = \delta(\vv r - \vv r_{s})$. To complete the argument, we need to show that $\delta \bar{\delta} = \delta(ct_{s} - ct_{\textrm{ret}}) \, \delta(\vv r - \vv r_{s}) = \delta ( \vv R - \vv R_{s} )$. Can we ``reproduce" $\int \delta (\vv R - \vv R_{s}) \mkern1mu \vv J (\vv R_{s}) \mkern1mu \dd \Omega_{s} = \vv J (\vv R)$ with $\delta(ct_{s} - ct_{\textrm{ret}}) \, \delta(\vv r - \vv r_{s})$? Yes. We'll need $ct_{\textrm{ret}} = ct - \vert \vv r - \vv r_{s} \vert$, because taking the three-volume integral turns $\vv r_{s}$ into $\vv r$ in both $\vv J$ \emph{and} $\delta(ct_{s} - ct_{\textrm{ret}})$ (such that $ct_{\textrm{ret}} = ct$):
 \begin{equation*}
 \begin{aligned}
-\iint \vv J (ct_{s}, \vv r_{s}) \, \delta(ct_{s} - ct_{\textrm{ret}}) \, \delta(\vv r - \vv r_{s}) \; c \, \dd t_{s} \, \dd V_{s} &= \int \vv J (ct_{s}, \vv r) \, \delta(ct_{s} - ct) \; c \, \dd t_{s} \\[4pt]
+\iint \vv J (ct_{s}, \vv r_{s}) \, \delta(ct_{s} - ct_{\textrm{ret}}) \, \delta(\vv r - \vv r_{s}) \; \dd V_{s} \; c \, \dd t_{s} &= \int \vv J (ct_{s}, \vv r) \, \delta(ct_{s} - ct) \; c \, \dd t_{s} \\[4pt]
 &= \vv J(ct, \vv r) .
 \end{aligned}
 \end{equation*}
