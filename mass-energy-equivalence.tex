@@ -4090,7 +4090,7 @@ Start with the gradient term in Equation \ref{eq:lwe0}:
 \begin{equation*}
 \del \big([d] - [\vv d] \cdot [\vvbeta] \big)^{-1} = - \big([d] - [\vv d] \cdot [\vvbeta] \big)^{-2} \, \Big( \del [d] - \del \big( [\vv d] \cdot [\vvbeta] \big) \Big).
 \end{equation*}
-With $\del [d] = \del ( ct - ct_{\mathrm{ret}} ) = - \del ct_{\mathrm{ret}}$, that's:
+With $\del [d] = \del ( ct - ct_{\mathrm{ret}} ) = - \del ct_{\mathrm{ret}}$ (definition of $ct_{\mathrm{ret}}$), that's:
 \begin{equation}\label{eq:gradterm1}
 \del \big([d] - [\vv d] \cdot [\vvbeta] \big)^{-1} = \big([d] - [\vv d] \cdot [\vvbeta] \big)^{-2} \, \Big( \del ct_{\mathrm{ret}} + \del \big( [\vv d] \cdot [\vvbeta] \big) \Big) .
 \end{equation}
@@ -4113,8 +4113,8 @@ where $[\vvzeta] = \dd [\vvbeta] / \dd(ct_{\mathrm{ret}})$ is the particle's nor
 \begin{equation}\label{eq:secondterm}
 \begin{split}
 \big( [\vvbeta] \cdot \del \big) [\vv d] &= \big( [\vvbeta] \cdot \del \big) \big( \vv r - [\vv r_q] \big) \\[2pt]
-&= \left( [\beta_x] \dfrac{\partial}{\partial x} + [\beta_y] \dfrac{\partial}{\partial y} + [\beta_z] \dfrac{\partial}{\partial z} \right) \big( \vv r - \vv r_q(ct_{\mathrm{ret}}) \big) \\[3pt]
-&= \left( [\beta_x] \dfrac{\partial \langle x, y, z \rangle}{\partial x} + \dots \right)  -  \left( [\beta_x] \dfrac{\dd [\vv r_q]}{\dd (ct_{\mathrm{ret}})} \dfrac{\partial (ct_{\mathrm{ret}})}{\partial x} + \dots \right) \\[2pt]
+&= \left( [\beta_x] \dfrac{\partial}{\partial x} + [\beta_y] \dfrac{\partial}{\partial y} + [\beta_z] \dfrac{\partial}{\partial z} \right) \big( \langle x, y, z \rangle - \vv r_q(ct_{\mathrm{ret}}) \big) \\[3pt]
+&= \Big( \big \langle [\beta_x], 0, 0 \big \rangle \, + \, \dots \Big)  -  \left( [\beta_x] \dfrac{\dd [\vv r_q]}{\dd (ct_{\mathrm{ret}})} \dfrac{\partial (ct_{\mathrm{ret}})}{\partial x} \, + \, \dots \right) \\[2pt]
 &= [\vvbeta] - \big( [\vvbeta] \cdot \del ct_{\mathrm{ret}} \big) [\vvbeta] .
 \end{split}
 \end{equation}
@@ -4225,9 +4225,7 @@ Our updated Equation \ref{eq:ctofapart} is then:
 \begin{equation}\label{eq:ctofapart2}
 \partial^{ct} \dfrac{[\vvbeta]}{[d] - [\vv d] \cdot [\vvbeta]} = \dfrac{[d] [\vvzeta]}{\big( [d] - [\vv d] \cdot [\vvbeta] \big)^2} \, - \, \dfrac{\Big( \partial^{ct} [d] - \partial^{ct} \big( [\vv d] \cdot [\vvbeta] \big) \Big) [\vvbeta] }{\big([d] - [\vv d] \cdot [\vvbeta] \big)^2}
 \end{equation}
-(the $\partial^{ct}$ term of the Li\'enard--Wiechert $\vv e$ field, Equation \ref{eq:lwe0}).
-
-Now the second term of Equation \ref{eq:ctofapart2}. We need $\partial^{ct} ([\vv d] \cdot [\vvbeta])$:
+(the $\partial^{ct}$ term of the Li\'enard--Wiechert $\vv e$ field, Equation \ref{eq:lwe0}). For the second term of Equation \ref{eq:ctofapart2}, we need $\partial^{ct} ([\vv d] \cdot [\vvbeta])$:
 \begin{equation*}
 \begin{aligned}
 \partial^{ct} \big( [\vv d] \cdot [\vvbeta] \big) &= [\vv d] \cdot \partial^{ct} [\vvbeta] \, + \, [\vvbeta] \cdot \partial^{ct} [\vv d] \\[6pt]
@@ -4281,14 +4279,14 @@ Factor (carefully):
 &= \dfrac{[d] [\vvzeta]}{\big([d] - [\vv d] \cdot [\vvbeta] \big)^{2}} \, + \, \dfrac{\big([\gamma]^{-2} + [\vv d] \cdot [\vvzeta] \big)\big([d] [\vvbeta] - [\vv d] \big)}{\big( [d] - [\vv d] \cdot [\vvbeta] \big)^3}
 \end{split}
 \end{equation*}
-(Equation \ref{eq:20} for the $\gamma$). Then:
+(Equation \ref{eq:20} for the $\gamma$). Impose a shared denominator and distribute $-1$:
 \begin{equation*}
 \begin{split}
 \vv e (ct, \vv r) &= - \dfrac{q}{4 \pi} \left( \dfrac{[d] \big([d] - [\vv d] \cdot [\vvbeta] \big) [\vvzeta]}{\big([d] - [\vv d] \cdot [\vvbeta] \big)^{3}} \, + \, \dfrac{\big([\gamma]^{-2} + [\vv d] \cdot [\vvzeta] \big)\big([d] [\vvbeta] - [\vv d] \big)}{\big( [d] - [\vv d] \cdot [\vvbeta] \big)^3} \right) \\[4pt]
-&= \dfrac{q}{4 \pi} \left(\dfrac{\big([\gamma]^{-2} + [\vv d] \cdot [\vvzeta] \big)\big( [\vv d] - [d] [\vvbeta] \big) \, - \, [d] \big([d] - [\vv d] \cdot [\vvbeta] \big) [\vvzeta]}{\big( [d] - [\vv d] \cdot [\vvbeta] \big)^3} \right) .
+&= \dfrac{q}{4 \pi} \left(\dfrac{\big([\gamma]^{-2} + [\vv d] \cdot [\vvzeta] \big)\big( [\vv d] - [d] [\vvbeta] \big) \, - \, \Big( [\vv d] \cdot \big( [\vv d] - [d][\vvbeta] \big) \Big)[\vvzeta]}{\big( [d] - [\vv d] \cdot [\vvbeta] \big)^3} \right) .
 \end{split}
 \end{equation*}
-Now, $[d]([d] - [\vv d] \cdot [\vvbeta])[\vvzeta] = ([\vv d] \cdot ([\vv d] - [d][\vvbeta]))[\vvzeta]$. That forms the ``$cab$" part of a ``$bac - cab$" expansion, and:
+Spot the ``$bac - cab$" expansion and un-expand it:
 \begin{equation*}
 \vv e (ct, \vv r) = \dfrac{q}{4 \pi} \left(\dfrac{[\gamma]^{-2} \big( [\vv d] - [d] [\vvbeta] \big)}{\big( [d] - [\vv d] \cdot [\vvbeta] \big)^3} \, + \, \dfrac{[\vv d] \times \Big( \big( [\vv d] - [d][\vvbeta] \big) \times [\vvzeta] \Big)}{\big( [d] - [\vv d] \cdot [\vvbeta] \big)^3} \right) .
 \end{equation*}
@@ -4296,11 +4294,11 @@ Define $\vv{\upkappa} \equiv [\vv{\hat{d}}] - [\vvbeta]$, and factor out $[d]$ f
 \begin{equation*}
 \vv e (ct, \vv r) = \dfrac{q}{4 \pi \big( 1 - [\vv{\hat{d}}] \cdot [\vvbeta] \big)^3} \left(\dfrac{[d] [\gamma]^{-2} \vv{\upkappa}}{[d]^3} \, + \, \dfrac{[d]^2 [\vv{\hat{d}}] \times \big( \vv{\upkappa} \times [\vvzeta] \big)}{[d]^3} \right) .
 \end{equation*}
-Cancel the last $[d]$'s:
+Finally(!):
 \begin{equation}\label{eq:retepart}
 \vv e(ct, \vv r) = \dfrac{q}{4 \pi \big( 1 - [\vv{\hat{d}}] \cdot [\vvbeta] \big)^3} \left( \dfrac{\vv{\upkappa}}{[\gamma]^2 [d]^2} \, + \, \dfrac{[\vv{\hat{d}}] \times \left( \vv{\upkappa} \times [\vvzeta] \right)}{[d]} \right),
 \end{equation}
-and that's it for $\vv e$!
+and that's it for $\vv e$.
 
 [skip]
 
