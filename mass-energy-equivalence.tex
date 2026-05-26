@@ -3616,7 +3616,9 @@ This section is important, but it's long, computation-heavy, and nearly self-con
 
 The Lorenz-gauge field equation $\Box \vv A = \vv J$ can be solved for the four-potential $\vv A$ using the method of Green's functions. Some of the details are beyond our scope, but a manifestly covariant solution looks like this:
 \begin{equation}\label{eq:retfp}
-\vv A(\vv R) = \int G_{\textrm{ret}} ( \vv R - \vv R_{s} ) \, \vv J (\vv R _{s}) \, \dd \Omega_{s} ,
+\boxed{
+\vv A(\vv R) = \int G_{\textrm{ret}} ( \vv R - \vv R_{s} ) \, \vv J (\vv R _{s}) \, \dd \Omega_{s}
+} \, ,
 \end{equation}
 where we have some symbols to explain.
 
@@ -3674,7 +3676,9 @@ Equation \ref{eq:green2} is the form of the retarded Green's function that we'll
 \end{equation*}
 Carry out the $ct_{s}$-integral, and obtain:
 \begin{equation}\label{eq:retfp2}
-\vv A(ct, \vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv J (ct_{\textrm{ret}}, \vv r _{s})}{d} \, \dd V_{s} .
+\boxed{
+\vv A(ct, \vv r) = \dfrac{1}{4 \pi} \int \dfrac{\vv J (ct_{\textrm{ret}}, \vv r _{s})}{d} \, \dd V_{s}
+} \, .
 \end{equation}
 Here, the integration is over \emph{all of space} for the chosen inertial frame, but not at a single moment. Rather, for each source-position $\vv r_{s}$, the four-current density $\vv J$ is sampled at the retarded time $ct_{\textrm{ret}}$ (a function of $ct$, $\vv r$, and $\vv r_{s}$).
 
@@ -3937,11 +3941,15 @@ or (by Equation \ref{eq:deld}):
 
 Now we plug Equations \ref{eq:delrho} and \ref{eq:curlj} into Equations \ref{eq:ref1} and \ref{eq:rbf1}, and after some minor simplifying and rearranging, we get:
 \begin{equation}\label{eq:ref2}
+\boxed{
 \vv e(ct, \vv r) = \dfrac{1}{4 \pi} \int \left( \dfrac{[\rho]}{d^2} \, \vv{\hat{d}}  \, + \, \dfrac{\partial^{ct} [\rho] }{d} \, \vv{\hat{d}} \, -  \, \dfrac{ \partial^{ct} [\mkern2mu \vv j \mkern1.5mu ]}{d} \right) \, \dd V_{s}
+}
 \end{equation}
 and:
 \begin{equation}\label{eq:rbf2}
-\vv b(ct, \vv r) = \dfrac{1}{4 \pi} \int \left( \dfrac{[\mkern2mu \vv j \mkern1.5mu ] }{d^2} \, + \, \dfrac{ \partial^{ct} [\mkern2mu \vv j \mkern1.5mu ] }{d} \right) \times \mkern2mu \vv{\hat{d}} \; \dd V_{s} .
+\boxed{
+\vv b(ct, \vv r) = \dfrac{1}{4 \pi} \int \left( \dfrac{[\mkern2mu \vv j \mkern1.5mu ] }{d^2} \, + \, \dfrac{ \partial^{ct} [\mkern2mu \vv j \mkern1.5mu ] }{d} \right) \times \mkern2mu \vv{\hat{d}} \; \dd V_{s}
+} \, .
 \end{equation}
 These equations give the electric and magnetic fields at a given ``field event" in terms of the sources and their time-derivatives everywhere else in space at the appropriate retarded times. ``Information" about the presence and rate-of-change of $\rho$ and $\vv j$ at each ``source event" propagates outward in all spatial directions at the speed of light, as a disturbance in the $\vv e$ and $\vv b$ fields. The sum of all such disturbances that reach the field event determines the values of $\vv e$ and $\vv b$ at that point in spacetime. This is effectively the story we told in Section \ref{sssec:fp} about the Lorenz-gauge field equation $\Box \vv A = \vv J$, but now we get it in a more explicit form in terms of the fields, with no caveats about gauge. For time-independent sources, of course, our new equations for the retarded fields reduce to Equations \ref{eq:electrostatice} and \ref{eq:biot}, since the time-derivatives vanish and the sources become $\rho (\vv r_{s})$ and $\vv j (\vv r_{s})$.
 
@@ -4033,7 +4041,7 @@ The roots of our function are given by $[\vv R - \vv R_{q}(ct_0)]^2 = 0$, meanin
 \end{equation*}
 Integrate:
 \begin{equation}\label{eq:covlien}
-\vv A(\vv R) = \dfrac{q \vv B(ct_{0 \mkern2mu \textrm{ret}})}{4 \pi \big[ \vv R - \vv R_{q} (ct_{0 \mkern2mu \textrm{ret}}) \big] \cdot \vv B (ct_{0 \mkern2mu \textrm{ret}})} .
+\boxed{ \vv A(\vv R) = \dfrac{q \vv B(ct_{0 \mkern2mu \textrm{ret}})}{4 \pi \big[ \vv R - \vv R_{q} (ct_{0 \mkern2mu \textrm{ret}}) \big] \cdot \vv B (ct_{0 \mkern2mu \textrm{ret}})} } \, .
 \end{equation}
 
 Equation \ref{eq:covlien} is the Li\'enard--Wiechert potential in manifestly covariant form. For a given inertial frame, $ct_{\mathrm{ret}} \equiv ct_{q} (ct_{0 \mkern2mu \textrm{ret}})$ is the coordinate time of the world-line event $\vv R_{q}(ct_{0 \mkern2mu \textrm{ret}})$. Evaluating the condition $[\vv R - \vv R_{q}(ct_{0 \mkern2mu \textrm{ret}})]^2 = 0$ in that frame gives $[ct - ct_{\mathrm{ret}}]^2 - [\vv r - \vv r_{q}(ct_{0 \mkern2mu \textrm{ret}})]^2 = [ct - ct_{\mathrm{ret}}]^2 - [\vv r - \vv r_{q}(ct_{\mathrm{ret}})]^2 = 0$ (we're free to reparameterize in terms of $ct_{\mathrm{ret}}$, and we're about to do that for everything). With $\vv d(ct_{\mathrm{ret}}) \equiv \vv r - \vv r_{q}(ct_{\mathrm{ret}})$, the retarded coordinate time here is defined \emph{implicitly} by the equation $ct_{\mathrm{ret}} = ct - d(ct_{\mathrm{ret}}) = ct - \vert \vv r - \vv r_{q}(ct_{\mathrm{ret}}) \vert$. In the frame, then:
@@ -4051,7 +4059,7 @@ Use $\vv B = \gamma \langle 1, \vvbeta \rangle$ (Equation \ref{eq:31}):
 \end{equation*}
 For brevity, reintroduce the convention that square brackets around a quantity mean that it's evaluated at $ct_{\textrm{ret}}$ (keeping in mind the implicit definition of $ct_{\textrm{ret}}$ in this context):
 \begin{equation}\label{eq:lienard}
-\vv A(ct, \vv r) = \dfrac{q \, \big \langle 1, [\vvbeta] \big \rangle}{4 \pi [d] \, (1 - [\vv{\hat{d}}] \cdot [\vvbeta] )} .
+\boxed{ \vv A(ct, \vv r) = \dfrac{q \, \big \langle 1, [\vvbeta] \big \rangle}{4 \pi [d] \, (1 - [\vv{\hat{d}}] \cdot [\vvbeta] )} } \, .
 \end{equation}
 
 Equation \ref{eq:lienard} is the usual form of the Li\'enard--Wiechert four-potential. In terms of components, with $\vv A = \langle \Phi, \vv a \rangle$, that's:
@@ -4181,7 +4189,7 @@ Plug Equation \ref{eq:delctret} into our main gradient term (Equation \ref{eq:gr
 &= \dfrac{[\vvbeta] }{\big([d] - [\vv d] \cdot [\vvbeta] \big)^{2}} \, - \, \dfrac{\big( [\vv d] \cdot [\vvzeta] + 1 - [\beta]^2 \big) [\vv d] }{\big([d] - [\vv d] \cdot [\vvbeta] \big)^{3}} .
 \end{split}
 \end{equation}
-With Equation \ref{eq:gradterm3} in hand, let's introduce a shorthand notation for the quantity $[d] - [\vv d] \cdot [\vvbeta]$, to reduce clutter:
+With Equation \ref{eq:gradterm3} in hand, let's introduce a dedicated symbol for the quantity $[d] - [\vv d] \cdot [\vvbeta]$ (it will be ubiquitous in these derivations):
 \begin{equation*}
 D \equiv [d] - [\vv d] \cdot [\vvbeta] .
 \end{equation*}
@@ -4197,7 +4205,7 @@ Numerator of first term, using $ct_{\mathrm{ret}} = ct - [d]$:
 \end{equation}
 Use $[d] = ([\vv d] \cdot [\vv d])^{1/2}$ and $[\vv d] = \vv r - \vv r_q (ct_{\mathrm{ret}})$:
 \begin{equation*}
-\partial^{ct} [d] = \dfrac{1}{2[d]} \, \partial^{ct} ([\vv d] \cdot [\vv d]) = \dfrac{1}{[d]} \, [\vv d] \cdot \partial^{ct} \big( \vv r - \vv r_q (ct_{\mathrm{ret}}) \big) = - \dfrac{[\vv d]}{[d]} \cdot \dfrac{\dd [\vv r_q]}{\dd (ct_{\mathrm{ret}})} \partial^{ct} ct_{\mathrm{ret}} ,
+\partial^{ct} [d] = \dfrac{1}{2[d]} \, \partial^{ct} ([\vv d] \cdot [\vv d]) = \dfrac{1}{[d]} \, [\vv d] \cdot \partial^{ct} \big( \vv r - \vv r_q (ct_{\mathrm{ret}}) \big) = - \dfrac{[\vv d]}{[d]} \cdot \dfrac{\dd [\vv r_q]}{\dd (ct_{\mathrm{ret}})} \, \partial^{ct} ct_{\mathrm{ret}} ,
 \end{equation*}
 or:
 \begin{equation}\label{eq:ctd}
@@ -4247,15 +4255,15 @@ Our updated Equation \ref{eq:ctofapart} is then:
 \end{equation*}
 (Equation \ref{eq:ctctret}). That result and Equation \ref{eq:ctd2} go into the second term of Equation \ref{eq:ctofapart2}. The numerator of that second term is then:
 \begin{equation*}
-- \Big( \partial^{ct} [d] - \partial^{ct} \big( [\vv d] \cdot [\vvbeta] \big) \Big) [\vvbeta] = \dfrac{[\vv d] \cdot [\vvbeta] + [d] \big( [\vv d] \cdot [\vvzeta] - [\beta]^2 \big)}{D} \, [\vvbeta] ,
+- \Big( \partial^{ct} [d] - \partial^{ct} \big( [\vv d] \cdot [\vvbeta] \big) \Big) [\vvbeta] = \dfrac{[\vv d] \cdot [\vvbeta] \, + \, [d] \big( [\vv d] \cdot [\vvzeta] - [\beta]^2 \big)}{D} \, [\vvbeta] ,
 \end{equation*}
 and the second term itself is:
 \begin{equation*}
-\dfrac{ - \Big( \partial^{ct} [d] - \partial^{ct} \big( [\vv d] \cdot [\vvbeta] \big) \Big) [\vvbeta] }{D^2} = \dfrac{[\vv d] \cdot [\vvbeta] + [d] \big( [\vv d] \cdot [\vvzeta] - [\beta]^2 \big)}{D^3} \, [\vvbeta] .
+\dfrac{ - \Big( \partial^{ct} [d] - \partial^{ct} \big( [\vv d] \cdot [\vvbeta] \big) \Big) [\vvbeta] }{D^2} = \dfrac{[\vv d] \cdot [\vvbeta] \, + \, [d] \big( [\vv d] \cdot [\vvzeta] - [\beta]^2 \big)}{D^3} \, [\vvbeta] .
 \end{equation*}
 Our whole $\partial^{ct}$ term (Equation \ref{eq:ctofapart2}) becomes:
 \begin{equation}\label{eq:ctofapart3}
-\partial^{ct} \dfrac{[\vvbeta]}{D} = \dfrac{[d] [\vvzeta]}{D^2} \, + \, \dfrac{[\vv d] \cdot [\vvbeta] + [d] \big( [\vv d] \cdot [\vvzeta] - [\beta]^2 \big)}{D^3} \, [\vvbeta] .
+\partial^{ct} \dfrac{[\vvbeta]}{D} = \dfrac{[d] [\vvzeta]}{D^2} \, + \, \dfrac{[\vv d] \cdot [\vvbeta] \, + \, [d] \big( [\vv d] \cdot [\vvzeta] - [\beta]^2 \big)}{D^3} \, [\vvbeta] .
 \end{equation}
 
 Now we have both the gradient term (Equation \ref{eq:gradterm3}) and the $\partial^{ct}$ term (Equation \ref{eq:ctofapart3}) for the Li\'enard--Wiechert $\vv e$ field (Equation \ref{eq:lwe0}). They need to be summed:
@@ -4263,7 +4271,7 @@ Now we have both the gradient term (Equation \ref{eq:gradterm3}) and the $\parti
 \begin{split}
 \vv e (ct, \vv r) &= - \dfrac{q}{4 \pi} \, \Big( \del D^{-1} + \partial^{ct} \left( D^{-1} \, [\vvbeta] \right) \Big) \\[6pt]
 \dfrac{- 4 \pi \, \vv e (ct, \vv r)}{q} &= \left( \dfrac{[\vvbeta] }{D^{2}} \, - \, \dfrac{\big( [\vv d] \cdot [\vvzeta] + 1 - [\beta]^2 \big) [\vv d] }{D^{3}} \right) \\[3pt]
-& \; \; \; + \left( \dfrac{[d] [\vvzeta]}{D^2} + \dfrac{[\vv d] \cdot [\vvbeta] + [d] \big( [\vv d] \cdot [\vvzeta] - [\beta]^2 \big)}{D^3} \, [\vvbeta] \right) .
+& \; \; \; + \left( \dfrac{[d] [\vvzeta]}{D^2} + \dfrac{[\vv d] \cdot [\vvbeta] \, + \, [d] \big( [\vv d] \cdot [\vvzeta] - [\beta]^2 \big)}{D^3} \, [\vvbeta] \right) .
 \end{split}
 \end{equation*}
 Start simplifying, but write $[\vv d ] \cdot [\vvbeta]$ as $[d] - ([d] - [\vv d] \cdot [\vvbeta]) = [d] - D$ (upstairs):
@@ -4297,7 +4305,7 @@ Define $\vv{\upkappa} \equiv [\vv{\hat{d}}] - [\vvbeta]$, and factor out $[d]$ f
 \end{equation*}
 Finally(!):
 \begin{equation}\label{eq:retepart}
-\vv e(ct, \vv r) = \dfrac{q}{4 \pi \big( 1 - [\vv{\hat{d}}] \cdot [\vvbeta] \big)^3} \left( \dfrac{\vv{\upkappa}}{[\gamma]^2 [d]^2} \, + \, \dfrac{[\vv{\hat{d}}] \times \big( \vv{\upkappa} \times [\vvzeta] \big)}{[d]} \right),
+\boxed{ \vv e(ct, \vv r) = \dfrac{q}{4 \pi \big( 1 - [\vv{\hat{d}}] \cdot [\vvbeta] \big)^3} \left( \dfrac{\vv{\upkappa}}{[\gamma]^2 [d]^2} \, + \, \dfrac{[\vv{\hat{d}}] \times \big( \vv{\upkappa} \times [\vvzeta] \big)}{[d]} \right) } \, ,
 \end{equation}
 and that's it for $\vv e$.
 
@@ -4328,7 +4336,7 @@ Then (with Equation \ref{eq:20} again for the $\gamma$, and $D = [d] - [\vv d] \
 \begin{equation}\label{eq:retbpart0}
 \vv b (ct, \vv r) = \dfrac{- q [\vv{\hat{d}}]}{4 \pi D^{3} / [d]^3} \times \left(\dfrac{[\vvbeta] }{[\gamma]^{2} [d]^2} + \dfrac{\big( [\vv{\hat{d}}] \cdot [\vvzeta] \big)[\vvbeta] + \big( 1 - [\vv{\hat{d}}] \cdot [\vvbeta] \big) [\vvzeta] }{[d]} \right)
 \end{equation}
-(careful with the $[d]$'s!). There's a strong similarity to the $\vv e$ field. The connection becomes clear when we take the cross product of $[\vv{\hat{d}}]$ with the latter (Equation \ref{eq:retepart}). Numerator of the first term:
+(careful with the $[d]$'s!). There's certainly a similarity to the $\vv e$ field. The connection becomes clear when we take the cross product of $[\vv{\hat{d}}]$ with the latter (Equation \ref{eq:retepart}). Numerator of the first term:
 \begin{equation*}
 [\vv{\hat{d}}] \times \vv{\upkappa} =  [\vv{\hat{d}}] \times \big( [\vv{\hat{d}}] - [\vvbeta] \big) = - [\vv{\hat{d}}] \times [\vvbeta] ,
 \end{equation*}
@@ -4342,13 +4350,13 @@ which matches the numerator of the first term in Equation \ref{eq:retbpart0}. Us
 \end{equation*}
 which matches the numerator of the second term in Equation \ref{eq:retbpart0}. So:
 \begin{equation}\label{eq:retbpart}
-\vv b (ct, \vv r) = [\vv{\hat{d}}] \times \vv e (ct, \vv r),
+\boxed{ \vv b (ct, \vv r) = [\vv{\hat{d}}] \times \vv e (ct, \vv r) } \, ,
 \end{equation}
 or
 \begin{equation}\label{eq:retbpart2}
-\vv b (ct, \vv r) = \dfrac{q [\vv{\hat{d}}]}{4 \pi \big( 1 - [\vv{\hat{d}}] \cdot [\vvbeta] \big)^3} \times \left( \dfrac{\vv{\upkappa}}{[\gamma]^2 [d]^2} \, + \, \dfrac{[\vv{\hat{d}}] \times \big( \vv{\upkappa} \times [\vvzeta] \big)}{[d]} \right) ,
+\boxed{ \vv b (ct, \vv r) = \dfrac{q [\vv{\hat{d}}]}{4 \pi \big( 1 - [\vv{\hat{d}}] \cdot [\vvbeta] \big)^3} \times \left( \dfrac{\vv{\upkappa}}{[\gamma]^2 [d]^2} \, + \, \dfrac{[\vv{\hat{d}}] \times \big( \vv{\upkappa} \times [\vvzeta] \big)}{[d]} \right) }
 \end{equation}
-and we've now got both Li\'enard--Wiechert fields.
+($\vv{\upkappa} = [\vv{\hat{d}}] - [\vvbeta]$), and we've now got both Li\'enard--Wiechert fields.
 
 From a particle-first perspective, we can summarize ``all" of the classical theory by writing down the Lorentz force $q_t ( \vv e + \vvbeta \times \vv b )$ (Equation \ref{eq:ltf}) using Equations \ref{eq:retepart} and \ref{eq:retbpart} for $\vv e$ and $\vv b$, summing over all contributing source-particles (I've used $q_t$ for the test particle's charge to distinguish it from $q$ in the retarded field equations).
 
