@@ -3636,7 +3636,7 @@ where $\Box$ went inside the integral because it only operates on functions of $
 
 We won't do a deep dive into the Dirac delta function here. We'll just use it, and call out new properties or identities involving it as we need them. One I'll call out right now is that the delta function is \emph{even}: it doesn't care about the ``order" of subtraction in its argument, at least when it comes to its ``sifting" property. For example, we wrote $\int \delta (\vv R - \vv R_{s}) \mkern1mu \vv J (\vv R_{s}) \mkern1mu \dd \Omega_{s} = \vv J (\vv R)$, but it's equally true that $\int \delta (\vv R_{s} - \vv R) \mkern1mu \vv J (\vv R_{s}) \mkern1mu \dd \Omega_{s} = \vv J (\vv R)$. We'll freely make use of this fact when integrating.
 
-\emph{Solving} $\Box G = \delta ( \vv R - \vv R_{s} )$ requires techniques like contour integration and Fourier transforms. We won't bother. Instead, I'll show you how $G_{\textrm{ret}}( \vv R - \vv R_{s} )$ is defined, explain how its form filters out candidate source events that aren't on the field event's past light cone, and demonstrate that its d'Alembertian is indeed $\delta ( \vv R - \vv R_{s} )$.
+\emph{Solving} $\Box G = \delta ( \vv R - \vv R_{s} )$ is somewhat tricky, and is usually done with techniques like contour integration and Fourier transforms. We won't bother. Instead, I'll show you how $G_{\textrm{ret}}( \vv R - \vv R_{s} )$ is defined, explain how its form filters out candidate source events that aren't on the field event's past light cone, and demonstrate that its d'Alembertian is indeed $\delta ( \vv R - \vv R_{s} )$.
 
 The covariant retarded Green's function is:
 \begin{equation}\label{eq:green}
@@ -4061,6 +4061,7 @@ For brevity, reintroduce the convention that square brackets around a quantity m
 \begin{equation}\label{eq:lienard}
 \boxed{ \vv A(ct, \vv r) = \dfrac{q \, \big \langle 1, [\vvbeta] \big \rangle}{4 \pi [d] \, (1 - [\vv{\hat{d}}] \cdot [\vvbeta] )} } \, .
 \end{equation}
+Note that our new $[\vv d] = \vv r - \vv r_q(ct_{\mathrm{ret}})$ means something a little different than $\vv d = \vv r - \vv r_s$ did in earlier sections (particle trajectory vs. source event).
 
 Equation \ref{eq:lienard} is the usual form of the Li\'enard--Wiechert four-potential. In terms of components, with $\vv A = \langle \Phi, \vv a \rangle$, that's:
 \begin{equation}\label{eq:lienardphi}
@@ -4070,7 +4071,7 @@ and:
 \begin{equation}\label{eq:lienarda}
 \vv a(ct, \vv r) = \dfrac{q [\vvbeta]}{4 \pi [d] \, (1 - [\vv{\hat{d}}] \cdot [\vvbeta] )} = \Phi(ct, \vv r) [ \vvbeta ] .
 \end{equation}
-Equations \ref{eq:lienardphi} and \ref{eq:lienarda} tell us how to calculate a given particle's contribution to the scalar and three-vector (Lorenz-gauge) potentials at some field event $\vv R = \langle ct, \vv r \rangle$. Assuming that a relevant retarded-time value $ct_{\textrm{ret}}$ exists for the particle, then plug $[ \vv d ] = \vert \vv r - \vv r_{q} (ct_{\textrm{ret}}) \vert$ and the particle's retarded velocity $[\vvbeta]$ into the equations, and we have our answer. How could there be no relevant $ct_{\textrm{ret}}$? Consider the hyperbolic motion we covered in Section \ref{sssec:hyperbolic}: if the field event is beyond the particle's past Rindler horizon, then it's ``unpingable."
+Equations \ref{eq:lienardphi} and \ref{eq:lienarda} tell us how to calculate a given particle's contribution to the scalar and three-vector (Lorenz-gauge) potentials at some field event $\vv R = \langle ct, \vv r \rangle$. Assuming that a relevant retarded-time value $ct_{\textrm{ret}}$ exists for the particle, then plug $[ \vv d ] = \vv r - \vv r_{q} (ct_{\textrm{ret}})$ and the particle's retarded velocity $[\vvbeta]$ into the equations, and we have our answer. How could there be no relevant $ct_{\textrm{ret}}$? In practice there couldn't be, but consider the hyperbolic motion we covered in Section \ref{sssec:hyperbolic}: if the field event is beyond an ever-accelerating particle's past Rindler horizon, then it's ``unpingable."
 
 
 \subsubsection{Point-Charge Sources 2: Li\'enard--Wiechert Fields}\label{sssec:lwf}
@@ -4274,14 +4275,14 @@ Now we have both the gradient term (Equation \ref{eq:gradterm3}) and the $\parti
 & \; \; \; + \left( \dfrac{[d] [\vvzeta]}{D^2} + \dfrac{[\vv d] \cdot [\vvbeta] \, + \, [d] \big( [\vv d] \cdot [\vvzeta] - [\beta]^2 \big)}{D^3} \, [\vvbeta] \right) .
 \end{split}
 \end{equation*}
-Start simplifying, but write $[\vv d ] \cdot [\vvbeta]$ as $[d] - ([d] - [\vv d] \cdot [\vvbeta]) = [d] - D$ (upstairs):
+Start simplifying, but write $[\vv d ] \cdot [\vvbeta]$ as $[d] - ([d] - [\vv d] \cdot [\vvbeta]) = [d] - D$:
 \begin{equation*}
 \begin{split}
 \dfrac{ - 4 \pi \, \vv e (ct, \vv r)}{q} &= \dfrac{[\vvbeta] + [d] [\vvzeta]}{D^{2}} \, - \, \dfrac{\big( [\vv d] \cdot [\vvzeta] + 1 - [\beta]^2 \big) [\vv d] }{D^{3}} \\[8pt]
 & \; \; \; + \, \dfrac{[d] - D + [d] \big( [\vv d] \cdot [\vvzeta] - [\beta]^2 \big)}{D^3} \, [\vvbeta] .
 \end{split}
 \end{equation*}
-The $[\vvbeta]/D^2$ terms cancel, and we factor (carefully):
+The $[\vvbeta]/D^2$ terms cancel, and we factor:
 \begin{equation*}
 \begin{split}
 \dfrac{- 4 \pi \, \vv e (ct, \vv r)}{q} &= \dfrac{[d] [\vvzeta]}{D^{2}} \, + \, \dfrac{\big(1 - [\beta]^2 + [\vv d] \cdot [\vvzeta] \big)\big([d] [\vvbeta] - [\vv d] \big)}{D^3} \\[7pt]
@@ -4309,34 +4310,34 @@ Finally(!):
 \end{equation}
 and that's it for $\vv e$.
 
-Next, $\vv b$ (Equation \ref{eq:lwb0}):
+Next, $\vv b$ (Equation \ref{eq:lwb0}), remembering that $D = [d] - [\vv d] \cdot [\vvbeta]$:
 \begin{equation*}
 \vv b (ct, \vv r) = \dfrac{q}{4 \pi} \, \left(\del D^{-1} \times [\vvbeta] \, + \, \dfrac{\del \times [\vvbeta]}{D} \right)
 \end{equation*}
 (curl-of-scalar-times-vector identity). By Equation \ref{eq:gradterm3}, the first term is:
 \begin{equation*}
-\del D^{-1} \times [\vvbeta] =  \dfrac{- \big( [\vv d] \cdot [\vvzeta] + 1 - [\beta]^2 \big) [\vv d] }{D^{3}} \times [\vvbeta]
+\del D^{-1} \times [\vvbeta] =  \dfrac{- \big( [\vv d] \cdot [\vvzeta] + 1 - [\beta]^2 \big) [\vv d] }{D^{3}} \times [\vvbeta] = - [\vv d] \times \dfrac{\big( [\vv d] \cdot [\vvzeta] + [\gamma]^{-2} \big) [\vvbeta] }{D^{3}}
 \end{equation*}
-(the $[\vvbeta]$ term of Equation \ref{eq:gradterm3} vanishes because $[\vvbeta] \times [\vvbeta] = \vv 0$). And by Equations \ref{eq:curlb} and \ref{eq:delctret}, the numerator of the second term is:
+(the $[\vvbeta]$ term of Equation \ref{eq:gradterm3} vanishes because $[\vvbeta] \times [\vvbeta] = \vv 0$, and we've again used Equation \ref{eq:20} for the $\gamma$). Then by Equations \ref{eq:curlb} and \ref{eq:delctret}, the numerator of the \emph{second} term is:
 \begin{equation*}
 \del \times [\vvbeta] = \del ct_{\mathrm{ret}} \times [\vvzeta] = \dfrac{-[\vv d] \times [\vvzeta] }{D},
 \end{equation*}
 so that the whole second term is:
 \begin{equation*}
-\dfrac{\del \times [\vvbeta]}{D} = \dfrac{-[\vv d] \times [\vvzeta]}{D^2} = \dfrac{ - D [\vv d] \times [\vvzeta] }{D^3}.
+\dfrac{\del \times [\vvbeta]}{D} = -[\vv d] \times \dfrac{[\vvzeta]}{D^2} = -[\vv d] \times  \dfrac{D [\vvzeta] }{D^3} = - [\vv d] \times \dfrac{ \big( [d] - [\vv d] \cdot [\vvbeta] \big) [\vvzeta] }{D^3}.
 \end{equation*}
-Then (with Equation \ref{eq:20} again for the $\gamma$, and $D = [d] - [\vv d] \cdot [\vvbeta]$):
+Put them together, and factor out all the $[d]$'s:
 \begin{equation*}
 \begin{split}
-\vv b (ct, \vv r) &= \dfrac{- q [\vv d]}{4 \pi} \times \left(\dfrac{\big( [\vv d] \cdot [\vvzeta] + [\gamma]^{-2} \big) [\vvbeta] }{D^{3}} \, + \, \dfrac{D [\vvzeta] }{D^3} \right) \\[4pt]
-&= \dfrac{- q [\vv{\hat{d}}]}{4 \pi D^{3} / [d]^3} \times \left(\dfrac{[d] \big( [d] [\vv{\hat{d}}] \cdot [\vvzeta] + [\gamma]^{-2} \big) [\vvbeta] }{[d]^3} + \dfrac{[d]^2 \big( 1 - [\vv{\hat{d}}] \cdot [\vvbeta] \big) [\vvzeta] }{[d]^3} \right)
+\vv b (ct, \vv r) &= \dfrac{- q [\vv d]}{4 \pi} \times \left(\dfrac{\big( [\vv d] \cdot [\vvzeta] + [\gamma]^{-2} \big) [\vvbeta] }{D^{3}} \, + \, \dfrac{\big( [d] - [\vv d] \cdot [\vvbeta] \big) [\vvzeta] }{D^3} \right) \\[4pt]
+&= \dfrac{- q [\vv{\hat{d}}]}{4 \pi D^{3} / [d]^3} \times \left(\dfrac{[d] \big( [d] [\vv{\hat{d}}] \cdot [\vvzeta] \, + \, [\gamma]^{-2} \big) [\vvbeta] }{[d]^3} \, + \, \dfrac{[d]^2 \big( 1 - [\vv{\hat{d}}] \cdot [\vvbeta] \big) [\vvzeta] }{[d]^3} \right)
 \end{split}
 \end{equation*}
 (using $D^3 / [d]^3  = (1 - [\vv{\hat{d}}] \cdot [\vvbeta])^3$ in the prefactor just to fit everything on one line), or:
 \begin{equation}\label{eq:retbpart0}
 \vv b (ct, \vv r) = \dfrac{- q [\vv{\hat{d}}]}{4 \pi D^{3} / [d]^3} \times \left(\dfrac{[\vvbeta] }{[\gamma]^{2} [d]^2} + \dfrac{\big( [\vv{\hat{d}}] \cdot [\vvzeta] \big)[\vvbeta] + \big( 1 - [\vv{\hat{d}}] \cdot [\vvbeta] \big) [\vvzeta] }{[d]} \right)
 \end{equation}
-(careful with the $[d]$'s!). There's certainly a similarity to the $\vv e$ field. The connection becomes clear when we take the cross product of $[\vv{\hat{d}}]$ with the latter (Equation \ref{eq:retepart}). Numerator of the first term:
+(track the $[d]$'s carefully!). There's certainly a similarity to the $\vv e$ field. The connection becomes clear when we take the cross product of $[\vv{\hat{d}}]$ with the latter (Equation \ref{eq:retepart}). Numerator of the first term:
 \begin{equation*}
 [\vv{\hat{d}}] \times \vv{\upkappa} =  [\vv{\hat{d}}] \times \big( [\vv{\hat{d}}] - [\vvbeta] \big) = - [\vv{\hat{d}}] \times [\vvbeta] ,
 \end{equation*}
@@ -4356,11 +4357,11 @@ or
 \begin{equation}\label{eq:retbpart2}
 \boxed{ \vv b (ct, \vv r) = \dfrac{q [\vv{\hat{d}}]}{4 \pi \big( 1 - [\vv{\hat{d}}] \cdot [\vvbeta] \big)^3} \times \left( \dfrac{\vv{\upkappa}}{[\gamma]^2 [d]^2} \, + \, \dfrac{[\vv{\hat{d}}] \times \big( \vv{\upkappa} \times [\vvzeta] \big)}{[d]} \right) }
 \end{equation}
-($\vv{\upkappa} = [\vv{\hat{d}}] - [\vvbeta]$), and we've now got both Li\'enard--Wiechert fields.
+($\vv{\upkappa} = [\vv{\hat{d}}] - [\vvbeta]$).
 
-From a particle-first perspective, we can summarize ``all" of the classical theory by writing down the Lorentz force $q_t ( \vv e + \vvbeta \times \vv b )$ (Equation \ref{eq:ltf}) using Equations \ref{eq:retepart} and \ref{eq:retbpart} for $\vv e$ and $\vv b$, summing over all contributing source-particles (I've used $q_t$ for the test particle's charge to distinguish it from $q$ in the retarded field equations).
+At long last, we've got both Li\'enard--Wiechert fields. Earlier we noted that we can summarize ``all" of classical electrodynamics with the Lorentz force density and the Jefimenko equations. From a particle-first perspective (\emph{not} the perspective of this document), we can now do effectively the same thing by writing down the Lorentz force $q_t ( \vv e + \vvbeta \times \vv b )$ (Equation \ref{eq:ltf}) using Equations \ref{eq:retepart} and \ref{eq:retbpart} for $\vv e$ and $\vv b$, summing over all contributing source-particles (I've used $q_t$ for the test particle's charge to distinguish it from $q$ in the retarded field equations).
 
-In the Li\'enard--Wiechert fields, the $\vv{\upkappa}$ term falls off as $1/[d]^2$, whereas the $[\vv {\hat{d}}] \times ( \vv{\upkappa} \times [\vvzeta] )$ term falls off as $1/[d]$. The former is the \textbf{velocity field} (or \textbf{generalized Coulomb field} in the $\vv e$ equation), which dominates at low speeds and close range, and the latter is the acceleration-dependent \textbf{radiation field}, which dominates farther away and is most responsible for the character of electromagnetic waves. The acceleration-dependence was present in the Jefimenko equations, too (Equations \ref{eq:ref2} and \ref{eq:rbf2}), but somewhat obscured: it's the $\partial^{ct} [\mkern2mu \vv j \mkern1.5mu ]$ stuff (current density already ``includes" charge-velocities).
+In the Li\'enard--Wiechert fields (Equations \ref{eq:retepart} and \ref{eq:retbpart2}), the $\vv{\upkappa}$ term falls off as $1/[d]^2$, whereas the $[\vv {\hat{d}}] \times ( \vv{\upkappa} \times [\vvzeta] )$ term falls off as $1/[d]$. The former is the \textbf{velocity field} (or \textbf{generalized Coulomb field} in the $\vv e$ equation), which dominates at low speeds and close range, and the latter is the acceleration-dependent \textbf{radiation field}, which dominates farther away and is most responsible for the character of electromagnetic waves. The acceleration-dependence was present in the Jefimenko equations, too (Equations \ref{eq:ref2} and \ref{eq:rbf2}), but somewhat obscured: it's the $\partial^{ct} [\mkern2mu \vv j \mkern1.5mu ]$ stuff (current density already ``includes" charge-velocities).
 
 One more observation. If the source-particle isn't accelerating at the retarded time, then only the velocity-field term in the Li\'enard--Wiechert equation for $\vv e$ remains, with $\vv e \parallel \vv{\upkappa}$. That's trivial. Here comes the interesting bit. If the particle \emph{maintains} its constant velocity until the current time $ct$, then the vector $\vv{\upkappa} = [\vv{\hat{d}}] - [\vvbeta]$ actually points from the particle's \emph{current} position to the position $\vv r$ of the field event. This is so because the inertial particle's current position (at time $ct$) is ${[\vv r_{q}] + (ct - ct_{\mathrm{ret}})[\vvbeta]}$ (the sum of its initial position $[\vv r_{q}]$ and its displacement $(ct - ct_{\mathrm{ret}})[\vvbeta]$ in the interim), or equivalently ${[\vv r_{q}] + (ct - (ct - [d]))[\vvbeta] = [\vv r_{q}] + [d][\vvbeta]}$, meaning the separation from the particle's current location to the field-event position is ${\vv r - ([\vv r_{q}] + [d][\vvbeta]) = [\vv d] - [d][\vvbeta] = [d]([\vv{\hat{d}}] - [\vvbeta]) = [d] \vv{\upkappa}}$. (And if the particle doesn't \emph{remain} inertial, $\vv{\upkappa}$ points to $\vv r$ from where the particle \emph{would} currently be \emph{had} it maintained its initial constant velocity.) The electric field $\vv e$ itself then likewise points from the inertial particle's current position to $\vv r$, as does the electric \emph{force} acting on a test particle at $\vv r$ with charge $q_t$ (that's $q_t \vv e$, recall).
 
