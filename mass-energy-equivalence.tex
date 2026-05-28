@@ -2946,7 +2946,7 @@ We've claimed that Equation \ref{eq:gfp} is the electromagnetic field equation, 
 \begin{equation}\label{eq:ff}
 \boxed{\vv F_{\textrm{L}} = q \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A)} \, .
 \end{equation}
-This $\vv F_{\textrm{L}}$ is called the \textbf{Lorentz four-force}.\footnote{Since $\vv J$ has dimensions of $Q / L^3$ (Equation \ref{eq:fc}), $\vv A$ must have $Q / L$ (Equation \ref{eq:gfp}). And since $\vv F$ has $E / L$, we now see that $q$ has $Q = \sqrt{EL}$. (Not so in the SI, by the way.)} It's the physical effect that information about the four-current density's value elsewhere has on a test charge upon reaching it (we're invoking the point-charge model now).\footnote{\label{fn:recoil}By ``test charge" we mean that we neglect the influence of the particle's charge on the four-potential, which, in turn, affects the particle. Accounting for it is beyond our scope and not entirely possible in classical electrodynamics anyway. (Remember: the theory is really about \emph{continua}, not \emph{particles}. In fact, instead of starting with $\vv F_{\textrm{L}}$, it's better to regard the field energy, momentum, and stress as fundamental, derive from them and Maxwell's equations the Lorentz four-force \emph{density}, and use a limiting procedure to obtain $\vv F_{\textrm{L}}$---see Section \ref{sssec:fffffd}. We'll cover all those quantities, but we start with force and point particles because it's easier.) That said, we'd be remiss not to mention that accelerating charges are what generate electromagnetic waves, and that the ``recoil" four-force that a radiating particle is subject to (``beyond" $\vv F_{\textrm{L}}$) \emph{should be} ${\vv F = (q^2 / (6 \pi))[\mathring{\vv Z} + (\vv Z \cdot \vv Z) \vv B]}$, where $q$ is the particle's charge, $\vv B$ its normalized four-velocity, $\vv Z$ its normalized four-acceleration, and $\mathring{\vv Z}$ its normalized four-jerk. The jerk-term in this \textbf{Abraham--Lorentz--Dirac four-force} is the problem---it leads to unphysical predictions like runaway acceleration. An \emph{approximation} called the \textbf{Landau--Lifshitz equation} avoids the pathologies and accords well with experiment, but ultimately the classical theory fails to self-consistently describe point charges. In any case, the radiation reaction is negligible in most practical applications.} The quantities on the right side are the particle's charge $q$, the particle's normalized four-velocity $\vv B$, and the ``value" of the four-potential $\vv A$ at the particle's spacetime position (we're differentiating the four-potential, so its non-uniqueness doesn't matter). As we learned in Section \ref{sssec:tp}, this differential four-vector triple product is gauge-invariant and can also be written:
+This $\vv F_{\textrm{L}}$ is called the \textbf{Lorentz four-force}.\footnote{Since $\vv J$ has dimensions of $Q / L^3$ (Equation \ref{eq:fc}), $\vv A$ must have $Q / L$ (Equation \ref{eq:gfp}). And since $\vv F$ has $E / L$, we now see that $q$ has $Q = \sqrt{EL}$. (Not so in the SI, by the way.)} It's the physical effect that information about the four-current density's value elsewhere has on a test charge upon reaching it (we're invoking the point-charge model now).\footnote{\label{fn:recoil}By ``test charge" we mean that we neglect the influence of the particle's charge on the four-potential, which, in turn, affects the particle. Accounting for it is beyond our scope and not entirely possible in classical electrodynamics anyway. (Remember: the theory is really about \emph{continua}, not \emph{particles}. In fact, instead of starting with $\vv F_{\textrm{L}}$, it's better to regard the field energy, momentum, and stress as fundamental, derive from them and Maxwell's equations the Lorentz four-force \emph{density}, and use a limiting procedure to obtain $\vv F_{\textrm{L}}$---see Section \ref{sssec:fffffd}. We'll cover all those quantities, but we start with the force on a test charge because it's easier to grasp and more entitled to the claim of ``empirical result.") That said, we'd be remiss not to mention that accelerating charges are what generate electromagnetic waves, and that the ``recoil" four-force that a radiating particle is subject to (``beyond" $\vv F_{\textrm{L}}$) \emph{should be} ${\vv F = (q^2 / (6 \pi))[\mathring{\vv Z} + (\vv Z \cdot \vv Z) \vv B]}$, where $q$ is the particle's charge, $\vv B$ its normalized four-velocity, $\vv Z$ its normalized four-acceleration, and $\mathring{\vv Z}$ its normalized four-jerk. The jerk-term in this \textbf{Abraham--Lorentz--Dirac four-force} is the problem---it leads to unphysical predictions like runaway acceleration. An \emph{approximation} called the \textbf{Landau--Lifshitz equation} avoids the pathologies and accords well with experiment, but ultimately the classical theory fails to self-consistently describe point charges. In any case, the radiation reaction is negligible in most practical applications.} The quantities on the right side are the particle's charge $q$, the particle's normalized four-velocity $\vv B$, and the ``value" of the four-potential $\vv A$ at the particle's spacetime position (we're differentiating the four-potential, so its non-uniqueness doesn't matter). As we learned in Section \ref{sssec:tp}, this differential four-vector triple product is gauge-invariant and can also be written:
 \begin{equation}\label{eq:lff}
 \vv F_{\textrm{L}} = q \, \bigl[ \partialup_{\vv A} (\vv B \cdot \vv A) - (\vv B \cdot \partialup) \vv A \bigr] .\end{equation}
 By Equations \ref{eq:dt} and \ref{eq:31}, the component form of Equation \ref{eq:ff} is:
@@ -3608,9 +3608,9 @@ This ``derivation" is little more than an acknowledgment that the components of 
 
 \subsection{Solutions to the General Field Equation}\label{ssec:retpot}
 
-In Section \ref{sssec:li}, we looked at solutions to the free-space field equation, ${\Box \vv A = \textrm{\mbox{\boldmath$\emptyset$}}}$ (light!). In this section, we'll look at solutions to the general ``sourced" field equation, $- \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A) = \Box \vv A - \partialup ( \partialup \cdot \vv A) = \vv J$ (Equation \ref{eq:gfp}). Well, that isn't a tractable equation, so actually we'll deal with the Lorenz-gauge ``version" of it, $\Box \vv A = \vv J$ (Equation \ref{eq:fp}).
+In Section \ref{sssec:li}, we looked at solutions to the free-space field equation, ${\Box \vv A = \textrm{\mbox{\boldmath$\emptyset$}}}$ (light!). In this section and the next, we'll look at solutions to the general ``sourced" field equation, $- \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A) = \Box \vv A - \partialup ( \partialup \cdot \vv A) = \vv J$ (Equation \ref{eq:gfp}). Well, that isn't a tractable equation, so actually we'll deal with the Lorenz-gauge ``version" of it, $\Box \vv A = \vv J$ (Equation \ref{eq:fp}).
 
-This section is important, but it's long, computation-heavy, and nearly self-contained. If you're eager to get to ``electrodyadics" then you can skip ahead to Section \ref{sec:dy} with little loss of continuity.
+This material is important, but it's computation-heavy and not really needed for the ``electrodyadics" in Section \ref{sec:dy}. On a first read you may prefer to skip ahead.
 
 \subsubsection[Retarded Potential, Green’s Function, Dirac Delta]{Retarded Potential, Green's Function, Dirac Delta}\label{sssec:retpotsub}
 
@@ -3963,11 +3963,16 @@ The reason this point is sometimes missed is that the phenomenon of \textbf{indu
 \end{equation*}
 with the changing field appearing on the right side, as if it were a ``source" for the field on the left. The $\partial^{ct} \vv e$ term is even called the \textbf{displacement current}, reinforcing the ``source of $\vv b$" interpretation. This interpretation is a defensible heuristic in many practical contexts, but strictly speaking \emph{it is wrong!} The changing field is always \emph{accompanied by} a circulating field of the other kind, but the ``induced" field is \emph{at the same event} as the changing field (the same place at the same time). There's no ``causal" relationship here. Relatedly, it's often said that a light wave ``self-propagates" because the changing electric and magnetic fields ``generate" each other ad infinitum, but as we discussed in Section \ref{sssec:li}, the $\vv e$ and $\vv b$ fields in the wave are always mutually \emph{in phase}. Again, the differential Maxwell equations tell us how the fields are related to each other \emph{at the same event}, not that what one field is doing somehow influences the other. Yes, the $\rho$ and $\vv j$ in Maxwell's equations pertain to the same event as the fields, too, but there's no field/field equivalent to the source/field Jefimenko equations. The charge and current densities---\emph{not} time-derivatives of $\vv e$ and $\vv b$ themselves---are what generate the value-determining disturbances in the fields.
 
-\subsubsection{Point-Charge Sources 1: Li\'enard--Wiechert Potentials}\label{sssec:lwp}
+
+\subsection{Point Charges}\label{ssec:pointchargesources}
+
+This section builds on material in Section \ref{ssec:retpot}, where it was noted that you can skip ahead to Section \ref{sec:dy} with little loss of continuity if you're eager to get to ``electrodyadics." Same applies here, of course.
 
 The retarded potential and Jefimenko equations can be specialized to the case of a single moving point-charge source. When they are, the potentials are called the \textbf{Li\'enard--Wiechert potentials}, and the corresponding $\vv e$ and $\vv b$ fields are sometimes known as the \textbf{Li\'enard--Wiechert fields}.\footnote{The term \emph{Li\'enard--Wiechert fields} is common but not ubiquitous like \emph{Li\'enard--Wiechert potentials}. You may also encounter the \textbf{Heaviside--Feynman equations}, which are an alternative formulation to the Li\'enard--Wiechert fields that we won't cover.} In this document, we take the view that, in the classical theory, charge should be modeled fundamentally as a \emph{continuous} property of matter (even though it's quantized in reality). From that perspective, the retarded potential and Jefimenko equations are more important than equations for a point-charge source. In fact, one way of summarizing ``all" of electrodynamics is to write the Lorentz force density $\rho \mkern1mu \vv e + \vv j \times \vv b$ (Equation \ref{eq:lorentzforcedensity}) using the Jefimenko equations for $\vv e$ and $\vv b$: the retarded source-densities determine the field values, and the fields in turn exert a force-per-volume on the charge distribution.
 
-But many people take the opposite view, and regard \emph{particles} as fundamental in classical electromagnetism (despite the fact that they inevitably lead to inconsistencies). And in any case, the particle model is still \emph{useful}. So let's now derive the Li\'enard--Wiechert potentials, followed by the Li\'enard--Wiechert fields Section \ref{sssec:lwf}.
+But many people take the opposite view, and regard \emph{particles} as fundamental in classical electromagnetism (despite the fact that they inevitably lead to inconsistencies). And in any case, the particle model is still \emph{useful}. So let's now derive the Li\'enard--Wiechert potentials and fields.
+
+\subsubsection{Li\'enard--Wiechert Potentials}\label{sssec:lwp}
 
 The first step is to find an expression for the four-current density of a point charge. In Section \ref{sssec:fcd}, we determined that, under the \emph{continuous} model for charge, the four-current density (field) for a single fluid-like ``sub-distribution" is ${\vv J_{\mathrm{sub}} = \rho_{0 \, \mathrm{sub}} \, \vv B_{\mathrm{sub}}}$ (Equation \ref{eq:fcc})---the product of the sub-distribution's proper charge density (field) $\rho_{0 \, \mathrm{sub}}$ and its normalized four-velocity (field) $\vv B_{\mathrm{sub}}$---and that the \emph{total} four-current density is the sum of all the $\vv J_{\mathrm{sub}}$'s (Equation \ref{eq:fc}). If we model charge as discrete, then by superposition we still define the ``total" $\vv J$ field as the sum of $\vv J_{\mathrm{sub}}$'s, but now each $\vv J_{\mathrm{sub}}$ field ``belongs" to a single zero-volume point charge and vanishes at all events except for those on the particle's world line. For an event on the world line, we expect to have $\vv J_{\mathrm{sub}} = \rho_{0 \, \mathrm{sub}} \, \vv B$, just like for a fluid-like distribution, except that here $\vv B$ is the \emph{particle's} normalized four-velocity at the world-line event, as opposed to a four-velocity \emph{field} that's defined throughout spacetime. Moreover, the $\rho_{0 \, \mathrm{sub}}$ field itself must vanish at all events except for those on the particle's world line, and three-volume integrals of $\rho_{0 \, \mathrm{sub}}$ over a region that includes a world-line event must yield the particle's charge $q$ \emph{when performed in the particle's rest frame} (where $\rho_{0 \, \mathrm{sub}} = \rho_{\mathrm{sub}}$ by definition).
 
@@ -4071,10 +4076,10 @@ and:
 \begin{equation}\label{eq:lienarda}
 \vv a(ct, \vv r) = \dfrac{q [\vvbeta]}{4 \pi [d] \, (1 - [\vv{\hat{d}}] \cdot [\vvbeta] )} = \Phi(ct, \vv r) [ \vvbeta ] .
 \end{equation}
-Equations \ref{eq:lienardphi} and \ref{eq:lienarda} tell us how to calculate a given particle's contribution to the scalar and three-vector (Lorenz-gauge) potentials at some field event $\vv R = \langle ct, \vv r \rangle$. Assuming that a relevant retarded-time value $ct_{\textrm{ret}}$ exists for the particle, then plug $[ \vv d ] = \vv r - \vv r_{q} (ct_{\textrm{ret}})$ and the particle's retarded velocity $[\vvbeta]$ into the equations, and we have our answer. How could there be no relevant $ct_{\textrm{ret}}$? In practice there couldn't be, but consider the hyperbolic motion we covered in Section \ref{sssec:hyperbolic}: if the field event is beyond an ever-accelerating particle's past Rindler horizon, then it's ``unpingable."
+Equations \ref{eq:lienardphi} and \ref{eq:lienarda} tell us how to calculate a given particle's contribution to the scalar and three-vector (Lorenz-gauge) potentials at some field event $\vv R = \langle ct, \vv r \rangle$. Assuming that a relevant retarded-time value $ct_{\textrm{ret}}$ exists for the particle, then plug $[ \vv d ] = \vv r - \vv r_{q} (ct_{\textrm{ret}})$ and the particle's retarded velocity $[\vvbeta]$ into the equations, and we have our answer. How could there be no relevant $ct_{\textrm{ret}}$? In practice there couldn't be (in flat Minkowski spacetime, neglecting quantum particle-creation), but consider the hyperbolic motion we covered in Section \ref{sssec:hyperbolic}: if the field event is beyond an ever-accelerating particle's past Rindler horizon, then it's ``unpingable."
 
 
-\subsubsection{Point-Charge Sources 2: Li\'enard--Wiechert Fields}\label{sssec:lwf}
+\subsubsection{Li\'enard--Wiechert Fields}\label{sssec:lwf}
 
 The retarded \emph{fields} generated by a moving point charge can be derived by applying Equations \ref{eq:lienardphi} and \ref{eq:lienarda} (Li\'enard--Wiechert potentials) to the definitions of $\vv e$ and $\vv b$ (Equations \ref{eq:eb}), which are $\vv e = - \del \Phi - \partial^{ct} \vv a$ and $\vv b = \del \times \vv a$. This is a lot of work, but we'll do it.\footnote{Our derivation is modeled after: David J. Griffiths, \emph{Introduction to Electrodynamics}, 5th ed. (Cambridge: Cambridge, 2024), 462--64.}
 
@@ -4086,22 +4091,22 @@ and:
 \begin{equation*}
 \vv a(ct, \vv r) = \dfrac{q [\vvbeta]}{4 \pi \, ([d] - [\vv{d}] \cdot [\vvbeta] )} .
 \end{equation*}
-The fields are then:
+Defining shorthand $D \equiv [d] - [\vv d] \cdot [\vvbeta]$, the fields are then:
 \begin{equation}\label{eq:lwe0}
-\vv e (ct, \vv r) = - \dfrac{q}{4 \pi} \, \bigg( \del \big([d] - [\vv d] \cdot [\vvbeta] \big)^{-1} + \partial^{ct} \Big( \big([d] - [\vv d] \cdot [\vvbeta] \big)^{-1} \, [\vvbeta] \Big) \bigg)
+\vv e (ct, \vv r) = - \dfrac{q}{4 \pi} \Big( \del D^{-1} + \partial^{ct} \big( D^{-1} \, [\vvbeta] \big) \Big)
 \end{equation}
 and
 \begin{equation}\label{eq:lwb0}
-\vv b (ct, \vv r) = \dfrac{q}{4 \pi} \, \del \times \Big( \big([d] - [\vv d] \cdot [\vvbeta] \big)^{-1} \, [\vvbeta]  \Big) .
+\vv b (ct, \vv r) = \dfrac{q}{4 \pi} \, \del \times \big( D^{-1} \, [\vvbeta] \big) .
 \end{equation}
 
 Start with the gradient term in Equation \ref{eq:lwe0}:
 \begin{equation*}
-\del \big([d] - [\vv d] \cdot [\vvbeta] \big)^{-1} = - \big([d] - [\vv d] \cdot [\vvbeta] \big)^{-2} \, \Big( \del [d] - \del \big( [\vv d] \cdot [\vvbeta] \big) \Big).
+\del D^{-1} = - D^{-2} \, \Big( \del [d] - \del \big( [\vv d] \cdot [\vvbeta] \big) \Big).
 \end{equation*}
 With $\del [d] = \del ( ct - ct_{\mathrm{ret}} ) = - \del ct_{\mathrm{ret}}$ (definition of $ct_{\mathrm{ret}}$), that's:
 \begin{equation}\label{eq:gradterm1}
-\del \big([d] - [\vv d] \cdot [\vvbeta] \big)^{-1} = \big([d] - [\vv d] \cdot [\vvbeta] \big)^{-2} \, \Big( \del ct_{\mathrm{ret}} + \del \big( [\vv d] \cdot [\vvbeta] \big) \Big) .
+\del D^{-1} = D^{-2} \, \Big( \del ct_{\mathrm{ret}} + \del \big( [\vv d] \cdot [\vvbeta] \big) \Big) .
 \end{equation}
 By the gradient-of-a-dot-product identity:
 \begin{equation*}
@@ -4114,16 +4119,16 @@ First term:
 \begin{equation*}
 \begin{aligned}
 \big( [\vv d] \cdot \del \big) [\vvbeta] &= \left( [d_x] \dfrac{\partial}{\partial x} + [d_y] \dfrac{\partial}{\partial y} + [d_z] \dfrac{\partial}{\partial z} \right) \vvbeta (ct_{\mathrm{ret}}) \\[2pt]
-&= [d_x] \dfrac{\dd [\vvbeta]}{\dd (ct_{\mathrm{ret}})} \dfrac{\partial (ct_{\mathrm{ret}})}{\partial x} + [d_y] \dfrac{\dd [\vvbeta]}{\dd (ct_{\mathrm{ret}})} \dfrac{\partial (ct_{\mathrm{ret}})}{\partial y} + [d_z] \dfrac{\dd [\vvbeta]}{\dd (ct_{\mathrm{ret}})} \dfrac{\partial (ct_{\mathrm{ret}})}{\partial z} \\[4pt]
+&= [d_x] \dfrac{\dd \vvbeta}{\dd (ct_{\mathrm{ret}})} \dfrac{\partial (ct_{\mathrm{ret}})}{\partial x} + [d_y] \dfrac{\dd \vvbeta}{\dd (ct_{\mathrm{ret}})} \dfrac{\partial (ct_{\mathrm{ret}})}{\partial y} + [d_z] \dfrac{\dd \vvbeta}{\dd (ct_{\mathrm{ret}})} \dfrac{\partial (ct_{\mathrm{ret}})}{\partial z} \\[4pt]
 &= \big( [\vv d] \cdot \del ct_{\mathrm{ret}} \big) [\vvzeta] ,
 \end{aligned}
 \end{equation*}
-where $[\vvzeta] = \dd [\vvbeta] / \dd(ct_{\mathrm{ret}})$ is the particle's normalized acceleration at the retarded time.\footnote{The notation $\dd [\vvbeta] / \dd (ct_{\mathrm{ret}})$ is really shorthand for $[\dd \vvbeta / \dd (ct_q)]$, since the velocity is a function of the world-line parameter (not of $ct_{\mathrm{ret}}$, which is the evaluation time). We'll continue writing chain rules involving $ct_{\mathrm{ret}}$ with this shorthand.} The second term is similar but we break up $[\vv d]$:
+where $[\vvzeta] = \dd \vvbeta / \dd(ct_{\mathrm{ret}})$ is the particle's normalized acceleration at the retarded time.\footnote{The notation $\dd \vvbeta / \dd (ct_{\mathrm{ret}})$ is really shorthand for $[\dd \vvbeta / \dd (ct_q)] = (\dd \vvbeta / \dd (ct_q))\vert_{ct_q = ct_{\mathrm{ret}}}$, since the velocity is a function of the world-line parameter (not of $ct_{\mathrm{ret}}$, which is the evaluation time). We'll continue writing chain rules involving $ct_{\mathrm{ret}}$ with this shorthand.} The second term is similar but we break up $[\vv d]$:
 \begin{equation}\label{eq:secondterm}
 \begin{split}
 \big( [\vvbeta] \cdot \del \big) [\vv d] &= \big( [\vvbeta] \cdot \del \big) \big( \vv r - [\vv r_q] \big) \\[2pt]
 &= \left( [\beta_x] \dfrac{\partial}{\partial x} + [\beta_y] \dfrac{\partial}{\partial y} + [\beta_z] \dfrac{\partial}{\partial z} \right) \big( \langle x, y, z \rangle - \vv r_q(ct_{\mathrm{ret}}) \big) \\[3pt]
-&= \Big( \big \langle [\beta_x], 0, 0 \big \rangle \, + \, \dots \Big)  -  \left( [\beta_x] \dfrac{\dd [\vv r_q]}{\dd (ct_{\mathrm{ret}})} \dfrac{\partial (ct_{\mathrm{ret}})}{\partial x} \, + \, \dots \right) \\[2pt]
+&= \Big( \big \langle [\beta_x], 0, 0 \big \rangle \, + \, \dots \Big)  -  \left( [\beta_x] \dfrac{\dd \vv r_q}{\dd (ct_{\mathrm{ret}})} \dfrac{\partial (ct_{\mathrm{ret}})}{\partial x} \, + \, \dots \right) \\[2pt]
 &= [\vvbeta] - \big( [\vvbeta] \cdot \del ct_{\mathrm{ret}} \big) [\vvbeta]
 \end{split}
 \end{equation}
@@ -4131,7 +4136,7 @@ where $[\vvzeta] = \dd [\vvbeta] / \dd(ct_{\mathrm{ret}})$ is the particle's nor
 \begin{equation}\label{eq:curlb}
 \begin{split}
 \big( \del \times [\vvbeta] \big)_x &= \dfrac{\partial [\beta_z]}{\partial y} - \dfrac{\partial [\beta_y]}{\partial z} \\[3pt]
-&= \dfrac{\partial (ct_{\mathrm{ret}})}{\partial y} \dfrac{\dd [\beta_z]}{\dd (ct_{\mathrm{ret}})} \, - \, \dfrac{\partial (ct_{\mathrm{ret}})}{\partial z} \dfrac{\dd [\beta_y]}{\dd (ct_{\mathrm{ret}})} \\[3pt]
+&= \dfrac{\partial (ct_{\mathrm{ret}})}{\partial y} \dfrac{\dd \beta_z}{\dd (ct_{\mathrm{ret}})} \, - \, \dfrac{\partial (ct_{\mathrm{ret}})}{\partial z} \dfrac{\dd \beta_y}{\dd (ct_{\mathrm{ret}})} \\[3pt]
 &= \big( \del ct_{\mathrm{ret}} \times [\vvzeta] \big)_x ,
 \end{split}
 \end{equation}
@@ -4141,7 +4146,7 @@ so that the third term is (with a ``$bac - cab$" expansion):
 \end{equation*}
 The fourth term is similar, but since $\del \times \vv r = \vv 0$ we have $\del \times [\vv d] = - \del \times [\vv r_q]$:
 \begin{equation*}
-- \big( \del \times [\vv r_q] \big)_x \, = \, - \left( \dfrac{\partial (ct_{\mathrm{ret}})}{\partial y} \dfrac{\dd [z_q]}{\dd (ct_{\mathrm{ret}})} - \dfrac{\partial (ct_{\mathrm{ret}})}{\partial z} \dfrac{\dd [y_q]}{\dd (ct_{\mathrm{ret}})} \right) \, = \,  - \big( \del ct_{\mathrm{ret}} \times [\vvbeta] \big)_x ,
+- \big( \del \times [\vv r_q] \big)_x \, = \, - \left( \dfrac{\partial (ct_{\mathrm{ret}})}{\partial y} \dfrac{\dd z_q}{\dd (ct_{\mathrm{ret}})} - \dfrac{\partial (ct_{\mathrm{ret}})}{\partial z} \dfrac{\dd y_q}{\dd (ct_{\mathrm{ret}})} \right) \, = \,  - \big( \del ct_{\mathrm{ret}} \times [\vvbeta] \big)_x ,
 \end{equation*}
 giving:
 \begin{equation}\label{eq:curld}
@@ -4158,8 +4163,8 @@ After some cancellations (first and third terms; second and fourth terms), the f
 That goes in our gradient term for $\vv e$ (Equation \ref{eq:gradterm1}), which becomes:
 \begin{equation}\label{eq:gradterm2}
 \begin{split}
-\del \big([d] - [\vv d] \cdot [\vvbeta] \big)^{-1} &= \dfrac{\del ct_{\mathrm{ret}} + \Big( [\vvbeta] + \big( [\vv d] \cdot [\vvzeta] - [\beta]^2 \big) \del ct_{\mathrm{ret}} \Big)}{\big([d] - [\vv d] \cdot [\vvbeta] \big)^{2}} \\[6pt]
-&= \dfrac{[\vvbeta] + \big( [\vv d] \cdot [\vvzeta] + 1 - [\beta]^2 \big) \del ct_{\mathrm{ret}}}{\big([d] - [\vv d] \cdot [\vvbeta] \big)^{2}} .
+\del D^{-1} &= \dfrac{\del ct_{\mathrm{ret}} + \Big( [\vvbeta] + \big( [\vv d] \cdot [\vvzeta] - [\beta]^2 \big) \del ct_{\mathrm{ret}} \Big)}{D^{2}} \\[6pt]
+&= \dfrac{[\vvbeta] + \big( [\vv d] \cdot [\vvzeta] + 1 - [\beta]^2 \big) \del ct_{\mathrm{ret}}}{D^{2}} .
 \end{split}
 \end{equation}
 Now we need $\del ct_{\mathrm{ret}} = \del (ct - [d]) = - \del [d]$:
@@ -4178,35 +4183,30 @@ The ``$bac$" part of a ``$bac - cab$" expansion cancels the second term, and:
 \begin{equation}\label{eq:delctret}
 \begin{split}
 \del ct_{\mathrm{ret}} &= - \dfrac{1}{[d]} \Big( [\vv d] - \big( [\vv d] \cdot [\vvbeta] \big) \del ct_{\mathrm{ret}} \Big) \\[3pt]
-[d] \del ct_{\mathrm{ret}} &= - [\vv d] + \big( [\vv d] \cdot [\vvbeta] \big) \del ct_{\mathrm{ret}} \\[5pt]
-\big( [d] - [\vv d] \cdot [\vvbeta] \big) \del ct_{\mathrm{ret}} &= - [\vv d] \\[1pt]
-\del ct_{\mathrm{ret}} &= \dfrac{-[\vv d]}{[d] - [\vv d] \cdot [\vvbeta]} .
+[d] \del ct_{\mathrm{ret}} &= - [\vv d] + \big( [\vv d] \cdot [\vvbeta] \big) \del ct_{\mathrm{ret}} \\[4pt]
+\big( [d] - [\vv d] \cdot [\vvbeta] \big) \del ct_{\mathrm{ret}} &= - [\vv d] \\[3pt]
+\del ct_{\mathrm{ret}} &= \dfrac{-[\vv d]}{D} .
 \end{split}
 \end{equation}
 Plug Equation \ref{eq:delctret} into our main gradient term (Equation \ref{eq:gradterm2}):
 \begin{equation}\label{eq:gradterm3}
 \begin{split}
-\del \big([d] - [\vv d] \cdot [\vvbeta] \big)^{-1} &= \dfrac{[\vvbeta] \, + \, \big( [\vv d] \cdot [\vvzeta] + 1 - [\beta]^2 \big) \left( \dfrac{- [\vv d]}{[d] - [\vv d] \cdot [\vvbeta]} \right) }{\big([d] - [\vv d] \cdot [\vvbeta] \big)^{2}} \\[5pt]
-&= \dfrac{[\vvbeta] }{\big([d] - [\vv d] \cdot [\vvbeta] \big)^{2}} \, - \, \dfrac{\big( [\vv d] \cdot [\vvzeta] + 1 - [\beta]^2 \big) [\vv d] }{\big([d] - [\vv d] \cdot [\vvbeta] \big)^{3}} .
+\del D^{-1} &= \dfrac{[\vvbeta] \, + \, \big( [\vv d] \cdot [\vvzeta] + 1 - [\beta]^2 \big) \left( \dfrac{- [\vv d]}{D} \right) }{D^{2}} \\[5pt]
+&= \dfrac{[\vvbeta] }{D^{2}} \, - \, \dfrac{\big( [\vv d] \cdot [\vvzeta] + 1 - [\beta]^2 \big) [\vv d] }{D^{3}} .
 \end{split}
 \end{equation}
-With Equation \ref{eq:gradterm3} in hand, let's introduce a dedicated symbol for the quantity $[d] - [\vv d] \cdot [\vvbeta]$ (it will be ubiquitous in these derivations):
-\begin{equation*}
-D \equiv [d] - [\vv d] \cdot [\vvbeta] .
-\end{equation*}
- 
 
-The next step is the $\partial^{ct}$ term from Equation \ref{eq:lwe0}:
+The next step is the $\partial^{ct}$ term from Equation \ref{eq:lwe0}. Remembering that ${D = [d] - [\vv d] \cdot [\vvbeta]}$:
 \begin{equation}\label{eq:ctofapart}
-\partial^{ct} \dfrac{[\vvbeta]}{[d] - [\vv d] \cdot [\vvbeta]} = \dfrac{\partial^{ct} [\vvbeta]}{D} \, - \, \dfrac{\Big( \partial^{ct} [d] - \partial^{ct} \big( [\vv d] \cdot [\vvbeta] \big) \Big) [\vvbeta] }{D^2} .
+\partial^{ct} \dfrac{[\vvbeta]}{D} = \dfrac{\partial^{ct} [\vvbeta]}{D} \, - \, \dfrac{\Big( \partial^{ct} [d] - \partial^{ct} \big( [\vv d] \cdot [\vvbeta] \big) \Big) [\vvbeta] }{D^2} .
 \end{equation}
 Numerator of first term, using $ct_{\mathrm{ret}} = ct - [d]$:
 \begin{equation}\label{eq:firsttermnumerator}
-\partial^{ct} [\vvbeta] = \partial^{ct} \vvbeta (ct_{\mathrm{ret}}) = \dfrac{\dd [\vvbeta]}{\dd (ct_{\mathrm{ret}})} \, \partial^{ct} \big( ct - [d] \big) = [\vvzeta] \big( 1 - \partial^{ct} [d] \big) .
+\partial^{ct} [\vvbeta] = \partial^{ct} \vvbeta (ct_{\mathrm{ret}}) = \dfrac{\dd \vvbeta}{\dd (ct_{\mathrm{ret}})} \, \partial^{ct} \big( ct - [d] \big) = [\vvzeta] \big( 1 - \partial^{ct} [d] \big) .
 \end{equation}
 Use $[d] = ([\vv d] \cdot [\vv d])^{1/2}$ and $[\vv d] = \vv r - \vv r_q (ct_{\mathrm{ret}})$:
 \begin{equation*}
-\partial^{ct} [d] = \dfrac{1}{2[d]} \, \partial^{ct} ([\vv d] \cdot [\vv d]) = \dfrac{1}{[d]} \, [\vv d] \cdot \partial^{ct} \big( \vv r - \vv r_q (ct_{\mathrm{ret}}) \big) = - \dfrac{[\vv d]}{[d]} \cdot \dfrac{\dd [\vv r_q]}{\dd (ct_{\mathrm{ret}})} \, \partial^{ct} ct_{\mathrm{ret}} ,
+\partial^{ct} [d] = \dfrac{1}{2[d]} \, \partial^{ct} ([\vv d] \cdot [\vv d]) = \dfrac{1}{[d]} \, [\vv d] \cdot \partial^{ct} \big( \vv r - \vv r_q (ct_{\mathrm{ret}}) \big) = - \dfrac{[\vv d]}{[d]} \cdot \dfrac{\dd \vv r_q}{\dd (ct_{\mathrm{ret}})} \, \partial^{ct} ct_{\mathrm{ret}} ,
 \end{equation*}
 or:
 \begin{equation}\label{eq:ctd}
@@ -4249,7 +4249,7 @@ Our updated Equation \ref{eq:ctofapart} is then:
 (by Equation \ref{eq:ctpartialbeta}), or:
 \begin{equation*}
 \begin{aligned}
-\partial^{ct} \big( [\vv d] \cdot [\vvbeta] \big) &= \dfrac{[d] [\vv d] \cdot [\vvzeta] }{D} \, - \, [\vvbeta] \cdot \dfrac{\dd [\vv r_q]}{\dd ct_{\mathrm{ret}}} \, \partial^{ct} ct_{\mathrm{ret}} \\[6pt]
+\partial^{ct} \big( [\vv d] \cdot [\vvbeta] \big) &= \dfrac{[d] [\vv d] \cdot [\vvzeta] }{D} \, - \, [\vvbeta] \cdot \dfrac{\dd \vv r_q}{\dd (ct_{\mathrm{ret}})} \, \partial^{ct} ct_{\mathrm{ret}} \\[6pt]
 &= \dfrac{[d] [\vv d] \cdot [\vvzeta] }{D} \, - \, [\vvbeta] \cdot [\vvbeta] \, \dfrac{[d]}{D} \\[6pt]
 &= \dfrac{[d] \big( [\vv d] \cdot [\vvzeta] - [\beta]^2 \big)}{D}
 \end{aligned}
