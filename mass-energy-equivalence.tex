@@ -3275,15 +3275,14 @@ H = \dfrac{\left( \vv P_\mathrm{c} - q \vv A \right) ^2}{2 E_0} .
 
 \subsubsection[The Lorentz Four-Force Density; Poynting’s Theorem]{The Lorentz Four-Force Density; Poynting's Theorem}\label{sssec:lffd}
 
-If we differentiate the Lorentz four-force (Equation \ref{eq:ff}) with respect to the proper volume ${V_0 = \gamma V}$ of a small piece of a continuous fluid-like charge distribution, we get a four-vector called the \textbf{Lorentz four-force density}:\footnote{\label{fn:ffd}We're applying the \emph{particle} force law to a continuum's infinitesimal volume element. This works, but a more sophisticated approach (that we'll take in Section \ref{sssec:fffffd}) starts with the force \emph{density} and obtains the force from a limiting procedure (see Footnote \ref{fn:recoil}). Informally, just read it off: $\dd \vv F_{\mathrm{L}} = \bm{\mathfrak{F}} \, \dd V_0 = (\rho_0 \, \dd V_0) \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) = \dd q \, \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A)$.}
+If we differentiate the Lorentz four-force (Equation \ref{eq:ff}) with respect to the proper volume ${V_0 = \gamma V}$ of a small piece of a continuous fluid-like charge distribution, we get a four-vector called the \textbf{Lorentz four-force density}:\footnote{\label{fn:ffd}We're applying the \emph{particle} force law to a continuum's infinitesimal volume element. This works, but a more sophisticated approach (that we'll take in Section \ref{sssec:fffffd}) starts with the Lorentz force \emph{density}, ``demotes" force to a volume integral thereof, and obtains the Lorentz force law for a \emph{particle} from a limiting procedure (see Footnote \ref{fn:recoil}). Informally, just read it off: $\dd \vv F_{\mathrm{L}} = \bm{\mathfrak{F}} \, \dd V_0 = (\rho_0 \, \dd V_0) \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) = \dd q \, \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A)$.}
 \begin{equation*}
-\bm{\mathfrak{F}} = \dfrac{\dd \vv F_{\mathrm{L}}}{\dd V_0} = \dfrac{\dd}{\dd V_0} \bigl[ q \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) \bigr] .
+\begin{split}
+\bm{\mathfrak{F}} = \dfrac{\dd \vv F_{\mathrm{L}}}{\dd V_0} &= \dfrac{\dd}{\dd V_0} \bigl[ q \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) \bigr] \\[3pt]
+&= \rho_0 \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A)
+\end{split}
 \end{equation*}
-Only $q$ has volume-dependence here, so that's:
-\begin{equation*}
-\bm{\mathfrak{F}} = \rho_0 \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) .
-\end{equation*}
-Now apply Equation \ref{eq:fcc} ($\rho_0 \vv B = \vv J$):
+(only the element's charge $q$ has volume-dependence, and ${\rho_0 = \dd q / \dd V_0}$ is the proper charge density defined in Section \ref{sssec:fcd}). By Equation \ref{eq:fcc} ($\rho_0 \vv B = \vv J$):
 \begin{equation}\label{eq:lffd}
 \boxed{ \bm{\mathfrak{F}} \equiv \vv J \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A) } \, ,
 \end{equation}
