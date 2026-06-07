@@ -3611,9 +3611,9 @@ In Section \ref{sssec:li}, we looked at solutions to the free-space field equati
 
 This material is important, but it's computation-heavy and not really needed for the ``electrodyadics" in Section \ref{sec:dy}. On a first read you may prefer to skip ahead.
 
-\subsubsection[Retarded Potential, Green’s Function, Dirac Delta]{Retarded Potential, Green's Function, Dirac Delta}\label{sssec:retpotsub}
+\subsubsection{Retarded Potential, Green Function, Dirac Delta}\label{sssec:retpotsub}
 
-The Lorenz-gauge field equation $\Box \vv A = \vv J$ can be solved for the four-potential $\vv A$ using the method of Green's functions. Some of the details are beyond our scope, but a manifestly covariant solution looks like this:
+The Lorenz-gauge field equation $\Box \vv A = \vv J$ can be solved for the four-potential $\vv A$ using the method of Green functions. Some of the details are beyond our scope, but a manifestly covariant solution looks like this:
 \begin{equation}\label{eq:retfp}
 \boxed{
 \vv A(\vv R) = \int G_{\textrm{ret}} ( \vv R - \vv R_{s} ) \, \vv J (\vv R _{s}) \, \dd \Omega_{s}
@@ -3621,9 +3621,9 @@ The Lorenz-gauge field equation $\Box \vv A = \vv J$ can be solved for the four-
 \end{equation}
 where we have some symbols to explain.
 
-First, this is an integral taken over \emph{all of spacetime}, and $\dd \Omega_{s}$ refers to the \textbf{four-volume} element ($\dd x_{s} \, \dd y_{s} \, \dd z_{s} \, c \mkern2mu \dd t_{s}$) centered at the ``source event" $\vv R _{s}$, where the four-current density $\vv J$ is sampled. (To be clear, \emph{every event in spacetime} is accounted for as a source event in this integral.) The undecorated $\vv R$ is the ``field event" at which we're evaluating $\vv A$. Now, ``all of spacetime" should strike you as odd: if $\vv J$ generates disturbances in the Lorenz-gauge four-potential that travel outward through space at the speed of light, then shouldn't we only be ``sampling" $\vv J$ at events that are lightlike-separated from $\vv R$ and which precede $\vv R$ chronologically (i.e., events on the past light cone of $\vv R$)? The answer is yes, and that's where $G_{\textrm{ret}}$ comes in. It's the \textbf{manifestly covariant retarded Green's function}, and in effect it \emph{filters out} all events $\vv R_{s}$ that aren't on the past light cone of $\vv R$.
+First, this is an integral taken over \emph{all of spacetime}, and $\dd \Omega_{s}$ refers to the \textbf{four-volume} element ($\dd x_{s} \, \dd y_{s} \, \dd z_{s} \, c \mkern2mu \dd t_{s}$) centered at the ``source event" $\vv R _{s}$, where the four-current density $\vv J$ is sampled.\footnote{The four-volume element is Lorentz-invariant, just as a three-volume element in three-dimensional Euclidean space is left unchanged under a rotation of Cartesian axes. Note, however, that demonstrating this mathematically can't be done by a naive appeal to Equations \ref{eq:fd} (Lorentz transformation for the differentials). That's because despite the similar notation, the differentials here do not pertain to a four-separation between two events. Rather, they correspond to the ``sides" of an infinitesimal four-dimensional ``box" in spacetime. The right approach is to show that the four-volume of the box is unaffected by a Lorentz boost, and that comes down to whether the determinant of the transformation matrix (Equation \ref{eq:bm}) equals one (it does).} (To be clear, \emph{every event in spacetime} is accounted for as a source event in this integral.) The undecorated $\vv R$ is the ``field event" at which we're evaluating $\vv A$. Now, ``all of spacetime" should strike you as odd: if $\vv J$ generates disturbances in the Lorenz-gauge four-potential that travel outward through space at the speed of light, then shouldn't we only be ``sampling" $\vv J$ at events that are lightlike-separated from $\vv R$ and which precede $\vv R$ chronologically (i.e., events on the past light cone of $\vv R$)? The answer is yes, and that's where $G_{\textrm{ret}}$ comes in. It's the \textbf{manifestly covariant retarded Green function}, and in effect it \emph{filters out} all events $\vv R_{s}$ that aren't on the past light cone of $\vv R$.
 
-Let's see how this Green's function works. If Equation \ref{eq:retfp} is a solution to $\Box \vv A (\vv R) = \vv J (\vv R)$, then we must have:
+Let's see how this Green function works. If Equation \ref{eq:retfp} is a solution to $\Box \vv A (\vv R) = \vv J (\vv R)$, then we must have:
 \begin{equation*}
 \begin{aligned}
 \vv J (\vv R) &= \Box \int G_{\textrm{ret}} ( \vv R - \vv R_{s} ) \, \vv J (\vv R _{s}) \, \dd \Omega_{s} \\[3pt]
@@ -3637,7 +3637,7 @@ We won't do a deep dive into the Dirac delta function here. We'll just use it, a
 
 \emph{Solving} $\Box G = \delta ( \vv R - \vv R_{s} )$ is somewhat tricky, and is usually done with techniques like contour integration and Fourier transforms. We won't bother. Instead, I'll show you how $G_{\textrm{ret}}( \vv R - \vv R_{s} )$ is defined, explain how its form filters out candidate source events that aren't on the field event's past light cone, and demonstrate that its d'Alembertian is indeed $\delta ( \vv R - \vv R_{s} )$.
 
-The covariant retarded Green's function is:
+The covariant retarded Green function is:
 \begin{equation}\label{eq:green}
 G_{\textrm{ret}} (\vv R - \vv R_{s}) \equiv \dfrac{\delta[ (\vv R - \vv R_{s})^2 ]}{2 \pi} \, \theta (ct - ct_{s}).
 \end{equation}
@@ -3669,7 +3669,7 @@ But $\theta$ kills the first term (because ${ct - ct_{\textrm{adv}} < 0}$) and p
 G_{\textrm{ret}} (\vv R - \vv R_{s}) = \dfrac{\delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi d} .
 \end{equation}
 
-Equation \ref{eq:green2} is the form of the retarded Green's function that we'll use to show that $\Box G_{\textrm{ret}} (\vv R - \vv R_{s}) = \delta ( \vv R - \vv R_{s})$. We'll do so in the next section. Quickly, let's use Equation \ref{eq:green2} to express the retarded potential in its more familiar guise. Plug Equation \ref{eq:green2} into Equation \ref{eq:retfp}, write $\vv R$ and $\vv R_{s}$ in terms of their components, and ``separate" the single four-volume integral into a $ct_s$-integral and a three-volume integral ($\dd V_{s} = \dd x_{s} \, \dd y_{s} \, \dd z_{s}$):
+Equation \ref{eq:green2} is the form of the retarded Green function that we'll use to show that $\Box G_{\textrm{ret}} (\vv R - \vv R_{s}) = \delta ( \vv R - \vv R_{s})$. We'll do so in the next section. Quickly, let's use Equation \ref{eq:green2} to express the retarded potential in its more familiar guise. Plug Equation \ref{eq:green2} into Equation \ref{eq:retfp}, write $\vv R$ and $\vv R_{s}$ in terms of their components, and ``separate" the single four-volume integral into a $ct_s$-integral and a three-volume integral ($\dd V_{s} = \dd x_{s} \, \dd y_{s} \, \dd z_{s}$):
 \begin{equation*}
 \vv A(ct, \vv r) = \dfrac{1}{4 \pi} \iint \dfrac{\vv J(ct_{s}, \vv r _{s})}{d}  \; \delta ( ct_{s} - ct_{\textrm{ret}} )  \; c \, \dd t_{s} \, \dd V_{s}.
 \end{equation*}
@@ -3751,7 +3751,7 @@ Therefore $\nabla^2 d^{-1} = - \del \cdot ( \vv d / d^3 ) = - \del \cdot ( \vv{\
 \nabla^2 \dfrac{1}{d} = - \del \cdot \dfrac{\vv{\hat{d}}}{d^2} = - 4 \pi \delta(\vv d).
 \end{equation}
 
-Now substitute Equations \ref{eq:gradoverr} and \ref{eq:lap1overd} into Equation \ref{gretlap1} to ``update" our Laplacian of the Green's function. Let's use $\bar{\delta} \equiv \delta(\vv d) = \delta(\vv r - \vv r_{s})$, so that we can continue using $\delta = \delta (ct_{s} - ct_{\textrm{ret}})$ without having to write the arguments every time:
+Now substitute Equations \ref{eq:gradoverr} and \ref{eq:lap1overd} into Equation \ref{gretlap1} to ``update" our Laplacian of the Green function. Let's use $\bar{\delta} \equiv \delta(\vv d) = \delta(\vv r - \vv r_{s})$, so that we can continue using $\delta = \delta (ct_{s} - ct_{\textrm{ret}})$ without having to write the arguments every time:
 \begin{equation}\label{gretlap2}
 \nabla^2 \, \dfrac{\delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi d} = \dfrac{1}{4 \pi} \, \Bigl( d^{-1} \nabla^2 \delta \, - \, 4 \pi \delta \bar{\delta} \, - \, 2 (d^{-2} \vv{\hat{d}} \cdot \del \delta) \Bigr) .
 \end{equation}
@@ -3787,7 +3787,7 @@ so:
 \nabla^2 \delta ( ct_{s} - ct_{\textrm{ret}} ) = 2 d^{-1} \delta^\prime + \delta^{\prime \prime}.
 \end{equation}
 
-Plug Equations \ref{eq:graddelta} and \ref{eq:lapdelta} into Equation \ref{gretlap2}, and we have our final expression for the Laplacian of the retarded Green's function:
+Plug Equations \ref{eq:graddelta} and \ref{eq:lapdelta} into Equation \ref{gretlap2}, and we have our final expression for the Laplacian of the retarded Green function:
 \begin{equation}\label{gretlap3}
 \begin{split}
 \nabla^2 \, \dfrac{\delta ( ct_{s} - ct_{\textrm{ret}} )}{4 \pi d} &= \dfrac{1}{4 \pi} \, \Bigl( 2 d^{-2} \delta^\prime \, + \, d^{-1} \delta^{\prime \prime}  \, - \, 4 \pi \delta \bar{\delta} \, - \, 2 d^{-2} \delta^\prime \Bigr) \\[6pt]
