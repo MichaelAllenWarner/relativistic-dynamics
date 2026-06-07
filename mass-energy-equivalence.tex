@@ -3802,7 +3802,7 @@ Now return to Equation \ref{eq:green3}, bringing in Equation \ref{gretlap3} (Lap
 &= \delta \bar{\delta} .
 \end{aligned}
 \end{equation*}
-Recall that $\delta = \delta(ct_{s} - ct_{\textrm{ret}})$ and $\bar{\delta} = \delta(\vv r - \vv r_{s})$. To complete the argument, we need to show that $\delta \bar{\delta} = \delta(ct_{s} - ct_{\textrm{ret}}) \, \delta(\vv r - \vv r_{s}) = \delta ( \vv R - \vv R_{s} )$. Can we ``reproduce" $\int \delta (\vv R - \vv R_{s}) \mkern1mu \vv J (\vv R_{s}) \mkern1mu \dd \Omega_{s} = \vv J (\vv R)$ with $\delta(ct_{s} - ct_{\textrm{ret}}) \, \delta(\vv r - \vv r_{s})$? Yes. We'll need $ct_{\textrm{ret}} = ct - \vert \vv r - \vv r_{s} \vert$, because taking the three-volume integral turns $\vv r_{s}$ into $\vv r$ in both $\vv J$ \emph{and} $\delta(ct_{s} - ct_{\textrm{ret}})$ (such that $ct_{\textrm{ret}} = ct$):
+Recall that $\delta = \delta(ct_{s} - ct_{\textrm{ret}})$ and $\bar{\delta} = \delta(\vv r - \vv r_{s})$. To complete the argument, we need to show that $\delta \bar{\delta} = \delta(ct_{s} - ct_{\textrm{ret}}) \, \delta(\vv r - \vv r_{s}) = \delta ( \vv R - \vv R_{s} )$. Note that a property of the delta function is that $\delta ( \vv R - \vv R_{s} ) = \delta(ct - ct_{s}) \, \delta(\vv r - \vv r_{s})$, but the situation here is different (mind the subscripts). The question is: can we ``reproduce" $\int \delta (\vv R - \vv R_{s}) \mkern1mu \vv J (\vv R_{s}) \mkern1mu \dd \Omega_{s} = \vv J (\vv R)$ with $\delta(ct_{s} - ct_{\textrm{ret}}) \, \delta(\vv r - \vv r_{s})$? The answer is yes. We'll need $ct_{\textrm{ret}} = ct - \vert \vv r - \vv r_{s} \vert$, because taking the three-volume integral turns $\vv r_{s}$ into $\vv r$ in both $\vv J$ \emph{and} $\delta(ct_{s} - ct_{\textrm{ret}})$ (such that $ct_{\textrm{ret}} = ct$):
 \begin{equation*}
 \begin{aligned}
 \iint \vv J (ct_{s}, \vv r_{s}) \, \delta(ct_{s} - ct_{\textrm{ret}}) \, \delta(\vv r - \vv r_{s}) \; \dd V_{s} \; c \, \dd t_{s} &= \int \vv J (ct_{s}, \vv r) \, \delta(ct_{s} - ct) \; c \, \dd t_{s} \\[4pt]
@@ -3969,7 +3969,7 @@ with the changing field appearing on the right side, as if it were a ``source" f
 
 This section builds on material in Section \ref{ssec:retpot}, where it was noted that you can skip ahead to Section \ref{sec:dy} with little loss of continuity if you're eager to get to ``electrodyadics." Same applies here, of course.
 
-The retarded potential and Jefimenko equations can be specialized to the case of a single moving point-charge source. When they are, the potentials are called the \textbf{Li\'enard--Wiechert potentials}, and the corresponding $\vv e$ and $\vv b$ fields are sometimes known as the \textbf{Li\'enard--Wiechert fields}.\footnote{The term \emph{Li\'enard--Wiechert fields} is common but not ubiquitous like \emph{Li\'enard--Wiechert potentials}. You may also encounter the \textbf{Heaviside--Feynman equations}, which are an alternative formulation to the Li\'enard--Wiechert fields that we won't cover.} In this document, we take the view that, in the classical theory, charge should be modeled fundamentally as a \emph{continuous} property of matter (even though it's quantized in reality). From that perspective, the retarded potential and Jefimenko equations are more important than equations for a point-charge source. In fact, one way of summarizing ``all" of electrodynamics is to write the Lorentz three-force density $\rho \mkern1mu \vv e + \vv j \times \vv b$ (Equation \ref{eq:lorentzforcedensity}) using the Jefimenko equations for $\vv e$ and $\vv b$: the retarded source-densities determine the field values, and the fields in turn exert a force-per-volume on the charge distribution.
+The retarded potential and Jefimenko equations can be specialized to the case of a single point-charge source in arbitrary motion. When they are, the potentials are called the \textbf{Li\'enard--Wiechert potentials}, and the corresponding $\vv e$ and $\vv b$ fields (in the form we'll study) are sometimes known as the \textbf{Li\'enard--Wiechert fields}.\footnote{The term \emph{Li\'enard--Wiechert fields} is common but not ubiquitous like \emph{Li\'enard--Wiechert potentials}. You may also encounter the \textbf{Heaviside--Feynman equations}, which are an alternative formulation to the Li\'enard--Wiechert fields that we won't cover.} In this document, we take the view that, in the classical theory, charge should be modeled fundamentally as a \emph{continuous} property of matter (even though it's quantized in reality). From that perspective, the retarded potential and Jefimenko equations are more important than equations for a point-charge source. In fact, one way of summarizing ``all" of electrodynamics is to write the Lorentz three-force density $\rho \mkern1mu \vv e + \vv j \times \vv b$ (Equation \ref{eq:lorentzforcedensity}) using the Jefimenko equations for $\vv e$ and $\vv b$: the retarded source-densities determine the field values, and the fields in turn exert a force-per-volume on the charge distribution.
 
 But many people take the opposite view, and regard \emph{particles} as fundamental in classical electromagnetism (despite the fact that they inevitably lead to inconsistencies). And in any case, the particle model is still \emph{useful}. So let's now derive the Li\'enard--Wiechert potentials and fields.
 
@@ -3983,11 +3983,14 @@ So how do we make that happen mathematically? Clearly a Dirac delta function wil
 \end{equation}
 where $q$ is the particle's charge, $\vv R_q (ct_0)$ is the particle's world line parameterized by its proper time $ct_0$, and $\vv R$ is the event at which we're evaluating this particle's $\rho_{0 \, \mathrm{sub}}$. (To be clear, square brackets are just for grouping again, like parentheses. When they mean ``evaluated at retarded time," I'll tell you.) That may seem like a strange definition! Think about it like this: for a given $\vv R$, we evaluate $\rho_{0 \, \mathrm{sub}}$ by considering every moment in time $ct_0$, and for each moment asking whether the event $\vv R$ is the particle's current spacetime location $\vv R_q (ct_0)$; the delta function makes it so that only moments for which the answer is \emph{yes} contribute to $\rho_{0 \, \mathrm{sub}}$. The answer will be \emph{no} for all moments if $\vv R$ isn't on the world line (giving $\rho_{0 \, \mathrm{sub}} = 0$), and it will be \emph{yes}  for exactly one moment if $\vv R$ \emph{is} on the world line.
 
-To see how this plays out, let's use $\gamma(ct_q) = \dd (ct_q) / \dd (ct_0)$ (time dilation) to express those moments in terms of the \emph{coordinate} time of the particle's world-line events $\vv R_q = \langle ct_q, \vv r_q \rangle$. For some inertial frame, that change of integration variable gives:
+To see how this plays out, let's use $\gamma(ct_q) = \dd (ct_q) / \dd (ct_0)$ (time dilation) to express those moments in terms of the \emph{coordinate} time of the particle's world-line events $\vv R_q = \langle ct_q, \vv r_q \rangle$. For some inertial frame, a corresponding change of integration variable (and reparameterization) gives:
 \begin{equation*}
-\rho_{0 \, \mathrm{sub}} (ct, \vv r) = q \int \dfrac{\delta \big[ \vv r - \vv r_q (ct_q) \big]}{\gamma (ct_q)} \, \delta \big[ ct - ct_q \big] \, c \, \dd t_q
+\begin{aligned}
+\rho_{0 \, \mathrm{sub}} (ct, \vv r) &= q \int \dfrac{\delta \big[ \vv R - \vv R_q (ct_q) \big]}{\gamma (ct_q)} \, c \, \dd t_q \\[3pt]
+&= q \int \dfrac{\delta \big[ \vv r - \vv r_q (ct_q) \big]}{\gamma (ct_q)} \, \delta \big[ ct - ct_q \big] \, c \, \dd t_q .
+\end{aligned}
 \end{equation*}
-(we've split the invariant delta function into frame-dependent space and time factors, and reparameterized $\vv r_q$ and $ct_q$ from $ct_0$ to $ct_q$). Integrate:
+Integrate:
 \begin{equation}\label{eq:rho0part2}
 \rho_{0 \, \mathrm{sub}} (ct, \vv r) = \dfrac{q \, \delta \big[ \vv r - \vv r_q (ct) \big]}{\gamma (ct)}.
 \end{equation}
@@ -4082,7 +4085,7 @@ Equations \ref{eq:lienardphi} and \ref{eq:lienarda} tell us how to calculate a g
 
 \subsubsection{Li\'enard--Wiechert Fields}\label{sssec:lwf}
 
-The retarded \emph{fields} generated by a moving point charge can be derived by applying Equations \ref{eq:lienardphi} and \ref{eq:lienarda} (Li\'enard--Wiechert potentials) to the definitions of $\vv e$ and $\vv b$ (Equations \ref{eq:eb}), which are $\vv e = - \del \Phi - \partial^{ct} \vv a$ and $\vv b = \del \times \vv a$. This is a lot of work, but we'll do it.\footnote{Our derivation is modeled after: David J. Griffiths, \emph{Introduction to Electrodynamics}, 5th ed. (Cambridge: Cambridge, 2024), 462--64.}
+The retarded \emph{fields} generated by a moving point charge can be derived by applying Equations \ref{eq:lienardphi} and \ref{eq:lienarda} (Li\'enard--Wiechert potentials) to the definitions of $\vv e$ and $\vv b$ (Equations \ref{eq:eb}), which are $\vv e = - \del \Phi - \partial^{ct} \vv a$ and $\vv b = \del \times \vv a$. This is a lot of work, but we'll do it.\footnote{Our derivation is modeled after: David J. Griffiths, \emph{Introduction to Electrodynamics}, 5th ed. (Cambridge: Cambridge, 2024), 462--64.} If you'd like, you can skip to discussion of the results after Equation \ref{eq:retbpart2}.
 
 To avoid some product rules, write the Li\'enard--Wiechert potentials with the $[d]$ in the denominator distributed into the parenthetical term:
 \begin{equation*}
@@ -4373,7 +4376,7 @@ Now that we have equations for the four-current density field ``belonging" to a 
 \begin{equation*}
 \vv F_{\mathrm{L \, sub}} (ct) = \int_{V} \bm{\mathfrak{F}}_{\mathrm{sub}} (ct, \vv r) \, \dd V_0 = \int_{V} \gamma_{\mathrm{sub}} (ct, \vv r) \, \bm{\mathfrak{F}}_{\mathrm{sub}} (ct, \vv r) \, \dd V,
 \end{equation*}
-the total four-force acting on the sub-distribution via the fields within the region $V$ at time $ct$. We've invoked $\dd V_0 = \gamma \mkern1mu \dd V$ (volume contraction), where $\dd V_0$ is the proper volume of the infinitesimal material element at $\vv r$ (if one is there), and $\gamma$ is its Lorentz factor. Summing over all sub-distributions gives:
+the total four-force acting on the sub-distribution via the fields within the region $V$ at time $ct$. We've invoked $\dd V_0 = \gamma \mkern1mu \dd V$ (volume contraction), where $\dd V_0$ is the invariant proper volume of the infinitesimal material element at $\vv r$ (if one is there), and $\gamma$ is its Lorentz factor. Summing over all sub-distributions gives:
 \begin{equation*}
 \vv F_{\mathrm{L \, total}} (ct) = \int_{V} \sum \Big( \gamma(ct, \vv r) \, \bm{\mathfrak{F}} (ct, \vv r) \Big)_{\mathrm{sub}} \, \dd V ,
 \end{equation*}
