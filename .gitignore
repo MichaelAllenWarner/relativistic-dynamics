@@ -28,6 +28,7 @@
 *.mtc
 *.mtc1
 *.out
+*.synctex(busy)
 *.synctex.gz
 *.pdf
 *.nlo
