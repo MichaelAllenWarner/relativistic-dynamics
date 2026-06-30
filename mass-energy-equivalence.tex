@@ -5764,7 +5764,7 @@ e_z & -b_y & b_x & 0
 \end{bmatrix}
 \right)
 \end{equation*}
-(using $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$). We won't write out the full 4-by-4 in the parentheses, but if we visualize carrying out that matrix-multiplication first, we see that each component of the four-vector $\partialup \cdot (\inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ))$ will involve just a single column of the rightmost matrix in the above expression, and that any such component $\mu$ (where $\mu$ can be $ct$, $x$, $y$, or $z$) is then:
+(using $\del = \langle - \partial^x , - \partial^y , - \partial^z \rangle$). The matrix in parentheses is a 4-by-4 whose $\mu$th column is the product of $[\inlinedy{\mathsf{F}}]$ (on the left) with the $\mu$th column of $\eta [\partialup] [\vv A]^{\mathrm{T}}$ (on the right). Then the whole row-times-square expression yields a row matrix whose $\mu$th entry---a component of the four-vector ${\partialup \cdot (\inlinedy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ))}$---in turn involves only the $\mu$th column of the 4-by-4 in parentheses (and hence only the $\mu$th column of $\eta [\partialup] [\vv A]^{\mathrm{T}}$). Letting $\mu$ now stand for $ct$, $x$, $y$, or $z$, that gives:
 \begin{equation*}
 \begin{split}
 \Big( \partialup \cdot \big( \capdy{\mathsf{F}} \cdot \, ( \partialup \otimes \vv A ) \big) \Big)^{\mu} &= \partial^{ct} \, \bigl( e_x \partial^x A^{\mu} + e_y \partial^y A^{\mu} + e_z \partial^z A^{\mu} \bigr) \\[-.9ex]
@@ -5804,7 +5804,7 @@ We haven't yet discussed \emph{angular} momentum. Let's fix that. In Newtonian m
 
 Having established that Equation \ref{eq:set} is a continuity equation, where the vanishing divergence of the stress--energy dyadic $\inlinedy{\mathsf{T}}$ expresses the conservation of four-momentum, we might ask whether it's possible to likewise express the conservation of \emph{angular} momentum as the vanishing four-divergence of some sort of ``angular stress--energy tensor." The answer is yes, but first we must get our bearings by expressing angular momentum in a manifestly covariant form. 
 
-\subsubsection{Angular Momentum Four-Dyadic}
+\subsubsection{Angular Momentum Four-Dyadic; Center of Energy}
 
 We do this by noting that $\vvell$ is a pseudovector whose information is actually more ``naturally" conveyed in the guise of its Hodge dual, a (conserved) three-dyadic that isn't a pseudotensor:
 \begin{equation*}
