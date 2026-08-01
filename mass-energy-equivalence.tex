@@ -2946,7 +2946,7 @@ We've claimed that Equation \ref{eq:gfp} is the electromagnetic field equation, 
 \begin{equation}\label{eq:ff}
 \boxed{\vv F_{\textrm{L}} = q \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A)} \, .
 \end{equation}
-This $\vv F_{\textrm{L}}$ is called the \textbf{Lorentz four-force}.\footnote{Since $\vv J$ has dimensions of $Q / L^3$ (Equation \ref{eq:fc}), $\vv A$ must have $Q / L$ (Equation \ref{eq:gfp}). And since $\vv F$ has $E / L$, we now see that $q$ has $Q = \sqrt{EL}$. (Not so in the SI, by the way.)} It's the physical effect that information about the four-current density's value elsewhere has on a test charge upon reaching it (we're invoking the point-charge model now).\footnote{\label{fn:recoil}By ``test charge" we mean that we neglect the influence of the particle's charge on the four-potential, which, in turn, may affect the particle. Accounting for it is beyond our scope and not entirely possible in classical electrodynamics anyway. (Remember: the theory is really about \emph{continua}, not \emph{particles}. In fact, instead of starting with $\vv F_{\textrm{L}}$, it's better to regard the field's stress--energy tensor as fundamental, derive from it and Maxwell's equations the Lorentz four-force \emph{density}, and use a limiting procedure to obtain $\vv F_{\textrm{L}}$---see Sections \ref{sssec:lffd}, \ref{sssec:fffffd}, and \ref{sec:dy}. We'll cover all those quantities, but we start with the force on a test charge because it's easier to grasp and closer in spirit to ``empirical result.") That said, we'd be remiss not to mention that accelerating charges are what generate electromagnetic waves, and that the ``recoil" four-force that a radiating particle is subject to (``beyond" $\vv F_{\textrm{L}}$) \emph{should be} ${\vv F = (q^2 / (6 \pi))[\mathring{\vv Z} + (\vv Z \cdot \vv Z) \vv B]}$, where $q$ is the particle's charge, $\vv B$ its normalized four-velocity, $\vv Z$ its normalized four-acceleration, and $\mathring{\vv Z}$ its normalized four-jerk. The jerk-term in this \textbf{Abraham--Lorentz--Dirac four-force} is the problem---it leads to unphysical predictions like runaway acceleration. An \emph{approximation} called the \textbf{Landau--Lifshitz equation} avoids the pathologies and accords well with experiment, but ultimately the classical theory fails to self-consistently describe point charges. In any case, the radiation reaction is negligible in most practical applications.} The quantities on the right side are the particle's charge $q$, the particle's normalized four-velocity $\vv B$, and the ``value" of the four-potential $\vv A$ at the particle's spacetime position (we're differentiating the four-potential, so its nonuniqueness doesn't matter). As we learned in Section \ref{sssec:tp}, this differential four-vector triple product is gauge-invariant and can also be written:
+This $\vv F_{\textrm{L}}$ is called the \textbf{Lorentz four-force}.\footnote{Since $\vv J$ has dimensions of $Q / L^3$ (Equation \ref{eq:fc}), $\vv A$ must have $Q / L$ (Equation \ref{eq:gfp}). And since $\vv F$ has $E / L$, we now see that $q$ has $Q = \sqrt{EL}$. (Not so in the SI, by the way.)} It's the physical effect that information about the four-current density's value elsewhere has on a test charge upon reaching it (we're invoking the point-charge model now).\footnote{\label{fn:recoil}By ``test charge" we mean that we neglect the influence of the particle's charge on the four-potential, which, in turn, may affect the particle. Accounting for it is beyond our scope and not entirely possible in classical electrodynamics anyway. (Remember: the theory is really about \emph{continua}, not \emph{particles}. In fact, instead of starting with $\vv F_{\textrm{L}}$, it's better to regard the field's stress--energy tensor as fundamental, derive from it and Maxwell's equations the Lorentz four-force \emph{density}, and use a limiting procedure to obtain $\vv F_{\textrm{L}}$---see Sections \ref{sssec:lffd}, \ref{sssec:fffffd}, and \ref{sec:dy}. We'll cover all those quantities, but we start with the force on a test charge because it's easier to grasp and closer in spirit to ``empirical result.") That said, we'd be remiss not to mention that accelerating charges are what generate electromagnetic waves, and that the ``recoil" four-force that a radiating particle is subject to (``beyond" $\vv F_{\textrm{L}}$) \emph{should be} ${\vv F = (q^2 / (6 \pi))[(\vv Z \cdot \vv Z) \vv B + \mathring{\vv Z}]}$, where $q$ is the particle's charge, $\vv B$ its normalized four-velocity, $\vv Z$ its normalized four-acceleration, and $\mathring{\vv Z}$ its normalized four-jerk. The jerk-term in this \textbf{Abraham--Lorentz--Dirac four-force} is the problem---it leads to unphysical predictions like runaway acceleration. An \emph{approximation} called the \textbf{Landau--Lifshitz equation} avoids the pathologies and accords well with experiment, but ultimately the classical theory fails to self-consistently describe point charges. In any case, the radiation reaction is negligible in most practical applications.} The quantities on the right side are the particle's charge $q$, the particle's normalized four-velocity $\vv B$, and the ``value" of the four-potential $\vv A$ at the particle's spacetime position (we're differentiating the four-potential, so its nonuniqueness doesn't matter). As we learned in Section \ref{sssec:tp}, this differential four-vector triple product is gauge-invariant and can also be written:
 \begin{equation}\label{eq:lff}
 \vv F_{\textrm{L}} = q \, \bigl[ \partialup_{\vv A} (\vv B \cdot \vv A) - (\vv B \cdot \partialup) \vv A \bigr] .\end{equation}
 By Equations \ref{eq:dt} and \ref{eq:31}, the component form of Equation \ref{eq:ff} is:
@@ -4417,7 +4417,149 @@ That distinction is important. If we take our derivation at face value, we might
 
 If the particle's Li\'enard--Wiechert four-potential diverges at its own location, then why don't we run into a similar problem for material elements? In other words, when we split the total force into self-force and external-force terms with a continuous model for charge, why doesn't the self-force of each material element \emph{on itself} diverge and require writing $\vv A_{\mathrm{ext}}$ instead of $\vv A$? After all, the integrand in the Lorenz-gauge retarded four-potential (Equation \ref{eq:retfp2}) has a $1/d$ structure, too. The answer is that a material element isn't a particle. Yes, for the element, the \emph{integrand} in Equation \ref{eq:retfp2} diverges as $d = \vert \vv r - \vv r_s \vert \to 0$, but it's multiplied by the volume element $\dd V_s$, and the combination doesn't diverge. To see why, put a small spherical shell around the field position $\vv r$, considering source positions $\vv r_s$ on the surface so that the radius is $d$. (Equivalently, sum the volume elements $\dd V_s$ over all source positions at fixed $d$.) The volume of the shell is $4 \pi d^2 \mkern2mu \dd d$ (the surface area $4 \pi d^2$ times the infinitesimal thickness $\dd d$---sorry for the awkward notation). The product of integrand and shell volume is then proportional to $d \, \dd d$, and that \emph{vanishes} in the limit that $d \to 0$. So no divergence problem for the material element, and in fact its ``self-$\vv A$" contributes nothing to the integral.
 
-%The Abraham--Lorentz--Dirac force mentioned in Footnote \ref{fn:recoil}.  That result and the associated pathologies arise from attempting to account for the effect an accelerating particle's \emph{own} radiation field should have \emph{on itself}, and we won't get into that here. It's worth mentioning that a different kind of limiting procedure---not using the delta function, but rather considering what happens to a vanishingly small but \emph{finite} body whose mass and charge likewise approach zero---can generate from the Lorentz four-force density both the Lorentz four-force and the Abraham--Lorentz--Dirac four-force, as the two lowest-order terms in an expansion. What's more, the Abraham--Lorentz--Dirac term obtained this way does \emph{not} suffer from the pathologies that the point-charge version of it does.\footnote{See Samuel E. Gralla, Abraham I. Harte, and Robert M. Wald, ``Rigorous derivation of electromagnetic self-force," \emph{Physical Review D} 80, no. 2 (2009): 024031. Preprint: \url{https://arxiv.org/abs/0905.2391}.}
+\subsubsection{Abraham--Lorentz--Dirac Four-Force (Radiation Reaction)}
+
+We've now shown why the Lorentz force acting on a classical point charge necessarily excludes the particle's electromagnetic ``self-force." But how \emph{can} we account for that \textbf{radiation reaction}? Answer: the Li\'enard--Wiechert fields, the Poynting vector, and knowledge of relativistic dynamics. Our approach won't be entirely rigorous, but it will suffice to lead us to the pathological Abraham--Lorentz--Dirac four-force, and we'll then have closed the loop on the ``point particles ultimately break classical electrodynamics" thread we pulled in Section \ref{sssec:prelude}.
+
+Here again are the Li\'enard--Wiechert fields (Equations \ref{eq:retepart} and \ref{eq:retbpart2}):
+\begin{equation*}
+\vv e(ct, \vv r) = \dfrac{q}{4 \pi \big( 1 - [\vv{\hat{d}}] \cdot [\vvbeta] \big)^3} \left( \dfrac{\vv{\upkappa}}{[\gamma]^2 [d]^2} \, + \, \dfrac{[\vv{\hat{d}}] \times \big( \vv{\upkappa} \times [\vvzeta] \big)}{[d]} \right)
+\end{equation*}
+and
+\begin{equation*}
+\vv b (ct, \vv r) = \dfrac{q [\vv{\hat{d}}]}{4 \pi \big( 1 - [\vv{\hat{d}}] \cdot [\vvbeta] \big)^3} \times \left( \dfrac{\vv{\upkappa}}{[\gamma]^2 [d]^2} \, + \, \dfrac{[\vv{\hat{d}}] \times \big( \vv{\upkappa} \times [\vvzeta] \big)}{[d]} \right) = [\vv{\hat{d}}] \times \vv e (ct, \vv r).
+\end{equation*}
+As a reminder, these are the contributions to the electric and magnetic fields at a given event $\vv R = \langle ct, \vv r \rangle$ that are attributable to signals the point-charge source in question emitted when it was at position $\vv r_{q}(ct_{\mathrm{ret}})$ at the (implicitly defined) retarded time $ct_{\mathrm{ret}} = ct - \vert \vv r - \vv r_{q}(ct_{\mathrm{ret}}) \vert$. In these equations, square brackets around a quantity indicate that it's evaluated at $ct_{\mathrm{ret}}$, the shorthand $[\vv{d}]$ means $\vv r - \vv r_{q}(ct_{\mathrm{ret}})$ (with unit vector $[\vv{\hat{d}}]$ and magnitude $[d]$), the shorthand $\vv{\upkappa}$ means $[\vv{\hat{d}}] - [\vvbeta]$, and the kinematic quantities on the right side ($\vvbeta$, $\gamma$, $\vvzeta$) pertain to the particle.
+
+Pretend that the particle is the only thing in the universe, and that all electromagnetic disturbances are sourced from it. We're going to start by using the Li\'enard--Wiechert fields to calculate the rate at which electromagnetic energy crosses a sphere infinitely far away from the source-charge. For convenience, we'll work in the frame for which the particle is instantaneously at rest at the time of emission, $ct_{\mathrm{ret}}$. Our calculation will be the integral of (the normal component of) the Poynting vector $\vv s = \vv e \times \vv b$---the flux density of electromagnetic energy (its per-unit-area transfer rate, as explained in Section \ref{sssec:lffd})---over the spherical shell a distance $[d] \rightarrow \infty$ from the particle. Making the particle's emission-time position the origin, we'll have spherical coordinates $([d], \theta, \phi)$, and in these coordinates the spherical surface element in our integral is $[d]^2 \sin \theta \, \dd \theta \, \dd \phi$.\footnote{See: \url{https://en.wikipedia.org/wiki/Spherical_coordinate_system}.}
+
+Now, because of that $[d]^2$ in the surface element just mentioned, we can safely ignore the near-field $1 / [d]^2$ terms in the Li\'enard--Wiechert fields. Why? Because in the Poynting vector $\vv s = \vv e \times \vv b$, the near fields contribute only to $1/[d]^3$ and $1/[d]^4$ terms, which become $1/[d]$ and $1/[d]^2$ after cancellation with the surface element's $[d]^2$, and these vanish in the $[d] \rightarrow \infty$ limit. The far-field $1/[d]$ terms, by contrast, can't be neglected, because in the Poynting vector they together produce a $1/[d]^2$ term that the surface element renders $[d]$-less (doesn't vanish). So for the purpose of our integral, the Li\'enard--Wiechert fields are effectively:
+\begin{equation*}
+\vv e(ct, \vv r) = \dfrac{q}{4 \pi \big( 1 - [\vv{\hat{d}}] \cdot [\vvbeta] \big)^3} \, \dfrac{[\vv{\hat{d}}] \times \big( \vv{\upkappa} \times [\vvzeta] \big)}{[d]}
+\end{equation*}
+and
+\begin{equation*}
+\vv b (ct, \vv r) = \dfrac{q [\vv{\hat{d}}]}{4 \pi \big( 1 - [\vv{\hat{d}}] \cdot [\vvbeta] \big)^3} \times \dfrac{[\vv{\hat{d}}] \times \big( \vv{\upkappa} \times [\vvzeta] \big)}{[d]} = [\vv{\hat{d}}] \times \vv e (ct, \vv r).
+\end{equation*}
+But we're also working in the particle's instantaneous rest frame, so we further set $[\vvbeta] = \vv 0$ (and $\vv{\upkappa} = [\vv{\hat{d}}]$):
+\begin{equation*}
+\vv e(ct, \vv r) = \dfrac{q}{4 \pi} \, \dfrac{[\vv{\hat{d}}] \times \big( [\vv{\hat{d}}] \times [\vvzeta] \big)}{[d]}
+\end{equation*}
+and
+\begin{equation*}
+\vv b (ct, \vv r) = \dfrac{q [\vv{\hat{d}}]}{4 \pi} \times \dfrac{[\vv{\hat{d}}] \times \big( [\vv{\hat{d}}] \times [\vvzeta] \big)}{[d]} = [\vv{\hat{d}}] \times \vv e (ct, \vv r).
+\end{equation*}
+
+At infinity, then, the Li\'enard--Wiechert fields resemble the plane-wave ``building blocks" for free-space solutions we studied in Section \ref{sssec:li}: the electric field joins the magnetic field in being perpendicular to $[\vv{\hat{d}}]$ (the line of sight to the particle's retarded position), and the magnitudes of the (mutually perpendicular) fields become equal.\footnote{In this sentence I didn't stipulate ``in the particle's emission-time rest frame" (recall from Section \ref{sssec:lff} that $\vv e \cdot \vv b$ and $e^2 - b^2$ are invariants).} It follows that the Poynting vector's component normal to the surface element in our integral will simply be the magnitude $s = \vert \vv e \times \vv b \vert = eb \, \sin \angle (\vv e, \vv b) = eb = e^2$. To express $e$ nicely for spherical coordinates, let $\theta$ (the polar-angle coordinate) be the lesser angle between $[\vv{\hat{d}}]$ and $[\vvzeta]$, so that the magnitude of their cross product is $[\zeta] \sin \theta$. Then since the unit vector $[\vv{\hat{d}}]$ is perpendicular to $[\vv{\hat{d}}] \times [\vvzeta]$, the magnitude of $[\vv{\hat{d}}] \times ([\vv{\hat{d}}] \times [\vvzeta])$ is itself just $[\zeta] \sin \theta$, too, and:
+\begin{equation*}
+e(ct, \vv r) = \dfrac{q}{4 \pi} \, \dfrac{[\zeta] \sin \theta}{[d]} .
+\end{equation*}
+So our Poynting vector's magnitude (and component normal to the surface element) is:
+\begin{equation*}
+s(ct, \vv r) = e^2 = \dfrac{q^2}{16 \pi^2} \, \dfrac{[\zeta]^2 \sin^2 \theta}{[d]^2}
+\end{equation*}
+(this is the $1 / [d]^2$ term produced by the far-field terms we anticipated). Finally, our integral is:
+\begin{equation*}
+\begin{aligned}
+\left. \dfrac{\dd E_{\textrm{em}}}{\dd (ct)} \right|_{[d] \rightarrow \infty} &= \int_{0}^{2 \pi} \int_{0}^{\pi} \dfrac{q^2}{16 \pi^2} \, \dfrac{[\zeta]^2 \sin^2 \theta}{[d]^2} \, [d]^2 \sin \theta \, \dd \theta \, \dd \phi \\[3pt]
+&= \dfrac{q^2 [\zeta]^2}{16 \pi^2} \int_{0}^{2 \pi} \int_{0}^{\pi} \left( 1 - \cos^2 \theta \right) \sin \theta \, \dd \theta \, \dd \phi ,
+\end{aligned}
+\end{equation*}
+for the instantaneous transfer rate of electromagnetic energy on the spherical shell at infinity, in the particle's emission-time rest frame. To solve the inner integral, use substitution, with $u = \cos \theta$ and $\dd u = - \sin \theta \, \dd \theta$:
+\begin{equation*}
+\begin{aligned}
+\int_{0}^{\pi} \left( 1 - \cos^2 \theta \right) \sin \theta \, \dd \theta &= \int_{1}^{-1} \left( 1 - u^2 \right) \big( - \dd u \big) \\[3pt]
+&= \int_{-1}^{1} \left( 1 - u^2 \right) \dd u \\[2pt]
+&=  \left. \left( u - \dfrac{u^3}{3} \right) \right|_{-1}^{1} \\[1pt]
+&= \dfrac{4}{3} .
+\end{aligned}
+\end{equation*}
+The other integral for the azimuthal angle $\phi$ is trivially $2 \pi$, and we get:
+\begin{equation}\label{eq:prelarmor}
+\left. \dfrac{\dd E_{\textrm{em}}}{\dd (ct)} \right|_{[d] \rightarrow \infty} = \dfrac{q^2 [\zeta]^2}{6 \pi} .
+\end{equation}
+
+Next, a key insight. Since the far-field radiant energy originates from the accelerating charge, and since there's no $[d]$-dependence in Equation \ref{eq:prelarmor}, we can ``rewind" back to emission-time, ``compressing" the spherical shell all the way down to the particle at its retarded position. When we do this, the right side of Equation \ref{eq:prelarmor} remains meaningful (with the square brackets around $\zeta$ removed---retarded time is now the current time), but it no longer represents the total transfer rate of electromagnetic energy at infinity. Rather, it represents a \emph{portion of} the local particle-to-fields energy transfer rate (in the particle's instantaneous rest frame):
+\begin{equation}\label{eq:larmor}
+\dfrac{\dd E_{\textrm{em} \, \textrm{rad}}}{\dd (ct)} = \dfrac{q^2 \zeta^2}{6 \pi} .
+\end{equation}
+Equation \ref{eq:larmor} is called the \textbf{Larmor formula}. Specifically, it's the portion of the particle-to-fields energy transfer rate that's destined to propagate out in the fields all the way to infinity. Why does it represent only a portion of the energy transfer rate? Because our derivation neglected the near-field Li\'enard--Wiechert terms entirely, and they can only be ignored in the ${[d] \rightarrow \infty}$ limit.\footnote{In the general case, there's also the (negative of the) Lorentz power $\mathcal{P}_{\textrm{L}} = q ( \vvbeta \cdot \vv e )$ (Equation \ref{eq:lp}). But the $\vv e$ there \emph{excludes} the self-fields whose effects we're trying to quantify, and in our ``particle is the only thing in the universe" setup the external fields vanish. (And $\vvbeta = \vv 0$ anyway in the rest frame.)}
+
+Let's reorient the discussion to what happens \emph{to} the point charge. The negative of Equation \ref{eq:larmor} gives us a portion of the energy transfer rate from fields to particle in the rest frame.\footnote{Again, just a portion! The \emph{total} energy transfer rate to the particle must vanish in the particle's rest frame, as the particle's rest energy (mass) doesn't change. More on this soon.} We'll go ahead and use the word \emph{power} now (I prefer to avoid the words \emph{power} and \emph{force} when speaking of what the particle does to the fields):
+\begin{equation*}
+\mathcal{P}_{\textrm{rad}} = - \dfrac{q^2 \zeta^2}{6 \pi}
+\end{equation*}
+(recall that we express power $\mathcal{P}$ in force-units). This rest-frame power can be written in a manifestly covariant way by adding naught-subscripts to $\mathcal{P}_{\textrm{rad}}$ and $\zeta$, making them \emph{proper} quantities (see Sections \ref{sssec:pa} and \ref{sssec:pf}):
+\begin{equation*}
+\mathcal{P}_{0 \, \textrm{rad}} = - \dfrac{q^2 \zeta_0^2}{6 \pi} ,
+\end{equation*}
+or (by Equation \ref{eq:pa4}):
+\begin{equation}\label{eq:powerrad}
+\mathcal{P}_{0 \, \textrm{rad}} = \dfrac{q^2}{6 \pi} \, \vv Z \cdot \vv Z ,
+\end{equation}
+where $\vv Z$ is the particle's (normalized) four-acceleration.
+
+Every power (times Lorentz factor $\gamma$) is the time component of a four-force (Equation \ref{eq:33}), so:
+\begin{equation*}
+\vv F_{\textrm{rad}} = \gamma \big \langle \mathcal{P}_{\textrm{rad}}, \mkern.5mu \vv f_{\mathrm{rad}} \big \rangle ,
+\end{equation*}
+the ``radiation" portion of the particle's ``self-$\vv F$." We'll now deduce that the three-force $\vv f_{\mathrm{rad}}$ vanishes in the particle's rest frame, by appealing heuristically to $E = pc$ for light (which the Li\'enard--Wiechert fields behave like at infinity). Since the negative of $\mathcal{P}_{\textrm{rad}}$ is the portion of the particle-to-fields energy transfer rate that will propagate unabated forever as an expanding spherical shell, the negative of $\vv f_{\mathrm{rad}}$ is the corresponding portion of the three-momentum transfer rate that will do the same. ``Fast-forward" ahead to when the spherical shell gets to infinity, and our rest-frame Poynting-vector integral from earlier is operative again. We know that at any point on the shell, the outward rate of electromagnetic three-momentum transfer is proportional to the outward rate of electromagnetic energy transfer. And we found that the angular dependence of the Poynting vector on the shell (the flux density of electromagnetic energy) was simply $\sin^2 \theta$, without any appearance of the azimuthal coordinate $\phi$. But $\sin^2 (\pi - \theta) = \sin^2 \theta$, and therefore the vectorial transfer rate of electromagnetic momentum at coordinates ($\theta$, $\phi$) on the shell is exactly canceled by that at the antipode ($\pi - \theta$, $\phi + \pi$)---same magnitude, opposite directions. This remains true of the ``radiation shell" as we ``rewind" back to the emission time (with the important caveat that now this electromagnetic momentum transfer rate is only \emph{part} of the total), and we conclude that $\vv f_{\mathrm{rad}}$ indeed vanishes in the particle's rest frame. With $\gamma = 1$, we have in this frame $\vv F_{\textrm{rad}} = \langle \mathcal{P}_{0 \, \textrm{rad}}, \mkern.5mu \vv 0 \rangle = \mathcal{P}_{0 \, \textrm{rad}} \langle 1, \mkern.5mu \vv 0 \rangle $. Covariantly, by Equation \ref{eq:powerrad}:
+\begin{equation*}
+\vv F_{\textrm{rad}} = \dfrac{q^2}{6 \pi} \left( \vv Z \cdot \vv Z \right) \vv B ,
+\end{equation*}
+where $\vv B$ is the particle's normalized four-velocity.
+
+To get the particle's \emph{total} ``self-$\vv F$," the Abraham--Lorentz--Dirac four-force $\vv F_{\textrm{ALD}}$, we must account for the near fields, too. We'll do this indirectly, leveraging the fact that the total four-force must be codirectional with the four-acceleration (because $\vv F = E_0 \mkern.5mu \vv Z$ when the particle's rest energy $E_0$ doesn't change---Equation \ref{eq:39}) and therefore orthogonal to the four-velocity ($\vv Z \cdot \vv B$ always vanishes---see Section \ref{sssec:fa}). Defining $\vv F_{\textrm{other}}$ as all action of the self-fields on the particle that isn't already captured by $\vv F_{\textrm{rad}}$, we have:
+\begin{equation*}
+\vv F_{\textrm{ALD}} = \vv F_{\textrm{rad}} + \vv F_{\textrm{other}} = \dfrac{q^2}{6 \pi} \left( \vv Z \cdot \vv Z \right) \vv B + \vv F_{\textrm{other}} ,
+\end{equation*}
+with the stipulation that $\vv F_{\textrm{ALD}} \cdot \vv B = 0$. We can make use of the following product rule (differentiating with respect to particle proper time, and using our over-circle convention):
+\begin{equation*}
+0 = \dfrac{\dd}{\dd (ct_0)} \left( \vv Z \cdot \vv B \right) = \mathring{\vv Z} \cdot \vv B + \vv Z \cdot \vv Z
+\end{equation*}
+($\vv Z = \mathring{\vv B}$ by defintion, remember). So $\vv Z \cdot \vv Z = - \mathring{\vv Z} \cdot \vv B$. With $\vv B \cdot \vv B = 1$, then:
+\begin{equation*}
+\begin{aligned}
+0 &= \vv F_{\textrm{ALD}} \cdot \vv B \\[1pt]
+&= \dfrac{q^2}{6 \pi} \left( \vv Z \cdot \vv Z \right) \vv B \cdot \vv B + \vv F_{\textrm{other}} \cdot \vv B \\[3pt]
+\vv F_{\textrm{other}} \cdot \vv B &= \dfrac{q^2}{6 \pi} \, \mathring{\vv Z} \cdot \vv B .
+\end{aligned}
+\end{equation*}
+The \emph{simplest} possibility here is just $\vv F_{\textrm{other}} = q^2 \mathring{\vv Z} / (6 \pi)$. Of course, by ${\vv Z \cdot \vv B = 0}$, we can consider the addition of a term like $\alpha \vv Z$ for some constant $\alpha$ with energy-units, but since the total four-force must equal $E_0 \mkern.5mu \vv Z$, such a term would be completely indistinguishable from the particle's rest energy actually having been $(E_0 - \alpha)$ all along. In other words, this term is already accounted for in the measured rest energy of the particle, and we can just ignore it. The only other terms we could add that are constructed from the particle's kinematic quantities would involve higher-order derivatives of the four-acceleration. We aren't in a position to rule them out conclusively, but obviously they're undesirable, and the good news is that more rigorous derivations \emph{do} rule them out. So the simplest possibility is all that remains, and:
+\begin{equation}\label{eq:aldff}
+\vv F_{\textrm{ALD}} = \dfrac{q^2}{6 \pi} \left[ \left( \vv Z \cdot \vv Z \right) \vv B + \mathring{\vv Z} \right],
+\end{equation}
+as we originally claimed in Footnote \ref{fn:recoil}.
+
+Equation \ref{eq:aldff} goes by several names: Abraham--Lorentz--Dirac four-force, radiation reaction, particle self-force, recoil force (there may be others). It's the portion of the total electromagnetic four-force acting on a point charge that's attributable to the particle's ``own fields," or equivalently the portion that isn't the Lorentz force, which is the part that's attributable to signals arriving from elsewhere. In general:
+\begin{equation*}
+\vv F_{\textrm{particle via fields}} =  \vv F_{\textrm{L}} + \vv F_{\textrm{ALD}} .
+\end{equation*}
+
+We've mentioned already that the particle's self-force causes problems that aren't fully resolvable in classical electrodynamics.\footnote{The ``resolution" is not to bring true point charges into the theory at all! Without them, it's still possible to consider what happens to a vanishingly small but \emph{finite} body whose mass and charge likewise approach zero. In fact, this limiting procedure can generate from the Lorentz four-force density both the Lorentz four-force and the Abraham--Lorentz--Dirac four-force, as the two lowest-order terms in an expansion. What's more, the Abraham--Lorentz--Dirac term obtained this way does \emph{not} suffer from the pathologies that the point-charge version of it does. See Samuel E. Gralla, Abraham I. Harte, and Robert M. Wald, ``Rigorous derivation of electromagnetic self-force," \emph{Physical Review D} 80, no. 2 (2009): 024031. Preprint: \url{https://arxiv.org/abs/0905.2391}.}  We won't go into too much detail, but the issue is the jerk term.
+
+%Equation \ref{eq:larmorrestframe} is called the \textbf{Larmor formula}. I've avoided the word \emph{power}, since I prefer to reserve that word (and the word \emph{force}) for what happens to ``things," not fields, but of course the Larmor formula \emph{is} a ``power"
+
+
+%Now, since the radiated energy here was sourced from the accelerating particle, the \emph{additive inverse} of Equation \ref{eq:larmorrestframe} pertains to energy transferred \emph{to} the charge (from the fields):
+%\begin{equation*}
+%\mathcal{P}_{\mathrm{rad}} = - \left. \dfrac{\dd E_{\textrm{em}}}{\dd (ct)} \right|_{[d] \rightarrow \infty} = - \dfrac{q^2 [\zeta]^2}{6 \pi}
+%\end{equation*}
+%(recall that we express power in force-units). But this term represents only \emph{part} of the total fields-to-particle power. Of course, there's the Lorentz power $\mathcal{P}_{\textrm{L}} = q ( \vvbeta \cdot \vv e )$ (Equation \ref{eq:lp}), but we don't care about that at the moment (the $\vv e$ there \emph{excludes} the self-fields whose effects we're trying to quantify). More relevant is the fact that so far we've only accounted for the Li\'enard--Wiechert fields \emph{at infinity}. The particle also sources electromagnetic energy-transfer closer in!
+
+%Instead of dealing directly with the Li\'enard--Wiechert fields again, we can use what we know about relativistic dynamics.
+
+%where we've added some naught-subscripts to make the equation manifestly covariant (the power and acceleration-magnitude in the rest frame notated this way are Lorentz-invariant \emph{proper} quantities; see Section \ref{sssec:pf}).
+
+
+
+% Step 1: Refer back to far-field / near-field split of LW fields, and note that in the limit that d goes to infinity, only the far-field contributes. Note that the total radiation-reaction four-force can be split into two terms: one term that's (minus) the rate-of-4-momentum-transfer to the far fields (maybe call this the Larmor or Lienard four-force?) (whose time component is the Lienard power which reduces to the Larmor power in the non-relativistic limit) and a second term that's everything else (Schott four-force term).
+% Step 2: For the particle's rest frame, calculate the time component of the Larmor/Lienard four-force (i.e., the rate of energy-transfer [power] in the fields at infinity from the particle). Gives something proportional to squared proper-acceleration.
+% Step 3: Use symmetry argument to show that in that same frame (particle's rest frame), the corresponding spatial component of the Larmor/Lienard four-force (i.e., rate of 3-momentum transfer in the fields at infinity due to the particle) vanishes. Therefore the Larmor/Lienard four-force (not the entire radiation-reaction four-force) has components <P_{0 rad}, 0, 0, 0> in this frame, where P_{0 rad} is the proper radiated power (an invariant). Since P_{0 rad} is proportional to (Z dot Z) (from square proper-acceleration calculation), the <P_{0 rad}, 0, 0, 0> is proportional to (Z dot Z)B (B is particle's four-velocity, equal to <1, 0, 0, 0> in this frame), and that's our Larmor/Lienard term.
+% Step 4: B/c particle loses no rest energy, we must have vanishing of total radiation-reaction force dotted with particle four-velocity. Assume that the Schott four-force term can involve four-jerk but no higher derivatives of particle acceleration. These conditions suffice to conclude with some straightforward algebra that the Schott four-force term is proportional to the particle's four-jerk (not unique, actually, but added terms would be to proportional to four-acceleration and proportionality constant could just be 'added' to the particle's mass [rest energy], so they're not important [this process is called mass renormalization]). Full radiation-reaction four-force (ALD four-force) is then sum of L/L and Schott terms.
+% Step 5: show a little of the pathologies (runaway acceleration at least). Perhaps mention that Gralla/Harte/Wald do a different sort of limiting procedure that generates a non-pathological term that's very much like the ALD four-force. Maybe mention Landau/Lifshitz approximation.
+
+%The Abraham--Lorentz--Dirac force mentioned in Footnote \ref{fn:recoil}.  That result and the associated pathologies arise from attempting to account for the effect an accelerating particle's \emph{own} radiation field should have \emph{on itself}, and we won't get into that here. It's worth mentioning that }
 
 
 \clearpage
