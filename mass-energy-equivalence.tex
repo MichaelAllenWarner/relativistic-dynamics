@@ -6096,37 +6096,37 @@ Historically, Gaussian units and HLU arose as variants of the ``CGS" system, whe
 
 How can that be? The general idea is that we define ``MKS HLU" quantities in terms of standard SI ones in such a way that, when the new quantities are used together, we no longer see ugly $\varepsilon_0$ or $\mu_0$ anywhere, and everything has purely \emph{mechanical} dimensions (no ``special" electromagnetic units).
 
-We start with electric charge, which in the SI gets its own special dimension and unit (the coulomb).\footnote{Actually, the ampere is the \emph{base} electromagnetic unit in the SI (unit of current), with the coulomb derived from it, but that doesn't really matter for our purposes. The point is that in the SI, charge does not have dimensions of $\sqrt{\mathsf{E}\mathsf{L}}$ like it does in HLU. It's just $\mathsf{Q}_{\textrm{SI}}$.} To relate $q_{\textrm{SI}}$ with our ``MKS HLU" $q$, we bring in the SI's ``vacuum permittivity" constant $\varepsilon_0$. This constant has dimensions of $\mathsf{Q}_{\textrm{SI}}^2 / (\mathsf{E} \mathsf{L})$, and we know that our $q$ has dimensions $\mathsf{Q} = \sqrt{\mathsf{E}\mathsf{L}}$. Therefore $\mathsf{Q} = \mathsf{Q}_{\textrm{SI}} / \sqrt{[\varepsilon_0]}$ (where brackets mean \emph{dimensions of}), and we're free to \emph{define} $q$ like $q \equiv q_{\textrm{SI}} / \sqrt{\varepsilon_0}$. We could choose a more complicated definition that's dimensionally consistent, but why would we?
+We start with electric charge, which in the SI gets its own special dimension and unit (the coulomb, $\textrm{C}$).\footnote{Actually, the ampere (A) is the \emph{base} electromagnetic unit in the SI (unit of current), with the coulomb derived from it, but that doesn't really matter for our purposes. The point is that in the SI, charge does not have dimensions of $\sqrt{\mathsf{E}\mathsf{L}}$ like it does in HLU. It's just $\mathsf{Q}_{\textrm{SI}}$.} To relate $q_{\textrm{SI}}$ with our ``MKS HLU" $q$, we bring in the SI's ``vacuum permittivity" constant $\varepsilon_0$. This constant has dimensions of $\mathsf{Q}_{\textrm{SI}}^2 / (\mathsf{E} \mathsf{L})$, and we know that our $q$ has dimensions $\mathsf{Q} = \sqrt{\mathsf{E}\mathsf{L}}$. Therefore $\mathsf{Q} = \mathsf{Q}_{\textrm{SI}} / \sqrt{[\varepsilon_0]}$ (where brackets mean \emph{dimensions of}), and we choose to \emph{define} $q$ like $q \equiv q_{\textrm{SI}} / \sqrt{\varepsilon_0}$. It's got units of $\textrm{J}^{1/2} \, \textrm{m}^{1/2}$ (that's joule and meter), and $1 \, \textrm{J}^{1/2} \, \textrm{m}^{1/2} = 1 \, \textrm{C} / \sqrt{\varepsilon_0}$.
 
 From here, we'll relate:
 \begin{itemize}
-\item our four-current density $\vv J = \langle \rho, \, \vv j \rangle$ (with dimensions of $\mathsf{Q} / \mathsf{L}^3$) to SI's ${\vv J_{\textrm{SI}} = \langle \rho_{\textrm{SI}} c, \, \vv j_{\textrm{SI}} \rangle}$ (with dimensions of $\mathsf{Q}_{\textrm{SI}}/(\mathsf{L}^2 \mathsf{T})$),
-\item and our four-potential $\vv A = \langle \Phi, \, \vv a \rangle$ (with dimensions of $\mathsf{Q}/\mathsf{L}$) to SI's ${\vv A_{\textrm{SI}} = \langle \Phi_{\textrm{SI}} / c, \, \vv a_{\textrm{SI}} \rangle}$ (with dimensions of $\mathsf{E}\mathsf{T}/(\mathsf{Q}_{\textrm{SI}}\mathsf{L})$).
+\item our four-current density $\vv J = \langle \rho, \mkern2mu \vv j \rangle$ (with dimensions of $\mathsf{Q} / \mathsf{L}^3$) to SI's ${\vv J_{\textrm{SI}} = \langle \rho_{\textrm{SI}} \mkern.5mu c, \mkern2mu \vv j_{\textrm{SI}} \rangle}$ (with dimensions of $\mathsf{Q}_{\textrm{SI}}/(\mathsf{L}^2 \mathsf{T})$),
+\item and our four-potential $\vv A = \langle \Phi, \mkern2mu \vv a \rangle$ (with dimensions of $\mathsf{Q}/\mathsf{L}$) to SI's ${\vv A_{\textrm{SI}} = \langle \Phi_{\textrm{SI}} / c, \mkern2mu \vv a_{\textrm{SI}} \rangle}$ (with dimensions of $\mathsf{E}\mathsf{T}/(\mathsf{Q}_{\textrm{SI}}\mathsf{L})$).
 \end{itemize}
 Since we have $\mathsf{Q} = \mathsf{Q}_{\textrm{SI}} / \sqrt{[\varepsilon_0]}$, and since $c$ has dimensions of $\mathsf{L}/\mathsf{T}$, a bit of algebra lets us establish appropriate definitions:
 \begin{itemize}
-\item $\rho \equiv \rho_{\textrm{SI}} / \sqrt{\varepsilon_0}$
-\item $\vv j \equiv \vv j_{\textrm{SI}} / (c \sqrt{\varepsilon_0})$
-\item $\vv J \equiv \vv J_{\textrm{SI}} / (c \sqrt{\varepsilon_0})$
-\item $\Phi \equiv \sqrt{\varepsilon_0} \mkern1mu \Phi_{\textrm{SI}}$
-\item $\vv a \equiv c \sqrt{\varepsilon_0} \mkern1mu \vv a_{\textrm{SI}}$
-\item $\vv A \equiv c \sqrt{\varepsilon_0} \mkern1mu \vv A_{\textrm{SI}}$
+\item $\rho \equiv \rho_{\textrm{SI}} / \sqrt{\varepsilon_0}$, units of $\textrm{J}^{1/2} \, \textrm{m}^{-5/2} = (1 \, \textrm{C} / \textrm{m}^3) / \sqrt{\varepsilon_0}$
+\item $\vv j \equiv \vv j_{\textrm{SI}} / (c \mkern1mu \sqrt{\varepsilon_0})$ (same units)
+\item $\vv J \equiv \vv J_{\textrm{SI}} / (c \mkern1mu \sqrt{\varepsilon_0})$ (same units)
+\item $\Phi \equiv \sqrt{\varepsilon_0} \mkern2mu \Phi_{\textrm{SI}}$, units of $\textrm{J}^{1/2} \, \textrm{m}^{-1/2} = \sqrt{\varepsilon_0} \mkern2mu \, \textrm{J} / \textrm{C} = \sqrt{\varepsilon_0} \mkern2mu \, \textrm{V}$ (volt)
+\item $\vv a \equiv c \mkern1mu \sqrt{\varepsilon_0} \mkern2mu \vv a_{\textrm{SI}}$ (same units)
+\item $\vv A \equiv c \mkern1mu \sqrt{\varepsilon_0} \mkern2mu \vv A_{\textrm{SI}}$ (same units)
 \end{itemize} 
-(remember that our $\vv J$ and $\vv j$ are normalized, so some of this doesn't quite match the ``usual" SI/HLU relationship). And our $\inlinedy{\mathsf{F}} = \partialup \wedge \vv A$ is mirrored in the SI by $\inlinedy{\mathsf{F}} \mkern-4mu {}_{\textrm{SI}} = \partialup \wedge \vv A_{\textrm{SI}}$, so that $\inlinedy{\mathsf{F}} \equiv c \sqrt{\varepsilon_0} \inlinedy{\mathsf{F}} \mkern-4mu {}_{\textrm{SI}}$.
+(remember that our $\vv J$ and $\vv j$ are normalized, so some of this doesn't quite match the ``usual" SI/HLU relationship). And our $\inlinedy{\mathsf{F}} = \partialup \wedge \vv A$ is mirrored in the SI by $\inlinedy{\mathsf{F}} \mkern-4mu {}_{\textrm{SI}} = \partialup \wedge \vv A_{\textrm{SI}}$, so that $\inlinedy{\mathsf{F}} \equiv c \mkern1mu \sqrt{\varepsilon_0} \inlinedy{\mathsf{F}} \mkern-4mu {}_{\textrm{SI}}$. Then our $\inlinedy{\mathsf{F}}$ has units of $\textrm{J}^{1/2} \, \textrm{m}^{-3/2} = \sqrt{\varepsilon_0} \mkern2mu \, \textrm{V} / \textrm{m}$.
 
 Much else falls into place by simple substitution. For instance:
 \begin{itemize}
 \item our field equation ${\vv J = - \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A)} = \partialup \cdot \inlinedy{\mathsf{F}}$ is written in the SI like ${\mu_0 \vv J_{\textrm{SI}} = - \partialup \mkern1mu `` \mkern-4mu \times ( \partialup \times \mkern-4mu " \mkern1mu \vv A_{\textrm{SI}}) = \partialup \cdot \inlinedy{\mathsf{F}}\mkern-4mu {}_{\textrm{SI}}}$, where we've brought in the ``vacuum permeability" constant $\mu_0 = 1 / (c^2 \varepsilon_0)$ for convenience;
-\item the Lorentz four-force ${\vv F_{\textrm{L}} = q \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A)} = q \mkern-4mu \inlinedy{\mathsf{F}} \cdot \mkern2mu \vv B$ in the SI becomes ${\vv F_{\textrm{L}} = c \mkern1mu q_{\textrm{SI}} \vv B \mkern1mu `` \mkern-3mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A_{\textrm{SI}})} = c \mkern1mu q_{\textrm{SI}} \mkern-3mu \inlinedy{\mathsf{F}} \mkern-4mu {}_{\textrm{SI}} \cdot \vv B$.
+\item the Lorentz four-force ${\vv F_{\textrm{L}} = q \vv B \mkern1mu `` \mkern-4mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A)} = q \mkern-4mu \inlinedy{\mathsf{F}} \cdot \mkern2mu \vv B$ in the SI becomes ${\vv F_{\textrm{L}} = c \mkern1.5mu q_{\textrm{SI}} \mkern1mu \vv B \mkern1mu `` \mkern-3mu \times (\partialup \times \mkern-4mu " \mkern1mu \vv A_{\textrm{SI}})} = c \mkern1.5mu q_{\textrm{SI}} \mkern-3mu \inlinedy{\mathsf{F}} \mkern-4mu {}_{\textrm{SI}} \cdot \vv B$ (recall that $\vv B$ is the dimensionless normalized four-velocity; hide the $c$ with $\vv V = \vv B c$ if you'd like).
 \end{itemize}
-That said, sometimes the components of tensors are defined in ways that aren't fully ``parallel" across unit-systems (as we already saw with $\rho$ and $\Phi$). Notably:
+That said, sometimes the components of four-tensors are defined in ways that aren't fully ``parallel" across unit-systems, as we already saw with factors of $c$ in our definitions of $\vv j$ and $\vv a$ but not of $\rho$ and $\Phi$. Notably:
 \begin{itemize}
-\item $\vv e \equiv \sqrt{\varepsilon_0} \mkern1mu \vv e_{\textrm{SI}}$
-\item $\vv b \equiv c \sqrt{\varepsilon_0} \mkern1mu \vv b_{\textrm{SI}}$
+\item $\vv e \equiv \sqrt{\varepsilon_0} \mkern2mu \vv e_{\textrm{SI}}$, units of $\textrm{J}^{1/2} \, \textrm{m}^{-3/2} = \sqrt{\varepsilon_0} \mkern2mu \, \textrm{V} / \textrm{m}$ (same as $\inlinedy{\mathsf{F}}$)
+\item $\vv b \equiv c \mkern1mu \sqrt{\varepsilon_0} \mkern2mu \vv b_{\textrm{SI}}$ (same units, which are equivalent to $\sqrt{\varepsilon_0} \mkern2mu \, \textrm{T} \, \textrm{m} / \textrm{s}$, with $\textrm{T}$ for tesla [unit for $\vv b_{\textrm{SI}}$] and $\textrm{s}$ for second)
 \end{itemize}
 ($\vv e_{\textrm{SI}}$ and $\vv b_{\textrm{SI}}$ unfortunately have different dimensions).
 
-I'll stop there. I just wanted to convey the basic principles. If you understand them, then you can figure out the rest on your own as needed (and you can find more about the SI units almost anywhere).
+I'll stop there. I just wanted to convey the basic principles. If you understand them, then you can figure out the rest on your own as needed. You can find more about the SI units almost anywhere.
 
 \clearpage
 
