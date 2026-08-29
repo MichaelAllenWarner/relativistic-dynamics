@@ -4476,26 +4476,27 @@ for the instantaneous transfer rate of electromagnetic energy on the spherical s
 \end{equation*}
 The other integral for the azimuthal angle $\phi$ is trivially $2 \pi$, and we get:
 \begin{equation}\label{eq:prelarmor}
-\left. \dfrac{\dd E_{\textrm{em}}}{\dd (ct)} \right|_{[d] \rightarrow \infty} = \dfrac{q^2 [\zeta]^2}{6 \pi} .
+\left. \dfrac{\dd E_{\textrm{em}}}{\dd (ct)} \right|_{[d] \rightarrow \infty} = \dfrac{q^2 [\zeta]^2}{6 \pi} = \dfrac{1}{4\pi} \, \dfrac{2}{3} \, q^2 [\zeta]^2 .
 \end{equation}
+The $4 \pi$ factor is just inherited from the far-field equations, so it's sensible to keep it separate. (This also facilitates comparisons with treatments that use ``unrationalized" Gaussian units.) But in running text I'll write $6 \pi$.
 
 Next, a key insight. Since the far-field radiant energy originates from the accelerating charge, and since there's no $[d]$-dependence in Equation \ref{eq:prelarmor}, we can ``rewind" back to emission time, ``compressing" the spherical shell all the way down to the particle at its retarded position. When we do this, the right side of Equation \ref{eq:prelarmor} remains meaningful (with the square brackets around $\zeta$ removed---retarded time is now the current time), but it no longer represents the total transfer rate of electromagnetic energy at infinity. Rather, it represents a \emph{portion of} the local particle-to-fields energy transfer rate (in the particle's instantaneous rest frame):
 \begin{equation}\label{eq:larmor}
-\dfrac{\dd E_{\textrm{em} \, \textrm{rad}}}{\dd (ct)} = \dfrac{q^2 \zeta^2}{6 \pi} .
+\dfrac{\dd E_{\textrm{em} \, \textrm{rad}}}{\dd (ct)} = \dfrac{1}{4\pi} \, \dfrac{2}{3} \, q^2 \zeta^2 .
 \end{equation}
 Equation \ref{eq:larmor} is called the \textbf{Larmor formula}. Specifically, it's the portion of the particle-to-fields energy transfer rate that's destined to propagate out in the fields all the way to infinity. Why does it represent just a portion of the energy transfer rate? Because our derivation neglected the near-field Li\'enard--Wiechert terms entirely, and they can only be ignored in the ${[d] \rightarrow \infty}$ limit.\footnote{In the general case, there's also the (negative of the) Lorentz power $\mathcal{P}_{\textrm{L}} = q ( \vvbeta \cdot \vv e )$ (Equation \ref{eq:lp}). But the $\vv e$ there \emph{excludes} the self-fields whose effects we're trying to quantify, and in our ``particle is the only thing in the universe" setup the external fields vanish. (And $\vvbeta = \vv 0$ anyway in the rest frame.)} Strictly speaking, the Larmor formula holds only in the particle's instantaneous rest frame, but it's an excellent approximation at ``nonrelativistic" speeds.
 
-Let's reorient the discussion to what happens \emph{to} the point charge. The negative of Equation \ref{eq:larmor} gives us a portion of the energy transfer rate from fields to particle in the rest frame.\footnote{Again, just a portion! The \emph{total} energy transfer rate to the particle must vanish in the particle's rest frame, as the particle's rest energy (mass) doesn't change. More on this soon.} We'll go ahead and use the word \emph{power} now (I prefer to avoid the words \emph{power} and \emph{force} when speaking of what the particle does to the fields):
+Let's reorient the discussion to what happens \emph{to} the point charge. The negative of Equation \ref{eq:larmor} gives us a portion of the energy transfer rate from fields to particle in the rest frame.\footnote{Again, just a portion! The \emph{total} energy transfer rate to the particle must \emph{vanish} in the rest frame, as the particle's rest energy (mass) doesn't change. More on this soon.} We'll go ahead and use the word \emph{power} now (I prefer to avoid the words \emph{power} and \emph{force} when speaking of what the particle does to the fields):
 \begin{equation*}
-\mathcal{P}_{\textrm{rad}} = - \dfrac{q^2 \zeta^2}{6 \pi}
+\mathcal{P}_{\textrm{rad}} = - \dfrac{1}{4 \pi} \, \dfrac{2}{3} \, q^2 \zeta^2
 \end{equation*}
 (recall that we express power $\mathcal{P}$ in force-units). This rest-frame power can be written in a manifestly covariant way by adding naught-subscripts to $\mathcal{P}_{\textrm{rad}}$ and $\zeta$, making them \emph{proper} quantities (see Sections \ref{sssec:pa} and \ref{sssec:pf}):
 \begin{equation*}
-\mathcal{P}_{0 \, \textrm{rad}} = - \dfrac{q^2 \zeta_0^2}{6 \pi} ,
+\mathcal{P}_{0 \, \textrm{rad}} = - \dfrac{1}{4 \pi} \, \dfrac{2}{3} \, q^2 \zeta_0^2 ,
 \end{equation*}
 or (by Equation \ref{eq:pa4}):
 \begin{equation}\label{eq:powerrad}
-\mathcal{P}_{0 \, \textrm{rad}} = \dfrac{q^2}{6 \pi} \, \vv Z \cdot \vv Z ,
+\mathcal{P}_{0 \, \textrm{rad}} = \dfrac{1}{4 \pi} \, \dfrac{2}{3} \, q^2 \mkern1mu (\vv Z \cdot \vv Z) ,
 \end{equation}
 where $\vv Z$ is the particle's (normalized) four-acceleration.\footnote{\label{fn:pradinv}Plugging in the frame-dependent formula for $Z^2 = \vv Z \cdot \vv Z$ from Footnote \ref{fn:crossacc}, that's $\mathcal{P}_{0 \, \textrm{rad}} = (q^2 / (6 \pi)) \gamma^6 [(\vvbeta \times \vvzeta)^2 - \zeta^2]$. It turns out that this equation is still valid if we drop the naught subscript on the left side: $\mathcal{P}_{\textrm{rad}} = (q^2 / (6 \pi)) \gamma^6 [(\vvbeta \times \vvzeta)^2 - \zeta^2]$. In other words, $\mathcal{P}_{0 \, \textrm{rad}} = \mathcal{P}_{\textrm{rad}}$ for all observers. We'll see why in a moment.}
 
@@ -4505,13 +4506,13 @@ Every power (times Lorentz factor $\gamma$) is the time component of a four-forc
 \end{equation*}
 the ``radiation" portion of the particle's ``self-$\vv F$." We'll now deduce that the three-force $\vv f_{\mathrm{rad}}$ vanishes in the particle's rest frame, by appealing heuristically to $E = pc$ for light (which the Li\'enard--Wiechert fields behave like at infinity).\footnote{Our deduction will retroactively become more rigorous once we establish in Section \ref{ssec:emm} that the Poynting vector doubles as the electromagnetic momentum density (see also Footnote \ref{fn:epc}).} Since the negative of $\mathcal{P}_{\textrm{rad}}$ is the portion of the particle-to-fields energy transfer rate that will propagate unabated forever as an expanding spherical shell, the negative of $\vv f_{\mathrm{rad}}$ is the corresponding portion of the three-momentum transfer rate that will do the same. ``Fast-forward" ahead to when the spherical shell gets to infinity, and our rest-frame Poynting-vector integral from earlier is operative again. We know that at any point on the shell, the outward rate of electromagnetic three-momentum transfer is proportional to the outward rate of electromagnetic energy transfer. And we found that the angular dependence of the Poynting vector on the shell (the flux density of electromagnetic energy) was simply $\sin^2 \theta$, without any appearance of the azimuthal coordinate $\phi$. But $\sin^2 (\pi - \theta) = \sin^2 \theta$, and therefore the vectorial transfer rate of electromagnetic momentum at coordinates ($\theta$, $\phi$) on the shell is exactly canceled by that at the antipode ($\pi - \theta$, $\phi + \pi$)---same magnitude, opposite directions. This remains true of the ``radiation shell" as we ``rewind" back to the emission time (with the important caveat that now this electromagnetic momentum transfer rate is only \emph{part} of the total), and we conclude that $\vv f_{\mathrm{rad}}$ indeed vanishes in the particle's rest frame. With $\gamma = 1$, we have in this frame $\vv F_{\textrm{rad}} = \gamma \langle \mathcal{P}_{0 \, \textrm{rad}}, \mkern.5mu \vv 0 \rangle = \mathcal{P}_{0 \, \textrm{rad}} \langle 1, \mkern.5mu \vv 0 \rangle$.\footnote{Under a Lorentz boost to a ``primed" frame, the time component is $F_{\mathrm{rad}}^{\prime \mkern1mu ct} = \gamma \mathcal{P}_{0 \, \textrm{rad}}$ (since the ``unprimed" spatial component vanishes). But the time component of a four-force is always the power scaled by the particle's Lorentz factor $\gamma$, which in this case is the very $\gamma$ from the transformation. It follows that $\mathcal{P}_{\textrm{rad}}^{\prime} = \mathcal{P}_{0 \, \textrm{rad}}$, as claimed in Footnote \ref{fn:pradinv}, and in every frame $\mathcal{P}_{0 \, \textrm{rad}} = \mathcal{P}_{\textrm{rad}} = (q^2 / (6 \pi)) \gamma^6 [(\vvbeta \times \vvzeta)^2 - \zeta^2]$. The negative of this is Li\'enard's relativistic generalization of the Larmor formula, likewise an invariant: everyone agrees on the value of the portion of the particle-to-fields energy transfer rate that's destined to radiate to infinity, and it's $(q^2 / (6 \pi)) \gamma^6 [\zeta^2 - (\vvbeta \times \vvzeta)^2]$.} Covariantly, by Equation \ref{eq:powerrad}:
 \begin{equation*}
-\vv F_{\textrm{rad}} = \dfrac{q^2}{6 \pi} \left( \vv Z \cdot \vv Z \right) \vv B ,
+\vv F_{\textrm{rad}} = \dfrac{1}{4 \pi} \, \dfrac{2}{3} \, q^2 \mkern1mu ( \vv Z \cdot \vv Z ) \vv B ,
 \end{equation*}
 where $\vv B$ is the particle's normalized four-velocity.
 
 To get the particle's \emph{total} ``self-$\vv F$," the Abraham--Lorentz--Dirac four-force $\vv F_{\textrm{ALD}}$, we must account for the near fields, too. We'll do this indirectly, leveraging the fact that the total four-force must be codirectional with the four-acceleration (because $\vv F = E_0 \mkern.5mu \vv Z$ when the particle's rest energy $E_0$ doesn't change---Equation \ref{eq:39}) and therefore orthogonal to the four-velocity ($\vv Z \cdot \vv B$ always vanishes---see Section \ref{sssec:fa}). Defining $\vv F_{\textrm{other}}$ as all action of the self-fields on the particle that isn't already captured by $\vv F_{\textrm{rad}}$, we have:
 \begin{equation*}
-\vv F_{\textrm{ALD}} = \vv F_{\textrm{rad}} \, + \, \vv F_{\textrm{other}} = \dfrac{q^2}{6 \pi} \left( \vv Z \cdot \vv Z \right) \vv B \, + \, \vv F_{\textrm{other}} ,
+\vv F_{\textrm{ALD}} = \vv F_{\textrm{rad}} \, + \, \vv F_{\textrm{other}} = \dfrac{1}{4\pi} \, \dfrac{2}{3} \, q^2 \mkern1mu ( \vv Z \cdot \vv Z ) \vv B \, + \, \vv F_{\textrm{other}} ,
 \end{equation*}
 with the stipulation that $\vv F_{\textrm{ALD}} \cdot \vv B = 0$.\footnote{Well, the \emph{total} four-force must be orthogonal to $\vv B$, and that includes the Lorentz four-force $\vv F_{\mathrm{L}}$ (in response to the \emph{external} fields). But we already know that $\vv F_{\mathrm{L}}$ is orthogonal to $\vv B$ (see Section \ref{sssec:lff}), so we must have $\vv F_{\textrm{ALD}} \cdot \vv B = 0$ to satisfy $(\vv F_{\mathrm{L}} + \vv F_{\textrm{ALD}}) \cdot \vv B = 0$.} We can make use of the following product rule (differentiating with respect to particle proper time, and using our over-circle convention):
 \begin{equation*}
@@ -4521,8 +4522,8 @@ with the stipulation that $\vv F_{\textrm{ALD}} \cdot \vv B = 0$.\footnote{Well,
 \begin{equation*}
 \begin{aligned}
 0 &= \vv F_{\textrm{ALD}} \cdot \vv B \\[2pt]
-&= \dfrac{q^2}{6 \pi} \left( \vv Z \cdot \vv Z \right) \vv B \cdot \vv B \, + \, \vv F_{\textrm{other}} \cdot \vv B \\[4pt]
-\vv F_{\textrm{other}} \cdot \vv B &= \dfrac{q^2}{6 \pi} \, \mathring{\vv Z} \cdot \vv B .
+&= \dfrac{1}{4 \pi} \, \dfrac{2}{3} \, q^2 \mkern1mu ( \vv Z \cdot \vv Z ) \vv B \cdot \vv B \, + \, \vv F_{\textrm{other}} \cdot \vv B \\[4pt]
+\vv F_{\textrm{other}} \cdot \vv B &= \dfrac{1}{4 \pi} \, \dfrac{2}{3} \, q^2 \mkern1mu \big( \mathring{\vv Z} \cdot \vv B \big) .
 \end{aligned}
 \end{equation*}
 
@@ -4530,7 +4531,7 @@ The \emph{simplest} possibility here is just $\vv F_{\textrm{other}} = q^2 \math
 
 The only other terms we could add that are constructed from the particle's kinematic quantities would involve higher-order derivatives of the four-acceleration. We aren't in a position to rule them out conclusively (more rigorous derivations do), but we can appeal to reasonableness. If we limit ourselves to ``nice" functions (smooth, no kinks or singularities, etc.), then with each new term we have to introduce some length-unit factor to neutralize the additional \emph{inverse}-length unit supplied by the next $c t_0$-derivative. But what factor? For an extended body we could bring in a radius or something, but we're talking about a point particle. Could we build the factor from other quantities? Charge is the one and only electromagnetic property of a particle, and in our units it's got dimensions of $\sqrt{\mathsf{E}\mathsf{L}}$ (see Footnote \ref{fn:qdims}), so we'd have to square it and divide by something with energy-units. The natural candidate is $q^2 / E_0$. Two objections, which you're free not to buy. First, for a true point particle, $E_0$ just doesn't ``belong" on this side of a nongravitational force equation; the particle's rest energy (mass) plays the role of \emph{gravitational} ``charge," not electromagnetic charge.\footnote{Note that although $\alpha$ in the $\alpha \vv Z$ term was effectively rest energy and technically on the wrong side of the equation, it wasn't playing the role of ``charge," and we were able to ``merge" it with $E_0 \vv Z$ on the other side. Higher-order terms with $q^2 / E_0$ are different.} Second, we've already got $q^2$, and that's the only power of $q$ that makes any sense in this context: one $q$ for the particle as \emph{source} of the self-fields, and one $q$ for the particle's \emph{response} to them. Rejecting higher-order terms, we're left with the original simplest possibility, and:
 \begin{equation}\label{eq:aldff}
-\boxed{ \vv F_{\textrm{ALD}} = \dfrac{q^2}{6 \pi} \left[ \left( \vv Z \cdot \vv Z \right) \vv B + \mathring{\vv Z} \right] } \, ,
+\boxed{ \vv F_{\textrm{ALD}} = \dfrac{1}{4 \pi} \, \dfrac{2}{3} \, q^2 \left[ \left( \vv Z \cdot \vv Z \right) \vv B + \mathring{\vv Z} \right] } \, ,
 \end{equation}
 as we claimed in Footnote \ref{fn:recoil}. That $q^2 \mathring{\vv Z} / (6 \pi)$ piece is called the \textbf{Schott term}.
 
