@@ -4515,9 +4515,9 @@ To get the particle's \emph{total} ``self-$\vv F$," the Abraham--Lorentz--Dirac 
 \vv F_{\textrm{ALD}} = \vv F_{\textrm{rad}} \, + \, \vv F_{\textrm{other}} = \dfrac{1}{4\pi} \, \dfrac{2}{3} \, q^2 \mkern1mu ( \vv Z \cdot \vv Z ) \vv B \, + \, \vv F_{\textrm{other}} ,
 \end{equation*}
 with the stipulation that $\vv F_{\textrm{ALD}} \cdot \vv B = 0$.\footnote{Well, the \emph{total} four-force must be orthogonal to $\vv B$, and that includes the Lorentz four-force $\vv F_{\mathrm{L}}$ (in response to the \emph{external} fields). But we already know that $\vv F_{\mathrm{L}}$ is orthogonal to $\vv B$ (see Section \ref{sssec:lff}), so we must have $\vv F_{\textrm{ALD}} \cdot \vv B = 0$ to satisfy $(\vv F_{\mathrm{L}} + \vv F_{\textrm{ALD}}) \cdot \vv B = 0$.} We can make use of the following product rule (differentiating with respect to particle proper time, and using our over-circle convention):
-\begin{equation*}
+\begin{equation}\label{eq:jerkvelocity}
 0 = \dfrac{\dd}{\dd (ct_0)} \left( \vv Z \cdot \vv B \right) = \mathring{\vv Z} \cdot \vv B \, + \, \vv Z \cdot \vv Z
-\end{equation*}
+\end{equation}
 ($\vv Z = \mathring{\vv B}$ by definition, remember). So $\vv Z \cdot \vv Z = - \mathring{\vv Z} \cdot \vv B$. With $\vv B \cdot \vv B = 1$, then:
 \begin{equation*}
 \begin{aligned}
@@ -4535,12 +4535,54 @@ The only other terms we could add that are constructed from the particle's kinem
 \end{equation}
 as we claimed in Footnote \ref{fn:recoil}. That $q^2 \mathring{\vv Z} / (6 \pi)$ piece is called the \textbf{Schott term}.
 
-Equation \ref{eq:aldff} goes by several names: Abraham--Lorentz--Dirac four-force, radiation reaction, radiation damping, particle self-force, recoil force, back-reaction (there may be others).\footnote{The names with the word \emph{radiation} are arguably misleading, since the Schott term is nonradiative.} It's the portion of the total electromagnetic four-force acting on a point charge that's attributable to the particle's ``own fields," or equivalently the portion that isn't the Lorentz four-force $\vv F_{\textrm{L}}$, which is the part that's attributable to signals arriving from elsewhere. In general:
+Equation \ref{eq:aldff} goes by several names: Abraham--Lorentz--Dirac four-force, radiation reaction, radiation damping, radiation friction force, particle self-force, recoil force, back-reaction (there may be others).\footnote{The names with the word \emph{radiation} are arguably misleading, since the Schott term is nonradiative.} It's the portion of the total electromagnetic four-force acting on a point charge that's attributable to the particle's ``own fields," or equivalently the portion that isn't the Lorentz four-force $\vv F_{\textrm{L}}$, which is the part that's attributable to signals arriving from elsewhere. In general:
 \begin{equation*}
 \vv F_{\textrm{particle via fields}} =  \vv F_{\textrm{L}} + \vv F_{\textrm{ALD}} .
 \end{equation*}
 
-We've mentioned already that the particle's self-force causes problems that aren't fully resolvable in classical electrodynamics.\footnote{The ``resolution" is not to bring true point charges into the theory at all! Without them, it's still possible to consider what happens to a small but \emph{finite} body, but to avoid pathologies in the vanishing-size limit requires \emph{also} having the body's charge and mass approach zero in a particular way. Granted, a classical point charge has \emph{finite} $q$ and $E_0$, so this procedure doesn't rescue the particle model, but it does generate an expansion for the self-force in a vanishing-size limit that includes a pathology-free term resembling the Abraham--Lorentz--Dirac force. See Samuel E. Gralla, Abraham I. Harte, and Robert M. Wald, ``Rigorous derivation of electromagnetic self-force," \emph{Physical Review D} 80, no. 2 (2009): 024031. Preprint: \url{https://arxiv.org/abs/0905.2391}.} We won't go into too much detail, but the issue is the jerk term.
+We've mentioned already that the particle's self-force causes problems that aren't fully resolvable in classical electrodynamics.\footnote{The ``resolution" is not to bring true point charges into the theory at all! Without them, it's still possible to consider what happens to a small but \emph{finite} body, but to avoid pathologies in the vanishing-size limit requires \emph{also} having the body's charge and mass approach zero in a particular way. Granted, a classical point charge has \emph{finite} $q$ and $E_0$, so this procedure doesn't rescue the particle model, but it does generate an expansion for the self-force in a vanishing-size limit that includes a pathology-free term resembling the Abraham--Lorentz--Dirac force. See Samuel E. Gralla, Abraham I. Harte, and Robert M. Wald, ``Rigorous derivation of electromagnetic self-force," \emph{Physical Review D} 80, no. 2 (2009): 024031. Preprint: \url{https://arxiv.org/abs/0905.2391}.} We won't go into too much detail, but the issue is the Schott term. Consideration of the nonrelativistic limit suffices to see what goes wrong. Start with the particle's instantaneous rest frame, using $\gamma = 1$, $\vvbeta = \vv 0$, $ct_0 = ct$, and $\vvzeta_0 = \vvzeta$. The normalized four-velocity is then $\vv B = \langle 1, \vv 0 \rangle$ (Equation \ref{eq:31}), the normalized four-acceleration is $\vv Z = \langle 0, \vvzeta \rangle$ (Equation \ref{eq:35}), and any four-force acting on the particle must be like ${\vv F = \langle 0, \vv f \rangle}$ (by Equation \ref{eq:fb}).
+
+What about the normalized four-jerk $\mathring{\vv Z}$? First use $\mathring{\vv Z} \cdot \vv B = - \vv Z \cdot \vv Z$ (Equation \ref{eq:jerkvelocity}), which ``picks out" the four-jerk's time component in the rest frame on the left (the ``trick" from Section \ref{sssec:mc}) and equates it with $- \vv Z \cdot \vv Z = \zeta_0^2 = \zeta^2$. For the spatial component, we have no such shortcut at the moment, so we must differentiate $\gamma^2 \vvzeta + \gamma^4 (\vvbeta \cdot \vvzeta) \vvbeta$ (the general spatial component of the four-acceleration, from Equation \ref{eq:35}) with respect to proper time, which is equivalent to differentiating with respect to rest-frame coordinate time. Using the relation $\dot{\gamma} = \gamma^3 (\vvbeta \cdot \vvzeta)$ (Equation \ref{eq:gd}) to calculate, and then plugging in rest-frame values, we find that the result is the normalized three-jerk $\dot{\vvzeta}$ (using the rest-frame $ct$-derivative). That happens to be exactly what we'd have gotten if we'd differentiated the \emph{rest-frame} spatial component of the four-acceleration instead, but that wouldn't have been a valid approach. In terms of components, then, the recoil four-force (Equation \ref{eq:aldff}) in the particle's instantaneous rest frame reduces to:
+\begin{equation*}
+\big \langle 0, \mkern1mu \vv f_{\textrm{ALD}} \big \rangle = \dfrac{1}{4 \pi} \, \dfrac{2}{3} \, q^2  \left[ - \zeta^2 \big \langle 1, \mkern1mu \vv 0 \big \rangle + \big \langle \zeta^2, \mkern1mu \dot{\vvzeta}  \big \rangle \right] .
+\end{equation*}
+The time components on the right side correctly cancel.
+
+Let's focus on that three-force. Say there was a nonzero external Lorentz force earlier, with $\vv f = \vv f_{\textrm{L}} + \vv f_{\textrm{ALD}}$ (the Lorentz force caused the particle to accelerate and radiate), and we're studying the particle from the moment the external force is ``turned off." We suddenly have $\vv f_{\textrm{ALD}} = \vv f = E_0 \vvzeta$ in the rest frame (Newton's second law---see Section \ref{sssec:pf}), and:
+\begin{equation*}
+E_0 \vvzeta = \dfrac{1}{4 \pi} \, \dfrac{2}{3} \, q^2 \dot{\vvzeta} \mkern1mu ,
+\end{equation*}
+or:
+\begin{equation*}
+\vvzeta = c \mkern.5mu \tau \mkern1.5mu \dot{\vvzeta} \mkern1mu ,
+\end{equation*}
+with constant $c \mkern.5mu \tau \equiv (q^2 / E_0)/(6 \pi)$. Now, this relationship holds exactly only while the particle is at rest, but we know that three-acceleration is a \emph{Galilean} invariant. So provided the particle's speed isn't too high, we can ``upgrade" our rest-frame equation to a nonrelativistic approximation and make it a function of time:
+\begin{equation*}
+\vvzeta (ct) = c \mkern.5mu \tau \mkern1.5mu \dot{\vvzeta} (ct).
+\end{equation*}
+The solution to this equation is:
+\begin{equation*}
+\vvzeta (ct) = \vvzeta_{\mkern1mu \textrm{i}} \, \textrm{e}^{ct / (c \tau)} ,
+\end{equation*}
+where $\vvzeta_{\mkern1mu \textrm{i}}$ is the initial three-acceleration (its value right now, when the Lorentz force vanishes). To verify that solution, check that differentiating the right side with respect to $ct$ is equivalent to dividing it by $c \mkern.5mu \tau$.
+
+Question: what is the value of $\vvzeta_{\mkern1mu \textrm{i}}$? While the Lorentz force was acting, the acceleration was $\vvzeta = (\vv f_{\textrm{L}} + \vv f_{\textrm{ALD}}) / E_0$. Now that the external fields have dropped to zero, does the acceleration vanish immediately, or is there some lingering acceleration from the $\vv f_{\textrm{ALD}}$ term? If there's a lingering ``contribution" from $\vv f_{\textrm{ALD}}$, then we have a serious problem: \textbf{runaway acceleration}, where the exponential function causes $\vvzeta$'s magnitude to \emph{increase without bound} over time (though naturally in the relativistic treatment the speed of light can't be reached). Since we never see this ridiculous behavior in reality, we must presume that the acceleration drops to zero \emph{immediately} when the external force drops out. The particle coasts forever, and everything's okay.
+
+But there's more to the story, and everything is not okay. Consider the whole timeline. First there's no force at all, then the external Lorentz force acts for a while, and finally the Lorentz force turns off permanently. To model the acceleration here, we need the solution not to $\vvzeta = c \mkern.5mu \tau \mkern1.5mu \dot{\vvzeta} $, but rather to:
+\begin{equation*}
+\vvzeta(ct) - c \mkern.5mu \tau \mkern1.5mu \dot{\vvzeta} (ct) = \dfrac{\vv f_{\textrm{L}} (ct)}{E_0} .
+\end{equation*}
+The trick is to multiply both sides by a factor that makes the left a simple derivative. The factor is $\textrm{e}^{-ct / (c \tau)}$, because of this product rule:
+\begin{equation*}
+\dfrac{\dd}{\dd (ct)} \left( - c \mkern.5mu \tau \mkern2.5mu \textrm{e}^{-ct / (c \tau)} \mkern1mu \vvzeta \right) = - c \mkern.5mu \tau \left( \textrm{e}^{-ct / (c \tau)} \mkern1mu \dot{\vvzeta} - \dfrac{\textrm{e}^{-ct / (c \tau)} \mkern1mu \vvzeta}{c \mkern.5mu \tau} \right) = \textrm{e}^{-ct / (c \tau)} \left( \vvzeta - c \mkern.5mu \tau \mkern1.5mu \dot{\vvzeta} \right) ,
+\end{equation*}
+so that the differential equation becomes:
+\begin{equation*}
+\dfrac{\dd}{\dd (ct)} \left( - c \mkern.5mu \tau \mkern2.5mu \textrm{e}^{-ct / (c \tau)} \mkern1mu \vvzeta (ct) \right) = \textrm{e}^{-ct / (c \tau)} \, \dfrac{ \vv f_{\textrm{L}} (ct)}{E_0} .
+\end{equation*}
+
+ 
+
 
 %Equation \ref{eq:larmorrestframe} is called the \textbf{Larmor formula}. I've avoided the word \emph{power}, since I prefer to reserve that word (and the word \emph{force}) for what happens to ``things," not fields, but of course the Larmor formula \emph{is} a ``power"
 
