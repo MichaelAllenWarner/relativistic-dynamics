@@ -4589,7 +4589,24 @@ so that the differential equation becomes:
 \begin{equation*}
 \dfrac{\dd}{\dd (ct)} \left( - c \mkern.5mu \tau \mkern2.5mu \textrm{e}^{-ct / (c \tau)} \mkern1mu \vvzeta (ct) \right) = \textrm{e}^{-ct / (c \tau)} \, \dfrac{ \vv f_{\textrm{L}} (ct)}{E_0} .
 \end{equation*}
+Integrate, from initial time $ct_{\textrm{i}} = 0$ (before Lorentz force starts to act) to final time $ct_{\textrm{f}}$ (after it's stopped acting):
+\begin{equation*}
+\begin{aligned}
+- c \mkern.5mu \tau \left. \Big( \textrm{e}^{-ct / (c \tau)} \mkern1mu \vvzeta (ct) \Big) \right|_{0}^{ct_{\textrm{f}}} &= \int_{0}^{ct_{\textrm{f}}} \textrm{e}^{-ct / (c \tau)} \, \dfrac{ \vv f_{\textrm{L}} (ct)}{E_0}  \; c \, \dd t \\[3pt]
+\textrm{e}^{-ct_{\textrm{f}} / (c \tau)} \mkern1mu \vvzeta (ct_{\textrm{f}}) - \vvzeta_{\mkern1mu \textrm{i}} &= - \dfrac{1}{c \mkern.5mu \tau} \int_{0}^{ct_{\textrm{f}}} \textrm{e}^{-ct / (c \tau)} \, \dfrac{ \vv f_{\textrm{L}} (ct)}{E_0}  \; c \, \dd t \\[4pt]
+\vvzeta (ct_{\textrm{f}}) &= \textrm{e}^{ct_{\textrm{f}} / (c \tau)} \left( \vvzeta_{\mkern1mu \textrm{i}} - \dfrac{1}{c \mkern.5mu \tau} \int_{0}^{ct_{\textrm{f}}} \textrm{e}^{-ct / (c \tau)} \, \dfrac{ \vv f_{\textrm{L}} (ct)}{E_0}  \; c \, \dd t \right) .
+\end{aligned}
+\end{equation*}
+To be clear, the symbol $\vvzeta_{\mkern1mu \textrm{i}}$ has a different meaning here than it did a few paragraphs up, when we were concerned only with what happens \emph{after the Lorentz force is switched off}. There, $\vvzeta_{\mkern1mu \textrm{i}}$ meant the particle's normalized acceleration at the switch-off moment, but here, $\vvzeta_{\mkern1mu \textrm{i}}$ is the acceleration at some reference time \emph{before the Lorentz force has been switched on}. Same symbol, different meanings. But they do have something in common! Each should be zero. The ``old" one should be zero to avoid runaway acceleration. The ``new" one should be zero because the force hasn't acted yet, and the particle should be inertial.
 
+Now, let's see what happens when we \emph{impose} the no-runaway-acceleration requirement. This simply means that ${\vvzeta (ct_{\textrm{f}}) = \vv 0}$, since we've stipulated that $ct_{\textrm{f}}$ is some time after the Lorentz force has switched off (and we've already established that the acceleration runs away if it hasn't vanished by then). Sounds innocent enough, but look:
+\begin{equation*}
+\begin{aligned}
+\vv 0 &= \textrm{e}^{ct_{\textrm{f}} / (c \tau)} \left( \vvzeta_{\mkern1mu \textrm{i}} - \dfrac{1}{c \mkern.5mu \tau} \int_{0}^{ct_{\textrm{f}}} \textrm{e}^{-ct / (c \tau)} \, \dfrac{ \vv f_{\textrm{L}} (ct)}{E_0}  \; c \, \dd t \right) \\[4pt]
+\vvzeta_{\mkern1mu \textrm{i}} &= \dfrac{1}{c \mkern.5mu \tau} \int_{0}^{ct_{\textrm{f}}} \textrm{e}^{-ct / (c \tau)} \, \dfrac{ \vv f_{\textrm{L}} (ct)}{E_0}  \; c \, \dd t .
+\end{aligned}
+\end{equation*}
+That's not the zero we were expecting. The initial acceleration---before the Lorentz force has even started to act---\emph{depends on the Lorentz force at future times}! To avoid runaway acceleration at the end, we must accept \textbf{preacceleration} at the beginning: the particle accelerates \emph{before it's subject to the force}. A true catch-22! Point charges break the classical theory.
  
 
 % \footnote{The ``resolution" is not to bring true point charges into the theory at all! Without them, it's still possible to consider what happens to a small but \emph{finite} body, but to avoid pathologies in the vanishing-size limit requires \emph{also} having the body's charge and mass approach zero in a particular way. Granted, a classical point charge has \emph{finite} $q$ and $E_0$, so this procedure doesn't rescue the particle model, but it does generate an expansion for the self-force in a vanishing-size limit that includes a pathology-free term resembling the Abraham--Lorentz--Dirac force. See Samuel E. Gralla, Abraham I. Harte, and Robert M. Wald, ``Rigorous derivation of electromagnetic self-force," \emph{Physical Review D} 80, no. 2 (2009): 024031. Preprint: \url{https://arxiv.org/abs/0905.2391}.}
