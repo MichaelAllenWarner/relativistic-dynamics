@@ -4045,7 +4045,7 @@ Next we need the Dirac delta's function-composition identity (Equation \ref{eq:d
 \begin{equation*}
 \delta (f(x)) = \sum_{n} \dfrac{\delta(x - x_n)}{\vert f ^\prime (x_n) \vert} .
 \end{equation*}
-For us, $f (ct_0) = [\vv R - \vv R_{q}(ct_0)]^2 = [\vv R - \vv R_{q}(ct_0)] \cdot [\vv R - \vv R_{q}(ct_0)]$. (This will be something like the manifestly covariant version of the function-composition move we made on our way to Equation \ref{eq:green2}, except that this time there's an additional chain-rule step.) Its derivative with respect to $ct_0$ is:
+For us, $f (ct_0) = [\vv R - \vv R_{q}(ct_0)]^2 = [\vv R - \vv R_{q}(ct_0)] \cdot [\vv R - \vv R_{q}(ct_0)]$, and:
 \begin{equation*}
 \begin{aligned}
 f ^\prime (ct_0) &= 2 \big[ \vv R - \vv R_{q} (ct_0) \big] \cdot \dfrac{\dd}{\dd (ct_0)}  \big[ \vv R - \vv R_q (ct_0) \big] \\[2pt]
@@ -4053,7 +4053,11 @@ f ^\prime (ct_0) &= 2 \big[ \vv R - \vv R_{q} (ct_0) \big] \cdot \dfrac{\dd}{\dd
 &= - 2 \big[ \vv R - \vv R_{q} (ct_0) \big] \cdot \vv B (ct_0) .
 \end{aligned}
 \end{equation*}
-The roots of our function are given by $[\vv R - \vv R_{q}(ct_0)]^2 = 0$, meaning that the field event $\vv R$ and a world-line event $\vv R_{q}(ct_0)$ satisfying that condition are lightlike-separated. There can be at most two events on the particle's world line that are lightlike-separated from $\vv R$---one on $\vv R$'s past light cone and one on its future light cone. Naturally, we'll call the corresponding proper times the \emph{retarded} and \emph{advanced} proper times (respectively): $ct_{0 \mkern2mu \textrm{ret}}$ and $ct_{0 \mkern2mu \textrm{adv}}$. The derivative at the roots evaluates to $- 2 [ \vv R - \vv R_{q} (ct_{0 \mkern2mu \textrm{ret}})] \cdot \vv B (ct_{0 \mkern2mu \textrm{ret}})$ and $- 2 [ \vv R - \vv R_{q} (ct_{0 \mkern2mu \textrm{adv}})] \cdot \vv B (ct_{0 \mkern2mu \textrm{adv}})$. That these derivative-values don't share an absolute value might seem like a complication, but it isn't. The advanced term from the function-composition identity will have $\delta(ct_0 - ct_{0 \mkern2mu \textrm{adv}})$ in the numerator, and the Heaviside step function $\theta [ct - ct_{q} (ct_0)]$ in Equation \ref{eq:covlien0} kills it (because $ct - ct_q(ct_{0 \mkern2mu \textrm{adv}}) < 0$, since $ct_q(ct_{0 \mkern2mu \textrm{adv}})$ is on $\vv R$'s \emph{future} light cone). This leaves:
+The roots of our function are given by $[\vv R - \vv R_{q}(ct_0)]^2 = 0$, meaning that the field event $\vv R$ and a world-line event $\vv R_{q}(ct_0)$ satisfying that condition are lightlike-separated. There can be at most two events on the particle's world line that are lightlike-separated from $\vv R$---one on $\vv R$'s past light cone and one on its future light cone. Naturally, we'll call the corresponding proper times the \emph{retarded} and \emph{advanced} proper times (respectively): $ct_{0 \mkern2mu \textrm{ret}}$ and $ct_{0 \mkern2mu \textrm{adv}}$. The derivative at the roots evaluates to $- 2 [ \vv R - \vv R_{q} (ct_{0 \mkern2mu \textrm{ret}})] \cdot \vv B (ct_{0 \mkern2mu \textrm{ret}})$ and $- 2 [ \vv R - \vv R_{q} (ct_{0 \mkern2mu \textrm{adv}})] \cdot \vv B (ct_{0 \mkern2mu \textrm{adv}})$. Then $\delta (f(ct_0))$ equals:
+\begin{equation*}
+\dfrac{\delta(ct_0 - ct_{0 \mkern2mu \textrm{ret}})}{ \big \vert 2 \big[ \vv R - \vv R_{q} (ct_{0 \mkern2mu \textrm{ret}}) \big] \cdot \vv B (ct_{0 \mkern2mu \textrm{ret}}) \big \vert} \, + \, \dfrac{\delta(ct_0 - ct_{0 \mkern2mu \textrm{adv}})}{ \big \vert 2 \big[ \vv R - \vv R_{q} (ct_{0 \mkern2mu \textrm{adv}}) \big] \cdot \vv B (ct_{0 \mkern2mu \textrm{adv}}) \big \vert}.
+\end{equation*}
+Plug that into Equation \ref{eq:covlien0}, letting the $\theta$ function kill the second term (because $ct - ct_q(ct_{0 \mkern2mu \textrm{adv}}) < 0$), and dropping the absolute-value bars from the remaining first term (because the dotted vectors are both future-pointing):
 \begin{equation*}
 \vv A(\vv R) = \dfrac{q}{2 \pi} \int \vv B(ct_0) \,\dfrac{\delta(ct_0 - ct_{0 \mkern2mu \textrm{ret}})}{2 \big[ \vv R - \vv R_{q} (ct_{0 \mkern2mu \textrm{ret}}) \big] \cdot \vv B (ct_{0 \mkern2mu \textrm{ret}})} \; c \, \dd t_0 .
 \end{equation*}
@@ -4062,7 +4066,7 @@ Integrate:
 \boxed{ \vv A(\vv R) = \dfrac{q \vv B(ct_{0 \mkern2mu \textrm{ret}})}{4 \pi \big[ \vv R - \vv R_{q} (ct_{0 \mkern2mu \textrm{ret}}) \big] \cdot \vv B (ct_{0 \mkern2mu \textrm{ret}})} } \, .
 \end{equation}
 
-Equation \ref{eq:covlien} is the Li\'enard--Wiechert potential in manifestly covariant form. For a given inertial frame, $ct_{\mathrm{ret}} \equiv ct_{q} (ct_{0 \mkern2mu \textrm{ret}})$ is the coordinate time of the world-line event $\vv R_{q}(ct_{0 \mkern2mu \textrm{ret}})$. Evaluating the condition $[\vv R - \vv R_{q}(ct_{0 \mkern2mu \textrm{ret}})]^2 = 0$ in that frame gives $[ct - ct_{\mathrm{ret}}]^2 - [\vv r - \vv r_{q}(ct_{0 \mkern2mu \textrm{ret}})]^2 = [ct - ct_{\mathrm{ret}}]^2 - [\vv r - \vv r_{q}(ct_{\mathrm{ret}})]^2 = 0$ (we're free to reparameterize in terms of $ct_{\mathrm{ret}}$, and we're about to do that for everything). With $\vv d(ct_{\mathrm{ret}}) \equiv \vv r - \vv r_{q}(ct_{\mathrm{ret}})$, the retarded coordinate time here is defined \emph{implicitly} by the equation $ct_{\mathrm{ret}} = ct - d(ct_{\mathrm{ret}}) = ct - \vert \vv r - \vv r_{q}(ct_{\mathrm{ret}}) \vert$. In the frame, then:
+Equation \ref{eq:covlien} is the Li\'enard--Wiechert potential in manifestly covariant form. For a given inertial frame, $ct_{\mathrm{ret}} \equiv ct_{q} (ct_{0 \mkern2mu \textrm{ret}})$ is the coordinate time of the world-line event $\vv R_{q}(ct_{0 \mkern2mu \textrm{ret}})$. Evaluating the condition $[\vv R - \vv R_{q}(ct_{0 \mkern2mu \textrm{ret}})]^2 = 0$ in that frame gives $[ct - ct_{\mathrm{ret}}]^2 - [\vv r - \vv r_{q}(ct_{0 \mkern2mu \textrm{ret}})]^2 = [ct - ct_{\mathrm{ret}}]^2 - [\vv r - \vv r_{q}(ct_{\mathrm{ret}})]^2 = 0$ (we're free to reparameterize in terms of $ct_{\mathrm{ret}}$, and we're about to do that for everything). With $\vv d(ct_{\mathrm{ret}}) \equiv \vv r - \vv r_{q}(ct_{\mathrm{ret}})$, the retarded coordinate time here is defined \emph{implicitly} by the equation $ct_{\mathrm{ret}} = ct - d(ct_{\mathrm{ret}}) = ct - \vert \vv r - \vv r_{q}(ct_{\mathrm{ret}}) \vert$ (\emph{subtract} the light-travel time from $ct$). In the frame, then:
 \begin{equation*}
 \vv A(ct, \vv r) = \dfrac{q \vv B(ct_{\textrm{ret}})}{4 \pi \big[ \vv R - \vv R_{q} (ct_{\textrm{ret}}) \big] \cdot \vv B (ct_{\textrm{ret}})} .
 \end{equation*}
@@ -4104,7 +4108,7 @@ and:
 \begin{equation*}
 \vv a(ct, \vv r) = \dfrac{q [\vvbeta]}{4 \pi \, ([d] - [\vv{d}] \cdot [\vvbeta] )} .
 \end{equation*}
-Defining shorthand $D \equiv [d] - [\vv d] \cdot [\vvbeta]$, the fields are then:
+Define shorthand $D \equiv [d] - [\vv d] \cdot [\vvbeta]$ ($D$ for denominator). The fields are then:
 \begin{equation}\label{eq:lwe0}
 \vv e (ct, \vv r) = - \dfrac{q}{4 \pi} \Big( \del D^{-1} + \partial^{ct} \big( D^{-1} \, [\vvbeta] \big) \Big)
 \end{equation}
