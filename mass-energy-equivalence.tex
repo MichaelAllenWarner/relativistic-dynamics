@@ -340,32 +340,268 @@ But how is that possible? Isn't mass just the ``amount of matter"? Evidently not
 
 \subsection{New Ground Rules: Special Relativity Review}\label{ssec:sr}
 
-When Einstein wrote about this thought experiment, he'd already published his first paper on special relativity.\footnote{\label{fn:ep}Albert Einstein, ``Zur Elektrodynamik bewegter K\"orper" \emph{Annalen der Physik} 17, no. 10 (1905): 891--921. English translation here: \url{https://www.fourmilab.ch/etexts/einstein/specrel/www/}.} In that earlier work, he posited a cosmic speed limit---i.e., that the speed of light in vacuum $c$ is invariant---and derived many of its consequences. Let's review some of them. Once we have the relativistic Doppler formula in hand, we'll come back to the thought experiment.
+When Einstein wrote about this thought experiment, he'd already published his first paper on special relativity.\footnote{\label{fn:ep}Albert Einstein, ``Zur Elektrodynamik bewegter K\"orper" \emph{Annalen der Physik} 17, no. 10 (1905): 891--921. English translation here: \url{https://www.fourmilab.ch/etexts/einstein/specrel/www/}.} In that earlier work, he posited that the speed of light in vacuum $c$ is invariant and derived many consequences. Let's review some of them. Once we have the relativistic Doppler formula in hand, we'll come back to the thought experiment.
+
+\subsubsection{An Invariant Speed Is the Cosmic Speed Limit}
+
+If a light wave is passing by, you might try to ``catch up" to it by accelerating in the direction it's traveling. If the speed of light is invariant, that won't work: try as you might, the light's speed remains $c$. That's what the invariance of $c$ means! An inertial observer \emph{watching} you make the attempt would say that you \emph{are} ``catching up" to the light, but never quite matching its speed; $c$ is $c$ for everyone, and it's the cosmic speed limit.
+
+(There's a nuance here. Technically we can only measure the \emph{two-way} speed of light, never the \emph{one-way} speed of light. This has no effect on physics in practice, and we're entitled to make the simplest assumption that the one-way speed of light is $c$ in all directions. We'll do so.)
+
+
+\subsubsection{Time in Units of Length, Speed without Units}
+
+Because $c$ is an invariant with units of length over time, it can function as a unit-conversion factor. (Actually, a good argument can be made that it is \emph{nothing} but a unit-conversion factor!) We are therefore free to express lengths in units of time by dividing lengths-in-meters by $c$, and we are free to express times in units of length by multiplying times-in-seconds with $c$. We now make the deliberate choice to always use meters for both lengths and times. This means writing $ct$ consistently, never $t$ alone. Of course, if we're \emph{asked} to give an answer in seconds, then we can divide $ct$ by $c$ at the end of a problem.
+
+If we're expressing both length and time in meters, we may as well express velocity and speed in units of, well, nothing. Put differently, if the universe has a speed limit $c$, then all speeds can be expressed as \emph{fractions} of it. What could be more natural? Define the \textbf{normalized velocity}: $\vvbeta \equiv \vv v / c$ (lowercase Greek letter beta). For constant velocity, that's  $\vvbeta = \Delta \vv r / (c \mkern.5mu \Delta t)$, where $\vv r$ is position and ${\Delta \vv r = \langle \Delta x, \Delta y, \Delta z \rangle}$ is the moving thing's displacement.\footnote{We'll call $\Delta \vv r$ \emph{displacement} when referring to the physical motion of something, and \emph{separation} when speaking in the abstract of a vector ``connecting" two points.} The magnitude of this vector is $\beta = v / c$, the \textbf{normalized speed}. By \emph{normalized}, we mean that $\beta$ is a dimensionless number between 0 and 1 (though later we'll recycle the word for some other ``$c$-scaled" quantities that aren't). The speed of light is $\beta = 1$. From now on, we'll use $\vvbeta$ nearly exclusively. We have little use for $\vv v$.
+
+
+\subsubsection{Events, Inertial Frames, and Coordinate Time}\label{sssec:events}
+
+An \textbf{event} is a location in space at a moment in time, or a point in \textbf{spacetime}. Events exist independent of reference frames (inertial or otherwise), but without specifying a frame it's rather difficult to \emph{catalog} them.
+
+How do we catalog events with an inertial frame?
+
+First, let's clarify what we mean by ``inertial frame." Start with a rectangular coordinate system: pick a location in space as the origin, and choose a set of Cartesian axes. With the coordinate system in place, picture the frame itself as a regular, rigid, inertial lattice of magically incorporeal rulers filling all of space, each parallel to one of the axes. At every intersection of rulers is a magically incorporeal computer; all such computers are thus inertial and mutually at rest. Each computer has a very accurate clock. The clocks have all been synchronized so that the following ``test" always succeeds for every pair of frame-computers: Computer 1 emits a light wave toward Computer 2 when Computer 1's clock-reading is $ct_1$; upon receiving this wave, Computer 2 immediately responds with a new light signal that conveys its own clock-reading $ct_2$ at reception-and-response time; Computer 1 receives Computer 2's signal (and the value of $ct_2$) when Computer 1's clock-reading is $ct_3$; Computer 1 can now calculate both $(ct_3 - ct_2)$ and $(ct_2 - ct_1)$ and will find that they're equal. This is called \textbf{Einstein synchronization}.
+
+When an event occurs that we'd like to catalog in this frame, the nearest computer detects it (with a camera or antenna, say) and records a description of it (``Albert rolls a 42") along with the computer's lattice position and current clock-reading. The logged time and Cartesian coordinates are ``good" for the whole frame: operationally, they're what we \emph{mean} by the event's ``when" and ``where" according to an inertial observer whose rest frame is this one. The ``frame time" is called \textbf{coordinate time}. One could arrange for the frame-computers to continually broadcast their collected event-data via light signals. Maybe also have them continually receive and process the event-data so transmitted by the other frame-computers. This way, each computer forms an increasingly complete event-catalog for the frame. (Assume infinite storage and processing power, etc.)
+
+For best results, the lattice of rulers should be as ``dense" as possible. Ideally, there's a frame-computer at \emph{every} location in space, so that a given event's spatial position and coordinate time can be recorded \emph{exactly}. We'll proceed as if that's the case for every inertial frame we consider.
+
+
+\subsubsection{Standard Configuration}\label{sssec:standardconfig}
+
+Often we're interested in comparing the event-catalog of one frame with that of another that's moving (or \emph{boosted}) relative to the first (you see why the rulers and computers must be magically incorporeal?). We'll call one frame the ``primed" frame and the other the ``unprimed" frame, and we'll use the symbols $ct^{\prime}$, $x^{\prime}$, $y^{\prime}$, and $z^{\prime}$ to indicate coordinate time and spatial coordinates of events cataloged in the former.
+
+We'll usually limit ourselves to frames that are in \textbf{standard configuration}. In most textbooks, that means that the frames' spatial origins coincide at $ct = ct^{\prime} = 0$, the Cartesian axes of each frame are parallel to the corresponding axes of the other (with the same orientation), and the $x$-axis and $x^{\prime}$-axis are always \emph{coincident}. For that last part to hold, the primed frame must move in the positive or negative unprimed $x$-direction (and the unprimed frame must move in the ``opposite" $x^{\prime}$-direction).
+
+We could leave it there, but we'll find it convenient to be a little more specific: for us, standard configuration further means that the primed frame moves at (normalized) speed $\beta$ in the \emph{positive} $x$-direction, and equivalently that the unprimed frame moves at $\beta$ in the \emph{negative} $x^{\prime}$-direction. This is of course an arbitrary and unnecessary restriction. We include it because it lets us speak unambiguously of the frames' relative \emph{speed} as the boost parameter. The alternative is to make relative \emph{velocity} the boost parameter, but then one must choose (arbitrarily!) which of the two velocity vectors to use: primed frame's velocity in unprimed frame, or unprimed frame's velocity in primed frame? By making a slightly more restrictive arbitrary decision up front, we avoid ``polluting" our equations with a boost parameter that ``privileges" one frame over the other.
+
+That said, we won't always be concerned with ``two-way" comparisons of event-catalogs. When our interest is ``one-way," from a given frame to some unspecified other, we \emph{will} sometimes speak of a (normalized) velocity $\vvbeta$ as the boost parameter: the velocity of the ``new" frame relative to the first.
+
+Naturally, standard configuration is not the only possibility. More general frame-configurations might drop the coinciding-origins requirement (we'll sometimes do this) or allow the Cartesian axes of one frame to be rotated with respect to those of the other (we won't do this). And there's nothing sacred about Cartesian coordinates! We'll stick with them because they make the math easy, but in principle no coordinate system is inherently more or less valid than any other.
 
 
 \subsubsection{The Invariant Spacetime Interval}
 
-An \textbf{event} is a location in space at a moment in time, or a point in \textbf{spacetime}. We begin our review of special relativity by taking for granted the invariance of the \textbf{spacetime interval} between two events:\footnote{The invariance of the spacetime interval can be derived from the invariance of $c$. We won't bother, but one source that does it well is Anthony Zee, \emph{Einstein Gravity in a Nutshell} (Princeton: Princeton, 2013), 166--7. Unlike some other derivations, Zee's is not restricted to the special case that the interval vanishes.}
+The \textbf{spacetime interval} between two events is defined like this:
 \begin{equation}\label{eq:sti}
 \Delta s \equiv \sqrt{ (c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2 } ,
 \end{equation}
-where $\vv r$ is position and ${\Delta \vv r = \langle \Delta x, \Delta y, \Delta z \rangle}$ is the spatial separation vector.\footnote{We'll call $\Delta \vv r$ \emph{displacement} when referring to the physical motion of something, and \emph{separation} when speaking in the abstract of a vector ``connecting" two points.}
+where $c \mkern.5mu \Delta t$ is the elapsed time between the events and ${\Delta \vv r = \langle \Delta x, \Delta y, \Delta z \rangle}$ is the separation vector pointing from one event's spatial location to the other's (it's squared, so it doesn't matter which way the vector is oriented). Which inertial frame should $c \mkern.5mu \Delta t$ and $\Delta \vv r$ be measured in? Answer: it doesn't matter. The spacetime interval, like $c$, is \emph{invariant}. Plug in the events' $c \mkern.5mu \Delta t$ and $\Delta \vv r$ for any inertial frame you choose, and you'll get the same answer for $\Delta s$.
 
+Before we prove that claim, note that the squared interval $(\Delta s)^2$ can be positive, negative, or zero. If it's positive, the interval is said to be \textbf{timelike} because then $(c \mkern.5mu \Delta t)^2 > ( \Delta \vv r )^2$. If it's negative, the interval is \textbf{spacelike} because $( \Delta \vv r )^2 > (c \mkern.5mu \Delta t)^2$ (and then the value of the interval itself is actually an imaginary number). If it's zero, the interval is \textbf{lightlike} (or \textbf{null}) because $(c \mkern.5mu \Delta t)^2 = ( \Delta \vv r )^2$, which characterizes a pair of events that a light wave could journey between (i.e., $\beta = \vert \Delta \vv r / (c \mkern.5mu \Delta t) \vert = 1$ for light). If it's true that the interval is invariant, then it follows that an interval's ``type" is invariant too---a timelike interval is timelike for everyone, and so on.
 
-\subsubsection{Standard Configuration and the Lorentz Transformation}\label{sssec:lt}
+If you'd like to see how the invariance of the interval follows from the invariance of $c$, read on. If you'd prefer to take my word for it and just use the result, feel free to skip ahead to Section \ref{sssec:lt}.
 
-We'll say more about the interval in a bit, but first we'll use its invariance to work out how space and time coordinates transform under a change of inertial frames. In \emph{Newtonian} physics, the coordinates transform according to the \textbf{Galilean transformation} (and its inverse, on the right side below):
+First a lightlike interval. Start with two inertial frames in standard configuration (actually, any configuration will do, but I want to keep standard configuration fresh in your mind). At some event, a point-source emits a spherically symmetric light wave. Since the speed of light is invariant, the wave must travel outward at $c$ as an expanding spherical shell for \emph{both} frames. Pick an event on the shell. In the unprimed frame, the squared spacetime interval between this event and the emission-event is $(\Delta s)^2 = (c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2$. But the light's normalized speed is $1 = \beta = \vert \Delta \vv r / (c \mkern.5mu \Delta t) \vert $, so that $( \Delta \vv r )^2 = (c \mkern.5mu \Delta t)^2$, and then $(\Delta s)^2 = 0$. The same argument works in the primed frame: the spacetime interval is $(c \mkern.5mu \Delta t^{\prime})^2 - ( \Delta \vv r^{\prime} )^2$, and for light $1 = \beta^{\prime} = \vert \Delta \vv r^{\prime} / (c \mkern.5mu \Delta t^{\prime}) \vert $; then $( \Delta \vv r^{\prime} )^2 = (c \mkern.5mu \Delta t^{\prime})^2$, and the interval vanishes for the primed frame, too. A lightlike interval (zero) is lightlike (zero) for everyone.
+
+Less trivial is the proof for a timelike interval. Two inertial frames in standard configuration again (this time it matters). At rest with respect to the unprimed frame is a \textbf{light clock}, which consists of a light wave ``bouncing" back and forth between two perfectly reflective mirrors (see Figure \ref{f:lightclock-unprimed}). The mirrors are a distance $d/2$ apart and both parallel to the unprimed $x$/$z$-plane, such that the light travels parallel to the $y$-axis. We consider a single ``round trip" of the light, with three events of interest: event $\mathcal{D}$ is the light's departure from the bottom mirror, $\mathcal{R}$ is the light's reflection at the top mirror, and $\mathcal{A}$ is the light's arrival back at the bottom mirror. Let's show that the spacetime interval between events $\mathcal{D}$ and $\mathcal{A}$ is timelike and invariant.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[>={Stealth[length=10pt, width=7pt]}, thick, font=\small]
+  % Unprimed light clock: light along y
+  \def\halfL{2.4}
+  \def\mirrorW{1.0}
+  % bottom and top mirrors
+  \draw[line width=1.2pt] (-\mirrorW,0) -- (\mirrorW,0);
+  \draw[line width=1.2pt] (-\mirrorW,\halfL) -- (\mirrorW,\halfL);
+  % light path (up then down; D and A coincide spatially)
+  \coordinate (D) at (0,0);
+  \coordinate (R) at (0,\halfL);
+  \draw[->, decorate, decoration={snake, segment length=6pt, amplitude=1pt, post=lineto, post length=8pt}]
+    ($([xshift=-3.5pt]D)!0.04!([xshift=-3.5pt]R)$) -- ($([xshift=-3.5pt]D)!0.96!([xshift=-3.5pt]R)$);
+  \draw[->, decorate, decoration={snake, segment length=6pt, amplitude=1pt, post=lineto, post length=8pt}]
+    ($([xshift=3.5pt]R)!0.04!([xshift=3.5pt]D)$) -- ($([xshift=3.5pt]R)!0.96!([xshift=3.5pt]D)$);
+  % events
+  \fill (D) circle (2.4pt);
+  \fill (R) circle (2.4pt);
+  \node[below] at (D) {$\mathcal{D},\,\mathcal{A}$};
+  \node[above] at (R) {$\mathcal{R}$};
+  % height label
+  \draw[<->, thin] ({\mirrorW+0.35},0) -- ({\mirrorW+0.35},\halfL)
+    node[midway, right] {$d/2$};
+  % axes hint (held away from the clock)
+  \coordinate (Oaxes) at (-3.3,-0.35);
+  \draw[->, thin] (Oaxes) -- ++(1.0,0) node[right] {$x$};
+  \draw[->, thin] (Oaxes) -- ++(0,1.0) node[above] {$y$};
+\end{tikzpicture}
+\caption{Light clock at rest in the unprimed frame, as described in the text. The $z$-axis is suppressed.}
+\label{f:lightclock-unprimed}
+\end{figure}
+
+In the light clock's unprimed rest frame, events $\mathcal{D}$ and $\mathcal{A}$ occur at the same spatial location, since in this frame the bottom mirror doesn't move: $\Delta \vv r = \vv 0$. Next, the elapsed unprimed coordinate time between $\mathcal{D}$ and $\mathcal{A}$ is simply the time it takes the light to traverse the distance $d/2$ twice. In length-units, that's $c \mkern.5mu \Delta t = d$ (because light's normalized speed is one). For the unprimed frame, then, $(c \mkern.5mu \Delta t)^2 > ( \Delta \vv r )^2 = 0$, so the interval is timelike, and $(\Delta s)^2 = (c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2 = (c \mkern.5mu \Delta t)^2 = d^2$.
+
+In the primed frame, the light clock moves in the negative $x^{\prime}$-direction (Figure \ref{f:lightclock-primed}). This means that between events $\mathcal{D}$ and $\mathcal{A}$, the light wave moves not only ``vertically" (parallel to the $y^{\prime}$-axis) but also ``horizontally" (the light's velocity has a negative $x^{\prime}$-component). The light's round-trip path therefore forms the ``top" of an isosceles triangle whose base is the bottom mirror's displacement $\vert \Delta \vv r^{\prime} \vert$ (the primed spatial separation between events $\mathcal{D}$ and $\mathcal{A}$). The triangle's height is the height of the light clock, which is still $d/2$,\footnote{\label{fn:lengthcontraction}Lengths perpendicular to the axis of relative motion mustn't change. Why? Consider a pipe passing through a barely wider pipe. If the pipes' diameters weren't invariant for the pipes' respective rest frames, then each pipe would ``say" that the other one's diameter has changed. But then how would they agree that the one pipe fits inside the other?} and its vertex is the primed position of the reflection event $\mathcal{R}$. Drop an altitude from the vertex to bisect the base, and we have a pair of congruent right triangles with catheti $d/2$ and $\vert \Delta \vv r^{\prime} \vert / 2$. The Pythagorean theorem gives the hypotenuse: $\sqrt{(d/2)^2 + (\Delta \vv r^{\prime} / 2)^2} = \sqrt{d^2 + (\Delta \vv r^{\prime})^2} / 2$. Twice that is the total distance the light travels: $\sqrt{d^2 + (\Delta \vv r^{\prime})^2}$. Since light's normalized speed is unity, that total distance is equivalently the primed coordinate-time interval between $\mathcal{D}$ and $\mathcal{A}$ (in length-units), meaning:  ${(c \mkern.5mu \Delta t^{\prime})^2 = d^2 + (\Delta \vv r^{\prime})^2}$. The primed spacetime interval between $\mathcal{D}$ and $\mathcal{A}$ is then $(c \mkern.5mu \Delta t^{\prime})^2 - (\Delta \vv r^{\prime})^2 = d^2$, precisely as it was for the unprimed frame. Timelike intervals are invariant.\footnote{Have we only shown this for timelike intervals that happen to occur at the same spatial position for some inertial frame? Yes, but that covers all of them. Start in some frame for which $(c \mkern.5mu \Delta t)^2 > ( \Delta \vv r )^2$ (definition of timelike). That means the normalized speed needed to get from one event to the other, $\vert \Delta \vv r \vert / (c \mkern.5mu \Delta t)$, is less than one (it's subluminal). An inertial traveler moving at that speed can be present at both events. Call that traveler's frame unprimed. Set up a light clock with the right height and the right orientation with respect to the desired boost-axis, and our proof holds.}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[>={Stealth[length=10pt, width=7pt]}, thick, font=\small]
+  % Primed frame: clock moves in -x' direction; light path is a triangle
+  \def\halfL{2.4}
+  \def\halfBase{2.9} % half of bottom-mirror displacement D->A (larger ~ larger beta)
+  \def\mirrorW{0.85}
+  % event positions
+  \coordinate (Dp) at (\halfBase,0);
+  \coordinate (Ap) at (-\halfBase,0);
+  \coordinate (Mp) at (0,0); % midpoint of DA
+  \coordinate (Rp) at (0,\halfL);
+  % mirrors at the three events (short segments)
+  \draw[line width=1.2pt] ({\halfBase-\mirrorW},0) -- ({\halfBase+\mirrorW},0);
+  \draw[line width=1.2pt] ({-\halfBase-\mirrorW},0) -- ({-\halfBase+\mirrorW},0);
+  \draw[line width=1.2pt] ({-\mirrorW},\halfL) -- ({\mirrorW},\halfL);
+  % dotted line between the bottom mirrors
+  \draw[dashed, thin] ({\halfBase-\mirrorW},0) -- ({-\halfBase+\mirrorW},0);
+  % light path triangle
+  \draw[->, decorate, decoration={snake, segment length=6pt, amplitude=1pt, post=lineto, post length=8pt}]
+    (Dp) -- ($(Dp)!0.975!(Rp)$);
+  \draw[->, decorate, decoration={snake, segment length=6pt, amplitude=1pt, post=lineto, post length=8pt}]
+    (Rp) -- ($(Rp)!0.975!(Ap)$);
+  % altitude from R to midpoint
+  \draw[dashed, thin] (Rp) -- (Mp)
+    node[pos=0.58, left] {$d/2$};
+  % right-angle mark at midpoint
+  \draw[thin] (0,0.45) -- (0.45,0.45) -- (0.45,0);
+  % midpoint tick (mirror thickness; biased downward)
+  \draw[line width=1.2pt] (0,-0.22) -- (0,0.06);
+  % events
+  \fill (Dp) circle (2.4pt);
+  \fill (Ap) circle (2.4pt);
+  \fill (Rp) circle (2.4pt);
+  \node[below right] at (Dp) {$\mathcal{D}$};
+  \node[below left] at (Ap) {$\mathcal{A}$};
+  \node[above] at (Rp) {$\mathcal{R}$};
+  % half-base distance labels
+  \node[below] at ({\halfBase/2},-0.08) {$\vert \Delta \vv r ^{\prime} \vert / 2$};
+  \node[below] at ({-\halfBase/2},-0.08) {$\vert \Delta \vv r ^{\prime} \vert / 2$};
+  % clock velocity (negative x')
+  \draw[->, very thick] (-1.6,{\halfL+0.55}) -- (-3.1,{\halfL+0.55})
+    node[midway, above] {clock};
+  % axes hint (held away from the clock, left side)
+  \coordinate (Oaxesp) at (-6.0,-0.55);
+  \draw[->, thin] (Oaxesp) -- ++(1.0,0) node[right] {$x^{\prime}$};
+  \draw[->, thin] (Oaxesp) -- ++(0,1.0) node[above] {$y^{\prime}$};
+\end{tikzpicture}
+\caption{The same light clock as in Figure \ref{f:lightclock-unprimed}, but here in the primed frame, for which it moves in the negative $x^{\prime}$-direction.}
+\label{f:lightclock-primed}
+\end{figure}
+
+Now spacelike intervals. Two inertial frames in standard configuration once more. In the unprimed frame a light-emitter remains stationary at the origin. At coordinate time $ct = 0$ it emits two light waves, one in the positive $x$-direction and one in the negative $x$-direction; we'll label this emission event $\mathcal{E}$. On the $x$-axis are two stationary mirrors, one at $x = D/2$ and the other at $x = -D/2$. Simultaneously at time $ct = D / 2$ the light waves reflect off these mirrors (events $\mathcal{L}$ and $\mathcal{R}$, for left and right mirror).\footnote{We'll get to the relativity of simultaneity soon, but a quick note: events $\mathcal{L}$ and $\mathcal{R}$ will \emph{not} be simultaneous for the primed frame.} The waves then return to the origin at time $ct = D$ (final event $\mathcal{F}$). See Figure \ref{f:spacelike-unprimed}. The spacetime interval between $\mathcal{E}$ and $\mathcal{F}$ is timelike, since they occur at the same spatial location. The spacetime interval between $\mathcal{E}$ and $\mathcal{L}$ is lightlike, as are those between $\mathcal{L}$ and $\mathcal{F}$, between $\mathcal{E}$ and $\mathcal{R}$, and between $\mathcal{R}$ and $\mathcal{F}$. All these timelike and lightlike intervals we know to be invariant. The interval between $\mathcal{L}$ and $\mathcal{R}$ is \emph{spacelike}, however, since they occur simultaneously a distance $D$ apart. We need to show that it's invariant. The square of the timelike interval $\mathcal{E}$--$\mathcal{F}$ is $D^2$ (the squared coordinate-time interval $D^2$ minus the \emph{vanishing} squared spatial separation). The square of our spacelike interval $\mathcal{L}$--$\mathcal{R}$ is the additive inverse (at least in this frame): $-D^2$ (the \emph{vanishing} squared coordinate-time interval minus the squared spatial separation $D^2$).
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[>={Stealth[length=10pt, width=7pt]}, thick, font=\small]
+  % Unprimed spacelike setup: emitter at origin, mirrors at ±D/2
+  \def\halfD{3.2}
+  \def\mirrorH{1.0}
+  % left and right mirrors (facing along x)
+  \draw[line width=1.2pt] (-\halfD,{-\mirrorH/2}) -- (-\halfD,{\mirrorH/2});
+  \draw[line width=1.2pt] (\halfD,{-\mirrorH/2}) -- (\halfD,{\mirrorH/2});
+  % event positions
+  \coordinate (O) at (0,0);
+  \coordinate (L) at (-\halfD,0);
+  \coordinate (R) at (\halfD,0);
+  % light paths: outbound above the axis, return below
+  \draw[->, decorate, decoration={snake, segment length=6pt, amplitude=1pt, post=lineto, post length=8pt}]
+    ($([yshift=4pt]O)!0.04!([yshift=4pt]R)$) -- ($([yshift=4pt]O)!0.96!([yshift=4pt]R)$);
+  \draw[->, decorate, decoration={snake, segment length=6pt, amplitude=1pt, post=lineto, post length=8pt}]
+    ($([yshift=-4pt]R)!0.04!([yshift=-4pt]O)$) -- ($([yshift=-4pt]R)!0.96!([yshift=-4pt]O)$);
+  \draw[->, decorate, decoration={snake, segment length=6pt, amplitude=1pt, post=lineto, post length=8pt}]
+    ($([yshift=4pt]O)!0.04!([yshift=4pt]L)$) -- ($([yshift=4pt]O)!0.96!([yshift=4pt]L)$);
+  \draw[->, decorate, decoration={snake, segment length=6pt, amplitude=1pt, post=lineto, post length=8pt}]
+    ($([yshift=-4pt]L)!0.04!([yshift=-4pt]O)$) -- ($([yshift=-4pt]L)!0.96!([yshift=-4pt]O)$);
+  % events
+  \fill (O) circle (2.4pt);
+  \fill (L) circle (2.4pt);
+  \fill (R) circle (2.4pt);
+  \node[above] at (0,0.28) {origin};
+  \node[below] at (0,-0.28) {$\mathcal{E},\,\mathcal{F}$};
+  \node[left] at ({-\halfD-0.12},0) {$\mathcal{L}$};
+  \node[right] at ({\halfD+0.12},0) {$\mathcal{R}$};
+  % baseline distance D between the mirrors
+  \draw[<->, thin] (-\halfD,-1.15) -- (\halfD,-1.15)
+    node[midway, below] {$D$};
+  % axes hint
+  \coordinate (Oaxes) at (-5.8,-0.55);
+  \draw[->, thin] (Oaxes) -- ++(1.0,0) node[right] {$x$};
+  \draw[->, thin] (Oaxes) -- ++(0,1.0) node[above] {$y$};
+\end{tikzpicture}
+\caption{Emitter and opposite mirrors at rest in the unprimed frame, as described in the text. The $z$-axis is suppressed.}
+\label{f:spacelike-unprimed}
+\end{figure}
+
+Now we must show that $(ct^{\prime}_{\mathcal{R}} - ct^{\prime}_{\mathcal{L}})^2 - (x^{\prime}_{\mathcal{R}} - x^{\prime}_{\mathcal{L}})^2 = - D^2$. We already know that $(ct^{\prime}_{\mathcal{F}} - ct^{\prime}_{\mathcal{E}})^2 - (x^{\prime}_{\mathcal{F}} - x^{\prime}_{\mathcal{E}})^2 = D^2$ (invariance of the timelike interval), so we just need to show $(ct^{\prime}_{\mathcal{R}} - ct^{\prime}_{\mathcal{L}})^2 - (x^{\prime}_{\mathcal{R}} - x^{\prime}_{\mathcal{L}})^2 = (x^{\prime}_{\mathcal{F}} - x^{\prime}_{\mathcal{E}})^2 - (ct^{\prime}_{\mathcal{F}} - ct^{\prime}_{\mathcal{E}})^2$. Lots of algebra. By the invariance of the lightlike intervals, we have:
+\begin{itemize}
+\item $ct^{\prime}_{\mathcal{R}} - ct^{\prime}_{\mathcal{E}} = + (x^{\prime}_{\mathcal{R}} - x^{\prime}_{\mathcal{E}})$ (outbound $\mathcal{E} \rightarrow \mathcal{R}$)
+\item $ct^{\prime}_{\mathcal{L}} - ct^{\prime}_{\mathcal{E}} = - (x^{\prime}_{\mathcal{L}} - x^{\prime}_{\mathcal{E}})$ (outbound $\mathcal{E} \rightarrow \mathcal{L}$)
+\item $ct^{\prime}_{\mathcal{F}} - ct^{\prime}_{\mathcal{R}} = - (x^{\prime}_{\mathcal{F}} - x^{\prime}_{\mathcal{R}})$ (inbound $\mathcal{R} \rightarrow \mathcal{F}$)
+\item $ct^{\prime}_{\mathcal{F}} - ct^{\prime}_{\mathcal{L}} = + (x^{\prime}_{\mathcal{F}} - x^{\prime}_{\mathcal{L}})$ (inbound $\mathcal{L} \rightarrow \mathcal{F}$)
+\end{itemize}
+(negative signs needed for ``leftward" light). Sum the outbounds:
+\begin{equation*}
+ct^{\prime}_{\mathcal{R}} + ct^{\prime}_{\mathcal{L}} - 2 ct^{\prime}_{\mathcal{E}} = x^{\prime}_{\mathcal{R}} - x^{\prime}_{\mathcal{L}} .
+\end{equation*}
+Sum the inbounds:
+\begin{equation*}
+2 ct^{\prime}_{\mathcal{F}} - ct^{\prime}_{\mathcal{R}} - ct^{\prime}_{\mathcal{L}} = x^{\prime}_{\mathcal{R}} - x^{\prime}_{\mathcal{L}} .
+\end{equation*}
+Right sides are equal, so equate the left sides and simplify:
+\begin{equation*}
+ct^{\prime}_{\mathcal{F}} = ct^{\prime}_{\mathcal{R}} + ct^{\prime}_{\mathcal{L}} - ct^{\prime}_{\mathcal{E}} .
+\end{equation*}
+Next \emph{subtract} the outbounds:
+\begin{equation*}
+ct^{\prime}_{\mathcal{R}} - ct^{\prime}_{\mathcal{L}} = x^{\prime}_{\mathcal{R}} + x^{\prime}_{\mathcal{L}} - 2 x^{\prime}_{\mathcal{E}} .
+\end{equation*}
+And subtract the inbounds (first from second):
+\begin{equation*}
+ct^{\prime}_{\mathcal{R}} - ct^{\prime}_{\mathcal{L}} = 2 x^{\prime}_{\mathcal{F}} - x^{\prime}_{\mathcal{R}} - x^{\prime}_{\mathcal{L}} .
+\end{equation*}
+Left sides are equal, so equate the right sides and simplify:
+\begin{equation*}
+x^{\prime}_{\mathcal{F}} = x^{\prime}_{\mathcal{R}} + x^{\prime}_{\mathcal{L}} - x^{\prime}_{\mathcal{E}} .
+\end{equation*}
+Plug our new equations for $ct^{\prime}_{\mathcal{F}}$ and $x^{\prime}_{\mathcal{F}}$ into our known equation for the timelike interval, and expand:
+\begin{equation*}
+\begin{aligned}
+D^2 &= (ct^{\prime}_{\mathcal{F}} - ct^{\prime}_{\mathcal{E}})^2 - (x^{\prime}_{\mathcal{F}} - x^{\prime}_{\mathcal{E}})^2 \\
+&= \big[ ( ct^{\prime}_{\mathcal{R}} + ct^{\prime}_{\mathcal{L}} - ct^{\prime}_{\mathcal{E}} ) - ct^{\prime}_{\mathcal{E}} \big]^2 - \big[ ( x^{\prime}_{\mathcal{R}} + x^{\prime}_{\mathcal{L}} - x^{\prime}_{\mathcal{E}} ) - x^{\prime}_{\mathcal{E}} \big]^2 \\
+&= \big[ ( ct^{\prime}_{\mathcal{R}} - ct^{\prime}_{\mathcal{E}}) + (ct^{\prime}_{\mathcal{L}} - ct^{\prime}_{\mathcal{E}} ) \big]^2 - \big[ ( x^{\prime}_{\mathcal{R}} - x^{\prime}_{\mathcal{E}} ) + ( x^{\prime}_{\mathcal{L}}  - x^{\prime}_{\mathcal{E}} ) \big]^2 \\[3pt]
+&= \cancel{( ct^{\prime}_{\mathcal{R}} - ct^{\prime}_{\mathcal{E}})^2} + \bcancel{(ct^{\prime}_{\mathcal{L}} - ct^{\prime}_{\mathcal{E}} )^2} + 2 ( ct^{\prime}_{\mathcal{R}} - ct^{\prime}_{\mathcal{E}}) (ct^{\prime}_{\mathcal{L}} - ct^{\prime}_{\mathcal{E}} ) \\
+& \quad - \cancel{( x^{\prime}_{\mathcal{R}} - x^{\prime}_{\mathcal{E}} )^2} - \bcancel{( x^{\prime}_{\mathcal{L}}  - x^{\prime}_{\mathcal{E}} )^2} - 2 ( x^{\prime}_{\mathcal{R}} - x^{\prime}_{\mathcal{E}} ) ( x^{\prime}_{\mathcal{L}}  - x^{\prime}_{\mathcal{E}} ) \\[3pt]
+&= 2 ( ct^{\prime}_{\mathcal{R}} - ct^{\prime}_{\mathcal{E}}) (ct^{\prime}_{\mathcal{L}} - ct^{\prime}_{\mathcal{E}} ) - 2 ( x^{\prime}_{\mathcal{R}} - x^{\prime}_{\mathcal{E}} ) ( x^{\prime}_{\mathcal{L}}  - x^{\prime}_{\mathcal{E}} )
+\end{aligned}
+\end{equation*}
+(the pairs cancel by the outbound lightlike conditions). Now do a similar expansion for our spacelike interval's equation, and we should find that it equals the negative of what we just derived for $D^2$ (in the second line we merely add zero to each term in a useful way):
+\begin{equation*}
+\begin{aligned}
+-D^2 &\stackrel{?}{=} (ct^{\prime}_{\mathcal{R}} - ct^{\prime}_{\mathcal{L}})^2 - (x^{\prime}_{\mathcal{R}} - x^{\prime}_{\mathcal{L}})^2 \\
+&= \big[ ( ct^{\prime}_{\mathcal{R}} - ct^{\prime}_{\mathcal{E}}) - (ct^{\prime}_{\mathcal{L}} - ct^{\prime}_{\mathcal{E}} ) \big]^2 - \big[ ( x^{\prime}_{\mathcal{R}} - x^{\prime}_{\mathcal{E}} ) - ( x^{\prime}_{\mathcal{L}}  - x^{\prime}_{\mathcal{E}} ) \big]^2 \\[3pt]
+&= \cancel{( ct^{\prime}_{\mathcal{R}} - ct^{\prime}_{\mathcal{E}})^2} + \bcancel{(ct^{\prime}_{\mathcal{L}} - ct^{\prime}_{\mathcal{E}} )^2} - 2 ( ct^{\prime}_{\mathcal{R}} - ct^{\prime}_{\mathcal{E}}) (ct^{\prime}_{\mathcal{L}} - ct^{\prime}_{\mathcal{E}} ) \\
+& \quad - \cancel{( x^{\prime}_{\mathcal{R}} - x^{\prime}_{\mathcal{E}} )^2} - \bcancel{( x^{\prime}_{\mathcal{L}}  - x^{\prime}_{\mathcal{E}} )^2} + 2 ( x^{\prime}_{\mathcal{R}} - x^{\prime}_{\mathcal{E}} ) ( x^{\prime}_{\mathcal{L}}  - x^{\prime}_{\mathcal{E}} ) \\[3pt]
+&= - \big[ 2 ( ct^{\prime}_{\mathcal{R}} - ct^{\prime}_{\mathcal{E}}) (ct^{\prime}_{\mathcal{L}} - ct^{\prime}_{\mathcal{E}} ) - 2 ( x^{\prime}_{\mathcal{R}} - x^{\prime}_{\mathcal{E}} ) ( x^{\prime}_{\mathcal{L}}  - x^{\prime}_{\mathcal{E}} ) \big] \\[3pt]
+&= - D^2 .
+\end{aligned}
+\end{equation*}
+And that's it---spacelike intervals are invariant.
+
+Well, there are a couple of limitations we should acknowledge. First, we've only covered a boost along the ``line of sight" connecting the events $\mathcal{L}$ and $\mathcal{R}$ (simultaneous in the unprimed frame). Second, we haven't established that one \emph{can} always find an inertial frame for which spacelike-separated events are indeed simultaneous. Neither is cause for concern, as long as the equations relating an event's coordinate time and Cartesian coordinates in one frame to its counterparts in another frame are \emph{linear}. They are---otherwise choice of spatial origin and of which time to call $ct = 0$ would affect the \emph{physics}---and we'll soon derive them. So rest assured: a boost in \emph{any} direction leaves a spacelike interval invariant, and spacelike-separated events \emph{are} always simultaneous for some frame(s). All spacetime intervals are invariant.
+
+\subsubsection{The Lorentz Transformation}\label{sssec:lt}
+
+We spoke earlier of comparing the ``event-catalogs" for different inertial frames, but we have not yet shown how to \emph{make} such comparisons (or rather, how to predict them). If we know the coordinate time and spatial position of an event for one inertial frame, we should be able to figure out what they are for another inertial frame whose velocity relative to the first is given. In \emph{Newtonian} physics, the coordinates transform under a boost according to the \textbf{Galilean transformation} (and its inverse, on the right side below):
 \begin{equation*}
 \begin{aligned}
 t^{\prime} &= t& t&= t^\prime \\
 x^{\prime} &= x - vt& \qquad x &= x^\prime + vt^\prime\\
 y^{\prime} &= y& y&= y^\prime\\
-z^{\prime} &= z& z&= z^\prime .
+z^{\prime} &= z& z&= z^\prime ,
 \end{aligned}
 \end{equation*}
-Here the frames are in \textbf{standard configuration} for a \textbf{boost} along the coincident $x$/$x^\prime$-axes. That means that the Cartesian axes of each frame are parallel to the corresponding axes of the other, the origins coincide at $t=t^\prime=0$, and the ``primed" frame moves with speed $v$ in the positive ``unprimed" $x$-direction (equivalently, the unprimed frame moves with speed $v$ in the negative $x^\prime$-direction, so that the \textbf{relative speed} $v$ is really the shared magnitude of two different velocity vectors, each the velocity of one frame relative to the other).\footnote{Having the primed frame move in the \emph{positive} $x$-direction is an arbitrary and unnecessary restriction that often isn't included as part of the ``standard configuration." We include it because it lets us speak unambiguously of relative \emph{speed} as the boost parameter. Allowing the frames to move in either direction relative to each other is of course just fine, but it requires using relative \emph{velocity} as the boost parameter, and one must then choose (arbitrarily!) which of the two velocity vectors to use (primed frame's velocity in unprimed frame? or unprimed frame's velocity in primed frame?). By making a slightly more restrictive arbitrary decision up front, we avoid ``polluting" our transformation equations with a boost parameter that ``privileges" one frame over the other.} How do things change in special relativity?
+where the frames are in standard configuration (see Section \ref{sssec:standardconfig}), and where we ``reverted" to $t$ and $v$. How do things change in special relativity?
 
-An elegant way to answer that question starts with the observation that, \emph{under standard configuration}, the invariance of the interval implies the invariance of $(ct)^2 - x^2$, since $(ct)^2 - x^2 - y^2 - z^2$ is the squared interval between an arbitrary event and the event that constitutes the frames' shared spacetime origin (where $ct = ct^{\prime} = 0$ and $\vv r = \vv r ^{\prime} = \vv 0$), and since we (safely) assume that we'll still have $y^{\prime} = y$ and $z^{\prime} = z$. Defining $\chi_+ \equiv ct + x$ and $\chi_- \equiv ct - x$, we can express that invariant \emph{difference} as an invariant \emph{product}, $\chi_+^{\prime} \mkern.5mu \chi_-^{\prime} = \chi_+ \mkern.5mu \chi_-$. This is nice because, unlike $ct$ and $x$, $\chi_+$ and $\chi_-$ aren't ``coupled" to each other under a boost: in the language of $\chi_+$ and $\chi_-$, the linear transformation that takes $ct$ and $x$ to $ct^{\prime}$ and $x^{\prime}$ can \emph{only} entail multiplying $\chi_-$ by some function of the frames' relative speed $v$ and \emph{dividing $\chi_+$ by the same factor}.\footnote{``Linear" here means that we'll have $ct^{\prime} = A(v) ct + B(v) x$ and $x^{\prime} = C(v) x + D(v) ct$, where $ct$ and $x$ appear \emph{only to first order}. (The factors $A$, $B$, $C$, and $D$ are some functions of $v$, the frames' relative speed.) If this weren't so---if, say, the transformation involved $x^2$---then choice of spacetime-origin event would affect the \emph{physics}, which is absurd.} In other words, to satisfy $\chi_+^{\prime} \mkern.5mu \chi_-^{\prime} = \chi_+ \mkern.5mu \chi_-$, we're restricted to ${\chi_-^{\prime} = k \mkern.5mu \chi_-}$ and ${\chi_+^{\prime} = k^{-1} \mkern.5mu \chi_+}$ for some $k = k(v)$.\footnote{\label{fn:lcc}The $\chi_+$ and $\chi_-$ are called \textbf{light-cone coordinates}, and $k$ is the \textbf{Bondi $\bm{k} \mkern.5mu$-factor}. Our choice to define $k$ via ${\chi_-^{\prime} = k \mkern.5mu \chi_-}$ instead of ${\chi_+^{\prime} = k \mkern.5mu \chi_+}$ is just to match convention.} Now the algebra will be a breeze!
+An elegant way to answer that question starts with the observation that, \emph{under standard configuration}, the invariance of the interval implies the invariance of $(ct)^2 - x^2$, since $(ct)^2 - x^2 - y^2 - z^2$ is the squared interval between an arbitrary event and the event that constitutes the frames' shared spacetime origin (where $ct = ct^{\prime} = 0$ and $\vv r = \vv r ^{\prime} = \vv 0$), and since we (safely) assume that we'll still have $y^{\prime} = y$ and $z^{\prime} = z$ (see Footnote \ref{fn:lengthcontraction}). Defining $\chi_+ \equiv ct + x$ and $\chi_- \equiv ct - x$, we can express that invariant \emph{difference} as an invariant \emph{product}, $\chi_+^{\prime} \mkern.5mu \chi_-^{\prime} = \chi_+ \mkern.5mu \chi_-$. This is nice because, unlike $ct$ and $x$, $\chi_+$ and $\chi_-$ aren't ``coupled" to each other under a boost: in the language of $\chi_+$ and $\chi_-$, the linear transformation that takes $ct$ and $x$ to $ct^{\prime}$ and $x^{\prime}$ can \emph{only} entail multiplying $\chi_-$ by some function of the frames' normalized relative speed $\beta$ and \emph{dividing $\chi_+$ by the same factor}.\footnote{``Linear" here means that we'll have $ct^{\prime} = A(\beta) ct + B(\beta) x$ and $x^{\prime} = C(\beta) x + D(\beta) ct$, where $ct$ and $x$ appear \emph{only to first order}. (The factors $A$, $B$, $C$, and $D$ are some functions of $\beta$, the frames' normalized relative speed.) As mentioned at the end of the previous section, if this weren't so---if, say, the transformation involved $x^2$---then choice of spacetime-origin event would affect the \emph{physics}, which is absurd. For $\chi_+$ and $\chi_-$, a linear transformation would be like $\chi_-^{\prime} = F(\beta) \chi_- + G(\beta) \chi_+$ and $\chi_+^{\prime} = H(\beta) \chi_+ + I(\beta) \chi_-$. Now the squared interval: $\chi_+^{\prime} \mkern.5mu \chi_-^{\prime} = (F \chi_- + G \chi_+)(H \chi_+ + I \chi_-) = GH\chi_+^2 + FI\chi_-^2 + (FH + GI)\chi_+\chi_-$. Set that equal to $\chi_+ \mkern.5mu \chi_-$ (interval is invariant), and we find $GH = FI = 0$ and $FH + GI = 1$. So either $G = I = 0$ (with $F = H^{-1}$), or $F = H = 0$ (with $G = I^{-1}$). The former matches our claim; the latter ``swaps" $\chi_+$ and $\chi_-$, effectively flipping the $x^{\prime}$-axis and contradicting standard configuration.} In other words, to satisfy $\chi_+^{\prime} \mkern.5mu \chi_-^{\prime} = \chi_+ \mkern.5mu \chi_-$, we're restricted to ${\chi_-^{\prime} = k \mkern.5mu \chi_-}$ and ${\chi_+^{\prime} = k^{-1} \mkern.5mu \chi_+}$ for some $k = k(\beta)$.\footnote{\label{fn:lcc}The $\chi_+$ and $\chi_-$ are called \textbf{light-cone coordinates}, and $k$ is the \textbf{Bondi $\bm{k} \mkern.5mu$-factor}. Our choice to define $k$ via ${\chi_-^{\prime} = k \mkern.5mu \chi_-}$ instead of ${\chi_+^{\prime} = k \mkern.5mu \chi_+}$ is just to match convention.} Now the algebra will be a breeze!
 
 From the definitions of $\chi_+$ and $\chi_-$, we have $\chi_+^{\prime} + \chi_-^{\prime} = 2ct^{\prime}$. Then:
 \begin{equation}\label{eq:ctp}
@@ -388,12 +624,12 @@ This is a good time to remind ourselves of the definitions of the hyperbolic sin
 \tanh^{-1}{q} = \dfrac{1}{2} \mkern1mu & \ln \left( \dfrac{1 + q}{1 - q} \right) = \ln \sqrt{\frac{1 + q}{1 - q}} .
 \end{aligned}
 \end{equation}
-We immediately see an opportunity to rewrite Equations \ref{eq:ctp} and \ref{eq:xp} with the substitution $k = \mathrm{e}^{\phi}$ for some function $\phi (v)$:
+We immediately see an opportunity to rewrite Equations \ref{eq:ctp} and \ref{eq:xp} with the substitution $k = \mathrm{e}^{\phi}$ for some function $\phi (\beta)$:
 \begin{equation*}
 ct^{\prime} = ( \cosh \phi ) \, ct - ( \sinh \phi ) \, x , \qquad x^{\prime} = ( \cosh \phi ) \, x - ( \sinh \phi ) \, ct .
 \end{equation*}
 
-Finally, we can determine the relationship between $\phi$ and $v$ (the relative speed of the frames) by noting first that for $x^{\prime} = 0$ (e.g., the primed origin), the above equation for $x^{\prime}$ gives $x / (ct) = \sinh \phi / \cosh \phi = \tanh \phi$, and second that, by standard configuration and the very definition of the frames' relative speed, the unprimed position $x = x(ct)$ of the primed origin must be ${x = vt}$, so that $x / (ct) = v / c$ (again, for $x^{\prime} = 0$). We therefore have $\tanh \phi = v / c$, or $\phi = \tanh^{-1}{(v / c)}$.\footnote{\label{fn:bkf}Now we've got $k = \mathrm{e}^{\phi}$ for $\phi = \tanh^{-1}(v/c)$, the usual definition of the Bondi $k$-factor (see Footnote \ref{fn:lcc}). Had we chosen ${\chi_+^{\prime} = k \mkern.5mu \chi_+}$, our $k$ would be its reciprocal.} Invoking the identities ${\cosh (\tanh^{-1}{q}) = (1 - q^2)^{-1/2}}$ and ${\sinh (\tanh^{-1}{q}) = q(1 - q^2)^{-1/2}}$, we obtain the \textbf{Lorentz transformation} and its inverse for \textbf{Minkowski coordinates} ($ct$, $x$, $y$, and $z$):
+Finally, we can determine the relationship between $\phi$ and $\beta$ (the relative speed of the frames) by noting first that for $x^{\prime} = 0$ (e.g., the primed origin), the above equation for $x^{\prime}$ gives ${x / (ct) = \sinh \phi / \cosh \phi = \tanh \phi}$, and second that, by standard configuration and the very definition of the frames' relative speed, the unprimed position $x = x(ct)$ of the primed origin must be ${x = \beta \mkern1mu ct}$, so that $x / (ct) = \beta$ (again, for $x^{\prime} = 0$). We therefore have $\tanh \phi = \beta$, or $\phi = \tanh^{-1}{\beta}$.\footnote{\label{fn:bkf}Now we've got $k = \mathrm{e}^{\phi}$ for $\phi = \tanh^{-1}\beta$, the usual definition of the Bondi $k$-factor (see Footnote \ref{fn:lcc}). Had we chosen ${\chi_+^{\prime} = k \mkern.5mu \chi_+}$, our $k$ would be its reciprocal.} Invoking the identities ${\cosh (\tanh^{-1}{q}) = (1 - q^2)^{-1/2}}$ and ${\sinh (\tanh^{-1}{q}) = q(1 - q^2)^{-1/2}}$, we obtain the \textbf{Lorentz transformation} and its inverse for \textbf{Minkowski coordinates} ($ct$, $x$, $y$, and $z$):
 \begin{equation}\label{eq:lt}
 \begin{aligned}
 ct^{\prime} &= \dfrac{ct - \beta x}{\sqrt{1- \beta ^2}}& ct &= \dfrac{ct^\prime + \beta x^\prime}{\sqrt{1- \beta ^2}} \\[3pt]
@@ -402,18 +638,8 @@ y^{\prime} &= y& y&= y^\prime \\
 z^{\prime} &= z& z&= z^\prime,
 \end{aligned}
 \end{equation}
-valid for frames in standard configuration.\footnote{More general transformations drop certain stipulations about the axes and origins. We'll soon get a \emph{little} more general, but we'll mainly stick with rotation-free boosts, which have everything we need to study the ``new" physics of special relativity.} Here we've introduced the \textbf{normalized speed} $\beta$ (lowercase Greek letter beta), magnitude of the \textbf{normalized velocity} $\vvbeta=\vv v/c$. By \emph{normalized}, we mean that $\beta$ is a dimensionless number between 0 and 1 (though later we'll recycle the word for some other ``$c$-scaled" quantities that aren't).
+valid for frames in standard configuration.
 
-Don't think of $\vvbeta$ as shorthand! The universe has a speed limit, and all speeds \emph{really are} fractions of it. Plus, working with $\vvbeta$ reveals mathematical elegance that's masked when working with $\vv v$. A good example is the symmetry of the $ct^\prime$ and $x^\prime$ equations above; if we use $v$ instead of $\beta$ (or $t$ instead of $ct$, for that matter), the symmetry of the numerators is obscured:
-\begin{equation*}
-ct^\prime = \frac{ct - \dfrac{vx}{\vphantom{V_v} c}}{\sqrt{1 - \dfrac{v^2}{c^2}}} \qquad x^\prime = \frac{x - vt}{\sqrt{1 - \dfrac{v^2}{c^2}}},
-\end{equation*}
-or worse:
-\begin{equation*}
-t^\prime = \frac{t - \dfrac{vx}{\vphantom{V_v} c^2}}{\sqrt{1 - \dfrac{v^2}{c^2}}} \qquad x^\prime = \frac{x - vt}{\sqrt{1 - \dfrac{v^2}{c^2}}}.
-\end{equation*}
-From now on we spurn $\vv v$. We'll refer to the classical limit not as $v \ll c$, but as $\beta \ll 1$. We regard $\vvbeta$ as the ``natural" way to express velocity. It goes hand in hand with measuring distance and time in the same unit.
- 
 Because the Lorentz transformation is linear (space and time coordinates are to first power only), it also works for \emph{differences} in the coordinates between two events: just replace the likes of $x$ and $ct$ with those of $\Delta x$ and $c \mkern.5mu \Delta t$ (or of $\dd x$ and $c \, \dd t$ if need be\footnote{\label{fn:in}In physics it's normal to interpret the derivative as a ratio of infinitesimals. Some find this objectionable, but it's a great heuristic for well-behaved single-variable situations.}). We now adopt the standard shorthand $\gamma \equiv (1 - \beta^2)^{-1/2}$ (lowercase Greek letter gamma), called the \textbf{Lorentz factor}:
 \begin{equation}\label{eq:lt2}
 \begin{aligned}
@@ -466,28 +692,27 @@ by a \emph{very} useful identity that follows from $\gamma = 1/\sqrt{1 - \beta^2
 \begin{equation}\label{eq:20}
 \gamma^{-2} = 1 - \beta^2 .
 \end{equation}
-So $(\Delta s)^2 = (c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2$ remains invariant. Since it can be negative, positive, or zero, we have three ``categories" of interval:
+So $(\Delta s)^2 = (c \mkern.5mu \Delta t)^2 - ( \Delta \vv r )^2$ remains invariant, as it must.
+
+Let's also be more explicit about the physical significance of the different ``types" of interval we introduced earlier:
 \begin{itemize}
-\item When $(\Delta s)^2<0$, the interval is \textbf{spacelike}, and $\lvert (\Delta s)^2 \rvert ^{1/2} = \Delta s / \mathrm{i}$ represents the \textbf{proper distance} between two events, which is their spatial separation in an inertial frame for which they occur simultaneously (there are infinitely many such frames, since motion perpendicular to the line connecting the locations of simultaneous events doesn't ``break" their simultaneity). Nothing---not even a light signal---can travel from one event to the other. The events cannot have a causal relationship, and their chronological order depends on one's frame of reference.
-\item When $(\Delta s)^2>0$, the interval is \textbf{timelike}, and $\lvert(\Delta s)^2\rvert ^{1/2} = \Delta s $ represents the \textbf{inertial proper time interval} between the events, which is the proper time $c \mkern.5mu \Delta t_0$ that elapses for an inertial traveler who journeys from one event to the other.\footnote{\label{fn:pma}The qualifier \emph{inertial} is crucial because noninertial journeys between timelike-separated events are possible, too. But among all travelers who make the journey, it's the inertial one who ages the most en route (we won't show this until Section \ref{sssec:ele}). This maximal aging---the inertial traveler's elapsed proper time---is the spacetime interval between the events.} Equivalently, it's the coordinate time that elapses between the events in the unique inertial frame for which they occur at the same location. The events may be causally related, and their chronological order is fixed.
-\item When $(\Delta s)^2=0$, the interval is \textbf{lightlike} or \textbf{null}, meaning that there's no inertial frame in which the events occur simultaneously or at the same location. Only a signal moving at the speed of light can travel from one event to the other. The events may be causally related (by such a signal), and their chronological order is fixed.
+\item When $(\Delta s)^2<0$, the interval is spacelike, and $\lvert (\Delta s)^2 \rvert ^{1/2} = \Delta s / \mathrm{i}$ represents the \textbf{proper distance} between two events, which is their spatial separation in an inertial frame for which they occur simultaneously (there are infinitely many such frames, since motion perpendicular to the line connecting the locations of simultaneous events doesn't ``break" their simultaneity). Nothing---not even a light signal---can travel from one event to the other. The events cannot have a causal relationship, and their chronological order depends on one's frame of reference.
+\item When $(\Delta s)^2>0$, the interval is timelike, and $\lvert(\Delta s)^2\rvert ^{1/2} = \Delta s $ represents the \textbf{inertial proper time interval} between the events, which is the proper time $c \mkern.5mu \Delta t_0$ that elapses for an inertial traveler who journeys from one event to the other.\footnote{\label{fn:pma}The qualifier \emph{inertial} is crucial because noninertial journeys between timelike-separated events are possible, too. But among all travelers who make the journey, it's the inertial one who ages the most en route (we won't show this until Section \ref{sssec:ele}). This maximal aging---the inertial traveler's elapsed proper time---is the spacetime interval between the events.} Equivalently, it's the coordinate time that elapses between the events in the unique inertial frame for which they occur at the same location. The events may be causally related, and their chronological order is fixed.
+\item When $(\Delta s)^2=0$, the interval is lightlike or null, meaning that there's no inertial frame in which the events occur simultaneously or at the same location. Only a signal moving at the speed of light can travel from one event to the other. The events may be causally related (by such a signal), and their chronological order is fixed.
 \end{itemize}
 
 
 \subsubsection{Velocities, Angles, and the Aberration of Light}\label{sssec:va}
 
-In deriving the relativistic transformation rules for velocity components, we must not confuse the relative speed of two inertial observers in standard configuration with their measurements of some third party's velocity. To that end, let's append the subscript ``rel" to the observers' relative speed for now ($\beta_{\textrm{rel}}$), and also to the corresponding Lorentz factor: $\gamma_{\textrm{rel}} = (1 - \beta_{\textrm{rel}}^2)^{-1/2}$. Then $\vvbeta$ and $\vvbeta^{\prime}$ are the observers' measurements of the third party's velocity. To find how the components of $\vvbeta$ transform into those of $\vvbeta^{\prime}$ (and vice versa), we divide $\Delta x^\prime$ and $\Delta x$ (etc.) by $c \mkern.5mu \Delta t^\prime$ and $c \mkern.5mu \Delta t$, respectively, and evaluate the limits of the quotients as $c \mkern.5mu \Delta t^\prime \rightarrow 0$ and $c \mkern.5mu \Delta t \rightarrow 0$.\footnote{Note that $c \mkern.5mu \Delta t^\prime \rightarrow 0$ implies $c \mkern.5mu \Delta t \rightarrow 0$ for timelike- or lightlike-separated events, since by Equations \ref{eq:lt2} we have $c \mkern.5mu \Delta t = \gamma_{\textrm{rel}} [ 1 + \beta_{\textrm{rel}} \mkern1mu \Delta x^\prime / (c \mkern.5mu \Delta t^\prime) ] c \mkern.5mu \Delta t^\prime$, with the condition that $\vert c \mkern.5mu \Delta t^\prime \vert \geq \vert \Delta x^\prime \vert$. That means $\vert \Delta x^\prime / (c \mkern.5mu \Delta t^\prime) \vert \leq 1$, and then $\vert c \mkern.5mu \Delta t \vert \leq \gamma_{\textrm{rel}} (1 + \beta_{\textrm{rel}}) \vert c \mkern.5mu \Delta t^\prime \vert $, from which the result follows (because the factor $\gamma_{\textrm{rel}} (1 + \beta_{\textrm{rel}})$ is finite). Intuitively, it couldn't be otherwise for a pair of ``adjacent" events along a physical trajectory!} For example:
+In deriving the relativistic transformation rules for velocity components, we must not confuse the relative speed of two inertial observers in standard configuration with their measurements of some third party's velocity. To that end, let's append the subscript ``rel" to the observers' relative speed for now ($\beta_{\textrm{rel}}$), and also to the corresponding Lorentz factor: $\gamma_{\textrm{rel}} = (1 - \beta_{\textrm{rel}}^2)^{-1/2}$. Then $\vvbeta$ and $\vvbeta^{\prime}$ are the observers' measurements of the third party's velocity. To find how the components of $\vvbeta$ transform into those of $\vvbeta^{\prime}$ (and vice versa), we divide $\Delta x^\prime$ and $\Delta x$ (etc.) by $c \mkern.5mu \Delta t^\prime$ and $c \mkern.5mu \Delta t$, respectively, and evaluate the limits of the quotients as $c \mkern.5mu \Delta t^\prime \rightarrow 0$ and $c \mkern.5mu \Delta t \rightarrow 0$.\footnote{Exercise: use Equations \ref{eq:lt2} to show that $c \mkern.5mu \Delta t^\prime \rightarrow 0$ implies $c \mkern.5mu \Delta t \rightarrow 0$ for timelike- or lightlike-separated events.} For example:
 \begin{equation*}
 \beta_x^\prime \equiv \dfrac{\dd x^\prime}{\dd (ct^\prime)} = \lim_{\substack{c \mkern.5mu \Delta t^\prime \to 0 \\[1.5pt] [c \mkern.5mu \Delta t \to 0]}} \, \frac{\Delta x^\prime}{c \mkern.5mu \Delta t^\prime} = \lim_{\substack{\\ c \mkern.5mu \Delta t \to 0}} \, \frac{\gamma_{\textrm{rel}} \left( \Delta x - \beta_{\textrm{rel}} \, c \mkern.5mu \Delta t \right)}{\gamma_{\textrm{rel}} \left( c \mkern.5mu \Delta t - \beta_{\textrm{rel}} \, \Delta x \right)}
 \end{equation*}
 (by Equations \ref{eq:lt2}), and dividing numerator and denominator by $c \mkern.5mu \Delta t$:
 \begin{equation*}
-\begin{aligned}
-\beta_x^\prime &= \frac{\lim\limits_{\substack{\\ c \mkern.5mu \Delta t \to 0}} \left( \dfrac{\Delta x}{c \mkern.5mu \Delta t} - \beta_{\textrm{rel}} \right) \hfill}{\lim\limits_{\substack{\\ c \mkern.5mu \Delta t \to 0}} \left( 1 - \beta_{\textrm{rel}} \, \dfrac{\Delta x}{c \mkern.5mu \Delta t} \right) }\\[7pt]
-&= \frac{\beta_x - \beta_{\textrm{rel}}}{1 - \beta_{x} \mkern1mu \beta_{\textrm{rel}}},
-\end{aligned}
+\beta_x^\prime = \frac{\lim\limits_{\substack{\\ c \mkern.5mu \Delta t \to 0}} \left( \dfrac{\Delta x}{c \mkern.5mu \Delta t} - \beta_{\textrm{rel}} \right) \hfill}{\lim\limits_{\substack{\\ c \mkern.5mu \Delta t \to 0}} \left( 1 - \beta_{\textrm{rel}} \, \dfrac{\Delta x}{c \mkern.5mu \Delta t} \right) } = \frac{\beta_x - \beta_{\textrm{rel}}}{1 - \beta_{x} \mkern1mu \beta_{\textrm{rel}}},
 \end{equation*}
-and so on. Or we can take a shortcut: sidestep the limits and just ``divide" the infinitesimals in the first place (see Footnote \ref{fn:in}). Either way, we end up with the following transformation for velocity components:
+and so on. Or we can take a shortcut: sidestep the limits and just ``divide" the infinitesimals in the first place (see Footnote \ref{fn:in}). Either way, we get:
 \begin{equation}\label{eq:vt}
 \begin{aligned}
 \beta_x^{\prime} &= \frac{\beta_x - \beta_{\textrm{rel}}}{1 - \beta_{x} \mkern1mu \beta_{\textrm{rel}}}& \qquad \beta_x &= \frac{\beta_x^{\prime} + \beta_{\textrm{rel}}}{1 + \beta_x^{\prime} \mkern1mu \beta_{\textrm{rel}}}\\[5pt]
@@ -655,7 +880,7 @@ In words: if we know the energy $E$ of (the photons in) a light wave as measured
 
 Actually, our photonic parentheticals in the previous paragraph weren't necessary: Equation \ref{eq:8} works for Maxwell's wave model of light, too, though demonstrating this requires digging a bit deeper into classical electromagnetism (we'll do this in Section \ref{sec:rem}). Heuristically, we can reason that if the energies of all the photons transform this way, then the energy of the light wave must also. As promised when we introduced Equation \ref{eq:4}, we've used the Planck--Einstein relation to take a shortcut. From now on we'll drop the photon talk.
 
-If you're wondering how the observers in Einstein's thought experiment can possibly detect both waves (because nobody can be in more than one place at once!), recall that a frame of reference isn't just a single observer. We pretend that each inertial frame is full of magically incorporeal measuring devices: a grid of arbitrarily precise rulers, synchronized clocks, and whatever else might come in handy, like spectrometers for analyzing light waves passing through. Every measurement is made at a place and time specified by the imagined clock-and-ruler lattice, and everyone \emph{at rest in that frame} agrees on the measurement's where and when. Further, a measurement like $E^\prime$ in Equation \ref{eq:8} that depends only on relative velocity is \emph{itself} valid for the whole frame.
+If you're wondering how the observers in Einstein's thought experiment can possibly detect both waves (because nobody can be in more than one place at once!), recall that a frame of reference isn't just a single observer. Revisit Section \ref{sssec:events}. We pretend that each inertial frame is full of magically incorporeal measuring devices: a grid of arbitrarily precise rulers, computers with Einstein-synchronized clocks, and whatever else might come in handy, like spectrometers for analyzing light waves passing through. Every measurement is made at a place and time specified by the imagined lattice, and everyone \emph{at rest in that frame} agrees on the measurement's where and when. Further, a measurement like $E^\prime$ in Equation \ref{eq:8} that depends only on relative velocity is \emph{itself} valid for the whole frame.
 
 So when we apply Equation \ref{eq:8} to our thought experiment, we can arrange for the moving observer to personally detect one of the light waves with a spectrometer, but then the other wave must be detected by a \emph{second} spectrometer elsewhere in the frame, along the wave's path. Or we can disregard the observer altogether and simply speak of two spectrometers. It doesn't matter. The important thing is that the spectrometers move with the same velocity $\vvbeta$ relative to the light-emitting body. And since the light waves propagate in opposite directions from the body's perspective, the angles they form with $\vvbeta$ must differ by $\pi$. How convenient! The cosines of such angles sum to zero (i.e., $\cos \mkern1.5mu (\theta+\pi)=-\cos\theta$), and that's just what we'll need for all the $\theta$'s to disappear when we use Equation \ref{eq:8} to add the $E^{\prime}$ of one light wave to the $E^{\prime}$ of the other. Apparently this Einstein fellow knew what he was doing. But we're getting ahead of ourselves.
 
