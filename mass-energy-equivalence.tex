@@ -373,11 +373,9 @@ For best results, the lattice of rulers should be as ``dense" as possible. Ideal
 
 Often we're interested in comparing the event-catalog of one frame with that of another that's moving (or \emph{boosted}) relative to the first (you see why the rulers and computers must be magically incorporeal?). We'll call one frame the ``primed" frame and the other the ``unprimed" frame, and we'll use the symbols $ct^{\prime}$, $x^{\prime}$, $y^{\prime}$, and $z^{\prime}$ to indicate coordinate time and spatial coordinates of events cataloged in the former.
 
-We'll usually limit ourselves to frames that are in \textbf{standard configuration}. In most textbooks, that means that the frames' spatial origins coincide at $ct = ct^{\prime} = 0$, the Cartesian axes of each frame are parallel to the corresponding axes of the other (with the same orientation), and the $x$-axis and $x^{\prime}$-axis are always \emph{coincident}. For that last part to hold, the primed frame must move in the positive or negative unprimed $x$-direction (and the unprimed frame must move in the ``opposite" $x^{\prime}$-direction).
+When working with spatial coordinates (or vector components), we'll usually limit ourselves to frames that are in \textbf{standard configuration}. In most textbooks, that means that the frames' spatial origins coincide at $ct = ct^{\prime} = 0$, the Cartesian axes of each frame are parallel to the corresponding axes of the other (with the same orientation), and the $x$-axis and $x^{\prime}$-axis are always \emph{coincident}. For that last part to hold, the primed frame must move in the positive or negative unprimed $x$-direction (and the unprimed frame must move in the ``opposite" $x^{\prime}$-direction).
 
-We could leave it there, but we'll find it convenient to be a little more specific: for us, standard configuration further means that the primed frame moves at (normalized) speed $\beta$ in the \emph{positive} $x$-direction, and equivalently that the unprimed frame moves at $\beta$ in the \emph{negative} $x^{\prime}$-direction. This is of course an arbitrary and unnecessary restriction. We include it because it lets us speak unambiguously of the frames' relative \emph{speed} as the boost parameter. The alternative is to make relative \emph{velocity} the boost parameter, but then one must choose (arbitrarily!) which of the two velocity vectors to use: primed frame's velocity in unprimed frame, or unprimed frame's velocity in primed frame? By making a slightly more restrictive arbitrary decision up front, we avoid ``polluting" our equations with a boost parameter that ``privileges" one frame over the other.
-
-That said, we won't always be concerned with ``two-way" comparisons of event-catalogs. When our interest is ``one-way," from a given frame to some unspecified other, we \emph{will} sometimes speak of a (normalized) velocity $\vvbeta$ as the boost parameter: the velocity of the ``new" frame relative to the first.
+We could leave it there, but we'll find it convenient to be a little more specific: for us, standard configuration further means that the primed frame moves at (normalized) speed $\beta$ in the \emph{positive} $x$-direction, and equivalently that the unprimed frame moves at $\beta$ in the \emph{negative} $x^{\prime}$-direction. This is of course an arbitrary and unnecessary restriction. We include it because it lets us speak unambiguously of the frames' relative \emph{speed} as the boost parameter. The alternative is to make relative \emph{velocity} the boost parameter, but then one must choose (arbitrarily!) which of the two velocity vectors to use: primed frame's velocity in unprimed frame, or unprimed frame's velocity in primed frame? By making a slightly more restrictive arbitrary decision up front, we avoid ``polluting" our equations with a boost parameter that ``privileges" one frame over the other. (Exception: when we consider a boost in an \emph{arbitrary} direction, we \emph{will} use $\vvbeta$ as the boost parameter---velocity of ``new" frame relative to ``old." Then standard configuration isn't relevant, though care is required for quantities like $\vv r$ and $ct$ that depend on choice of origin or zero.)
 
 Naturally, standard configuration is not the only possibility. More general frame-configurations might drop the coinciding-origins requirement (we'll sometimes do this) or allow the Cartesian axes of one frame to be rotated with respect to those of the other (we won't do this). And there's nothing sacred about Cartesian coordinates! We'll stick with them because they make the math easy, but in principle no coordinate system is inherently more or less valid than any other.
 
@@ -655,7 +653,7 @@ For the sake of completeness, let's derive the transformation for a boost in an 
 \begin{equation*}
 c t^{\prime} = \gamma \big[ c t - \beta (\vv r _\parallel \cdot \hatbeta ) \big],
 \end{equation*}
-which clearly works for \emph{arbitrary} $\hatbeta$. Likewise, we must have $\vv r^{\prime} _\perp = \vv r _\perp$ and (by $\vv r _\parallel = x \langle 1, 0, 0 \rangle = x \hatbeta$):
+which clearly works for \emph{arbitrary} $\hatbeta$ (provided the frames share an origin-event). Likewise, we must have $\vv r^{\prime} _\perp = \vv r _\perp$ and (by $\vv r _\parallel = x \langle 1, 0, 0 \rangle = x \hatbeta$):
 \begin{equation*}
 \vv r^{\prime} _\parallel = \gamma ( \vv r _\parallel - \beta \mkern1mu c t \, \hatbeta ),
 \end{equation*}
@@ -664,7 +662,7 @@ where again $\hatbeta$ can be arbitrary. Finally, we use $\vv r = \vv r _\parall
 c t^{\prime} = \gamma \big[ c t - \beta ( \vv r \cdot \hatbeta ) \big] \qquad \quad
 \vv r^{\prime} = \vv r + \big[ (\gamma - 1)(\vv r \cdot \hatbeta) - \gamma \beta c t \big] \hatbeta .
 \end{equation}
-For the arbitrary-direction version of Equations \ref{eq:lt2}, insert $\Delta$'s.
+For the arbitrary-direction version of Equations \ref{eq:lt2}, replace $ct$ and $\vv r$ with $c \mkern.5mu \Delta t$ and $\Delta \vv r$ (and then the frames needn't even share an origin-event).
 
 
 \subsubsection{Relative Simultaneity, Time Dilation, Length Contraction}\label{sssec:td}
